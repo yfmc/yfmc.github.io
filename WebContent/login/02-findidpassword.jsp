@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ include file="/inc/header.jsp" %>
+<%@ include file="/_inc/header.jsp" %>
 <style type="text/css">
 
 /*============ 아디찾기=============================*/
@@ -36,10 +36,7 @@
         padding-right: 10px;
     }
 
-    #findId a {
-        color: grey;
-        font-size: 18px
-    }
+
 
     #findId .loginbt {
         width: 350px;
@@ -87,11 +84,6 @@
         padding-right: 10px;
     }
 
-    #findPw a {
-        color: grey;
-        font-size: 18px
-    }
-
     #findPw .loginbt {
         width: 350px;
         margin: auto;
@@ -102,6 +94,11 @@
 
     #findPw .loginbt .btn {
         width: 120px;
+    }
+    
+    #content a{
+    	text-decoration:none;
+    	color:black;
     }
 
     #content:after{
@@ -128,7 +125,7 @@
 
                 <div class="loginbt">
                     <button type="button" class="btn btn-default">아이디 찾기</button>
-                    <button type="button" class="btn btn-default">취소</button>
+                    <button type="button" class="btn btn-default"><a href="01-login.jsp">취소</a></button>
                 </div>
                 </form>
             </div>
@@ -152,10 +149,10 @@
 
                 <div class="loginbt">
                     <button type="button" class="btn btn-default">비밀번호 찾기</button>
-                    <button type="button" class="btn btn-default">취소</button>
+                    <button type="button" class="btn btn-default"><a href="01-login.jsp">취소</a></button>
 
                 </div>
                 </form>
             </div>
         </div>
-<%@ include file="/inc/footer.jsp" %>
+<%@ include file="/_inc/footer.jsp" %>
