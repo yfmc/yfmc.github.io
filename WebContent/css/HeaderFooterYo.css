@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* 기본세팅============================================================== */
+*{
+    margin:0px;
+    padding:0px;
+}
+#container {
+    background-color: white;
+    width: 1200px;
+    margin: auto;
+}
+ul,ol{
+    list-style:none;
+}
+/* 기본세팅 끝============================================================== */
+/* 헤더시작============================================================== */
+
+
+#header {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    padding-top: 30px
+}
+
+
+#header .filmlogo {
+    width: 350px;
+    height: 85px;
+    margin: auto;
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    color: black;
+    text-align: center;
+
+}
+
+.filmlogo a{
+    text-decoration: none;
+    color:#000;
+}
+.filmlogo a:hover{
+    text-decoration: none;
+    color:#000;
+}
+
+
+.menu {
+    margin: auto;
+    width: 100%;
+    height: 30px;
+}
+
+.menu .mainnav {
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.menu .nav {
+    width: 25%;
+    height: 20px;
+    float: left;
+    padding: 10px 0 10px 0;
+    font-size: 25px;
+}
+
+.menu .mains {
+    width:40%;
+    margin: auto;
+    display:block;
+    text-decoration: none;
+    padding-bottom:2px;
+    color: black;
+    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'Jua', sans-serif;
+}
+
+.menu .mains:hover {
+    border-bottom: 3px solid red;
+
+}
+
+.menu .subnav{
+    width:40%;
+    font-size:20px;
+    background-color: #f0f4f5;
+    margin:auto;
+    margin-top:-2px;
+    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'Jua', sans-serif;
+    z-index:100;
+    opacity:0;
+    visibility: hidden;
+    color:black;
+    position:relative;
+    top:2px;
+    margin-bottom:2px;
+}
+
+.menu .subnav a{
+    width:auto;
+    margin: auto;
+    display:block;
+}
+.menu .subnav a:hover {
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
+    text-decoration:none;
+}
+.mainnav>.nav:hover>.subnav{
+    opacity:1;
+    visibility:visible;
+    -webkit-transition:all 0.5s;
+}
+
+.right_top {
+    width: 250px;
+    height: 15px;
+}
+
+.right_top ul {
+    text-align: center;
+    position: absolute;
+    right: -5px;
+    top: 10px;
+}
+
+.right_top li {
+    width: auto;
+    padding-right: 10px;
+    border-right: 1px solid black;
+    display: inline-block;
+    position: right;
+}
+
+.right_top li:last-child {
+    border-right: none;
+}
+
+.right_top a {
+    text-decoration: none;
+    color: black;
+}
+
+#header:after {
+    content: ' ';
+    clear: both;
+    float: none;
+    display: block;
+}
+/*헤더끝이용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ*/
+/*푸터시작입니다.==================================================*/
+#footer{
+    width:auto;
+    height:180px;
+    margin-top: 50px;
+    border-top:1px solid black;
+}
+#footer .logo{
+    width:auto;
+    height:180px;
+    padding-top:30px;
+    padding-left:0px;
+    padding-right:30px;
+    float:left;
+    font-family: 'Dancing Script', cursive;
+}
+.logo h1{
+    color:black;
+    font-size: 50px
+}
+
+#footer .companyinfo{
+    width:auto;
+    height:180px;
+    float:left;
+    padding-top: 40px;
+}
+#footer p{
+    color:black;
+    font-size: 14px;
+}
+
+#footer #theaterlogo{
+    width:280px;
+    height: 100px;
+    padding-top:35px;
+    margin-left:12px;
+    float:left;
+}
+
+#footer img{
+    width:100%;
+}
+/*푸터끝이용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ*/
