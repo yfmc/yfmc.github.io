@@ -61,11 +61,7 @@
                 <ul>
                     <li><a href="<%=request.getContextPath()%>/login/01-login.jsp">로그인</a></li>
                     <li><a href="<%=request.getContextPath()%>/account/01-welcome.jsp">&nbsp;회원가입</a></li>
-<<<<<<< HEAD
                     <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.jsp">&nbsp;마이페이지</a></li>
-=======
-                    <li><a href="#">&nbsp;마이페이지</a></li>
->>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                 </ul>
             </div>
         </div>
