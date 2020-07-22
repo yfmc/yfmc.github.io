@@ -24,7 +24,11 @@
                     <ul class="listarea">
                         <li><img src="../img/mypage_movie1.jpg" height=170px>
                             <span class="title">
+<<<<<<< HEAD
                                 <h3><a href="../movie/MovieContent.jsp">반도</a></h3>
+=======
+                                <h3><a href="#">반도</a></h3>
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                             </span>
                             <span class="rating">
                                 <h4>평점 : 8.90</h4>
@@ -38,7 +42,11 @@
                     <ul class="listarea">
                         <li><img src="../img/mypage_movie2.jpg" height=170px>
                             <span class="title">
+<<<<<<< HEAD
                                 <h3><a href="../movie/MovieContent.jsp">스파이더맨:파 프롬 홈</a></h3>
+=======
+                                <h3><a href="#">스파이더맨:파 프롬 홈</a></h3>
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                             </span>
                             <span class="rating">
                                 <h4>평점 : 8.90</h4>
@@ -52,7 +60,11 @@
                     <ul class="listarea">
                         <li><img src="../img/mypage_movie3.jpg" height=170px>
                             <span class="title">
+<<<<<<< HEAD
                                 <h3><a href="../movie/MovieContent.jsp">어벤져스:엔드게임</a></h3>
+=======
+                                <h3><a href="#">어벤져스:엔드게임</a></h3>
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                             </span>
                             <span class="rating">
                                 <h4>평점 : 8.90</h4>

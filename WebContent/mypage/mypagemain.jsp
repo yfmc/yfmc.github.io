@@ -49,19 +49,31 @@
                         <!-- 갤러리 한 개 영역 -->
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+<<<<<<< HEAD
                             <a href="../movie/MovieContent.jsp" class="thumbnail">
+=======
+                            <a href="#" class="thumbnail">
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                                 <img src="../img/mypage_movie1.jpg" />
                                 <h5>반도</h5>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                             <a href="../movie/MovieContent.jsp" class="thumbnail">
+=======
+                            <a href="#" class="thumbnail">
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                                 <img src="../img/mypage_movie2.jpg" />
                                 <h5>스파이더맨:파프롬홈</h5>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                             <a href="../movie/MovieContent.jsp" class="thumbnail">
+=======
+                            <a href="#" class="thumbnail">
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                                 <img src="../img/mypage_movie3.jpg" />
                                 <h5>어벤져스:엔드게임</h5>
                             </a>
@@ -77,19 +89,31 @@
                         <!-- 갤러리 한 개 영역 -->
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+<<<<<<< HEAD
                             <a href="../movie/MovieContent.jsp" class="thumbnail">
+=======
+                            <a href="#" class="thumbnail">
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                                 <img src="../img/mypage_movie1.jpg" />
                                 <h5>반도</h5>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                             <a href="../movie/MovieContent.jsp" class="thumbnail">
+=======
+                            <a href="#" class="thumbnail">
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                                 <img src="../img/mypage_movie2.jpg" />
                                 <h5>스파이더맨:파프롬홈</h5>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                             <a href="../movie/MovieContent.jsp" class="thumbnail">
+=======
+                            <a href="#" class="thumbnail">
+>>>>>>> e82006d131b07b1560c393d73798fc88c43ca562
                                 <img src="../img/mypage_movie3.jpg" />
                                 <h5>어벤져스:엔드게임</h5>
                             </a>
