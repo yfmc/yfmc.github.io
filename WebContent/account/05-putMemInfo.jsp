@@ -120,7 +120,7 @@
         text-align:right;
         padding-right:100px;
     }
-    .buttons > button{
+    .buttons  button{
         width:100px;
         margin-right: 30px
     }
@@ -203,7 +203,7 @@
                     </form>
                 </div>
                 <div class="buttons">
-                    <button type="button" class="btn btn-default">회원가입</button>
+                    <a href="<%=request.getContextPath()%>/account/06-Complete.jsp"><button type="button" class="btn btn-default">회원가입</button></a>
                     <button type="button" class="btn btn-default">취소</button>
                 </div>
             </div>

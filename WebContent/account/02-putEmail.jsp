@@ -104,7 +104,7 @@
                     </div>
                     </form>
                     <div class="buttons">
-                        <button type="button" class="btn btn-default">인증번호 전송</button>
+                        <a href="<%=request.getContextPath()%>/account/03-emailCode.jsp"><button type="button" class="btn btn-default">인증번호 전송</button></a>
                         <a href="<%=request.getContextPath()%>/account/01-welcome.jsp"><button type="button" class="btn btn-default">취소</button></a>
                     </div>
                 </div>
