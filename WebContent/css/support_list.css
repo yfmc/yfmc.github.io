@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+    #contents {
+        width: 900px;
+        min-height: 300px;
+        margin: 0px 0px 50px 30px;
+        padding-left: 15px;
+        float: left;
+    }
+
+    #contents h2 {
+        padding-bottom: 10px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    #contents h3 {
+        padding: 0px 10px 10px 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* 검색 버튼 */
+    .search {
+        margin: 20px;
+    }
+
+    .search_result {
+        margin: 20px;
+    }
+
+    .table_area {
+        text-align: center;
+    }
+
+    /* 글 목록 */
+    table {
+        width: 100%;
+        line-height: 80%;
+        margin-bottom: 40px;
+    }
+
+    thead {
+        display: table-header-group;
+        border-bottom: 2px solid #eee;
+    }
+
+    th {
+        height: 35px;
+        text-align: center;
+    }
+
+    td {
+        display: table-cell;
+        vertical-align: inherit;
+        border-bottom: 1px solid #eee;
+        padding: 12px;
+        font-size: 15px;
+    }
