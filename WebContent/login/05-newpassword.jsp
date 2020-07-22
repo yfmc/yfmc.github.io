@@ -38,7 +38,7 @@
     #newpw .passwords input{
         width:300px;
         height:35px;
-        border-radius:10px;
+        border-radius:5px;
         border:1px solid grey;
     }
 
@@ -89,7 +89,7 @@
                 </div>
                 <div class="buttons">
                     <button type="button" class="btn btn-default">비밀번호 재설정</button>
-                    <button type="button" class="btn btn-default">취소</button>
+                   	<a href="<%=request.getContextPath()%>/login/02-findidpassword.jsp"><button type="button" class="btn btn-default">취소</button></a>
                 </div>
             </div>
         </div>

@@ -39,8 +39,9 @@
         margin-right:10px;
         width: 120px;
         /*margin-left:30px;*/
-
     }
+
+    
     </style>
     
     <div id="content">
@@ -51,8 +52,8 @@
                 </p>
 
                 <div class="loginbt">
-                    <button type="button" class="btn btn-default"><a href="01-login.jsp">로그인</a></button>
-                    <button type="button" class="btn btn-default"><a href="02-findidpassword.jsp">비밀번호 찾기</a></button>
+                    <a href="<%=request.getContextPath()%>/login/01-login.jsp"><button type="button" class="btn btn-primary">로그인</button></a>
+                    <a href="<%=request.getContextPath()%>/login/02-findidpassword.jsp"><button type="button" class="btn btn-default">비밀번호 찾기</button></a>
                 </div>
 
             </div>

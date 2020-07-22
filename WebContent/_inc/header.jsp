@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,
-minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Hello Bootstrap</title>
     <!-- 필요CSS -->
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/HeaderFooterYo.css" />
@@ -60,8 +59,8 @@ minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
             </div>
             <div class="right_top">
                 <ul>
-                    <li><a href="login/01-login.jsp">로그인</a></li>
-                    <li><a href="#">&nbsp;회원가입</a></li>
+                    <li><a href="<%=request.getContextPath()%>/login/01-login.jsp">로그인</a></li>
+                    <li><a href="<%=request.getContextPath()%>/account/01-welcome.jsp">&nbsp;회원가입</a></li>
                     <li><a href="#">&nbsp;마이페이지</a></li>
                 </ul>
             </div>
