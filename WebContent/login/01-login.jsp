@@ -66,11 +66,11 @@
                     <input type="text" class="form-control" placeholder="비밀번호를 입력해주세요." aria-describedby="sizing-addon1">
                 </div>
                 <div class="loginpb">
-                    <a href="02-findidpassword.jsp" class="fgidpw">ID/PW찾기</a>
+                    <a href="<%=request.getContextPath()%>/login/02-findidpassword.jsp" class="fgidpw">ID/PW찾기</a>
                     <a href="#" class="noid">회원가입</a>
                 </div>
                 <div class="loginbt">
-                    <button type="button" class="btn btn-default">로그인</button>
+                    <button type="button" class="btn btn-primary">로그인</button>
                 </div>
                 </form>
             </div>

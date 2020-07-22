@@ -125,7 +125,7 @@
 
                 <div class="loginbt">
                     <button type="button" class="btn btn-default">아이디 찾기</button>
-                    <button type="button" class="btn btn-default"><a href="01-login.jsp">취소</a></button>
+                    <a href="01-login.jsp"><button type="button" class="btn btn-default">취소</button></a>
                 </div>
                 </form>
             </div>
@@ -149,7 +149,7 @@
 
                 <div class="loginbt">
                     <button type="button" class="btn btn-default">비밀번호 찾기</button>
-                    <button type="button" class="btn btn-default"><a href="01-login.jsp">취소</a></button>
+                    <a href="<%=request.getContextPath()%>/login/01-login.jsp"><button type="button" class="btn btn-default">취소</button></a>
 
                 </div>
                 </form>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ include file="/inc/top.jsp"%>
+<%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Statistics1.css">
 
 <!-- ========== 컨텐츠 영역 시작 ========== -->
@@ -57,4 +57,4 @@
         </div>
     </div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->
-<%@ include file="/inc/bottom.jsp"%>
+<%@ include file="../_inc/footer.jsp"%>

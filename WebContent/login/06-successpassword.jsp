@@ -51,7 +51,7 @@
                 </p>
 
                 <div class="loginbt">
-                    <button type="button" class="btn btn-default"><a href="01-login.jsp">로그인</a></button>
+                    <a href="<%=request.getContextPath()%>/login/01-login.jsp"><button type="button" class="btn btn-primary">로그인</button></a>
 
                 </div>
 
