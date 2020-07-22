@@ -121,7 +121,7 @@
                             <label for="code">인증번호</label>
                             <input id="code" type="text" placeholder="인증번호를 입력해주세요.">
                             </form>
-                            <a href="<%=request.getContextPath()%>/account/04-Agree.jsp"><button type="button" class="btn btn-default">확인</button></a>
+                            <button type="button" class="btn btn-default">확인</button>
                         </div>
                 </div>
                 <div class="nomail">

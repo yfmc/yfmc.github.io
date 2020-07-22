@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+/* 극장 선택 테이블 전체 */
+.branch_table {
+    width: 100%;
+    padding-top: 30px;
+    margin:auto;
+    border: 1px solid #eee;
+}
+
+/* 지역 선택 바 */
+.provincial {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+
+/* "지역별 극장 정보" */
+.table_name {
+    text-align: center;
+}
+
+/* 지역명 글씨 정렬 */
+.privincial ul {
+    text-align: center;
+}
+
+.provincial li {
+    display: inline-block;
+    width: 8%;
+    height: 15px;
+}
+
+/* 링크의 박스화 */
+.provincial li a {
+    display: block;
+    font-size: 20px;
+    color: black;
+}
+
+.provincial li:nth-child(7), .provincial li:nth-child(8), .provincial li:nth-child(11) {
+    text-align: center;
+}
+
+.provincial li:nth-child(10) {
+    text-align: right;
+}
+
+.provincial li a:hover {
+    text-decoration: none;
+    color:#eee;
+}
+
+.provincial li a:active {
+    text-decoration: none;
+    font-style: none;
+}
+
+/* 지역별 지점 선택 영역 */
+.branch_list {
+    width: 95%;
+    min-height: 500px;
+    margin: auto;
+    background-color: #eee;
+}
+
+.branch_list > ul {
+    display: block;
+    padding: 30px 0 0 0;
+    margin: 0;
+}
+
+/* 각 지점 버튼 */
+.branch_list li {
+    display: block;
+    float: left;
+    width: 250px;
+    height: 40px;
+    border-right: 1px solid black;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.branch_list a:hover {
+    text-decoration: none;
+}
+
+/* 각 지역 탭 영역 */
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 극장 상세 정보 박스 전체 */
+.branch_info {
+    width: 80%;
+    margin: auto;
+    background-color: #eee;
+}
+
+/* 상세 정보 박스 head 영역 */
+
+.branch_head > h2, .branch_head > button {
+    display: inline-block;
+}
+
+.branch_head > button {
+	font-size: 15px;
+}
+
+/* 지점명 */
+.branch_name {
+    font-weight: bold;
+}
+
+/* 상세 정보 박스 body 영역 */
+/* 텍스트, 로고 영역 */
+.branch_body {
+	border: 0;
+}
+
+.info_text {
+    width: 60%;
+    float: left;
+}
+
+.info_img {
+    width: 30%;
+	float: right;
+}
+
+.clear:after {
+	content: '';
+	display: block;
+	float: none;
+	clear: both;
+}
+
+.info_img img {
+    display: block;
+    margin: auto;
+}
+
+/* 주소, 상영관 정보 text */
+.info_detail {
+    margin-left: 15px;
+}
+
+/* 상세 정보 박스 tail 영역 */
+/* 안내 팝업 영역 */
+.branch_tail {
+	border: 0;
+	padding-top: 10px;
+
+}
+
+.branch_tail > .topop {
+	display: inline-block;
+	margin-left: 15px;
+	font-size: 15px;
+}
+
+/* 팝업 modal */
+#kakaomap {
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    background-color: #a2deb2;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 상영시간표 영역 */
+.table_head {
+    background-color:#eee;
+}
+
+/* 날짜 선택 일주일 */
+.week_btn {
+    background-color: #757575;
+    width: 70%;
+    margin:auto;
+}
+
+.week_btn > .btn:active {
+    box-shadow: none;
+}
+
+.week_btn a {
+    display: inline-block;
+    width: 10%;
+    margin-left: 5px;
+    border-radius: 0;
+}
+
+/* 관람가 / 요금 안내 */
+.table_info {
+    text-align: right;
+}
+
+.table_info > .btn:active {
+    box-shadow: none;
+}
+
+/* 영화 별 시간표 영역 */
+
+
+.film_time > h3 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* 영화 시간 버튼 */
+.film_time > .btn {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.film_time a span {
+    display: block;
+}
+
+.start_time {
+    font-weight: bold;
+}
+
+.film_time .seats {
+    font-size: 11px;
+    float:left;
+    margin-right: 10px;
+}
+
+.room_no {
+    font-size: 11px;
+}

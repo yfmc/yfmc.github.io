@@ -24,25 +24,19 @@ ul,ol{
     padding-top: 30px
 }
 
-
-#header .filmlogo {
-    width: 350px;
-    height: 85px;
-    margin: auto;
-    font-family: 'Dancing Script', cursive;
-    font-size: 70px;
-    color: black;
-    text-align: center;
-
+.filmlogo_header {
+	width:365px;
+	margin: auto;
 }
 
-.filmlogo a{
-    text-decoration: none;
-    color:#000;
+.filmlogo_header img {
+	display: block;
+	width: auto;
+	
 }
-.filmlogo a:hover{
-    text-decoration: none;
-    color:#000;
+
+.filmlogo_header:hover{
+    cursor: pointer;
 }
 
 
@@ -157,46 +151,42 @@ ul,ol{
 }
 /*헤더끝이용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ*/
 /*푸터시작입니다.==================================================*/
-#footer{
+#footer {
     width:auto;
     height:180px;
     margin-top: 50px;
     border-top:1px solid black;
 }
-#footer .logo{
-    width:auto;
-    height:180px;
-    padding-top:30px;
-    padding-left:0px;
-    padding-right:30px;
-    float:left;
-    font-family: 'Dancing Script', cursive;
+
+#footer img {
+    width:100%;
 }
-.logo h1{
-    color:black;
-    font-size: 50px
+
+.filmlogo_footer {
+	display: inline-block;
+	width: 250px;
+	float: left;
+	margin-top: 50px;
+	margin-right: 10px;
 }
 
 #footer .companyinfo{
-    width:auto;
-    height:180px;
-    float:left;
+	display: inline-block;
+    width: 600px;
     padding-top: 40px;
 }
+
 #footer p{
     color:black;
-    font-size: 14px;
+    font-size: 13px;
 }
 
-#footer #theaterlogo{
-    width:280px;
-    height: 100px;
-    padding-top:35px;
-    margin-left:12px;
-    float:left;
+#footer .theaterlogo{
+	display: inline-block;
+    width: 330px;
+    float: right;
+    margin-top: 20px;
 }
 
-#footer img{
-    width:100%;
-}
+
 /*푸터끝이용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ*/

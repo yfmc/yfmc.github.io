@@ -11,23 +11,21 @@
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/HeaderFooterYo.css" />
     <!-- //필요CSS -->
     <!-- 부트스트랩 -->
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- //부트스트랩 -->
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat+Subrayada:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <!-- //구글폰트 -->
-    <!-- //폰트어썸 -->
-    <script src="https://kit.fontawesome.com/2de30be98d.js" crossorigin="anonymous"></script>
-    <!-- //폰트어썸 -->
 
 </head>
 
 <body>
     <div id="container">
         <div id="header">
-            <h1 class="filmlogo"><a href="../index.jsp"><i class="fas fa-film"></i> Cinephile</a></h1>
+        	<div class="filmlogo_header">
+        		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" href="../index.jsp" />
+            </div>
             <div class="menu">
                 <ul class="mainnav">
                     <li class="nav">
