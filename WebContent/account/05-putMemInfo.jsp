@@ -3,14 +3,13 @@
 
 <%@ include file="/_inc/header.jsp" %>
 
-   <style type="text/css">
+    <style type="text/css">
     #content>ul {
         width: auto;
         height: 40px;
         margin-top: 100px;
         font-size: 25px;
         font-weight: bold;
-        /*background-color: #f0f;*/
         text-align: center;
     }
 
@@ -55,9 +54,17 @@
         width: 500px;
         margin-bottom: 20px;
         display: inline-block;
-
     }
-
+    .joining .meminfo .input-group:nth-child(10) {
+        width: 500px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+    .joining .meminfo .input-group:nth-child(11) {
+        width: 500px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
     .joining .meminfo .gender {
         display: inline-block;
     }
@@ -73,7 +80,7 @@
         text-align: left;
         font-size: 20px;
         margin-right: 20px;
-    }
+    } 
 
     .input-group>input {
         width: 300px;
@@ -88,6 +95,14 @@
         border-radius: 5px;
         border: none;
         background-color: #fff;
+    }
+    .input-group:nth-child(10) input {
+        width: 170px;
+        height: 35px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        margin-bottom:-20px;
+        margin-right:10px;
     }
 
     .joining .meminfo .subbutton {
@@ -105,14 +120,14 @@
         text-align:right;
         padding-right:100px;
     }
-    .buttons  button{
+    .buttons > button{
         width:100px;
         margin-right: 30px
     }
     .star{
         color:red;
     }
-    </style> 
+    </style>
     
     <div id="content">
             <ul>
@@ -172,21 +187,24 @@
                             <input id="user_phone" type="text" placeholder="휴대폰 번호를 -없이 입력해주세요">
                         </div>
                         <div class="input-group">
-                            <label for="user_addr"><span class="star">*</span> 주소</label>
-                            <input id="user_addr" type="text" placeholder="주소검색 버튼을 눌러주세요">
+                            <label for="user_postcode"><span class="star">*</span> 주소</label>
+                            <input id="user_postcode" type="text" placeholder="우편번호">
+                            <button type="button" class="btn btn-default">우편번호 검색</button>
                         </div>
-                        <div class="subbutton">
-                            <button type="button" class="btn btn-default">주소검색</button>
+
+                        <div class="input-group">
+                            <label for="user_addr"></label>
+                            <input id="user_addr" type="text" placeholder="">
                         </div>
                         <div class="input-group">
                             <label for="addr_detail"></label>
-                            <input id="addr_detail" type="text" placeholder="주소 상세">
+                            <input id="addr_detail" type="text" placeholder="주소상세">
                         </div>
                     </form>
                 </div>
                 <div class="buttons">
-                    <a href="<%=request.getContextPath()%>/account/06-Complete.jsp"><button type="button" class="btn btn-default">회원가입</button></a>
-                    <a href="<%=request.getContextPath()%>/account/04-Agree.jsp"><button type="button" class="btn btn-default">취소</button></a>
+                    <button type="button" class="btn btn-default">회원가입</button>
+                    <button type="button" class="btn btn-default">취소</button>
                 </div>
             </div>
         </div>
