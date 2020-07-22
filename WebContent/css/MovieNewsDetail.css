@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+.movieNews{
+	
+	min-height:1400px;
+}
+.entry-title{
+	font-weight:bold;
+	font-size : 40px;
+}
+
+.entry-content{
+	font-size:18px;
+	width:900px;
+	margin:auto;
+}
+
+.buttonMoving{
+	margin-left:1000px;
+	
+}
+
+figure{
+	margin:auto;
+	margin-top:30px;
+	margin-bottom:30px;
+}
