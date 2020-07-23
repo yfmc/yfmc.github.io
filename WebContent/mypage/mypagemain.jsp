@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@include file="/_inc/header.jsp" %>
+<%@include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/mypagemain.css">
         <div id="content" class="clear">
             <div class="sidebar">
@@ -101,4 +101,4 @@
                 </div>
             </div>
         </div>
-<%@ include file="/_inc/footer.jsp"%>
+<%@ include file="../_inc/footer.jsp"%>
