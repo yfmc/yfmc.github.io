@@ -31,16 +31,16 @@
                         </div>
                         <div class="form-group">
                             <!-- .constrol-tabel은 label태그에 들어가는 속성이다. -->
-                            <label for="user_name" class="col-sm-2 control-label">비밀번호</label>
+                            <label for="user_password" class="col-sm-2 control-label">비밀번호</label>
                             <div class="col-sm-5">
-                                <input type="text" name="user_password" id="user_password" style="width:220px" value="" placeholder="비밀번호를 입력해주세요" />
+                                <input type="password" name="user_password" id="user_password" style="width:220px" value="" placeholder="비밀번호를 입력해주세요" />
                             </div>
                         </div>
                         <div class="form-group">
                             <!-- .constrol-tabel은 label태그에 들어가는 속성이다. -->
-                            <label for="user_name" class="col-sm-2 control-label">비밀번호 확인</label>
+                            <label for="user_password" class="col-sm-2 control-label">비밀번호 확인</label>
                             <div class="col-sm-5">
-                                <input type="text" name="user_password" id="user_password" style="width:220px" value="" placeholder="비밀번호를 다시 입력해주세요" />
+                                <input type="password" name="user_password" id="user_password" style="width:220px" value="" placeholder="비밀번호를 다시 입력해주세요" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="choose" class="col-sm-2 control-label">성별</label>
+                            <label for="gender" class="col-sm-2 control-label">성별</label>
                             <div class="col-sm-10">
                                 <label>
                                     <input type="radio" name="gender" id="gender_m" value="M" checked disabled />남&nbsp;
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">이메일</label>
+                            <label for="maillist" class="col-sm-2 control-label">이메일</label>
                             <div class="col-sm-5">
                                 <input type="text" style="width:100px; height:25px"> @
                                 <select name="maillist" id="maillist" style="height:25px">
