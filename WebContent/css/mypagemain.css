@@ -105,19 +105,24 @@
 	opacity:0.6;
 }
 .bodycenter {
-    border-bottom: 1px dotted #222;
     height: 340px;
     position: relative;
     margin-top: 30px;
+    border:1.5px solid #808080;
+    border-radius:8px;
+    padding-top:10px;
 }
 
 .row {
     padding-left: 200px;
 }
 
+
 .row h5 {
     text-align: center;
+    line-height:0.7;
 }
+
 
 .thumbnail {
     margin-top: 20px;
@@ -142,19 +147,25 @@
 
 .bodycenter button {
     position: absolute;
-    bottom: 40px;
+    bottom: 19px;
     right: 80px;
 }
 
 .bodybottom {
-    border-bottom: 1px dotted #222;
     height: 340px;
     position: relative;
     margin-top: 30px;
+    border:1.5px solid #808080;
+	border-radius:8px;
+	padding-top:10px;
+}
+
+.bodybottom h5{
+	font-weight:bold;
 }
 
 .bodybottom button {
     position: absolute;
-    bottom: 40px;
+    bottom: 19px;
     right: 80px;
 }
