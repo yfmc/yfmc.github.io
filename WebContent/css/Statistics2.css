@@ -10,30 +10,37 @@ list-style:none;
 margin-top:20px;
 }
 
-.content .content1 ul {
-        /*border:1px solid #eee;*/
-        width: 70%;
-        margin: auto;
-    }
+.content1 ul{
+	width:80%;
+	margin:auto;
+}
 
-    .content .content1 ul li {
-        float: left;
-        width: 25%;
-        text-align: center;
+.content1 ul li{
+	margin-top:20px;
+	width:25%;
+	float:left;
+	text-align:center;
+}
 
+.content ul li a{
+	color:#222;
+	font-size:18px;
+	font-family:"Jua", sans-serif;
+	display:block;
+	margin:auto;
+}
 
-    }
-
-    .content ul:after {
-        display: block;
-        content: '';
-        float: none;
-        clear: both;
-    }
+.content1:after{
+	display:block;
+	content:' ';
+	clear:both;
+	float:none;
+	
+}
     
     .statistics h2{
         font-size:40px;
-        color:#222;
+        color:blue;
         text-align: center;
         margin-top:50px;
         /*border: 1px solid #eee;*/

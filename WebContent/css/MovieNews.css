@@ -1,8 +1,10 @@
 @charset "UTF-8";
+
 .content .content1 ul {
         /*border:1px solid #eee;*/
         width: 70%;
         margin: auto;
+        margin-top:30px;
     }
 
     .content .content1 ul li {
@@ -13,6 +15,14 @@
 
 
     }
+    
+.content ul li a{
+	color:#222;
+	font-size:18px;
+	font-family:"Jua", sans-serif;
+	display:block;
+	margin:auto;
+}
 
     .content ul:after {
         display: block;
@@ -21,24 +31,14 @@
         clear: both;
     }
 
-    .list_title {
+    .newsName {
         margin-top: 40px;
         text-align: center;
     }
 
-    .list_title h2 {
-        color: #222;
+    .newsName h2 {
+        color: darkorange;
         margin-bottom: 20px;
-    }
-
-    .list_title button:first-child {
-        margin-right: 30px;
-    }
-
-
-    .content .clearfix {
-        width: 90%;
-        margin: auto;
     }
 
     .newsName{

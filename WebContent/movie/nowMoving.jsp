@@ -1,39 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/nowMoving.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/nowMoving.css?time=<%=System.currentTimeMillis()%>">
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
     <div class="content">
         <div class="content1">
             <ul>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                        박스오피스
-                    </button>
+                    <a href="#">박스오피스</a> 
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                        영화검색
-                    </button>
+                    <a href="#">영화검색</a> 
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                        영화소식
-                    </button>
+                    <a href="#">영화소식</a> 
                 </li>
                 <li>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                        통계
-                    </button>
+                    <a href="#">통계</a> 
                 </li>
+                
             </ul>
         </div>
         <div class="list_title">
             <h2>박스오피스</h2>
             <p>
-                <button type="button" class="btn btn-primary btn-sm">현재 상영작</button>
-                <button type="button" class="btn btn-danger btn-sm">상영 예정작</button>
+                <span>
+                <ul>
+               		<li>
+                		<a href="#">현재 상영작</a>
+                	</li>
+                	<li>
+                		<a href="#">상영 예정작</a>
+                	</li>
+                </ul>
+                </span>
             </p>
         </div>
         <div class="clearfix">

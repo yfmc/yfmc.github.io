@@ -15,18 +15,25 @@ margin-top:20px;
         width: 70%;
         margin: auto;
     }
-
-    .content .content1 ul li {
-        float: left;
-        width: 25%;
-        text-align: center;
-
-
+    
+    .content1 ul li{
+    margin-top:20px;
+    width:25%;
+    float:left;
+    text-align:center;
+    }
+    
+    .content1 ul li a{
+    color:#222;
+    font-size:18px;
+    font-family:'Jua', sans-serif;
+    display:block;
+    margin:auto;
     }
 
     .content ul:after {
         display: block;
-        content: '';
+        content: ' ';
         float: none;
         clear: both;
     }
@@ -37,37 +44,44 @@ margin-top:20px;
     }
 
     .list_title h2 {
-        color: #222;
+        color: darkorchid;
         margin-bottom: 20px;
     }
 
 
-    .form-search{
-        width:80%;
-        text-align:center;
-        margin-left:150px;
-        margin-top:50px;
-        /*border:1px solid #eee;*/
-    }
-    .form-search .checkbox{
-        width:20%;
-        font-size:20px;
-        color:#222;
+.form-search{
+      width:80%;
+      text-align:center;
+      margin-left:150px;
+      margin-top:50px;
+      /*border:1px solid #eee;*/
+}
+.form-search .checkbox{
+      width:20%;
+      font-size:20px;
+      color:#222;
     }
 
-    .search{
-        margin-top:120px;
+.search{
+      margin-top:120px;
     }
-    .search h1{
-        text-align: center;
-        color:#222;
-    }
-    .search .input-group{
-        /*border: 1px solid #6f6;*/
-        width:30%;
-        margin: auto;
-        margin-bottom:50px;
-    }
+.search h1{
+      text-align: center;
+      color:#222;
+}
+.search .input-group{
+      /*border: 1px solid #6f6;*/
+      width:30%;
+      margin: auto;
+      margin-bottom:50px;
+}
+    
+.search-result{
+	color:darkgray;
+  width:auto;
+  margin-left:70px;
+  margin-bottom:30px;
+}
     .king-row{
         margin-top:10px;
         height:400px;

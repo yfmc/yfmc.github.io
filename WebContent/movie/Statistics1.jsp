@@ -1,40 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/Statistics1.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/Statistics1.css?time=<%=System.currentTimeMillis()%>">
 
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
         <div class="content">
             <div class="content1">
-                <ul>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            박스오피스
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            영화검색
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            영화소식
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            통계
-                        </button>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li>
+                    <a href="#">박스오피스</a> 
+                </li>
+                <li>
+                    <a href="#">영화검색</a> 
+                </li>
+                <li>
+                    <a href="#">영화소식</a> 
+                </li>
+                <li>
+                    <a href="#">통계</a> 
+                </li>
+                
+            </ul>
+        </div>
             <!-- 통계 전체 부분 -->
             <!-- 통계시작 -->
             <div class="statistics">
                 <h2>통계</h2>
-
+			<form>
             <div class="form-group statistics-check">
                 <div class="col-sm-10">
                     <label class="radio-inline">
@@ -47,6 +40,7 @@
                     </label>
                 </div>
             </div>
+            </form>
             <!-- 통계자료 사진 넣기 -->
             <span>
                 <img src="../img/일별박스오피스관객수.png" alt="일별 박스오피스 순위">
