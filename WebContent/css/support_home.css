@@ -4,16 +4,12 @@
         width: 100%;
         margin: 0 auto;
     }
-    
-    p {
-    	font-size: 16px;
-    }
 
     .row {
         margin-top: 30px;
     }
     
-        .content {
+    .content {
         width: 900px;
         min-height: 300px;
         margin: 25px 0px 50px 30px;
@@ -32,9 +28,17 @@
         font-size: 22px;
         font-weight: bold;
     }
+    
+    .content p {
+    	font-size: 16px;
+    }
+    
+    .support_title {
+    	margin-bottom: 40px;
+    }
 
     .service {
-        width: 800px;
+        width: 700px;
         padding-bottom: 20px;
         border-bottom: 1px solid #eee;
     }
@@ -45,8 +49,9 @@
     }
 
     .service_list li {
-        margin: 5px 15px 0px 5px;
+        margin: 5px 25px 0px 5px;
         float: left;
+        line-height: 50px;
     }
 
     .service_list li a {
@@ -55,7 +60,6 @@
         height: 180px;
         font-size: 18px;
         font-weight: bold;
-        line-height: 250%;
         color: #222;
         text-align: center;
     }

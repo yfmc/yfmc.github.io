@@ -15,7 +15,9 @@
                 <li class="list-group-item"><a href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
             </ul>
             <div class="content">
-                <h2>고객센터 홈</h2>
+	            <div class="support_title">
+	                <h2>고객센터 홈</h2>
+	            </div>
                 <div class="service">
                     <h3>자주찾는 서비스</h3>
                     <ul class="service_list">

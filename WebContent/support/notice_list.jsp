@@ -8,6 +8,7 @@
 
 <div class="row">
 	<div id="contents">
+	<!-- 사이드 바 -->
 		<ul class="sidebar">
 			<li class="list-group-item"><a href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
 			<li class="list-group-item"><a href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
@@ -15,15 +16,15 @@
 			<li class="list-group-item"><a href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
 		</ul>
 		<div class="content">
-			<div class="notice_title">
+			<div class="support_title">
 				<h2>공지사항</h2>
 				<p>저희 영화관의 이슈 및 공지사항을 확인하실 수 있습니다.</p>
 			</div>
 			<div class="notice search">
 				<div class="input-group">
-					<span class="input-group-btn"> <!-- 추가적인 style 적용 필요함 --> <select
-						name='choose' class='form-control'
-						style="width: auto; margin-right: -1px;">
+					<span class="input-group-btn">
+					<!-- 추가적인 style 적용 필요함 -->
+					<select name='choose' class='form-control' style="width: auto; margin-right: -1px;">
 							<option value="">제목</option>
 							<option value="">내용</option>
 					</select>
@@ -34,16 +35,16 @@
 				</div>
 			</div>
 			<div class="search_result">
-			총 " "건이 검색 되었습니다.
+			총 "&nbsp;&nbsp;&nbsp;"건이 검색 되었습니다.
 			</div>
 			<div class="table_area">
 				<table class="table_notice_list">
 					<!-- 목록 -->
 					<colgroup>
-						<col style="width: 10%;">
+						<col style="width: 100px;">
 						<col style="width: auto;">
-						<col style="width: 10%;">
-						<col style="width: 10%;">
+						<col style="width: 150px;">
+						<col style="width: 100px;">
 					</colgroup>
 					<thead>
 						<tr>
@@ -56,51 +57,49 @@
 					<tbody>
 						<tr>
 							<td>10</td>
-							<td><a
-								href="<%=request.getContextPath()%>/support/notice_detail.jsp">공지사항
-									10</a></td>
+							<td class="detail_title"><a href="<%=request.getContextPath()%>/support/notice_detail.jsp">공지사항 10</a></td>
 							<td>2020.07.20</td>
 							<td>10000</td>
 						</tr>
 						<tr>
 							<td>9</td>
-							<td>공지사항 9</td>
+							<td class="detail_title">공지사항 9</td>
 							<td>2020.07.20</td>
 							<td>9999</td>
 						</tr>
 						<tr>
 							<td>8</td>
-							<td>공지사항 8</td>
+							<td class="detail_title">공지사항 8</td>
 							<td>2020.07.20</td>
 							<td>8888</td>
 						</tr>
 						<tr>
 							<td>7</td>
-							<td>공지사항 7</td>
+							<td class="detail_title">공지사항 7</td>
 							<td>2020.07.20</td>
 							<td>7777</td>
 						</tr>
 						<tr>
 							<td>6</td>
-							<td>공지사항 6</td>
+							<td class="detail_title">공지사항 6</td>
 							<td>2020.07.20</td>
 							<td>6666</td>
 						</tr>
 						<tr>
 							<td>5</td>
-							<td>공지사항 5</td>
+							<td class="detail_title">공지사항 5</td>
 							<td>2020.07.20</td>
 							<td>5555</td>
 						</tr>
 						<tr>
 							<td>4</td>
-							<td>공지사항 4</td>
+							<td class="detail_title">공지사항 4</td>
 							<td>2020.07.20</td>
 							<td>4444</td>
 						</tr>
 						<tr>
 							<td>3</td>
-							<td>공지사항 3</td>
+							<td class="detail_title">공지사항 3</td>
 							<td>2020.07.20</td>
 							<td>3333</td>
 						</tr>
