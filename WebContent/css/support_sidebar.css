@@ -1,16 +1,30 @@
 @charset "UTF-8";
 
-.sidebar {
+    .list-group-item {
+        border: 0;
+        padding: 10px 25px;
+    }
+
+    .sidebar {
         width: 200px;
         padding: 10px;
         font-weight: bold;
         font-size: 16px;
         float: left;
-        margin-top: 20px;
+        margin-top: 35px;
+    }
+
+    .sidebar li {
+        border-top: 1px solid #ddd;
+    }
+    
+    .list-group-item:first-child {
+    	border-top-left-radius: 0;
+    	border-top-right-radius: 0;
     }
 
     .sidebar li a {
         display: block;
         width: auto;
-        color: #000;
+        color: #222;
     }
