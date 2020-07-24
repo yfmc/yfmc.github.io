@@ -22,7 +22,7 @@
                 </div>
                 <div class="bodylist">
                     <ul class="listarea">
-                        <li><img src="../img/mypage_movie1.jpg" height=170px>
+                        <li><a href="../movie/MovieContent.jsp"><img src="../img/mypage_movie1.jpg" height=170px></a>
                             <span class="title">
                                 <h3><a href="../movie/MovieContent.jsp">반도</a></h3>
                             </span>
@@ -36,7 +36,7 @@
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><img src="../img/mypage_movie2.jpg" height=170px>
+                        <li><a href="../movie/MovieContent.jsp"><img src="../img/mypage_movie2.jpg" height=170px></a>
                             <span class="title">
                                 <h3><a href="../movie/MovieContent.jsp">스파이더맨:파 프롬 홈</a></h3>
                             </span>
@@ -50,7 +50,7 @@
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><img src="../img/mypage_movie3.jpg" height=170px>
+                        <li><a href="../movie/MovieContent.jsp"><img src="../img/mypage_movie3.jpg" height=170px></a>
                             <span class="title">
 
                                 <h3><a href="../movie/MovieContent.jsp">어벤져스:엔드게임</a></h3>
