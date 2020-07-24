@@ -1,33 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieNews.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieNews.css?time=<%=System.currentTimeMillis()%>">
+
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
         <div class="content">
             <div class="content1">
                 <ul>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            박스오피스
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            영화검색
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            영화소식
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            통계
-                        </button>
-                    </li>
-                </ul>
+                <li>
+                    <a href="#">박스오피스</a> 
+                </li>
+                <li>
+                    <a href="#">영화검색</a> 
+                </li>
+                <li>
+                    <a href="#">영화소식</a> 
+                </li>
+                <li>
+                    <a href="#">통계</a> 
+                </li>
+                
+            </ul>
             </div>
             <div class="newsName">
             <h2>영화소식</h2>

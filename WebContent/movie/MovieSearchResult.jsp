@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieSearchResult.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieSearchResult.css?time=<%=System.currentTimeMillis()%>">
 
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
@@ -9,24 +9,16 @@
             <div class="content1">
                 <ul>
                     <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            박스오피스
-                        </button>
+                        <a href="#">박스오피스</a>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            영화검색
-                        </button>
+                        <a href="#">영화검색</a>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            영화소식
-                        </button>
+                        <a href="#">영화소식</a>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-                            통계
-                        </button>
+                        <a href="#">통계</a>
                     </li>
                 </ul>
             </div>
@@ -84,7 +76,11 @@
             </div>
             </div>
             <!-- 검색결과가 몇건인지 확인하기 -->
-            <!--  -->
+            <div class="search-result">
+            <span>
+            	<h4>"OOO"(으)로 총 n개의 검색결과가 있습니다.</h4>
+            </span>
+            </div>
             <!-- 검색결과 보여주기 -->
             <div class="king-row">
                 <div class="col-md-3 col-sm-6 col-xs-12">

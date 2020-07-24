@@ -60,7 +60,6 @@
 
 .bodytop {
     margin-top: 50px;
-    border-bottom: 1px solid black;
     padding-bottom: 50px;
 }
 
@@ -73,8 +72,10 @@
     height: 200px;
     padding-top: 1px;
     position: relative;
-    border-bottom: 1px dotted black;
-
+    padding-left:20px;
+	border:2.5px solid #828282;
+    border-radius:10px;
+	background-color:#fcfcfc;
 }
 
 
@@ -97,7 +98,7 @@
 }
 
 .listarea .title a{
-    color:#6f6f70;
+    color:#292929;
     font-size:20px;
     font-weight:bold;
 }
@@ -114,7 +115,7 @@
 .listarea .btn {
     float: right;
     position: absolute;
-    right: 0px;
+    right: 15px;
     top: 10px;
     width: 32px;
     height: 25px;

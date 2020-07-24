@@ -1,70 +1,147 @@
 @charset "UTF-8";
 
 .container{
+
 min-height:1000px;
+
 }
+
 li{
+
 list-style:none;
+
 }
+
 .content1{
+
 margin-top:20px;
+
 }
 
-.content .content1 ul {
+ 
+
+.content1 ul{
+
+	width:80%;
+
+	margin:auto;
+
+	}
+
+ 
+
+.content1 ul li{
+
+	margin-top:20px;
+
+	width:25%;
+
+	float:left;
+
+	text-align:center;
+
+	
+
+}
+
+ 
+
+.content1 ul li a{
+
+	color:#222;
+
+	font-size:18px;
+
+	font-family:'Jua', sans-serif;
+
+	display:block;
+
+	margin:auto;
+
+}
+
+ 
+
+.content1:after{
+
+	display:block;
+
+	content:' ';
+
+	clear:both;
+
+	float:none;
+
+}
+
+ 
+
+.list_title{
+
+    margin-top:40px;
+
+    text-align: center;
+
+}
+
+.list_title h2{
+
+    color:darkorchid;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+
+}
+
+.form-search{
+
+      width:80%;
+
+      text-align:center;
+
+      margin-left:150px;
+
+      margin-top:50px;
+
         /*border:1px solid #eee;*/
-        width: 70%;
-        margin: auto;
-    }
 
-    .content .content1 ul li {
-        float: left;
-        width: 25%;
-        text-align: center;
+}
 
+.form-search .checkbox{
 
-    }
+      width:20%;
 
-    .content ul:after {
-        display: block;
-        content: '';
-        float: none;
-        clear: both;
-    }
+      font-size:20px;
 
-    .list_title {
-        margin-top: 40px;
-        text-align: center;
-    }
+      color:#222;
 
-    .list_title h2 {
-        color: #222;
-        margin-bottom: 20px;
-    }
+}
 
+ 
 
-    .form-search{
-        width:80%;
-        text-align:center;
-        margin-left:150px;
-        margin-top:50px;
-        /*border:1px solid #eee;*/
-    }
-    .form-search .checkbox{
-        width:20%;
-        font-size:20px;
-        color:#222;
-    }
+.search{
 
-    .search{
-        margin-top:120px;
-    }
-    .search h1{
-        text-align: center;
-        color:#222;
-    }
-    .search .input-group{
-        /*border: 1px solid #6f6;*/
-        width:30%;
-        margin: auto;
-        margin-bottom:100px;
-    }
+      margin-top:120px;
+
+}
+
+.search h1{
+
+     text-align: center;
+
+    color:#222;
+
+}
+
+.search .input-group{
+
+      /*border: 1px solid #6f6;*/
+
+      width:30%;
+
+      margin: auto;
+
+      margin-bottom:100px;
+
+}

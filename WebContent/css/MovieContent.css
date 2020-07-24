@@ -58,13 +58,23 @@ list-style:none;
     .movie-totalExplain{
         margin-top:30px;
     }
-
-    .movie-etc input:first-child{
-        margin-top:15px;
+    
+    .movie-explain input{
+    	margin-top:-10px;
     }
 
+	.movie-etc{
+		margin-top:8px;
+	}
+    .movie-etc input{
+        margin-top:3px;
+        margin-right:5px;
+    }
+    
     .starRev{
-        display: inline;
+         display: block;
+    	float: right;
+    	margin-right: 25px;
     }
 
     .movie-summary{
@@ -108,6 +118,8 @@ list-style:none;
     
     .movie-advice button{
     margin-top:10px;
+    font-size:16px;
+    font-weight:bold;
     }
     .movie-advice button:after{
         content:' ';
@@ -125,6 +137,8 @@ list-style:none;
 
     .movie-comment button{
         margin-top:15px;
+        font-size:16px;
+        font-weight:bold;
     }
     .movie-comment button:after{
         content:' ';
@@ -132,7 +146,8 @@ list-style:none;
         float:none;
         clear:both;
     }
-    .movie-comment textarea{
-        display: inline-block;
-        margin-bottom: 15px;
+    
+    .pulldate{
+    	font-size:10px;
     }
+    

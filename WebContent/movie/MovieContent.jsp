@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieContent.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieContent.css?time=<%=System.currentTimeMillis()%>">
 
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <!-- 내용 부분 시작 -->
@@ -11,7 +11,7 @@
             <div class="movie-totalExplain">
             <div class="movie-explain">
                 <span>제목</span>
-                <span><input class="btn btn-default" type="submit" value="예매하기"><br></span>
+                <span><input class="btn btn-danger" type="submit" value="예매하기"></span>
                 <span>감독<br></span>
                 <span>배우<br></span>
                 <span>장르<br></span>
@@ -20,7 +20,7 @@
             </div>
             <!--좋아요, 관람객수, 평점  -->
             <div class="movie-etc">
-            <input class="btn btn-default" type="submit" value="좋아요">
+            <input class="btn btn-success" type="submit" value="좋아요">
             <span>500명</span>
             <span>누적관람객 수 : 15000000명</span>
             <span>관람객 평점</span>
@@ -74,32 +74,65 @@
             <h3>한줄평</h3>
             <textarea class="form-control col-sm-5" rows="5">
             </textarea>
-            <button type="submit" class="btn btn-danger" style="float:right">등록</button>
+            <button type="submit" class="btn btn-dark" style="float:right">등록</button>
     </div>
     <hr>
+    <form action="">
     <div class="movie-comment">
         <ul class="people-comment">
-            <li><h4>아이디1</h4>
-            <textarea class="form-control col-sm-5" rows="2">
-            </textarea>
-            </li>
-            <li><h4>아이디2</h4>
-            <textarea class="form-control col-sm-5" rows="2">
-            </textarea>
+            <li>
+            <label for="text">python</label>
+            <div class="pulldate">
+            <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+    		</div>
+            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
             </li>
             <li>
-                <h4>아이디3</h4>
-            <textarea class="form-control col-sm-5" rows="2">
-            </textarea>
+            <label for="text">java</label>
+            <div class="pulldate">
+            <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+    		</div>
+            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
             </li>
             <li>
-                <h4>아이디4</h4>
-            <textarea class="form-control col-sm-5" rows="2">
-            </textarea>
+                <label for="text">mysql</label>
+                <div class="pulldate">
+            <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+    		</div>
+            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            </li>
+            <li>
+                <label for="text">html</label>
+                <div class="pulldate">
+            <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+    		</div>
+            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            </li>
+            <li>
+                <label for="text">css</label>
+                <div class="pulldate">
+            <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+    		</div>
+            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            </li>
+            <li>
+                <label for="text">javascript</label>
+                <div class="pulldate">
+            <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+    		</div>
+            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            </li>
+            <li>
+                <label for="text">jQuery</label>
+                <div class="pulldate">
+            <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+    		</div>
+            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
             </li>
         </ul>
-        <button type="submit" class="btn btn-danger" style="float:right">맨위로</button>
+        <button type="submit" class="btn btn-dark" style="float:right">맨위로</button>
     </div>
+    </form>
     <!-- 한줄평 작성하기 끝 -->
     <!-- 내용 부분 끝 -->
 <!--// ========== 컨텐츠 영역 끝 ========== -->
