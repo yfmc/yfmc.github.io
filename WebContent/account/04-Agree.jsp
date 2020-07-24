@@ -128,7 +128,7 @@
                     <input type="radio" name="agree" id="agree"
                     value="agree"/>
                     <label for="agree">동의&nbsp;&nbsp;</label>
-                    <input type="radio" name="disagree" id="disagree"
+                    <input type="radio" name="agree" id="disagree"
                     value="agree"/>
                     <label for="disagree">동의하지 않음</label>
                     </div>
