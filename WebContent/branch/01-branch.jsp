@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@ include file="../_inc/header.jsp"%>
+<%@ include file="/_inc/header.jsp"%>
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
 <!-- content -->
 <div id="content">
@@ -166,15 +167,15 @@
 		<div class="table_head">
 			<!-- 날짜 선택 버튼 영역 -->
 			<div class="week_btn">
-				<a href="#" class="btn btn-lg"><font color="black"><i class="fas fa-angle-left"></i></font></a>
-				<a href="#" class="btn btn-lg"><font color="red">7/19<br />일</font></a>
-				<a href="#" class="btn btn-lg"><font color="black">7/20<br />월</font></a>
-				<a href="#" class="btn btn-lg"><font color="black">7/21<br />화</font></a>
-				<a href="#" class="btn btn-lg"><font color="black">7/22<br />수</font></a>
-				<a href="#" class="btn btn-lg"><font color="black">7/23<br />목</font></a>
-				<a href="#" class="btn btn-lg"><font color="black">7/24<br />금</font></a>
-				<a href="#" class="btn btn-lg"><font color="blue">7/25<br />토</font></a>
-				<a href="#" class="btn btn-lg"><font color="black"><i class="fas fa-angle-right"></i></font></a>
+				<a class="btn btn-lg"><font color="black"><i class="fas fa-angle-left"></i></font></a>
+				<a class="btn btn-lg"><font color="red">7/19<br />일</font></a>
+				<a class="btn btn-lg"><font color="black">7/20<br />월</font></a>
+				<a class="btn btn-lg"><font color="black">7/21<br />화</font></a>
+				<a class="btn btn-lg"><font color="black">7/22<br />수</font></a>
+				<a class="btn btn-lg"><font color="black">7/23<br />목</font></a>
+				<a class="btn btn-lg"><font color="black">7/24<br />금</font></a>
+				<a class="btn btn-lg"><font color="blue">7/25<br />토</font></a>
+				<a class="btn btn-lg"><font color="black"><i class="fas fa-angle-right"></i></font></a>
 			</div>
 			<!-- 관람가 및 요금 안내 button -->
 			<div class="table_info" data-toggle="modal" data-target="#modal_table">
@@ -218,7 +219,7 @@
 												<td>만 15세 미만의 고객님은 보호자를 동반하셔야 관람하실 수 있습니다.</td>
 											</tr>
 											<tr>
-												<td><span class="label label-danger">청불</span> 청소년 관람불가</td>
+												<td><span class="label label-danger">청불</span> 청소년관람불가</td>
 												<td>만 18세 미만의 고객님은 보호자를 동반하셔도 관람하실 수 없습니다.<br />- 입장시 신분증을 꼭 지참하시기 바랍니다.<br />- 만 18세 이상이더라도 고등학교 재학중인 경우 관람이 불가합니다.
 												</td>
 											</tr>
@@ -298,4 +299,4 @@
 		</div>
 	</div>
 </div>
-<%@ include file="../_inc/footer.jsp"%>
+<%@ include file="/_inc/footer.jsp"%>
