@@ -40,11 +40,11 @@
                     <li class="nav">
                         <a href="#" class="mains">예매</a>
                         <ul class="subnav">
-                            <li><a href="#">예매하기</a></li>
-                            <li><a href="#">극장별시간표</a></li>
+                            <li><a href="<%=request.getContextPath()%>/booking/01-booking.jsp">예매하기</a></li>
+                            <li><a href="<%=request.getContextPath()%>/booking/02-timetable.jsp">극장별시간표</a></li>
                         </ul>
                     </li>
-                    <li class="nav"><a href="#" class="mains">극장</a></li>
+                    <li class="nav"><a href="<%=request.getContextPath()%>/branch/01-branch.jsp" class="mains">극장</a></li>
                     <li class="nav">
                         <a href="#" class="mains">고객센터</a>
                         <ul class="subnav">

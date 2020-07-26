@@ -1,0 +1,132 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* 글씨체 나눔고딕 */
+#content {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 예매하기 박스 전체 */
+.booking_page {
+	width: 100%;
+	height: 900px;
+	padding-top: 50px;
+}
+
+/* 예매단계 안내박스 */
+.booking_stage {	
+	width: 80px;
+	float: left;
+	border-right: 1px solid white;
+}
+
+.booking_stage li {
+	display: block;
+	height: 200px;
+	text-align: center;
+	border-bottom: 1px solid black;
+	padding-top: 80px;
+}
+
+.booking_stage li:first-child {
+	background-color:#4d4d4d;
+	color: white;
+	font-weight: bold;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 영화관 선택 */
+.booking_branch {
+	width: 350px;
+	float: left;
+}
+
+/* 지역 선택 */
+.choose_provincial {
+	width: 130px;
+	height: 740px;
+	float:left;
+	background-color: #eee;
+}
+.choose_provincial li {
+	display: block;
+	height: 50px;
+	padding-left: 10px;
+	padding-top: 15px;
+	font-weight: bold;
+}
+
+.choose_provincial li:nth-child(2) {
+	background-color: white;
+}
+
+/* 지점 선택 */
+.choose_branch {
+	width: 210px;
+	height: 740px;
+	padding-left: 10px;
+	padding-top: 15px;
+	float:left;
+}
+
+.choose_branch li {
+	display: block;
+	height: 30px;
+	font-size: 14px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 영화 선택 */
+.booking_film {
+	width: 350px;
+	height: 800px;
+	float: left;
+}
+
+.choose_film {
+	height: 740px;
+	padding-top: 15px;
+}
+
+.choose_film li {
+	display: block;
+	height: 50px;
+	font-size: 17px;
+	padding-top: 12px;
+}
+
+.choose_film li:first-child {
+	border: 2px solid black;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 날짜, 시간 선택 */
+.booking_time {
+	width: 410px;
+	background-color: #aaa3e6;
+	float: left;
+}
+
+/* float 마감제 */
+.clear {
+	content: '';
+	display: block;
+	float: none;
+	clear: both;
+}
+
+/* 각 박스 타이틀 */
+.booking_title {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	border-right: 1px solid white;
+	height: 60px;
+	padding-top: 15px;
+	background-color: #4d4d4d;
+	color: white;
+}
