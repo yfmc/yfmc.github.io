@@ -62,9 +62,11 @@
     text-align:center;
     margin-top:160px;
 }
+
 .msg h1{
     font-weight:bold;
 }
+
 .msg input[type="button"]{
     margin-top:40px;
     width:150px;

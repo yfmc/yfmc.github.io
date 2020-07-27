@@ -3,16 +3,15 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/inquirypost.css">
-
         <div id="content" class="clear">
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
-                        <li><a href="./bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="./choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="./changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="./withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="./inquirylist.jsp">나의 문의내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
                     </ul>
                 </div>
             </div>
@@ -20,9 +19,9 @@
                 <div class="inqpost">
                     <table class="table table-bordered table-condensed">
                         <tr>
-                            <td style="width:20px;text-align:center;">17</th>
-                            <td style="width:550px">회원 탈퇴는 어떤 절차로 진행되나요?</th>
-                            <td style="width:150px">2020-07-17</th>
+                            <td style="width:20px;text-align:center;">17</td>
+                            <td style="width:550px">회원 탈퇴는 어떤 절차로 진행되나요?</td>
+                            <td style="width:150px">2020-07-17</td>
                         </tr>
                     </table>
                     <table class="table cont table-bordered ">
@@ -48,8 +47,8 @@
                             </td>
                         </tr>
                     </table>
-                    <button type="button" class="btn" onclick="location.href='./inquirylist.jsp'">목록으로</button>
-                    <button type="button" class="btn" onclick="location.href='./mypagemain.jsp'">메인으로</button>
+                    <button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/mypage/inquirylist.jsp'">목록으로</button>
+                    <button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/mypage/mypagemain.jsp'">메인으로</button>
                 </div>
             </div>
         </div>

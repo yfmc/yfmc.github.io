@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-
-
 #content {
     width: auto;
     min-height: 850px;
@@ -78,21 +76,20 @@
     position: relative;
     float: right;
     margin-top: -13px;
+    border:2px solid #222;
 }
 
 
 .oftentheater td {
     height: 22px;
     width: 130px;
-    border: 1px solid black;
+    border: 1px dashed #222;
     padding-left: 4px;
 }
 
 .oftentheater td a {
     color: black;
 }
-
-
 
 .oftentheater td a:hover {
     text-decoration: none;
@@ -104,6 +101,7 @@
 	padding-right:5px;
 	opacity:0.6;
 }
+
 .bodycenter {
     height: 340px;
     position: relative;
@@ -117,12 +115,10 @@
     padding-left: 200px;
 }
 
-
 .row h5 {
     text-align: center;
     line-height:0.7;
 }
-
 
 .thumbnail {
     margin-top: 20px;
@@ -136,6 +132,7 @@
     height: 200px;
     opacity:0.8;
 }
+
 .thumbnail img:hover{
 	opacity:0.5;
 }
@@ -143,7 +140,6 @@
 .centertitle {
     text-align: center;
 }
-
 
 .bodycenter button {
     position: absolute;

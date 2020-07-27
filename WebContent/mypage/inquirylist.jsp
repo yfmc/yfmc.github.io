@@ -8,11 +8,11 @@
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
-                        <li><a href="./bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="./choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="./changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="./withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="./inquirylist.jsp">나의 문의내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,27 +32,27 @@
                         <tbody>
                             <tr>
                                 <td style="text-align:center;">20</td>
-                                <td><a href="./inquirypost.jsp">예매가 되지 않습니다.</a></td>
+                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
                                 <td>2020.07.20</td>
                             </tr>
                             <tr>
                                 <td style="text-align:center;">19</td>
-                                <td><a href="./inquirypost.jsp">환불은 어느 시점에 적용되나요?</a></td>
+                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">환불은 어느 시점에 적용되나요?</a></td>
                                 <td>2020.07.19</td>
                             </tr>
                             <tr>
                                 <td style="text-align:center;">18</td>
-                                <td><a href="./inquirypost.jsp">등록되지 않은 영화관이 있습니다.</a></td>
+                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">등록되지 않은 영화관이 있습니다.</a></td>
                                 <td>2020.07.18</td>
                             </tr>
                             <tr>
                                 <td style="text-align:center;">17</td>
-                                <td><a href="./inquirypost.jsp">회원 탈퇴는 어떤 절차로 진행되나요?</a></td>
+                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">회원 탈퇴는 어떤 절차로 진행되나요?</a></td>
                                 <td>2020.07.17</td>
                             </tr>
                             <tr>
                                 <td style="text-align:center;">16</td>
-                                <td><a href="./inquirypost.jsp">사이트가 느립니다.</a></td>
+                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">사이트가 느립니다.</a></td>
                                 <td>2020.07.16</td>
                             </tr>
                         </tbody>

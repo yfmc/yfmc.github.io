@@ -8,11 +8,11 @@
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
-                        <li><a href="./bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="./choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="./changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="./withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="./inquirylist.jsp">나의 문의내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
+                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
                     </ul>
                 </div>
             </div>
@@ -22,9 +22,9 @@
                 </div>
                 <div class="bodylist">
                     <ul class="listarea">
-                        <li><a href="../movie/MovieContent.jsp"><img src="../img/mypage_movie1.jpg" height=170px></a>
+                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" height=170px></a>
                             <span class="title">
-                                <h3><a href="../movie/MovieContent.jsp">반도</a></h3>
+                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">반도</a></h3>
                             </span>
                             <span class="rating">
                                 <h4>평점 : 8.90</h4>
@@ -32,13 +32,13 @@
                             <span class="genre">
                                 <h4>장르:액션, 코미디</h4>
                             </span>
-                            <input type="button" value="-" class="btn" />
+                            <input type="button" onclick="removeinq()" value="-" class="btn" />
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><a href="../movie/MovieContent.jsp"><img src="../img/mypage_movie2.jpg" height=170px></a>
+                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie2.jpg" height=170px></a>
                             <span class="title">
-                                <h3><a href="../movie/MovieContent.jsp">스파이더맨:파 프롬 홈</a></h3>
+                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">스파이더맨:파 프롬 홈</a></h3>
                             </span>
                             <span class="rating">
                                 <h4>평점 : 8.90</h4>
@@ -46,14 +46,14 @@
                             <span class="genre">
                                 <h4>장르:액션, 코미디</h4>
                             </span>
-                            <input type="button" value="-" class="btn" />
+                            <input type="button" onclick="removeinq()" value="-" class="btn" />
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><a href="../movie/MovieContent.jsp"><img src="../img/mypage_movie3.jpg" height=170px></a>
+                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie3.jpg" height=170px></a>
                             <span class="title">
 
-                                <h3><a href="../movie/MovieContent.jsp">어벤져스:엔드게임</a></h3>
+                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">어벤져스:엔드게임</a></h3>
                             </span>
                             <span class="rating">
                                 <h4>평점 : 8.90</h4>
@@ -61,7 +61,7 @@
                             <span class="genre">
                                 <h4>장르:액션, 코미디</h4>
                             </span>
-                            <input type="button" value="-" class="btn" />
+                            <input type="button" onclick="removeinq()" value="-" class="btn" />
                         </li>
                     </ul>
                 </div>
@@ -81,4 +81,9 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+        	function removeinq(){
+        		var result=confirm("정말로 찜한 영화 목록에서 제외하시겠습니까?");
+        	}
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

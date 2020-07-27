@@ -78,7 +78,6 @@
 	background-color:#fcfcfc;
 }
 
-
 .listarea li img {
     width: 15%;
     float: left;
@@ -102,11 +101,13 @@
     font-size:20px;
     font-weight:bold;
 }
+
 .rating h4 {
     line-height: 3.0;
     color:green;
     font-size:15px;
 }
+
 .genre h4{
 	color:#4a89ff;
 	font-size:14px;
