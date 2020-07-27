@@ -11,6 +11,7 @@
 	width: 100%;
 	height: 900px;
 	padding-top: 50px;
+	padding-left: 5px;
 }
 
 /* 예매단계 안내박스 */
@@ -76,6 +77,10 @@
 	font-size: 14px;
 }
 
+.choose_branch li:nth-child(4) {
+	color: red;
+}
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 /* 영화 선택 */
@@ -87,6 +92,7 @@
 
 .choose_film {
 	height: 740px;
+	background-color: #eee;
 	padding-top: 15px;
 }
 
@@ -99,6 +105,7 @@
 
 .choose_film li:first-child {
 	border: 2px solid black;
+	background-color: white;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
@@ -106,9 +113,109 @@
 /* 날짜, 시간 선택 */
 .booking_time {
 	width: 410px;
-	background-color: #aaa3e6;
+	height: 800px;
 	float: left;
 }
+
+/* 날짜 선택 */
+.choose_day {
+	height:80px;
+	padding-top: 15px;
+	padding-left: 12px;
+}
+
+.choose_day li {
+	display: inline-block;
+	text-align: center;
+	padding: 2px 5px;
+}
+
+.choose_day li:nth-child(2) {
+	color: red;
+}
+
+.choose_day li:nth-child(8) {
+	color: blue;
+}
+
+.choose_day li:first-child, .choose_day li:last-child {
+	font-size: 25px;
+}
+
+.choose_day li:nth-child(3) {
+	font-weight: bold;
+	border: 2px solid black;
+}
+
+/* 시간 선택 */
+.choose_time {
+	height: 530px;
+	padding-left: 20px;
+	padding-top: 30px;
+}
+
+/* 선택 중인 영화 제목 */
+.chosen_film {
+	padding-bottom: 20px;
+}
+
+/* 상영시간 버튼 */
+.choose_time li {
+	display: inline-block;
+	width: 90px;
+	border: 1px solid #424242;
+	text-align: center;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.choose_time li:first-child {
+	background-color: #eee;
+	border: 2px solid #424242;
+}
+
+.start_time {
+    font-weight: bold;
+}
+
+.seats {
+    font-size: 11px;
+}
+
+.room_no {
+    font-size: 11px;
+}
+
+/* 다음단계 버튼 */
+.go_to_next {
+	text-align: center;
+	height: 130px;
+	float: right;
+}
+
+.go_to_next > a {
+	display: block;
+	border: 2px solid black;
+	width: 130px;
+	height: 100%;
+	padding-top: 20px;
+	font-size: 25px;
+	color: black;
+}
+
+.go_to_next > a:hover {
+	cursor: pointer;
+	background-color: black;
+	color: white;
+	text-decoration: none;
+}
+
+.go_to_next .fas {
+	font-size: 40px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 /* float 마감제 */
 .clear {

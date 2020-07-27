@@ -2,7 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="/_inc/header.jsp"%>
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_time.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
 <!-- content -->
@@ -96,7 +96,41 @@
 			날짜, 시간 선택
 			</div>
 			<!-- 날짜 선택 -->
+			<div class="choose_day">
+				<ul>
+					<li><i class="fas fa-angle-left"></i></li>
+					<li>7/19<br />일</li>
+					<li>7/20<br />월</li>
+					<li>7/21<br />화</li>
+					<li>7/22<br />수</li>
+					<li>7/23<br />목</li>
+					<li>7/24<br />금</li>
+					<li>7/25<br />토</li>
+					<li><i class="fas fa-angle-right"></i></li>
+				</ul>
+			</div>
 			<!-- 시간 선택 -->
+			<div class="choose_time">
+				<div class="chosen_film">
+					<span class="label label-warning">15</span> 강철비2 : 정상회담
+				</div>
+				<ul>
+					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
+					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
+					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
+					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
+					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
+					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
+					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
+					
+				</ul>
+			</div>
+			<!-- 다음 단계 버튼 -->
+			<div class="go_to_next">
+				<a href="<%=request.getContextPath()%>/booking/02-booking_seats.jsp"><i class="fas fa-hand-point-right"></i><br />좌석선택</a>
+			</div>
+			<!-- float 마감제 -->
+			<div class="clear"></div>
 		</div>
 		
 		<!-- float 마감제 -->
