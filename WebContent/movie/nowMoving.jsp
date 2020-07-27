@@ -11,13 +11,13 @@
                     <a href="#">박스오피스</a> 
                 </li>
                 <li>
-                    <a href="#">영화검색</a> 
+                    <a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>">영화검색</a> 
                 </li>
                 <li>
-                    <a href="#">영화소식</a> 
+                    <a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>">영화소식</a> 
                 </li>
                 <li>
-                    <a href="#">통계</a> 
+                    <a href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>">통계</a> 
                 </li>
                 
             </ul>
@@ -25,16 +25,14 @@
         <div class="list_title">
             <h2>박스오피스</h2>
             <p>
-                <span>
                 <ul>
                		<li>
                 		<a href="#">현재 상영작</a>
                 	</li>
                 	<li>
-                		<a href="#">상영 예정작</a>
+                		<a href="<%=request.getContextPath()%>/movie/willMoving.jsp?time=<%=System.currentTimeMillis()%>">상영 예정작</a>
                 	</li>
                 </ul>
-                </span>
             </p>
         </div>
         <div class="clearfix">
@@ -43,6 +41,7 @@
                     예매순
                     <span class="caret"></span>
                 </button>
+                
                 <ul class="dropdown-menu dropdown-menu-right">
                     <li role="presentation">
                         <a role="menuitem" tabindex="-1" href="#">예매순</a>
@@ -54,6 +53,7 @@
                         <a role="menuitem" tabindex="-1" href="#">관람객순</a>
                     </li>
                 </ul>
+                
             </div>
         </div>
         <!-- 갤러리 영역 -->
@@ -65,17 +65,22 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
-                            <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200713_m_Wsj_1000013-490x700.jpg" class="img-responsive" />
+                        	<span>
+                            	<img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200713_m_Wsj_1000013-490x700.jpg" class="img-responsive" />
+                            </span>
                         </div>
+                        
                         <!-- 텍스트 영역 -->
+                        
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
                             <p>
                                 이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
                             </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                            </span>
                         </div>
+                        
                     </div>
                 </a>
             </div>
@@ -86,16 +91,18 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
-                            <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200714_m_yi_100001.jpg" class="img-responsive" />
+                        	<span>
+                            	<img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200714_m_yi_100001.jpg" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
-                            <h4>제목</h4>
+                        	<span>
+                            	<h4>제목</h4>
                             <p>
                                 이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
                             </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -107,16 +114,18 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        <span>
                             <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200710_m_wsj_1000001-700x466.jpg" class="img-responsive" />
+                        </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
-                            <h4>제목</h4>
-                            <p>
-                                이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
-                            </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                        	<span>
+                            	<h4>제목</h4>
+                           			<p>
+                                	이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
+                            		</p>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -128,16 +137,18 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
-                            <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200710_m_yi_100008.jpg" class="img-responsive" />
+                        	<span>
+                            	<img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200710_m_yi_100008.jpg" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
-                            <h4>제목</h4>
-                            <p>
+                        	<span>
+                            	<h4>제목</h4>
+                            	<p>
                                 이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
-                            </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                            	</p>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -149,16 +160,18 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
-                            <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200713_m_Wsj_1000009-700x464.jpg" class="img-responsive" />
+                        	<span>
+                            	<img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200713_m_Wsj_1000009-700x464.jpg" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
                             <p>
                                 이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
                             </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -170,16 +183,18 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        	<span>
                             <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200713_m_yi_100002.jpg" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
-                            <h4>제목</h4>
-                            <p>
-                                이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
-                            </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                        	<span>
+                            	<h4>제목</h4>
+                            	<p>
+                                	이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
+                            	</p>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -191,16 +206,18 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        <span>
                             <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200713_PJD_7855-700x467.jpg" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
                             <p>
                                 이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
                             </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -212,16 +229,18 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        <span>
                             <img src="https://news.maxmovie.com/wp-content/uploads/2020/07/20200713_m_Wsj_1000004-467x700.jpg" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
                             <p>
                                 이 부분은 컨텐츠에 대한 내용이 들어가는 영역 입니다.
                             </p>
-                            <!-- .text-right는 오른쪽 정렬 -->
-                            <!-- .text-muted는 약간 회색으로 바뀜 -->
+                            </span>
                         </div>
                     </div>
                 </a>

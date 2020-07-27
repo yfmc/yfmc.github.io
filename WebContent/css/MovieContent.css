@@ -127,7 +127,10 @@ list-style:none;
         float:none;
         clear:both;
     }
-
+	
+	.oneLine{
+		min-height:600px;
+	}
     .movie-comment{
         width:700px;
         min-height:450px;
@@ -136,7 +139,6 @@ list-style:none;
     }
 
     .movie-comment button{
-        margin-top:15px;
         font-size:16px;
         font-weight:bold;
     }
@@ -151,3 +153,20 @@ list-style:none;
     	font-size:10px;
     }
     
+    .movie-comment button:after{
+    	content:' ';
+    	display:block;
+    	float:none;
+    	clear:both;
+    }
+    
+    .pageUpbutton{
+    	margin-top:50px;
+    	width:600px;
+    	
+    }
+    
+    .pageUpbutton button{
+    	font-weight:bold;
+    	color:#222;
+    }

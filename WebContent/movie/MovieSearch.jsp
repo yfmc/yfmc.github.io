@@ -15,28 +15,17 @@
                     <ul>
 
                         <li>
-
-                            <a href="#">박스오피스</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#">영화검색</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#">영화소식</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#">통계</a>
-
-                        </li>
+                		    <a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>">박스오피스</a> 
+                		</li>
+                		<li>
+                    		<a href="#">영화검색</a> 
+                		</li>
+                		<li>
+                    		<a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>">영화소식</a> 
+                		</li>
+                		<li>
+                    		<a href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>">통계</a> 
+                		</li>
 
                     </ul>
 
@@ -132,13 +121,13 @@
 
               <input type="text" class="form-control"placeholder="검색창">
 
-             <span class="input-group-btn">
+             	<span class="input-group-btn">
 
                     <button class="btn btn-default">
 
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
-                </button>
+                	</button>
 
                 </span>
 

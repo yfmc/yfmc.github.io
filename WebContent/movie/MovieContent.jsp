@@ -26,8 +26,8 @@
             <span>관람객 평점</span>
                 <div class="starRev">
                   <span class="starR on">별1</span>
-                  <span class="starR">별2</span>
-                  <span class="starR">별3</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
                   <span class="starR">별4</span>
                   <span class="starR">별5</span>
 
@@ -77,7 +77,7 @@
             <button type="submit" class="btn btn-dark" style="float:right">등록</button>
     </div>
     <hr>
-    <form action="">
+    <form class="oneLine" action="">
     <div class="movie-comment">
         <ul class="people-comment">
             <li>
@@ -86,6 +86,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
             </li>
             <li>
             <label for="text">java</label>
@@ -93,6 +94,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
             </li>
             <li>
                 <label for="text">mysql</label>
@@ -100,6 +102,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
             </li>
             <li>
                 <label for="text">html</label>
@@ -107,6 +110,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
             </li>
             <li>
                 <label for="text">css</label>
@@ -114,6 +118,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
             </li>
             <li>
                 <label for="text">javascript</label>
@@ -121,6 +126,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
             </li>
             <li>
                 <label for="text">jQuery</label>
@@ -128,12 +134,16 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
             </li>
+            <!-- 한줄평 작성하기 끝 -->
         </ul>
-        <button type="submit" class="btn btn-dark" style="float:right">맨위로</button>
     </div>
+    	<div class="pageUpbutton">
+        	<button type="submit" class="btn btn-dark" style="float:right">맨위로</button>
+        </div>
     </form>
-    <!-- 한줄평 작성하기 끝 -->
+    
     <!-- 내용 부분 끝 -->
 <!--// ========== 컨텐츠 영역 끝 ========== -->
 <%@ include file="../_inc/footer.jsp"%>

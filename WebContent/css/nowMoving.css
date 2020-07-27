@@ -56,9 +56,13 @@ margin-top:20px;
 	margin:auto;
 	width:45%;
 }
+
+.list_title ul li:nth-child(1){
+	border-right:2px solid #222;
+}
 .list_title ul li a{
 	font-family:'Jua', sans-serif;
-	font-size:14px;
+	font-size:16px;
 	color:#222;
 }
 

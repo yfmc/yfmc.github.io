@@ -9,17 +9,17 @@
             <div class="content1">
                 <ul>
                     <li>
-                        <a href="#">박스오피스</a>
-                    </li>
-                    <li>
-                        <a href="#">영화검색</a>
-                    </li>
-                    <li>
-                        <a href="#">영화소식</a>
-                    </li>
-                    <li>
-                        <a href="#">통계</a>
-                    </li>
+                		    <a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>">박스오피스</a> 
+                		</li>
+                		<li>
+                    		<a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>">영화검색</a> 
+                		</li>
+                		<li>
+                    		<a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>">영화소식</a> 
+                		</li>
+                		<li>
+                    		<a href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>">통계</a> 
+                		</li>
                 </ul>
             </div>
             <div class="list_title">
@@ -65,15 +65,16 @@
                 검색하기<br/>
             </h1>
         </div>
-
-            <div class="input-group">
-              <input type="text" class="form-control"     placeholder="검색창">
-             <span class="input-group-btn">
-                    <button class="btn btn-default">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                </button>
-                </span>
-            </div>
+			<form>
+            	<div class="input-group">
+              		<input type="text" class="form-control"     placeholder="검색창">
+             			<span class="input-group-btn">
+                    		<button class="btn btn-default">
+                    	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                			</button>
+                		</span>
+            	</div>
+            </form>
             </div>
             <!-- 검색결과가 몇건인지 확인하기 -->
             <div class="search-result">
@@ -89,11 +90,15 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        <span>
                             <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
+                            </span>
                           </div>
                     </div>
                 </a>
@@ -105,11 +110,15 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        <span>
                             <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
+                            </span>
                           </div>
                     </div>
                 </a>
@@ -121,11 +130,15 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        <span>
                             <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
+                            </span>
                           </div>
                     </div>
                 </a>
@@ -137,11 +150,15 @@
                     <div class="row">
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
+                        <span>
                             <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            </span>
                         </div>
                         <!-- 텍스트 영역 -->
                         <div class="col-sm-12 col-xs-9">
+                        <span>
                             <h4>제목</h4>
+                            </span>
                           </div>
                     </div>
                 </a>

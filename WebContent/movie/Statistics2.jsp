@@ -9,13 +9,13 @@
             <div class="content1">
             <ul>
                 <li>
-                    <a href="#">박스오피스</a> 
+                    <a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>">박스오피스</a> 
                 </li>
                 <li>
-                    <a href="#">영화검색</a> 
+                    <a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>">영화검색</a> 
                 </li>
                 <li>
-                    <a href="#">영화소식</a> 
+                    <a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>">영화소식</a> 
                 </li>
                 <li>
                     <a href="#">통계</a> 
@@ -40,12 +40,13 @@
                     </label>
                 </div>
             </div>
-            </form>
+            
             <!-- 통계자료 사진 넣기 -->
             <span>
                 <img src="../img/주간주말박스오피스관객수.png" alt="주간주말박스오피스곤객수">
             </span>
             <!-- 통계자료 끝 -->
+            </form>
             </div>
             <!-- 통계끝 -->
         </div>
