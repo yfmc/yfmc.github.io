@@ -7,13 +7,15 @@
     <title>고객센터 홈</title>
     <div class="row">
         <div id="contents">
-            <!-- 사이드 바 -->
+            <!-- ==== 사이드 바 ==== -->
             <ul class="sidebar">
                 <li class="list-group-item"><a href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
                 <li class="list-group-item"><a href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
                 <li class="list-group-item"><a href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
                 <li class="list-group-item"><a href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
             </ul>
+            <!-- ==== 사이드바 끝 ==== -->
+            <!-- ==== 본문 시작 ==== -->
             <div class="content">
 	            <div class="support_title">
 	                <h2>고객센터 홈</h2>
@@ -28,9 +30,9 @@
                 </div>
                 <div class="notice-wrap">
                     <div class="row">
-                        <div class="notice_pre col-xs-5">
+                        <div class="pre notice_pre pull-left">
                             <div class="title_area">
-                                <h3>공지사항<button type="button" class="btn btn-link pull-right">더보기 > </button></h3>
+                                <h3>공지사항<a href="<%=request.getContextPath()%>/support/notice_list.jsp" class="more pull-right">더보기 > </a></h3>
                                 <a href="#" class="list-group-item">
                                     <p class="list-group-item-text">공지사항 10</p>
                                 </a>
@@ -48,9 +50,9 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="faq_pre pull-right col-xs-5">
+                        <div class="pre faq_pre pull-right">
                             <div class="title_area">
-                                <h3>자주찾는 질문<button type="button" class="btn btn-link pull-right">더보기 > </button></h3>
+                                <h3>자주찾는 질문<a href="<%=request.getContextPath()%>/support/faq_list.jsp" class="more pull-right">더보기 > </a></h3>
                                 <a href="#" class="list-group-item">
                                     <p class="list-group-item-text">자주찾는 질문 10</p>
                                 </a>
@@ -72,6 +74,7 @@
                 </div>
                 <p> Cinephile 고객센터 : 1544-8282(상담가능시간, 월~금 09:00 ~ 18:00)</p>
             </div>
+            <!-- ==== 본문 끝 ==== -->
         </div>
     </div>
 <%@ include file="../_inc/footer.jsp" %>

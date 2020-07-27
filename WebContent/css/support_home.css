@@ -21,6 +21,7 @@
         margin-bottom: 20px;
         padding-bottom: 10px;
         font-size: 28px;
+        font-weight: bold;
     }
 
     .content h3 {
@@ -38,14 +39,14 @@
     }
 
     .service {
-        width: 700px;
+        width: 100%;
         padding-bottom: 20px;
         border-bottom: 1px solid #eee;
     }
 
     .service_list {
         height: 200px;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     .service_list li {
@@ -83,18 +84,22 @@
         margin-left: 15px;
         border-bottom: 1px solid #000;
     }
-
-    .notice_pre {
-        display: block;
-        float: left;
-        padding: 0px;
+    
+    .more {
+    	width: 60px;
+    	height: 22px;
+    	color: #222;
+    	font-size: 14px;
+    	line-height: 200%;
     }
 
-    .faq_pre {
-        display: block;
-        float: left;
-        padding: 0px;
+    .pre {
+        width: 400px;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid #eee;
     }
+
+
     
     .btn-link {
         padding: 0;

@@ -40,18 +40,12 @@
 			<div class="table_area">
 				<table class="table_notice_list">
 					<!-- 목록 -->
-					<colgroup>
-						<col style="width: 100px;">
-						<col style="width: auto;">
-						<col style="width: 150px;">
-						<col style="width: 100px;">
-					</colgroup>
 					<thead>
 						<tr>
-							<th scope="col">번호</th>
-							<th scope="col">제목</th>
-							<th scope="col">등록일</th>
-							<th scope="col">조회수</th>
+							<th style="width: 100px;">번호</th>
+							<th style="width: auto;">제목</th>
+							<th style="width: 150px;">등록일</th>
+							<th style="width: 150px;">조회수</th>
 						</tr>
 					</thead>
 					<tbody>
