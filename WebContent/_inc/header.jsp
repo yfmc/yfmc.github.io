@@ -24,7 +24,7 @@
     <div id="container">
         <div id="header">
         	<div class="filmlogo_header">
-        		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" href="../index.jsp" />
+        		<a href="<%=request.getContextPath()%>/index.jsp"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" /></a>
             </div>
             <div class="menu">
                 <ul class="mainnav">
