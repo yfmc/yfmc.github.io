@@ -33,6 +33,18 @@
 	border-top: 1px solid black;
 }
 
+.booking_stage li:first-child:hover {
+	background-color: #4d4d4d;
+	color: white;
+	font-weight: bold;
+}
+
+.booking_stage li:nth-child(2):hover {
+	background-color: #4d4d4d;
+	color: white;
+	font-weight: bold;
+}
+
 .booking_stage li:nth-child(3) {
 	background-color:#4d4d4d;
 	color: white;
@@ -41,8 +53,8 @@
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
-/* 인원 / 좌석 선택 영역 */
-.booking_seats {
+/* 결제수단 선택 영역 */
+.booking_payment {
 	width: 1110px;
 	height: 800px;
 	float: left;
@@ -60,6 +72,83 @@
 	color: white;
 }
 
+/* 하단 영역 */
+.booking_body {
+	width: 1110px;
+	height: 740px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 좌측 선택 영화 영역 */
+.chosen_film {
+	width: 30%;
+	height:740px;
+	float: left;
+}
+
+.chosen_film > img {
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.chosen_detail {
+	width: 250px;
+	margin: auto;
+}
+
+.detail_title {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.detail {
+	font-size: 15px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 우측 결제 영역 */
+.choose_payment {
+	width: 70%;
+	height:740px;
+	float: left;
+	background-color: #eee;
+}
+
+/* '최종 결제수단 선택' */
+.choose_payment h2 {
+	margin-top: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* 결제수단 선택 버튼 영역 */
+.payment_radio {
+	width: 60%;
+	margin: auto;
+	margin-top: 40px;
+}
+
+.payment_radio > button {
+	display: inline-block;
+	width: 130px;
+	margin: 10px;
+	padding: 10px;
+}
+
+.payment_radio i {
+	font-size: 50px;
+	text-align: center;
+}
+
+.payment_radio span {
+	font-size: 20px;
+	text-align: center;
+}
 
 
 
