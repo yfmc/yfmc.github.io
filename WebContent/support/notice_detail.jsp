@@ -24,10 +24,10 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">번호</th>
-                                <th style="width: auto;">제목</th>
-                                <th style="width: 150px;">등록일</th>
-                                <th style="width: 150px;">조회수</th>
+                                <th style="width: 100px;">번호 10</th>
+                                <th style="width: auto;">공지사항10</th>
+                                <th style="width: 150px;">등록일 2020.07.20</th>
+                                <th style="width: 150px;">조회수 10000</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,18 +41,26 @@
                                     확인 잘 해보세요.<br />
                                 </td>
                             </tr>
+                            <tr class="detail_box">
+	                            <td colspan="4">
+	                            답변 입니다 확인하세요<br />
+	                         	항상 저희 Cinephile를 사랑해주셔서 감사합니다.
+	                         	</td>
+                         	</tr>
                             <tr class="page_move" align="left">
-                                <td colspan="4">
-                                    <a href="#" class id="?">
-                                        <span class="page_next">다음글 ▲</span>
+                                <td colspan="4">                         
+                                        <span class="page_next">다음글</span>
+                                        <i class="fas fa-angle-up"></i>
+                                        <a href="#" class id="?">
                                         <span>다음 글이 없습니다.</span>
                                     </a>
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">
                                 <td colspan="4">
-                                    <a href="#" class id="?">
-                                        <span class="page_prev">이전글 ▼</span>
+                                        <span class="page_prev">이전글</span>
+                                        <i class="fas fa-angle-down"></i>
+                                    	<a href="#" class id="?">
                                         <span>공지사항 9</span>
                                     </a>
                                 </td>

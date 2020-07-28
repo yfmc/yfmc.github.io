@@ -17,7 +17,7 @@
                 <!-- ==== 사이드바 끝 ==== -->
                 <!-- ==== 본문 시작 ====-->
                 <div class="content">
-                    <div class="notice_title">
+                    <div class="faq_title">
                         <h2>자주찾는 질문</h2>
 						<p>
 							회원님들께서 가장 자주하시는 질문을 모았습니다.<br />
@@ -27,36 +27,39 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">번호</th>
-                                <th style="width: auto;">제목</th>
+                                <th style="width: 100px;">번호 10</th>
+                                <th style="width: auto;">자주찾는 질문 10</th>
                                 <th style="width: 150px;">등록일</th>
                                 <th style="width: 150px;">조회수</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="detail_box">
-                                <td colspan="4"> 여기는 공지사항 내용입니다.<br />
-                                    잘 읽어 보세요.<br />
-                                    확인 잘 해보세요.<br />
-                                    저희 영화관을 이용해 주셔서 감사합니다.<br />
-                                    Cinephile.<br />
-                                    확인 잘 해보세요.<br />
-                                    확인 잘 해보세요.<br />
+                            	<td colspan="4">
+                                여기는 자주찾는 질문입니다.<br />
+                                잘 읽어 보세요.<br />
+                                확인 잘 해보세요.<br />
+                                저희 영화관을 이용해 주셔서 감사합니다.<br />
+                                Cinephile.<br />
+                                확인 잘 해보세요.<br />
+                                확인 잘 해보세요.<br />
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">
-                                <td colspan="4">
-                                    <a href="#" class id="?">
-                                        <span class="page_next">다음글 ▲</span>
+                                <td colspan="4">                         
+                                        <span class="page_next">다음글</span>
+                                        <i class="fas fa-angle-up"></i>
+                                        <a href="#" class id="?">
                                         <span>다음 글이 없습니다.</span>
                                     </a>
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">
                                 <td colspan="4">
-                                    <a href="#" class id="?">
-                                        <span class="page_prev">이전글 ▼</span>
-                                        <span>자주찾는 질문 9</span>
+                                        <span class="page_prev">이전글</span>
+                                        <i class="fas fa-angle-down"></i>
+                                    	<a href="#" class id="?">
+                                        <span>자주찾는질문 9</span>
                                     </a>
                                 </td>
                             </tr>
