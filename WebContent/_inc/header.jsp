@@ -46,11 +46,11 @@
                     </li>
                     <li class="nav"><a href="<%=request.getContextPath()%>/branch/01-branch.jsp" class="mains">극장</a></li>
                     <li class="nav">
-                        <a href="#" class="mains">고객센터</a>
+                        <a href="<%=request.getContextPath()%>/support/support_home.jsp" class="mains">고객센터</a>
                         <ul class="subnav">
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">자주찾는질문</a></li>
-                            <li><a href="#">1:1문의</a></li>
+                            <li><a href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
+                            <li><a href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는질문</a></li>
+                            <li><a href="<%=request.getContextPath()%>/support/qna.jsp">1:1문의</a></li>
                         </ul>
                     </li>
                 </ul>
