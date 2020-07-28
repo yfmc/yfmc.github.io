@@ -6,8 +6,9 @@
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <!-- 내용 부분 시작 -->
     <div class="movie-poster">
-
-            <span><img src="<%=request.getContextPath()%>/img/you.jpeg" alt="영화포스터" class="img-rounded"/></span>
+   		    <span>
+            	<img src="<%=request.getContextPath()%>/img/you.jpeg" alt="영화포스터" class="img-rounded"/>
+            </span>
             <div class="movie-totalExplain">
             <div class="movie-explain">
                 <span>제목</span>
@@ -30,7 +31,6 @@
                   <span class="starR on">별3</span>
                   <span class="starR">별4</span>
                   <span class="starR">별5</span>
-
                 </div>
             </div>
         </div>
@@ -48,6 +48,11 @@
         <p>인공지능 운세 프로그램 만신의 예언에 대부분의 사람들이 의존하고 있는 세상. 만신을 믿지 않는 몇 안 되는 사람인 선호(이연희)는 만신을 신봉했지만, 갑작스레 죽음을 맞이했던 동생의 운세를 알아내기 위해 오늘도 만신의 개발자를 찾아다닌다.</p>
         <p>가람은 그런 선호와 정 반대의 인물이다. 세상을 비관하며 삶을 마감하려 했던 그는 만신을 통해 기적적으로 살아남아 만신을 믿게 된다. 만신에 의존하다 못해 광신도가 된 가람은 북극성을 따라가라는 만신의 운세를 믿고 별 문양 옷을 입은 선호를 따라나선다.</p>
         </span>
+    </div>
+    <div id="banner" class="change-poster">
+    	<a href="#" id="banner-link" target="_blank">
+    		<img src="<%=request.getContextPath()%>/img/you.jpeg" id="banner-img" width="800" height="400"/>
+    	</a>
     </div>
     </div>
     <hr>
@@ -72,9 +77,18 @@
     <!-- 한줄평 작성하기 -->
     <div class="movie-advice">
             <h3>한줄평</h3>
+            <form>
             <textarea class="form-control col-sm-5" rows="5">
             </textarea>
             <button type="submit" class="btn btn-dark" style="float:right">등록</button>
+            <div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
+                  <span class="starR">별4</span>
+                  <span class="starR">별5</span>
+            </div>
+            </form>
     </div>
     <hr>
     <form class="oneLine" action="">
@@ -85,56 +99,105 @@
             <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<input type="text" name="text" id="text1" class="form-control" value="한줄평입력"/>
             	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
+                  <span class="starR on">별4</span>
+                  <span class="starR on">별5</span>
+            </div>
             </li>
             <li>
             <label for="text">java</label>
             <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<input type="text" name="text" id="text2" class="form-control" value="한줄평입력"/>
             	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
+                  <span class="starR on">별4</span>
+                  <span class="starR">별5</span>
+            </div>
             </li>
             <li>
                 <label for="text">mysql</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<input type="text" name="text" id="text3" class="form-control" value="한줄평입력"/>
             	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
+                  <span class="starR">별4</span>
+                  <span class="starR">별5</span>
+            </div>
             </li>
             <li>
                 <label for="text">html</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<input type="text" name="text" id="text4" class="form-control" value="한줄평입력"/>
             	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR">별3</span>
+                  <span class="starR">별4</span>
+                  <span class="starR">별5</span>
+            </div>
             </li>
             <li>
                 <label for="text">css</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<input type="text" name="text" id="text5" class="form-control" value="한줄평입력"/>
             	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
+                  <span class="starR">별4</span>
+                  <span class="starR">별5</span>
+            </div>
             </li>
             <li>
                 <label for="text">javascript</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<input type="text" name="text" id="text6" class="form-control" value="한줄평입력"/>
             	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
+                  <span class="starR on">별4</span>
+                  <span class="starR">별5</span>
+            </div>
             </li>
             <li>
                 <label for="text">jQuery</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text" class="form-control" value="한줄평입력"/>
+            	<input type="text" name="text" id="text7" class="form-control" value="한줄평입력"/>
             	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<div class="starRev">
+                  <span class="starR on">별1</span>
+                  <span class="starR on">별2</span>
+                  <span class="starR on">별3</span>
+                  <span class="starR on">별4</span>
+                  <span class="starR on">별5</span>
+            </div>
             </li>
             <!-- 한줄평 작성하기 끝 -->
         </ul>
@@ -144,6 +207,33 @@
         </div>
     </form>
     
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+    	var banner = [
+    		{img:'../img/you.jpeg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'},
+    		{img:'../img/you2.jpg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'},
+    		{img:'../img/you3.jpg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'},
+    		{img:'../img/you4.jpg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'}
+    	];
+    	
+    	function random(n,m){
+    		return parseInt(Math.random()*(m-n+1))+n;
+    	}
+    	
+    	function random_banner(){
+    		var rand = random(0,banner.length-1);
+    		var item=banner[rand];
+    		$("#banner-link").attr("href",item.url);
+    		$("#banner-img").attr("src",item.img);
+    	}
+    	
+    	$(function(){
+    		random_banner();
+    		setInterval(function(){
+    			random_banner();
+    		},2000);
+    	});
+    </script>
     <!-- 내용 부분 끝 -->
 <!--// ========== 컨텐츠 영역 끝 ========== -->
 <%@ include file="../_inc/footer.jsp"%>

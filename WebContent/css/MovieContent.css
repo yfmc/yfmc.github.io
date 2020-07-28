@@ -6,6 +6,8 @@ min-height:1000px;
 *{
 list-style:none;
 }
+
+
 /*평점주기*/
     .starR{
       background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
@@ -71,6 +73,10 @@ list-style:none;
         margin-right:5px;
     }
     
+    .change-poster{
+    	margin-top:50px;
+    }
+    
     .starRev{
          display: block;
     	float: right;
@@ -127,6 +133,9 @@ list-style:none;
         float:none;
         clear:both;
     }
+    .movie-advice .starRev{
+    	margin-top:10px;
+    }
 	
 	.oneLine{
 		min-height:600px;
@@ -139,6 +148,8 @@ list-style:none;
     }
 
     .movie-comment button{
+    	margin-top:5px;
+    	margin-bottom:5px;
         font-size:16px;
         font-weight:bold;
     }
@@ -149,16 +160,15 @@ list-style:none;
         clear:both;
     }
     
+    .movie-comment .starRev{
+    margin-top:5px;
+    }
+    
     .pulldate{
     	font-size:10px;
     }
     
-    .movie-comment button:after{
-    	content:' ';
-    	display:block;
-    	float:none;
-    	clear:both;
-    }
+    
     
     .pageUpbutton{
     	margin-top:50px;

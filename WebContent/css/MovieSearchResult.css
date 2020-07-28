@@ -83,8 +83,8 @@ margin-top:20px;
   margin-bottom:30px;
 }
     .king-row{
-        margin-top:10px;
-        height:400px;
+        margin-top:100px;
+        min-height:300px;
     }
 
     .king-row h4{
