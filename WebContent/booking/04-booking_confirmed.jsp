@@ -18,19 +18,43 @@
 			</ul>
 		</div>
 		
-		<!-- 인원 / 좌석 선택 영역 -->
-		<div class="booking_seats">
+		<!-- 예매완료 영역 -->
+		<div class="booking_confirmed">
 			<!-- 상단 제목 -->
 			<h4 class="booking_title">예매완료</h4>
 			
-			<!-- 인원 선택 -->
-			<div class="choose_people">
-				
+			<!-- 하단부 -->
+			<div class="booking_done">
+				<h2>예매가 완료되었습니다</h2>
+				<h3>예매번호 : 2020-0720-1517-0708</h3>
+				<img class="film_poster" src="https://t1.daumcdn.net/movie/f6d6494aa78ac7ffde282c0e67b431beede65b91" width=270 />
+				<div class="booked_detail">
+					<div class="detail_title"><span class="label label-warning">15</span> 강철비2 : 정상회담</div>
+					<div class="detail">
+					2020.07.20 (월) 15:15 ~ 17:21<br />
+					메가박스 코엑스 1관 F7, F8<br />
+					성인 2명<br />
+					결제금액 : 20,000원
+					</div>
+				</div>
+				<div class="exit_btn">
+					<button class="go_to_main" type="button" onclick="goMain();">메인으로 가기</button>
+					<button class="go_to_mypage" type="button">나의 예매내역으로 가기</button>
+				</div>
 			</div>
+			<!-- float 마감제 -->
+			<div class="clear"></div>
 		</div>
 		
 		<!-- float 마감제 -->
 		<div class="clear"></div>
 	</div>
-</div>	
+</div>
+
+<!-- Javascript -->
+<script type="text/javascript">
+function goMain() {
+	location.href="<%=request.getContextPath()%>/index.jsp";
+}
+</script>
 <%@ include file="/_inc/footer.jsp"%>

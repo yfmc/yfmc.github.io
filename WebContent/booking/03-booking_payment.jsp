@@ -39,15 +39,17 @@
 				</div>
 				<!-- 우측 결제 영역 -->
 				<div class="choose_payment">
-					<form>
-						<h2>최종 결제수단 선택</h2>
-						<div class="payment_radio">
-							<button type="button" name="payment" id="credit_card"><i class="far fa-credit-card"></i><br /><span>신용카드</span></button>
-							<button type="button" name="payment" id="simple_payment"><i class="fas fa-money-check-alt"></i><br /><span>간편결제</span></button>
-							<button type="button" name="payment" id="mobile_payment"><i class="fas fa-mobile-alt"></i><br /><span>휴대폰결제</span></button>
-						</div>
-					</form>
-					<div></div>
+					<h2>최종 결제수단 선택</h2>
+					<div class="payment_radio">
+						<button type="button" name="payment" id="credit_card"><i class="far fa-credit-card"></i><br /><span>신용카드</span></button>
+						<button type="button" name="payment" id="simple_payment"><i class="fas fa-money-check-alt"></i><br /><span>간편결제</span></button>
+						<button type="button" name="payment" id="mobile_payment"><i class="fas fa-mobile-alt"></i><br /><span>휴대폰결제</span></button>
+					</div>
+					<h3>결제금액 20,000원</h3>
+					<div class="payment_btn">
+						<span class="btn to_void">결제취소</span>
+						<span class="btn to_pay" onclick="goNext();">결제하기</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -72,6 +74,14 @@
 		
 		if (is_ok) {
 			location.href="<%=request.getContextPath()%>/booking/02-booking_seats.jsp";
+		}
+	}
+	
+	function goNext() {
+		var is_ok=confirm("결제하시겠습니까?");
+		
+		if (is_ok) {
+			location.href="<%=request.getContextPath()%>/booking/04-booking_confirmed.jsp";
 		}
 	}
 </script>
