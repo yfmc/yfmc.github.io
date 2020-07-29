@@ -146,6 +146,9 @@ list-style:none;
         margin: auto;
         color:#222;
     }
+    .people-comment li{
+    	margin-top:20px;
+    }
 
     .movie-comment button{
     	margin-top:5px;
@@ -162,10 +165,22 @@ list-style:none;
     
     .movie-comment .starRev{
     margin-top:5px;
+    margin-right:0px;
     }
     
     .pulldate{
     	font-size:10px;
+    }
+    
+    .movie-comment .modify-text{
+    	margin-left:10px;
+    	font-size:10px;
+    	font-weight:bold;
+    }
+    .movie-comment .delete-text{
+    	
+    	font-size:10px;
+    	font-weight:bold;
     }
     
     

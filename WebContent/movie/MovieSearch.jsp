@@ -31,12 +31,6 @@
 
         	</div>
 
-            <div class="list_title">
-
-            	<h2>박스오피스</h2>
-
-        	</div>
-
             <!-- 영화 검색 조건 -->
 
             <div class="form-group form-inline">

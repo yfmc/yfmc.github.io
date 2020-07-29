@@ -22,9 +22,6 @@
                 		</li>
                 </ul>
             </div>
-            <div class="list_title">
-                <h2>박스오피스</h2>
-            </div>
             <!-- 영화 검색 조건 -->
             <div class="form-group form-inline">
                 <!-- .constrol-tabel은 label태그에 들어가는 속성이다. -->
@@ -91,7 +88,7 @@
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
                         <span>
-                            <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            <img src="../img/you.jpeg" width="260" height="195" />
                             </span>
                         </div>
                         <!-- 텍스트 영역 -->
@@ -111,7 +108,7 @@
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
                         <span>
-                            <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            <img src="../img/you2.jpg" width="260" height="195" />
                             </span>
                         </div>
                         <!-- 텍스트 영역 -->
@@ -131,7 +128,7 @@
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
                         <span>
-                            <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            <img src="../img/you3.jpg" width="260" height="195"/>
                             </span>
                         </div>
                         <!-- 텍스트 영역 -->
@@ -151,7 +148,7 @@
                         <!-- 이미지 영역 -->
                         <div class="col-sm-12 col-xs-3">
                         <span>
-                            <img src="https://via.placeholder.com/640x480" class="img-responsive" />
+                            <img src="../img/you4.jpg" width="260" height="195"/>
                             </span>
                         </div>
                         <!-- 텍스트 영역 -->

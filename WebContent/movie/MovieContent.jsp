@@ -5,6 +5,7 @@
 
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <!-- 내용 부분 시작 -->
+    <div class="container">
     <div class="movie-poster">
    		    <span>
             	<img src="<%=request.getContextPath()%>/img/you.jpeg" alt="영화포스터" class="img-rounded"/>
@@ -100,7 +101,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text1" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             	<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
@@ -115,7 +116,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text2" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<%-- <button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             	<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
@@ -128,9 +129,12 @@
                 <label for="text">mysql</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+            	<button type="button" class="modify-text" style="width:25px; height:20px;">수정</button>
+    			<button type="button" class="delete-text" style="width:25px; height:20px;">삭제</button>
     		</div>
+    			
             	<input type="text" name="text" id="text3" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<button type="submit" class="btn btn-dark" style="float:right">수정완료</button>
             	<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
@@ -145,7 +149,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text4" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             	<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
@@ -160,7 +164,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text5" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             	<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
@@ -175,7 +179,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text6" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             	<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
@@ -190,7 +194,7 @@
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
             	<input type="text" name="text" id="text7" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>
+            	<%-- <button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             	<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
@@ -206,6 +210,7 @@
         	<button type="submit" class="btn btn-dark" style="float:right">맨위로</button>
         </div>
     </form>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">

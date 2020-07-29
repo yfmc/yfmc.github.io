@@ -8,6 +8,7 @@ list-style:none;
 }
 .content1{
 margin-top:20px;
+margin-bottom:30px;
 }
 
 .content .content1 ul {
@@ -38,15 +39,6 @@ margin-top:20px;
         clear: both;
     }
 
-    .list_title {
-        margin-top: 40px;
-        text-align: center;
-    }
-
-    .list_title h2 {
-        color: darkorchid;
-        margin-bottom: 20px;
-    }
 
 
 .form-search{
@@ -63,7 +55,7 @@ margin-top:20px;
     }
 
 .search{
-      margin-top:120px;
+      margin-top:180px;
     }
 .search h1{
       text-align: center;
