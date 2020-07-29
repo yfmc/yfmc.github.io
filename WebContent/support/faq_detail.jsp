@@ -66,7 +66,7 @@
                         </tbody>
                     </table>
                     <div class="list_button pull-right">
-                        <a href="<%=request.getContextPath()%>/support/notice_list.jsp" class=" btn btn-success pull-right">목록으로</a>
+                        <a href="<%=request.getContextPath()%>/support/faq_list.jsp" class=" btn btn-success pull-right">목록으로</a>
                     </div>
                 </div>
             </div>

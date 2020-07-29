@@ -104,8 +104,8 @@
 	                    </div>
 	                </div>
 	                <div class="btn_btm_wrap">
-	                    <a href="#" class="btn btn-default">취소</a>
-	                    <a href="#" class="btn btn-primary">입력완료</a>
+	                    <a href="<%=request.getContextPath()%>/support/support_home.jsp"" class="btn btn-default">취소</a>
+	                    <a href="<%=request.getContextPath()%>/support/qna_complete.jsp" class="btn btn-primary">입력완료</a>
 	                </div>
 	            </div>
 	            <!-- ==== 본문 끝 ==== -->

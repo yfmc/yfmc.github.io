@@ -33,7 +33,7 @@
                         <div class="pre notice_pre pull-left">
                             <div class="title_area">
                                 <h3>공지사항<a href="<%=request.getContextPath()%>/support/notice_list.jsp" class="more pull-right">더보기 > </a></h3>
-                                <a href="#" class="list-group-item">
+                                <a href="<%=request.getContextPath()%>/support/notice_detail.jsp" class="list-group-item">
                                     <p class="list-group-item-text">공지사항 10</p>
                                 </a>
                                 <a href="#" class="list-group-item">
@@ -53,7 +53,7 @@
                         <div class="pre faq_pre pull-right">
                             <div class="title_area">
                                 <h3>자주찾는 질문<a href="<%=request.getContextPath()%>/support/faq_list.jsp" class="more pull-right">더보기 > </a></h3>
-                                <a href="#" class="list-group-item">
+                                <a href="<%=request.getContextPath()%>/support/faq_detail.jsp" class="list-group-item">
                                     <p class="list-group-item-text">자주찾는 질문 10</p>
                                 </a>
                                 <a href="#" class="list-group-item">

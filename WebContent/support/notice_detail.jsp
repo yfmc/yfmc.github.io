@@ -41,12 +41,6 @@
                                     확인 잘 해보세요.<br />
                                 </td>
                             </tr>
-                            <tr class="detail_box">
-	                            <td colspan="4">
-	                            답변 입니다 확인하세요<br />
-	                         	항상 저희 Cinephile를 사랑해주셔서 감사합니다.
-	                         	</td>
-                         	</tr>
                             <tr class="page_move" align="left">
                                 <td colspan="4">                         
                                         <span class="page_next">다음글</span>
