@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/inquirylist.css">
 
         <div id="content" class="clear">
@@ -18,7 +19,7 @@
             </div>
             <div id="body">
                 <div class="bodytop">
-                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 문의 내역입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bullhorn"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 문의 내역입니다.</h3>
                 </div>
                 <div class="board">
                     <table class="table table-hover table-bordered">
@@ -60,13 +61,16 @@
                     <hr />
                     <div class="text-center">
                         <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#" style="background:#4f4f4f;">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item"><a class="page-link" href="#">5</a></li>
                             <li class="page-item"><a class="page-link" href="#">>></a></li>
                         </ul>
+                        <div class="inqbutton">
+                    		<button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/support/qna.jsp'">1:1문의</button>
+                    	</div>
                     </div>
                 </div>
             </div>

@@ -13,12 +13,18 @@
     float:left;
 }
 
+.fas{
+	font-size:40px;
+	color:#897944;
+}
+
 .sidebar {
     width: 250px;
     min-height: 850px;
     float: left;
     border-right: 1px solid black;
     margin-right: 20px;
+    font-family: 'Jua', sans-serif;
 }
 
 .clear:after {
@@ -77,6 +83,17 @@
 }
 
 .board thead{
+	background-color:#6e6e6e;
+	color:white;
+}
+
+.inqbutton{
+	float:right;
+	padding-top:15px;
+}
+.inqbutton .btn{
+	width:100px;
+	height:40px;
 	background-color:#6e6e6e;
 	color:white;
 }

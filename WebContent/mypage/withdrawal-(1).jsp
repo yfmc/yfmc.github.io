@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/withdrawal-(1).css">
 
         <div id="content" class="clear">
@@ -18,7 +19,8 @@
             </div>
             <div id="body">
                 <div class="reqmsg">
-                    <p>회원 탈퇴하기 전 본인 확인이 필요합니다.<br />비밀번호를 입력해주세요.</p>
+                	<i class="fas fa-frown-open"></i>
+                    <p style="font-family: 'Jua', sans-serif;">회원 탈퇴하기 전 본인 확인이 필요합니다.<br />비밀번호를 입력해주세요.</p>
                     <br />
                     <form action="" method="POST" class="form-inline">
                         <div class="form-group">

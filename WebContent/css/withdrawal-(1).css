@@ -5,12 +5,19 @@
     min-height: 850px;
     margin-bottom: 50px;
     margin-top: 50px;
+    font-family: 'Jua', sans-serif;
 }
 
 #body {
     width: 900px;
     min-height: 850px;
     float:left;
+}
+
+.fas{
+	padding-bottom:30px;
+	font-size:50px;
+	
 }
 
 .sidebar {

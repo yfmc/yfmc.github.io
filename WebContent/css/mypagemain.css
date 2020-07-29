@@ -19,6 +19,7 @@
     float: left;
     border-right: 1px solid black;
     margin-right: 20px;
+    font-family: 'Jua', sans-serif;
 }
 
 .clear:after {
@@ -111,6 +112,10 @@
     padding-top:10px;
 }
 
+.bodycenter h4{
+	font-size:25px;
+}
+
 .row {
     padding-left: 200px;
 }
@@ -154,6 +159,10 @@
     border:1.5px solid #808080;
 	border-radius:8px;
 	padding-top:10px;
+}
+
+.bodybottom h4{
+	font-size:25px;
 }
 
 .bodybottom h5{

@@ -5,12 +5,18 @@
     min-height: 850px;
     margin-bottom: 50px;
     margin-top: 50px;
+    font-family: 'Jua', sans-serif;
 }
 
 #body {
     width: 900px;
     min-height: 850px;
     float:left;
+}
+
+.far{
+	font-size:40px;	
+	color:#897944;
 }
 
 .sidebar {
@@ -100,7 +106,6 @@
 .listarea .title a{
     color:#292929;
     font-size:20px;
-    font-weight:bold;
 }
 
 .bookdate h4 {

@@ -19,6 +19,7 @@
     float: left;
     border-right: 1px solid black;
     margin-right: 20px;
+    font-family: 'Jua', sans-serif;
 }
 
 .clear:after {
@@ -65,4 +66,6 @@
 .inqpost .btn{
 	margin:5px;
 	float:right;
+	background-color:#222;
+	color:white;
 }

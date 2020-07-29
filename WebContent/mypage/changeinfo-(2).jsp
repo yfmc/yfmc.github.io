@@ -71,6 +71,7 @@
                                     <option value="naver.com">naver.com</option>
                                     <option value="daum.net">daum.net</option>
                                     <option value="gmail.com">gmail.com</option>
+                                    <option value="direct">직접입력</option>
                                 </select>
                                 &nbsp;&nbsp;
                                 <input type="button" onclick="certiinq()" value="인증하기" style="width:70px;" />

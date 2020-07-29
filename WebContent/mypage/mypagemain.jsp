@@ -3,7 +3,7 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/mypagemain.css">
-		
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">		
         <div id="content" class="clear">
             <div class="sidebar">
                 <div class="sidemenu">
@@ -18,7 +18,7 @@
             </div>
             <div id="body">
                 <div class="bodytop">
-                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 My Page입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 My Page입니다.</h3>
                     <table class="oftentheater">
                         <tr>
                             <td>CGV 강남
@@ -44,7 +44,7 @@
                 </div>
                 <div class="bodycenter">
                     <span class="centertitle">
-                        <h4>나의 최근 예매내역</h4>
+                        <h4 style="font-family: 'Jua', sans-serif;">나의 최근 예매내역</h4>
                     </span>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -73,10 +73,9 @@
                 </div>
                 <div class="bodybottom">
                     <span class="centertitle">
-                        <h4>찜한 영화</h4>
+                        <h4 style="font-family: 'Jua', sans-serif;">찜한 영화</h4>
                     </span>
                     <div class="row">
-                        <!-- 갤러리 한 개 영역 -->
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
                                 <img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" />
