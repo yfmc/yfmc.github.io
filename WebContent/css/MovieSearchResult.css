@@ -74,6 +74,11 @@ margin-bottom:30px;
   margin-left:70px;
   margin-bottom:30px;
 }
+
+.page-header{
+	border:0;
+}
+
     .king-row{
         margin-top:100px;
         min-height:300px;

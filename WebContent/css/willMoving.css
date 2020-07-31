@@ -6,6 +6,7 @@ list-style:none;
 .containerHeight{
 min-height:1000px;
 }
+/*
 .content1 {
 margin-top:20px;
 }
@@ -37,6 +38,7 @@ margin-top:20px;
 	float:none;
 	
 }
+*/
 .list_title{
     margin-top:40px;
     text-align: center;
@@ -45,16 +47,17 @@ margin-top:20px;
     color:red;
     margin-bottom:20px;
     font-weight:bold;
+    font-size:40px;
 }
 .list_title ul {
-	width:30%;
+	width:27%;
 	margin:auto;
 }
 
 .list_title ul li{
 	float:left;
 	margin:auto;
-	width:45%;
+	width:50%;
 }
 .list_title ul li:nth-child(1){
 	border-right:2px solid #222;
@@ -62,7 +65,7 @@ margin-top:20px;
 
 .list_title ul li a{
 	font-family:'Jua', sans-serif;
-	font-size:14px;
+	font-size:20px;
 	color:#222;
 }
 
@@ -75,24 +78,60 @@ margin-top:20px;
 
 
 .content .clearfix{
-    width:90%;
+    width:86%;
     margin: auto;
 }
+
+
+.label {
+  border-radius: 0;
+  font-weight: 300;
+  font-size:13px;
+}
+
 .king-row{
     /*border: 1px solid #f6f;*/
     width:85%;
     margin:auto;
     margin-top:50px;
+    
 }
 
 .thumbnail {
         height: 400px;
-    }
+        width:250px;
+        border:0;
+       
+}
+
+.thumbnail:hover{
+	 text-decoration:none;
+}
 
 /*썸네일 내부의 이미지 크기 고정*/
 .thumbnail img {
-    max-height: 300px;
+    min-height: 330px;
+    width:250px;
  }
+ 
+
+.thumbnail .movie-text{
+	text-align:center;
+	
+}
+
+.thumbnail .movie-text h4{
+	font-weight:bold;
+	font-size:18px;
+	color:black;
+	
+}
+
+.king-row .movie-picture{
+	width:25%;
+	float:left;
+	margin-top:15px;
+}
 
  .king-row:after{
     display: block;
@@ -101,8 +140,21 @@ margin-top:20px;
     clear:both;
  }
  
+.king-row .rank{
+	height:22px;
+	width:245px;
+	margin-left:3px;
+	margin-bottom:0px;
+	font-style:italic;
+	background-color:black;
+}
+
+.king-row .rank span{
+	font-size:20px;
+	color:white;
+}
+
  .king-row .img-responsive{
- width:auto;
  height:auto;
  max-height:200px;
  min-width:210px;
@@ -113,4 +165,68 @@ margin-top:20px;
 .plusbutton{
 	margin-bottom:10px;
     text-align: center;
+}
+
+/*사이드 바*/
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  margin-right:0px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right:calc(50% - 723px); /* right:calc(50% - social bar width/2) */
+  border : 2px solid #222;
+  border-radius : 10px;
+  
+ 
+}
+
+@media screen and (max-width:920px){
+.icon-bar {
+  display: none;
+  }
+} 
+
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 16px;
+  text-decoration: none; 
+  font-weight: bold;
+  margin:2px;
+  
+}
+
+
+.icon-bar a:hover {
+  background-color: #edb9c3;
+}
+
+.side-boxoffice {
+  background: white;
+}
+
+.side-moviesearch {
+  background: white; 
+}
+
+.side-movienews {
+  background: white; 
+}
+
+.side-statistics {
+  background: white;
+}
+
+/*사이드바 아이콘*/
+.fas, .far{
+	display:block;
+	font-size:50px;
+	font-weight:800;
 }
