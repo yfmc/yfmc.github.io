@@ -101,21 +101,17 @@
 				</table>
 			</div>
 			<!-- 페이지 버튼 -->
-			<nav class="Page navigation">
-				<ul class="pagination">
-					<li><a href="#" aria-label="Previous"> <span
-							aria-hidden="true">&laquo;</span>
-					</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#" aria-label="Next"> <span
-							aria-hidden="true">&raquo;</span>
-					</a></li>
-				</ul>
-			</nav>
+			<div class="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#"><</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                </ul>
+            </div>
 		</div>
 	</div>
 </div>
