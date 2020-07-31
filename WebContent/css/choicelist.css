@@ -5,13 +5,13 @@
     min-height: 850px;
     margin-bottom: 50px;
     margin-top: 50px;
-    font-family: 'Jua', sans-serif;
 }
 
 #body {
     width: 900px;
-    min-height: 850px;
+    min-height: 1300px;
     float:left;
+    font-family: 'Jua', sans-serif;
 }
 
 .far{
@@ -21,10 +21,12 @@
 
 .sidebar {
     width: 250px;
-    min-height: 850px;
+    min-height: 1300px;
     float: left;
     border-right: 1px solid black;
     margin-right: 20px;
+    margin-top:-20px;
+    margin-left:-20px;
 }
 
 .clear:after {
@@ -35,9 +37,12 @@
 }
 
 .sidemenu {
-    height: 300px;
-    width: 80%;
-    margin-top: 40px;
+    width: 200px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    float: left;
+    margin-top: 35px;
 }
 
 .sidemenu ul {
@@ -45,24 +50,21 @@
 }
 
 .sidemenu ul li {
-    height: 70px;
-    font-size: 16px;
-    border: 1px solid #eee;
-    text-align: center;
-    background-color: black;
-    line-height: 4.0;
-    border-radius: 5px;
+    border-top: 1px solid #ddd;
 }
 
 .sidemenu ul li a {
-    color: white;
     display: block;
+    padding: 0px 10px;
+    width: auto;
+    color: #222;
+    line-height: 40px;
 }
 
 .sidemenu ul li a:hover {
-    text-decoration: none;
-    background-color: #222;
-}
+    	background-color: #eee;
+    }
+
 
 .bodytop {
     margin-top: 50px;
@@ -70,7 +72,7 @@
 }
 
 .bodylist {
-    height: 600px;
+    height:1100px;
 }
 
 .listarea {
@@ -80,7 +82,7 @@
     position: relative;
     padding-left:20px;
 	border:2.5px solid #828282;
-    border-radius:10px;
+    border-radius:5px;
 	background-color:#fcfcfc;
 }
 
@@ -131,7 +133,18 @@
     padding-left:9.5px;
 }
 
+.listarea .book{
+	float: right;
+    position: absolute;
+    right: 63px;
+    top: 75px;
+    width: 87px;
+    height: 41px;
+    background-color:#ff4545;
+    color:white;
+    font-size:14px;
+}
 .pagination {
-    margin-top: 50px;
-    margin-left: 100px;
+    margin-top: -25px;
+    margin-left: 375px;
 }

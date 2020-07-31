@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user_password" class="col-sm-2 control-label">비밀번호 확인</label>
+                            <label for="user_password2" class="col-sm-2 control-label">비밀번호 확인</label>
                             <div class="col-sm-5">
                                 <input type="password" name="user_password2" id="user_password2" style="width:220px" value="" placeholder="비밀번호를 다시 입력해주세요" />
                             </div>
@@ -66,13 +66,7 @@
                         <div class="form-group">
                             <label for="maillist" class="col-sm-2 control-label">이메일</label>
                             <div class="col-sm-5">
-                                <input type="text" name="mail" id="mail" style="width:100px; height:25px"> @
-                                <select name="maillist" id="maillist" style="height:25px">
-                                    <option value="naver.com">naver.com</option>
-                                    <option value="daum.net">daum.net</option>
-                                    <option value="gmail.com">gmail.com</option>
-                                    <option value="direct">직접입력</option>
-                                </select>
+                                <input type="text" name="mail" id="mail" style="width:200px; height:25px">
                                 &nbsp;&nbsp;
                                 <input type="button" onclick="certiinq()" value="인증하기" style="width:70px;" />
                             </div>
@@ -86,32 +80,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="phonelist" class="col-sm-2 control-label">전화번호</label>
+                            <label for="phonelist" class="col-sm-2 control-label">연락처</label>
                             <div class="col-sm-5">
-                                <select name="phonelist" id="phonelist" style="width:55px;height:25px">
-                                    <option value="010">010</option>
-                                    <option value="02">02</option>
-                                    <option value="031">031</option>
-                                    <option value="032">032</option>
-                                    <option value="033">033</option>
-                                    <option value="041">041</option>
-                                    <option value="042">042</option>
-                                    <option value="043">043</option>
-                                    <option value="044">044</option>
-                                    <option value="051">051</option>
-                                    <option value="052">052</option>
-                                    <option value="053">053</option>
-                                    <option value="054">054</option>
-                                    <option value="055">055</option>
-                                    <option value="061">061</option>
-                                    <option value="062">062</option>
-                                    <option value="063">063</option>
-                                    <option value="064">064</option>
-                                </select>
-                                &nbsp;
-                                <input type="text" name="phone2" id="phone2" style="width:66px" />
-                                &nbsp;
-                                <input type="text" name="phone3" id="phone3" style="width:66px" />
+                                <input type="text" name="phone2" id="phone2" style="width:200px" placeholder="-없이 입력하세요"/>
                             </div>
                         </div>
                         <div class="form-group">

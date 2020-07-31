@@ -86,15 +86,36 @@
             <form>
                 <fieldset>
                     <legend>영화관 검색</legend>
-                    <label for="theater">브랜드 선택</label>
+                    <label for="theater">브랜드</label>
                     <select name="theater" id="theater">
+                    	<option value="">--- 선택 ---</option>
                         <option value="CGV">CGV</option>
                         <option value="megabox">메가박스</option>
                         <option value="lotte">롯데시네마</option>
                     </select>
-                    <label for="theatersearch">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;영화관선택</label>
-                    <input type="search" id="theatersearch" name="theatersearch" style="width:150px;" />
-                    <button type="submit">추가하기</button>
+                    <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
+                    <select name="region" id="region"">
+                    	<option value="">--- 선택 ---</option>
+                        <option value="서울">서울</option>
+                        <option value="경기도">경기도</option>
+                        <option value="인천">인천</option>
+                        <option value="강원도">강원도</option>
+                        <option value="대전">대전</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="광주">광주</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="대구">대구</option>
+                        <option value="울산">울산</option>
+                        <option value="부산">부산</option>
+                        <option value="제주도">제주도</option>
+                    </select>
+                    <label for="theatersearch">&nbsp;&nbsp;&nbsp;영화관</label>
+                    <input type="search" id="theatersearch" name="theatersearch" style="width:110px;" />
+                    <button type="submit" style="margin-left:2px;">추가</button>
                 </fieldset>
             </form>
         </div>

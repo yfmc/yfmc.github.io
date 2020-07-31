@@ -24,7 +24,8 @@
     float: left;
     border-right: 1px solid black;
     margin-right: 20px;
-    font-family: 'Jua', sans-serif;
+    margin-top:-20px;
+    margin-left:-20px;
 }
 
 .clear:after {
@@ -35,9 +36,12 @@
 }
 
 .sidemenu {
-    height: 300px;
-    width: 80%;
-    margin-top: 40px;
+    width: 200px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    float: left;
+    margin-top: 35px;
 }
 
 .sidemenu ul {
@@ -45,24 +49,21 @@
 }
 
 .sidemenu ul li {
-    height: 70px;
-    font-size: 16px;
-    border: 1px solid #eee;
-    text-align: center;
-    background-color: black;
-    line-height: 4.0;
-    border-radius: 5px;
+    border-top: 1px solid #ddd;
 }
 
 .sidemenu ul li a {
-    color: white;
     display: block;
+    padding: 0px 10px;
+    width: auto;
+    color: #222;
+    line-height: 40px;
 }
 
 .sidemenu ul li a:hover {
-    text-decoration: none;
-    background-color: #222;
-}
+    	background-color: #eee;
+    }
+
 
 .bodytop {
     border-bottom: 1px dotted #222;

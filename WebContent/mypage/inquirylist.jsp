@@ -61,7 +61,7 @@
                     <hr />
                     <div class="text-center">
                         <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#" style="background:#4f4f4f;">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#" style="background:#a8a8a8;">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
