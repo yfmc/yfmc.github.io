@@ -4,75 +4,82 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieSearchResult.css?time=<%=System.currentTimeMillis()%>">
 <title>영화검색결과 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
-<div class="contentHeight">
-        <div class="content">
-            <div class="content1">
-                <ul>
-                    <li>
-                		    <a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>">박스오피스</a> 
-                		</li>
-                		<li>
-                    		<a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>">영화검색</a> 
-                		</li>
-                		<li>
-                    		<a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>">영화소식</a> 
-                		</li>
-                		<li>
-                    		<a href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>">통계</a> 
-                		</li>
-                </ul>
-            </div>
-            <!-- 영화 검색 조건 -->
-            <div class="form-group form-inline">
-                <!-- .constrol-tabel은 label태그에 들어가는 속성이다. -->
-                <div class="col-sm-10 form-search">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="mycheckbox" id="checkbox1" value="" />
-                            영화명
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="mycheckbox" id="checkbox2" value="" />
-                            장르
-                        </label>
-                    </div>
-                    <!-- 사용 못하게 막으려면 .disabled -->
-                    <div class="checkbox">
-                        <label>
-                            <!-- 사용 못하게 막으려면 .disabled -->
-                            <input type="checkbox" name="mycheckbox" id="checkbox3" value=""/>
-                            감독명
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <!-- 사용 못하게 막으려면 .disabled -->
-                            <input type="checkbox" name="mycheckbox" id="checkbox4" value=""/>
-                            배우명
-                        </label>
-                    </div>
+<form class="movie-search">
+        <h2>좋아하는 영화, 보고싶은 영화를 <span>Cinephile</span>에서 찾아보세요!</h2>
+        <table cellpadding="0">
+            <tr>
+                <div class="input-group search-input">  
+                <th colspan="2">영화검색</th>
+                <td style="width:139px;">
+                    <span class="input-group-btn">
+                        <select name='choose' class='form-control' style="width:100%;">
+                            <option value="">전체선택</option>
+                            <option value="">영화명</option>
+                            <option value="">배우명</option>
+                            <option value="">감독명</option>
+                        </select>
+                    </span>
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="키워드를 입력해주세요" style="width:80%;">
+                </td>
                 </div>
-            </div>
-            <!-- 검색 조건 고르기 끝 -->
-            <div class="search">
-        <div class="page-header">
-            <h1>
-                검색하기<br/>
-            </h1>
+            </tr>
+            <!-- 장르선택 -->
+            <tr>
+                <th colspan="2">장르</th>
+                <td colspan="2">
+                    <ul>
+                    <li><input type="checkbox" name="all_genre"><label for="">전체</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">가족</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">공포/호러</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">드라마</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">SF</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">멜로/로맨스</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">느와르</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">범죄</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">학원물</label></li>
+                    <li><input type="checkbox" name="genre"><label for="">기타</label></li>
+                </ul>
+            </td>
+            <td></td>
+            </tr>
+            <!-- 제작국가 -->
+            <tr>
+                <th colspan="2">제작국가</th>
+                <td colspan="2">
+                    <ul>
+                        <li><input type="checkbox" name="all_nation"><label for="">전체</label></li>
+                        <li><input type="checkbox" name="nation"><label for="">한국</label></li>
+                        <li><input type="checkbox" name="nation"><label for="">미국</label></li>
+                        <li><input type="checkbox" name="nation"><label for="">일본</label></li>    
+                    </ul>
+                </td>
+                <td></td>
+            </tr>
+            <!-- 제작년도 -->
+            <tr>
+                <th colspan="2">
+                    	제작년도
+                </th>
+                <td colspan="2">
+                	<div class="slidecontainer">
+  						<input type="range" min="1" max="100" value="50" class="slider" id="myRange" style="width:80%;">
+					</div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+		
+		<div class="search-button">
+        	<button type="button" class="round inred">
+            	검색
+        	</button>
+        	<button type="reset">
+            	초기화
+        	</button>
         </div>
-			<form>
-            	<div class="input-group">
-              		<input type="text" class="form-control"     placeholder="검색창">
-             			<span class="input-group-btn">
-                    		<button class="btn btn-default">
-                    	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                			</button>
-                		</span>
-            	</div>
-            </form>
-            </div>
+    </form>
             <!-- 검색결과가 몇건인지 확인하기 -->
             <div class="search-result">
             <span>
@@ -82,87 +89,176 @@
             </div>
             <!-- 검색결과 보여주기 -->
             <div class="king-row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
+            <!-- 1개 -->
+            <div class="movie-picture">
                 <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
                 <a href="#" class="thumbnail">
                     <div class="row">
                         <!-- 이미지 영역 -->
-                        <div class="col-sm-12 col-xs-3">
-                        <span>
-                            <img src="../img/you.jpeg" width="260" height="195" />
+                        <div class="movie-image">
+                        	<span>
+                            	<img src="<%=request.getContextPath()%>/img/nowmoving1.jpg" class="img-responsive" />
                             </span>
                         </div>
+                        
                         <!-- 텍스트 영역 -->
-                        <div class="col-sm-12 col-xs-9">
+                        
+                        <div class="movie-text">
                         <span>
-                            <h4>제목</h4>
+                            <h4><span class="label label-warning">15</span>강철비2-정상회담</h4>
                             </span>
-                          </div>
+                        </div>
+                        
                     </div>
                 </a>
             </div>
-            <!-- 2개-->
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <!-- 2개 -->
+            <div class="movie-picture">
                 <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
                 <a href="#" class="thumbnail">
                     <div class="row">
                         <!-- 이미지 영역 -->
-                        <div class="col-sm-12 col-xs-3">
-                        <span>
-                            <img src="../img/you2.jpg" width="260" height="195" />
+                        <div class="movie-image">
+                        
+                        	<span>
+                            	<img src="<%=request.getContextPath()%>/img/nowmoving2.jpg" class="img-responsive" />
                             </span>
                         </div>
                         <!-- 텍스트 영역 -->
-                        <div class="col-sm-12 col-xs-9">
-                        <span>
-                            <h4>제목</h4>
+                        <div class="movie-text">
+                        	<span>
+                            	<h4><span class="label label-warning">15</span>반도</h4>
                             </span>
-                          </div>
+                        </div>
                     </div>
                 </a>
             </div>
             <!-- 3개 -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="movie-picture">
                 <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
                 <a href="#" class="thumbnail">
                     <div class="row">
                         <!-- 이미지 영역 -->
-                        <div class="col-sm-12 col-xs-3">
+                        <div class="movie-image">
                         <span>
-                            <img src="../img/you3.jpg" width="260" height="195"/>
-                            </span>
+                            <img src="<%=request.getContextPath()%>/img/nowmoving3.jpg" class="img-responsive" />
+                        </span>
                         </div>
                         <!-- 텍스트 영역 -->
-                        <div class="col-sm-12 col-xs-9">
-                        <span>
-                            <h4>제목</h4>
+                        <div class="movie-text">
+                        	<span>
+                            	<h4><span class="label label-success">전체</span>알라딘</h4>
                             </span>
-                          </div>
+                        </div>
                     </div>
                 </a>
             </div>
             <!-- 4개 -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="movie-picture">
                 <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
                 <a href="#" class="thumbnail">
                     <div class="row">
                         <!-- 이미지 영역 -->
-                        <div class="col-sm-12 col-xs-3">
-                        <span>
-                            <img src="../img/you4.jpg" width="260" height="195"/>
+                        <div class="movie-image">
+                        	<span>
+                            	<img src="<%=request.getContextPath()%>/img/nowmoving4.jpg" class="img-responsive" />
                             </span>
                         </div>
                         <!-- 텍스트 영역 -->
-                        <div class="col-sm-12 col-xs-9">
-                        <span>
-                            <h4>제목</h4>
+                        <div class="movie-text">
+                        	<span>
+                            	<h4><span class="label label-primary">12</span>소년 아메드</h4>
                             </span>
-                          </div>
+                        </div>
                     </div>
                 </a>
             </div>
+            <!-- 5개 -->
+            <div class="movie-picture">
+                <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+                <a href="#" class="thumbnail">
+                    <div class="row">
+                        <!-- 이미지 영역 -->
+                        <div class="movie-image">
+                        	<span>
+                            	<img src="<%=request.getContextPath()%>/img/nowmoving5.jpg" class="img-responsive" />
+                            </span>
+                        </div>
+                        <!-- 텍스트 영역 -->
+                        <div class="movie-text">
+                        <span>
+                            <h4><span class="label label-warning">15</span>소년시절의 너</h4>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- 6개 -->
+            <div class="movie-picture">
+                <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+                <a href="#" class="thumbnail">
+                    <div class="row">
+                        <!-- 이미지 영역 -->
+                        <div class="movie-image">
+                        	<span>
+                            <img src="<%=request.getContextPath()%>/img/nowmoving6.jpg" class="img-responsive" />
+                            </span>
+                        </div>
+                        <!-- 텍스트 영역 -->
+                        <div class="movie-text">
+                        	<span>
+                            	<h4><span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동</h4>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- 7개 -->
+            <div class="movie-picture">
+                <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+                <a href="#" class="thumbnail">
+                    <div class="row">
+                        <!-- 이미지 영역 -->
+                        <div class="movie-image">
+                        <span>
+                            <img src="<%=request.getContextPath()%>/img/nowmoving7.jpg" class="img-responsive" />
+                            </span>
+                        </div>
+                        <!-- 텍스트 영역 -->
+                        <div class="movie-text">
+                        <span>
+                            <h4><span class="label label-danger">청불</span>존 윅-특별판</h4>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- 8개 -->
+            <div class="movie-picture">
+                <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+                <a href="#" class="thumbnail">
+                    <div class="row">
+                        <!-- 이미지 영역 -->
+                        <div class="movie-image">
+                        <span>
+                            <img src="<%=request.getContextPath()%>/img/nowmoving8.jpg" class="img-responsive" />
+                            </span>
+                        </div>
+                        <!-- 텍스트 영역 -->
+                        <div class="movie-text">
+                        <span>
+                            <h4><span class="label label-warning">15</span>다만 악에서 구하소서</h4>
+                            </span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </div>
+    <div class="icon-bar">
+  		<a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>" class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> 
+  		<a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>" class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a> 
+ 		 <a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>" class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a> 
+  		<a href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>" class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
+	</div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->
 <%@ include file="../_inc/footer.jsp"%>

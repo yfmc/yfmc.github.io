@@ -7,126 +7,165 @@ min-height:1000px;
 }
 
 li{
-
-list-style:none;
-
+  list-style:none;
 }
 
-.content1{
-
-margin-top:20px;
-margin-bottom:30px;
-
+.movie-search{
+	width:100%;
 }
 
- 
-
-.content1 ul{
-
-	width:80%;
-
-	margin:auto;
-
-	}
-
- 
-
-.content1 ul li{
-
-	margin-top:20px;
-
-	width:25%;
-
-	float:left;
-
+.movie-search h2{
 	text-align:center;
-
+	font-weight:bold;
+	margin-top:35px;
+	margin-bottom:50px;
+	font-size:36px;
 	
-
 }
 
- 
+.movie-search h2 span{
+	font-family:"Jua", sans-serif;
+}
+    
+table{
+  
+  background-color:#f7f2cb;
+  margin:auto;
+  width:80%;
+  height:300px;
+}
 
-.content1 ul li a{
+table th {
+	text-align:center;
+	width:30%;
+}
 
-	color:#222;
+table tr{
+	border-bottom:1px solid #fcfaeb;
+}
 
-	font-size:18px;
 
-	font-family:'Jua', sans-serif;
+table ul li{
+	float:left;
+	margin:0px;
+}
 
-	display:block;
 
+.search-button{
+	text-align:center;
 	margin:auto;
-
+	margin-top:50px;
 }
 
+button{
+	background:#e71a0f;
+	border:1px solid #ea5b50;
+	color: #eee;
+	font-weight:bold;
+	width:55px;
+	heigt:30px;
+}
+
+button:nth-child(2){
+	background:white;
+	color:#e71a0f;
+}    
+/*slidebar*/
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+/*사이드 바*/
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  margin-right:0px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right:calc(50% - 723px); /* right:calc(50% - social bar width/2) */
+  border : 2px solid #222;
+  border-radius : 10px;
+  
  
+}
 
-.content1:after{
+@media screen and (max-width:920px){
+.icon-bar {
+  display: none;
+  }
+} 
 
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 16px;
+  text-decoration: none; 
+  font-weight: bold;
+  margin:2px;
+  
+}
+
+
+.icon-bar a:hover {
+  background-color: #edb9c3;
+}
+
+.side-boxoffice {
+  background: white;
+}
+
+.side-moviesearch {
+  background: white; 
+}
+
+.side-movienews {
+  background: white; 
+}
+
+.side-statistics {
+  background: white;
+}
+
+/*사이드바 아이콘*/
+.fas, .far{
 	display:block;
-
-	content:' ';
-
-	clear:both;
-
-	float:none;
-
-}
-
-
-.form-search{
-
-      width:80%;
-
-      text-align:center;
-
-      margin-left:150px;
-
-      margin-top:50px;
-
-        
-
-}
-
-.form-search .checkbox{
-
-      width:20%;
-
-      font-size:20px;
-
-      color:#222;
-
-}
-
- 
-
-.search{
-
-      margin-top:180px;
-
-}
-
-.search h1{
-
-     text-align: center;
-
-    color:#222;
-
-}
-
-.search .input-group{
-
-     
-      width:30%;
-
-      margin: auto;
-
-      margin-bottom:100px;
-
-}
-
-.page-header{
-	border:0;
+	font-size:50px;
+	font-weight:800;
 }

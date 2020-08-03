@@ -241,12 +241,12 @@
 </div>
 
 <!-- side바 -->
->
+
 	<div class="icon-bar">
-  		<a href="#" class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> 
-  		<a href="#" class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a> 
- 		 <a href="#" class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a> 
-  		<a href="#" class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
+  		<a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>" class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> 
+  		<a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>" class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a> 
+ 		 <a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>" class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a> 
+  		<a href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>" class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
 	</div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->
 <%@ include file="../_inc/footer.jsp"%>
