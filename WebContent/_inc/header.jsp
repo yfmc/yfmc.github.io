@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    
     <!-- 필요CSS -->
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/HeaderFooterYo.css" />
     <!-- //필요CSS -->
@@ -24,7 +23,7 @@
     <div id="container">
         <div id="header">
         	<div class="filmlogo_header">
-        		<a href="<%=request.getContextPath()%>/index.jsp"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" /></a>
+        		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" href="../index.jsp" />
             </div>
             <div class="menu">
                 <ul class="mainnav">
@@ -46,11 +45,11 @@
                     </li>
                     <li class="nav"><a href="<%=request.getContextPath()%>/branch/01-branch.jsp" class="mains">극장</a></li>
                     <li class="nav">
-                        <a href="<%=request.getContextPath()%>/support/support_home.jsp" class="mains">고객센터</a>
+                        <a href="#" class="mains">고객센터</a>
                         <ul class="subnav">
-                            <li><a href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
-                            <li><a href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는질문</a></li>
-                            <li><a href="<%=request.getContextPath()%>/support/qna.jsp">1:1문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자주찾는질문</a></li>
+                            <li><a href="#">1:1문의</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -63,12 +62,3 @@
                 </ul>
             </div>
         </div>
-<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
-    <script type="text/javascript">
-        $(function(){
-            //.nav에 마우스가 올라가거나 빠져나오는 경우 호출되는 이벤트
-            $(".nav").hover(function(){
-                $(this).find(".subnav").slideToggle(50);
-            });
-        });
-</script>

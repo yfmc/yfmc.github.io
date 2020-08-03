@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_seats.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
+<title>좌석선택 < 예매 | Cinephile</title>
+
 <!-- content -->
 <div id="content">
 	<div class="booking_page">

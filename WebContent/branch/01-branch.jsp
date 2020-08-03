@@ -2,8 +2,10 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="/_inc/header.jsp"%>
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch2.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
+
+<title>극장정보 < 극장 | Cinephile</title>
 
 <!-- content -->
 <div id="content">
