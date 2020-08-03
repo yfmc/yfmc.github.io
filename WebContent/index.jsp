@@ -3,7 +3,7 @@
 <%@ include file="_inc/header.jsp"%>
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/index.css" />
-
+<title>Cinephile</title>
 
 <!-- content -->
 <div id="content">
@@ -80,4 +80,5 @@
 		</div>
 	</div>
 </div>
+<script ></script>
 <%@ include file="_inc/footer.jsp"%>

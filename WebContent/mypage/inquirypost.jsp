@@ -17,39 +17,70 @@
             </div>
             <div id="body">
                 <div class="inqpost">
-                    <table class="table table-bordered table-condensed">
-                        <tr>
-                            <td style="width:20px;text-align:center;">17</td>
-                            <td style="width:550px">회원 탈퇴는 어떤 절차로 진행되나요?</td>
-                            <td style="width:150px">2020-07-17</td>
-                        </tr>
-                    </table>
-                    <table class="table cont table-bordered ">
-                        <tr>
-                            <td style="padding:30px;">
-                                문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 <br/>
-                                문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 <br/>
-                                문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 <br/>
-                                문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 <br/>
-                                문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 <br/>
-                                문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 <br/>
+                    <table class="detail_content">
+                        <thead>
+                            <tr class="detail_title">
+                                <th style="width: 100px;">10</th>
+                                <th style="width: auto;">예매가 되지 않습니다.</th>
+                                <th style="width: 150px;">2020.07.20</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="detail_box">
+                            	<td colspan="4">
+                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
+                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
+                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
+                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
+                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
+                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
                                 
-                                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                <br/><br/><br/><br/><br/><br/>
                                 <hr />
                                안녕하세요 Cinephile입니다. 문의하신 내용에 대한 답변입니다.<br/><br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
+                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
+                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
+                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
+                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
+                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
+                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
           
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
+                            <tr class="page_move" align="left">
+                                <td colspan="4">                         
+                                        <span class="page_next">다음글</span>
+                                        <i class="fas fa-angle-up"></i>
+                                        <a href="#" class id="?">
+                                        <span>다음 글이 없습니다.</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="page_move" align="left">
+                                <td colspan="4">
+                                        <span class="page_prev">이전글</span>
+                                        <i class="fas fa-angle-down"></i>
+                                    	<a href="#" class id="?">
+                                        <span>결제가 되지 않습니다.</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/mypage/inquirylist.jsp'">목록으로</button>
-                    <button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/mypage/mypagemain.jsp'">메인으로</button>
+                    <button type="button" class="btn inqgo">목록으로</button>
+                    <button type="button" class="btn maingo">메인으로</button>
                 </div>
             </div>
         </div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        	$(document).on("click",".inqgo",function(){
+        		location.href="<%=request.getContextPath()%>/mypage/inquirylist.jsp";
+        	});
+        	$(document).on("click",".maingo",function(){
+        		location.href="<%=request.getContextPath()%>/mypage/mypagemain.jsp";
+        	});
+        });
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

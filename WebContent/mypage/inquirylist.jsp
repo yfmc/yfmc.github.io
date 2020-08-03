@@ -21,58 +21,84 @@
                 <div class="bodytop">
                     <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bullhorn"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 문의 내역입니다.</h3>
                 </div>
-                <div class="board">
-                    <table class="table table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                <th style="width:45px;text-align:center;">번호</th>
-                                <th style="width:550px">제목</th>
-                                <th style="width:150px">작성일</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="text-align:center;">20</td>
-                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
-                                <td>2020.07.20</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;">19</td>
-                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">환불은 어느 시점에 적용되나요?</a></td>
-                                <td>2020.07.19</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;">18</td>
-                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">등록되지 않은 영화관이 있습니다.</a></td>
-                                <td>2020.07.18</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;">17</td>
-                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">회원 탈퇴는 어떤 절차로 진행되나요?</a></td>
-                                <td>2020.07.17</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;">16</td>
-                                <td><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">사이트가 느립니다.</a></td>
-                                <td>2020.07.16</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr />
-                    <div class="text-center">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#" style="background:#a8a8a8;">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#">>></a></li>
-                        </ul>
-                        <div class="inqbutton">
-                    		<button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/support/qna.jsp'">1:1문의</button>
-                    	</div>
+                <div class="table_area">
+					<table class="table_faq_list">
+						<thead>
+							<tr>
+								<th style="width: 100px;">번호</th>
+								<th style="width: auto;">제목</th>
+								<th style="width: 150px;">등록일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>10</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.20</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.19</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.18</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.17</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.16</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.15</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.14</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td>2020.07.13</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="page">
+                    <div class="row">
+                        <div class="col">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#" style="background:#a8a8a8;">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">>></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+	            <div class="inqbutton">
+	                <button type="button" class="btn faqgo">1:1문의</button>
+	            </div>
             </div>
         </div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        	$(document).on("click",".faqgo",function(){
+        		location.href="<%=request.getContextPath()%>/support/qna.jsp";
+        	});
+        });
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

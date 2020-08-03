@@ -73,7 +73,7 @@
 }
 
 .oftentheater {
-    font-size: 10px;
+    font-size: 11px;
     position: relative;
     float: right;
     margin-top: -13px;
@@ -82,8 +82,8 @@
 
 
 .oftentheater td {
-    height: 22px;
-    width: 130px;
+    height: 28px;
+    width: 140px;
     border: 1px dashed #222;
     padding-left: 4px;
 }

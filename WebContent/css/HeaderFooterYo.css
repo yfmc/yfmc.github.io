@@ -56,14 +56,21 @@ ul,ol{
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
-
+.mainnav a{
+    width:auto;
+    margin: auto;
+    display:block;
+}
 .menu .nav {
     width: 25%;
     height: 20px;
     float: left;
     padding: 10px 0 10px 0;
     font-size: 25px;
+	position:relative;
 }
+
+
 
 .menu .mains {
     width:40%;
@@ -82,48 +89,44 @@ ul,ol{
 }
 
 .menu .subnav{
+    border-top:3px solid red;
     width:40%;
     font-size:20px;
     background-color: #f0f4f5;
-    margin:auto;
-    margin-top:-2px;
     font-family: 'Do Hyeon', sans-serif;
     font-family: 'Jua', sans-serif;
     z-index:100;
-    opacity:0;
-    visibility: hidden;
+    display: none;
     color:black;
-    position:relative;
-    top:2px;
-    margin-bottom:2px;
+    position:absolute;
+    left:90px;
+    top:47px;
 }
 
-.menu .subnav a{
-    width:auto;
-    margin: auto;
-    display:block;
-}
-.menu .subnav a:hover {
-    border-top: 3px solid red;
-    border-bottom: 3px solid red;
+.menu .subnav a:hover{
+    background-color: pink;
     text-decoration:none;
 }
-.mainnav>.nav:hover>.subnav{
-    opacity:1;
-    visibility:visible;
-    -webkit-transition:all 0.5s;
+
+.menu .subnav>li{
+    height:40px;
+    line-height: 40px;
 }
+
+
 
 .right_top {
     width: 250px;
     height: 15px;
+    
 }
 
 .right_top ul {
     text-align: center;
     position: absolute;
     right: -5px;
-    top: 10px;
+    top: 20px;
+    
 }
 
 .right_top li {
@@ -139,6 +142,10 @@ ul,ol{
 }
 
 .right_top a {
+    text-decoration: none;
+    color: black;
+}
+.right_top a:hover {
     text-decoration: none;
     color: black;
 }

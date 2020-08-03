@@ -38,7 +38,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><a href="#" onclick="openth()">자주가는 영화관 설정하기</a></td>
+                            <td><a href="#" class="often">자주가는 영화관 설정하기</a></td>
                         </tr>
                     </table>
                 </div>
@@ -50,25 +50,25 @@
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
                                 <img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" />
+                                <h5 style="font-weight:bold">강철비2: 정상회담</h5>
+                                <h5 style="font-size:12px;">예매:2020-07-31</h5>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
+                                <img src="<%=request.getContextPath()%>/img/mypage_movie2.jpg" />
                                 <h5 style="font-weight:bold">반도</h5>
                                 <h5 style="font-size:12px;">예매:2020-07-18</h5>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
-                                <img src="<%=request.getContextPath()%>/img/mypage_movie2.jpg" />
-                                <h5 style="font-weight:bold">스파이더맨:파프롬홈</h5>
-                                <h5 style="font-size:12px;">예매:2019-07-04</h5>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
                                 <img src="<%=request.getContextPath()%>/img/mypage_movie3.jpg" />
-                                <h5 style="font-weight:bold">어벤져스:엔드게임</h5>
-                                <h5 style="font-size:12px;">예매:2019-04-18</h5>
+                                <h5 style="font-weight:bold">스파이더맨: 파 프롬 홈</h5>
+                                <h5 style="font-size:12px;">예매:2019-07-17</h5>
                             </a>
                         </div>
-                        <button type="button" class="btn btn-default" onclick="location.href='./bookinglist.jsp'">더보기</button>
+                        <button type="button" class="btn btn-default bt1" >더보기</button>
                     </div>
                 </div>
                 <div class="bodybottom">
@@ -79,29 +79,37 @@
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
                                 <img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" />
-                                <h5>반도</h5>
+                                <h5>강철비2: 정상회담</h5>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
                                 <img src="../img/mypage_movie2.jpg" />
-                                <h5>스파이더맨:파프롬홈</h5>
+                                <h5>반도</h5>
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
                                 <img src="<%=request.getContextPath()%>/img/mypage_movie3.jpg" />
-                                <h5>어벤져스:엔드게임</h5>
+                                <h5>스파이더맨: 파 프롬 홈</h5>
                             </a>
                         </div>
-                        <button type="button" class="btn btn-default" onclick="location.href='./choicelist.jsp'">더보기</button>
+                        <button type="button" class="btn btn-default bt2" >더보기</button>
                     </div>
                 </div>
             </div>
         </div>
         <script type="text/javaScript">
-			function openth(){
-				window.open('./oftentheater.jsp','','width=600,height=650,scrollbars=no,toolbars=no,menubar=no,status=no,location=no');
-			}
+			$(function(){
+				$(document).on("click",".often",function(){
+					window.open('./oftentheater.jsp','','width=600,height=650,scrollbars=no,toolbars=no,menubar=no,status=no,location=no');
+				});
+				$(document).on("click",".bt1",function(){
+					location.href='./bookinglist.jsp';
+				});
+				$(document).on("click",".bt2",function(){
+					location.href='./choicelist.jsp';
+				});
+			});
 		</script>
 <%@ include file="../_inc/footer.jsp"%>

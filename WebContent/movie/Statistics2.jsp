@@ -2,7 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Statistics2.css?time=<%=System.currentTimeMillis()%>">.css">
-
+<title>통계2 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
         <div class="content">

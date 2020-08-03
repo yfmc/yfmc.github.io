@@ -21,8 +21,16 @@
                     <h1>회원 탈퇴가 정상적으로 처리되었습니다.</h1>
                     <br />
                     <h4>그동안 Cinephile을 이용해주셔서 감사합니다.</h4>
-                    <input type="button" value="메인으로 가기" onclick="location.href='<%=request.getContextPath()%>/index.jsp'" />
+                    <input type="button" class="indexgo" value="메인으로 가기" />
                 </div>
             </div>
         </div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        	$(document).on("click",".indexgo",function(){
+        		location.href="<%=request.getContextPath()%>/index.jsp";
+        	});
+        });
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

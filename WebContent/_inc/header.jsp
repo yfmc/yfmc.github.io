@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>Hello Bootstrap</title>
+    
     <!-- 필요CSS -->
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/HeaderFooterYo.css" />
     <!-- //필요CSS -->
@@ -63,3 +63,12 @@
                 </ul>
             </div>
         </div>
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+    <script type="text/javascript">
+        $(function(){
+            //.nav에 마우스가 올라가거나 빠져나오는 경우 호출되는 이벤트
+            $(".nav").hover(function(){
+                $(this).find(".subnav").slideToggle(50);
+            });
+        });
+</script>

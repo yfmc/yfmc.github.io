@@ -4,6 +4,7 @@
 <%@include file="../_inc/header.jsp" %>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bookinglist.css">
+<link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
         <div id="content" class="clear">
             <div class="sidebar">
                 <div class="sidemenu">
@@ -18,7 +19,7 @@
             </div>
             <div id="body">
                 <div class="bodytop">
-                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 예매내역입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 예매내역입니다.</h3>
                 </div>
                 <div class="bodylist">
                     <ul class="listarea">
@@ -27,15 +28,12 @@
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">강철비2: 정상회담(Steel Rain2: Summit, 2020)</a></h3>
                             </span>
                             <span class="bookdate">
-                                <h4>예매일 : 2020년-07월-31일</h4>
+                                <h4>관람일시 : 2020-07-31(금) 15:15~</h4>
                             </span>
                             <span class="theaterpeople">
                                 <h4>CGV 목동 2명 (H7,H8)</h4>
                             </span>
-                            <span class="starttime">
-                                15:15 ~
-                            </span>
-                            <input type="button" onclick="cancelinq()" value="예매취소" class="btn" />
+                            <input type="button" value="예매취소" class="btn cancelbtn" />
                         </li>
                     </ul>
                     <ul class="listarea">
@@ -44,12 +42,12 @@
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">반도(Peninsula, 2020)</a></h3>
                             </span>
                             <span class="bookdate">
-                                <h4>예매일 : 2019년-07월-18일</h4>
+                                <h4>관람일시 : 2020-07-18(토) 18:00~</h4>
                             </span>
                             <span class="theaterpeople">
                                 <h4>CGV 강남 4명 (F7,F8,F9,F10)</h4>
                             </span>
-                            <input type="button" value="예매취소" class="btn"/>
+                            <input type="button" value="예매취소" class="btn cancelbtn"/>
                         </li>
                     </ul>
                     <ul class="listarea">
@@ -58,12 +56,12 @@
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">스파이더맨: 파 프롬 홈(Spider-man: Far From Home, 2019)</a></h3>
                             </span>
                             <span class="bookdate">
-                                <h4>예매일 : 2019년-07월-17일</h4>
+                                <h4>관람일시 : 2019-07-17(수) 15:00~</h4>
                             </span>
                             <span class="theaterpeople">
                                 <h4>롯데시네마 영등포 3명 (D5,D6,D7)</h4>
                             </span>
-                            <input type="button" value="취소불가" class="btn" disabled />
+                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
                         </li>
                     </ul>
                     <ul class="listarea">
@@ -72,12 +70,12 @@
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">어벤져스: 엔드게임 (Avengers: Endgame, 2019)</a></h3>
                             </span>
                             <span class="bookdate">
-                                <h4>예매일 : 2020년-04월-18일</h4>
+                                <h4>관람일시 : 2019-04-18(목) 18:15~</h4>
                             </span>
                             <span class="theaterpeople">
                                 <h4>CGV 강남 3명 (D6,D7,H8)</h4>
                             </span>
-                            <input type="button" onclick="cancelinq()" value="취소불가" class="btn" disabled />
+                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
                         </li>
                     </ul>
                     <ul class="listarea">
@@ -86,12 +84,12 @@
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">극한직업 (Extreme Job, 2018)</a></h3>
                             </span>
                             <span class="bookdate">
-                                <h4>예매일 : 2019년-01월-25일</h4>
+                                <h4>관람일시 : 2019-01-25(금) 18:00~</h4>
                             </span>
                             <span class="theaterpeople">
                                 <h4>CGV 목동 3명 (B10,B11,B12)</h4>
                             </span>
-                            <input type="button" onclick="cancelinq()" value="취소불가" class="btn" disabled />
+                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
                         </li>
                     </ul>
                 </div>
@@ -111,12 +109,24 @@
                 </div>
             </div>
         </div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script type="text/javascript">
-        function cancelinq(){
-        	var result=confirm("정말로 예매취소하시겠습니까?");
-        	if(result){
-        		alert("예매가 취소되었습니다.");
-        	}
-        }
+        $(function(){
+        	$(document).on("click",".cancelbtn",function(){
+        		swal({
+        			title:"확인",
+        			text:"정말 예매를 취소하시겠습니까?",
+        			type:"question",
+        			confirmButtonText:"Yes",
+        			showCancelButton:true,
+        			cancelButtonText:"No",
+        		}).then(function(result){
+        			if(result.value){
+        				swal("예매취소","성공적으로 예매가 취소되었습니다.","success");
+        			}
+        		});
+        	});
+        });
         </script>
 <%@ include file="../_inc/footer.jsp"%>

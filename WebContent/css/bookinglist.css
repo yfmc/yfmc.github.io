@@ -11,7 +11,6 @@
     width: 900px;
     min-height: 1300px;
     float:left;
-    font-family: 'Jua', sans-serif;
 }
 
 .far{
@@ -81,9 +80,13 @@
     padding-top: 1px;
     position: relative;
     padding-left:20px;
-    border:2.5px solid #828282;
-    border-radius:5px;
-	background-color:#fcfcfc;
+    border:1px solid #828282;
+    border-right:0;
+    border-left:0;
+}
+
+.listarea:hover{
+	background-color:#f0f0f0;
 }
 
 .listarea li img {
@@ -115,15 +118,15 @@
     font-size:15px;
 }
 
+.starttime h4{
+	font-size:15px;
+}
+
 .theaterpeople h4{
 	color:#4a89ff;
 	font-size:15px;
 }
 
-.starttime{
-	font-size:16px;
-	line-height:1.5;
-}
 .listarea .btn{   
 	float: right;
     position: absolute;

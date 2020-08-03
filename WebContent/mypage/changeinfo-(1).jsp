@@ -19,18 +19,29 @@
             <div id="body">
                 <div class="reqmsg">
                 <i class="fas fa-key"></i>
-                    <p style="font-family: 'Jua', sans-serif;">회원정보를 수정하기 전 본인 확인이 필요합니다.<br />비밀번호를 입력해주세요.</p>
+                    <p>회원정보를 수정하기 전 본인 확인이 필요합니다.<br />비밀번호를 입력해주세요.</p>
                     <br />
                     <form action="" method="POST" class="form-inline">
                         <div class="form-group">
                             <input type="password" name="password" id="password" placeholder="  비밀번호를 입력해주세요">
                         </div>
-                        &nbsp;&nbsp;<button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/mypage/changeinfo-(2).jsp'">입력</button>
+                        &nbsp;&nbsp;<button type="button" class="btn change_go_btn">입력</button>
                     </form>
                 </div>
                 <div class="mainbutton">
-                	<button type="button" class="btn" onclick="location.href='<%=request.getContextPath()%>/mypage/mypagemain.jsp'">메인으로</button>
+                	<button type="button" class="btn main_go_btn">메인으로</button>
                 </div>
             </div>
         </div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+        	$(function(){
+        		$(document).on("click",".change_go_btn",function(){
+        			location.href="<%=request.getContextPath()%>/mypage/changeinfo-(2).jsp";
+        		});
+        		$(document).on("click",".main_go_btn",function(){
+        			location.href="<%=request.getContextPath()%>/mypage/mypagemain.jsp";
+        		});
+        	});
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

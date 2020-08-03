@@ -61,12 +61,11 @@
 }
 
 .sidemenu ul li a:hover {
-    	background-color: #eee;
-    }
+    background-color: #eee;
+}
 
 
 .bodytop {
-    border-bottom: 1px dotted #222;
     height: 70px;
     width: auto;
     padding: 8px;
@@ -78,23 +77,50 @@
     position: absolute;
 }
 
-.board{
-    margin-left:80px;
-    margin-top:50px;
+.table_area {
+    border-top: 1px solid #555;
+    text-align: center;
 }
 
-.board thead{
-	background-color:#6e6e6e;
-	color:white;
+table {
+    width: 100%;
+    line-height: 80%;
+    margin-bottom: 40px;
+}
+
+thead {
+    display: table-header-group;
+    border-bottom: 2px solid #eee;
+}
+
+th {
+    height: 35px;
+    text-align: center;
+    background-color: #f2f4f5;
+    font-size: 16px;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.pagination {
+    margin-top: 8px;
+    margin-left: 341px;
 }
 
 .inqbutton{
 	float:right;
-	padding-top:15px;
 }
+
 .inqbutton .btn{
-	width:100px;
-	height:40px;
+	position:relative;
+	top:-57px;
+	right:33px;
 	background-color:#6e6e6e;
 	color:white;
 }

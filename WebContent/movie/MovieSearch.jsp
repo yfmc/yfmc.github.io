@@ -4,6 +4,7 @@
 
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieSearch.css?time=<%=System.currentTimeMillis()%>">
+<title>영화검색 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 
 <div class="contentHeight">

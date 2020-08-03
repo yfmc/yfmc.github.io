@@ -39,3 +39,6 @@
     	padding: 10px 20px;
     }
     
+    .sidebar > li:nth-child(4) > a {
+    	border-bottom: 1px solid #ddd;
+    }

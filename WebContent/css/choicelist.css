@@ -11,7 +11,6 @@
     width: 900px;
     min-height: 1300px;
     float:left;
-    font-family: 'Jua', sans-serif;
 }
 
 .far{
@@ -81,9 +80,13 @@
     padding-top: 1px;
     position: relative;
     padding-left:20px;
-	border:2.5px solid #828282;
-    border-radius:5px;
-	background-color:#fcfcfc;
+	border:1px solid #828282;
+    border-right:0;
+    border-left:0;
+}
+
+.listarea:hover{
+	background-color:#f0f0f0;
 }
 
 .listarea li img {
@@ -120,17 +123,17 @@
 	font-size:14px;
 }
 
-.listarea .btn {
+.listarea .remove {
     float: right;
     position: absolute;
     right: 15px;
     top: 10px;
     width: 32px;
     height: 25px;
-    line-height:0.75;
+    line-height:0;
     font-size: 25px;
-    border: 1px solid #8f8d8d;
-    padding-left:9.5px;
+    padding-left:12px;
+    padding-bottom:10px;
 }
 
 .listarea .book{

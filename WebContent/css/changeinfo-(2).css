@@ -13,6 +13,11 @@
     float:left;
 }
 
+.instruction{
+	position:relative;
+	right:30px;
+}
+
 .bodytop{
     text-align:center;
 }
@@ -68,8 +73,16 @@
     width:100%;
     padding-left:140px;
     padding-top:20px;
+    font-size:14px;
 }
 
+.form-control{
+	display:inline;
+}
+
+.certinum{
+	display:none;
+}
 
 .twobutton{
     position:relative;

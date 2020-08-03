@@ -2,7 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieContent.css?time=<%=System.currentTimeMillis()%>">
-
+<title>영화상세페이지 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <!-- 내용 부분 시작 -->
     <div class="container">

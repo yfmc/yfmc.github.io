@@ -4,7 +4,7 @@
 <%@include file="../_inc/header.jsp" %>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/choicelist.css">
-
+<link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
         <div id="content" class="clear">
             <div class="sidebar">
                 <div class="sidemenu">
@@ -19,7 +19,7 @@
             </div>
             <div id="body">
                 <div class="bodytop">
-                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-bookmark"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님이 좋아한 영화목록입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-bookmark"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님이 좋아한 영화목록입니다.</h3>
                 </div>
                 <div class="bodylist">
                     <ul class="listarea">
@@ -33,7 +33,7 @@
                             <span class="genre">
                                 <h4>장르 : 드라마, 액션</h4>
                             </span>
-                            <input type="button" onclick="removeinq()" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn remove" />
                             <input type="button" value="예매하기" class="btn book"/>
                         </li>
                     </ul>
@@ -48,7 +48,7 @@
                             <span class="genre">
                                 <h4>장르 : 액션, 드라마</h4>
                             </span>
-                            <input type="button" onclick="removeinq()" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn remove" />
                             <input type="button" value="예매하기" class="btn book"/>
                         </li>
                     </ul>
@@ -64,7 +64,7 @@
                             <span class="genre">
                                 <h4>장르 : 액션, 모험, 코미디</h4>
                             </span>
-                            <input type="button" onclick="removeinq()" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn remove" />
                             <input type="button" value="예매불가" class="btn book" disabled/>
                         </li>
                     </ul>
@@ -80,7 +80,7 @@
                             <span class="genre">
                                 <h4>장르 : 액션, SF</h4>
                             </span>
-                            <input type="button" onclick="removeinq()" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn remove" />
                             <input type="button" value="예매불가" class="btn book" disabled/>
                         </li>
                     </ul>
@@ -96,7 +96,7 @@
                             <span class="genre">
                                 <h4>장르 : 코미디</h4>
                             </span>
-                            <input type="button" onclick="removeinq()" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn remove" />
                             <input type="button" value="예매불가" class="btn book" disabled/>
                         </li>
                     </ul>
@@ -117,9 +117,27 @@
                 </div>
             </div>
         </div>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script type="text/javascript">
-        	function removeinq(){
-        		var result=confirm("이 영화를 좋아한 영화 목록에서 제외하시겠습니까?");
-        	}
+        $(function(){
+        	$(document).on("click",".remove",function(){
+        		swal({
+        			title:"확인",
+        			text:"정말 이 영화를 좋아한 영화 목록에서 제외하시겠습니까?",
+        			type:"question",
+        			confirmButtonText:"Yes",
+        			showCancelButton:true,
+        			cancelButtonText:"No",
+        		}).then(function(result){
+        			if(result.value){
+        				swal("삭제","좋아한 영화 목록에서 제외되었습니다.","success");
+        			}
+        		});
+        	});
+        	$(document).on("click",".book",function(){
+        		location.href="<%=request.getContextPath()%>/booking/01-booking_time.jsp";
+        	});
+        });
         </script>
 <%@ include file="../_inc/footer.jsp"%>

@@ -2,7 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieSearchResult.css?time=<%=System.currentTimeMillis()%>">
-
+<title>영화검색결과 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
         <div class="content">
@@ -77,6 +77,7 @@
             <div class="search-result">
             <span>
             	<h4>"OOO"(으)로 총 n개의 검색결과가 있습니다.</h4>
+            	<hr/>
             </span>
             </div>
             <!-- 검색결과 보여주기 -->
