@@ -5,8 +5,6 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
-<title>상영시간표 < 예매 | Cinephile</title>
-
 <!-- content -->
 <div id="content">
 	<!-- 극장 선택 테이블 -->
