@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_seats.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
+<title>좌석선택 < 예매 | Cinephile</title>
+
 <!-- content -->
 <div id="content">
 	<div class="booking_page">
@@ -38,25 +40,25 @@
 					<li>
 						<div class="sort_ppl">성인 10,000원</div>
 						<div class="choose_num clear">
-    						<span class="choose minus"><i class="fas fa-minus"></i></span>
-    						<span class="choose num">2</span>
-    						<span class="choose plus"><i class="fas fa-plus"></i></span>
+    						<span id="minus0" class="choose minus"><i class="fas fa-minus"></i></span>
+                            <span id="count0" class="choose num">0</span>
+                            <span id="plus0" class="choose plus"><i class="fas fa-plus"></i></span>
     					</div>
 					</li>
 					<li>
 						<div class="sort_ppl">청소년 7,000원</div>
 						<div class="choose_num clear">
-    						<span class="choose minus"><i class="fas fa-minus"></i></span>
-    						<span class="choose num">0</span>
-    						<span class="choose plus"><i class="fas fa-plus"></i></span>
+    						<span id="minus1" class="choose minus"><i class="fas fa-minus"></i></span>
+                            <span id="count1" class="choose num">0</span>
+                            <span id="plus1" class="choose plus"><i class="fas fa-plus"></i></span>
     					</div>
 					</li>
 					<li>
 						<div class="sort_ppl">장애인 5,000원</div>
 						<div class="choose_num clear">
-    						<span class="choose minus"><i class="fas fa-minus"></i></span>
-    						<span class="choose num">0</span>
-    						<span class="choose plus"><i class="fas fa-plus"></i></span>
+    						<span id="minus2" class="choose minus"><i class="fas fa-minus"></i></span>
+                            <span id="count2" class="choose num">0</span>
+                            <span id="plus2" class="choose plus"><i class="fas fa-plus"></i></span>
     					</div>
 					</li>
 				</ul>
@@ -64,6 +66,7 @@
 				<!-- 안내 사항 부분 -->
 				<div class="booking_notice">
 					- 인원은 최대 8명 선택 가능합니다.<br />
+					- 단체/대관 문의는 고객센터로 주시기 바랍니다.<br />
 					- 청소년 요금은 만 4세 이상 ~ 만 18세 미만의 청소년에 한해 적용됩니다.
 				</div>
 				<!-- float 마감제 -->
@@ -434,6 +437,7 @@
 					</div>
 					<!-- 총 금액 안내 -->
 					<div class="seats_price">
+						<h4>선택좌석 : I9, I10</h4>
 						<h3>총 금액 : 20,000원</h3>
 					</div>
 					<!-- 결제하기 버튼 -->
@@ -450,6 +454,11 @@
 		<div class="clear"></div>
 	</div>
 </div>
+
+<!-- jQuery -->
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<!-- js 파일 적용 -->
+<script type="text/javascript" src="bookingppl.js"></script>
 
 <!-- Javascript -->
 <script type="text/javascript">

@@ -25,6 +25,7 @@
     border-bottom: 1px solid black;
     padding-top: 10px;
     margin-top: 30px;
+    background-color: #4d4d4d;
 }
 
 /* 지역명 글씨 */
@@ -40,7 +41,8 @@
 .provincial li a {
     display: block;
     font-size: 20px;
-    color: black;
+    color: white;
+    font-weight: bold;
 }
 
 .provincial li:nth-child(10) {
@@ -59,15 +61,14 @@
 
 /* 지역별 지점 선택 영역 */
 .branch_list {
-    width: 95%;
-    min-height: 500px;
-    margin: auto;
+    height: 650px;
     background-color: #eee;
+    padding: 10px;
 }
 
 .branch_list > ul {
     display: block;
-    padding: 30px 0 0 0;
+    padding: 15px 0 0 0;
     margin: 0;
 }
 
@@ -75,26 +76,49 @@
 .branch_list li {
     display: block;
     float: left;
-    width: 250px;
+    width: 220px;
     height: 40px;
     border-right: 1px solid black;
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.branch_list li:nth-child(5n) {
+	border-right: none;
+}
+
+.branch_list a {
+	color: black;
 }
 
 .branch_list a:hover {
     text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+.branch_list a:visited, .branch_list a:active, .branch_list a:link {
+	text-decoration: none;
+	color: black;
 }
 
 /* 각 지역 탭 영역 */
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
+/* "지점 상제 정보" */
+.branch_infottl {
+	text-align: center;
+	font-weight: bold;
+}
+
 /* 극장 상세 정보 박스 전체 */
 .branch_info {
     width: 80%;
     margin: auto;
     background-color: #eee;
+    border: 1px solid #4d4d4d;
+    margin-top: 20px;
 }
 
 /* 상세 정보 박스 head 영역 */
@@ -105,11 +129,14 @@
 
 .branch_head > button {
 	font-size: 15px;
+	margin-left: 10px;
+	margin-bottom: 15px;
 }
 
 /* 지점명 */
 .branch_name {
     font-weight: bold;
+    padding-left: 15px;
 }
 
 /* 상세 정보 박스 body 영역 */
@@ -128,13 +155,6 @@
 	float: right;
 }
 
-.clear:after {
-	content: '';
-	display: block;
-	float: none;
-	clear: both;
-}
-
 .info_img img {
     display: block;
     margin: auto;
@@ -145,11 +165,16 @@
     margin-left: 15px;
 }
 
+.rooms, .seats {
+	font-size: 13px;
+}
+
 /* 상세 정보 박스 tail 영역 */
 /* 안내 팝업 영역 */
 .branch_tail {
 	border: 0;
 	padding-top: 10px;
+	padding-bottom: 10px;
 
 }
 
@@ -170,6 +195,11 @@
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 /* 상영시간표 영역 */
+
+.timetable > h1 {
+	font-weight: bold;
+}
+
 .table_head {
     background-color:#eee;
 }
@@ -232,4 +262,12 @@
 
 .room_no {
     font-size: 11px;
+}
+
+/* float 마감제 */
+.clear {
+	content: '';
+	display: block;
+	float: none;
+	clear: both;
 }

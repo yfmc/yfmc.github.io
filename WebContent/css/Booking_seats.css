@@ -212,7 +212,7 @@
 
 /* 좌석 종류 안내 */
 .seats_sort {
-	width: 600px;
+	width: 520px;
 	margin-left: 30px;
 	margin-top: 60px;
 	float:left;
@@ -292,14 +292,19 @@
 
 /* 총 금액 안내 */
 .seats_price {
-	width: 350px;
+	width: 430px;
 	height: 130px;
 	float:left;
 }
 
+.seats_price > h4 {
+	margin-top: 20px;
+	text-align: center;
+	color: #fff;
+}
+
 .seats_price > h3 {
 	text-align: center;
-	line-height: 90px;
 	color: #fff;
 }
 

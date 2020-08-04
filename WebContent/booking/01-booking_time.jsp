@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_time.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
+<title>상영선택 < 예매 | Cinephile</title>
+
 <!-- content -->
 <div id="content">
 	<div class="booking_page">
@@ -125,16 +127,44 @@
 					
 				</ul>
 			</div>
-			<!-- 다음 단계 버튼 -->
-			<div class="go_to_next">
-				<a href="<%=request.getContextPath()%>/booking/02-booking_seats.jsp"><i class="fas fa-hand-point-right"></i><br />좌석선택</a>
-			</div>
-			<!-- float 마감제 -->
-			<div class="clear"></div>
-		</div>
-		
-		<!-- float 마감제 -->
-		<div class="clear"></div>
-	</div>	
-</div>	
+            <!-- 다음 단계 버튼 -->
+            <div class="go_to_next" id="next-btn">
+                <a href=""><i class="fas fa-hand-point-right"></i><br />좌석선택</a>
+            </div>
+            <!-- 로그인 modal 창 -->
+            <div class="modal" id="modal-login">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- head -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">로그인</h4>
+                    </div>
+                    <!-- body -->
+                    <div class="modal-body">로그인하셔야 예매가 가능합니다
+                        <div class="form-group" style="margin-top: 10px">
+                            <label for="user_id">아이디</label>
+                            <input type="text" name="user_id" id="user_id" class="form-control" />
+                            <label for="user_pw">비밀번호</label>
+                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
+                        </div>
+                        <button type="button" id="login-btn" class="btn btn-primary">로그인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- float 마감제 -->
+            <div class="clear"></div>
+        </div>
+
+        <!-- float 마감제 -->
+        <div class="clear"></div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<!-- js 파일 적용 -->
+<script type="text/javascript" src="loginmodal.js"></script>
+
 <%@ include file="/_inc/footer.jsp"%>

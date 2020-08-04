@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
+<title>극장정보 < 극장 | Cinephile</title>
+
 <!-- content -->
 <div id="content">
 	<!-- 극장 선택 테이블 -->
@@ -33,7 +35,7 @@
 				<li><a href="#">메가박스 송파파크하비오</a></li>
 				<li><a href="#">메가박스 코엑스</a></li>
 				<li><a href="#">CGV 압구정</a></li>
-				<li><a href="#">CGV 등촌</a></li>
+				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
 				<li><a href="#">메가박스 군자</a></li>
 				<li><a href="#">롯데시네마 신도림</a></li>
 				<li><a href="#">롯데시네마 서울대입구</a></li>
@@ -50,16 +52,69 @@
 				<li><a href="#">CGV 왕십리</a></li>
 				<li><a href="#">CGV 성신여대입구</a></li>
 				<li><a href="#">롯데시네마 청량리</a></li>
+				<li><a href="#">CGV 강남</a></li>
+				<li><a href="#">롯데시네마 영등포</a></li>
+				<li><a href="#">메가박스 송파파크하비오</a></li>
+				<li><a href="#">메가박스 코엑스</a></li>
+				<li><a href="#">CGV 압구정</a></li>
+				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
+				<li><a href="#">메가박스 군자</a></li>
+				<li><a href="#">롯데시네마 신도림</a></li>
+				<li><a href="#">롯데시네마 서울대입구</a></li>
+				<li><a href="#">CGV 하계</a></li>
+				<li><a href="#">CGV 건대입구</a></li>
+				<li><a href="#">메가박스 창동</a></li>
+				<li><a href="#">롯데시네마 강동</a></li>
+				<li><a href="#">롯데시네마 도곡</a></li>
+				<li><a href="#">메가박스 아트나인</a></li>
+				<li><a href="#">CGV 홍대</a></li>
+				<li><a href="#">CGV 신촌아트레온</a></li>
+				<li><a href="#">롯데시네마 홍대입구</a></li>
+				<li><a href="#">메가박스 신촌</a></li>
+				<li><a href="#">CGV 왕십리</a></li>
+				<li><a href="#">CGV 성신여대입구</a></li>
+				<li><a href="#">롯데시네마 청량리</a></li>
+				<li><a href="#">CGV 강남</a></li>
+				<li><a href="#">롯데시네마 영등포</a></li>
+				<li><a href="#">메가박스 송파파크하비오</a></li>
+				<li><a href="#">메가박스 코엑스</a></li>
+				<li><a href="#">CGV 압구정</a></li>
+				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
+				<li><a href="#">메가박스 군자</a></li>
+				<li><a href="#">롯데시네마 신도림</a></li>
+				<li><a href="#">롯데시네마 서울대입구</a></li>
+				<li><a href="#">CGV 하계</a></li>
+				<li><a href="#">CGV 건대입구</a></li>
+				<li><a href="#">메가박스 창동</a></li>
+				<li><a href="#">롯데시네마 강동</a></li>
+				<li><a href="#">롯데시네마 도곡</a></li>
+				<li><a href="#">메가박스 아트나인</a></li>
+				<li><a href="#">CGV 홍대</a></li>
+				<li><a href="#">CGV 신촌아트레온</a></li>
+				<li><a href="#">롯데시네마 홍대입구</a></li>
+				<li><a href="#">메가박스 신촌</a></li>
+				<li><a href="#">CGV 왕십리</a></li>
+				<li><a href="#">CGV 성신여대입구</a></li>
+				<li><a href="#">롯데시네마 청량리</a></li>
+				<li><a href="#">CGV 신촌아트레온</a></li>
+				<li><a href="#">롯데시네마 홍대입구</a></li>
+				<li><a href="#">메가박스 신촌</a></li>
+				<li><a href="#">CGV 왕십리</a></li>
+				<li><a href="#">CGV 성신여대입구</a></li>
+				<li><a href="#">롯데시네마 청량리</a></li>
 			</ul>
 		</div>
+		<!-- float 마감제 -->
+		<div class="clear"></div>
 	</div>
-	
+	<hr />
+	<h1 class="branch_infottl">지점 상세 정보</h1>
 	<!-- 극장 상세 정보 -->
 	<div class="branch_info">
 		<!-- 극장 상세 정보 head -->
 		<div class="branch_head">
 			<h2 class="branch_name">CGV 강남</h2>
-			<button onclick="bookmarked()"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
+			<button class="btn btn-default" onclick="bookmarked()"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
 		</div>
 		<script type="text/javascript">
 			function bookmarked() {
@@ -67,7 +122,7 @@
 			}
 		</script>
 		<!-- 극장 상세 정보 body -->
-		<div class="branch_body clear">
+		<div class="branch_body">
 			<!-- 텍스트 정보 -->
 			<div class="info_text">
 				<div class="info_detail">
@@ -80,12 +135,13 @@
 				<img src="http://img.cgv.co.kr/R2014/images/title/h1_cgv.png" />
 			</div>
 		</div>
-
+		<!-- float 마감제 -->
+		<div class="clear"></div>
 
 		<!-- 극장 상세 정보 tail -->
 		<div class="branch_tail">
 			<!-- 대중교통안내 button -->
-			<div class="subway topop" data-toggle="modal" data-target="#modal_subway">
+			<div class="btn btn-info subway topop" data-toggle="modal" data-target="#modal_subway">
 				<i class="fas fa-subway"></i> 대중교통안내
 			</div>
 			<!-- 대중교통안내 modal -->
@@ -109,7 +165,7 @@
 			</div>
 
 			<!-- 주차안내 button -->
-			<div class="car topop" data-toggle="modal" data-target="#modal_car">
+			<div class="btn btn-info car topop" data-toggle="modal" data-target="#modal_car">
 				<i class="fas fa-car"></i> 주차안내
 			</div>
 			<!-- 주차안내 modal -->
@@ -134,7 +190,7 @@
 
 
 			<!-- 지도보기 button -->
-			<div class="map topop" data-toggle="modal" data-target="#modal_map">
+			<div class="btn btn-success map topop" data-toggle="modal" data-target="#modal_map">
 				<i class="fas fa-map-marked-alt"></i> 지도보기
 			</div>
 			<!-- 지도보기 modal -->
@@ -180,7 +236,7 @@
 			<!-- 관람가 및 요금 안내 button -->
 			<div class="table_info" data-toggle="modal" data-target="#modal_table">
 				<h4>
-					<a href="#" class="btn"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</a>
+					<button class="btn btn-default"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</a>
 				</h4>
 			</div>
 
