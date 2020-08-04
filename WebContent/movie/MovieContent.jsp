@@ -3,39 +3,40 @@
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieContent.css?time=<%=System.currentTimeMillis()%>">
 <title>영화상세페이지 | Cinephile</title>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <!-- 내용 부분 시작 -->
     <div class="container">
-    <div class="movie-poster">
+    <!-- 영화 포스터 시작 -->
+    <div class="movie-poster-etc">
+    	<div class="movie-poster">
    		    <span>
-            	<img src="<%=request.getContextPath()%>/img/you.jpeg" alt="영화포스터" class="img-rounded"/>
+            	<img src="<%=request.getContextPath()%>/img/nowmoving2.jpg" alt="영화포스터" class="img-rounded"/>
             </span>
-            <div class="movie-totalExplain">
-            <div class="movie-explain">
-                <span>제목</span>
-                <span><input class="btn btn-danger" type="submit" value="예매하기"></span>
-                <span>감독<br></span>
-                <span>배우<br></span>
-                <span>장르<br></span>
-                <span>기본<br></span>
-                <span>개봉일<br></span>
-            </div>
-            <!--좋아요, 관람객수, 평점  -->
-            <div class="movie-etc">
-            <input class="btn btn-success" type="submit" value="좋아요">
-            <span>500명</span>
-            <span>누적관람객 수 : 15000000명</span>
-            <span>관람객 평점</span>
-                <div class="starRev">
+    	</div>
+        <div class="movie-etc1">
+        	<div class="box-margin" style="height:20px;"></div>
+        	<h3><span>반도</span><button type="button" class="btn btn-danger">예매하기</button></h4>
+        	<h4>감독:<span>연상호</span></h4>
+        	<h4>배우:<span>강동원, 이정현</span></h4>
+        	<h4>장르:<span>액션, 드라마</span></h4>
+        	<h4>등급:<span>15세  관람가</span></h4>
+        	<h4>개봉일:<span>2020년 07월 15일</span></h4>
+        </div>
+        <div class="movie-etc2">
+        	<p><button type="button" class="btn btn-primary">좋아요</button><span>152,123</span></p>
+        	<p>누적관람객 : <span>1,123,456</span>명</p>
+        	<p>관람객 평점 : <span><div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR on">별3</span>
                   <span class="starR">별4</span>
                   <span class="starR">별5</span>
-                </div>
-            </div>
+            					</div></span></p>
         </div>
     </div>
+    <!-- 영화 포스터 끝 -->
     <br>
     <hr>
     <br>
@@ -50,11 +51,9 @@
         <p>가람은 그런 선호와 정 반대의 인물이다. 세상을 비관하며 삶을 마감하려 했던 그는 만신을 통해 기적적으로 살아남아 만신을 믿게 된다. 만신에 의존하다 못해 광신도가 된 가람은 북극성을 따라가라는 만신의 운세를 믿고 별 문양 옷을 입은 선호를 따라나선다.</p>
         </span>
     </div>
-    <div id="banner" class="change-poster">
-    	<a href="#" id="banner-link" target="_blank">
-    		<img src="<%=request.getContextPath()%>/img/you.jpeg" id="banner-img" width="800" height="400"/>
-    	</a>
-    </div>
+    <!-- plugin slick사용 시작 -->
+    
+    <!-- plugin slick사용 끝 -->
     </div>
     <hr>
     <div class="staticPicture">
@@ -92,152 +91,129 @@
             </form>
     </div>
     <hr>
-    <form class="oneLine" action="">
-    <div class="movie-comment">
+    <!-- 회원들이 작성한 댓글 시작 -->
+     <div class="movie-comment">
         <ul class="people-comment">
             <li>
             <label for="text">python</label>
             <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text1" class="form-control" value="한줄평입력"/>
-            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
-            	<div class="starRev">
+    		<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR on">별3</span>
                   <span class="starR on">별4</span>
                   <span class="starR on">별5</span>
             </div>
+            	<span name="text" class="text1" id="text1">이 영화 정말 재미있습니다.</span>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
+            	
             </li>
             <li>
             <label for="text">java</label>
             <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text2" class="form-control" value="한줄평입력"/>
-            	<%-- <button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
-            	<div class="starRev">
+    		<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR on">별3</span>
                   <span class="starR on">별4</span>
                   <span class="starR">별5</span>
             </div>
+            	<span name="text" class="text1" id="text1">이 영화 정말 재미있습니다. 또 보고싶어지는 영화입니다.</span>
+            	<%-- <button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             </li>
             <li>
                 <label for="text">mysql</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
-            	<button type="button" class="modify-text" style="width:25px; height:20px;">수정</button>
-    			<button type="button" class="delete-text" style="width:25px; height:20px;">삭제</button>
+            	<button type="button" class="modify-text" style="width:30px; height:25px;">수정</button>
+    			<button type="button" class="delete-text" style="width:30px; height:25px;">삭제</button>
     		</div>
-    			
-            	<input type="text" name="text" id="text3" class="form-control" value="한줄평입력"/>
-            	<button type="submit" class="btn btn-dark" style="float:right">수정완료</button>
-            	<div class="starRev">
+    			<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR on">별3</span>
                   <span class="starR">별4</span>
                   <span class="starR">별5</span>
             </div>
+            	<span name="text" class="text1" id="text1">생각보다 너무 재미없네요 ㅠㅠㅠ</span>
+            	<button type="submit" class="btn btn-dark" style="float:right">수정완료</button>
             </li>
             <li>
                 <label for="text">html</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text4" class="form-control" value="한줄평입력"/>
-            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
-            	<div class="starRev">
+    		<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR">별3</span>
                   <span class="starR">별4</span>
                   <span class="starR">별5</span>
             </div>
+            	<span name="text" class="text1" id="text1">그럭저럭 볼만한 영화입니당 ㅎㅎ</span>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             </li>
             <li>
                 <label for="text">css</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text5" class="form-control" value="한줄평입력"/>
-            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
-            	<div class="starRev">
+    		<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR on">별3</span>
                   <span class="starR">별4</span>
                   <span class="starR">별5</span>
             </div>
+            	<span name="text" class="text1" id="text1">인생영화입니다 정말....나의 심금을 울렸습니다...</span>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             </li>
             <li>
                 <label for="text">javascript</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text6" class="form-control" value="한줄평입력"/>
-            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
-            	<div class="starRev">
+    		<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR on">별3</span>
                   <span class="starR on">별4</span>
                   <span class="starR">별5</span>
             </div>
+            	<span name="text" class="text1" id="text1">친구들이랑 재밌게 봤습니다! 또 보러 올께요!!!ㅎㅎ</span>
+            	<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             </li>
             <li>
                 <label for="text">jQuery</label>
                 <div class="pulldate">
             <script type="text/Javascript" src="../js_sws/pulldate.js"></script>
     		</div>
-            	<input type="text" name="text" id="text7" class="form-control" value="한줄평입력"/>
-            	<%-- <button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
-            	<div class="starRev">
+    		<div class="starRev">
                   <span class="starR on">별1</span>
                   <span class="starR on">별2</span>
                   <span class="starR on">별3</span>
                   <span class="starR on">별4</span>
                   <span class="starR on">별5</span>
             </div>
+            	<span name="text" class="text1" id="text1">액션과 재미를 동시에 챙긴 영화였습니다. 꾸루루루루르르르르르쨈</span>
+            	<%-- <button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
             </li>
-            <!-- 한줄평 작성하기 끝 -->
         </ul>
     </div>
+    <!-- 회원들이 작성한 댓글 끝-->
     	<div class="pageUpbutton">
         	<button type="submit" class="btn btn-dark" style="float:right">맨위로</button>
         </div>
-    </form>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript">
-    	var banner = [
-    		{img:'../img/you.jpeg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'},
-    		{img:'../img/you2.jpg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'},
-    		{img:'../img/you3.jpg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'},
-    		{img:'../img/you4.jpg',url:'http://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EA%B9%80%EC%9C%A0%EC%A0%95'}
-    	];
-    	
-    	function random(n,m){
-    		return parseInt(Math.random()*(m-n+1))+n;
-    	}
-    	
-    	function random_banner(){
-    		var rand = random(0,banner.length-1);
-    		var item=banner[rand];
-    		$("#banner-link").attr("href",item.url);
-    		$("#banner-img").attr("src",item.img);
-    	}
-    	
-    	$(function(){
-    		random_banner();
-    		setInterval(function(){
-    			random_banner();
-    		},2000);
-    	});
+    
     </script>
     <!-- 내용 부분 끝 -->
 <!--// ========== 컨텐츠 영역 끝 ========== -->

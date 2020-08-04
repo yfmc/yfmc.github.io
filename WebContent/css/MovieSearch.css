@@ -48,6 +48,11 @@ table tr{
 table ul li{
 	float:left;
 	margin:0px;
+	margin-right:8px;
+}
+
+table ul li label{
+	margin-left:5px;
 }
 
 
@@ -105,6 +110,7 @@ button:nth-child(2){
   background: #4CAF50;
   cursor: pointer;
 }
+
 
 /*사이드 바*/
 

@@ -44,12 +44,15 @@ table tr{
 	border-bottom:1px solid #fcfaeb;
 }
 
-
 table ul li{
 	float:left;
 	margin:0px;
+	margin-right:8px;
 }
 
+table ul li label{
+	margin-left:5px;
+}
 
 .search-button{
 	text-align:center;

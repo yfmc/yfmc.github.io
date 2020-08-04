@@ -22,55 +22,76 @@ list-style:none;
         background-position:0 0;
     }
 
-    .movie-poster{
-    	
-        color:#222;
-        margin-left:300px;
+   .movie-poster-etc{
+   		height:450px;
+   		/*border:2px solid #6f6;*/
+   		margin-top:70px;
+   		
+   		
+   }
+   .movie-poster img{
+   		height:400px;
+   		margin-left:180px;
+   		margin-top:opx;
+   		margin-right:15px;
+   		float:left;
+   }
+   
+   .movie-poster img:after{
+   	content:' ';
+   	display:block;
+   	float:none;
+   	clear:both;
+   }
 
-    }
-    .movie-poster span img{
-        float:left;
-        width:300px;
-        height:300px;
-        margin-top:-30px;
-        margin-right:30px;
-    }
-    .movie-poster span img:after{
-        content: '';
-        display: block;
-        float:none;
-        clear:both;
-    }
-    .movie-explain span:first-child{
-        font-size:20px;
-        display: inline;
-    }
-    .movie-explain span:nth-child(2){
-        display: inline;
-    }
-
-    .movie-explain span{
-        display: block;
-        margin-top:15px;
-    }
-
-    .movie-explain{
-        margin-top:50px;
-    }
-    .movie-totalExplain{
-        margin-top:30px;
+	.movie-etc1{
+		margin-top:70px;
+		margin-left:480px;
+		/*border:2px solid #f6f;*/
+	}
+	
+	.movie-etc1 button{
+		margin-left:15px;
+	} 
+	
+	.movie-etc1 h3{
+		font-weight:bold;
+	}
+	
+	.movie-etc1 h4{
+		margin-top:25px;
+		font-size:20px;
+		font-weight:bold;
+	}
+	
+	.movie-etc2{
+		margin-top:30px;
+		margin-left:480px;
+		/*border:2px solid #222;*/
+	}
+	
+	.movie-etc2 p{
+		display:inline-block;
+		font-weight:bold;
+	}
+	
+	.movie-etc2 button{
+		margin-right:5px;
+	}
+	
+	.movie-etc2 p:nth-child(1){
+		font-size:16px;
+		font-weight:bold;
+		color:blue;
+		margin-right:25px;
+	}
+    
+    .movie-etc2 p:nth-child(2){
+    	margin-right:25px;
     }
     
-    .movie-explain input{
-    	margin-top:-10px;
-    }
-
-	.movie-etc{
-		margin-top:8px;
-	}
-    .movie-etc input{
-        margin-top:3px;
-        margin-right:5px;
+    .movie-etc2 .starRev{
+    	margin-right:60px;
     }
     
     .change-poster{
@@ -85,13 +106,19 @@ list-style:none;
 
     .movie-summary{
         color:#222;
-        margin-left: 300px;
+        margin-left: 180px;
     }
 
     .movie-summaryText{
         width:800px;
     }
-
+    
+    
+    /* 줄거리 사진 들어갈 자리*/
+    
+     /*줄거리 사진 들어갈 자리 끝*/
+    
+    
     table{
         border-bottom: 1px solid #eee;
         width:500px;
@@ -135,21 +162,23 @@ list-style:none;
     }
     .movie-advice .starRev{
     	margin-top:10px;
+    	
     }
 	
-	.oneLine{
-		min-height:600px;
-	}
-    .movie-comment{
+	.movie-comment{
         width:700px;
         min-height:450px;
         margin: auto;
         color:#222;
     }
-    .people-comment li{
-    	margin-top:20px;
+    
+    .movie-comment label{
+    	font-size:20px;
     }
-
+    .people-comment li{
+    	margin-top:40px;
+    }
+    
     .movie-comment button{
     	margin-top:5px;
     	margin-bottom:5px;
@@ -170,20 +199,28 @@ list-style:none;
     
     .pulldate{
     	font-size:10px;
+    	margin-bottom:-30px;
     }
     
     .movie-comment .modify-text{
     	margin-left:10px;
-    	font-size:10px;
+    	font-size:12px;
     	font-weight:bold;
     }
     .movie-comment .delete-text{
     	
-    	font-size:10px;
+    	font-size:12px;
     	font-weight:bold;
     }
     
-    
+    .people-comment .text1{
+    	font-size:17px;
+    	display:inline-block;
+    	border:1px solid #ccc;
+    	width:700px;
+    	font-family:"Jua", sans-serif;
+    }
+   
     
     .pageUpbutton{
     	margin-top:50px;
