@@ -107,6 +107,7 @@ list-style:none;
     .movie-summary{
         color:#222;
         margin-left: 180px;
+        min-height:550px;
     }
 
     .movie-summaryText{
@@ -114,8 +115,69 @@ list-style:none;
     }
     
     
+    
     /* 줄거리 사진 들어갈 자리*/
     
+    .image-moving{
+    	
+    	width:600px;
+    	height:300px;
+    	/*border:2px solid #f6f;*/
+    	margin:auto;
+    	margin-left: 120px;
+    }
+    
+    .moving1{
+    	/*border:2px solid #6f6;*/
+    	width:auto;
+    	height:300px;
+    	margin:auto;
+    	margin-top:30px;
+    	
+    	
+    }
+    
+    .moving2{
+    	width:auto;
+    	height:300px;
+    	margin:auto;
+    	margin-top:30px;
+    	
+    	
+    }
+    
+    .moving3{
+    	width:auto;
+    	height:300px;
+    	margin:auto;
+    	margin-top:30px;
+    	
+    	
+    }
+    
+    .moving4{
+    	width:auto;
+    	height:300px;
+    	margin:auto;
+    	margin-top:30px;
+    	
+    	
+    }
+    
+    .slick-prev:before {
+  		color: black !important;
+  		margin-top:30px;
+	}
+	.slick-next:before {
+  		color: black !important;
+  		margin-top:30px;
+	}
+    
+    .slick-slide:focus, .slick-center:focus, .slick-active:focus, .slick-current:focus{
+    	border : none;
+    	outline : none;
+    	
+    }
      /*줄거리 사진 들어갈 자리 끝*/
     
     
@@ -176,7 +238,7 @@ list-style:none;
     	font-size:20px;
     }
     .people-comment li{
-    	margin-top:40px;
+    	margin-top:50px;
     }
     
     .movie-comment button{
@@ -198,8 +260,9 @@ list-style:none;
     }
     
     .pulldate{
-    	font-size:10px;
+    	font-size:12px;
     	margin-bottom:-30px;
+    	display:inline-block;
     }
     
     .movie-comment .modify-text{
@@ -216,7 +279,7 @@ list-style:none;
     .people-comment .text1{
     	font-size:17px;
     	display:inline-block;
-    	border:1px solid #ccc;
+    	/*border:1px solid #ccc;*/
     	width:700px;
     	font-family:"Jua", sans-serif;
     }

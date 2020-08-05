@@ -33,7 +33,7 @@
                         <a role="menuitem" tabindex="-1" href="#">개봉일순</a>
                     </li>
                     <li role="presentation">
-                        <a role="menuitem" tabindex="-1" href="#">보고싶어요순</a>
+                        <a role="menuitem" tabindex="-1" href="#">좋아요순</a>
                     </li>
                 </ul>
                 

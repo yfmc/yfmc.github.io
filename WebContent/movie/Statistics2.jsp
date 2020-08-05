@@ -1,28 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/Statistics2.css?time=<%=System.currentTimeMillis()%>">.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/Statistics2.css?time=<%=System.currentTimeMillis()%>">
 <title>통계2 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
         <div class="content">
-            <div class="content1">
-            <ul>
-                <li>
-                    <a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>">박스오피스</a> 
-                </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>">영화검색</a> 
-                </li>
-                <li>
-                    <a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>">영화소식</a> 
-                </li>
-                <li>
-                    <a href="#">통계</a> 
-                </li>
-                
-            </ul>
-        </div>
             <!-- 통계 전체 부분 -->
             <!-- 통계시작 -->
             <div class="statistics">
@@ -51,5 +34,14 @@
             <!-- 통계끝 -->
         </div>
     </div>
+
+<!-- side바 -->
+
+	<div class="icon-bar">
+  		<a href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>" class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> 
+  		<a href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>" class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a> 
+ 		 <a href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>" class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a> 
+  		<a href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>" class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
+	</div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->
 <%@ include file="../_inc/footer.jsp"%>

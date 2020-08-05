@@ -7,11 +7,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/MovieSearch.css?time=<%=System.currentTimeMillis()%>">
 <!-- Range Slider CSS -->
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/Movie-slide-style.css">
-<!--Only for demo purpose - no need to add.-->
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/Movie-slide-demo.css" />
+<link rel="stylesheet" href="../dist/rangeslider.css">
 <title>영화검색 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <form class="movie-search">
@@ -72,12 +68,16 @@
 		<tr>
 			<th colspan="2">제작년도</th>
 			<td colspan="2">
-				<div class="slidecontainer">
-					<input type="range" min="1" max="100" value="50" class="slider"
-						id="myRange" style="width: 80%;">
+				<div id="js-example-change-value" class="range-slider">
+					<input type="range" min="2000" max="2020" data-rangeslider>
+					<h4>
+						<output><p>년</p></output>
+					</h4>
 				</div>
 			</td>
-			<td></td>
+			<td>
+				<!-- 빈공간 -->
+			</td>
 		</tr>
 	</table>
 
@@ -88,9 +88,6 @@
 		<button type="reset">초기화</button>
 	</div>
 </form>
-
-
-
 
 
 <div class="icon-bar">
@@ -108,8 +105,51 @@
 </div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="../dist/rangeslider.min.js"></script>
 <script type="text/javascript">
-	
+	$(function() {
+
+		var $document = $(document), selector = '[data-rangeslider]', $element = $(selector);
+		// Example functionality to demonstrate a value feedback
+		function valueOutput(element) {
+			var value = element.value, output = element.parentNode
+					.getElementsByTagName('output')[0];
+			output.innerHTML = value;
+		}
+		for (var i = $element.length - 1; i >= 0; i--) {
+			valueOutput($element[i]);
+		}
+		;
+		$document.on('change', 'input[type="range"]', function(e) {
+			valueOutput(e.target);
+		});
+		// Basic rangeslider initialization
+		$element.rangeslider({
+
+			// Deactivate the feature detection
+			polyfill : false,
+
+			// Callback function
+			onInit : function() {
+			},
+
+			// Callback function
+			onSlide : function(position, value) {
+				console.log('onSlide');
+				console.log('position: ' + position, 'value: ' + value);
+			},
+
+			// Callback function
+			onSlideEnd : function(position, value) {
+				console.log('onSlideEnd');
+				console.log('position: ' + position, 'value: ' + value);
+			}
+		});
+
+	});
 </script>
+
 
 <%@ include file="../_inc/footer.jsp"%>
