@@ -61,22 +61,21 @@
 
 /* 지역별 지점 선택 영역 */
 .branch_list {
-    height: 650px;
+	position: relative;
+    height: 500px;
     background-color: #eee;
     padding: 10px;
 }
 
 .branch_list > ul {
     display: block;
-    padding: 15px 0 0 0;
-    margin: 0;
 }
 
 /* 각 지점 버튼 */
 .branch_list li {
     display: block;
     float: left;
-    width: 220px;
+    width: 210px;
     height: 40px;
     border-right: 1px solid black;
     margin-left: 15px;

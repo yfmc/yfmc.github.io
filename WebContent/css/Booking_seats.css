@@ -99,7 +99,8 @@
 
 /* 인원 분류 영역 3개 */
 .choose_people > li {
-	display: inline-block;
+	display: block;
+	float: left;
 	width: 32%;
 }
 

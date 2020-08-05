@@ -61,6 +61,8 @@
                             <span id="plus2" class="choose plus"><i class="fas fa-plus"></i></span>
     					</div>
 					</li>
+					<!-- float 마감제 -->
+					<div class="clear"></div>
 				</ul>
 			
 				<!-- 안내 사항 부분 -->

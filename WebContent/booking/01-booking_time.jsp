@@ -4,6 +4,8 @@
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_time.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
+<!-- 스크롤바 플러그인 -->
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
 
 <title>상영선택 < 예매 | Cinephile</title>
 
@@ -48,6 +50,28 @@
 			<!-- 지점 선택 -->
 			<div class="choose_branch">
 				<ul>
+					<li>CGV 강남</li>
+					<li>롯데시네마 영등포</li>
+					<li>메가박스 송파파크하비오</li>
+					<li>메가박스 코엑스</li>
+					<li>CGV 압구정</li>
+					<li>CGV 등촌</li>
+					<li>메가박스 군자</li>
+					<li>롯데시네마 신도림</li>
+					<li>롯데시네마 서울대입구</li>
+					<li>CGV 하계</li>
+					<li>CGV 건대입구</li>
+					<li>메가박스 창동</li>
+					<li>롯데시네마 강동</li>
+					<li>롯데시네마 도곡</li>
+					<li>메가박스 아트나인</li>
+					<li>CGV 홍대</li>
+					<li>CGV 신촌아트레온</li>
+					<li>롯데시네마 홍대입구</li>
+					<li>메가박스 신촌</li>
+					<li>CGV 왕십리</li>
+					<li>CGV 성신여대입구</li>
+					<li>롯데시네마 청량리</li>
 					<li>CGV 강남</li>
 					<li>롯데시네마 영등포</li>
 					<li>메가박스 송파파크하비오</li>
@@ -164,7 +188,9 @@
 
 <!-- jQuery -->
 <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<!-- 스크롤바 플러그인 -->
+<script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
 <!-- js 파일 적용 -->
-<script type="text/javascript" src="loginmodal.js"></script>
+<script type="text/javascript" src="booking_time.js"></script>
 
 <%@ include file="/_inc/footer.jsp"%>

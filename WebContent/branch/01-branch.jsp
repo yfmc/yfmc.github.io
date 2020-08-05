@@ -4,6 +4,8 @@
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
+<!-- 스크롤바 플러그인 -->
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
 
 <title>극장정보 < 극장 | Cinephile</title>
 
@@ -355,4 +357,10 @@
 		</div>
 	</div>
 </div>
+
+<!-- 스크롤바 플러그인 -->
+<script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
+<script type="text/javascript">
+    document.querySelector('.branch_list').fakeScroll();
+</script>
 <%@ include file="/_inc/footer.jsp"%>

@@ -4,6 +4,8 @@
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
+<!-- 스크롤바 플러그인 -->
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
 
 <title>상영시간표 < 예매 | Cinephile</title>
 
@@ -35,7 +37,7 @@
 				<li><a href="#">메가박스 송파파크하비오</a></li>
 				<li><a href="#">메가박스 코엑스</a></li>
 				<li><a href="#">CGV 압구정</a></li>
-				<li><a href="#">CGV 등촌</a></li>
+				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
 				<li><a href="#">메가박스 군자</a></li>
 				<li><a href="#">롯데시네마 신도림</a></li>
 				<li><a href="#">롯데시네마 서울대입구</a></li>
@@ -52,10 +54,62 @@
 				<li><a href="#">CGV 왕십리</a></li>
 				<li><a href="#">CGV 성신여대입구</a></li>
 				<li><a href="#">롯데시네마 청량리</a></li>
+				<li><a href="#">CGV 강남</a></li>
+				<li><a href="#">롯데시네마 영등포</a></li>
+				<li><a href="#">메가박스 송파파크하비오</a></li>
+				<li><a href="#">메가박스 코엑스</a></li>
+				<li><a href="#">CGV 압구정</a></li>
+				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
+				<li><a href="#">메가박스 군자</a></li>
+				<li><a href="#">롯데시네마 신도림</a></li>
+				<li><a href="#">롯데시네마 서울대입구</a></li>
+				<li><a href="#">CGV 하계</a></li>
+				<li><a href="#">CGV 건대입구</a></li>
+				<li><a href="#">메가박스 창동</a></li>
+				<li><a href="#">롯데시네마 강동</a></li>
+				<li><a href="#">롯데시네마 도곡</a></li>
+				<li><a href="#">메가박스 아트나인</a></li>
+				<li><a href="#">CGV 홍대</a></li>
+				<li><a href="#">CGV 신촌아트레온</a></li>
+				<li><a href="#">롯데시네마 홍대입구</a></li>
+				<li><a href="#">메가박스 신촌</a></li>
+				<li><a href="#">CGV 왕십리</a></li>
+				<li><a href="#">CGV 성신여대입구</a></li>
+				<li><a href="#">롯데시네마 청량리</a></li>
+				<li><a href="#">CGV 강남</a></li>
+				<li><a href="#">롯데시네마 영등포</a></li>
+				<li><a href="#">메가박스 송파파크하비오</a></li>
+				<li><a href="#">메가박스 코엑스</a></li>
+				<li><a href="#">CGV 압구정</a></li>
+				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
+				<li><a href="#">메가박스 군자</a></li>
+				<li><a href="#">롯데시네마 신도림</a></li>
+				<li><a href="#">롯데시네마 서울대입구</a></li>
+				<li><a href="#">CGV 하계</a></li>
+				<li><a href="#">CGV 건대입구</a></li>
+				<li><a href="#">메가박스 창동</a></li>
+				<li><a href="#">롯데시네마 강동</a></li>
+				<li><a href="#">롯데시네마 도곡</a></li>
+				<li><a href="#">메가박스 아트나인</a></li>
+				<li><a href="#">CGV 홍대</a></li>
+				<li><a href="#">CGV 신촌아트레온</a></li>
+				<li><a href="#">롯데시네마 홍대입구</a></li>
+				<li><a href="#">메가박스 신촌</a></li>
+				<li><a href="#">CGV 왕십리</a></li>
+				<li><a href="#">CGV 성신여대입구</a></li>
+				<li><a href="#">롯데시네마 청량리</a></li>
+				<li><a href="#">CGV 신촌아트레온</a></li>
+				<li><a href="#">롯데시네마 홍대입구</a></li>
+				<li><a href="#">메가박스 신촌</a></li>
+				<li><a href="#">CGV 왕십리</a></li>
+				<li><a href="#">CGV 성신여대입구</a></li>
+				<li><a href="#">롯데시네마 청량리</a></li>
 			</ul>
 		</div>
+		<!-- float 마감제 -->
+		<div class="clear"></div>
 	</div>
-
+	<hr />
 	<!-- 상영시간표 -->
 	<div class="timetable">
 		<h1>상영시간표</h1>
@@ -76,7 +130,7 @@
 			<!-- 관람가 및 요금 안내 button -->
 			<div class="table_info" data-toggle="modal" data-target="#modal_table">
 				<h4>
-					<a href="#" class="btn"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</a>
+					<button class="btn btn-default"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</a>
 				</h4>
 			</div>
 
@@ -195,4 +249,10 @@
 		</div>
 	</div>
 </div>
+
+<!-- 스크롤바 플러그인 -->
+<script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
+<script type="text/javascript">
+    document.querySelector('.branch_list').fakeScroll();
+</script>
 <%@ include file="/_inc/footer.jsp"%>

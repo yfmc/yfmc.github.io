@@ -43,6 +43,11 @@
 	float: left;
 }
 
+/* 스크롤 위치 설정 */
+.fakeScroll__bar {
+	right: 8px !important;
+}
+
 /* 지역 선택 */
 .choose_provincial {
 	width: 130px;
@@ -64,9 +69,9 @@
 
 /* 지점 선택 */
 .choose_branch {
+	position: relative;
 	width: 210px;
 	height: 740px;
-	padding-left: 10px;
 	padding-top: 15px;
 	float:left;
 }
