@@ -1,3 +1,5 @@
+<!-- 회원탈퇴 전 비밀번호 확인하는 페이지 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -7,6 +9,7 @@
 <link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
 
         <div id="content" class="clear">
+        	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
@@ -18,6 +21,8 @@
                     </ul>
                 </div>
             </div>
+            <!-- 사이드바 끝 -->
+            
             <div id="body">
                 <div class="reqmsg">
                 	<i class="fas fa-frown-open"></i>
@@ -37,25 +42,5 @@
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
-        <script type="text/javascript">
-        $(function(){
-        	$(document).on("click",".withdgo",function(){
-        		swal({
-        			title:"확인",
-        			text:"정말 탈퇴하시겠습니까?",
-        			type:"question",
-        			confirmButtonText:"Yes",
-        			showCancelButton:true,
-        			cancelButtonText:"No",
-        		}).then(function(result){
-        			if(result.value){
-        				location.href="<%=request.getContextPath()%>/mypage/withdrawal-(2).jsp";
-        			}
-        		});
-        	});
-        	$(document).on("click",".maingo",function(){
-        		location.href="<%=request.getContextPath()%>/mypage/mypagemain.jsp";
-        	});
-        });
-        </script>
+        <script src="<%=request.getContextPath()%>/js_files/withdrawal-(1).js"></script>
 <%@ include file="../_inc/footer.jsp"%>
