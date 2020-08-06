@@ -4,8 +4,8 @@
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/MovieContent.css?time=<%=System.currentTimeMillis()%>">
 <title>영화상세페이지 | Cinephile</title>
-<link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="../slick/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="../plugins/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="../plugins/slick/slick-theme.css" />
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <!-- 내용 부분 시작 -->
 <div class="container">
@@ -132,7 +132,7 @@
 		<ul class="people-comment">
 			<li><label for="text">python</label>
 				<div class="pulldate">
-					<script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
 				<div class="starRev">
 					<span class="starR on">별1</span> <span class="starR on">별2</span> <span
@@ -143,7 +143,7 @@
 			</li>
 			<li><label for="text">java</label>
 				<div class="pulldate">
-					<script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
 				<div class="starRev">
 					<span class="starR on">별1</span> <span class="starR on">별2</span> <span
@@ -154,7 +154,7 @@
 			</li>
 			<li><label for="text">mysql</label>
 				<div class="pulldate">
-					<script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 					<button type="button" class="modify-text"
 						style="width: 30px; height: 25px;">수정</button>
 					<button type="button" class="delete-text"
@@ -169,7 +169,7 @@
 			</li>
 			<li><label for="text">html</label>
 				<div class="pulldate">
-					<script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
 				<div class="starRev">
 					<span class="starR on">별1</span> <span class="starR on">별2</span> <span
@@ -180,7 +180,7 @@
 			</li>
 			<li><label for="text">css</label>
 				<div class="pulldate">
-					<script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
 				<div class="starRev">
 					<span class="starR on">별1</span> <span class="starR on">별2</span> <span
@@ -191,7 +191,7 @@
 			</li>
 			<li><label for="text">javascript</label>
 				<div class="pulldate">
-					<script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
 				<div class="starRev">
 					<span class="starR on">별1</span> <span class="starR on">별2</span> <span
@@ -202,7 +202,7 @@
 			</li>
 			<li><label for="text">jQuery</label>
 				<div class="pulldate">
-					<script type="text/Javascript" src="../js_sws/pulldate.js"></script>
+					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
 				<div class="starRev">
 					<span class="starR on">별1</span> <span class="starR on">별2</span> <span
@@ -220,7 +220,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="../slick/slick.min.js"></script>
+<script type="text/javascript" src="../plugins/slick/slick.min.js"></script>
 <script type="text/javascript">
 		$(document).ready(function(){
 			$(".image-moving").slick({

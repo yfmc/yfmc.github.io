@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* 참조한 css에 배경이 검은색이여서 바꾸기 위해 body에 white을 줌*/
+body{
+	background-color:white !important;
+}
 
 li{
 list-style:none;
@@ -97,34 +101,149 @@ margin-top:20px;
     
 }
 
-.thumbnail {
+.imageup {
         height: 400px;
         width:250px;
         border:0;
        
 }
 
-.thumbnail:hover{
+.imageup:hover{
 	 text-decoration:none;
 }
 
 /*썸네일 내부의 이미지 크기 고정*/
-.thumbnail img {
+.imageup img {
     min-height: 330px;
     width:250px;
  }
  
+/*이미지에 마우스 올렸을 때 예매하기 상세정보 등장*/
+figcaption button{
+	margin-top:85px;
+	margin-left:28px;
+	width:200px;
+	height:30px;
+	background-color:inherit !important;
+	border:1px solid white !important;
+}
 
-.thumbnail .movie-text{
+ figure.imageup {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: auto;
+  height:auto;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  
+}
+figure.imageup * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+figure.imageup img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+figure.imageup:after,
+figure.imageup figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:250px;
+  height:330px;
+}
+figure.imageup:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.65);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+  margin-top:-10px;
+  margin-left:-8px;
+}
+figure.imageup figcaption {
+  z-index: 1;
+  margin-top:-10px;
+  margin-right:-20px;
+}
+figure.imageup btn-danger{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+figure.imageup btn-danger {
+  line-height: 1.1em;
+  font-weight: 700;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+figure.imageup btn-primary {
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0;
+  top: 50%;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+}
+
+
+figure.imageup:hover img,
+figure.imageup.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+figure.imageup:hover:after,
+figure.imageup.hover:after {
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+figure.imageup:hover btn-danger,
+figure.imageup.hover btn-danger,
+figure.imageup:hover btn-primary,
+figure.imageup.hover btn-primary{
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+
+.imageup button{
+	visibility: hidden;
+	transition: all 0.0s ease;
+}
+
+.imageup .movie-image:hover button{
+	visibility: visible;
+	
+}
+/*이미지에 마우스 올렸을 때 예매하기 상세정보 등장 끝*/
+.imageup .movie-text{
 	text-align:center;
 	
 }
 
-.thumbnail .movie-text h4{
+.imageup .movie-text h4{
 	font-weight:bold;
 	font-size:18px;
 	color:black;
-	
+	margin-bottom:60px;
 }
 
 .king-row .movie-picture{
@@ -140,7 +259,7 @@ margin-top:20px;
     clear:both;
  }
  
-.king-row .rank{
+.king-row .dDay{
 	height:22px;
 	width:245px;
 	margin-left:3px;
@@ -149,7 +268,7 @@ margin-top:20px;
 	background-color:black;
 }
 
-.king-row .rank span{
+.king-row .dDay span{
 	font-size:20px;
 	color:white;
 }
