@@ -51,57 +51,9 @@
 							<th style="width: 150px;">조회수</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>10</td>
-							<td class="detail_title"><a href="<%=request.getContextPath()%>/support/faq_detail.jsp">자주찾는
-									질문 10</a></td>
-							<td>2020.07.20</td>
-							<td>10000</td>
-						</tr>
-						<tr>
-							<td>9</td>
-							<td class="detail_title">자주찾는 질문 9</td>
-							<td>2020.07.20</td>
-							<td>9999</td>
-						</tr>
-						<tr>
-							<td>8</td>
-							<td class="detail_title">자주찾는 질문 8</td>
-							<td>2020.07.20</td>
-							<td>8888</td>
-						</tr>
-						<tr>
-							<td>7</td>
-							<td class="detail_title">자주찾는 질문 7</td>
-							<td>2020.07.20</td>
-							<td>7777</td>
-						</tr>
-						<tr>
-							<td>6</td>
-							<td class="detail_title">자주찾는 질문 6</td>
-							<td>2020.07.20</td>
-							<td>6666</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td class="detail_title">자주찾는 질문 5</td>
-							<td>2020.07.20</td>
-							<td>5555</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td class="detail_title">자주찾는 질문 4</td>
-							<td>2020.07.20</td>
-							<td>4444</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td class="detail_title">자주찾는 질문 3</td>
-							<td>2020.07.20</td>
-							<td>3333</td>
-						</tr>
-					</tbody>
+					<tbody id="faq_list_body">
+                    	<!-- Ajax 결과 위치 -->
+                    </tbody>
 				</table>
 			</div>
 			<div class="Page navigation">
@@ -118,4 +70,27 @@
 		</div>
 	</div>
 </div>
+<script src="../plugins/handlebars/handlebars-v4.0.11.js"></script>
+    <script id="faq_list_tmpl" type="text/x-handlebars-template">
+    	{{#each faq_list}}	
+		<tr>
+    	<td>{{faqno}}</td>
+		<td class="detail_title"><a href="<%=request.getContextPath()%>/support/faq_detail.jsp">{{faqname}}</a></td>
+    	<td>{{date}}</td>
+    	<td>{{views}}</td>
+		</tr>
+    	{{/each}}
+    </script>
+    <script type="text/javascript">
+    	function get_faq_list() {
+    		$.get("../api/faq_list.json", function(req) {
+    			var template = Handlebars.compile($("#faq_list_tmpl").html());
+    			var html = template(req);
+    			$("#faq_list_body").append(html);
+    		});
+    	}
+    	$(function() {
+    		get_faq_list();
+    	});
+	</script>
 <%@ include file="../_inc/footer.jsp"%>

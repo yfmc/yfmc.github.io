@@ -50,8 +50,8 @@
     	font-weight: bold;
     	color: #e63e30;
     }
-
-    .qna_form {
+	
+    .qna_box, .user_box{
         margin-bottom: 70px;
     }
 
@@ -63,17 +63,20 @@
     }
 
     .form-group label {
-        margin: 0px;
         padding: 0px 20px;
         font-size: 16px;
         line-height: 220%;
         cursor: text;
     }
     
-    .form-group label::after {
+    .must::after {
     	content: '*';
     	margin-left: 10px;
     	color: #e63e30; 
+    }
+    
+    #contents > div > form:nth-child(3) > div:nth-child(3) > label:nth-child(3)::after {
+    	content: ' ';
     }
     
     .form-group textarea {
@@ -83,25 +86,33 @@
     .form-control {
     	background-color: #f8f8f8;
     }
+    
 
-	.agree_box h4 {
+
+	.text_box h4 {
 		margin-bottom: 10px;
 		border: 0;
 	}
 	
-    .agree_box p {
+    .text_box span {
+    	font-size: 11px;
+    	font-weight:bold;
+   	}
+	
+    .text_box p {
         padding: 20px;
         border: 1px solid #ddd;
     }
-
-    .text_form {
-        font-size: 11px;
-        font-weight: bold;
-        color: #666;
-    }
-
+    
     .agree_check {
         margin-top: 20px
+    }
+    
+    .agree_check label {
+    	margin-left:10px;}
+    
+    input[type="radio"] {
+    	margin-right: 10px;
     }
 
     .btn {
@@ -112,4 +123,15 @@
     .btn_btm_wrap {
         margin: 60px 0;
         text-align: center;
+    }
+    
+    .error {
+    	color: red;
+    }
+    
+    label.error {
+    	font-size: 10px;
+    	display: inline-block;
+    	padding: 5px 10px;
+    	margin: 0;
     }
