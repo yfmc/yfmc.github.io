@@ -9,14 +9,24 @@
     
     <!-- 필요CSS -->
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/HeaderFooterYo.css" />
-    <!-- //필요CSS -->
+  
+    
     <!-- 부트스트랩 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <!-- //부트스트랩 -->
+  
+    
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat+Subrayada:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
-    <!-- //구글폰트 -->
+
+    
+    <!-- 폰트어썸 -->
+	<script src="https://kit.fontawesome.com/2de30be98d.js" crossorigin="anonymous"></script>
+	
+	<!-- JS참조 -->
+    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+	<script src="../js_files/headerMenuSlide.js"></script>
 
 </head>
 
@@ -63,12 +73,3 @@
                 </ul>
             </div>
         </div>
-<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
-    <script type="text/javascript">
-        $(function(){
-            //.nav에 마우스가 올라가거나 빠져나오는 경우 호출되는 이벤트
-            $(".nav").hover(function(){
-                $(this).find(".subnav").slideToggle(50);
-            });
-        });
-</script>
