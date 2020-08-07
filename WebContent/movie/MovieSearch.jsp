@@ -7,7 +7,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/MovieSearch.css?time=<%=System.currentTimeMillis()%>">
 <!-- Range Slider CSS -->
-<link rel="stylesheet" href="../plugins/dist/rangeslider.css">
+<link rel="stylesheet" href="../plugins/rangeslider/rangeslider.css">
 <title>영화검색 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <form class="movie-search">
@@ -107,7 +107,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="../plugins/dist/rangeslider.min.js"></script>
+<script src="../plugins/rangeslider/rangeslider.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 

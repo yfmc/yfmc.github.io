@@ -40,247 +40,252 @@
 			</div>
 		</div>
 		<!-- 갤러리 영역 -->
-		<div class="king-row">
-			<!-- 1개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.1</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span><img
-								src="<%=request.getContextPath()%>/img/nowmoving1.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption> </span>
+		<div class="scroll-row">
+			<div class="scroll-copy">
+				<div class="king-row">
+					<!-- 1개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.1</span>
 						</div>
-						<!-- 텍스트 영역 -->
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span><img
+										src="<%=request.getContextPath()%>/img/nowmoving1.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption> </span>
+								</div>
+								<!-- 텍스트 영역 -->
 
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>강철비2-정상회담
-								</h4>
-							</span>
-						</div>
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>강철비2-정상회담
+										</h4>
+									</span>
+								</div>
 
+							</div>
+						</figure>
 					</div>
-				</figure>
-			</div>
-			<!-- 2개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.2</span>
+					<!-- 2개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.2</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="<%=request.getContextPath()%>/img/nowmoving2.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>반도
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 3개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.3</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="<%=request.getContextPath()%>/img/nowmoving3.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-success">전체</span>알라딘
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 4개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.4</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="<%=request.getContextPath()%>/img/nowmoving4.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-primary">12</span>소년 아메드
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 5개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.5</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="<%=request.getContextPath()%>/img/nowmoving5.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>소년시절의 너
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 6개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.6</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="<%=request.getContextPath()%>/img/nowmoving6.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 7개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.7</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="<%=request.getContextPath()%>/img/nowmoving7.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-danger">청불</span>존 윅-특별판
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 8개 -->
+					<div class="movie-picture">
+						<div class="rank">
+							<span>NO.8</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span><img
+										src="<%=request.getContextPath()%>/img/nowmoving8.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<button type="button" class="btn btn-danger">예매하기</button>
+											<button type="button" class="btn btn-primary">상세정보</button>
+										</figcaption> </span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>다만 악에서 구하소서
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
 				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving2.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>반도
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
 			</div>
-			<!-- 3개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.3</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving3.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-success">전체</span>알라딘
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 4개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.4</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving4.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-primary">12</span>소년 아메드
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 5개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.5</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving5.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>소년시절의 너
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 6개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.6</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving6.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 7개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.7</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving7.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-danger">청불</span>존 윅-특별판
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 8개 -->
-			<div class="movie-picture">
-				<div class="rank">
-					<span>NO.8</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span><img
-								src="<%=request.getContextPath()%>/img/nowmoving8.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption> </span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>다만 악에서 구하소서
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
+			<!-- scroll-row끝! -->
 		</div>
 		<!-- 갤러리 8개 끝!!! -->
 		<div class="plusbutton">
@@ -315,6 +320,25 @@
 <script type="text/javascript">
 	$(".hover").mouseleave(function() {
 		$(this).removeClass("hover");
+	});
+
+	var count = 0;
+	$(function() {
+		$(window).scroll(
+				function() {
+					if ($(window).height() + $(window).scrollTop() >= $(
+							document).height() - 10) {
+						console.log("끝에 도착함");
+						count++;
+
+						var tag = $(".scroll-row").html();
+						var tag2 = $(".scroll-copy").html();
+						tag += tag2;
+						$(".scroll-row").html(tag);
+						//console.log(tag);
+						console.log(count);
+					}
+				});
 	});
 </script>
 <%@ include file="../_inc/footer.jsp"%>

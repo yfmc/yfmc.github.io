@@ -7,9 +7,7 @@ body{
 li{
 list-style:none;
 }
-.containerHeight{
-min-height:1000px;
-}
+
 /*
 .content1 {
 margin-top:20px;
@@ -100,8 +98,6 @@ margin-top:20px;
 }
 
 .imageup {
-        height: 400px;
-        width:250px;
         border:0;
         text-decoration:none;
                  
@@ -114,7 +110,7 @@ margin-top:20px;
 /*썸네일 내부의 이미지 크기 고정*/
 .imageup img {
     min-height: 330px;
-    width:250px;
+    width:245px;
   	
  }
  
@@ -158,7 +154,7 @@ figure.imageup figcaption {
   bottom: 0;
   left: 0;
   right: 0;
-  width:250px;
+  width:245px;
   height:330px;
 }
 figure.imageup:after {
@@ -211,7 +207,7 @@ figure.imageup.hover:after {
   position: absolute;
   top: 10px;
   bottom: 10px;
-  left: 10px;
+  left: 13px;
   right: 10px;
 }
 figure.imageup:hover btn-danger,
@@ -266,7 +262,7 @@ figure.imageup.hover btn-primary{
 	height:22px;
 	background-color:red;	
 	width:245px;
-	margin-left:3px;
+	margin-left:5px;
 	margin-bottom:0px;
 	font-style:italic;
 	

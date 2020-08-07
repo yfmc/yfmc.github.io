@@ -1,297 +1,302 @@
 @charset "UTF-8";
 
-.container{
-min-height:1000px;
-}
-*{
-list-style:none;
+.container {
+	min-height: 1000px;
 }
 
+* {
+	list-style: none;
+}
 
 /*평점주기*/
-    .starR{
-      background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
-      background-size: auto 100%;
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      text-indent: -9999px;
-      cursor: pointer;
-    }
-    .starR.on{
-        background-position:0 0;
-    }
+.starR {
+	background:
+		url('http://miuu227.godohosting.com/images/icon/ico_review.png')
+		no-repeat right 0;
+	background-size: auto 100%;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	text-indent: -9999px;
+	cursor: pointer;
+}
 
-   .movie-poster-etc{
-   		height:450px;
-   		/*border:2px solid #6f6;*/
-   		margin-top:70px;
-   		
-   		
-   }
-   .movie-poster img{
-   		height:400px;
-   		margin-left:180px;
-   		margin-top:opx;
-   		margin-right:15px;
-   		float:left;
-   }
-   
-   .movie-poster img:after{
-   	content:' ';
-   	display:block;
-   	float:none;
-   	clear:both;
-   }
+.starR.on {
+	background-position: 0 0;
+}
 
-	.movie-etc1{
-		margin-top:70px;
-		margin-left:480px;
-		/*border:2px solid #f6f;*/
-	}
-	
-	.movie-etc1 button{
-		margin-left:15px;
-	} 
-	
-	.movie-etc1 h3{
-		font-weight:bold;
-	}
-	
-	.movie-etc1 h4{
-		margin-top:25px;
-		font-size:20px;
-		font-weight:bold;
-	}
-	
-	.movie-etc2{
-		margin-top:30px;
-		margin-left:480px;
-		/*border:2px solid #222;*/
-	}
-	
-	.movie-etc2 p{
-		display:inline-block;
-		font-weight:bold;
-	}
-	
-	.movie-etc2 button{
-		margin-right:5px;
-	}
-	
-	.movie-etc2 p:nth-child(1){
-		font-size:16px;
-		font-weight:bold;
-		color:blue;
-		margin-right:25px;
-	}
-    
-    .movie-etc2 p:nth-child(2){
-    	margin-right:25px;
-    }
-    
-    .movie-etc2 .starRev{
-    	margin-right:60px;
-    }
-    
-    .change-poster{
-    	margin-top:50px;
-    }
-    
-    .starRev{
-         display: block;
-    	float: right;
-    	margin-right: 25px;
-    }
+.movie-poster-etc {
+	height: 450px;
+	/*border:2px solid #6f6;*/
+	margin-top: 70px;
+}
 
-    .movie-summary{
-        color:#222;
-        margin-left: 180px;
-        min-height:550px;
-    }
+.movie-poster img {
+	height: 400px;
+	margin-left: 180px;
+	margin-top: opx;
+	margin-right: 15px;
+	float: left;
+}
 
-    .movie-summaryText{
-        width:800px;
-    }
-    
-    
-    
-    /* 줄거리 사진 들어갈 자리*/
-    
-    .image-moving{
-    	
-    	width:600px;
-    	height:300px;
-    	/*border:2px solid #f6f;*/
-    	margin:auto;
-    	margin-left: 120px;
-    }
-    
-    .moving1{
-    	/*border:2px solid #6f6;*/
-    	width:auto;
-    	height:300px;
-    	margin:auto;
-    	margin-top:30px;
-    	
-    	
-    }
-    
-    .moving2{
-    	width:auto;
-    	height:300px;
-    	margin:auto;
-    	margin-top:30px;
-    	
-    	
-    }
-    
-    .moving3{
-    	width:auto;
-    	height:300px;
-    	margin:auto;
-    	margin-top:30px;
-    	
-    	
-    }
-    
-    .moving4{
-    	width:auto;
-    	height:300px;
-    	margin:auto;
-    	margin-top:30px;
-    	
-    	
-    }
-    
-    .slick-prev:before {
-  		color: black !important;
-  		margin-top:30px;
-	}
-	.slick-next:before {
-  		color: black !important;
-  		margin-top:30px;
-	}
-    
-    .slick-slide:focus, .slick-center:focus, .slick-active:focus, .slick-current:focus{
-    	border : none;
-    	outline : none;
-    	
-    }
-     /*줄거리 사진 들어갈 자리 끝*/
-    
-    
-    table{
-        border-bottom: 1px solid #eee;
-        width:500px;
-        height:400px;
-        color:#222;
-        margin:auto;
+.movie-poster img:after {
+	content: ' ';
+	display: block;
+	float: none;
+	clear: both;
+}
 
-    }
-    table th{
-        text-align: center;
-        font-size:20px;
-        color:blue;
-    }
-    .staticPicture img{
-        width:500px;
-        height:300px;
-        margin-top:-30px;
-    }
-    .staticPicture td:first-child{
-        padding-right:30px;
-    }
+.movie-etc1 {
+	margin-top: 70px;
+	margin-left: 480px;
+	/*border:2px solid #f6f;*/
+}
 
-    .movie-advice{
-        width:800px;
-        height:150px;
-        margin:auto;
-        color:#222;
-        margin-bottom: 50px;
-    }
-    
-    .movie-advice button{
-    margin-top:10px;
-    font-size:16px;
-    font-weight:bold;
-    }
-    .movie-advice button:after{
-        content:' ';
-        display: block;
-        float:none;
-        clear:both;
-    }
-    .movie-advice .starRev{
-    	margin-top:10px;
-    	
-    }
-	
-	.movie-comment{
-        width:700px;
-        min-height:450px;
-        margin: auto;
-        color:#222;
-    }
-    
-    .movie-comment label{
-    	font-size:20px;
-    }
-    .people-comment li{
-    	margin-top:50px;
-    }
-    
-    .movie-comment button{
-    	margin-top:5px;
-    	margin-bottom:5px;
-        font-size:16px;
-        font-weight:bold;
-    }
-    .movie-comment button:after{
-        content:' ';
-        display: block;
-        float:none;
-        clear:both;
-    }
-    
-    .movie-comment .starRev{
-    margin-top:5px;
-    margin-right:0px;
-    }
-    
-    .pulldate{
-    	font-size:12px;
-    	margin-bottom:-30px;
-    	display:inline-block;
-    }
-    
-    .movie-comment .modify-text{
-    	margin-left:10px;
-    	font-size:12px;
-    	font-weight:bold;
-    }
-    .movie-comment .delete-text{
-    	
-    	font-size:12px;
-    	font-weight:bold;
-    }
-    
-    .people-comment .text1{
-    	font-size:17px;
-    	display:inline-block;
-    	/*border:1px solid #ccc;*/
-    	width:700px;
-    	font-family:"Jua", sans-serif;
-    }
-   
-    
-    .pageUpbutton{
-    	margin-top:50px;
-    	width:600px;
-    	
-    }
-    
-    .pageUpbutton button{
-    	font-weight:bold;
-    	color:#222;
-    }
+.movie-etc1 button {
+	margin-left: 15px;
+}
+
+.movie-etc1 h3 {
+	font-weight: bold;
+}
+
+.movie-etc1 h4 {
+	margin-top: 25px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.movie-etc2 {
+	margin-top: 30px;
+	margin-left: 480px;
+	/*border:2px solid #222;*/
+}
+
+.movie-etc2 p {
+	display: inline-block;
+	font-weight: bold;
+}
+
+.movie-etc2 button {
+	margin-right: 5px;
+}
+
+.movie-etc2 p:nth-child(1) {
+	font-size: 16px;
+	font-weight: bold;
+	color: blue;
+	margin-right: 25px;
+}
+
+.movie-etc2 p:nth-child(2) {
+	margin-right: 25px;
+}
+
+.movie-etc2 .starRev {
+	margin-right: 60px;
+}
+
+.change-poster {
+	margin-top: 50px;
+}
+
+.starRev {
+	display: block;
+	float: right;
+	margin-right: 25px;
+}
+
+.movie-summary {
+	color: #222;
+	margin-left: 180px;
+	min-height: 550px;
+}
+
+.movie-summaryText {
+	width: 800px;
+}
+
+/* 줄거리 사진 들어갈 자리*/
+.image-moving {
+	width: 600px;
+	height: 300px;
+	/*border:2px solid #f6f;*/
+	margin: auto;
+	margin-left: 120px;
+}
+
+.moving1 {
+	/*border:2px solid #6f6;*/
+	width: auto;
+	height: 300px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.moving2 {
+	width: auto;
+	height: 300px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.moving3 {
+	width: auto;
+	height: 300px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.moving4 {
+	width: auto;
+	height: 300px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.slick-prev:before {
+	color: black !important;
+	margin-top: 30px;
+}
+
+.slick-next:before {
+	color: black !important;
+	margin-top: 30px;
+}
+
+.slick-slide:focus, .slick-center:focus, .slick-active:focus,
+	.slick-current:focus {
+	border: none;
+	outline: none;
+}
+/*줄거리 사진 들어갈 자리 끝*/
+table {
+	border-bottom: 1px solid #eee;
+	width: 500px;
+	height: 400px;
+	color: #222;
+	margin: auto;
+}
+
+table th {
+	text-align: center;
+	font-size: 20px;
+	color: blue;
+}
+
+.staticPicture img {
+	width: 500px;
+	height: 300px;
+	margin-top: -30px;
+}
+
+.staticPicture td:first-child {
+	padding-right: 30px;
+}
+
+.movie-advice {
+	width: 800px;
+	height: 150px;
+	margin: auto;
+	color: #222;
+	margin-bottom: 50px;
+}
+
+.movie-advice button {
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.movie-advice button:after {
+	content: ' ';
+	display: block;
+	float: none;
+	clear: both;
+}
+
+.movie-advice .starRev {
+	margin-top: 10px;
+}
+
+.movie-comment {
+	width: 700px;
+	min-height: 450px;
+	margin: auto;
+	color: #222;
+}
+
+.movie-comment label {
+	font-size: 20px;
+}
+
+.people-comment li {
+	margin-top: 50px;
+}
+
+.movie-comment button {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.movie-comment button:after {
+	content: ' ';
+	display: block;
+	float: none;
+	clear: both;
+}
+
+.movie-comment .starRev {
+	margin-top: 5px;
+	margin-right: 0px;
+}
+
+.pulldate {
+	font-size: 12px;
+	margin-bottom: -30px;
+	display: inline-block;
+}
+
+.movie-comment .modify-text {
+	margin-left: 10px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.movie-comment .delete-text {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.people-comment .text1 {
+	font-size: 17px;
+	display: inline-block;
+	/*border:1px solid #ccc;*/
+	width: 700px;
+	font-family: "Jua", sans-serif;
+}
+
+.pagePass {
+	margin-top: 40px;
+	font-weight: bold;
+}
+
+.pagination li>a {
+	color: black;
+}
+
+.pagination {
+	margin-left: 430px;
+}
+
+.pageUpbutton {
+	margin-top: 10px;
+	width: 600px;
+}
+
+.pageUpbutton button {
+	font-weight: bold;
+	color: #222;
+}
