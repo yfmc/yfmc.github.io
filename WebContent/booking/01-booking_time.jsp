@@ -108,7 +108,7 @@
 			</div>
 			<!-- 영화 선택 -->
 			<div class="choose_film">
-				<ul class="week_btn">
+				<ul>
 					<li><span class="label label-warning">15</span> 강철비2 : 정상회담</li>
 					<li><span class="label label-warning">15</span> #살아있다</li>
 					<li><span class="label label-warning">15</span> 반도</li>
@@ -125,20 +125,20 @@
 			</div>
 			<!-- 날짜 선택 -->
 			<div class="choose_day">
-				<a class="btn weekday day0">7/19<br />일</a>
-				<a class="btn weekday day1">7/20<br />월</a>
-				<a class="btn weekday day2">7/21<br />화</a>
-				<a class="btn weekday day3">7/22<br />수</a>
-				<a class="btn weekday day4">7/23<br />목</a>
-				<a class="btn weekday day5">7/24<br />금</a>
-				<a class="btn weekday day6">7/25<br />토</a>
-				<a class="btn weekday day7">7/19<br />일</a>
-				<a class="btn weekday day8">7/20<br />월</a>
-				<a class="btn weekday day9">7/21<br />화</a>
-				<a class="btn weekday day10">7/22<br />수</a>
-				<a class="btn weekday day11">7/23<br />목</a>
-				<a class="btn weekday day12">7/24<br />금</a>
-				<a class="btn weekday day13">7/25<br />토</a>
+				<a class="btn weekday day0"></a>
+				<a class="btn weekday day1"></a>
+				<a class="btn weekday day2"></a>
+				<a class="btn weekday day3"></a>
+				<a class="btn weekday day4"></a>
+				<a class="btn weekday day5"></a>
+				<a class="btn weekday day6"></a>
+				<a class="btn weekday day7"></a>
+				<a class="btn weekday day8"></a>
+				<a class="btn weekday day9"></a>
+				<a class="btn weekday day10"></a>
+				<a class="btn weekday day11"></a>
+				<a class="btn weekday day12"></a>
+				<a class="btn weekday day13"></a>
 			</div>
 			<!-- 시간 선택 -->
 			<div class="choose_time">
