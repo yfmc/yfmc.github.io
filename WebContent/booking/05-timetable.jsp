@@ -4,8 +4,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
-<!-- 스크롤바 플러그인 -->
+<!-- fakescroll css -->
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
+<!-- slick css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 <title>상영시간표 > 예매 | Cinephile</title>
 
@@ -110,22 +112,133 @@
 		<div class="clear"></div>
 	</div>
 	<hr />
+	<h1 class="branch_infottl">지점 상세 정보</h1>
+	<!-- 극장 상세 정보 -->
+	<div class="branch_info">
+		<!-- 극장 상세 정보 head -->
+		<div class="branch_head">
+			<h2 class="branch_name">CGV 강남</h2>
+			<button id="bookmarking" class="btn btn-default"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
+		</div>
+		<!-- 극장 상세 정보 body -->
+		<div class="branch_body">
+			<!-- 텍스트 정보 -->
+			<div class="info_text">
+				<div class="info_detail">
+					<span class="add1">서울특별시 강남구 역삼동 814-6 스타플렉스 4~11층</span><br /> <span class="add2">서울특별시 강남구 강남대로 438</span><br /> <span class="rooms">6개관 / </span> <span class="seats">874석</span>
+				</div>
+			</div>
+			
+			<!-- 브랜드 로고 영역 -->
+			<div class="info_img">
+				<img src="http://img.cgv.co.kr/R2014/images/title/h1_cgv.png" />
+			</div>
+		</div>
+		<!-- float 마감제 -->
+		<div class="clear"></div>
+
+		<!-- 극장 상세 정보 tail -->
+		<div class="branch_tail">
+			<!-- 대중교통안내 button -->
+			<div class="btn btn-info subway topop" data-toggle="modal" data-target="#modal_subway">
+				<i class="fas fa-subway"></i> 대중교통안내
+			</div>
+			<!-- 대중교통안내 modal -->
+			<div class="modal fade" id="modal_subway">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">
+								<i class="fas fa-subway"></i> 대중교통안내
+							</h4>
+						</div>
+						<div class="modal-body">
+							# 지하철 <br />2호선 | 강남역 11번 출구 <br />9호선 | 신논현역 5번출구 <br /> <br /># 버스 <br />- 분당지역 <br /> 좌석버스: 1005-1, 1005-2, 6800, 5500-2 <br /> 간선버스: 408, 462 <br /> 광역버스: 9404, 9408 <br />- 강북지역 <br /> 간선버스: 140, 144, 145, 471 <br />- 강서지역 <br /> 좌석버스: 1500 <br /> 간선버스: 360 <br />- 강동지역 <br /> 간선버스: 402, 420, 470, 407 <br />- 인근경기지역 <br /> 좌석버스: 3030, 2002, 2002-1 <br /> 광역버스: 9409, 9500, 9501, 9503, 9700, 9711
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 주차안내 button -->
+			<div class="btn btn-info car topop" data-toggle="modal" data-target="#modal_car">
+				<i class="fas fa-car"></i> 주차안내
+			</div>
+			<!-- 주차안내 modal -->
+			<div class="modal fade" id="modal_car">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">
+								<i class="fas fa-car"></i> 주차안내
+							</h4>
+						</div>
+						<div class="modal-body">
+							# 주차정보 <br />- 위치: 건물 지하2F ~ 지하4F <br /> <br /># 주차요금 <br />- CGV 영화 관람 시 주차 3시간 6,000원 <br />- 주차시간 (3시간) 초과 시 10분 당 1,000원 <br /> <br />※ 발렛서비스 운영시간 : 오전 8시 이후 ~ 오후 20시 <br />※ 발렛 무료 서비스는 영화 관람 고객 한 함. (영화 미관람 시 건물 주차장에서 별도 정산) <br />※ 20시 이후 입차 차량은 발렛서비스 이용이 제한될 수 있으며, 별도 운영되는 주차팀의 사정에 따라 변경될 수 있습니다. <br /> <br /># 이용안내 <br />- 주차공간이 협소하여 평일 오후/주말은 주차가 어렵습니다. <br />- 편리한 대중교통 이용을 이용하여 주시기 바랍니다.
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- 지도보기 button -->
+			<div class="btn btn-success map topop" data-toggle="modal" data-target="#modal_map">
+				<i class="fas fa-map-marked-alt"></i> 지도보기
+			</div>
+			<!-- 지도보기 modal -->
+			<div class="modal fade" id="modal_map">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">
+								<i class="fas fa-map-marked-alt"></i> 지도보기
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div id="kakaomap">지도표시자리</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
 	<!-- 상영시간표 -->
 	<div class="timetable">
 		<h1>상영시간표</h1>
-		<!-- 날짜 선택 head 영역 -->
+		<!-- 날짜 선택 영역 -->
 		<div class="table_head">
 			<!-- 날짜 선택 버튼 영역 -->
-			<div class="week_btn">
-				<a class="btn btn-lg"><font color="black"><i class="fas fa-angle-left"></i></font></a>
-				<a class="btn btn-lg"><font color="red">7/19<br />일</font></a>
-				<a class="btn btn-lg"><font color="black">7/20<br />월</font></a>
-				<a class="btn btn-lg"><font color="black">7/21<br />화</font></a>
-				<a class="btn btn-lg"><font color="black">7/22<br />수</font></a>
-				<a class="btn btn-lg"><font color="black">7/23<br />목</font></a>
-				<a class="btn btn-lg"><font color="black">7/24<br />금</font></a>
-				<a class="btn btn-lg"><font color="blue">7/25<br />토</font></a>
-				<a class="btn btn-lg"><font color="black"><i class="fas fa-angle-right"></i></font></a>
+			<div class="table_header">
+				<div class="week_btn">
+						<a class="btn btn-lg weekday day0"></a>
+						<a class="btn btn-lg weekday day1"></a>
+						<a class="btn btn-lg weekday day2"></a>
+						<a class="btn btn-lg weekday day3"></a>
+						<a class="btn btn-lg weekday day4"></a>
+						<a class="btn btn-lg weekday day5"></a>
+						<a class="btn btn-lg weekday day6"></a>
+						<a class="btn btn-lg weekday day7"></a>
+						<a class="btn btn-lg weekday day8"></a>
+						<a class="btn btn-lg weekday day9"></a>
+						<a class="btn btn-lg weekday day10"></a>
+						<a class="btn btn-lg weekday day11"></a>
+						<a class="btn btn-lg weekday day12"></a>
+						<a class="btn btn-lg weekday day13"></a>
+				</div>
+				<div class="clear"></div>
 			</div>
 			<!-- 관람가 및 요금 안내 button -->
 			<div class="table_info" data-toggle="modal" data-target="#modal_table">
@@ -250,8 +363,10 @@
 	</div>
 </div>
 
-<!-- 스크롤바 플러그인 -->
+<!-- fake scroll js -->
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
+<!-- slick js -->
+<script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
 <!-- js 참조 -->
 <script src="<%=request.getContextPath()%>/branch/branch.js"></script>
 <%@ include file="/_inc/footer.jsp"%>

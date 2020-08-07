@@ -160,32 +160,68 @@
 
 /* 날짜 선택 */
 .choose_day {
+	width: 410px;
 	height:80px;
-	padding-top: 15px;
-	padding-left: 12px;
+	margin-top: 10px;
 }
 
-.choose_day li {
-	display: inline-block;
+.weekday {
 	text-align: center;
-	padding: 2px 5px;
+	color: black;
 }
 
-.choose_day li:nth-child(2) {
-	color: red;
-}
-
-.choose_day li:nth-child(8) {
-	color: blue;
-}
-
-.choose_day li:first-child, .choose_day li:last-child {
-	font-size: 25px;
-}
-
-.choose_day li:nth-child(3) {
+.weekday:hover {
+	color: black;
 	font-weight: bold;
-	border: 2px solid black;
+	text-decoration: none;
+	cursor: pointer;
+	border-bottom: 2px solid red;
+}
+
+/* 각종 버튼 효과 삭제 */
+
+.slick-slide:focus, .slick-center:focus, .slick-track:focus, .slick-active:focus, .slick-current:focus, .slick-arrow:focus {
+   border: none;
+   outline: none;
+   box-shadow: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+	outline: none !important;
+	box-shadow: none;
+}
+
+.choose_day > a.slick-arrow:active, .choose_day > a.slick-arrow:focus {
+	box-shadow: none !important;
+}
+
+a.weekday:active, a.weekday:link, a.weekday:visited, a.weekday:focus {
+	text-decoration: none;
+	color: black;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+/* float 마감제 */
+.choose_day:after {
+	content: '';
+	display: block;
+	float:none;
+	clear: both;
+}
+
+.slick-list {
+	width: 325px;
+	display: block;
+	float: left;
+}
+
+.slick-arrow {
+	width: 30px;
+	display: block;
+	float: left;
 }
 
 /* 시간 선택 */
