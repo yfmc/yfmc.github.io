@@ -1,5 +1,3 @@
-<!--  회원정보 수정 전 비밀번호 물어보는 페이지 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -7,7 +5,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/changeinfo-(1).css">
         <div id="content" class="clear">
-        	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
@@ -19,8 +16,6 @@
                     </ul>
                 </div>
             </div>
-            <!-- 사이드바 끝 -->
-            
             <div id="body">
                 <div class="reqmsg">
                 <i class="fas fa-key"></i>
@@ -30,16 +25,23 @@
                         <div class="form-group">
                             <input type="password" name="password" id="password" placeholder="  비밀번호를 입력해주세요">
                         </div>
-                        <!--  입력버튼 -->
                         &nbsp;&nbsp;<button type="button" class="btn change_go_btn">입력</button>
                     </form>
                 </div>
-                <!-- 메인으로 가는 버튼 -->
                 <div class="mainbutton">
                 	<button type="button" class="btn main_go_btn">메인으로</button>
                 </div>
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="<%=request.getContextPath()%>/js_files/changeinfo-(1).js"></script>
+        <script type="text/javascript">
+        	$(function(){
+        		$(document).on("click",".change_go_btn",function(){
+        			location.href="<%=request.getContextPath()%>/mypage/changeinfo-(2).jsp";
+        		});
+        		$(document).on("click",".main_go_btn",function(){
+        			location.href="<%=request.getContextPath()%>/mypage/mypagemain.jsp";
+        		});
+        	});
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

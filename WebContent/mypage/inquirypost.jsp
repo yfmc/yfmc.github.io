@@ -1,12 +1,9 @@
-<!-- 질문 내용 상세 페이지 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/inquirypost.css">
         <div id="content" class="clear">
-        	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
@@ -18,10 +15,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- 사이드바 끝 -->
-            
             <div id="body">
-            	<!-- 문의 상세내역 -->
                 <div class="inqpost">
                     <table class="detail_content">
                         <thead>
@@ -73,12 +67,20 @@
                             </tr>
                         </tbody>
                     </table>
-                    <!-- 문의목록,메인 페이지로 가는 버튼 -->
                     <button type="button" class="btn inqgo">목록으로</button>
                     <button type="button" class="btn maingo">메인으로</button>
                 </div>
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="<%=request.getContextPath()%>/js_files/inquirypost.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        	$(document).on("click",".inqgo",function(){
+        		location.href="<%=request.getContextPath()%>/mypage/inquirylist.jsp";
+        	});
+        	$(document).on("click",".maingo",function(){
+        		location.href="<%=request.getContextPath()%>/mypage/mypagemain.jsp";
+        	});
+        });
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

@@ -29,7 +29,7 @@
 	                </div>
 	                <div class="complete_box">
 	                	<div class="filmlogo_header">
-			        		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png"  />
+			        		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" href="" />
 			            </div>
 			            <div class="complete_title">
 			            	<p>작성하신 문의내용이 정상적으로 <span style="color:#ff7787">접수완료</span> 되었습니다.</p>

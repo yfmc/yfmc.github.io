@@ -1,5 +1,3 @@
-<!-- 마이페이지 메인 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -7,7 +5,6 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/mypagemain.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">		
         <div id="content" class="clear">
-            <!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
@@ -19,13 +16,9 @@
                     </ul>
                 </div>
             </div>
-            <!-- 사이드바 끝 -->
-            
             <div id="body">
-            	<!-- 메인 상단부 -->
                 <div class="bodytop">
                     <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 My Page입니다.</h3>
-                    <!-- 자주가는 영화관 목록 -->
                     <table class="oftentheater">
                         <tr>
                             <td>CGV 강남
@@ -44,16 +37,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>롯데시네마 가산디지털
-                            <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
-                            </td>
+                            <td></td>
                             <td><a href="#" class="often">자주가는 영화관 설정하기</a></td>
                         </tr>
                     </table>
                 </div>
-                <!--  메인 중단부 -->
                 <div class="bodycenter">
-                	<!--  예매내역 3개 표시 -->
                     <span class="centertitle">
                         <h4 style="font-family: 'Jua', sans-serif;">나의 최근 예매내역</h4>
                     </span>
@@ -82,11 +71,9 @@
                         <button type="button" class="btn btn-default bt1" >더보기</button>
                     </div>
                 </div>
-                <!--  메인 하단부 -->
                 <div class="bodybottom">
-                	<!--  좋아요 누른 영화 3개 표시 -->
                     <span class="centertitle">
-                        <h4 style="font-family: 'Jua', sans-serif;">좋아한 영화</h4>
+                        <h4 style="font-family: 'Jua', sans-serif;">찜한 영화</h4>
                     </span>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -112,5 +99,17 @@
                 </div>
             </div>
         </div>
-        <script src="<%=request.getContextPath()%>/js_files/mypagemain.js"></script>
+        <script type="text/javaScript">
+			$(function(){
+				$(document).on("click",".often",function(){
+					window.open('./oftentheater.jsp','','width=600,height=650,scrollbars=no,toolbars=no,menubar=no,status=no,location=no');
+				});
+				$(document).on("click",".bt1",function(){
+					location.href='./bookinglist.jsp';
+				});
+				$(document).on("click",".bt2",function(){
+					location.href='./choicelist.jsp';
+				});
+			});
+		</script>
 <%@ include file="../_inc/footer.jsp"%>

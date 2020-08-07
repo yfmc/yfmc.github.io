@@ -1,5 +1,3 @@
-<!--  예매리스트 페이지 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -8,7 +6,6 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bookinglist.css">
 <link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
         <div id="content" class="clear">
-        	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
@@ -20,14 +17,10 @@
                     </ul>
                 </div>
             </div>
-            <!-- 사이드바 끝 -->
-            
             <div id="body">
                 <div class="bodytop">
                     <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 예매내역입니다.</h3>
                 </div>
-                
-                <!--  예매내역 리스트로 -->
                 <div class="bodylist">
                     <ul class="listarea">
                         <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" height=170px></a>
@@ -100,7 +93,6 @@
                         </li>
                     </ul>
                 </div>
-                <!--  페이지 넘김 -->
                 <div id="page">
                     <div class="row">
                         <div class="col">
@@ -119,5 +111,22 @@
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
-        <script src="<%=request.getContextPath()%>/js_files/bookinglist.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        	$(document).on("click",".cancelbtn",function(){
+        		swal({
+        			title:"확인",
+        			text:"정말 예매를 취소하시겠습니까?",
+        			type:"question",
+        			confirmButtonText:"Yes",
+        			showCancelButton:true,
+        			cancelButtonText:"No",
+        		}).then(function(result){
+        			if(result.value){
+        				swal("예매취소","성공적으로 예매가 취소되었습니다.","success");
+        			}
+        		});
+        	});
+        });
+        </script>
 <%@ include file="../_inc/footer.jsp"%>

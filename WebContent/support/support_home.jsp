@@ -18,7 +18,7 @@
             <!-- ==== 본문 시작 ==== -->
             <div class="content">
 	            <div class="support_title">
-	                <h2>고객센터</h2>
+	                <h2>고객센터 홈</h2>
 	            </div>
                 <div class="service">
                     <h3>자주찾는 서비스</h3>
@@ -28,22 +28,46 @@
                         <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp"><i class="fas fa-bullhorn"></i><br>나의 문의내역 확인</a></li>
                     </ul>
                 </div>
-                <div class="notice_wrap">
+                <div class="notice-wrap">
                     <div class="row">
                         <div class="pre notice_pre pull-left">
                             <div class="title_area">
                                 <h3>공지사항<a href="<%=request.getContextPath()%>/support/notice_list.jsp" class="more pull-right">더보기 > </a></h3>
-                                <div id="notice_list_body">
-                                	<!-- Ajax 결과 위치 -->
-                                </div>
+                                <a href="<%=request.getContextPath()%>/support/notice_detail.jsp" class="list-group-item">
+                                    <p class="list-group-item-text">공지사항 10</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">공지사항 9</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">공지사항 8</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">공지사항 7</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">공지사항 6</p>
+                                </a>
                             </div>
                         </div>
                         <div class="pre faq_pre pull-right">
                             <div class="title_area">
                                 <h3>자주찾는 질문<a href="<%=request.getContextPath()%>/support/faq_list.jsp" class="more pull-right">더보기 > </a></h3>
-                                <div id="faq_list_body">
-                                	<!-- Ajax 결과 위치 -->
-                                </div>
+                                <a href="<%=request.getContextPath()%>/support/faq_detail.jsp" class="list-group-item">
+                                    <p class="list-group-item-text">자주찾는 질문 10</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">자주찾는 질문 9</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">자주찾는 질문 8</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">자주찾는 질문 7</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <p class="list-group-item-text">자주찾는 질문 6</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -53,40 +77,4 @@
             <!-- ==== 본문 끝 ==== -->
         </div>
     </div>
-    <script src="../plugins/handlebars/handlebars-v4.0.11.js"></script>
-    <script id="notice_list_tmpl" type="text/x-handlebars-template">
-    	{{#each notice_list}}
-    	<a href="<%=request.getContextPath()%>/support/notice_detail.jsp" class="list-group-item">
-    	<span>{{noticename}}</span>
-    	<span class="date pull-right">{{date}}</span>
-    	{{/each}}
-    </script>
-    <script id="faq_list_tmpl" type="text/x-handlebars-template">
-    	{{#each faq_list}}
-    	<a href="<%=request.getContextPath()%>/support/faq_detail.jsp" class="list-group-item">
-    	<span>{{faqname}}</span>
-    	<span class="date pull-right">{{date}}</span>
-    	{{/each}}
-    </script>
-    <script type="text/javascript">
-    	function get_notice_list() {
-    		$.get("../api/support_home_list.json", function(req) {
-    			var template = Handlebars.compile($("#notice_list_tmpl").html());
-    			var html = template(req);
-    			$("#notice_list_body").append(html);
-    		});
-    	}
-    	function get_faq_list() {
-    		$.get("../api/support_home_list.json", function(req) {
-    			var template = Handlebars.compile($("#faq_list_tmpl").html());
-    			var html = template(req);
-    			$("#faq_list_body").append(html);
-    		});
-    	}
-    	
-    	$(function() {
-    		get_notice_list();
-    		get_faq_list();
-    	});
-    </script>
 <%@ include file="../_inc/footer.jsp" %>

@@ -43,11 +43,11 @@
                             </tr>
                             <tr class="page_move" align="left">
                                 <td colspan="4">                         
-                                    <span class="page_next">다음글</span>
-                                    <i class="fas fa-angle-up"></i>
-                                    <a href="#" class id="?">
-                                    <span>다음 글이 없습니다.</span>
-                                   	</a>
+                                        <span class="page_next">다음글</span>
+                                        <i class="fas fa-angle-up"></i>
+                                        <a href="#" class id="?">
+                                        <span>다음 글이 없습니다.</span>
+                                    </a>
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">

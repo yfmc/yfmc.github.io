@@ -74,13 +74,14 @@
     	color:#897944;
     }
 
-    .notice_wrap {
+    .notice-wrap {
         border-bottom: 1px solid #cacac1;
         margin-bottom: 20px;
         padding-bottom: 50px;
     }
 
-    .notice_wrap h3 {
+    .notice-wrap h3 {
+        margin-left: 15px;
         border-bottom: 1px solid #000;
     }
     
@@ -94,10 +95,11 @@
 
     .pre {
         width: 400px;
-        margin-left: 15px;
         padding: 0 0 10px 0;
         border-bottom: 1px solid #eee;
     }
+
+
     
     .btn-link {
         padding: 0;

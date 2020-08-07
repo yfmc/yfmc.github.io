@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <!-- 필요CSS -->
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/HeaderFooterYo.css" />
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/_HeaderFooterYo.css" />
   
     
     <!-- 부트스트랩 -->
@@ -26,7 +26,7 @@
 	<!-- JS참조 -->
     <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-	<script src="../js_files/headerMenuSlide.js"></script>
+	<script src="<%=request.getContextPath()%>/js_files/_headerMenuSlide.js"></script>
 
 </head>
 
@@ -67,9 +67,9 @@
             </div>
             <div class="right_top">
                 <ul>
-                    <li><a href="<%=request.getContextPath()%>/login/01-login.jsp">로그인</a></li>
-                    <li><a href="<%=request.getContextPath()%>/account/01-welcome.jsp">&nbsp;회원가입</a></li>
-                    <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.jsp">&nbsp;마이페이지</a></li>
+                    <li id="inout">로그인</li>
+                    <li id="account">&nbsp;회원가입</li>
+                    <li id="mypage">&nbsp;마이페이지</li>
                 </ul>
             </div>
         </div>

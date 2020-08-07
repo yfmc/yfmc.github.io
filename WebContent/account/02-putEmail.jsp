@@ -1,115 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page trimDirectiveWhitespaces="true" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
 
-<%@ include file="../_inc/header.jsp" %>
-
-<style type="text/css">
-    #content>ul {
-        width: auto;
-        height: 40px;
-        margin-top: 100px;
-        font-size: 25px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    #content>ul>li {
-        width: 25%;
-        height: 40px;
-        display: inline-block;
-        float: left;
-        line-height: 50px;
-    }
-
-    #content>ul:after {
-        content: none;
-        display: block;
-        float: none;
-        clear: both;
-    }
-
-    .joining {
-        width: auto;
-        height: 600px;
-        border-top: 5px solid #eee;
-        border-bottom: 5px solid #eee;
-        margin-bottom: 140px;
-        padding-top: 200px;
-    }
-
-    .joining .emails {
-        width: 500px;
-        margin: auto;
-    }
-
-    .joining .emails .input-group {
-        width: 500px;
-        margin-bottom: 20px;
-        display: inline-block;
-    }
-
-    .joining .emails label {
-        width: 160px;
-        text-align: left;
-        font-size: 20px;
-        margin-right: 20px;
-    }
-
-    .joining .emails input {
-        width: 300px;
-        height: 35px;
-        border-radius: 5px;
-        border: 1px solid grey;
-    }
+<%@ include file="../_inc/header.jsp"%>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/account_02putEmail.css?time=<%=System.currentTimeMillis()%>" />
 
 
-    .joining .buttons {
-        width: 500px;
-        margin-left: 20px;
-        margin-top: 10px;
+<div id="content">
+	<ul>
+		<li><font color="#00a1c9">1단계: 이메일 인증</font></li>
+		<li>2단계: 약관동의</li>
+		<li>3단계: 정보입력</li>
+		<li>4단계: 가입완료</li>
+	</ul>
+	<div class="joining">
+		<form name="email_form" id="email_form">
+			<div class="emails">
+				<div class="input-group">
+					<label for="user_email">이메일 주소</label> 
+					<input id="user_email" name="user_email" type="text" placeholder="이메일 주소를 입력해주세요">
+				</div>
+				<div class="input-group">
+					<label for="email_check">이메일 주소 확인</label> 
+					<input id="email_check" name="email_check" type="text" placeholder="이메일 주소를 입력해주세요" disabled>
+				</div>
+				<div class="buttons">
+					<a href="<%=request.getContextPath()%>/account/03-emailCode.jsp">
+						<button type="submit" class="btn btn-default" id="email_submit" disabled>인증번호 전송</button>
+						
+					</a> 
+					<a href="<%=request.getContextPath()%>/account/01-welcome.jsp">
+						<button type="button" class="btn btn-default">취소</button>
+					</a>
+				</div>
+			</div>
+			<div class="check_btn">
+				<button type="button" class="btn btn-default" id="email_uniq_check">중복확인</button>
+				<input type="hidden" name="checked_email" value="">
+			</div>
+		</form>
+	</div>
+</div>
 
-    }
+<script src="../plugins/validate/jquery.validate.min.js"></script>
+<script src="../plugins/validate/additional-methods.min.js"></script>
+<script src="../js_files/account_02putEmail.js"></script>
 
-
-    .joining .buttons .btn {
-        display: block;
-        margin-left: 10px;
-        margin-right: 10px;
-        width: 200px;
-        height: 30px;
-        float: left;
-        /*margin-left:30px;*/
-    }
-    </style>
-    
-    <div id="content">
-            <ul>
-                <li>
-                    <font color="#00a1c9">1단계: 이메일 인증</font>
-                </li>
-                <li>2단계: 약관동의</li>
-                <li>3단계: 정보입력</li>
-                <li>4단계: 가입완료</li>
-            </ul>
-            <div class="joining">
-                <div class="emails">
-                    <form>
-                    <div class="input-group">
-                            <label for="code">이메일 주소</label>
-                            <input id="code" type="text" placeholder="이메일 주소를 입력해주세요">
-                    </div>
-                    <div class="input-group">
-                            <label for="code">이메일 주소 확인</label>
-                            <input id="code" type="text" placeholder="이메일 주소를 입력해주세요">
-                    </div>
-                    </form>
-                    <div class="buttons">
-                        <a href="<%=request.getContextPath()%>/account/03-emailCode.jsp"><button type="button" class="btn btn-default">인증번호 전송</button></a>
-                        <a href="<%=request.getContextPath()%>/account/01-welcome.jsp"><button type="button" class="btn btn-default">취소</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-<%@ include file="../_inc/footer.jsp" %>
+<%@ include file="../_inc/footer.jsp"%>
