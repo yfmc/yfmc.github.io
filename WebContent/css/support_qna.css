@@ -52,7 +52,7 @@
     }
 	
     .qna_box, .user_box{
-        margin-bottom: 70px;
+        margin-bottom: 100px;
     }
 
     .form-group {
@@ -87,8 +87,6 @@
     	background-color: #f8f8f8;
     }
     
-
-
 	.text_box h4 {
 		margin-bottom: 10px;
 		border: 0;

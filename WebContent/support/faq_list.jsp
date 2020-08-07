@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="../_inc/header.jsp"%>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/datatables/datatables.min.css?time=<%=System.currentTimeMillis()%>"/>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_button.css?time=<%=System.currentTimeMillis()%>">
@@ -51,46 +52,42 @@
 							<th style="width: 150px;">조회수</th>
 						</tr>
 					</thead>
-					<tbody id="faq_list_body">
-                    	<!-- Ajax 결과 위치 -->
-                    </tbody>
 				</table>
 			</div>
-			<div class="Page navigation">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#"><</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">></a></li>
-                </ul>
-            </div>
 		</div>
 	</div>
 </div>
-<script src="../plugins/handlebars/handlebars-v4.0.11.js"></script>
-    <script id="faq_list_tmpl" type="text/x-handlebars-template">
-    	{{#each faq_list}}	
-		<tr>
-    	<td>{{faqno}}</td>
-		<td class="detail_title"><a href="<%=request.getContextPath()%>/support/faq_detail.jsp">{{faqname}}</a></td>
-    	<td>{{date}}</td>
-    	<td>{{views}}</td>
-		</tr>
-    	{{/each}}
-    </script>
-    <script type="text/javascript">
-    	function get_faq_list() {
-    		$.get("../api/faq_list.json", function(req) {
-    			var template = Handlebars.compile($("#faq_list_tmpl").html());
-    			var html = template(req);
-    			$("#faq_list_body").append(html);
-    		});
-    	}
-    	$(function() {
-    		get_faq_list();
-    	});
-	</script>
+<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
+<script type="text/javascript">
+$(function(){ 
+	$(".table_faq_list").DataTable({
+		ajax: {
+			type:"POST",
+			url: '../api/faq_list.json',
+			dataType:"JSON"
+		},
+		columns: [
+			{data: "faqno"},
+			{data: "faqname"},
+			{data: "date"},
+			{data: "views"}
+		],
+		// 표시 건수기능
+		lengthChange: true,
+		// 표시 건수 10건 단위로 설정
+		lengthMenu: [10, 20, 30],
+		// 검색 기능
+		searching: true,
+		// 정렬 기능
+		ordering: false,
+		// 정보 표시
+		info: true,
+		// 페이징 기능
+		paging: true,
+		// 현재 상태 유지
+		stateSave:true,
+		pagingType : "full_numbers"
+	}); 
+}); 
+</script>
 <%@ include file="../_inc/footer.jsp"%>

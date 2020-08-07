@@ -30,50 +30,52 @@
 	                        <h4>문의내용<span class="pull-right">* 필수입력</span></h4>
 	                </div>
 	                <form class="form-horizontal"  name="qna_form" id="qna_form">
-	                    <div class=" qna_box">
-	                        <div class="form-group">
-	                            <label for="qna_title" class="must col-xs-2 ">제목</label>
-	                            <div class="col-xs-10">
-	                                <input type="text" name="qna_title" id="qna_title" class="form-control" />
-	                            </div>
-	                        </div>
-	                        <div class="form-group">
-	                            <label for="qna_contents" class="must col-xs-2 ">내용</label>
-	                            <div class="col-xs-10">
-	                                <textarea name="qna_contents" id="qna_contents" class="form-control"  /></textarea>
-	                            </div>
-	                        </div>
-	                        <div class="form-group">
-	                            <label for="textbox" class="col-xs-2 ">첨부파일</label>
-	                            <div class="col-xs-2">
-	                                <input type="file" name="file_img" id="file_img" class="file_img" >
-	                            </div>
-	                        </div>
-	                        <h4>회원 정보</h4>
-	                        <div class="form-group">
-	                            <label for="user_name" class="must col-xs-2">이름</label>
-	                            <div class="col-xs-10">
-	                                <input type="text" name="user_name" id="user_name" class="form-control" />
-	                            </div>
-	                        </div>
-	                        <div class="form-group">
-	                            <label for="birthdate" class="must col-xs-2">생년월일</label>
-	                            <div class="col-xs-10">
-	                                <input type="text" name="birthdate" id="birthdate" class="form-control"  placeholder="예) 1900-01-01" />
-	                            </div>
-	                        </div>
-	                        <div class="form-group">
-	                            <label for="tel" class="must col-xs-2">연락처</label>
-	                            <div class="col-xs-10">
-	                                <input type="text" name="tel" id="tel" class="form-control" placeholder="' - '를 제외하고 입력하세요." />
-	                            </div>
-	                        </div>
-	                        <div class="form-group">
-	                            <label for="email" class="must col-xs-2">이메일</label>
-	                            <div class="col-xs-10">
-	                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 이메일로 답변이 전송됩니다." />
-	                            </div>
-	                        </div>
+	                    <div class="qna_box">
+		                        <div class="form-group">
+		                            <label for="qna_title" class="must col-xs-2 ">제목</label>
+		                            <div class="col-xs-10">
+		                                <input type="text" name="qna_title" id="qna_title" class="form-control" />
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label for="qna_contents" class="must col-xs-2 ">내용</label>
+		                            <div class="col-xs-10">
+		                                <textarea name="qna_contents" id="qna_contents" class="form-control"  /></textarea>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label for="textbox" class="col-xs-2 ">첨부파일</label>
+		                            <div class="col-xs-2">
+		                                <input type="file" name="file_img" id="file_img" class="file_img" >
+		                            </div>
+		                        </div>
+		                </div>
+		                <div class="user_box">
+		                        <h4>회원 정보</h4>
+		                        <div class="form-group">
+		                            <label for="user_name" class="must col-xs-2">이름</label>
+		                            <div class="col-xs-10">
+		                                <input type="text" name="user_name" id="user_name" class="form-control" />
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label for="birthdate" class="must col-xs-2">생년월일</label>
+		                            <div class="col-xs-10">
+		                                <input type="text" name="birthdate" id="birthdate" class="form-control"  placeholder="예) 1900-01-01" />
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label for="tel" class="must col-xs-2">연락처</label>
+		                            <div class="col-xs-10">
+		                                <input type="text" name="tel" id="tel" class="form-control" placeholder="' - '를 제외하고 입력하세요." />
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label for="email" class="must col-xs-2">이메일</label>
+		                            <div class="col-xs-10">
+		                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 이메일로 답변이 전송됩니다." />
+		                            </div>
+		                        </div>
 	                    </div>
 		                    <div class="text_box">
 			                    <div class="text_box_title">

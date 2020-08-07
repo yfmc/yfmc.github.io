@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/datatables/datatables.min.css?time=<%=System.currentTimeMillis()%>"/>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_button.css?time=<%=System.currentTimeMillis()%>">
@@ -29,7 +28,8 @@
 							<option value="">제목</option>
 							<option value="">내용</option>
 					</select>
-					</span> <input type="text" class="form-control" placeholder="Search">
+					</span>
+					<input type="text" class="form-control" placeholder="Search">
 					<span class="input-group-btn">
 						<button type="button" class="btn btn-default">검색</button>
 					</span>
@@ -49,42 +49,47 @@
 							<th style="width: 150px;">조회수</th>
 						</tr>
 					</thead>
+					<tbody id="notice_list_body">
+                    	<!-- Ajax 결과 위치 -->
+                    </tbody>
 				</table>
 			</div>
+			<!-- 페이지 버튼 -->
+			<div class="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#"><</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                </ul>
+            </div>
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
-<script type="text/javascript">
-$(function(){ 
-	$(".table_notice_list").DataTable({
-		ajax: {
-			type:"POST",
-			url: '../api/notice_list.json',
-			dataType:"JSON"
-		},
-		columns: [
-			{data: "noticeno"},
-			{data: "noticename"},
-			{data: "date"},
-			{data: "views"}
-		],
-		// 표시 건수기능
-		lengthChange: true,
-		// 표시 건수 10건 단위로 설정
-		lengthMenu: [10, 20, 30],
-		// 검색 기능
-		searching: true,
-		// 정렬 기능
-		ordering: false,
-		// 정보 표시
-		info: true,
-		// 페이징 기능
-		paging: true,
-		// 현재 상태 유지
-		stateSave:true,
-		pagingType : "full_numbers"
-	}); 
-}); 
-</script>
+<script src="../plugins/handlebars/handlebars-v4.0.11.js"></script>
+    <script id="notice_list_tmpl" type="text/x-handlebars-template">
+    	{{#each notice_list}}	
+		<tr>
+    	<td>{{noticeno}}</td>
+		<td class="detail_title"><a href="<%=request.getContextPath()%>/support/notice_detail.jsp">{{noticename}}</a></td>
+    	<td>{{date}}</td>
+    	<td>{{views}}</td>
+		</tr>
+    	{{/each}}
+    </script>
+    <script type="text/javascript">
+    	function get_notice_list() {
+    		$.get("../api/notice_list.json", function(req) {
+    			var template = Handlebars.compile($("#notice_list_tmpl").html());
+    			var html = template(req);
+    			$("#notice_list_body").append(html);
+    		});
+    	}
+    	$(function() {
+    		get_notice_list();
+    	});
+	</script>
 <%@ include file="../_inc/footer.jsp"%>
