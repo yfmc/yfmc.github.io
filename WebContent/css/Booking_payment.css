@@ -29,20 +29,19 @@
 	padding-top: 80px;
 }
 
+.booking_stage li:hover {
+	cursor: default;
+}
+
 .booking_stage li:first-child {
 	border-top: 1px solid black;
 }
 
-.booking_stage li:first-child:hover {
+.booking_stage li:first-child:hover, .booking_stage li:nth-child(2):hover {
 	background-color: #4d4d4d;
 	color: white;
 	font-weight: bold;
-}
-
-.booking_stage li:nth-child(2):hover {
-	background-color: #4d4d4d;
-	color: white;
-	font-weight: bold;
+	cursor: pointer;
 }
 
 .booking_stage li:nth-child(3) {
@@ -69,6 +68,10 @@
 	text-align: center;
 	font-weight: bold;
 	color: white;
+}
+
+.booking_title:hover {
+	cursor: default;
 }
 
 /* 하단 영역 */

@@ -4,10 +4,12 @@
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
-<!-- 스크롤바 플러그인 -->
+<!-- fakescroll css -->
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
+<!-- slick css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-<title>극장정보 < 극장 | Cinephile</title>
+<title>극장정보 > 극장 | Cinephile</title>
 
 <!-- content -->
 <div id="content">
@@ -116,13 +118,8 @@
 		<!-- 극장 상세 정보 head -->
 		<div class="branch_head">
 			<h2 class="branch_name">CGV 강남</h2>
-			<button class="btn btn-default" onclick="bookmarked()"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
+			<button id="bookmarking" class="btn btn-default"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
 		</div>
-		<script type="text/javascript">
-			function bookmarked() {
-				alert("자주 가는 영화관에 추가되었습니다");
-			}
-		</script>
 		<!-- 극장 상세 정보 body -->
 		<div class="branch_body">
 			<!-- 텍스트 정보 -->
@@ -221,24 +218,32 @@
 	<!-- 상영시간표 -->
 	<div class="timetable">
 		<h1>상영시간표</h1>
-		<!-- 날짜 선택 head 영역 -->
+		<!-- 날짜 선택 영역 -->
 		<div class="table_head">
 			<!-- 날짜 선택 버튼 영역 -->
-			<div class="week_btn">
-				<a class="btn btn-lg"><font color="black"><i class="fas fa-angle-left"></i></font></a>
-				<a class="btn btn-lg"><font color="red">7/19<br />일</font></a>
-				<a class="btn btn-lg"><font color="black">7/20<br />월</font></a>
-				<a class="btn btn-lg"><font color="black">7/21<br />화</font></a>
-				<a class="btn btn-lg"><font color="black">7/22<br />수</font></a>
-				<a class="btn btn-lg"><font color="black">7/23<br />목</font></a>
-				<a class="btn btn-lg"><font color="black">7/24<br />금</font></a>
-				<a class="btn btn-lg"><font color="blue">7/25<br />토</font></a>
-				<a class="btn btn-lg"><font color="black"><i class="fas fa-angle-right"></i></font></a>
+			<div class="table_header">
+				<div class="week_btn">
+						<a class="btn btn-lg weekday day0"></a>
+						<a class="btn btn-lg weekday day1"></a>
+						<a class="btn btn-lg weekday day2"></a>
+						<a class="btn btn-lg weekday day3"></a>
+						<a class="btn btn-lg weekday day4"></a>
+						<a class="btn btn-lg weekday day5"></a>
+						<a class="btn btn-lg weekday day6"></a>
+						<a class="btn btn-lg weekday day7"></a>
+						<a class="btn btn-lg weekday day8"></a>
+						<a class="btn btn-lg weekday day9"></a>
+						<a class="btn btn-lg weekday day10"></a>
+						<a class="btn btn-lg weekday day11"></a>
+						<a class="btn btn-lg weekday day12"></a>
+						<a class="btn btn-lg weekday day13"></a>
+				</div>
+				<div class="clear"></div>
 			</div>
 			<!-- 관람가 및 요금 안내 button -->
 			<div class="table_info" data-toggle="modal" data-target="#modal_table">
 				<h4>
-					<button class="btn btn-default"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</a>
+					<button class="btn btn-default"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</button>
 				</h4>
 			</div>
 
@@ -358,9 +363,10 @@
 	</div>
 </div>
 
-<!-- 스크롤바 플러그인 -->
+<!-- fake scroll js -->
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
-<script type="text/javascript">
-    document.querySelector('.branch_list').fakeScroll();
-</script>
+<!-- slick js -->
+<script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
+<!-- js 참조 -->
+<script src="<%=request.getContextPath()%>/branch/branch.js"></script>
 <%@ include file="/_inc/footer.jsp"%>

@@ -7,7 +7,7 @@
 <!-- 스크롤바 플러그인 -->
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
 
-<title>상영시간표 < 예매 | Cinephile</title>
+<title>상영시간표 > 예매 | Cinephile</title>
 
 <!-- content -->
 <div id="content">
@@ -130,7 +130,7 @@
 			<!-- 관람가 및 요금 안내 button -->
 			<div class="table_info" data-toggle="modal" data-target="#modal_table">
 				<h4>
-					<button class="btn btn-default"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</a>
+					<button class="btn btn-default"><i class="fas fa-info-circle"></i> 관람가 / 요금 안내</button>
 				</h4>
 			</div>
 
@@ -252,7 +252,6 @@
 
 <!-- 스크롤바 플러그인 -->
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
-<script type="text/javascript">
-    document.querySelector('.branch_list').fakeScroll();
-</script>
+<!-- js 참조 -->
+<script src="<%=request.getContextPath()%>/branch/branch.js"></script>
 <%@ include file="/_inc/footer.jsp"%>

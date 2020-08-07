@@ -29,6 +29,10 @@
 	padding-top: 80px;
 }
 
+.booking_stage li:hover {
+	cursor: default;
+}
+
 .booking_stage li:first-child {
 	border-top: 1px solid black;
 }
@@ -37,6 +41,7 @@
 	background-color: #4d4d4d;
 	color: white;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .booking_stage li:nth-child(2) {
@@ -63,6 +68,10 @@
 	text-align: center;
 	font-weight: bold;
 	color: white;
+}
+
+.booking_title:hover {
+	cursor: default;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
@@ -154,6 +163,10 @@
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
+}
+
+.screen:hover {
+	cursor: default;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */

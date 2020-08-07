@@ -7,7 +7,7 @@
 <!-- 스크롤바 플러그인 -->
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
 
-<title>상영선택 < 예매 | Cinephile</title>
+<title>상영선택 > 예매 | Cinephile</title>
 
 <!-- content -->
 <div id="content">
@@ -165,7 +165,8 @@
                         <h4 class="modal-title">로그인</h4>
                     </div>
                     <!-- body -->
-                    <div class="modal-body">로그인하셔야 예매가 가능합니다
+                    <div class="modal-body">
+                    	<span class="modal-msg">로그인하셔야 예매가 가능합니다</span>
                         <div class="form-group" style="margin-top: 10px">
                             <label for="user_id">아이디</label>
                             <input type="text" name="user_id" id="user_id" class="form-control" />
@@ -186,8 +187,6 @@
     </div>
 </div>
 
-<!-- jQuery -->
-<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 <!-- 스크롤바 플러그인 -->
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
 <!-- js 파일 적용 -->

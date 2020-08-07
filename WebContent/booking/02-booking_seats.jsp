@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_seats.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
-<title>좌석선택 < 예매 | Cinephile</title>
+<title>좌석선택 > 예매 | Cinephile</title>
 
 <!-- content -->
 <div id="content">
@@ -64,7 +64,6 @@
 					<!-- float 마감제 -->
 					<div class="clear"></div>
 				</ul>
-			
 				<!-- 안내 사항 부분 -->
 				<div class="booking_notice">
 					- 인원은 최대 8명 선택 가능합니다.<br />
@@ -78,9 +77,6 @@
 			<div class="choose_seats">
 				<!-- screen (상단) -->
 				<div class="screen">S C R E E N</div>
-				
-				
-				
 				<!-- 중반부 -->
 				<div class="seats_body">
 					<!-- 좌석 버튼 -->
@@ -457,10 +453,8 @@
 	</div>
 </div>
 
-<!-- jQuery -->
-<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 <!-- js 파일 적용 -->
-<script type="text/javascript" src="bookingppl.js"></script>
+<script type="text/javascript" src="booking_seats.js"></script>
 
 <!-- Javascript -->
 <script type="text/javascript">
