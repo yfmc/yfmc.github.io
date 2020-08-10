@@ -1,3 +1,5 @@
+<!-- 회원탈퇴 완료 페이지 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -5,6 +7,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/withdrawal-(2).css">
 
         <div id="content" class="clear">
+        	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
@@ -16,6 +19,8 @@
                     </ul>
                 </div>
             </div>
+            <!-- 사이드바 끝 -->
+            
             <div id="body">
                 <div class="msg">
                     <h1>회원 탈퇴가 정상적으로 처리되었습니다.</h1>
@@ -27,6 +32,8 @@
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript">
+        
+        // '메인으로 가기' 버튼 누르면 사이트 메인으로 이동
         $(function(){
         	$(document).on("click",".indexgo",function(){
         		location.href="<%=request.getContextPath()%>/index.jsp";

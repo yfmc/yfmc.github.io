@@ -174,3 +174,7 @@
     bottom: 19px;
     right: 80px;
 }
+
+.tooltip-inner {
+    min-width:300px; 
+}

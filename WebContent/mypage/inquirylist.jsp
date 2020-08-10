@@ -1,3 +1,5 @@
+<!-- 질문 내역 페이지 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -6,6 +8,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/inquirylist.css">
 
         <div id="content" class="clear">
+        	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
@@ -17,10 +20,12 @@
                     </ul>
                 </div>
             </div>
+            <!-- 사이드바 끝 -->
             <div id="body">
                 <div class="bodytop">
                     <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bullhorn"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 문의 내역입니다.</h3>
                 </div>
+                <!-- 문의 내역 게시판 형식으로 -->
                 <div class="table_area">
 					<table class="table_faq_list">
 						<thead>
@@ -74,6 +79,7 @@
 						</tbody>
 					</table>
 				</div>
+				<!-- 페이지 넘기기 버튼 -->
 				<div id="page">
                     <div class="row">
                         <div class="col">
@@ -88,17 +94,12 @@
                         </div>
                     </div>
                 </div>
+                <!-- 1:1문의 페이지로 가는 버튼 -->
 	            <div class="inqbutton">
 	                <button type="button" class="btn faqgo">1:1문의</button>
 	            </div>
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript">
-        $(function(){
-        	$(document).on("click",".faqgo",function(){
-        		location.href="<%=request.getContextPath()%>/support/qna.jsp";
-        	});
-        });
-        </script>
+        <script src="<%=request.getContextPath()%>/js_files/inquirylist.js"></script>
 <%@ include file="../_inc/footer.jsp"%>
