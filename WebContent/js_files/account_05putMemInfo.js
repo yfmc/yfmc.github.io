@@ -128,7 +128,7 @@ $(function(){
        			
        			/* 중복검사를 하지 않고 회원가입 버튼을 눌렀을 경우 처리 */
        			$("#btn_submit").click(function(){
-       				if($("input[name=checked_id]").val()==""){
+       				if($("#user_id").val() != "" && $("input[name=checked_id]").val()==""){
        					alert("아이디 중복확인 버튼을 눌러주세요.");
        					$(this).focus(); //<-- 왜 안먹힘???
        					return false;

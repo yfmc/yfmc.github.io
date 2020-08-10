@@ -27,6 +27,9 @@
     <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 	<script src="<%=request.getContextPath()%>/js_files/_headerMenuSlide.js"></script>
+	
+	<!-- AjaxHelper -->
+	<script src="../js_files/ajax_helper.js"></script>
 
 </head>
 
@@ -48,7 +51,7 @@
                         </ul>
                     </li>
                     <li class="nav">
-                        <a href="<%=request.getContextPath()%>/booking/01-booking_time.jsp" class="mains">예매</a>
+                        <a href="#" class="mains">예매</a>
                         <ul class="subnav">
                             <li><a href="<%=request.getContextPath()%>/booking/01-booking_time.jsp">예매하기</a></li>
                             <li><a href="<%=request.getContextPath()%>/booking/05-timetable.jsp">극장별시간표</a></li>
@@ -67,8 +70,8 @@
             </div>
             <div class="right_top">
                 <ul>
-                    <li id="inout">로그인</li>
-                    <li id="account">&nbsp;회원가입</li>
+                    <li id="inout"><a href="<%=request.getContextPath()%>/login/01-login.jsp">로그인</a></li>
+                    <li id="account"><a href="<%=request.getContextPath()%>/account/01-welcome.jsp">&nbsp;회원가입</a></li>
                     <li id="mypage">&nbsp;마이페이지</li>
                 </ul>
             </div>

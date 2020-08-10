@@ -7,7 +7,7 @@
 
             <div id="findId">
                 <h2 class="findId">아이디 찾기</h2>
-                <form>
+                <form id="find__id">
 
                 <div class="input-group input-group-lg">
 
@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="loginbt">
-                    <button type="button" class="btn btn-default" id="findid">아이디 찾기</button>
+                    <button type="submit" class="btn btn-default" id="findid">아이디 찾기</button>
                     <a href="01-login.jsp"><button type="button" class="btn btn-default">취소</button></a>
                 </div>
                 </form>
@@ -26,7 +26,7 @@
 
             <div id="findPw">
                 <h2 class="findPd">비밀번호 찾기</h2>
-                <form>
+                <form id="find__pw">
 
                 <div class="input-group input-group-lg">
 
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="loginbt">
-                    <button type="button" class="btn btn-default" id="findpw">비밀번호 찾기</button>
+                    <button type="submit" class="btn btn-default" id="findpw">비밀번호 찾기</button>
                     <a href="<%=request.getContextPath()%>/login/01-login.jsp"><button type="button" class="btn btn-default">취소</button></a>
 
                 </div>

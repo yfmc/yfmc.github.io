@@ -13,18 +13,18 @@
                 </p>
                 <div class="variCode">
                         <div class="input-group">
-                            <form>
+                            <form id="codesubmit">
                             <label for="code">인증번호</label>
                             <input id="code" type="text" placeholder="인증번호를 입력해주세요.">
+                            <button type="submit" class="btn btn-default">확인</button>
                             </form>
-                            <button type="button" class="btn btn-default">확인</button>
                         </div>
                 </div>
                 <div class="nomail">
                     <p>메일을 받지 못하였나요?</p>
-                    <button type="button" class="btn btn-default">인증번호 다시 보내기</button>
+                    <button type="button" class="btn btn-default" id="code_again">인증번호 다시 보내기</button>
                 </div>
             </div>
         </div>
-
+<script src="../js_files/login_04passwordemail.js"></script>
 <%@ include file="../_inc/footer.jsp" %>

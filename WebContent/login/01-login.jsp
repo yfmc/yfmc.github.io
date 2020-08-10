@@ -5,7 +5,7 @@
     <div id="content">
             <h2>로그인</h2>
             <div id="lginput">
-                <form>
+                <form id="letslogin">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1"><i class="fas fa-user-circle"></i></span>
                     <input type="text" class="form-control" id="user_id" placeholder="아이디를 입력해주세요." aria-describedby="sizing-addon1">
@@ -20,10 +20,8 @@
                 </div>
                 <div class="loginbt">
                 
-                    <button type="button" class="btn btn-primary" id="btn_login">로그인</button>
-             
-                   
-           
+                    <button type="submit" class="btn btn-primary" id="btn_login">로그인</button>
+
                 </div>
                 </form>
             </div>
