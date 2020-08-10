@@ -54,7 +54,8 @@
     color:#eee;
 }
 
-.provincial li a:active {
+/* 각종 링크 효과 삭제 */
+.provincial li a:active, .provincial li a:focus, .provincial li a:link, .provincial li a:visited {
     text-decoration: none;
     font-style: none;
 }
@@ -184,11 +185,21 @@
 }
 
 /* 팝업 modal */
-#kakaomap {
+.map_info {
+	width: 500px;
+	margin: auto;
+	margin-bottom: 10px;
+	position: relative;
+	text-align: center;
+	color: rgb(35, 140, 250);
+	font-weight: bold;
+}
+
+.kakaomap {
     width: 500px;
     height: 400px;
     margin: auto;
-    background-color: #a2deb2;
+    position: relative;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
@@ -291,12 +302,13 @@
 
 .start_time {
     font-weight: bold;
+    margin-bottom: 3px;
 }
 
 .film_time .seats {
     font-size: 11px;
     float:left;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .room_no {

@@ -203,7 +203,9 @@
 							</h4>
 						</div>
 						<div class="modal-body">
-							<div id="kakaomap">지도표시자리</div>
+							<h4 class="map_info">마커 클릭 시 kakaomap 길찾기 페이지로 이동합니다</h4>
+    						<div id="kakaomap" class="kakaomap">
+    						</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
@@ -367,6 +369,10 @@
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
 <!-- slick js -->
 <script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
+<!-- kakaomap API -->
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ba7a5958ab47694eb9afd60cda94e841"></script>
+<!-- kakaomap services 라이브러리 불러오기 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ba7a5958ab47694eb9afd60cda94e841&libraries=services"></script>
 <!-- js 파일 적용 -->
 <script src="<%=request.getContextPath()%>/branch/branch.js"></script>
 <%@ include file="/_inc/footer.jsp"%>

@@ -44,12 +44,12 @@
 					<form id="pay">
 						<h2>최종 결제수단 선택</h2>
 						<div class="payment_radio">
-								<input type="radio" name="payment" id="credit_card">
-								<label for="credit_card"><i class="far fa-credit-card"></i><br /><span>신용카드</span></label>
-								<input type="radio" name="payment" id="simple_payment">
-								<label for="simple_payment"><i class="fas fa-money-check-alt"></i><br /><span>간편결제</span></label>
-								<input type="radio" name="payment" id="mobile_payment">
-								<label for="mobile_payment"><i class="fas fa-mobile-alt"></i><br /><span>휴대폰결제</span></label>	
+							<input type="radio" name="payment" id="credit_card">
+							<label for="credit_card"><i class="far fa-credit-card"></i><br /><span>신용카드</span></label>
+							<input type="radio" name="payment" id="simple_payment">
+							<label for="simple_payment"><i class="fas fa-money-check-alt"></i><br /><span>간편결제</span></label>
+							<input type="radio" name="payment" id="mobile_payment">
+							<label for="mobile_payment"><i class="fas fa-mobile-alt"></i><br /><span>휴대폰결제</span></label>	
 						</div>
 						<h3>결제금액 20,000원</h3>
 						<div class="payment_btn">
