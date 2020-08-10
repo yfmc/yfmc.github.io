@@ -141,9 +141,11 @@
 					if($("#certigo").css("display") == "none"){
 					    $("#certigo").show();
 					    $(".certinum").show();
+					    $(".hiddenstar1").show();
 					} else {
 					    $("#certigo").hide();
 					    $(".certinum").hide();
+					    $(".hiddenstar1").hide();
 					}
 				});
 				
@@ -153,6 +155,10 @@
 					$("#phone").prop("disabled",!now);
 					if($("#phone").prop("disabled")==false){
 						$("#phone").focus();
+						$(".hiddenstar2").show();
+					}
+					else{
+						$(".hiddenstar2").hide();
 					}
 				});
 				
@@ -167,9 +173,11 @@
 					}
 					if($(".addressbutton").css("display")=="none"){
 						$(".addressbutton").show();
+						$(".hiddenstar3").show();
 					}
 					else{
 						$(".addressbutton").hide();
+						$(".hiddenstar3").hide();
 					}
 				});
 				

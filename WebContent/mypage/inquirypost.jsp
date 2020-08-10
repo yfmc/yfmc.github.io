@@ -4,6 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<title>마이페이지 > 문의 내역</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/inquirypost.css">
         <div id="content" class="clear">
         	<!-- 사이드바 -->

@@ -103,6 +103,10 @@
 	opacity:0.6;
 }
 
+.gotheater{
+	background:radial-gradient(#e8fcfc,#d1feff);
+}
+
 .bodycenter {
     height: 340px;
     position: relative;
@@ -176,5 +180,5 @@
 }
 
 .tooltip-inner {
-    min-width:300px; 
+    max-width:400px; 
 }

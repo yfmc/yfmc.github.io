@@ -4,6 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<title>마이페이지 > 회원 탈퇴</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/withdrawal-(2).css">
 
         <div id="content" class="clear">

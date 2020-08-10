@@ -4,7 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
-
+<title>마이페이지 > 회원정보 수정</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/changeinfo-(2).css">
 <link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
         <div id="content" class="clear">
@@ -80,7 +80,7 @@
                         </div>
                         <!-- 이메일 -->
                         <div class="form-group">
-                            <label for="maillist" class="col-xs-2 control-label">
+                            <label for="maillist" class="col-xs-2 control-label"><span style="color:red;display:none;" class="hiddenstar1">*</span>
                             <input type="checkbox" id="email_enable" /> 이메일</label>
                             <div class="col-xs-10">
                                 <input type="text" class="form-control" name="mail" id="mail" value="abcd@gmail.com" style="width:200px;"disabled/>
@@ -100,7 +100,7 @@
                         <!-- 연락처 -->
                         <div class="form-group">
                             <label for="phonelist" class="col-xs-2 control-label">
-                            <input type="checkbox" id="phone_enable"/> 연락처</label>
+                            <span style="color:red;display:none;" class="hiddenstar2">*</span> <input type="checkbox" id="phone_enable"/> 연락처</label>
                             <div class="col-xs-10">
                                 <input type="text" class="form-control" name="phone" id="phone" value="01012345678" style="width:150px; "disabled/>
                                 (-없이 입력하세요)
@@ -109,7 +109,7 @@
                         <!-- 주소 -->
                         <div class="form-group addressgroup">
                             <label for="address" class="col-xs-2 control-label">
-                            <input type="checkbox" id="address_enable"/> 주소</label>
+                            <span style="color:red;display:none;" class="hiddenstar3">*</span> <input type="checkbox" id="address_enable"/> 주소</label>
                             <div class="col-xs-10">
                                 <input type="text" class="form-control" name="address1" id="address1" value="서울특별시 서초구 서초대로77길 54" style="width:270px" disabled/>
                                 &nbsp;<input type="button" class="addressbutton btn btn-info" value="검색" style="display:none;"/>

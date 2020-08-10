@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/plugins/tagsinput/jquery-tagsinput.min.css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/oftentheater.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <title>자주가는 영화관 설정</title>
 </head>
 
@@ -37,7 +38,7 @@
                         <option value="lotte">롯데시네마</option>
                     </select>
                     <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
-                    <select name="region" id="region"">
+                    <select name="region" id="region">
                     	<option value="">--- 선택 ---</option>
                         <option value="서울">서울</option>
                         <option value="경기도">경기</option>
@@ -81,23 +82,47 @@
   				</div>
 			</div>
 		</div>
+		<div class="butt">
+				<button type="button" class="btn btn-primary outbutton">확인</button>
+		</div>
 		 <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 		<script src="<%=request.getContextPath()%>/plugins/tagsinput/jquery-tagsinput.min.js" defer></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript">
 			$(function(){
 				// 자주가는 영화관 추가,제거 기능 정의
 				var count=5;
+				var this_theater=["CGV 목동","CGV 강변","CGV 강남","CGV 건대입구","메가박스 화곡","CGV미아","롯데시네마 영등포","메가박스 신촌","메가박스 강남","롯데시네마 노원","롯데시네마 가산디지털"];
+				var my_theater=["CGV 강남","CGV 목동","메가박스 화곡","롯데시네마 영등포","롯데시네마 가산디지털"];
 				$(document).on("click",".inserttheater",function(){ //추가버튼 눌렀을 때
 					if(count==5){									// 이미 5개의 영화관이 등록되어 있다면 추가 못하게 함
 						alert("더 이상 추가할 수 없습니다.");
 						}
 					else{
+						if(this_theater.indexOf($("#theatersearch").val())==-1){
+							alert("그런 영화관은 없습니다.");
+							return false;
+						}
+						if(my_theater.indexOf($("#theatersearch").val())!=-1){
+							alert("이미 등록된 영화관입니다.");
+							return false;
+						}
 						var html="<div class='tag badge badge-primary'><span>";	//5개 미만이면 영화관 추가
 						html+=$("#theatersearch").val();
 						html+="</span><i class='tag-remove'>✖</i>";
 						$(".tags-container").append(html);
+						my_theater.push($("#theatersearch").val());
+						console.log(my_theater);
 						count++;
-						console.log(count);
+					}
+				});
+				$("#theatersearch").autocomplete({
+					source:this_theater,
+					select:function(event,ui){
+						console.log(ui.item);
+					},
+					focus:function(event,ui){
+						return false;
 					}
 				});
 				$(document).on("click",".tag-remove",function(){	//자주가는 영화관 목록 제외하기
@@ -105,8 +130,14 @@
 					if(result){
 					$(this).parents(".tag").hide();
 						count--;
-						console.log(count);
+						const idx = my_theater.indexOf($(this).parent().find("span").html());
+						if (idx > -1) my_theater.splice(idx, 1);
+						console.log(my_theater);
+						
 				}
+				});
+				$(document).on("click",".outbutton",function(){
+					self.close();
 				});
 			});
 		</script>

@@ -80,7 +80,7 @@
     padding-top: 1px;
     position: relative;
     padding-left:20px;
-	border:1px solid #828282;
+	border:0.5px solid #c9c9c9;
     border-right:0;
     border-left:0;
 }
@@ -155,7 +155,7 @@
 span.star-prototype,
 span.star-prototype>* {
   height: 16px;
-  background: url(http://i.imgur.com/YsyS5y8.png) 0 -16px repeat-x;
+  background: url(../img/star_rate.png) 0 -16px repeat-x;
   width: 80px;
   display: inline-block;
 }

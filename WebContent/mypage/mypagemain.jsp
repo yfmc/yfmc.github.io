@@ -4,6 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<title>마이페이지</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/mypagemain.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">		
         <div id="content" class="clear">
@@ -47,7 +48,7 @@
                             <td><span class='tooltip-graph' data-toggle="tooltip" data-html='true' data-placement='top' title='서울특별시 금천구 디지털로10길 9 (가산동, 현대아울렛)<br/>1544-8855<br/>6관, 1054석'>롯데시네마 가산디지털</span>
                             <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
                             </td>
-                            <td><a href="#" class="often">자주가는 영화관 설정하기</a></td>
+                            <td class="gotheater"><a href="#" class="often">자주가는 영화관 설정하기</a></td>
                         </tr>
                     </table>
                 </div>
@@ -79,7 +80,7 @@
                                 <h5 style="font-size:12px;">예매:2019-07-17</h5>
                             </a>
                         </div>
-                        <button type="button" class="btn btn-default bt1" >더보기</button>
+                        <button type="button" class="btn btn-info bt1 tooltip-graph" data-toggle="tooltip" data-placement='bottom' title='예매내역 페이지로 이동합니다.' >더보기</button>
                     </div>
                 </div>
                 <!--  메인 하단부 -->
@@ -97,7 +98,7 @@
                         </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="<%=request.getContextPath()%>/movie/MovieContent.jsp" class="thumbnail">
-                                <img src="../img/mypage_movie2.jpg" />
+                                <img src="<%=request.getContextPath()%>/img/mypage_movie2.jpg" />
                                 <h5>반도</h5>
                             </a>
                         </div>
@@ -107,7 +108,7 @@
                                 <h5>스파이더맨: 파 프롬 홈</h5>
                             </a>
                         </div>
-                        <button type="button" class="btn btn-default bt2" >더보기</button>
+                        <button type="button" class="btn btn-success bt2 tooltip-graph" data-toggle="tooltip" data-placement='bottom' title='좋아한 영화 페이지로 이동합니다.' >더보기</button>
                     </div>
                 </div>
             </div>
