@@ -67,4 +67,13 @@ $(function() {
 			$("#count2").html(count[2]);
 		}
 	});
+	
+	/* 상영시간 선택으로 돌아가기 */
+	$("#go_back").click(function() {
+		var is_ok=confirm("상영시간 선택화면으로 돌아가시겠습니까?");
+		
+		if (is_ok) {
+			location.href="01-booking_time.jsp";
+		}
+	});
 });

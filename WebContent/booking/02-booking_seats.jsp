@@ -13,7 +13,7 @@
 		<!-- 예매단계 안내박스 -->
 		<div class="booking_stage">
 			<ul>
-				<li onclick="goBack();">01<br />상영시간</li>
+				<li id="go_back">01<br />상영시간</li>
 				<li>02<br />좌석</li>
 				<li>03<br />결제</li>
 				<li>04<br />예매완료</li>
@@ -455,15 +455,4 @@
 
 <!-- js 파일 적용 -->
 <script type="text/javascript" src="booking_seats.js"></script>
-
-<!-- Javascript -->
-<script type="text/javascript">
-	function goBack() {
-		var is_ok=confirm("상영시간 선택화면으로 돌아가시겠습니까?");
-		
-		if (is_ok) {
-			location.href="<%=request.getContextPath()%>/booking/01-booking_time.jsp";
-		}
-	}
-</script>
 <%@ include file="/_inc/footer.jsp"%>

@@ -172,13 +172,15 @@
                     <!-- body -->
                     <div class="modal-body">
                     	<span class="modal-msg">로그인하셔야 예매가 가능합니다</span>
-                        <div class="form-group" style="margin-top: 10px">
-                            <label for="user_id">아이디</label>
-                            <input type="text" name="user_id" id="user_id" class="form-control" />
-                            <label for="user_pw">비밀번호</label>
-                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
-                        </div>
-                        <button type="button" id="login-btn" class="btn btn-primary">로그인</button>
+                    	<form id="login_modal">
+	                        <div class="form-group" style="margin-top: 10px">
+	                            <label for="user_id">아이디</label>
+	                            <input type="text" name="user_id" id="user_id" class="form-control" />
+	                            <label for="user_pw">비밀번호</label>
+	                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
+	                        </div>
+	                        <button type="submit" class="btn btn-primary">로그인</button>
+                        </form>
                     </div>
                 </div>
             </div>

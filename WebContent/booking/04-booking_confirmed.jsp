@@ -40,7 +40,7 @@
 					</div>
 				</div>
 				<div class="exit_btn">
-					<button class="go_to_main" type="button" onclick="goMain();">메인으로 가기</button>
+					<button class="go_to_main" type="button">메인으로 가기</button>
 					<button class="go_to_mypage" type="button">나의 예매내역으로 가기</button>
 				</div>
 			</div>
@@ -53,10 +53,6 @@
 	</div>
 </div>
 
-<!-- Javascript -->
-<script type="text/javascript">
-function goMain() {
-	location.href="<%=request.getContextPath()%>/index.jsp";
-}
-</script>
+<!-- js 파일 적용 -->
+<script type="text/javascript" src="<%=request.getContextPath()%>/booking/booking_confirmed.js"></script>
 <%@ include file="/_inc/footer.jsp"%>

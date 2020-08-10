@@ -58,4 +58,25 @@ $(function() {
 	$(".day"+6).css("color", "blue");
 	$(".day"+7).css("color", "red");
 	$(".day"+13).css("color", "blue");
+	
+	// 로그인 입력값 검사
+	$("#login_modal").submit(function(e) {
+		e.preventDefault();
+		
+		var userid=$("#user_id").val();
+		if (!userid) {
+			alert("아이디를 입력하세요");
+			$("#user_id").focus();
+			return false;
+		}
+		
+		var userpw=$("#user_pw").val();
+		if (!userpw) {
+			alert("비밀번호를 입력하세요");
+			$("#user_pw").focus();
+			return false;
+		}
+		
+		location.href="02-booking_seats.jsp";
+	});
 });

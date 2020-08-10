@@ -264,6 +264,6 @@
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
 <!-- slick js -->
 <script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
-<!-- js 참조 -->
+<!-- js 파일 적용 -->
 <script src="<%=request.getContextPath()%>/branch/branch.js"></script>
 <%@ include file="/_inc/footer.jsp"%>

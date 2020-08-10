@@ -123,7 +123,7 @@
 
 /* '최종 결제수단 선택' */
 .choose_payment h2 {
-	margin-top: 50px;
+	margin-top: 70px;
 	text-align: center;
 	font-weight: bold;
 }
@@ -135,11 +135,24 @@
 	margin-top: 40px;
 }
 
-.payment_radio > button {
+/* 라디오 선택 동그라미 삭제 */
+input[type="radio"] {
+	-webkit-appearance: none;
+}
+
+
+.payment_radio label {
 	display: inline-block;
-	width: 130px;
+	width: 120px;
 	margin: 10px;
 	padding: 10px;
+	border: 3px solid black;
+	text-align: center;
+	transition: 0.5s;
+}
+
+.payment_radio label:hover {
+	cursor: pointer;
 }
 
 .payment_radio i {
@@ -148,8 +161,14 @@
 }
 
 .payment_radio span {
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
+}
+
+/* 네모 영역을 라디오 버튼 영역으로 설정 */
+input[type="radio"]:checked+label {
+	background-color: black;
+	color: #eee;
 }
 
 .choose_payment h3 {
