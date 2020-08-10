@@ -32,7 +32,8 @@
                         </thead>
                         <tbody>
                             <tr class="detail_box">
-                                <td colspan="4"> 여기는 공지사항 내용입니다.<br />
+                                <td colspan="4">
+                                	여기는 공지사항 내용입니다.<br />
                                     잘 읽어 보세요.<br />
                                     확인 잘 해보세요.<br />
                                     저희 영화관을 이용해 주셔서 감사합니다.<br />
@@ -43,11 +44,11 @@
                             </tr>
                             <tr class="page_move" align="left">
                                 <td colspan="4">                         
-                                        <span class="page_next">다음글</span>
-                                        <i class="fas fa-angle-up"></i>
-                                        <a href="#" class id="?">
-                                        <span>다음 글이 없습니다.</span>
-                                    </a>
+                                    <span class="page_next">다음글</span>
+                                    <i class="fas fa-angle-up"></i>
+                                    <a href="#" class id="?">
+                                    <span>다음 글이 없습니다.</span>
+                                   	</a>
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">

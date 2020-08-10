@@ -13,6 +13,7 @@
     }
 
     .table_area {
+    	padding-top: 20px;
     	border-top: 1px solid #555;
         text-align: center;
     }
@@ -30,10 +31,10 @@
     }
 
     th {
-        height: 35px;
         text-align: center;
         background-color: #f2f4f5;
         font-size: 16px;
+        line-height: 150%;
     }
 
     td {
@@ -42,9 +43,14 @@
         border-bottom: 1px solid #eee;
         padding: 20px;
         font-size: 16px;
+        line-height: 200%;
     }
     
     .detail_title {
     	padding-left: 40px;
     	text-align: left;
+    }
+    
+    a{
+    	color: black;
     }

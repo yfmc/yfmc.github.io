@@ -24,27 +24,7 @@
 			"noticeno": 6,
 			"noticename": "공지사항 6",
 			"date": "2020.08.04"
-		},
-		{
-			"noticeno": 5,
-			"noticename": "공지사항 5",
-			"date": "2020.08.04"
-		},
-		{
-			"noticeno": 4,
-			"noticename": "공지사항 4",
-			"date": "2020.08.04"
-		},
-		{
-			"noticeno": 3,
-			"noticename": "공지사항 3",
-			"date": "2020.08.04"
-		},
-		{
-			"noticeno": 2,
-			"noticename": "공지사항 2",
-			"date": "2020.08.04"
-		}	
+		}
 	],
 	
 	"faq_list": [

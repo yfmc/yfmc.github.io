@@ -1,5 +1,95 @@
 {
-	"notice_list": [
+	"data": [
+		{
+			"noticeno": 25,
+			"noticename": "공지사항 25",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 24,
+			"noticename": "공지사항 24",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 23,
+			"noticename": "공지사항 23",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 22,
+			"noticename": "공지사항 22",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 21,
+			"noticename": "공지사항 21",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 20,
+			"noticename": "공지사항 20",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 19,
+			"noticename": "공지사항 19",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 18,
+			"noticename": "공지사항 18",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 17,
+			"noticename": "공지사항 17",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 16,
+			"noticename": "공지사항 16",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 15,
+			"noticename": "공지사항 15",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 14,
+			"noticename": "공지사항 14",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 13,
+			"noticename": "공지사항 13",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 12,
+			"noticename": "공지사항 12",
+			"date": "2020.08.04",
+			"views": 10000
+		},
+		{
+			"noticeno": 11,
+			"noticename": "공지사항 11",
+			"date": "2020.08.04",
+			"views": 10000
+		},
 		{
 			"noticeno": 10,
 			"noticename": "공지사항 10",
@@ -59,6 +149,6 @@
 			"noticename": "공지사항 1",
 			"date": "2020.08.04",
 			"views": 10000
-		}	
+		}
 	]
 }
