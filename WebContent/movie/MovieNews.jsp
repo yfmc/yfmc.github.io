@@ -251,6 +251,7 @@
 		href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>"
 		class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
 </div>
-<!--// ========== 컨텐츠 영역 끝 ========== -->
 
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--// ========== 컨텐츠 영역 끝 ========== -->
 <%@ include file="../_inc/footer.jsp"%>

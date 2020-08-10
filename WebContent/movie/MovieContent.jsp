@@ -51,8 +51,8 @@
 			</p>
 			<p>
 				관람객 평점 :<div class="starRev">
-						<span class="starR on">별1</span> <span class="starR on">별2</span>
-						<span class="starR on">별3</span> <span class="starR">별4</span> 
+						<span class="starR">별1</span> <span class="starR">별2</span>
+						<span class="starR">별3</span> <span class="starR">별4</span> 
 						<span class="starR">별5</span>
 					</div>
 			</p>
@@ -238,6 +238,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/Javascript" src="../js_files/likecount.js"></script>
+<script type="text/Javascript" src="../js_files/star.js"></script>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="../plugins/slick/slick.min.js"></script>
