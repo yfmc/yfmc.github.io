@@ -83,7 +83,27 @@
 .certinum{
 	display:none;
 }
+#postcodify{
+	margin-top:3px;	
+}
 
+.keyword{
+	width:310px;
+	margin-left:-13px;
+	margin-right:5px;
+}
+
+#postcode{
+	margin-bottom:5px;
+}
+
+#address{
+	margin-bottom:5px;
+}
+
+.search_button{
+	margin-top:-5px;
+}
 .twobutton{
     position:relative;
     left:140px;

@@ -121,11 +121,6 @@
 					});
 				});
 				
-				//주소찾기 팝업
-				$(document).on("click",".addressbutton",function(){
-					window.open('../mypage/address_search.jsp','','width=550,height=650,scrollbars=no,toolbars=no,menubar=no,status=no,location=no,left=600,top=300');
-				});
-				
 				//'취소' 버튼 누르면 메인으로
 				$(document).on("click",".out",function(){
 					location.href="../mypage/mypagemain.jsp";
@@ -164,21 +159,39 @@
 				
 				//체크박스를 넣어 원할 때에만 주소 변경 가능하게 함
 				$("#address_enable").change(function(){
-					var now=$("#address1").prop("disabled");
-					var now2=$("#address2").prop("disabled");
-					$("#address1").prop("disabled",!now);
-					$("#address2").prop("disabled",!now2);
-					if($("#address1").prop("disabled")==false){
-						$("#address1").focus();
+					var now=$("#address").prop("disabled");
+					var now2=$("#details").prop("disabled");
+					var now3=$("#postcode").prop("disabled");
+					$("#address").prop("disabled",!now);
+					$("#details").prop("disabled",!now2);
+					$("#postcode").prop("disabled",!now3);
+					$(".keyword").addClass("form-control");
+					$(".keyword").attr("placeholder","주소를 검색하세요");
+					$(".search_button").addClass("btn");
+					$(".search_button").addClass("btn-info");
+					
+					if($("#address").prop("disabled")==false){
+						$("#details").focus();
 					}
-					if($(".addressbutton").css("display")=="none"){
-						$(".addressbutton").show();
+					if($("#postcodify").css("display")=="none"){
+						$("#postcodify").show();
 						$(".hiddenstar3").show();
+						$("#details").val($("#details").val());
 					}
 					else{
-						$(".addressbutton").hide();
+						$("#postcodify").hide();
 						$(".hiddenstar3").hide();
+						$("#details").val($("#details").val());
 					}
 				});
-				
+				$("#postcodify").postcodify({
+			        insertAddress : "#address",
+			        insertDetails : "#details",
+			        insertPostcode5 : "#postcode",
+			        hideOldAddresses : false,
+			        afterSelect : function() {
+			        $("#postcodify").find(".postcodify_search_result,.postcodify_search_status").remove();
+			        $("#details").val("");
+			        }
+			    });
 			});

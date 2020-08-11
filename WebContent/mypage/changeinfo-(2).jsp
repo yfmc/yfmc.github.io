@@ -80,7 +80,7 @@
                         </div>
                         <!-- 이메일 -->
                         <div class="form-group">
-                            <label for="maillist" class="col-xs-2 control-label"><span style="color:red;display:none;" class="hiddenstar1">*</span>
+                            <label for="maillist" class="col-xs-2 control-label"><span style="color:red;display:none;" class="hiddenstar1">*</span> &nbsp;
                             <input type="checkbox" id="email_enable" /> 이메일</label>
                             <div class="col-xs-10">
                                 <input type="text" class="form-control" name="mail" id="mail" value="abcd@gmail.com" style="width:200px;"disabled/>
@@ -100,7 +100,7 @@
                         <!-- 연락처 -->
                         <div class="form-group">
                             <label for="phonelist" class="col-xs-2 control-label">
-                            <span style="color:red;display:none;" class="hiddenstar2">*</span> <input type="checkbox" id="phone_enable"/> 연락처</label>
+                            <span style="color:red;display:none;" class="hiddenstar2">*</span> &nbsp;<input type="checkbox" id="phone_enable"/> 연락처</label>
                             <div class="col-xs-10">
                                 <input type="text" class="form-control" name="phone" id="phone" value="01012345678" style="width:150px; "disabled/>
                                 (-없이 입력하세요)
@@ -108,13 +108,13 @@
                         </div>
                         <!-- 주소 -->
                         <div class="form-group addressgroup">
-                            <label for="address" class="col-xs-2 control-label">
-                            <span style="color:red;display:none;" class="hiddenstar3">*</span> <input type="checkbox" id="address_enable"/> 주소</label>
+                            <label for="addr" class="col-xs-2 control-label">
+                            <span style="color:red;display:none;" class="hiddenstar3">*</span> &nbsp;<input type="checkbox" id="address_enable"/> 주소</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" name="address1" id="address1" value="서울특별시 서초구 서초대로77길 54" style="width:270px" disabled/>
-                                &nbsp;<input type="button" class="addressbutton btn btn-info" value="검색" style="display:none;"/>
-                                <p></p>
-                                <input type="text" class="form-control" name="address2" id="address2" value="서초 W타워 14층" style="width:210px;" disabled/>
+                            <div id="postcodify" style="display:none;"></div>
+                            	<input type="text" class="form-control" name="postcode" id="postcode" style="width:80px;" value="06611" disabled /><br />
+								<input type="text" class="form-control" name="address" id="address" style="width:310px;" value="서울특별시 서초구 서초대로77길 54" disabled/><br />
+								<input type="text" class="form-control" name="details" id="details" style="width:310px;" value="서초타워 14층" disabled/><br />
                             </div>
                         </div>
                         <hr />
@@ -131,7 +131,8 @@
                 </div>
             </div>
         </div>
-        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js"></script>
         <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>

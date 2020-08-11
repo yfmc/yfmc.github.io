@@ -85,7 +85,7 @@
 		<div class="butt">
 				<button type="button" class="btn btn-primary outbutton">확인</button>
 		</div>
-		 <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+		 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="<%=request.getContextPath()%>/plugins/tagsinput/jquery-tagsinput.min.js" defer></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript">

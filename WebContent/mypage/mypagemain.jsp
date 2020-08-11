@@ -29,26 +29,26 @@
                     <!-- 자주가는 영화관 목록 -->
                     <table class="oftentheater">
                         <tr>
-                            <td><span class='tooltip-graph' data-toggle="tooltip" data-html='true' data-placement='top' title='서울특별시 강남구 역삼동 814-6 스타플렉스<br/>1544-1122<br/>6관 / 874석'>CGV 강남</span>
+                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 강남구 역삼동 814-6 스타플렉스<br/>1544-1122<br/>6관 / 874석">CGV 강남</span>
                             <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
                             </td>
-                            <td><span class='tooltip-graph' data-toggle="tooltip" data-html='true' data-placement='top' title='서울특별시 양천구 목동 916번지 현대백화점 지하2층<br/>1544-1122<br/>8관 / 1,372석'>CGV 목동</span>
-                            <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span class='tooltip-graph' data-toggle="tooltip" data-html='true' data-placement='top' title='서울시 강서구 화곡로 142 메가스퀘어 4층<br/>1544-0070<br/>5관,850석'>메가박스 화곡</span>
-                            <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
-                            </td>
-                            <td><span class='tooltip-graph' data-toggle="tooltip" data-html='true' data-placement='top' title='서울특별시 영등포구 경인로102길 13 (영등포동, 시네마동 7층)<br/>1544-8855<br/>7관, 1328석'>롯데시네마 영등포</span>
+                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 양천구 목동 916번지 현대백화점 지하2층<br/>1544-1122<br/>8관 / 1,372석">CGV 목동</span>
                             <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
                             </td>
                         </tr>
                         <tr>
-                            <td><span class='tooltip-graph' data-toggle="tooltip" data-html='true' data-placement='top' title='서울특별시 금천구 디지털로10길 9 (가산동, 현대아울렛)<br/>1544-8855<br/>6관, 1054석'>롯데시네마 가산디지털</span>
+                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울시 강서구 화곡로 142 메가스퀘어 4층<br/>1544-0070<br/>5관,850석">메가박스 화곡</span>
                             <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
                             </td>
-                            <td class="gotheater"><a href="#" class="often">자주가는 영화관 설정하기</a></td>
+                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 영등포구 경인로102길 13 (영등포동, 시네마동 7층)<br/>1544-8855<br/>7관, 1328석">롯데시네마 영등포</span>
+                            <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 금천구 디지털로10길 9 (가산동, 현대아울렛)<br/>1544-8855<br/>6관, 1054석">롯데시네마 가산디지털</span>
+                            <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
+                            </td>
+                            <td class="gotheater"><a href="#" class="often">자주가는 영화관 설정 &nbsp;&nbsp;&nbsp;<i class="fas fa-mouse" style="font-size:14px;"></i></a></td>
                         </tr>
                     </table>
                 </div>
@@ -80,7 +80,7 @@
                                 <h5 style="font-size:12px;">예매:2019-07-17</h5>
                             </a>
                         </div>
-                        <button type="button" class="btn btn-info bt1 tooltip-graph" data-toggle="tooltip" data-placement='bottom' title='예매내역 페이지로 이동합니다.' >더보기</button>
+                        <button type="button" class="btn btn-info bt1 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="예매내역 페이지로 이동합니다." >더보기</button>
                     </div>
                 </div>
                 <!--  메인 하단부 -->
@@ -108,7 +108,7 @@
                                 <h5>스파이더맨: 파 프롬 홈</h5>
                             </a>
                         </div>
-                        <button type="button" class="btn btn-success bt2 tooltip-graph" data-toggle="tooltip" data-placement='bottom' title='좋아한 영화 페이지로 이동합니다.' >더보기</button>
+                        <button type="button" class="btn btn-success bt2 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="좋아한 영화 페이지로 이동합니다." >더보기</button>
                     </div>
                 </div>
             </div>
