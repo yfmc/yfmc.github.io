@@ -98,7 +98,7 @@
 	<!-- 1개 -->
 	<div class="movie-picture">
 		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
+		<a href="" class="thumbnail">
 			<div class="row">
 				<!-- 이미지 영역 -->
 				<div class="movie-image">
@@ -124,7 +124,7 @@
 	<!-- 2개 -->
 	<div class="movie-picture">
 		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
+		<a href="MovieContent.jsp" class="thumbnail">
 			<div class="row">
 				<!-- 이미지 영역 -->
 				<div class="movie-image">

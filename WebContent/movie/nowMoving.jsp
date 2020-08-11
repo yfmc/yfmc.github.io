@@ -7,6 +7,7 @@
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <link rel="stylesheet"
 	href="https://www.littlesnippets.net/css/codepen-result.css">
+<link rel="stylesheet" href="../plugins/ajax/ajax_helper.css">
 <title>현재상영작 | Cinephile</title>
 <div class="contentHeight">
 	<div class="content">
@@ -46,7 +47,7 @@
 					<!-- 1개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.1</span>
+							NO.<span>1</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -54,7 +55,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span><img
-										src="<%=request.getContextPath()%>/img/nowmoving1.jpg"
+										src="https://movie-phinf.pstatic.net/20200703_48/1593739617223iuD2b_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
@@ -77,7 +78,7 @@
 					<!-- 2개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.2</span>
+							NO.<span>2</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -85,7 +86,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span> <img
-										src="<%=request.getContextPath()%>/img/nowmoving2.jpg"
+										src="https://movie-phinf.pstatic.net/20200624_137/15929908359489lOON_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
@@ -107,7 +108,7 @@
 					<!-- 3개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.3</span>
+							NO.<span>3</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -115,7 +116,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span> <img
-										src="<%=request.getContextPath()%>/img/nowmoving3.jpg"
+										src="https://movie-phinf.pstatic.net/20190524_104/1558663170174Q2mmw_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
@@ -137,7 +138,7 @@
 					<!-- 4개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.4</span>
+							NO.<span>4</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -145,8 +146,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span> <img
-										src="<%=request.getContextPath()%>/img/nowmoving4.jpg"
-										class="img-responsive" />
+										src="https://movie-phinf.pstatic.net/20200715_118/1594788326147GKSI3_JPEG/movie_image.jpg" class="img-responsive"/>
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
 											<button type="button" class="btn btn-primary">상세정보</button>
@@ -167,7 +167,7 @@
 					<!-- 5개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.5</span>
+							NO.<span>5</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -175,7 +175,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span> <img
-										src="<%=request.getContextPath()%>/img/nowmoving5.jpg"
+										src="https://movie-phinf.pstatic.net/20200804_191/1596519125636u6rAe_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
@@ -197,7 +197,7 @@
 					<!-- 6개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.6</span>
+							NO.<span>6</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -205,7 +205,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span> <img
-										src="<%=request.getContextPath()%>/img/nowmoving6.jpg"
+										src="https://movie-phinf.pstatic.net/20200727_170/1595824882139uopaD_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
@@ -227,7 +227,7 @@
 					<!-- 7개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.7</span>
+							NO.<span>7</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -235,7 +235,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span> <img
-										src="<%=request.getContextPath()%>/img/nowmoving7.jpg"
+										src="https://movie-phinf.pstatic.net/20200807_46/159679072564527BTt_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
@@ -257,7 +257,7 @@
 					<!-- 8개 -->
 					<div class="movie-picture">
 						<div class="rank">
-							<span>NO.8</span>
+							NO.<span>8</span>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">
@@ -265,7 +265,7 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span><img
-										src="<%=request.getContextPath()%>/img/nowmoving8.jpg"
+										src="https://movie-phinf.pstatic.net/20200706_191/1594001490577tifkl_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
@@ -288,8 +288,8 @@
 			<!-- scroll-row끝! -->
 		</div>
 		<!-- 갤러리 8개 끝!!! -->
-		<div class="plusbutton">
-			<button class="btn btn-danger">
+		<div class="plusbutton" style="visibility:visible;" id="plusbutton">
+			<button class="btn btn-danger" id="morenowmoving">
 				<!-- bs3-icon:glyphicon -->
 				<!-- icon에는 내가 넣고 싶은 것을 넣으면 된다. -->
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -314,31 +314,75 @@
 </div>
 
 <!--// ========== 컨텐츠 영역 끝 ========== -->
+<script type="text/x-handlebars-template" id="nowmoving-list">
+{{#each data}}
+<div class="movie-picture">
+                        <div class="rank">
+                            NO.<span>{{rank}}</span>
+                        </div>
+                        <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+                        <figure class="imageup">
+                            <div class="row">
+                                <!-- 이미지 영역 -->
+                                <div class="movie-image">
+                                    <span>{{{movieaddress}}}
+                                        <figcaption>
+                                            <button type="button" class="btn btn-danger">예매하기</button>
+                                            <button type="button" class="btn btn-primary">상세정보</button>
+                                        </figcaption> </span>
+                                </div>
+                                <!-- 텍스트 영역 -->
+
+                                <div class="movie-text">
+                                    <span>
+                                        <h4>
+                                            <span class="label label-{{agelimitbutton}}">{{agelimit}}</span>{{moviename}}
+                                        </h4>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </figure>
+                    </div>
+{{/each}}
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../plugins/ajax/ajax_helper.js"></script>
+<script src="../plugins/handlebars/handlebars-v4.7.6.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript">
 	$(".hover").mouseleave(function() {
 		$(this).removeClass("hover");
 	});
-
-	var count = 0;
-	$(function() {
-		$(window).scroll(
-				function() {
-					if ($(window).height() + $(window).scrollTop() >= $(
-							document).height() - 10) {
-						console.log("끝에 도착함");
-						count++;
-
-						var tag = $(".scroll-row").html();
-						var tag2 = $(".scroll-copy").html();
-						tag += tag2;
-						$(".scroll-row").html(tag);
-						//console.log(tag);
-						console.log(count);
-					}
-				});
+	
+	//console.log(content.movielist.data.length/4)
+	//console.log(content.movielist.data.length%4)
+	//var append=content.movielist.data.length/4
+	//if(content.movielist.data.length%4!=0){
+	//	var append=content.movielist.data.length/4+1;
+	//}
+	
+	
+	function get_list(){
+		$.get("../api/nowmovinglist.json",function(req){
+			var template=Handlebars.compile($("#nowmoving-list").html());
+			var html=template(req);
+			$(".king-row").append(html);
+		});
+	}
+	
+	$(function(){
+		var count=0;
+		//get_list();
+		$("#morenowmoving").one('click',function(e){
+			get_list();
+			count++;
+			if(count==1){
+				document.all.plusbutton.style.visibility="hidden";
+				console.log(count);
+			}
+		});
 	});
+	
 </script>
 <%@ include file="../_inc/footer.jsp"%>

@@ -83,7 +83,7 @@
 	</table>
 
 	<div class="search-button">
-		<button type="submit">검색</button>
+		<button type="submit" onclick="location.href='MovieSearchResult.jsp' return false;">검색</button>
 		<button type="reset">초기화</button>
 	</div>
 </form>
