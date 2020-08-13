@@ -34,15 +34,15 @@
                         </div>
                         <div class="input-group">
                             <label for="check_pw"><span class="star">*</span> 비밀번호 확인</label>
-                            <input id="check_pw" name="check_pw" type="password" placeholder="영문,숫자 조합 8자리 이상">
+                            <input id="check_pw" name="check_pw" type="password" placeholder="영문,숫자,특수문자 조합 8자리 이상">
                         </div>
                         <div class="input-group">
                             <label for="user_name"><span class="star">*</span> 이름</label>
-                            <input id="user_name" name="user_name" type="text" placeholder="이름을 입력해주세요">
+                            <input id="user_name" name="user_name" type="text" placeholder="한글이름">
                         </div>
                         <div class="input-group">
                             <label for="user_birth"><span class="star">*</span> 생년월일</label>
-                            <input id="user_birth" name="user_birth" type="text" placeholder="영문,숫자,특수문자 조합 8자리 이상">
+                            <input id="user_birth" name="user_birth" type="text" placeholder="주민번호 앞 6자리">
                         </div>
                         <div class="input-group">
                             <div class="gender">
@@ -65,17 +65,17 @@
                         </div>
                         <div class="input-group">
                             <label for="user_postcode"><span class="star">*</span> 주소</label>
-                            <input id="user_postcode" name="user_postcode" type="text" placeholder="우편번호" disabled>
-                            <button type="button"name="postcode" class="btn btn-default">우편번호 검색</button>
+                            <input id="user_postcode" name="user_postcode" type="text" placeholder="우편번호" class="postcodify_postcode5" >
+                            <button type="button"name="postcode" class="btn btn-default" id="addrsc">우편번호 검색</button>
                         </div>
 
                         <div class="input-group">
                             <label for="user_addr"></label>
-                            <input id="user_addr" name="user_addr" type="text" placeholder="" disabled>
+                            <input id="user_addr" name="user_addr" type="text" placeholder="" class="postcodify_address" >
                         </div>
                         <div class="input-group">
                             <label for="addr_detail"></label>
-                            <input id="addr_detail" name="addr_detail" type="text" placeholder="주소상세">
+                            <input id="addr_detail" name="addr_detail" type="text" placeholder="주소상세" class="postcodify_details">
                         </div>
 
                 </div>
@@ -88,6 +88,7 @@
         </div>
         <script src="../plugins/validate/jquery.validate.min.js"></script>
         <script src="../plugins/validate/additional-methods.min.js"></script>
+        <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
         <script src="../js_files/account_05putMemInfo.js"></script>
 
 <%@ include file="../_inc/footer.jsp" %>

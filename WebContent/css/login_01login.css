@@ -8,7 +8,7 @@
 
     #lginput {
         width: auto;
-        height: 600px;
+        height: 750px;
         border-top: 5px solid #eee;
         border-bottom: 5px solid #eee;
         margin-bottom: 140px;
@@ -49,3 +49,31 @@
         width: 150px;
         margin-left: 210px;
     }
+    .SNSlogin{
+    	width:30%;
+    	border-top:1px solid #eee;
+    	margin:auto;
+    	margin-top:80px;
+    }
+    .SNSlogin > span{
+    	width:auto;
+    	display:block;
+    	margin-top:-25px;
+    	font-style:italic;
+    	color:grey;
+    	font-size:18px;
+    } 
+    
+    .Kakaologin{
+    	width: 100%;
+    	margin:auto;
+    	margin-top:20px; 
+    }
+    
+    .Kakaologin > a:first-child{
+    	width:90%;
+    	margin-left:30px;
+    	display:block;		
+    }
+
+    

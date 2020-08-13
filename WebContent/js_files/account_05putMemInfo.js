@@ -53,7 +53,8 @@ $(function(){
 			  user_phone:{
 				  required:true,
 				  phone:true
-				  }        			  
+				  },
+			  user_addr:"required"
 		  },
 		  /* 규칙에 맞지 않을 경우의 메세지 */
 		  messages:{
@@ -85,7 +86,8 @@ $(function(){
 			  user_phone:{
 				  required:"핸드폰번호를 입력해주세요.",
 				  phone:"연락처 형식이 잘못되었습니다."
-			  }
+			  },
+			  user_addr:"주소를 입력해주세요."	  
 		  }
 	   });//end validate
 	
@@ -135,6 +137,7 @@ $(function(){
        				}
        			}); // end click 
        		
-        	   
-        	   
+        	   //우편검색버튼
+        	   $("#addrsc").postcodifyPopUp();
+
            });
