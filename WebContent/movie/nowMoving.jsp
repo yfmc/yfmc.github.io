@@ -7,7 +7,7 @@
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <link rel="stylesheet"
 	href="https://www.littlesnippets.net/css/codepen-result.css">
-<link rel="stylesheet" href="../plugins/ajax/ajax_helper.css">
+<link rel="stylesheet" href="../plugins/ajax_sws/ajax_helper.css">
 <title>현재상영작 | Cinephile</title>
 <div class="contentHeight">
 	<div class="content">
@@ -31,18 +31,17 @@
 
 				<ul class="dropdown-menu dropdown-menu-right">
 					<li role="presentation"><a role="menuitem" tabindex="-1"
-						href="#">예매순</a></li>
+						href="#" class="ranking" data-type="a">예매순</a></li>
 					<li role="presentation"><a role="menuitem" tabindex="-1"
-						href="#">평점순</a></li>
+						href="#" class="ranking" data-type="b">평점순</a></li>
 					<li role="presentation"><a role="menuitem" tabindex="-1"
-						href="#">관람객순</a></li>
+						href="#" class="ranking" data-type="c">관람객순</a></li>
 				</ul>
 
 			</div>
 		</div>
 		<!-- 갤러리 영역 -->
 		<div class="scroll-row">
-			<div class="scroll-copy">
 				<div class="king-row">
 					<!-- 1개 -->
 					<div class="movie-picture">
@@ -146,7 +145,8 @@
 								<!-- 이미지 영역 -->
 								<div class="movie-image">
 									<span> <img
-										src="https://movie-phinf.pstatic.net/20200715_118/1594788326147GKSI3_JPEG/movie_image.jpg" class="img-responsive"/>
+										src="https://movie-phinf.pstatic.net/20200715_118/1594788326147GKSI3_JPEG/movie_image.jpg"
+										class="img-responsive" />
 										<figcaption>
 											<button type="button" class="btn btn-danger">예매하기</button>
 											<button type="button" class="btn btn-primary">상세정보</button>
@@ -284,16 +284,15 @@
 						</figure>
 					</div>
 				</div>
+				<!-- scroll-row끝! -->
+			<!-- 갤러리 8개 끝!!! -->
+			<div class="plusbutton" style="visibility: visible;" id="plusbutton">
+				<button class="btn btn-danger" id="morenowmoving">
+					<!-- bs3-icon:glyphicon -->
+					<!-- icon에는 내가 넣고 싶은 것을 넣으면 된다. -->
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				</button>
 			</div>
-			<!-- scroll-row끝! -->
-		</div>
-		<!-- 갤러리 8개 끝!!! -->
-		<div class="plusbutton" style="visibility:visible;" id="plusbutton">
-			<button class="btn btn-danger" id="morenowmoving">
-				<!-- bs3-icon:glyphicon -->
-				<!-- icon에는 내가 넣고 싶은 것을 넣으면 된다. -->
-				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-			</button>
 		</div>
 	</div>
 </div>
@@ -314,7 +313,7 @@
 </div>
 
 <!--// ========== 컨텐츠 영역 끝 ========== -->
-<script type="text/x-handlebars-template" id="nowmoving-list">
+<script type="text/x-handlebars-template" id="ranking-list">
 {{#each data}}
 <div class="movie-picture">
                         <div class="rank">
@@ -347,42 +346,27 @@
 {{/each}}
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="../plugins/ajax/ajax_helper.js"></script>
+<script src="../plugins/ajax_sws/ajax_helper.js"></script>
 <script src="../plugins/handlebars/handlebars-v4.7.6.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../js_files/ranking.js"></script>
 <script type="text/javascript">
 	$(".hover").mouseleave(function() {
 		$(this).removeClass("hover");
 	});
-	
+
 	//console.log(content.movielist.data.length/4)
 	//console.log(content.movielist.data.length%4)
 	//var append=content.movielist.data.length/4
 	//if(content.movielist.data.length%4!=0){
 	//	var append=content.movielist.data.length/4+1;
 	//}
-	
-	
-	function get_list(){
-		$.get("../api/nowmovinglist.json",function(req){
-			var template=Handlebars.compile($("#nowmoving-list").html());
-			var html=template(req);
-			$(".king-row").append(html);
-		});
-	}
-	
-	$(function(){
-		var count=0;
-		//get_list();
-		$("#morenowmoving").one('click',function(e){
-			get_list();
-			count++;
-			if(count==1){
-				document.all.plusbutton.style.visibility="hidden";
-				console.log(count);
-			}
-		});
-	});
-	
+	$('.dropdown-menu > li > a').click(
+			function(e) {
+				var contents = $(this).html();
+				$('button.dropdown-toggle').html(
+						contents + ' <span class="caret"></span>');
+			});
 </script>
 <%@ include file="../_inc/footer.jsp"%>

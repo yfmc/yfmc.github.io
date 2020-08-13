@@ -83,11 +83,13 @@
 	</table>
 
 	<div class="search-button">
-		<button type="submit" onclick="location.href='MovieSearchResult.jsp' return false;">검색</button>
+		<button type="submit" class="searchgogo">검색</button>
 		<button type="reset">초기화</button>
 	</div>
 </form>
-
+<div class="moviesearchdetail_ex">
+<!-- 검색한 결과가 나오는 공간 -->
+</div>
 
 <div class="icon-bar">
 	<a
@@ -149,6 +151,14 @@
 		});
 
 	});
+	
+	
+		$(".searchgogo").click(function(e) {
+			e.preventDefault();
+			$(".moviesearchdetail_ex").load("../news/moviesearchdetail_ex.html");
+		});
+
+	
 </script>
 
 

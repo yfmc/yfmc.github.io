@@ -7,7 +7,7 @@
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <link rel="stylesheet"
 	href="https://www.littlesnippets.net/css/codepen-result.css">
-<link rel="stylesheet" href="../plugins/ajax/ajax_helper.css">
+<link rel="stylesheet" href="../plugins/ajax_sws/ajax_helper.css">
 <title>상영예정작 | Cinephile</title>
 <div class="contentHeight">
 	<div class="content">
@@ -351,9 +351,10 @@
 {{/each}}
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="../plugins/ajax/ajax_helper.js"></script>
+<script src="../plugins/ajax_sws/ajax_helper.js"></script>
 <script src="../plugins/handlebars/handlebars-v4.7.6.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../js_files/morewillmoving.js"></script>	
 <script type="text/javascript">
 	$(".hover").mouseleave(function() {
 		$(this).removeClass("hover");
@@ -365,28 +366,9 @@
 	//if(content.movielist.data.length%4!=0){
 	//	var append=content.movielist.data.length/4+1;
 	//}
-	
-	
-	function get_list(){
-		$.get("../api/willmovinglist.json",function(req){
-			var template=Handlebars.compile($("#willmoving-list").html());
-			var html=template(req);
-			$(".king-row").append(html);
-		});
-	}
-	
-	$(function(){
-		var count=0;
-		//get_list();
-		$("#morewillmoving").one('click',function(e){
-			get_list();
-			count++;
-			if(count==1){
-				document.all.plusbutton.style.visibility="hidden";
-				console.log(count);
-			}
-		});
-	});
-	
+	$('.dropdown-menu > li > a').click(function (e) {
+    var html = $(this).html();
+    $('button.dropdown-toggle').html(html +' <span class="caret"></span>');
+});
 </script>
 <%@ include file="../_inc/footer.jsp"%>

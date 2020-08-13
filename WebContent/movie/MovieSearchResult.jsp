@@ -4,7 +4,7 @@
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/MovieSearchResult.css?time=<%=System.currentTimeMillis()%>">
-	<!-- Range Slider CSS -->
+<!-- Range Slider CSS -->
 <link rel="stylesheet" href="../plugins/rangeslider/rangeslider.css">
 <title>영화검색결과 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
@@ -86,204 +86,206 @@
 		<button type="reset">초기화</button>
 	</div>
 </form>
-<!-- 검색결과가 몇건인지 확인하기 -->
-<div class="search-result">
-	<span>
-		<h4>"OOO"(으)로 총 n개의 검색결과가 있습니다.</h4>
-		<hr />
-	</span>
-</div>
-<!-- 검색결과 보여주기 -->
-<div class="king-row">
-	<!-- 1개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving1.jpg"
-						class="img-responsive" />
-					</span>
-				</div>
 
-				<!-- 텍스트 영역 -->
+	<!-- 검색결과가 몇건인지 확인하기 -->
+	<div class="search-result">
+		<span>
+			<h4>"OOO"(으)로 총 n개의 검색결과가 있습니다.</h4>
+			<hr />
+		</span>
+	</div>
+	<!-- 검색결과 보여주기 -->
+	<div class="king-row">
+		<!-- 1개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving1.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
 
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-warning">15</span>강철비2-정상회담
-						</h4>
-					</span>
-				</div>
+					<!-- 텍스트 영역 -->
 
-			</div>
-		</a>
-	</div>
-	<!-- 2개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="MovieContent.jsp" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-warning">15</span>강철비2-정상회담
+							</h4>
+						</span>
+					</div>
 
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving2.jpg"
-						class="img-responsive" />
-					</span>
 				</div>
-				<!-- 텍스트 영역 -->
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-warning">15</span>반도
-						</h4>
-					</span>
+			</a>
+		</div>
+		<!-- 2개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="MovieContent.jsp" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving2.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
+					<!-- 텍스트 영역 -->
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-warning">15</span>반도
+							</h4>
+						</span>
+					</div>
 				</div>
-			</div>
-		</a>
+			</a>
+		</div>
+		<!-- 3개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="#" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving3.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
+					<!-- 텍스트 영역 -->
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-success">전체</span>알라딘
+							</h4>
+						</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<!-- 4개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="#" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving4.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
+					<!-- 텍스트 영역 -->
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-primary">12</span>소년 아메드
+							</h4>
+						</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<!-- 5개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="#" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving5.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
+					<!-- 텍스트 영역 -->
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-warning">15</span>소년시절의 너
+							</h4>
+						</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<!-- 6개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="#" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving6.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
+					<!-- 텍스트 영역 -->
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동
+							</h4>
+						</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<!-- 7개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="#" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving7.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
+					<!-- 텍스트 영역 -->
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-danger">청불</span>존 윅-특별판
+							</h4>
+						</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		<!-- 8개 -->
+		<div class="movie-picture">
+			<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+			<a href="#" class="thumbnail">
+				<div class="row">
+					<!-- 이미지 영역 -->
+					<div class="movie-image">
+						<span> <img
+							src="<%=request.getContextPath()%>/img/nowmoving8.jpg"
+							class="img-responsive" />
+						</span>
+					</div>
+					<!-- 텍스트 영역 -->
+					<div class="movie-text">
+						<span>
+							<h4>
+								<span class="label label-warning">15</span>다만 악에서 구하소서
+							</h4>
+						</span>
+					</div>
+				</div>
+			</a>
+		</div>
 	</div>
-	<!-- 3개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving3.jpg"
-						class="img-responsive" />
-					</span>
-				</div>
-				<!-- 텍스트 영역 -->
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-success">전체</span>알라딘
-						</h4>
-					</span>
-				</div>
-			</div>
-		</a>
-	</div>
-	<!-- 4개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving4.jpg"
-						class="img-responsive" />
-					</span>
-				</div>
-				<!-- 텍스트 영역 -->
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-primary">12</span>소년 아메드
-						</h4>
-					</span>
-				</div>
-			</div>
-		</a>
-	</div>
-	<!-- 5개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving5.jpg"
-						class="img-responsive" />
-					</span>
-				</div>
-				<!-- 텍스트 영역 -->
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-warning">15</span>소년시절의 너
-						</h4>
-					</span>
-				</div>
-			</div>
-		</a>
-	</div>
-	<!-- 6개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving6.jpg"
-						class="img-responsive" />
-					</span>
-				</div>
-				<!-- 텍스트 영역 -->
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동
-						</h4>
-					</span>
-				</div>
-			</div>
-		</a>
-	</div>
-	<!-- 7개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving7.jpg"
-						class="img-responsive" />
-					</span>
-				</div>
-				<!-- 텍스트 영역 -->
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-danger">청불</span>존 윅-특별판
-						</h4>
-					</span>
-				</div>
-			</div>
-		</a>
-	</div>
-	<!-- 8개 -->
-	<div class="movie-picture">
-		<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-		<a href="#" class="thumbnail">
-			<div class="row">
-				<!-- 이미지 영역 -->
-				<div class="movie-image">
-					<span> <img
-						src="<%=request.getContextPath()%>/img/nowmoving8.jpg"
-						class="img-responsive" />
-					</span>
-				</div>
-				<!-- 텍스트 영역 -->
-				<div class="movie-text">
-					<span>
-						<h4>
-							<span class="label label-warning">15</span>다만 악에서 구하소서
-						</h4>
-					</span>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
+
 <div class="icon-bar">
 	<a
 		href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>"
@@ -329,17 +331,17 @@
 			onInit : function() {
 			},
 
-			// Callback function
-			/*onSlide : function(position, value) {
-				console.log('onSlide');
-				console.log('position: ' + position, 'value: ' + value);
-			},
+		// Callback function
+		/*onSlide : function(position, value) {
+			console.log('onSlide');
+			console.log('position: ' + position, 'value: ' + value);
+		},
 
-			// Callback function
-			onSlideEnd : function(position, value) {
-				console.log('onSlideEnd');
-				console.log('position: ' + position, 'value: ' + value);
-			}*/
+		// Callback function
+		onSlideEnd : function(position, value) {
+			console.log('onSlideEnd');
+			console.log('position: ' + position, 'value: ' + value);
+		}*/
 		});
 
 	});
