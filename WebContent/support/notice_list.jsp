@@ -9,31 +9,29 @@
 
 <div class="row">
 	<div id="contents">
-	<!-- 사이드 바 -->
-		<ul class="sidebar">
-			<li class="list-group-item"><a href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
-			<li class="list-group-item"><a href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
-			<li class="list-group-item"><a href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
-			<li class="list-group-item"><a href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
-		</ul>
+        <!-- ==== 사이드 바 ==== -->
+        <ul class="sidebar">
+            <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
+            <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
+            <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
+            <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
+        </ul>
+        <!-- ==== 사이드바 끝 ==== -->
 		<div class="content">
 			<div class="support_title">
 				<h2>공지사항</h2>
 				<p>저희 영화관의 이슈 및 공지사항을 확인하실 수 있습니다.</p>
 			</div>
 			<div class="notice search">
-				<div class="input-group">
-					<span class="input-group-btn">
-					<!-- 추가적인 style 적용 필요함 -->
-					<select name='choose' class='form-control' style="width: auto; margin-right: -1px;">
-							<option value="">제목</option>
-							<option value="">내용</option>
-					</select>
-					</span> <input type="text" class="form-control" placeholder="Search">
-					<span class="input-group-btn">
-						<button type="button" class="btn btn-default">검색</button>
-					</span>
-				</div>
+					<form class="search_box" name="search" method="post" action="<%=request.getContextPath()%>/support/notice_list.jsp">
+						<!-- 추가적인 style 적용 필요함 -->
+						<select name='choose' class='form-control' >
+								<option value="detail_title">제목</option>
+								<option value="detail_box">내용</option>
+						</select>
+							<input type="text" class="form-control" placeholder="Search">
+							<button type="submit" class="btn btn-default">검색</button>
+					</form>
 			</div>
 			<div class="search_result">
 			총 "&nbsp;&nbsp;&nbsp;"건이 검색 되었습니다.
@@ -61,8 +59,7 @@ $(function(){
 	$(".table_notice_list").DataTable({
 		ajax: {
 			type:"POST",
-			url: '../api/notice_list.json',
-			dataType:"JSON"
+			url: '../api/notice_list.json'
 		},
 		columns: [
 			{data: "noticeno"},

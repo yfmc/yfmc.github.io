@@ -42,3 +42,9 @@
     .sidebar > li:nth-child(4) > a {
     	border-bottom: 1px solid #ddd;
     }
+    
+    .on {
+    	background-color: #f10;
+    }
+    
+    
