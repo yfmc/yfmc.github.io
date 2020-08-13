@@ -23,6 +23,13 @@ $(function(){
 	$(document).on("click",".book",function(){
 		location.href="../booking/01-booking_time.jsp";
 	});
+	
+	$(".page-link").click(function(e){
+		e.preventDefault();
+		$(this).attr("style","background:#a8a8a8");
+		$(".page-link").not($(this)).attr("style","background:white");
+	});
+	
 	$.fn.generateStars = function() {
 		return this.each(function(i, e) {
 			$(e).html($("<span/>").width($(e).text() * 16));

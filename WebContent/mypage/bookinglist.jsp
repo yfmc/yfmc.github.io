@@ -8,6 +8,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bookinglist.css">
 <link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/plugins/lightbox/css/lightbox.min.css">
         <div id="content" class="clear">
         	<!-- 사이드바 -->
             <div class="sidebar">
@@ -30,95 +31,51 @@
                 
                 <!--  예매내역 리스트로 -->
                 <div class="bodylist">
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">강철비2: 정상회담(Steel Rain2: Summit, 2020)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2020-07-31(금) 15:15~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 목동 2명 (H7,H8)</h4>
-                            </span>
-                            <input type="button" value="예매취소" class="btn cancelbtn" />
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie2.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">반도(Peninsula, 2020)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2020-07-18(토) 18:00~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 강남 4명 (F7,F8,F9,F10)</h4>
-                            </span>
-                            <input type="button" value="예매취소" class="btn cancelbtn"/>
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie3.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">스파이더맨: 파 프롬 홈(Spider-man: Far From Home, 2019)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2019-07-17(수) 15:00~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>롯데시네마 영등포 3명 (D5,D6,D7)</h4>
-                            </span>
-                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie4.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">어벤져스: 엔드게임 (Avengers: Endgame, 2019)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2019-04-18(목) 18:15~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 강남 3명 (D6,D7,H8)</h4>
-                            </span>
-                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie5.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">극한직업 (Extreme Job, 2018)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2019-01-25(금) 18:00~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 목동 3명 (B10,B11,B12)</h4>
-                            </span>
-                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
-                        </li>
-                    </ul>
+                    
                 </div>
-                <!--  페이지 넘김 -->
-                <div id="page">
+				<div id="page">
                     <div class="row">
                         <div class="col">
                             <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#" style="background:#a8a8a8;">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/mypage/bookinglist.jsp?page=1" style="background:#a8a8a8;">1</a></li>
+                                <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/mypage/bookinglist.jsp?page=2">2</a></li>
+                                <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/mypage/bookinglist.jsp?page=3">3</a></li>
+                                <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/mypage/bookinglist.jsp?page=4">4</a></li>
+                                <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/mypage/bookinglist.jsp?page=5">5</a></li>
                                 <li class="page-item"><a class="page-link" href="#">>></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                
+                <!--  페이지 넘김 -->
+
             </div>
         </div>
+        <script type="text/x-handlebars-template" id="booking_list">
+		{{#each data}}
+		 <ul class="listarea">
+         	<li class="book"><span class="movieimg"><a href="{{poster}}" data-lightbox="myphoto"><img src={{{poster}}} height=170px/></a></span>
+         		<span class="title">
+         			<h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">{{title}}</a></h3>
+         		</span>
+         		<span class="bookdate">
+         			<h4>{{bookdate}}</h4>
+         		</span>
+         		<span class="theaterpeople">
+         			<h4>{{theaterpeople}}</h4>
+         		</span>
+         		<input type="button" value="{{bookable}}" class="btn cancelbtn"{{btnable}} />
+         	</li>
+         </ul>
+
+
+		{{/each}}
+		</script>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script src="<%=request.getContextPath()%>/js_files/bookinglist.js"></script>
+        <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
+
+		<script src="../plugins/lightbox/js/lightbox.min.js"></script>
+        <script src="../plugins/handlebars/handlebars-v4.7.6.js"></script>
 <%@ include file="../_inc/footer.jsp"%>
