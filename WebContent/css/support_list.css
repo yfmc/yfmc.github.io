@@ -1,56 +1,20 @@
 @charset "UTF-8";
 
-    /* 검색 버튼 */
-    .search {
-        margin: 10px 0px;
-        padding: 20px;
-        background-color: #eee;
-        -webkit-border-radius: 4px;
-    }
-
-    .search_result {
-        margin: 20px;
-    }
-
-    .table_area {
-    	padding-top: 20px;
-    	border-top: 1px solid #555;
-        text-align: center;
-    }
-
+    /* 검색 창 */
+    .search { margin: 10px 0px; padding: 20px; background-color: #eee; border-radius: 4px; }
+    .form-control { margin-right: -1px; float: left; }
+    .search_box { margin: 0 15px; }
+    .search select { width:10%; }
+    .search input { width: 82%; }
+    .search button { width: 8%;}
+    .search_result {margin: 20px;}
+    
     /* 글 목록 */
-    table {
-        width: 100%;
-        line-height: 80%;
-        margin-bottom: 40px;
-    }
-
-    thead {
-        display: table-header-group;
-        border-bottom: 2px solid #eee;
-    }
-
-    th {
-        text-align: center;
-        background-color: #f2f4f5;
-        font-size: 16px;
-        line-height: 150%;
-    }
-
-    td {
-        display: table-cell;
-        vertical-align: inherit;
-        border-bottom: 1px solid #eee;
-        padding: 20px;
-        font-size: 16px;
-        line-height: 200%;
-    }
+    .table_area { padding-top: 20px; border-top: 1px solid #555; text-align: center; }
+    table { width: 100%; line-height: 80%; margin-bottom: 40px; }
+    thead { display: table-header-group; border-bottom: 2px solid #eee; }
+	th { text-align: center; background-color: #f2f4f5; font-size: 16px; line-height: 150%; }
+	td { display: table-cell; vertical-align: inherit; border-bottom: 1px solid #eee; padding: 20px; font-size: 16px; line-height: 200%; }
     
-    .detail_title {
-    	padding-left: 40px;
-    	text-align: left;
-    }
+    a { color: black; }
     
-    a{
-    	color: black;
-    }
