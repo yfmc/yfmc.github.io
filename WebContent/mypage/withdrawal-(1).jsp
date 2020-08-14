@@ -17,7 +17,7 @@
                         <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
+                        <li style="background:#eee"><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
                     </ul>
                 </div>
@@ -36,6 +36,7 @@
                         &nbsp;&nbsp;<button type="button" class="btn withdgo">입력</button>
                     </form>
                 </div>
+                <!-- 메인 이동 버튼 -->
                 <div class="mainbutton">
                 	<button type="button" class="btn maingo">메인으로</button>
                 </div>

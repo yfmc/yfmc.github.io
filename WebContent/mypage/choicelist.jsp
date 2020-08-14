@@ -17,7 +17,7 @@
                 <div class="sidemenu">
                     <ul>
                         <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
+                        <li style="background:#eee"><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
@@ -33,7 +33,8 @@
                 <!-- 좋아한 영화 목록 -->
                 <div class="bodylist">
                     <ul class="listarea">
-                        <li><a href="../img/mypage_movie1.jpg" data-lightbox="myphoto1"><img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" height=170px></a>
+                    	<!-- 이미지에 마우스 올리면 '크게하기'글자가 뜨며 클릭하면 lightbox를 통해 큰 이미지를 보여줌 -->
+                        <li><div class="movieimg"><a href="../img/mypage_movie1.jpg" data-lightbox="myphoto1"><img src="../img/mypage_movie1.jpg" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
                             <span class="title">
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">강철비2: 정상회담(Steel Rain2: Summit, 2020)</a></h3>
                             </span>
@@ -43,12 +44,14 @@
                             <span class="genre">
                                 <h4>장르 : 드라마, 액션</h4>
                             </span>
+                            <!-- 좋아한 영화 목록에서 제거하는 버튼 -->
                             <input type="button" value="-" class="btn remove" />
+                            <!-- 예매하기 페이지로 이동하는 버튼 -->
                             <input type="button" value="예매하기" class="btn book"/>
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><a href="../img/mypage_movie2.jpg" data-lightbox="myphoto2"><img src="<%=request.getContextPath()%>/img/mypage_movie2.jpg" height=170px></a>
+                        <li><div class="movieimg"><a href="../img/mypage_movie2.jpg" data-lightbox="myphoto2"><img src="../img/mypage_movie2.jpg" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
                             <span class="title">
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">반도(Peninsula, 2020)</a></h3>
                             </span>
@@ -63,7 +66,7 @@
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><a href="../img/mypage_movie3.jpg" data-lightbox="myphoto3"><img src="<%=request.getContextPath()%>/img/mypage_movie3.jpg" height=170px></a>
+                        <li><div class="movieimg"><a href="../img/mypage_movie3.jpg" data-lightbox="myphoto3"><img src="../img/mypage_movie3.jpg" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
                             <span class="title">
 
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">스파이더맨: 파 프롬 홈(Spider-man: Far From Home, 2019)</a></h3>
@@ -79,7 +82,7 @@
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><a href="../img/mypage_movie4.jpg" data-lightbox="myphoto4"><img src="<%=request.getContextPath()%>/img/mypage_movie4.jpg" height=170px></a>
+                        <li><div class="movieimg"><a href="../img/mypage_movie4.jpg" data-lightbox="myphoto4"><img src="../img/mypage_movie4.jpg" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
                             <span class="title">
 
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">어벤져스: 엔드게임 (Avengers: Endgame, 2019)</a></h3>
@@ -95,7 +98,7 @@
                         </li>
                     </ul>
                     <ul class="listarea">
-                        <li><a href="../img/mypage_movie5.jpg" data-lightbox="myphoto5"><img src="<%=request.getContextPath()%>/img/mypage_movie5.jpg" height=170px></a>
+                        <li><div class="movieimg"><a href="../img/mypage_movie5.jpg" data-lightbox="myphoto5"><img src="../img/mypage_movie5.jpg" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
                             <span class="title">
 
                                 <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">극한직업 (Extreme Job, 2018)</a></h3>
@@ -111,7 +114,7 @@
                         </li>
                     </ul>
                 </div>
-                <!-- 페이지 넘기기 버튼 -->
+                <!-- 페이지 넘기기 -->
                 <div id="page">
                     <div class="row">
                         <div class="col">

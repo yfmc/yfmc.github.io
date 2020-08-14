@@ -90,23 +90,27 @@
 }
 
 .listarea li img {
-    width: 15%;
-    float: left;
-    margin-right: 30px;
-    margin-top:-10px;
-    border-radius:5px;
+    width: 100%;
     opacity:0.9;
+    border-radius:5px;
 }
-
-.listarea li img:hover {
-    width: 15%;
+.movieimg{
+	width: 15%;
     float: left;
     margin-right: 30px;
     margin-top:-10px;
-    border-radius:5px;
-    opacity:0.6;
+    position:relative;
 }
 
+.moreview{
+	position:absolute;
+	top:45%;
+	left:16%;
+	color:#ebebeb;
+	border:1px solid #ebebeb;
+	border-radius:2px;
+	padding:2px 12px;
+}
 .listarea .title a{
     color:#292929;
     font-size:20px;

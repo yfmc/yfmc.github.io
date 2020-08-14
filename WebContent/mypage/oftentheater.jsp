@@ -30,6 +30,7 @@
             <form>
                 <fieldset>
                     <legend>영화관 검색</legend>
+                    <!-- 브랜드 선택 -->
                     <label for="theater">브랜드</label>
                     <select name="theater" id="theater">
                     	<option value="">--- 선택 ---</option>
@@ -37,6 +38,7 @@
                         <option value="megabox">메가박스</option>
                         <option value="lotte">롯데시네마</option>
                     </select>
+                    <!-- 지역 선택 -->
                     <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
                     <select name="region" id="region">
                     	<option value="">--- 선택 ---</option>
@@ -53,6 +55,9 @@
                         <option value="경남">경남</option>
                         <option value="제주">제주</option>
                     </select>
+                    <!-- 영화관 검색시 자동완성으로 목록이 뜨며 추가 누를 시 추가됨 -->
+                    <!-- 없는 영화관 검색해 추가하거나 이미 등록한 영화관 추가할 수 없음 -->
+                    <!-- 자주 가는 영화관은 5개까지 선택 가능함 -->
                     <label for="theatersearch">&nbsp;&nbsp;&nbsp;영화관</label>
                     <input type="search" id="theatersearch" name="theatersearch" style="width:110px;" />
                     <button type="button" class="inserttheater" style="margin-left:2px;">추가</button>
@@ -116,11 +121,8 @@
 						count++;
 					}
 				});
-				$("#theatersearch").autocomplete({
+				$("#theatersearch").autocomplete({ //영화관 자동완성기능
 					source:this_theater,
-					select:function(event,ui){
-						console.log(ui.item);
-					},
 					focus:function(event,ui){
 						return false;
 					}
@@ -136,7 +138,7 @@
 						
 				}
 				});
-				$(document).on("click",".outbutton",function(){
+				$(document).on("click",".outbutton",function(){ //닫기버튼
 					self.close();
 				});
 			});

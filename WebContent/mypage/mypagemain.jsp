@@ -48,6 +48,7 @@
                             <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 금천구 디지털로10길 9 (가산동, 현대아울렛)<br/>1544-8855<br/>6관, 1054석">롯데시네마 가산디지털</span>
                             <a href="#"><img src="<%=request.getContextPath()%>/img/deleteicon.png" /></a>
                             </td>
+                            <!-- 자주가는 영화관 설정 창으로 이동 -->
                             <td class="gotheater"><a href="#" class="often">자주가는 영화관 설정 &nbsp;&nbsp;&nbsp;<i class="fas fa-mouse" style="font-size:14px;"></i></a></td>
                         </tr>
                     </table>
@@ -80,6 +81,7 @@
                                 <h5 style="font-size:12px;">예매:2019-07-17</h5>
                             </a>
                         </div>
+                        <!-- 예매내역 페이지로 이동 -->
                         <button type="button" class="btn btn-info bt1 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="예매내역 페이지로 이동합니다." >더보기</button>
                     </div>
                 </div>
@@ -108,12 +110,12 @@
                                 <h5>스파이더맨: 파 프롬 홈</h5>
                             </a>
                         </div>
+                        <!-- 좋아요 누른 영화내역 페이지로 이동 -->
                         <button type="button" class="btn btn-success bt2 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="좋아한 영화 페이지로 이동합니다." >더보기</button>
                     </div>
                 </div>
             </div>
             
-
         </div>
         <script src="<%=request.getContextPath()%>/js_files/mypagemain.js"></script>
 <%@ include file="../_inc/footer.jsp"%>

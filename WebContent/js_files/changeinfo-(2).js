@@ -1,4 +1,3 @@
-
         	//이메일 유효성 검사
         	function chkEmail(str) {
             	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -8,7 +7,6 @@
         	}
         	
 			$(function(){
-				
 				//validate를 이용한 전체 폼 유효성 검사
 				jQuery.validator.setDefaults({
 	                onkeyup:false,
@@ -184,7 +182,7 @@
 						$("#details").val($("#details").val());
 					}
 				});
-				$("#postcodify").postcodify({
+				$("#postcodify").postcodify({	//주소검색
 			        insertAddress : "#address",
 			        insertDetails : "#details",
 			        insertPostcode5 : "#postcode",

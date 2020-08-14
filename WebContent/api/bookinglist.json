@@ -5,7 +5,7 @@
 					"title":"강철비2: 정상회담(Steel Rain2: Summit, 2020)",
 					"bookdate":"관람일시 : 2020-07-31(금) 15:15~",
 					"theaterpeople":"CGV 목동 2명 (H7,H8)",
-					"bookable":"예매가능",
+					"bookable":"예매취소",
 					"btnable":""
 				}
 				,
@@ -14,7 +14,7 @@
 					"title":"반도(Peninsula, 2020)",
 					"bookdate":"관람일시 : 2020-07-18(토) 18:00~",
 					"theaterpeople":"CGV 강남 4명 (F7,F8,F9,F10)",
-					"bookable":"예매가능",
+					"bookable":"예매취소",
 					"btnable":""
 				}
 				,
@@ -23,7 +23,7 @@
 					"title":"스파이더맨: 파 프롬 홈(Spider-man: Far From Home, 2019)",
 					"bookdate":"관람일시 : 2019-07-17(수) 15:00~",
 					"theaterpeople":"롯데시네마 영등포 3명 (D5,D6,D7)",
-					"bookable":"예매불가",
+					"bookable":"취소불가",
 					"btnable":" disabled"
 				}
 				,
@@ -32,7 +32,7 @@
 					"title":"어벤져스: 엔드게임 (Avengers: Endgame, 2019)",
 					"bookdate":"관람일시 : 2019-04-18(목) 18:15~",
 					"theaterpeople":"CGV 강남 3명 (D6,D7,H8)",
-					"bookable":"예매불가",
+					"bookable":"취소불가",
 					"btnable":" disabled"
 				}
 				,
@@ -41,7 +41,7 @@
 					"title":"극한직업 (Extreme Job, 2018)",
 					"bookdate":"관람일시 : 2019-01-25(금) 18:00~",
 					"theaterpeople":"CGV 목동 3명 (B10,B11,B12)",
-					"bookable":"예매불가",
+					"bookable":"취소불가",
 					"btnable":" disabled"
 				}
 				
