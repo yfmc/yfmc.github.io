@@ -104,6 +104,11 @@
 	display: block;
 	float: left;
 	width: 480px;
+	/* 텍스트 드래그, 선택 방지 */
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 /* 인원 분류 영역 3개 */
@@ -173,6 +178,11 @@
 /* 중반부 */
 .seats_body {
 	height: 490px;
+	/* 텍스트 드래그, 선택 방지 */
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 /* 좌석 버튼 영역 */
@@ -198,19 +208,6 @@
 	width: 20px;
 	height: 16px;
 }
-
-/* 좌석 버튼 (span) 
-.seat_num {
-	display: block;
-	width: 20px;
-	height: 16px;
-	background: #e8e8e8;
-	color: #000;
-	font-size: 10px;
-	text-align: center;
-	border-radius: 7px 7px 2px 0px;
-}
-*/
 
 /* 좌석 버튼 (a) */
 .seat_btns > a {
@@ -279,6 +276,7 @@
 	font-size: 10px;
 	text-align: center;
 	border-radius: 7px 7px 2px 0px;
+	cursor: default;
 }
 
 /* 예매불가 */
@@ -287,11 +285,18 @@
 	width: 20px;
 	height: 16px;
 	background: #000;
-	color: #fff;
 	font-size: 10px;
 	text-align: center;
 	border-radius: 7px 7px 2px 0px;
 	cursor: default;
+}
+
+a.seat_able, a.seat_disabled, a.seat_selected {
+	cursor: pointer;
+}
+
+a.seat_unable {
+	cursor: not-allowed;
 }
 
 /* 장애인석 */
@@ -306,13 +311,14 @@
 	border-radius: 7px 7px 2px 0px;
 }
 
-/* 총 금액 안내 */
+/* 선택 좌석, 요금 안내 영역 */
 .seats_price {
 	width: 430px;
 	height: 130px;
 	float:left;
 }
 
+/* 선택 좌석 */
 .seat_info {
 	display: block;
 	margin-top: 20px;
@@ -320,8 +326,10 @@
 	text-align: left;
 	color: #fff;
 	font-size: 16px;
+	font-weight: bold;
 }
 
+/* 총 금액 */
 .price_info {
 	display: block;
 	margin-top: 20px;
@@ -329,27 +337,41 @@
 	text-align: left;
 	color: #fff;
 	font-size: 25px;
+	font-weight: bold;
 }
 
 
 /* 결제하기 버튼 */
 .go_to_next {
-	text-align: center;
-	height: 130px;
-	float: right;
-}
-
-.go_to_next > a {
-	display: block;
-	border: 2px solid black;
 	width: 130px;
-	height: 100%;
-	padding-top: 20px;
-	font-size: 25px;
-	color: black;
+	height: 130px;
+	display: block;
+	float: right;
+	text-align: center;
+	font-size: 23px;
+	font-weight: bold;
+	box-shadow: none;
+	border: none;
+	
+	/* 비활성화 상태  */
+	cursor: default;
+	background-color: #808080;
+	color: #eee;
+	
 }
 
-.go_to_next > a:hover {
+/* 활성화 상태 */
+.go_to_next.active {
+	cursor: pointer;
+	background-color: #4d4d4d;
+	color: #fff;
+}
+
+.go_to_next:focus {
+	outline: none;
+}
+
+.go_to_next.active {
 	cursor: pointer;
 	background-color: black;
 	color: white;
