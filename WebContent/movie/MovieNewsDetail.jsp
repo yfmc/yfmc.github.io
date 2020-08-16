@@ -8,7 +8,7 @@
 <div id="detail">
 </div>
 <span class="buttonMoving">
-<button type="button" class="btn btn-warning" onclick="location.href='<%=request.getContextPath()%>/movie/MovieNews.jsp'">목록으로</button>
+<button type="button" class="btn btn-warning" onclick="location.href='<%=request.getContextPath()%>/movie/MovieNews1.jsp'">목록으로</button>
 <button type="button" class="btn btn-danger" onclick="location.href='#'">맨위로</button>
 </span>
 </div>

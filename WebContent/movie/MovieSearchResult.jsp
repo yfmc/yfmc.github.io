@@ -293,7 +293,7 @@
 		href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>"
 		class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a>
 	<a
-		href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>"
+		href="<%=request.getContextPath()%>/movie/MovieNews1.jsp?time=<%=System.currentTimeMillis()%>"
 		class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a>
 	<a
 		href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>"
