@@ -60,7 +60,7 @@
 
 /* 영화관 선택 */
 .booking_branch {
-	width: 350px;
+	width: 380px;
 	float: left;
 }
 
@@ -89,14 +89,10 @@
 	color: #b0b0b0;
 }
 
-.choose_provincial li:nth-child(2) {
-	background-color: white;
-}
-
 /* 지점 선택 */
 .choose_branch {
 	position: relative;
-	width: 210px;
+	width: 240px;
 	height: 740px;
 	padding-top: 15px;
 	float:left;
@@ -121,7 +117,7 @@
 
 /* 영화 선택 */
 .booking_film {
-	width: 350px;
+	width: 320px;
 	height: 800px;
 	float: left;
 }
@@ -135,7 +131,7 @@
 .choose_film li {
 	display: block;
 	height: 50px;
-	font-size: 17px;
+	font-size: 15px;
 	padding-top: 12px;
 }
 

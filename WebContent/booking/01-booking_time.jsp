@@ -34,24 +34,24 @@
 			<div class="choose_provincial">
 				<ul>
 					<li>자주 가는 영화관</li>
-					<li>서울</li>
-					<li>경기</li>
-					<li>인천</li>
-					<li>강원</li>
-					<li>대전</li>
-					<li>충청/세종</li>
-					<li>광주</li>
-					<li>전라</li>
-					<li>대구/경북</li>
-					<li>부산/울산</li>
-					<li>경남</li>
-					<li>제주</li>
+					<li id="seoul2">서울</li>
+					<li id="gyeonggi2">경기</li>
+					<li id="incheon2">인천</li>
+					<li id="gangwon2">강원</li>
+					<li id="daejeon2">대전</li>
+					<li id="chungcheong2">충청/세종</li>
+					<li id="gwangju2">광주</li>
+					<li id="jeolla2">전라</li>
+					<li id="daegu2">대구/경북</li>
+					<li id="busan2">부산/울산</li>
+					<li id="gyeongnam2">경남</li>
+					<li id="jeju2">제주</li>
 				</ul>
 			</div>
 			
 			<!-- 지점 선택 -->
 			<div class="choose_branch">
-				<ul>
+				<ul id="branch_list">
 					<li>CGV 강남</li>
 					<li>롯데시네마 영등포</li>
 					<li>메가박스 송파파크하비오</li>
@@ -200,5 +200,6 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
 <!-- js 파일 적용 -->
 <script type="text/javascript" src="booking_time.js"></script>
+<script src="<%=request.getContextPath()%>/branch/branch2.js"></script>
 
 <%@ include file="/_inc/footer.jsp"%>

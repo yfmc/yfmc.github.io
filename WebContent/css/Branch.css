@@ -28,36 +28,32 @@
     background-color: #4d4d4d;
 }
 
+.prov_list {
+	display: block;
+	margin-left: 15px;
+}
+
 /* 지역명 글씨 */
 .provincial li {
-    display: inline-block;
-    width: 8%;
+    display: block;
+    float:left;
+    width: 90px;
     height: 40px;
     text-align: center;
     margin-top: 10px;
-}
-
-/* 링크의 박스화 */
-.provincial li a {
-    display: block;
     font-size: 20px;
     color: white;
     font-weight: bold;
 }
 
-.provincial li:nth-child(10) {
-    text-align: right;
+.provincial li:nth-child(6), .provincial li:nth-child(9), .provincial li:nth-child(10) {
+	width: 120px;
 }
 
-.provincial li a:hover {
+.provincial li:hover {
     text-decoration: none;
     color:#eee;
-}
-
-/* 각종 링크 효과 삭제 */
-.provincial li a:active, .provincial li a:focus, .provincial li a:link, .provincial li a:visited {
-    text-decoration: none;
-    font-style: none;
+    cursor: pointer;
 }
 
 /* 지역별 지점 선택 영역 */
@@ -66,6 +62,7 @@
     height: 500px;
     background-color: #eee;
     padding: 10px;
+    padding-top: 15px;
 }
 
 .branch_list > ul {

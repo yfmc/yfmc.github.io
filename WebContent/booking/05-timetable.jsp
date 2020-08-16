@@ -17,101 +17,104 @@
 	<div class="branch_table">
 		<h1 class="table_name">극장 선택</h1>
 		<div class="provincial">
-			<ul>
-				<li><a href="#seoul">서울</a></li>
-				<li><a href="#gyeonggi">경기</a></li>
-				<li><a href="#incheon">인천</a></li>
-				<li><a href="#gangwon">강원</a></li>
-				<li><a href="#daejeon">대전</a></li>
-				<li><a href="#chungcheong">충청/세종</a></li>
-				<li><a href="#gwangju">광주</a></li>
-				<li><a href="#jeolla">전라</a></li>
-				<li><a href="#daegu">대구/경북</a></li>
-				<li><a href="#busan">부산/울산</a></li>
-				<li><a href="#gyeongnam">경남</a></li>
-				<li><a href="#jeju">제주</a></li>
+			<ul class="prov_list">
+				<li id="seoul1">서울</li>
+				<li id="gyeonggi1">경기</li>
+				<li id="incheon1">인천</li>
+				<li id="gangwon1">강원</li>
+				<li id="daejeon1">대전</li>
+				<li id="chungcheong1">충청/세종</li>
+				<li id="gwangju1">광주</li>
+				<li id="jeolla1">전라</li>
+				<li id="daegu1">대구/경북</li>
+				<li id="busan1">부산/울산</li>
+				<li id="gyeongnam1">경남</li>
+				<li id="jeju1">제주</li>
+				<!-- float 마감제 -->
+				<div class="clear"></div>
 			</ul>
 		</div>
 		<div class="branch_list">
-			<ul id="seoul">
-				<li><a href="#">CGV 강남</a></li>
-				<li><a href="#">롯데시네마 영등포</a></li>
-				<li><a href="#">메가박스 송파파크하비오</a></li>
-				<li><a href="#">메가박스 코엑스</a></li>
-				<li><a href="#">CGV 압구정</a></li>
-				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
-				<li><a href="#">메가박스 군자</a></li>
-				<li><a href="#">롯데시네마 신도림</a></li>
-				<li><a href="#">롯데시네마 서울대입구</a></li>
-				<li><a href="#">CGV 하계</a></li>
-				<li><a href="#">CGV 건대입구</a></li>
-				<li><a href="#">메가박스 창동</a></li>
-				<li><a href="#">롯데시네마 강동</a></li>
-				<li><a href="#">롯데시네마 도곡</a></li>
-				<li><a href="#">메가박스 아트나인</a></li>
-				<li><a href="#">CGV 홍대</a></li>
-				<li><a href="#">CGV 신촌아트레온</a></li>
-				<li><a href="#">롯데시네마 홍대입구</a></li>
-				<li><a href="#">메가박스 신촌</a></li>
-				<li><a href="#">CGV 왕십리</a></li>
-				<li><a href="#">CGV 성신여대입구</a></li>
-				<li><a href="#">롯데시네마 청량리</a></li>
-				<li><a href="#">CGV 강남</a></li>
-				<li><a href="#">롯데시네마 영등포</a></li>
-				<li><a href="#">메가박스 송파파크하비오</a></li>
-				<li><a href="#">메가박스 코엑스</a></li>
-				<li><a href="#">CGV 압구정</a></li>
-				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
-				<li><a href="#">메가박스 군자</a></li>
-				<li><a href="#">롯데시네마 신도림</a></li>
-				<li><a href="#">롯데시네마 서울대입구</a></li>
-				<li><a href="#">CGV 하계</a></li>
-				<li><a href="#">CGV 건대입구</a></li>
-				<li><a href="#">메가박스 창동</a></li>
-				<li><a href="#">롯데시네마 강동</a></li>
-				<li><a href="#">롯데시네마 도곡</a></li>
-				<li><a href="#">메가박스 아트나인</a></li>
-				<li><a href="#">CGV 홍대</a></li>
-				<li><a href="#">CGV 신촌아트레온</a></li>
-				<li><a href="#">롯데시네마 홍대입구</a></li>
-				<li><a href="#">메가박스 신촌</a></li>
-				<li><a href="#">CGV 왕십리</a></li>
-				<li><a href="#">CGV 성신여대입구</a></li>
-				<li><a href="#">롯데시네마 청량리</a></li>
-				<li><a href="#">CGV 강남</a></li>
-				<li><a href="#">롯데시네마 영등포</a></li>
-				<li><a href="#">메가박스 송파파크하비오</a></li>
-				<li><a href="#">메가박스 코엑스</a></li>
-				<li><a href="#">CGV 압구정</a></li>
-				<li><a href="#">롯데시네마 프리미엄구미센트럴</a></li>
-				<li><a href="#">메가박스 군자</a></li>
-				<li><a href="#">롯데시네마 신도림</a></li>
-				<li><a href="#">롯데시네마 서울대입구</a></li>
-				<li><a href="#">CGV 하계</a></li>
-				<li><a href="#">CGV 건대입구</a></li>
-				<li><a href="#">메가박스 창동</a></li>
-				<li><a href="#">롯데시네마 강동</a></li>
-				<li><a href="#">롯데시네마 도곡</a></li>
-				<li><a href="#">메가박스 아트나인</a></li>
-				<li><a href="#">CGV 홍대</a></li>
-				<li><a href="#">CGV 신촌아트레온</a></li>
-				<li><a href="#">롯데시네마 홍대입구</a></li>
-				<li><a href="#">메가박스 신촌</a></li>
-				<li><a href="#">CGV 왕십리</a></li>
-				<li><a href="#">CGV 성신여대입구</a></li>
-				<li><a href="#">롯데시네마 청량리</a></li>
-				<li><a href="#">CGV 신촌아트레온</a></li>
-				<li><a href="#">롯데시네마 홍대입구</a></li>
-				<li><a href="#">메가박스 신촌</a></li>
-				<li><a href="#">CGV 왕십리</a></li>
-				<li><a href="#">CGV 성신여대입구</a></li>
-				<li><a href="#">롯데시네마 청량리</a></li>
+			<ul id="branch_list">
+				<li><a href='#'>롯데시네마 가산디지털</a></li>
+				<li><a href='#'>롯데시네마 가양</a></li>
+				<li><a href='#'>CGV 강남</a></li>
+				<li><a href='#'>메가박스 강남</a></li>
+				<li><a href='#'>메가박스 강남대로(씨티)</a></li>
+				<li><a href='#'>메가박스 강동</a></li>
+				<li><a href='#'>롯데시네마 강동</a></li>
+				<li><a href='#'>CGV 강변</a></li>
+				<li><a href='#'>CGV 건대입구</a></li>
+				<li><a href='#'>롯데시네마 건대입구</a></li>
+				<li><a href='#'>CGV 구로</a></li>
+				<li><a href='#'>메가박스 군자</a></li>
+				<li><a href='#'>롯데시네마 김포공항</a></li>
+				<li><a href='#'>롯데시네마 노원</a></li>
+				<li><a href='#'>CGV 대학로</a></li>
+				<li><a href='#'>롯데시네마 도곡</a></li>
+				<li><a href='#'>롯데시네마 독산</a></li>
+				<li><a href='#'>CGV 동대문</a></li>
+				<li><a href='#'>메가박스 동대문</a></li>
+				<li><a href='#'>CGV 등촌</a></li>
+				<li><a href='#'>메가박스 마곡</a></li>
+				<li><a href='#'>CGV 명동</a></li>
+				<li><a href='#'>CGV 명동역 씨네라이브러리</a></li>
+				<li><a href='#'>메가박스 목동</a></li>
+				<li><a href='#'>CGV 목동</a></li>
+				<li><a href='#'>CGV 미아</a></li>
+				<li><a href='#'>CGV 불광</a></li>
+				<li><a href='#'>롯데시네마 브로드웨이(신사)</a></li>
+				<li><a href='#'>메가박스 상봉</a></li>
+				<li><a href='#'>CGV 상봉</a></li>
+				<li><a href='#'>메가박스 상암월드컵경기장</a></li>
+				<li><a href='#'>롯데시네마 서울대입구</a></li>
+				<li><a href='#'>메가박스 성수</a></li>
+				<li><a href='#'>CGV 성신여대입구</a></li>
+				<li><a href='#'>메가박스 센트럴</a></li>
+				<li><a href='#'>CGV 송파</a></li>
+				<li><a href='#'>메가박스 송파파크하비오</a></li>
+				<li><a href='#'>롯데시네마 수락산</a></li>
+				<li><a href='#'>CGV 수유</a></li>
+				<li><a href='#'>롯데시네마 수유</a></li>
+				<li><a href='#'>롯데시네마 신도림</a></li>
+				<li><a href='#'>롯데시네마 신림</a></li>
+				<li><a href='#'>메가박스 신촌</a></li>
+				<li><a href='#'>CGV 신촌아트레온</a></li>
+				<li><a href='#'>메가박스 아트나인</a></li>
+				<li><a href='#'>CGV 압구정</a></li>
+				<li><a href='#'>롯데시네마 에비뉴엘(명동)</a></li>
+				<li><a href='#'>CGV 여의도</a></li>
+				<li><a href='#'>롯데시네마 영등포</a></li>
+				<li><a href='#'>CGV 영등포</a></li>
+				<li><a href='#'>CGV 왕십리</a></li>
+				<li><a href='#'>롯데시네마 용산</a></li>
+				<li><a href='#'>CGV 용산아이파크몰</a></li>
+				<li><a href='#'>롯데시네마 월드타워</a></li>
+				<li><a href='#'>메가박스 은평</a></li>
+				<li><a href='#'>롯데시네마 은평</a></li>
+				<li><a href='#'>메가박스 이수</a></li>
+				<li><a href='#'>롯데시네마 장안</a></li>
+				<li><a href='#'>CGV 중계</a></li>
+				<li><a href='#'>메가박스 창동</a></li>
+				<li><a href='#'>CGV 천호</a></li>
+				<li><a href='#'>CGV 청담씨네시티</a></li>
+				<li><a href='#'>롯데시네마 청량리</a></li>
+				<li><a href='#'>메가박스 코엑스</a></li>
+				<li><a href='#'>CGV 피카디리 1958</a></li>
+				<li><a href='#'>CGV 하계</a></li>
+				<li><a href='#'>롯데시네마 합정</a></li>
+				<li><a href='#'>메가박스 홍대</a></li>
+				<li><a href='#'>CGV 홍대</a></li>
+				<li><a href='#'>롯데시네마 홍대입구</a></li>
+				<li><a href='#'>메가박스 화곡</a></li>
+				<li><a href='#'>롯데시네마 황학</a></li>
 			</ul>
 		</div>
 		<!-- float 마감제 -->
 		<div class="clear"></div>
 	</div>
 	<hr />
+
 	<!-- 상영시간표 -->
 	<div class="timetable">
 		<h1>상영시간표</h1>
@@ -260,10 +263,15 @@
 	</div>
 </div>
 
-<!-- fake scroll js -->
+<!-- fakescroll js -->
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
 <!-- slick js -->
 <script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
+<!-- kakaomap API -->
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ba7a5958ab47694eb9afd60cda94e841"></script>
+<!-- kakaomap services 라이브러리 불러오기 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ba7a5958ab47694eb9afd60cda94e841&libraries=services"></script>
 <!-- js 파일 적용 -->
 <script src="<%=request.getContextPath()%>/branch/branch.js"></script>
+<script src="<%=request.getContextPath()%>/branch/branch2.js"></script>
 <%@ include file="/_inc/footer.jsp"%>
