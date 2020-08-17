@@ -33,8 +33,14 @@
                 	    <li>
                             <a href="<%=request.getContextPath()%>/admin/admin_home.jsp">홈</a>
                         </li>
+                  		<li>
+                            <a href="<%=request.getContextPath()%>/admin/admin_notice_list.jsp">공지사항 관리</a>
+                        </li>
                         <li>
                             <a href="<%=request.getContextPath()%>/admin/admin_qna_list.jsp">1:1문의 관리</a>
+                        </li>
+                        <li>
+                            <a href="<%=request.getContextPath()%>/admin/admin_faq_list.jsp">자주찾는질문 관리</a>
                         </li>
                         <li>
                             <a href="#">회원 관리</a>

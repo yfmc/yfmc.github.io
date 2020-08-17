@@ -279,7 +279,7 @@ table.dataTable thead .sorting_desc_disabled {
 /* 관리자페이지 홈 */
 #DataTables_Table_0 { padding: 0; }
 .panel { width : 47%; margin-right: 30px; border: 2px solid #eee; float: left; }
-.panel-heading { font-weight: bold; }
+.panel-heading { font-weight: bold; font-size:16px; }
 .unanswer_list h3, .notice_list h3 { padding-bottom: 10px; border-bottom: 1px solid #eee; }
 .more { width: 60px; height: 22px; color: #222; font-size: 14px; }
 a:link { text-decoration: none;}
@@ -287,4 +287,19 @@ a:hover { color: #222; }
 
 
 /* 1:1문의 관리 */
-.qna_list { width : 100%; }
+.qna_list, .notice_list, .faq_list { width : 100%; }
+
+/* 버튼 */
+.write { width : 80px; height: 25px; margin-top: -3px; line-height: 100%; }
+.compilte { width: 120px; height: 30px; line-height: 100%; }
+
+/* 글 작성페이지 */
+#notice_form { border-top: 1px solid #eee; padding-left: 15px;}
+.notice_title { margin-bottom:20px; }
+.notice_box { padding: 0 20px; }
+.form-group { width: 100%; margin: 0; padding: 10px 0; border-bottom: 1px solid #eee; }
+.form-group label { padding: 0 25px; font-size: 18px; line-height: 220%; cursor: text; }
+.form-group textarea { min-height: 200px; }
+.form-control { background-color: #f8f8f8; }
+.btn_btm_wrap { padding:15px 30px; }
+

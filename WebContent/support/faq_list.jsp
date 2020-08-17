@@ -65,8 +65,8 @@ $(function(){
 			dataType:"JSON"
 		},
 		columns: [
-			{data: "faqno"},
-			{data: "faqname"},
+			{data: "faq_no"},
+			{data: "faq_title"},
 			{data: "date"},
 			{data: "views"}
 		],
