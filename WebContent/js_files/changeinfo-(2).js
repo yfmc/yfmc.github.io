@@ -39,21 +39,7 @@
 					}); 
 				
 				$("#form1").validate({
-					submitHandler: function() {
-						swal({
-		        			title:"확인",
-		        			text:"정말 이 정보로 수정하시겠습니까?",
-		        			type:"question",
-		        			confirmButtonText:"Yes",
-		        			showCancelButton:true,
-		        			cancelButtonText:"No",
-		        		}).then(function(result){
-		        			if(result.value){
-		        				swal("","수정되었습니다.","success");
-		        			}
-		        		});
-
-			        },
+					
 					rules:{
 						user_password:{required:true,minlength:8,maxlength:20,engnumspe:true},
 						user_password2:{required:true,equalTo:"#user_password"},
@@ -99,7 +85,10 @@
 					var mail=$("#mail").val();
 					var res=chkEmail(mail);
 					if(!res){
-						alert("이메일이 형식에 맞지 않습니다.");
+						swal({
+							html:"이메일이 형식에 맞지 않습니다.",
+							animation:false
+						});
 						$("#mail").focus();
 						return false;
 					}
@@ -111,7 +100,10 @@
 				//'인증번호확인' 버튼 클릭 시 인증번호 검사
 				$(document).on("click",".certi_confirm",function(){
 					if($("#certinum").val()!="12345"){
-						alert("인증번호가 맞지 않습니다.");
+						swal({
+							html:"인증번호가 맞지 않습니다.",
+							animation:false
+						});
 						return false;
 					}
 					swal({

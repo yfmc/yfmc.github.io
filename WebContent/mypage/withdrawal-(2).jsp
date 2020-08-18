@@ -8,9 +8,6 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/withdrawal-(2).css">
 
         <div id="content" class="clear">
-        	<!-- 사이드바 -->
-            
-            
             <div id="body">
                 <div class="msg">
                     <h1>회원 탈퇴가 정상적으로 처리되었습니다.</h1>

@@ -10,9 +10,7 @@
 #body {
     width: 900px;
     min-height: 850px;
-    font-family: 'Jua', sans-serif;
-    margin:auto;
-    padding-top:70px;
+    float:left;
 }
 
 .sidebar {
@@ -69,12 +67,5 @@
 
 .msg h1{
     font-weight:bold;
-}
-
-.msg input[type="button"]{
-    margin-top:40px;
-    width:150px;
-    height:45px;
-    border:1px solid #bababa;
-    border-radius:5px;
+    font-family: 'Jua', sans-serif;
 }

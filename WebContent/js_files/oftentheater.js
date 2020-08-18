@@ -483,9 +483,9 @@ $(function(){
 	var this_theater=seoul_theater.concat(gyeonggi_theater,incheon_theater,gangwon_theater,daejeon_theater,chungcheong_theater);
 	this_theater=this_theater.concat(gwangju_theater,jeolla_theater,daegu_theater,busan_theater,gyeongnam_theater,jeju_theater);
 	var my_theater=["CGV 강남","CGV 목동","메가박스 화곡","롯데시네마 영등포","롯데시네마 가산디지털"];
-	function autocomp(){//영화관 자동완성기능
+	function autocomp(this_th){//영화관 자동완성기능
 		$("#theatersearch").autocomplete({ 
-			source:this_theater,
+			source:this_th,
 			focus:function(){
 			return false;
 			}
@@ -538,7 +538,7 @@ $(function(){
 			$("#theater").prop("disabled",true);
 			this_theater=seoul_theater.concat(gyeonggi_theater,incheon_theater,gangwon_theater,daejeon_theater,chungcheong_theater);
 		}
-		autocomp();
+		autocomp(this_theater);
 		$("#theater").change(function(){ //브랜드 변경시 자동완성 변경사항 정의
 			var this_theater2=[]
 			var choice2=$(this).find("option:selected").val();
@@ -550,12 +550,7 @@ $(function(){
 							this_theater2.push(a[i]["brand"]+" "+a[i]["branch"]);
 						}
 					}
-					$("#theatersearch").autocomplete({
-						source:this_theater2,
-						focus:function(event,ui){
-						return false;
-						}
-					});
+					autocomp(this_theater2);
 					break;
 				case 'megabox':
 					var a=b_json[choice];
@@ -564,12 +559,7 @@ $(function(){
 							this_theater2.push(a[i]["brand"]+" "+a[i]["branch"]);
 						}
 					}
-					$("#theatersearch").autocomplete({
-						source:this_theater2,
-						focus:function(event,ui){
-						return false;
-						}
-					});
+					autocomp(this_theater2);
 					break;
 				case 'lotte':
 					var a=b_json[choice];
@@ -578,20 +568,15 @@ $(function(){
 							this_theater2.push(a[i]["brand"]+" "+a[i]["branch"]);
 						}
 					}
-					$("#theatersearch").autocomplete({
-						source:this_theater2,
-						focus:function(event,ui){
-						return false;
-						}
-					});
+					autocomp(this_theater2);
 					break;
 				case '':
-					autocomp();
+					autocomp(this_theater);
 					break;
 			}
 		});
 	});
-	autocomp();
+	autocomp(this_theater);
 	
 	$(document).on("click",".inserttheater",function(){ //추가버튼 눌렀을 때
 		if(count==5){									// 이미 5개의 영화관이 등록되어 있다면 추가 못하게 함

@@ -30,7 +30,7 @@
                 
                 <div class="bodycenter">
                 	<!-- 회원정보 수정 폼 -->
-                    <form name="form1" id="form1" name="form1" class="form-horizontal">
+                    <form name="form1" method="post" id="form1" name="form1" class="form-horizontal" action="<%=request.getContextPath()%>/mypage/changeinfo-(3).jsp">
                         <!-- 아이디 -->
                         <div class="form-group">
                             <label for="user_id" class="col-xs-2 control-label">아이디</label>
