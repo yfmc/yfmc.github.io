@@ -82,6 +82,10 @@ input[type='password']{
     border:1px solid #adadad;
 }
 
+.change_go_btn{
+	background:#eee;
+}
+
 .mainbutton{
 	position:relative;
 	top:240px;

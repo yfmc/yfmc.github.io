@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <input type="password" name="password" id="password" placeholder="  비밀번호를 입력해주세요">
                         </div>
-                        &nbsp;&nbsp;<button type="button" class="btn withdgo">입력</button>
+                        &nbsp;&nbsp;<button type="submit" class="btn btn-default withdgo">입력</button>
                     </form>
                 </div>
                 <!-- 메인 이동 버튼 -->

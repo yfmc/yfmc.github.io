@@ -30,36 +30,37 @@
             <form>
                 <fieldset>
                     <legend>영화관 검색</legend>
+                    <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
+                    <select name="region" id="region">
+                    	<option value="">--- 선택 ---</option>
+                        <option value="seoul">서울</option>
+                        <option value="gyeonggi">경기</option>
+                        <option value="incheon">인천</option>
+                        <option value="gangwon">강원</option>
+                        <option value="daejeon">대전</option>
+                        <option value="chungcheong">충청/세종</option>
+                        <option value="gwangju">광주</option>
+						<option value="jeolla">전라</option>
+                        <option value="daegu">대구/경북</option>
+                        <option value="busan">부산/울산</option>
+                        <option value="gyeongnam">경남</option>
+                        <option value="jeju">제주</option>
+                    </select>
                     <!-- 브랜드 선택 -->
-                    <label for="theater">브랜드</label>
-                    <select name="theater" id="theater">
+                    <label for="theater"> &nbsp;브랜드</label>
+                    <select name="theater" id="theater" disabled>
                     	<option value="">--- 선택 ---</option>
                         <option value="CGV">CGV</option>
                         <option value="megabox">메가박스</option>
                         <option value="lotte">롯데시네마</option>
                     </select>
                     <!-- 지역 선택 -->
-                    <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
-                    <select name="region" id="region">
-                    	<option value="">--- 선택 ---</option>
-                        <option value="서울">서울</option>
-                        <option value="경기도">경기</option>
-                        <option value="인천">인천</option>
-                        <option value="강원도">강원</option>
-                        <option value="대전">대전</option>
-                        <option value="충청세종">충청/세종</option>
-                        <option value="광주">광주</option>
-						<option value="전라">전라</option>
-                        <option value="대구경북">대구/경북</option>
-                        <option value="부산울산">부산/울산</option>
-                        <option value="경남">경남</option>
-                        <option value="제주">제주</option>
-                    </select>
+                    
                     <!-- 영화관 검색시 자동완성으로 목록이 뜨며 추가 누를 시 추가됨 -->
                     <!-- 없는 영화관 검색해 추가하거나 이미 등록한 영화관 추가할 수 없음 -->
                     <!-- 자주 가는 영화관은 5개까지 선택 가능함 -->
-                    <label for="theatersearch">&nbsp;&nbsp;&nbsp;영화관</label>
-                    <input type="search" id="theatersearch" name="theatersearch" style="width:110px;" />
+                    <label for="theatersearch">&nbsp;&nbsp;영화관</label>
+                    <input type="search" id="theatersearch" name="theatersearch" style="width:150px;" />
                     <button type="button" class="inserttheater" style="margin-left:2px;">추가</button>
                 </fieldset>
             </form>
@@ -88,61 +89,13 @@
 			</div>
 		</div>
 		<div class="butt">
-				<button type="button" class="btn btn-primary outbutton">확인</button>
+				<button type="button" class="btn btn-success applbutton">적용</button>
+				<button type="button" class="btn btn-warning outbutton">취소</button>
 		</div>
 		 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="<%=request.getContextPath()%>/plugins/tagsinput/jquery-tagsinput.min.js" defer></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script type="text/javascript">
-			$(function(){
-				// 자주가는 영화관 추가,제거 기능 정의
-				var count=5;
-				var this_theater=["CGV 목동","CGV 강변","CGV 강남","CGV 건대입구","메가박스 화곡","CGV미아","롯데시네마 영등포","메가박스 신촌","메가박스 강남","롯데시네마 노원","롯데시네마 가산디지털"];
-				var my_theater=["CGV 강남","CGV 목동","메가박스 화곡","롯데시네마 영등포","롯데시네마 가산디지털"];
-				$(document).on("click",".inserttheater",function(){ //추가버튼 눌렀을 때
-					if(count==5){									// 이미 5개의 영화관이 등록되어 있다면 추가 못하게 함
-						alert("더 이상 추가할 수 없습니다.");
-						}
-					else{
-						if(this_theater.indexOf($("#theatersearch").val())==-1){
-							alert("그런 영화관은 없습니다.");
-							return false;
-						}
-						if(my_theater.indexOf($("#theatersearch").val())!=-1){
-							alert("이미 등록된 영화관입니다.");
-							return false;
-						}
-						var html="<div class='tag badge badge-primary'><span>";	//5개 미만이면 영화관 추가
-						html+=$("#theatersearch").val();
-						html+="</span><i class='tag-remove'>✖</i>";
-						$(".tags-container").append(html);
-						my_theater.push($("#theatersearch").val());
-						console.log(my_theater);
-						count++;
-					}
-				});
-				$("#theatersearch").autocomplete({ //영화관 자동완성기능
-					source:this_theater,
-					focus:function(event,ui){
-						return false;
-					}
-				});
-				$(document).on("click",".tag-remove",function(){	//자주가는 영화관 목록 제외하기
-					var result=confirm("이 영화관을 목록에서 제외할까요?");
-					if(result){
-					$(this).parents(".tag").hide();
-						count--;
-						const idx = my_theater.indexOf($(this).parent().find("span").html());
-						if (idx > -1) my_theater.splice(idx, 1);
-						console.log(my_theater);
-						
-				}
-				});
-				$(document).on("click",".outbutton",function(){ //닫기버튼
-					self.close();
-				});
-			});
-		</script>
+		<script src="../js_files/oftentheater.js"></script>
    </div>
 </body>
 

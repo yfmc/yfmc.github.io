@@ -45,7 +45,7 @@
                                 <h4>장르 : 드라마, 액션</h4>
                             </span>
                             <!-- 좋아한 영화 목록에서 제거하는 버튼 -->
-                            <input type="button" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn btn-default remove" />
                             <!-- 예매하기 페이지로 이동하는 버튼 -->
                             <input type="button" value="예매하기" class="btn book"/>
                         </li>
@@ -61,7 +61,7 @@
                             <span class="genre">
                                 <h4>장르 : 액션, 드라마</h4>
                             </span>
-                            <input type="button" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn btn-default remove" />
                             <input type="button" value="예매하기" class="btn book"/>
                         </li>
                     </ul>
@@ -77,7 +77,7 @@
                             <span class="genre">
                                 <h4>장르 : 액션, 모험, 코미디</h4>
                             </span>
-                            <input type="button" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn btn-default remove" />
                             <input type="button" value="예매불가" class="btn book" disabled/>
                         </li>
                     </ul>
@@ -93,7 +93,7 @@
                             <span class="genre">
                                 <h4>장르 : 액션, SF</h4>
                             </span>
-                            <input type="button" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn btn-default remove" />
                             <input type="button" value="예매불가" class="btn book" disabled/>
                         </li>
                     </ul>
@@ -109,7 +109,7 @@
                             <span class="genre">
                                 <h4>장르 : 코미디</h4>
                             </span>
-                            <input type="button" value="-" class="btn remove" />
+                            <input type="button" value="-" class="btn btn-default remove" />
                             <input type="button" value="예매불가" class="btn book" disabled/>
                         </li>
                     </ul>

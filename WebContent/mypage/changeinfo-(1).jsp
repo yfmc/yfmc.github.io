@@ -6,6 +6,7 @@
 <%@include file="../_inc/header.jsp" %>
 <title>마이페이지 > 회원정보 수정</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/changeinfo-(1).css">
         <div id="content" class="clear">
         	<!-- 사이드바 -->
@@ -32,7 +33,7 @@
                             <input type="password" name="password" id="password" placeholder="  비밀번호를 입력해주세요">
                         </div>
                         <!--  입력버튼 -->
-                        &nbsp;&nbsp;<button type="button" class="btn change_go_btn">입력</button>
+                        &nbsp;&nbsp;<button type="submit" class="btn btn-default change_go_btn">입력</button>
                     </form>
                 </div>
                 <!-- 메인으로 가는 버튼 -->
@@ -42,5 +43,6 @@
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script src="<%=request.getContextPath()%>/js_files/changeinfo-(1).js"></script>
 <%@ include file="../_inc/footer.jsp"%>

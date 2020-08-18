@@ -55,13 +55,20 @@
         margin-right: 10px;
         border: 0.5px solid #222;
     }
-
-    .outbutton{
+    
+	.applbutton{
     	position:relative;
-		left:45%;
+		left:37%;
 		width:60px;
 		height:35px;
 		margin-top:25px;
-		background-color:#0398fc;
+		border:0px;
+    }
+    .outbutton{
+    	position:relative;
+		left:37%;
+		width:60px;
+		height:35px;
+		margin-top:25px;
 		border:0px;
     }
