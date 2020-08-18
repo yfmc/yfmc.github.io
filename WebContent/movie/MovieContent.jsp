@@ -121,10 +121,9 @@
 	<!-- 한줄평 작성하기 -->
 	<div class="movie-advice">
 		<h3>한줄평</h3>
-		<form>
-			<textarea class="form-control col-sm-5" rows="5">
-            </textarea>
-			<button type="submit" class="btn btn-dark" style="float: right">등록</button>
+		<form action="MovieContent.jsp">
+			<input type="text" placeholder="한줄평을 작성해주세요." id="people-textarea"/>
+			<button type="submit" class="btn btn-dark" id="beforeinput" style="float: right">등록</button>
 			<div class="starRev">
 				<span class="starR on">별1</span> <span class="starR on">별2</span> <span
 					class="starR on">별3</span> <span class="starR">별4</span> <span
@@ -237,8 +236,9 @@
 	</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/Javascript" src="../js_files/likecount.js"></script>
-<script type="text/Javascript" src="../js_files/star.js"></script>
+<script type="text/javascript" src="../js_files/likecount.js"></script>
+<script type="text/javascript" src="../js_files/star.js"></script>
+<script type="text/javascript" src="../js_files/people_text.js"></script>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="../plugins/slick/slick.min.js"></script>

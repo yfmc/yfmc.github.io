@@ -57,8 +57,8 @@
 										src="https://movie-phinf.pstatic.net/20200703_48/1593739617223iuD2b_JPEG/movie_image.jpg"
 										class="img-responsive" />
 										<figcaption>
-											<button type="button" class="btn btn-danger">예매하기</button>
-											<button type="button" class="btn btn-primary">상세정보</button>
+											<button type="button" class="btn btn-danger" id="book1">예매하기</button>
+											<button type="button" class="btn btn-primary" id="information1">상세정보</button>
 										</figcaption> </span>
 								</div>
 								<!-- 텍스트 영역 -->
@@ -368,5 +368,11 @@
 				$('button.dropdown-toggle').html(
 						contents + ' <span class="caret"></span>');
 			});
+	
+	$(function(){
+		$("#information1").click(function(){
+			location.href="../movie/MovieContent.jsp";
+		});
+	});
 </script>
 <%@ include file="../_inc/footer.jsp"%>

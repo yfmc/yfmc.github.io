@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../plugins/rangeslider/rangeslider.css">
 <title>영화검색 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
-<form class="movie-search" id="movie-search">
+<form class="movie-search" id="movie-search"> <!-- action="MovieSearch.jsp" 검색에 대한 조건을 입력하였을 때 같은 페이지로 결과를 보낸다.-->
 	<h2>
 		좋아하는 영화, 보고싶은 영화를 <span>Cinephile</span>에서 찾아보세요!
 	</h2>
@@ -119,6 +119,7 @@
 			var value = element.value, output = element.parentNode
 					.getElementsByTagName('output')[0];
 			output.innerHTML = value;
+			//console.log(value); //제작년도에 대한 value값을 얻기위한 console이다.
 		}
 		for (var i = $element.length - 1; i >= 0; i--) {
 			valueOutput($element[i]);

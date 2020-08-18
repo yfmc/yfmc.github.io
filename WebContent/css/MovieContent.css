@@ -199,7 +199,12 @@ table th {
 	height: 150px;
 	margin: auto;
 	color: #222;
-	margin-bottom: 50px;
+	margin-bottom: -20px;
+}
+
+.movie-advice input{
+	width:800px;
+	height:50px;
 }
 
 .movie-advice button {
