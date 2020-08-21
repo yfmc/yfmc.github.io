@@ -17,7 +17,7 @@
 <script type="text/javascript">
 
 $(document).ready( function() {
-	$("#detail").load("../news/Example.html");
+	$("#detail").load("../news/Example01.html");
 });
 </script>
 <!--// ========== 컨텐츠 영역 끝 ========== -->

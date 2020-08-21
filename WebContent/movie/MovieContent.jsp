@@ -135,7 +135,7 @@
 	<!-- 회원들이 작성한 댓글 시작 -->
 	<div class="movie-comment">
 		<ul class="people-comment">
-			<li><label for="text">python</label>
+			<li><span>python</span>
 				<div class="pulldate">
 					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
@@ -146,7 +146,7 @@
 				</div> <span class="text1" id="text1">이 영화 정말 재미있습니다.</span> <%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
 
 			</li>
-			<li><label for="text">java</label>
+			<li><span>java</span>
 				<div class="pulldate">
 					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
@@ -157,7 +157,7 @@
 				</div> <span class="text1" id="text1">이 영화 정말 재미있습니다. 또
 					보고싶어지는 영화입니다.</span> <%-- <button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
 			</li>
-			<li><label for="text">mysql</label>
+			<li><span>mysql</span>
 				<div class="pulldate">
 					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 					<button type="button" class="modify-text"
@@ -172,7 +172,7 @@
 				</div> <span class="text1" id="text1">생각보다 너무 재미없네요 ㅠㅠㅠ</span>
 				<button type="submit" class="btn btn-dark" style="float: right">수정완료</button>
 			</li>
-			<li><label for="text">html</label>
+			<li><span>html</span>
 				<div class="pulldate">
 					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
@@ -183,7 +183,7 @@
 				</div> <span class="text1" id="text1">그럭저럭 볼만한 영화입니당 ㅎㅎ</span>
 				<%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
 			</li>
-			<li><label for="text">css</label>
+			<li><span>css</span>
 				<div class="pulldate">
 					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
@@ -194,7 +194,7 @@
 				</div> <span class="text1" id="text1">인생영화입니다 정말....나의
 					심금을 울렸습니다...</span> <%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
 			</li>
-			<li><label for="text">javascript</label>
+			<li><span>javascript</span>
 				<div class="pulldate">
 					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>
@@ -205,7 +205,7 @@
 				</div> <span class="text1" id="text1">친구들이랑 재밌게 봤습니다! 또
 					보러 올께요!!!ㅎㅎ</span> <%--<button type="submit" class="btn btn-dark" style="float:right">등록하기</button>--%>
 			</li>
-			<li><label for="text">jQuery</label>
+			<li><span>jQuery</span>
 				<div class="pulldate">
 					<script type="text/Javascript" src="../js_files/pulldate.js"></script>
 				</div>

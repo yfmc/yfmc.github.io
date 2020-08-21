@@ -231,7 +231,7 @@ table th {
 	color: #222;
 }
 
-.movie-comment label {
+.movie-comment li > span {
 	font-size: 20px;
 }
 
