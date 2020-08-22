@@ -17,7 +17,7 @@
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<a
-					href="<%=request.getContextPath()%>/movie/MovieNewsDetail.jsp?time=<%=System.currentTimeMillis()%>"
+					href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail01.jsp?time=<%=System.currentTimeMillis()%>"
 					class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
@@ -38,7 +38,7 @@
 			<!-- 2개 -->
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<a href="#" class="thumbnail">
+				<a href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail02.jsp?time=<%=System.currentTimeMillis()%>" class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
 						<div class="movie-image2"></div>
@@ -58,7 +58,7 @@
 			<!-- 3개 -->
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<a href="#" class="thumbnail">
+				<a href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail03.jsp?time=<%=System.currentTimeMillis()%>" class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
 						<div class="movie-image3"></div>
@@ -76,7 +76,7 @@
 			<!-- 4개 -->
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<a href="#" class="thumbnail">
+				<a href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail04.jsp?time=<%=System.currentTimeMillis()%>" class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
 						<div class="movie-image4"></div>
@@ -94,7 +94,7 @@
 			<!-- 5개 -->
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<a href="#" class="thumbnail">
+				<a href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail05.jsp?time=<%=System.currentTimeMillis()%>" class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
 						<div class="movie-image5"></div>
@@ -114,7 +114,7 @@
 			<!-- 6개 -->
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<a href="#" class="thumbnail">
+				<a href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail06.jsp?time=<%=System.currentTimeMillis()%>" class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
 						<div class="movie-image6"></div>
@@ -132,7 +132,7 @@
 			<!-- 7개 -->
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<a href="#" class="thumbnail">
+				<a href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail07.jsp?time=<%=System.currentTimeMillis()%>" class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
 						<div class="movie-image7"></div>
@@ -152,7 +152,7 @@
 			<!-- 8개 -->
 			<div class="movie-picture">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<a href="#" class="thumbnail">
+				<a href="<%=request.getContextPath()%>/movie/movienewsdetail/MovieNewsDetail08.jsp?time=<%=System.currentTimeMillis()%>" class="thumbnail">
 					<div class="row">
 						<!-- 이미지 영역 -->
 						<div class="movie-image8"></div>
