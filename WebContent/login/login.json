@@ -1,15 +1,7 @@
-[{
+{
 	"user_id" : "newjhj31",
 	"user_email" : "newjhj31@gmail.com",
 	"code":123456,
 	"user_pw" :"123qwe!@#",
 	"name":"장동건"
-},
-{
-	"user_id" : "cutewendy",
-	"user_email" : "wendy@gmail.com",
-	"code":123456,
-	"user_pw" :"123qwe!@#",
-	"name":"이웬디"
 }
-]

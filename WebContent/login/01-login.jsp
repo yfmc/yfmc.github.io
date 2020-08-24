@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+
+
 <%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login_01login.css?time=<%=System.currentTimeMillis()%>" />
     <div id="content">
             <h2>로그인</h2>
             <div id="lginput">
-                <form id="letslogin">
+                <form  method="post" action="login_ok.jsp">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1"><i class="fas fa-user-circle"></i></span>
-                    <input type="text" class="form-control" id="user_id" placeholder="아이디를 입력해주세요." aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" id="user_id" name="user_id" placeholder="아이디를 입력해주세요." aria-describedby="sizing-addon1">
                 </div>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1"><i class="fas fa-key"></i></span>
-                    <input type="password" class="form-control" id="user_pw" placeholder="비밀번호를 입력해주세요." aria-describedby="sizing-addon1">
+                    <input type="password" class="form-control" id="user_pw" name="user_pw" placeholder="비밀번호를 입력해주세요." aria-describedby="sizing-addon1">
                 </div>
                 
                 <div class="loginpb">
