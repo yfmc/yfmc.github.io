@@ -13,6 +13,7 @@
 	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
 	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
 	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
+	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.jsp">대관문의</a></li>
 	            </ul>
 	            <!-- ==== 사이드바 끝 ==== -->
                 <!-- ==== 본문 시작 ====-->

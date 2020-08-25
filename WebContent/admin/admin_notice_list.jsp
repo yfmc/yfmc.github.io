@@ -35,9 +35,6 @@
                 </div>
             </div>
         </div>
-    <script src="https://kit.fontawesome.com/2de30be98d.js" crossorigin="anonymous"></script>
-	<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
-	<script src="https://stackpath.bootstracdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
 	<script type="text/javascript">
 		$(function(){ 

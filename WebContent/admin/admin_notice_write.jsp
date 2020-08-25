@@ -6,7 +6,7 @@
                 <div class="title col-lg-12">
                     <h1 class="page-header">공지사항</h1>
                 </div>
-                <div class="notice_box">
+                <div class="content_box">
 		            <div class="notice_title">
 				     	<h3>공지사항 글 작성</h3>
 		            </div>
@@ -30,9 +30,7 @@
 		        </div>
             </div>
         </div>
-    <script src="https://kit.fontawesome.com/2de30be98d.js" crossorigin="anonymous"></script>
-	<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
-	<script src="https://stackpath.bootstracdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    
 	<script type="text/javascript">
 	$("#notice_form").submit(function(e) {
 		e.preventDefault();

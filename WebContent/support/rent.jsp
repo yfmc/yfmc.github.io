@@ -3,7 +3,9 @@
 <%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_qna.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_rent.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+
     	<div class="row">
 	        <div id="contents">
 	            <!-- ==== 사이드 바 ==== -->
@@ -17,54 +19,68 @@
 	            <!-- ==== 사이드바 끝 ==== -->
 	            <!-- ==== 본문 시작 ==== -->
 	            <div class="content">
-		                <div class="qna_title">
-		                    <h2>1:1문의</h2>
+		                <div class="rent_title">
+		                    <h2>대관문의</h2>
 		                    <ul>
-		                        <li>문의하시기전 FAQ(자주찾는 질문)를 확인하시면 궁금증을 더욱 빠르게 해결 하실 수 있습니다.</li>
-		                        <li>1:1문의글 답변 운영시간 09:00 ~ 18:00</li>
+		                        <li>개인이나 단체를 위한 대관서비스로 CGV의 넓고 쾌적한 극장에서 즐거운 추억을 만드실 수 있습니다.</li>
+								<li>단체/대관 문의 외 문의나 불편사항은 이메일 문의로 작성 부탁드립니다.</li>
 		                    </ul>
-		                    <div class="qna_notice">
-			                    <span>고객님의 문의에 <span style="color:#ff7787">답변하는 직원은 고객 여러분의 가족 중 한 사람</span>일 수 있습니다.
-			                   	<p style="font-size:12px;">고객의 언어폭력(비하, 욕설, 반말, 성희롱 등)으로부터 직원을 보호하기 위해 관련 법에 따라 수사기관에 필요한 조치를 요구할 수 있으며,
-			                   	<br />형법에 의해 처벌 대상이 될 수 있습니다.</p></span>
-		                   	</div>
 		                </div>
-	                <form class="form-horizontal"  name="qna_form" id="qna_form">
+	                <form class="form-horizontal"  name="rent_form" id="rent_form">
 		                <div class="form_title">
 		                        <h4>문의내용<span class="pull-right">* 필수입력</span></h4>
 		                </div>
-	                    <div class="qna_box">
-		                        <div class="form-group">
-		                            <label for="qna_title"  class="must col-xs-2 ">제목</label>
-		                            <div class="col-xs-10">
-		                                <input type="text" name="qna_title" id="qna_title" class="form-control" />
-		                            </div>
+	                    <div class="rent_box">
+		                    <div class="form-group">
+		                        <label for="rent_title"  class="must col-xs-2 ">영화관 선택</label>
+		                            <div class="col-xs-3">
+										<!-- 1차 카테고리 -->
+										<div class="form-group">
+											<select id="sel_region" class="form-control">
+												<option value="">지역선택</option>
+												<option value="seoul1">서울</option>
+												<option value="gyeonggi1">경기</option>
+												<option value="incheon1">인천</option>
+												<option value="gangwon1">강원</option>
+												<option value="daejeon1">대전</option>
+												<option value="chungcheong1">충청/세종</option>
+												<option value="gwangju1">광주</option>
+												<option value="jeolla1">전라</option>
+												<option value="daegu1">대구/경북</option>
+												<option value="busan1">부산/울산</option>
+												<option value="gyeongnam1">경남</option>
+												<option value="jeju1">제주</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-xs-5">
+										<!-- 2차 카테고리 -->
+										<div class="form-group">
+											<select id="sel_theater" class="form-control">
+												<option value="">영화관선택</option>
+											</select>
+										</div>
+									</div>
 		                        </div>
 		                        <div class="form-group">
-		                            <label for="qna_contents"  class="must col-xs-2 ">내용</label>
-		                            <div class="col-xs-10">
-		                                <textarea name="qna_contents" id="qna_contents" class="form-control"  /></textarea>
-		                            </div>
+		                        	<label for="rent_date"  class="must col-xs-2 " >대관 희망일</label>
+		                        	<div class="col-xs-5">
+		                        		<input type="text" id="datepicker">
+		                        	</div>
 		                        </div>
-		                        <div class="form-group">
-		                            <label for="textbox"  class="col-xs-2 ">첨부파일</label>
-		                            <div class="col-xs-10">
-		                                <input type="file" name="file_img" id="file_img" class="file_img" >
-		                            </div>
-		                        </div>
-		                </div>
+			                    <div class="form-group">
+			                        <label for="rent_contents"  class="must col-xs-2 " >내용</label>
+			                        <div class="col-xs-10">
+			                            <textarea name="rent_contents" id="rent_contents" class="form-control"  placeholder="정확한 행사내용과 통화가능시간을 남겨주시면 더욱 빠른 답변이 가능합니다." /></textarea>
+			                        </div>
+			                    </div>
+			                </div>
 		                <div class="user_box">
 		                        <h4>회원 정보</h4>
 		                        <div class="form-group">
 		                            <label for="user_name"  class="must col-xs-2 ">이름</label>
 		                            <div class="col-xs-10">
 		                                <input type="text" name="user_name" id="user_name" class="form-control" />
-		                            </div>
-		                        </div>
-		                        <div class="form-group">
-		                            <label for="birthdate"  class="must col-xs-2 ">생년월일</label>
-		                            <div class="col-xs-10">
-		                                <input type="text" name="birthdate" id="birthdate" class="form-control"  placeholder="예) 900101" />
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
@@ -76,7 +92,7 @@
 		                        <div class="form-group">
 		                            <label for="email"  class="must col-xs-2 ">이메일</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 이메일로 답변이 전송됩니다." />
+		                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 전화번호 혹은 이메일로 답변이 전송됩니다." />
 		                            </div>
 		                        </div>
 	                    </div>
@@ -113,8 +129,17 @@
 	            <!-- ==== 본문 끝 ==== -->
 	        </div>
 	    </div>
+	    <script id="category_item_tmpl" type="text/x-handlebars-template">
+			{{#each item}}
+			<option value="{{value}}">{{text}}</option>
+			{{/each}}
+		</script>
 		<script src="../plugins/validate/jquery.validate.min.js"></script>
 		<script src="../plugins/validate/additional-methods.min.js"></script>
+    `````<script src="../plugins/ajax_sws/ajax_helper.js"></script>
+    `````<script src="../plugins/handlebars/handlebars-v4.0.11.js"></script>
+		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>  
+
 	    <script type="text/javascript">
 	    $(function() {
 	    	$.validator.addMethod("kor", function(value, element) {
@@ -122,45 +147,90 @@
 	    		/^[ㄱ-ㅎ가-힣]*$/i.test(value);
 	    	});
 	    	
-	    	$.validator.addMethod("phone", function(value, element) {
-	    		return this.optional(element) ||
-	    		/^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/i.test(value) ||
-	    		/^\d{2,3}\d{3,4}\d{4}$/i.test(value);
+	    	$(function(){
+	    		$( "#datepicker" ).datepicker({
+	    		      showOn: "button",
+	    		      buttonImage: "images/calendar.gif",
+	    		      buttonImageOnly: true,
+	    		      buttonText: "Select date",
+	    		      nextText: '다음 달',
+	    		      prevText: '이전 달',
+	    		      showButtonPanel: true, 
+	    		      currentText: '오늘 날짜', 
+	    		      closeText: '닫기', 
+	    		      dateFormat: "yy-mm-dd",
+	    		      dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+	    		      dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+	    		      monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+	    		      monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+	    		    });
 	    	});
 	    	
-	    	$("#qna_form").validate({
+	    	$(function() {
+	    		// 드롭다운의 선택변경 이벤트
+	    		$("#sel_region").change(function() {
+	    			// 결과가 표시될 #sel_theater에 내용 삭제
+	    			$("#sel_theater").empty();
+	    			// 사용자 선택값 가져오기
+	    			var choice = $(this).find("option:selected").val();
+	    			// 선택값이 없다면 중단
+	    			if (!choice) {
+	    				return false;
+	    			}
+	    			
+	    			$.get("../api/category.do", {type: choice}, function(req) {
+	    				// 미리 준비한 HTML들을 읽어옴.
+	    				var template = Handlebars.compile($("#category_item_tmpl").html());
+	    				// Ajax를 통해서 읽어온 json을 템플릿에 병함
+	    				var html = template(req);
+	    				// #child에 읽어온 내용 추가
+	    				$("#sel_theater").append(html);
+	    			});
+	    		});
+	    	});
+	    	
+	    	$("#rent_form").validate({
 	    		// 입력검사 규칙
 	    		rules: {
-	    			qna_title: {required: true},
-	    			qna_contents: {required: true},
-	    			file_img: {extension: "jpg|gif|png"},
+	    			rent_title: {required: true},
+	    			rent_contents: {required: true},
 	    			user_name: {required: true, kor: true},
-	    			birthdate: {required: true, dateISO: true},
 	    			tel: {required: true, phone: true},
 	    			email: {required: true, email: true}
 	    		},
 	    		messages: {
-	    			qna_title: {required: "제목을 입력하세요."},
-	    			qna_contents: {required: "내용을 입력하세요."},
-	    			file_img: {extension: "첨부파일은 jpg, gif, png 형식만 가능합니다."},
+	    			rent_title: {required: "제목을 입력하세요."},
+	    			rent_contents: {required: "내용을 입력하세요."},
 	    			user_name: {required: "이름을 입력하세요.", kor:"이름은 한글로 입력하세요"},
-	    			birthdate: {required: "생년월일을 입력하세요.", dateISO: "생년월일의 형식이 맞지 않습니다."},
 	    			tel: {required: "전화번호를 입력하세요.", phone: "전화번호 형식이 맞지 않습니다."},
 	    			email: {required: "이메일을 입력하세요.", email:"이메일 형식이 맞지 않습니다."}
 	    		}
 	    	});
-	    	$("#qna_form").submit(function(e) {
+	    	
+	    	$("#rent_form").submit(function(e) {
 	            e.preventDefault();
+		        // 영화관 선택
+				if($('#sel_region').val() == "") {
+					alert("지역을 선택해 주세요");
+	                $('#sel_region').eq(0).focus();
+	                return false;
+	            }
+	            if($('#sel_theater').val() == "") {
+	                alert("영화관을 선택해 주세요.");
+	                $('#sel_theater').eq(0).focus();
+	                return false;
+	            }
+	            // 개인정보수집 동의
 	            var agree = $("input.agree:checked").val();
 	            if (!agree) {
 	                alert("개인정보수집 동의를 해주셔야 등록이 가능합니다.");
 	                return false;
-	            } else if (!qna_title.value || !qna_contents.value || !user_name.value ||
+	            } else if (!rent_title.value || !rent_contents.value || !user_name.value ||
 	            		!birthdate.value || !tel.value || !email.value) {
 	            	return false;
 	            } else {
 	            	alert("등록이 완료되었습니다.");
-	            	location.href="<%=request.getContextPath()%>/support/qna_complete.jsp";
+	            	location.href="<%=request.getContextPath()%>/support/rent_complete.jsp";
 	            }
 	        });
 	    });
