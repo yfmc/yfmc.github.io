@@ -46,8 +46,8 @@
 						mail:{required:true,email:true},
 						certinum:{required:true},
 						phone:{required:true,phones:true},
-						address1:{required:true},
-						address2:{required:true}
+						address:{required:true},
+						details:{required:true}
 					},
 					messages:{
 						user_password:{
@@ -71,10 +71,10 @@
 							required:"연락처를 입력하세요.",
 							phones:"연락처 형식이 잘못되었습니다."
 						},
-						address1:{
+						address:{
 							required:"주소를 검색해주세요.",
 						},
-						address2:{
+						details:{
 							required:"나머지 주소를 입력해주세요."
 						}
 					}

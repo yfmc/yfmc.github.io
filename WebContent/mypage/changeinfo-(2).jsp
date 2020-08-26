@@ -12,6 +12,7 @@
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
+                    	<li><a href="<%=request.getContextPath()%>/mypage/mypagemain.jsp">마이페이지 홈</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
                         <li style="background:#eee"><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
@@ -35,7 +36,7 @@
                         <div class="form-group">
                             <label for="user_id" class="col-xs-2 control-label">아이디</label>
                             <div class="col-xs-10">
-                                <p class="form-control-static">abcd1234</p>
+                                <input type="text" class="form-control" name="user_id" id="user_id" value="abcd1234" style="width:110px;"disabled />
                             </div>
                         </div>
                         <!-- 비밀번호 -->
@@ -63,7 +64,7 @@
                         <div class="form-group">
                             <label for="date" class="col-xs-2 control-label">생년월일</label>
                             <div class="col-xs-10">
-                                <input type="date" class="form-control" value="2000-01-01" style="width:150px;" disabled />
+                                <input type="text" class="form-control" value="800101" style="width:80px;"disabled />
                             </div>
                         </div>
                         <!-- 성별 -->
@@ -118,7 +119,7 @@
                             </div>
                         </div>
                         <hr />
-                        
+                        <p style="font-size:12px;color:#e47676;">※ id, 생년월일, 성별은 변경하실 수 없습니다.</p>
                         <!-- 수정버튼, 취소버튼 -->
                         <div class="twobutton">
                             <button type="submit" name="button" id="change_btn" class="btn btn-success" style="width:110px;">회원정보 수정</button>

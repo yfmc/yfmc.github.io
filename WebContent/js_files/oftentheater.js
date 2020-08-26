@@ -491,6 +491,28 @@ $(function(){
 			}
 		});
 	};
+	
+	function listrenewal(){
+		var movie1=my_theater[0];
+		var movie2=my_theater[1];
+		var movie3=my_theater[2];
+		var movie4=my_theater[3];
+		var movie5=my_theater[4];
+		
+		if(typeof(movie1)=='undefined') movie1="";
+		if(typeof(movie2)=='undefined') movie2="";
+		if(typeof(movie3)=='undefined') movie3="";
+		if(typeof(movie4)=='undefined') movie4="";
+		if(typeof(movie5)=='undefined') movie5="";
+		
+		$("#movie1").val(movie1);
+		$("#movie2").val(movie2);
+		$("#movie3").val(movie3);
+		$("#movie4").val(movie4);
+		$("#movie5").val(movie5);
+	};
+	
+	
 	$("#region").change(function(){ //지역 드롭다운시의 자동완성 변화 정의
 		var choice=$(this).find("option:selected").val();
 		if(choice){
@@ -551,6 +573,7 @@ $(function(){
 						}
 					}
 					autocomp(this_theater2);
+					$("#region").prop("disabled",true);
 					break;
 				case 'megabox':
 					var a=b_json[choice];
@@ -560,6 +583,7 @@ $(function(){
 						}
 					}
 					autocomp(this_theater2);
+					$("#region").prop("disabled",true);
 					break;
 				case 'lotte':
 					var a=b_json[choice];
@@ -569,9 +593,11 @@ $(function(){
 						}
 					}
 					autocomp(this_theater2);
+					$("#region").prop("disabled",true);
 					break;
 				case '':
 					autocomp(this_theater);
+					$("#region").prop("disabled",false);
 					break;
 			}
 		});
@@ -600,6 +626,7 @@ $(function(){
 		count++;
 		$("#theatersearch").val("");
 		$("#theatersearch").focus();
+		listrenewal();
 		}
 	});
 	
@@ -609,7 +636,10 @@ $(function(){
 			const idx = my_theater.indexOf($(this).parent().find("span").html());
 			if (idx > -1) my_theater.splice(idx, 1);
 			console.log(my_theater);
+			listrenewal();
 	});
+	
+	
 	$(document).on("click",".applbutton",function(){ //닫기버튼
 		self.close();
 	});

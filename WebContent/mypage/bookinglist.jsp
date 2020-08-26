@@ -14,6 +14,7 @@
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
+                    	<li><a href="<%=request.getContextPath()%>/mypage/mypagemain.jsp">마이페이지 홈</a></li>
                         <li style="background:#eee;"><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
                         <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>

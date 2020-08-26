@@ -88,6 +88,15 @@
   				</div>
 			</div>
 		</div>
+		<!-- 데이터 전송용(임시) -->
+		<form name="myform" method="post" action="mypagemain.jsp">
+			<input type="hidden" name="movie1" id="movie1" value="CGV 강남">
+			<input type="hidden" name="movie2" id="movie2" value="CGV 목동">
+			<input type="hidden" name="movie3" id="movie3" value="메가박스 화곡">
+			<input type="hidden" name="movie4" id="movie4" value="롯데시네마 영등포">
+			<input type="hidden" name="movie5" id="movie5" value="롯데시네마 가산디지털">
+		</form>
+		<p style="margin-top:15px;">지역을 선택해야 브랜드 선택이 가능합니다.<br/>브랜드 선택시 지역 변경이 불가능합니다.<br/>지역을 변경하려면 브랜트 탭을 <strong>'선택'</strong>으로 해주세요 :)</p>
 		<div class="butt">
 				<button type="button" class="btn btn-success applbutton">적용</button>
 				<button type="button" class="btn btn-warning outbutton">취소</button>
