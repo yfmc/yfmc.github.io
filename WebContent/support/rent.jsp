@@ -149,8 +149,8 @@
 	    	
 	    	$(function(){
 	    		$( "#datepicker" ).datepicker({
-	    		      showOn: "button",
-	    		      buttonImage: "images/calendar.gif",
+	    		      showOn: "both",
+	    		      buttonImage: "https://kr.seaicons.com/wp-content/uploads/2015/06/calendar-icon.png",
 	    		      buttonImageOnly: true,
 	    		      buttonText: "Select date",
 	    		      nextText: '다음 달',
