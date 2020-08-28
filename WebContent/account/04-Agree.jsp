@@ -55,6 +55,6 @@
             </div>
         </div>
         
-<script src="../js_files/account_04Agree.js"></script>
+<script src="account_04Agree.js"></script>
 
 <%@ include file="../_inc/footer.jsp" %>

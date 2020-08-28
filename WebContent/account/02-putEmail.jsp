@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="../_inc/header.jsp"%>
+
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/account_02putEmail.css?time=<%=System.currentTimeMillis()%>" />
 
 
@@ -13,7 +14,7 @@
 		<li>4단계: 가입완료</li>
 	</ul>
 	<div class="joining">
-		<form name="email_form" id="email_form">
+		<form name="email_form" id="email_form" method="post" action="session_ok.jsp">
 			<div class="emails">
 				<div class="input-group">
 					<label for="user_email">이메일 주소</label> 
@@ -43,6 +44,6 @@
 
 <script src="../plugins/validate/jquery.validate.min.js"></script>
 <script src="../plugins/validate/additional-methods.min.js"></script>
-<script src="../js_files/account_02putEmail.js"></script>
+<script src="account_02putEmail.js"></script>
 
 <%@ include file="../_inc/footer.jsp"%>

@@ -12,6 +12,5 @@
                 <a href="<%=request.getContextPath()%>/account/02-putEmail.jsp"><button type="button" class="btn btn-default">이메일 인증하기</button></a>
             </div>
         </div>
-        
-        
+
 <%@ include file="../_inc/footer.jsp" %>

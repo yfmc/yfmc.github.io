@@ -38,5 +38,5 @@
         </div>
     
     
-<script src="../js_files/account_03emailCode.js"></script>
+<script src="account_03emailCode.js"></script>
 <%@ include file="../_inc/footer.jsp" %>
