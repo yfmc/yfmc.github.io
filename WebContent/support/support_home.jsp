@@ -27,6 +27,7 @@
                         <li class="find_id_pw"><a href="<%=request.getContextPath()%>/login/02-findidpassword.jsp"><i class="far fa-address-card"></i><br>아이디 / 비밀번호 찾기</a></li>
                         <li class="check_ticket"><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp"><i class="far fa-calendar-alt"></i><br>예매 / 예매취소 내역확인</a></li>
                         <li class="my_qna"><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp"><i class="fas fa-bullhorn"></i><br>나의 문의내역 확인</a></li>
+                    	<li class="rent"><a href="<%=request.getContextPath()%>/support/rent.jsp"><i class="fas fa-users"></i><br>대관문의</a></li>
                     </ul>
                 </div>
                 <div class="notice_wrap">

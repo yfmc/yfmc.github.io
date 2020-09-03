@@ -63,8 +63,8 @@ $(function(){
 			url: '../api/notice_list.json'
 		},
 		columns: [
-			{data: "noticeno"},
-			{data: "noticename"},
+			{data: "notice_no"},
+			{data: "notice_title"},
 			{data: "date"},
 			{data: "views"}
 		],

@@ -26,6 +26,7 @@
 											<th style="width: auto;">제목</th>
 											<th style="width: 15%;">등록일</th>
 											<th style="width: 15%;">조회수</th>
+											<th style="width: 10%;">수정 / 삭제</th>
 										</tr>
 									</thead>
                                 </table>
@@ -38,17 +39,22 @@
 	<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
 	<script type="text/javascript">
 		$(function(){ 
+			    
 			$(".table_notice_list").DataTable({
 				ajax: {
 					type:"POST",
 					url: '../api/notice_list.json',
 					dataType:"JSON"
-				},
+					},
 				columns: [
 					{data: "notice_no"},
 					{data: "notice_title"},
 					{data: "date"},
-					{data: "views"}
+					{data: "views"},
+					{data: null,
+		             className: "center",
+		             defaultContent: '<a href="" class="edit">수정</a> / <a href="" class="remove">삭제</a>'
+		            }
 				],
 				// 표시 건수기능
 				lengthChange: true,
@@ -68,7 +74,21 @@
 				order: [[0, "desc"]],
 				pagingType : "full_numbers"
 			}); 
-		}); 
+			
+		    // 수정버튼 기능
+		    $('.table_notice_list').on( 'click', 'a.edit', function (e) {
+		        e.preventDefault();
+		 
+		    } );
+		 
+		    // 삭제버튼 기능
+		    $('.table_notice_list').on( 'click', 'a.remove', function (e) {
+		        e.preventDefault();
+		 		
+		        $(this).parents("tr").remove();
+		        
+		    });
+		});
 	</script>
     
 <%@ include file="../_inc/admin_footer.jsp" %>
