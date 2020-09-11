@@ -1,0 +1,49 @@
+@charset "UTF-8";
+	
+	h4 { margin: 20px 0 0 0; padding-bottom: 10px; font-size: 20px; border-bottom: 1px solid #bbb; }
+	
+	.rent_title { margin-bottom: 30px; }
+	
+    .rent_title ul { height: 100px; margin: 5px 5px 20px 5px; padding: 30px; font-size: 14px; background-color: #eee; }
+    .rent_title li { margin-bottom: 5px; }
+    .rent_title li:before { content: ""; display: inline-block; width: 4px; height: 4px; margin: 8px 5px 0 0; border-radius: 50%; vertical-align: top; background-color: #666; }    
+    .rent_title span { font-size: 16px; font-weight: bold; }
+    
+    .form_title { width:100%; height: 30px; }
+    .form_title span { margin-right: 30px; font-size: 14px; font-weight: bold; color: #e63e30; }
+    
+    .rent_notice { margin-left:10px; }
+
+    .rent_box, .user_box { margin-bottom: 100px; }
+
+    .form-group { width: 100%; margin: 0; padding: 10px 0; border-bottom: 1px solid #eee; }	    
+    .form-group textarea { min-height: 200px; }
+    .form-group label { padding: 0px 20px; font-size: 16px; line-height: 220%; cursor: text; }
+    .form-control { background-color: #f8f8f8; }
+    
+    #rent_form > div.rent_box > div:nth-child(1) > div:nth-child(2) > div,
+    #rent_form > div.rent_box > div:nth-child(1) > div:nth-child(3) > div { padding-left: 15px;  border : 0; }
+
+    .must::after { content: '*'; margin-left: 10px; color: #e63e30; }
+    
+    #datepicker { width:100px; text-align: center; }
+	#rent_form > div.rent_box > div:nth-child(2) > div > img { width: 24px; height: 24px; }
+
+	.text_box h4 { margin-bottom: 10px; border: 0;}	
+    .text_box span { font-size: 11px; font-weight:bold; }
+    .text_box p { padding: 20px; border: 1px solid #ddd; }
+    
+    .agree_check { margin-top: 20px }   
+    .agree_check label { margin-left:10px; }
+    
+    input[type="radio"] { margin-right: 10px; }
+
+    .btn { width: 120px; margin: 10px; }
+
+    .btn_btm_wrap { margin: 60px 0; text-align: center; }
+    
+    .error { color: red; }
+    
+    label.error { font-size: 10px; display: inline-block; padding: 5px 10px; margin: 0; }
+    
+    

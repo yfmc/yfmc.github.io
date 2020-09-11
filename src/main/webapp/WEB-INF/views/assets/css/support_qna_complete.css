@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.complete_box {
+	padding-top: 30px;
+	text-align: center;
+}
+
+.complete_title {
+	margin: 50px 0 20px 0;
+}
+
+.complete_title p {
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.btn {
+	width: 140px;
+	border: 2px solid #eee;
+}

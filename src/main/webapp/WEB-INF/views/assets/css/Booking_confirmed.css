@@ -1,0 +1,124 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* 글씨체 나눔고딕 */
+#content {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 예매하기 박스 전체 */
+.booking_page {
+	width: 100%;
+	height: 900px;
+	padding-top: 50px;
+	padding-left: 5px;
+}
+
+/* 예매단계 안내박스 */
+.booking_stage {	
+	width: 80px;
+	float: left;
+	border-right: 1px solid white;
+}
+
+.booking_stage li {
+	display: block;
+	height: 200px;
+	text-align: center;
+	border-bottom: 1px solid black;
+	padding-top: 80px;
+}
+
+.booking_stage li:first-child {
+	border-top: 1px solid black;
+}
+
+.booking_stage li:nth-child(4) {
+	background-color:#4d4d4d;
+	color: white;
+	font-weight: bold;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 예매완료 영역 */
+.booking_confirmed {
+	width: 1110px;
+	height: 800px;
+	float: left;
+}
+
+/* 상단 제목 */
+.booking_title {
+	margin: 0;
+	height: 60px;
+	padding-top: 17px;
+	background-color: #4d4d4d;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 하단부 */
+.booking_done {
+	width: 1110px;
+	height: 740px;
+	float: left;
+}
+
+/* "예매가 완료되었습니다 */
+.booking_done > h2 {
+	text-align: center;
+	margin-top: 30px;
+}
+
+/* 예매번호 */
+.booking_done > h3 {
+	text-align: center;
+	font-weight: bold;
+}
+
+/* 영화 포스터 */
+.film_poster {
+	display: block;
+	margin:auto;
+	margin-top: 10px;
+}
+
+/* 예매내용 */
+.booked_detail {
+	width: 230px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.detail_title {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* 나가기 버튼 2개 */
+.exit_btn {
+	width: 400px;
+	margin-left: 380px;
+	margin-top: 10px;
+}
+
+.exit_btn > button {
+	display: inline-block;
+	padding: 15px;
+	font-weight: bold;
+	margin: 15px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* float 마감제 */
+.clear {
+	content: '';
+	display: block;
+	float: none;
+	clear: both;
+}

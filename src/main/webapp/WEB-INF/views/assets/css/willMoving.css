@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/* 참조한 css에 배경이 검은색이여서 바꾸기 위해 body에 white을 줌*/
+body{
+	background-color:white !important;
+}
+
+li{
+list-style:none;
+}
+.containerHeight{
+min-height:1000px;
+}
+/*
+.content1 {
+margin-top:20px;
+}
+
+.content1 ul{
+	width:80%;
+	margin:auto;
+}
+
+.content1 ul li{
+	margin-top:20px;
+	width:25%;
+	float:left;
+	text-align:center;
+}
+
+.content ul li a{
+	color:#222;
+	font-size:18px;
+	font-family:"Jua", sans-serif;
+	display:block;
+	margin:auto;
+}
+
+.content1:after{
+	display:block;
+	content:' ';
+	clear:both;
+	float:none;
+	
+}
+*/
+.list_title{
+    margin-top:40px;
+    text-align: center;
+}
+.list_title h2{
+    color:red;
+    margin-bottom:20px;
+    font-weight:bold;
+    font-size:40px;
+}
+.list_title ul {
+	width:27%;
+	margin:auto;
+}
+
+.list_title ul li{
+	float:left;
+	margin:auto;
+	width:50%;
+}
+.list_title ul li:nth-child(1){
+	border-right:2px solid #222;
+}
+
+.list_title ul li a{
+	font-family:'Jua', sans-serif;
+	font-size:20px;
+	color:#222;
+}
+
+.list_title:after{
+	display:block;
+	content:' ';
+	clear:both;
+	float:none;
+}
+
+
+.content .clearfix{
+    width:86%;
+    margin: auto;
+}
+
+
+.label {
+  border-radius: 0;
+  font-weight: 300;
+  font-size:13px;
+}
+
+.king-row{
+    /*border: 1px solid #f6f;*/
+    width:85%;
+    margin:auto;
+    margin-top:50px;
+    
+}
+
+.imageup {
+        height: 400px;
+        width:250px;
+        border:0;
+       
+}
+
+.imageup:hover{
+	 text-decoration:none;
+}
+
+/*썸네일 내부의 이미지 크기 고정*/
+.imageup img {
+    min-height: 330px;
+    width:250px;
+ }
+ 
+/*이미지에 마우스 올렸을 때 예매하기 상세정보 등장*/
+figcaption button{
+	margin-top:85px;
+	margin-left:28px;
+	width:200px;
+	height:30px;
+	background-color:inherit !important;
+	border:1px solid white !important;
+}
+
+ figure.imageup {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: auto;
+  height:auto;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  
+}
+figure.imageup * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+figure.imageup img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+figure.imageup:after,
+figure.imageup figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:250px;
+  height:330px;
+}
+figure.imageup:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.65);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+  margin-top:-10px;
+  margin-left:-8px;
+}
+figure.imageup figcaption {
+  z-index: 1;
+  margin-top:-10px;
+  margin-right:-20px;
+}
+figure.imageup btn-danger{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+figure.imageup btn-danger {
+  line-height: 1.1em;
+  font-weight: 700;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+figure.imageup btn-primary {
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0;
+  top: 50%;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+}
+
+
+figure.imageup:hover img,
+figure.imageup.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+figure.imageup:hover:after,
+figure.imageup.hover:after {
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+figure.imageup:hover btn-danger,
+figure.imageup.hover btn-danger,
+figure.imageup:hover btn-primary,
+figure.imageup.hover btn-primary{
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+
+.imageup button{
+	visibility: hidden;
+	transition: all 0.0s ease;
+}
+
+.imageup .movie-image:hover button{
+	visibility: visible;
+	
+}
+/*이미지에 마우스 올렸을 때 예매하기 상세정보 등장 끝*/
+.imageup .movie-text{
+	text-align:center;
+	
+}
+
+.imageup .movie-text h4{
+	font-weight:bold;
+	font-size:18px;
+	color:black;
+	margin-bottom:60px;
+}
+
+.king-row .movie-picture{
+	width:25%;
+	float:left;
+	margin-top:15px;
+}
+
+ .king-row:after{
+    display: block;
+    content: '';
+    float:none;
+    clear:both;
+ }
+ 
+.king-row .dDay{
+	height:22px;
+	width:245px;
+	margin-left:3px;
+	margin-bottom:0px;
+	font-style:italic;
+	background-color:black;
+}
+
+.king-row .dDay span{
+	font-size:20px;
+	color:white;
+}
+
+ .king-row .img-responsive{
+ height:auto;
+ max-height:200px;
+ min-width:210px;
+ margin:auto;
+ 
+}
+
+.plusbutton{
+	margin-bottom:10px;
+    text-align: center;
+}
+
+/*사이드 바*/
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  margin-right:0px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right:calc(50% - 723px); /* right:calc(50% - social bar width/2) */
+  border : 2px solid #222;
+  border-radius : 10px;
+  
+ 
+}
+
+@media screen and (max-width:920px){
+.icon-bar {
+  display: none;
+  }
+} 
+
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 16px;
+  text-decoration: none; 
+  font-weight: bold;
+  margin:2px;
+  
+}
+
+
+.icon-bar a:hover {
+  background-color: #edb9c3;
+}
+
+.side-boxoffice {
+  background: white;
+}
+
+.side-moviesearch {
+  background: white; 
+}
+
+.side-movienews {
+  background: white; 
+}
+
+.side-statistics {
+  background: white;
+}
+
+/*사이드바 아이콘*/
+.fas, .far{
+	display:block;
+	font-size:50px;
+	font-weight:800;
+}

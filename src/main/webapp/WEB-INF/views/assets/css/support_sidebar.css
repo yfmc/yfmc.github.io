@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+    .list-group-item { border: 0; padding: 0; }
+
+    .sidebar { width: 200px; padding: 10px; font-weight: bold; font-size: 16px; float: left; margin-top: 35px; }
+    .sidebar li { border-top: 1px solid #ddd; }
+    .sidebar li a { display: block; padding: 0px 10px; width: auto; color: #222; line-height: 40px; }
+    .sidebar li a:hover { background-color: #eee; }
+    .sidebar > li:nth-child(5) > a { border-bottom: 1px solid #ddd; }   
+        
+    .list-group-item:first-child { border-top-left-radius: 0; border-top-right-radius: 0; }
+    .title_area .list-group-item { padding: 10px 20px; }
+    
+    .on { background-color: #eee; }
+    
+    
