@@ -11,12 +11,11 @@
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
-	
-	<!-- 웹 리소스 위치(location)에 대한 URL 맵핑(mapping) -->
+
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<!-- <resources mapping="/resources/**" location="/resources/" /> -->
-    <resources mapping="/assets/**" location="/WEB-INF/views/assets/" />
-	
+	<resources mapping="/assets/**" location="/WEB-INF/views/assets/" />
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -30,11 +29,30 @@
 	<!-- 인터셉터 등록 -->
 	<interceptors>
 		<interceptor>
-			<mapping path="/**" />
-			<beans:bean id="addInterceptor" 
-				class="study.spring.cinephile.interceptor.AppInterceptor" />
+			<mapping path="/**"/>
+			<beans:bean id="appInterceptor"
+			class="study.spring.cinephile.interceptor.AppInterceptor" />
 		</interceptor>
 	</interceptors>
+	
+	<!-- 스케줄러 어노테이션 선언 -->
+	<!-- <task:annotation-driven/>
+	
+	스케줄러로 동작할 객체 생성
+	<beans:bean id="scheduleJob" class="study.spring.simplespring.scheduler.SimpleScheduler" />
+	
+	생성한 스케줄러 객체에 대한 작겁 스케줄 지정
+	<task:scheduled-tasks>
+		1초마다 실행되는 작업
+		<task:scheduled ref="scheduleJob" method="everySeconds" cron="* * * * * ?" />
+		매 분 0초에 실행되는 작업
+		<task:scheduled ref="scheduleJob" method="everyMinites" cron="0 * * * * ?" />
+		10초마다 한 번씩 실행되는 작업
+		<task:scheduled ref="scheduleJob" method="every10Seconds" cron="0/10 * * * * ?" />
+		매일 자정에 실행되는 작업
+		<task:scheduled ref="scheduleJob" method="everyMidnight" cron="0 0 0 * * ?" />
+	</task:scheduled-tasks> -->
+	
 	
 	
 </beans:beans>

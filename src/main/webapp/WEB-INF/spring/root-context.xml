@@ -50,6 +50,9 @@
 
     <!-- RegexHelper 주입 설정 -->
     <bean id="regexHelper" class="study.spring.cinephile.helper.RegexHelper" />
+    
+    <!-- RegexHelperForAccount 주입 설정 -->
+    <bean id="regexHelperForAccount" class="study.spring.cinephile.helper.RegexHelperForAccount" />
 
     <!-- RetrifotHelper 주입 설정 -->
     <bean id="retrofitHelper" class="study.spring.cinephile.helper.RetrofitHelper" />
