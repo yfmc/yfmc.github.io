@@ -1,4 +1,4 @@
-log4.xml
+log4j.xml
 root-context.xml
 
 # 컴파일 결과물 제외
