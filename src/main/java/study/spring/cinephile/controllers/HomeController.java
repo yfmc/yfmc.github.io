@@ -41,7 +41,12 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "index";
+	}
+	
+	@RequestMapping(value = "/support/support_home.do", method=RequestMethod.GET)
+	public String support(Model model, HttpServletResponse response) {
+		return "support/support_home";
 	}
 	
 }

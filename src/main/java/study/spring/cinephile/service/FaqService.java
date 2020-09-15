@@ -6,6 +6,7 @@ import study.spring.cinephile.model.Faq;
 
 /** Faq 데이터 관리 기능을 제공하기 위한 Service 계층. */
 public interface FaqService {
+	
     /**
      * Faq 데이터 상세 조회
      * @param   input   조회할 Faq의 일련번호를 담고 있는 Beans
@@ -23,7 +24,7 @@ public interface FaqService {
     public List<Faq> getFaqList(Faq input) throws Exception;
 
     /**
-     * Faq 데이터가 저장되어 있는 갯수 조회
+     * Faq 데이터 갯수 조회
      * @param   input   검색 조건을 담고 있는 Beans
      * @return  저장되어 있는 데이터 수
      * @throws  Exception
