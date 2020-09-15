@@ -3,20 +3,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../_inc/header.jsp" %>
+<title>마이페이지 > 예매내역</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bookinglist.css">
-<link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bookinglist.css">
+<link rel="styleshhet" href="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalret2.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets//plugins/lightbox/css/lightbox.min.css">
         <div id="content" class="clear">
         	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
-                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
+                    	<li><a href="${pageContext.request.contextPath}/mypage/mypagemain.do">마이페이지 홈</a></li>
+                        <li style="background:#eee;"><a href="${pageContext.request.contextPath}/mypage/bookinglist.do">나의 예매내역</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/choicelist.do">나의 좋아요내역</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/changeinfo-(1).do">회원정보 수정</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/withdrawal-(1).do">회원 탈퇴</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/inquirylist.do">나의 문의내역</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,95 +35,88 @@
                 
                 <!--  예매내역 리스트로 -->
                 <div class="bodylist">
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie1.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">강철비2: 정상회담(Steel Rain2: Summit, 2020)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2020-07-31(금) 15:15~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 목동 2명 (H7,H8)</h4>
-                            </span>
-                            <input type="button" value="예매취소" class="btn cancelbtn" />
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie2.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">반도(Peninsula, 2020)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2020-07-18(토) 18:00~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 강남 4명 (F7,F8,F9,F10)</h4>
-                            </span>
-                            <input type="button" value="예매취소" class="btn cancelbtn"/>
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie3.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">스파이더맨: 파 프롬 홈(Spider-man: Far From Home, 2019)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2019-07-17(수) 15:00~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>롯데시네마 영등포 3명 (D5,D6,D7)</h4>
-                            </span>
-                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie4.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">어벤져스: 엔드게임 (Avengers: Endgame, 2019)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2019-04-18(목) 18:15~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 강남 3명 (D6,D7,H8)</h4>
-                            </span>
-                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
-                        </li>
-                    </ul>
-                    <ul class="listarea">
-                        <li><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp"><img src="<%=request.getContextPath()%>/img/mypage_movie5.jpg" height=170px></a>
-                            <span class="title">
-                                <h3><a href="<%=request.getContextPath()%>/movie/MovieContent.jsp">극한직업 (Extreme Job, 2018)</a></h3>
-                            </span>
-                            <span class="bookdate">
-                                <h4>관람일시 : 2019-01-25(금) 18:00~</h4>
-                            </span>
-                            <span class="theaterpeople">
-                                <h4>CGV 목동 3명 (B10,B11,B12)</h4>
-                            </span>
-                            <input type="button" value="취소불가" class="btn cancelbtn" disabled />
-                        </li>
-                    </ul>
+                <c:choose>
+                	<c:when test="${output==null || fn:length(output)==0}">
+                		<ul>
+                			<li>예매내역이 없습니다.</li>
+                		</ul>
+                	</c:when>
+                	<c:otherwise>
+                		<c:forEach var="item" items="${output}" varStatus="status">
+                		<ul class="listarea">
+                    	<!-- 이미지에 마우스 올리면 '크게하기'글자가 뜨며 클릭하면 lightbox를 통해 큰 이미지를 보여줌 -->
+	         				<li class="book"><div class="movieimg"><a href="${item.poster}" data-lightbox="myphoto1"><img src="${item.poster}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	         					<span class="title">
+	         						<h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title}</a></h3>
+	         					</span>
+	         					<span class="bookdate">
+	         						<h4>${item.lookdate}</h4>
+	         					</span>
+	         					<span class="theaterpeople">
+	         						<h4>${item.branch} ${item.peonum}명 (${item.seatno})</h4>
+	         					</span>
+	         					<!-- 예매취소 버튼 -->
+	         					<input type="button" value="예매취소" class="btn cancelbtn" />
+	         				</li>
+         				</ul>
+                		</c:forEach>
+                	</c:otherwise>
+                </c:choose>
                 </div>
                 <!--  페이지 넘김 -->
-                <div id="page">
+				<div id="page">
                     <div class="row">
                         <div class="col">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#" style="background:#a8a8a8;">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">>></a></li>
-                            </ul>
+                        <ul class="pagination">
+                           <c:choose>
+								<c:when test="${pageData.prevPage>0}">
+									<c:url value="/mypage/bookinglist.do" var="prevPageUrl">
+										<c:param name="page" value="${pageData.prevPage}"/>
+									</c:url>
+									<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
+								</c:when>
+								<c:otherwise>
+									<li class="page-item"><a class="page-link" href="#">이전</a></li>
+								</c:otherwise>
+							</c:choose>
+							
+							<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
+								<c:url value="/mypage/bookinglist.do" var="pageUrl">
+									<c:param name="page" value="${i}"/>
+								</c:url>
+								<c:choose>
+									<c:when test="${pageData.nowPage ==i}">
+										<li class="page-item page-link"><a class="page-link" href="#">[${i}]</a></li>
+									</c:when>
+									<c:otherwise>
+										<li class="page-item"><a class="page-link" href="${pageUrl}">[${i}]</a></li>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+	
+							<c:choose>
+								<c:when test="${pageData.nextPage>0}">
+									<c:url value="/mypage/bookinglist.do" var="nextPageUrl">
+										<c:param name="page" value="${pageData.nextPage}"/>
+									</c:url>
+										<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
+								</c:when>
+								<c:otherwise>
+									<li class="page-item page-link"><a class="page-link" href="#">다음</a></li>
+								</c:otherwise>
+							</c:choose>
+						</ul>
                         </div>
                     </div>
                 </div>
+
             </div>
-        </div>
+		</div>
+        
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
-        <script src="<%=request.getContextPath()%>/js_files/bookinglist.js"></script>
+        <script src="${pageContext.request.contextPath}/assets/js_files/bookinglist.js"></script>
+        <script src="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+
+		<script src="${pageContext.request.contextPath}/assets/plugins/lightbox/js/lightbox.min.js"></script>
+        <script src="${pageContext.request.contextPath}/assets/plugins/handlebars/handlebars-v4.7.6.js"></script>
 <%@ include file="../_inc/footer.jsp"%>

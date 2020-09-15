@@ -10,8 +10,9 @@
 #body {
     width: 900px;
     min-height: 850px;
-    float:left;
     font-family: 'Jua', sans-serif;
+    margin:auto;
+    padding-top:70px;
 }
 
 .sidebar {

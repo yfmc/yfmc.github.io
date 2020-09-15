@@ -2,17 +2,17 @@
 
 #container {
         width: 550px;
-        height: 400px;
+        height: 450px;
         border: 2px solid black;
         border-radius:5px;
-        margin: 10px;
+        margin: 10px auto;
         background-color:#fafafa;
     }
 
 	#container .up{
 		border:1px solid white;
 		border-radius:5px;
-		background-color:#0398fc;
+		background-color:#b194c3;
 		color:white;
 		margin-bottom:20px;
 	}
@@ -22,10 +22,18 @@
         font-weight:bold;
     }
     
+    #theater{
+    	height:25px;
+    }
+    
+    #region{
+    	height:25px;
+    }
+    
     legend {
         margin-top: 30px;
-        font-weight:bold;
-        font-size:18px;
+        font-size:17px;
+        margin-bottom:15px;
     }
 
     .theaterlist {
@@ -46,4 +54,21 @@
         float: right;
         margin-right: 10px;
         border: 0.5px solid #222;
+    }
+    
+	.applbutton{
+    	position:relative;
+		left:37%;
+		width:60px;
+		height:35px;
+		margin-top:10px;
+		border:0px;
+    }
+    .outbutton{
+    	position:relative;
+		left:37%;
+		width:60px;
+		height:35px;
+		margin-top:10px;
+		border:0px;
     }

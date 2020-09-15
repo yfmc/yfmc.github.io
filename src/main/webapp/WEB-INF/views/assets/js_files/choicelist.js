@@ -1,4 +1,17 @@
 $(function(){
+	$(".imgimg").mouseenter(function(){				//포스터에 마우스 올리면 '크게 보기' 글자가 뜨며 마우스를 떼면 사라짐
+		$(this).next().attr("style","display:'';");
+	});
+	$(".moreview").mouseenter(function(){
+		$(this).attr("style","display:'';");
+	});
+	$(".imgimg").mouseleave(function(){
+		$(this).next().attr("style","display:none;");
+	});
+	$(".moreview").mouseleave(function(){
+		$(this).attr("style","display:none;");
+	});
+	
 	//버튼 누르면 좋아한 영화 목록에서 삭제
 	$(document).on("click",".remove",function(){
 		swal({
@@ -20,12 +33,20 @@ $(function(){
 			}
 		});
 	});
-	$(document).on("click",".book",function(){
-		location.href="../booking/01-booking_time.jsp";
+	
+	$(document).on("click",".book",function(){	//예매하기 페이지로
+		location.href="../booking/01-booking_time.do";
 	});
-	$.fn.generateStars = function() {
+	
+	$(".page-link").click(function(e){		//현재 있는 페이지버튼에 색깔넣기
+		e.preventDefault();
+		$(this).attr("style","background:#a8a8a8");
+		$(".page-link").not($(this)).attr("style","background:white");
+	});
+	
+	$.fn.generateStars = function() {		//별점 표시
 		return this.each(function(i, e) {
-			$(e).html($('<span/>').width($(e).text() * 16));
+			$(e).html($("<span/>").width($(e).text() * 16));
 		});
 	};
 

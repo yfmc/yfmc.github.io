@@ -3,6 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
@@ -14,8 +17,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat+Subrayada:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/plugins/tagsinput/jquery-tagsinput.min.css">
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/oftentheater.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/tagsinput/jquery-tagsinput.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/oftentheater.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <title>자주가는 영화관 설정</title>
 </head>
 
@@ -29,31 +33,37 @@
             <form>
                 <fieldset>
                     <legend>영화관 검색</legend>
-                    <label for="theater">브랜드</label>
-                    <select name="theater" id="theater">
+                    <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
+                    <select name="region" id="region">
+                    	<option value="">--- 선택 ---</option>
+                        <option value="seoul">서울</option>
+                        <option value="gyeonggi">경기</option>
+                        <option value="incheon">인천</option>
+                        <option value="gangwon">강원</option>
+                        <option value="daejeon">대전</option>
+                        <option value="chungcheong">충청/세종</option>
+                        <option value="gwangju">광주</option>
+						<option value="jeolla">전라</option>
+                        <option value="daegu">대구/경북</option>
+                        <option value="busan">부산/울산</option>
+                        <option value="gyeongnam">경남</option>
+                        <option value="jeju">제주</option>
+                    </select>
+                    <!-- 브랜드 선택 -->
+                    <label for="theater"> &nbsp;브랜드</label>
+                    <select name="theater" id="theater" disabled>
                     	<option value="">--- 선택 ---</option>
                         <option value="CGV">CGV</option>
                         <option value="megabox">메가박스</option>
                         <option value="lotte">롯데시네마</option>
                     </select>
-                    <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
-                    <select name="region" id="region"">
-                    	<option value="">--- 선택 ---</option>
-                        <option value="서울">서울</option>
-                        <option value="경기도">경기</option>
-                        <option value="인천">인천</option>
-                        <option value="강원도">강원</option>
-                        <option value="대전">대전</option>
-                        <option value="충청세종">충청/세종</option>
-                        <option value="광주">광주</option>
-						<option value="전라">전라</option>
-                        <option value="대구경북">대구/경북</option>
-                        <option value="부산울산">부산/울산</option>
-                        <option value="경남">경남</option>
-                        <option value="제주">제주</option>
-                    </select>
-                    <label for="theatersearch">&nbsp;&nbsp;&nbsp;영화관</label>
-                    <input type="search" id="theatersearch" name="theatersearch" style="width:110px;" />
+                    <!-- 지역 선택 -->
+                    
+                    <!-- 영화관 검색시 자동완성으로 목록이 뜨며 추가 누를 시 추가됨 -->
+                    <!-- 없는 영화관 검색해 추가하거나 이미 등록한 영화관 추가할 수 없음 -->
+                    <!-- 자주 가는 영화관은 5개까지 선택 가능함 -->
+                    <label for="theatersearch">&nbsp;&nbsp;영화관</label>
+                    <input type="search" id="theatersearch" name="theatersearch" style="width:150px;" />
                     <button type="button" class="inserttheater" style="margin-left:2px;">추가</button>
                 </fieldset>
             </form>
@@ -81,35 +91,23 @@
   				</div>
 			</div>
 		</div>
-		 <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
-		<script src="<%=request.getContextPath()%>/plugins/tagsinput/jquery-tagsinput.min.js" defer></script>
-		<script type="text/javascript">
-			$(function(){
-				// 자주가는 영화관 추가,제거 기능 정의
-				var count=5;
-				$(document).on("click",".inserttheater",function(){ //추가버튼 눌렀을 때
-					if(count==5){									// 이미 5개의 영화관이 등록되어 있다면 추가 못하게 함
-						alert("더 이상 추가할 수 없습니다.");
-						}
-					else{
-						var html="<div class='tag badge badge-primary'><span>";	//5개 미만이면 영화관 추가
-						html+=$("#theatersearch").val();
-						html+="</span><i class='tag-remove'>✖</i>";
-						$(".tags-container").append(html);
-						count++;
-						console.log(count);
-					}
-				});
-				$(document).on("click",".tag-remove",function(){	//자주가는 영화관 목록 제외하기
-					var result=confirm("이 영화관을 목록에서 제외할까요?");
-					if(result){
-					$(this).parents(".tag").hide();
-						count--;
-						console.log(count);
-				}
-				});
-			});
-		</script>
+		<!-- 데이터 전송용(임시) -->
+		<form name="myform" method="post" action="${pageContext.request.contextPath}/mypage/mypagemain.do">
+			<input type="hidden" name="movie1" id="movie1" value="CGV 강남">
+			<input type="hidden" name="movie2" id="movie2" value="CGV 목동">
+			<input type="hidden" name="movie3" id="movie3" value="메가박스 화곡">
+			<input type="hidden" name="movie4" id="movie4" value="롯데시네마 영등포">
+			<input type="hidden" name="movie5" id="movie5" value="롯데시네마 가산디지털">
+		</form>
+		<p style="margin-top:15px;">지역을 선택해야 브랜드 선택이 가능합니다.<br/>브랜드 선택시 지역 변경이 불가능합니다.<br/>지역을 변경하려면 브랜트 탭을 <strong>'선택'</strong>으로 해주세요 :)</p>
+		<div class="butt">
+				<button type="button" class="btn btn-success applbutton">적용</button>
+				<button type="button" class="btn btn-warning outbutton">취소</button>
+		</div>
+		 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/plugins/tagsinput/jquery-tagsinput.min.js" defer></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="../assets/js_files/oftentheater.js"></script>
    </div>
 </body>
 

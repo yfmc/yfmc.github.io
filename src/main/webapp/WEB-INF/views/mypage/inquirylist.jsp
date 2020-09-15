@@ -4,19 +4,21 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<title>마이페이지 > 문의 내역</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/inquirylist.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/inquirylist.css">
 
         <div id="content" class="clear">
         	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
-                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
+                    	<li><a href="${pageContext.request.contextPath}/mypage/mypagemain.do">마이페이지 홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/bookinglist.do">나의 예매내역</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/choicelist.do">나의 좋아요내역</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/changeinfo-(1).do">회원정보 수정</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/withdrawal-(1).do">회원 탈퇴</a></li>
+                        <li style="background:#eee"><a href="${pageContext.request.contextPath}/mypage/inquirylist.do">나의 문의내역</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,42 +40,42 @@
 						<tbody>
 							<tr>
 								<td>10</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.20</td>
 							</tr>
 							<tr>
 								<td>9</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.19</td>
 							</tr>
 							<tr>
 								<td>8</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.18</td>
 							</tr>
 							<tr>
 								<td>7</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.17</td>
 							</tr>
 							<tr>
 								<td>6</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.16</td>
 							</tr>
 							<tr>
 								<td>5</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.15</td>
 							</tr>
 							<tr>
 								<td>4</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.14</td>
 							</tr>
 							<tr>
 								<td>3</td>
-								<td class="detail_title"><a href="<%=request.getContextPath()%>/mypage/inquirypost.jsp">예매가 되지 않습니다.</a></td>
+								<td class="detail_title"><a href="${pageContext.request.contextPath}/mypage/inquirypost.do">예매가 되지 않습니다.</a></td>
 								<td>2020.07.13</td>
 							</tr>
 						</tbody>
@@ -101,5 +103,5 @@
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="<%=request.getContextPath()%>/js_files/inquirylist.js"></script>
+        <script src="${pageContext.request.contextPath}/assets/js_files/inquirylist.js"></script>
 <%@ include file="../_inc/footer.jsp"%>

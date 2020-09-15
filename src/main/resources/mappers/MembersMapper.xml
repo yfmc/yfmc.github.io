@@ -26,14 +26,14 @@
 	
 	<!-- 단일행 조회를 위한 기능 정의 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Members"
-		resultMap="MembersMap">
+		resultMap="membersMap">
 		SELECT user_id, user_pw, user_name, user_email, gender, birthdate, phone, postcode, addr, addr_detail, is_out, out_date, reg_date, edit_date FROM Members WHERE members_id=#{members_id};
 	</select>
 	
 	<!-- 다중행 조회를 위한 기능 정의 -->
 	<select id="selectList"
 		parameterType="study.spring.cinephile.model.Members"
-		resultMap="MembersMap">
+		resultMap="membersMap">
 		select user_id, user_pw, user_name, user_email, gender, birthdate, phone, postcode, addr, addr_detail, is_out, out_date, reg_date, edit_date from Members;
 	
 		<where>

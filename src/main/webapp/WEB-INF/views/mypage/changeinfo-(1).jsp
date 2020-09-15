@@ -4,18 +4,21 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<title>마이페이지 > 회원정보 수정</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/changeinfo-(1).css">
+<link rel="styleshhet" href="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalret2.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/changeinfo-(1).css">
         <div id="content" class="clear">
         	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
-                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
+                    	<li><a href="${pageContext.request.contextPath}/mypage/mypagemain.do">마이페이지 홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/bookinglist.do">나의 예매내역</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/choicelist.do">나의 좋아요내역</a></li>
+                        <li style="background:#eee"><a href="${pageContext.request.contextPath}/mypage/changeinfo-(1).do">회원정보 수정</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/withdrawal-(1).do">회원 탈퇴</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/inquirylist.do">나의 문의내역</a></li>
                     </ul>
                 </div>
             </div>
@@ -31,7 +34,7 @@
                             <input type="password" name="password" id="password" placeholder="  비밀번호를 입력해주세요">
                         </div>
                         <!--  입력버튼 -->
-                        &nbsp;&nbsp;<button type="button" class="btn change_go_btn">입력</button>
+                        &nbsp;&nbsp;<button type="submit" class="btn btn-default change_go_btn">입력</button>
                     </form>
                 </div>
                 <!-- 메인으로 가는 버튼 -->
@@ -41,5 +44,6 @@
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="<%=request.getContextPath()%>/js_files/changeinfo-(1).js"></script>
+        <script src="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="${pageContext.request.contextPath}/assets/js_files/changeinfo-(1).js"></script>
 <%@ include file="../_inc/footer.jsp"%>

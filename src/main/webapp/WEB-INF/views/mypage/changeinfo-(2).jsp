@@ -4,19 +4,20 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
-
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/changeinfo-(2).css">
-<link rel="styleshhet" href="<%=request.getContextPath()%>/plugins/sweetalert/sweetalret2.min.css">
+<title>마이페이지 > 회원정보 수정</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/changeinfo-(2).css">
+<link rel="styleshhet" href="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalret2.min.css">
         <div id="content" class="clear">
         	<!-- 사이드바 -->
             <div class="sidebar">
                 <div class="sidemenu">
                     <ul>
-                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
+                    	<li><a href="${pageContext.request.contextPath}/mypage/mypagemain.do">마이페이지 홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/bookinglist.do">나의 예매내역</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/choicelist.do">나의 좋아요내역</a></li>
+                        <li style="background:#eee"><a href="${pageContext.request.contextPath}/mypage/changeinfo-(1).do">회원정보 수정</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/withdrawal-(1).do">회원 탈퇴</a></li>
+                        <li><a href="${pageContext.request.contextPath}/mypage/inquirylist.do">나의 문의내역</a></li>
                     </ul>
                 </div>
             </div>
@@ -30,12 +31,12 @@
                 
                 <div class="bodycenter">
                 	<!-- 회원정보 수정 폼 -->
-                    <form name="form1" id="form1" name="form1" class="form-horizontal">
+                    <form name="form1" method="post" id="form1" name="form1" class="form-horizontal" action="${pageContext.request.contextPath}/mypage/changeinfo-(3).do">
                         <!-- 아이디 -->
                         <div class="form-group">
                             <label for="user_id" class="col-xs-2 control-label">아이디</label>
                             <div class="col-xs-10">
-                                <p class="form-control-static">abcd1234</p>
+                                <input type="text" class="form-control" name="user_id" id="user_id" value="abcd1234" style="width:110px;"disabled />
                             </div>
                         </div>
                         <!-- 비밀번호 -->
@@ -63,7 +64,7 @@
                         <div class="form-group">
                             <label for="date" class="col-xs-2 control-label">생년월일</label>
                             <div class="col-xs-10">
-                                <input type="date" class="form-control" value="2000-01-01" style="width:150px;" disabled />
+                                <input type="text" class="form-control" value="800101" style="width:80px;"disabled />
                             </div>
                         </div>
                         <!-- 성별 -->
@@ -80,7 +81,7 @@
                         </div>
                         <!-- 이메일 -->
                         <div class="form-group">
-                            <label for="maillist" class="col-xs-2 control-label">
+                            <label for="maillist" class="col-xs-2 control-label"><span style="color:red;display:none;" class="hiddenstar1">*</span> &nbsp;
                             <input type="checkbox" id="email_enable" /> 이메일</label>
                             <div class="col-xs-10">
                                 <input type="text" class="form-control" name="mail" id="mail" value="abcd@gmail.com" style="width:200px;"disabled/>
@@ -100,7 +101,7 @@
                         <!-- 연락처 -->
                         <div class="form-group">
                             <label for="phonelist" class="col-xs-2 control-label">
-                            <input type="checkbox" id="phone_enable"/> 연락처</label>
+                            <span style="color:red;display:none;" class="hiddenstar2">*</span> &nbsp;<input type="checkbox" id="phone_enable"/> 연락처</label>
                             <div class="col-xs-10">
                                 <input type="text" class="form-control" name="phone" id="phone" value="01012345678" style="width:150px; "disabled/>
                                 (-없이 입력하세요)
@@ -108,17 +109,17 @@
                         </div>
                         <!-- 주소 -->
                         <div class="form-group addressgroup">
-                            <label for="address" class="col-xs-2 control-label">
-                            <input type="checkbox" id="address_enable"/> 주소</label>
+                            <label for="addr" class="col-xs-2 control-label">
+                            <span style="color:red;display:none;" class="hiddenstar3">*</span> &nbsp;<input type="checkbox" id="address_enable"/> 주소</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" name="address1" id="address1" value="서울특별시 서초구 서초대로77길 54" style="width:270px" disabled/>
-                                &nbsp;<input type="button" class="addressbutton btn btn-info" value="검색" style="display:none;"/>
-                                <p></p>
-                                <input type="text" class="form-control" name="address2" id="address2" value="서초 W타워 14층" style="width:210px;" disabled/>
+                            <div id="postcodify" style="display:none;"></div>
+                            	<input type="text" class="form-control" name="postcode" id="postcode" style="width:80px;" value="06611" disabled /><br />
+								<input type="text" class="form-control" name="address" id="address" style="width:310px;" value="서울특별시 서초구 서초대로77길 54" disabled/><br />
+								<input type="text" class="form-control" name="details" id="details" style="width:310px;" value="서초타워 14층" disabled/><br />
                             </div>
                         </div>
                         <hr />
-                        
+                        <p style="font-size:12px;color:#e47676;">※ id, 생년월일, 성별은 변경하실 수 없습니다.</p>
                         <!-- 수정버튼, 취소버튼 -->
                         <div class="twobutton">
                             <button type="submit" name="button" id="change_btn" class="btn btn-success" style="width:110px;">회원정보 수정</button>
@@ -131,9 +132,10 @@
                 </div>
             </div>
         </div>
-        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js"></script>
-        <script src="<%=request.getContextPath()%>/plugins/sweetalert/sweetalert2.all.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js_files/changeinfo-(2).js"></script>
+        <script src="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js_files/changeinfo-(2).js"></script>
 <%@ include file="../_inc/footer.jsp"%>

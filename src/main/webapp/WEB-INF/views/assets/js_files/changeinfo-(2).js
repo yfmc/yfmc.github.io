@@ -1,4 +1,3 @@
-
         	//이메일 유효성 검사
         	function chkEmail(str) {
             	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -8,7 +7,6 @@
         	}
         	
 			$(function(){
-				
 				//validate를 이용한 전체 폼 유효성 검사
 				jQuery.validator.setDefaults({
 	                onkeyup:false,
@@ -41,29 +39,15 @@
 					}); 
 				
 				$("#form1").validate({
-					submitHandler: function() {
-						swal({
-		        			title:"확인",
-		        			text:"정말 이 정보로 수정하시겠습니까?",
-		        			type:"question",
-		        			confirmButtonText:"Yes",
-		        			showCancelButton:true,
-		        			cancelButtonText:"No",
-		        		}).then(function(result){
-		        			if(result.value){
-		        				swal("","수정되었습니다.","success");
-		        			}
-		        		});
-
-			        },
+					
 					rules:{
 						user_password:{required:true,minlength:8,maxlength:20,engnumspe:true},
 						user_password2:{required:true,equalTo:"#user_password"},
 						mail:{required:true,email:true},
 						certinum:{required:true},
 						phone:{required:true,phones:true},
-						address1:{required:true},
-						address2:{required:true}
+						address:{required:true},
+						details:{required:true}
 					},
 					messages:{
 						user_password:{
@@ -87,10 +71,10 @@
 							required:"연락처를 입력하세요.",
 							phones:"연락처 형식이 잘못되었습니다."
 						},
-						address1:{
+						address:{
 							required:"주소를 검색해주세요.",
 						},
-						address2:{
+						details:{
 							required:"나머지 주소를 입력해주세요."
 						}
 					}
@@ -101,7 +85,10 @@
 					var mail=$("#mail").val();
 					var res=chkEmail(mail);
 					if(!res){
-						alert("이메일이 형식에 맞지 않습니다.");
+						swal({
+							html:"이메일이 형식에 맞지 않습니다.",
+							animation:false
+						});
 						$("#mail").focus();
 						return false;
 					}
@@ -113,17 +100,15 @@
 				//'인증번호확인' 버튼 클릭 시 인증번호 검사
 				$(document).on("click",".certi_confirm",function(){
 					if($("#certinum").val()!="12345"){
-						alert("인증번호가 맞지 않습니다.");
+						swal({
+							html:"인증번호가 맞지 않습니다.",
+							animation:false
+						});
 						return false;
 					}
 					swal({
 						html:"인증되었습니다."
 					});
-				});
-				
-				//주소찾기 팝업
-				$(document).on("click",".addressbutton",function(){
-					window.open('../mypage/address_search.jsp','','width=550,height=650,scrollbars=no,toolbars=no,menubar=no,status=no,location=no,left=600,top=300');
 				});
 				
 				//'취소' 버튼 누르면 메인으로
@@ -141,9 +126,11 @@
 					if($("#certigo").css("display") == "none"){
 					    $("#certigo").show();
 					    $(".certinum").show();
+					    $(".hiddenstar1").show();
 					} else {
 					    $("#certigo").hide();
 					    $(".certinum").hide();
+					    $(".hiddenstar1").hide();
 					}
 				});
 				
@@ -153,24 +140,48 @@
 					$("#phone").prop("disabled",!now);
 					if($("#phone").prop("disabled")==false){
 						$("#phone").focus();
+						$(".hiddenstar2").show();
+					}
+					else{
+						$(".hiddenstar2").hide();
 					}
 				});
 				
 				//체크박스를 넣어 원할 때에만 주소 변경 가능하게 함
 				$("#address_enable").change(function(){
-					var now=$("#address1").prop("disabled");
-					var now2=$("#address2").prop("disabled");
-					$("#address1").prop("disabled",!now);
-					$("#address2").prop("disabled",!now2);
-					if($("#address1").prop("disabled")==false){
-						$("#address1").focus();
+					var now=$("#address").prop("disabled");
+					var now2=$("#details").prop("disabled");
+					var now3=$("#postcode").prop("disabled");
+					$("#address").prop("disabled",!now);
+					$("#details").prop("disabled",!now2);
+					$("#postcode").prop("disabled",!now3);
+					$(".keyword").addClass("form-control");
+					$(".keyword").attr("placeholder","주소를 검색하세요");
+					$(".search_button").addClass("btn");
+					$(".search_button").addClass("btn-info");
+					
+					if($("#address").prop("disabled")==false){
+						$("#details").focus();
 					}
-					if($(".addressbutton").css("display")=="none"){
-						$(".addressbutton").show();
+					if($("#postcodify").css("display")=="none"){
+						$("#postcodify").show();
+						$(".hiddenstar3").show();
+						$("#details").val($("#details").val());
 					}
 					else{
-						$(".addressbutton").hide();
+						$("#postcodify").hide();
+						$(".hiddenstar3").hide();
+						$("#details").val($("#details").val());
 					}
 				});
-				
+				$("#postcodify").postcodify({	//주소검색
+			        insertAddress : "#address",
+			        insertDetails : "#details",
+			        insertPostcode5 : "#postcode",
+			        hideOldAddresses : false,
+			        afterSelect : function() {
+			        $("#postcodify").find(".postcodify_search_result,.postcodify_search_status").remove();
+			        $("#details").val("");
+			        }
+			    });
 			});

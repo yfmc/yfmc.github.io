@@ -4,23 +4,10 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/withdrawal-(2).css">
+<title>마이페이지 > 회원 탈퇴</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/withdrawal-(2).css">
 
         <div id="content" class="clear">
-        	<!-- 사이드바 -->
-            <div class="sidebar">
-                <div class="sidemenu">
-                    <ul>
-                        <li><a href="<%=request.getContextPath()%>/mypage/bookinglist.jsp">나의 예매내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/choicelist.jsp">나의 좋아요내역</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/changeinfo-(1).jsp">회원정보 수정</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/withdrawal-(1).jsp">회원 탈퇴</a></li>
-                        <li><a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp">나의 문의내역</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- 사이드바 끝 -->
-            
             <div id="body">
                 <div class="msg">
                     <h1>회원 탈퇴가 정상적으로 처리되었습니다.</h1>
@@ -36,7 +23,7 @@
         // '메인으로 가기' 버튼 누르면 사이트 메인으로 이동
         $(function(){
         	$(document).on("click",".indexgo",function(){
-        		location.href="<%=request.getContextPath()%>/index.jsp";
+        		location.href="../home.do";
         	});
         });
         </script>
