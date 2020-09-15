@@ -1,3 +1,6 @@
+log4.xml
+root-context.xml
+
 # 컴파일 결과물 제외
 *.com
 *.class
