@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../../_inc/header.jsp"%>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/MovieNewsDetail.css?time=<%=System.currentTimeMillis()%>">
+<title>영화소식상세정보 | Cinephile</title>
+
+<!-- ========== 컨텐츠 영역 시작 ========== -->
+<div class="movieNews">
+	<!--영화 제목-->
+	<div class="mainNewsTitle clearfix">
+		<h3 class="floatLeft">인터뷰 | ‘남매의 여름밤’ 윤단비 감독이 전하는 우리 모두의 여름 밤</h3>
+	</div>
+	<!--영화 본문-->
+	<div class="mainNews" style="font-size: 20px; line-height: 28px">
+		<p>영화 ‘남매의 여름밤’이 개봉 소식을 알렸다. 부산국제영화제 4관왕에 이어 로테르담 영화제를 비롯한 해외 유수
+			영화제에 연이어 초청되는 등 평단의 호평이 자자한 작품으로, 빛바랜 사진첩을 스크린에 옮긴 듯 따뜻하면서도 반가운 감상을
+			남기며 관객을 매료시켰다. 서울 그린나래미디어 본사에서 ‘남매의 여름밤’의 메가폰을 잡은 윤단비 감독을 만나 영화에 대한
+			다양한 이야기를 나눴다.</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="영화 '남매의 여름밤' 윤단비 감독. 사진 오누필름" id="contentsImage1"
+				src="https://d3ihz389yobwks.cloudfront.net/1597883046055mMZ7N.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>영화 '남매의 여름밤' 윤단비 감독. 사진 오누필름</figcaption>
+		</figure>
+		<p>영화 ‘남매의 여름밤’은 여름 방학 동안 아빠와 함께 할아버지 집에서 지내게 된 남매 옥주(최정운)와
+			동주(박승준)가 겪게 되는 가족 이야기를 담았다. 윤단비 감독의 장편 데뷔작으로, 특별한 사건이나 유별난 소재가 담기진
+			않았지만, 우리 모두가 지니고 있는 소중한 추억의 단면이 스크린 곳곳에 펼쳐져 깊은 인상을 남겼다.</p>
+		<p>현재를 살아가고 있는 옥주를 중심으로 펼쳐지는 이야기임에도 영화는 관객의 향수를 자극한다. 특별히 과거 시대를
+			배경으로 하지도 않으며, 억지 추억 여행을 떠나지도 않는다. 그럼에도 이 미묘한 감상을 남기는 이유는 무엇일까. 이에 윤단비
+			감독은 “옥주와 동주를 향한 나의 시선이 묻어난 것 같다”며 입을 열었다.</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="영화 '남매의 여름밤' 촬영 현장. 사진 오누필름" id="contentsImage2"
+				src="https://d3ihz389yobwks.cloudfront.net/15978831624825Q3hG.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>영화 '남매의 여름밤' 촬영 현장. 사진 오누필름</figcaption>
+		</figure>
+		<p>“내가 옥주의 나이도 아니고, 어른의 입장이지 않은가. 옥주네 가족은 현재의 삶을 살지만, 연출자의 시선이 투영돼
+			과거의 이야기처럼 느껴지지 않았을까 한다. 어릴 적 우리가 살았던 골목의 풍경이 담기는 것이 생생할 것 같기도 했다. 2층
+			양옥집에 할아버지도 있고, 매미 소리와 물건을 파는 트럭, 옆집 개가 짖는 소리 등 모든 것을 통제하지 않았다. 최대한
+			자연스럽게 현장감을 담아내고자 했다. 집도 요즘 만나기 쉽지 않은 구조 다 보니 향수를 자극할 수 있겠다.”</p>
+		<p>영화에 담긴 그네들의 삶이 다분히 현실적으로 비춰졌던 이유일까 양옥집과 함께 옥주네 가족의 생활상 역시 보는 이의
+			노스텔지어를 불렀다. 윤단비 감독은 이에 고개를 끄덕이며 “최대한 사실적으로 담고 싶었다”며 “각자의 여름에 있었던 빛과
+			촉감이 영화로부터 전달됐으면 좋겠다고 생각했다”고 답했다.</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="​영화 '남매의 여름밤' 촬영 현장. 사진 오누필름" id="contentsImage3"
+				src="https://d3ihz389yobwks.cloudfront.net/1597883209541pahQJ.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>​영화 '남매의 여름밤' 촬영 현장. 사진 오누필름</figcaption>
+		</figure>
+		<p>“자전적인 이야기까진 아니더라도 내가 정서를 잘 이해할 수 있는 작품을 만들고 싶었다. 그래서 동네 아줌마들이
+			떠들던 이야기, 엄마와 아빠의 이야기, 가족에 대한 이야기를 만들되 일상 속에서 사랑스럽다고 느꼈던 부분을 담으려 했다.
+			실제로 할아버지와 같이 지내진 않았다. 다만 그 정서는 너무나 잘 알고 있다. 누구나 익히 알 수 있고 공감할 수 있는
+			감정들이다.”</p>
+		<p>사실적인 이야기를 담아내고자 하는 윤단비 감독의 노력은 영화의 곳곳에서 묻어났다. 촬영장이 됐던 양옥집은 세트장이
+			아닌 실제 가정집이며, 그 안에 있던 여러 가재도구 역시 대부분 실제로 그곳에 놓여 있던 것들이었다. 심지어는 집 밖 장면의
+			공간들 역시 집에서 멀지 않은 곳에 위치해 있었다.</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="영화 '남매의 여름밤' 윤단비 감독. 사진 오누필름" id="contentsImage4"
+				src="https://d3ihz389yobwks.cloudfront.net/1597883110319Fgfpu.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>영화 '남매의 여름밤' 윤단비 감독. 사진 오누필름</figcaption>
+		</figure>
+		<p>“허구적인 것들을 배제하고 싶었다. 옥주가 남자친구를 만나는 공원이나 평상이 놓여있는 슈퍼도 집 근처다. 평상에
+			앉아 이야기를 나누면서도 집이 보이는 거리감을 표현하고 싶었다. 집 안의 소품들도 배치만 바꿨다. 가상의 시나리오에 맞춰서
+			소품을 제거하기보다 이 집에 이야기를 맞추려고 했다. 덕분에 시나리오 수정을 많이 했다. 특히 계단에 있는 중문은 집을
+			만나고 나서 활용해야겠다 생각한 부분이다. 중문 덕분에 사춘기 옥주에게 개인적인 공간을 만들어줄 수 있었고, 가족 간의
+			단절을 표현할 수 있었다.”</p>
+		<p>'남매의 여름밤'은 지난 24회 부산 국제영화제에서 4관왕을 차지한 이후 로테르담 국제영화제, 산세바스티안
+			국제영화제 등 유수 영화제에 초청되며 연이은 호평 세례를 받고 있다. 이에 윤단비 감독은 "배우들과 우연적인 요소들의 덕을
+			많이 봤다”며 겸손을 표했다.</p>
+		<p>“시나리오 쓸 때 여백이 많았다. 이것을 어떻게 채워야 할까 고민이 많았는데, 촬영하면서 시나리오보다 풍부하게
+			채워지고 있다는 느낌을 받았다. 촬영 도중 나비가 날아들어 우연히 찍기도 했고, 동주가 옥주의 어깨에 기대서 잠든 장면은
+			실제로 승준이가 잠든 것이기도 했다. 다시 하라고 하면 못할 것 같다. 참 감사하다.”</p>
+	</div>
+	<span class="buttonMoving">
+		<button type="button" class="btn btn-warning"
+			onclick="location.href='${pageContext.request.contextPath}/movie/MovieNews1.do'">목록으로</button>
+		<button type="button" class="btn btn-danger"
+			onclick="location.href='#'">맨위로</button>
+	</span>
+</div>
+
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--// ========== 컨텐츠 영역 끝 ========== -->
+
+<%@ include file="../../_inc/footer.jsp"%>

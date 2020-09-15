@@ -1,0 +1,119 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../../_inc/header.jsp"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/MovieNewsDetail.css?time=<%=System.currentTimeMillis()%>">
+<title>영화소식상세정보 | Cinephile</title>
+
+<!-- ========== 컨텐츠 영역 시작 ========== -->
+<div class="movieNews">
+<!--영화 제목-->
+	<div class="mainNewsTitle clearfix">
+		<h3 class="floatLeft">생일 축하합니다 | 박찬욱 감독·안길강·서지혜·손병호·소이현·배용준</h3>
+	</div>
+	<!--영화 본문-->
+	<div class="mainNews" style="font-size: 20px; line-height: 28px">
+		<p>1년에 단 하루뿐인 생일은 누구에게나 가슴 설레는 특별한 날이다. 주변인들의 진심 어린 축하가 오갈 때면 뭉클한
+			감동이 느껴지기도 한다. 누구보다 많은 사랑을 받으며 행복한 하루를 보낼 이번 주 생일을 맞은 배우와 영화인을 살펴봤다.</p>
+		<p>
+			<strong>#박찬욱 감독 8월 23일 </strong>
+		</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="박찬욱 감독. 사진 CJ엔터테인먼트" id="contentsImage1"
+				src="https://d3ihz389yobwks.cloudfront.net/1597974886885K3YqC.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>박찬욱 감독. 사진 CJ엔터테인먼트</figcaption>
+		</figure>
+		<p>영화감독 박찬욱이 이번 주 생일을 맞았다. 영화 ‘공동경비구역 JSA’(2000)로 관객과 평단 모두의 찬사를
+			받아 이름을 알렸으며, 이후 ‘복수는 나의 것’(2002), ‘올드보이’(2003), ‘친절한 금자씨’(2005),
+			‘싸이보그지만 괜찮아’(2006), ‘박쥐’(2009), ‘파란만장’(2010), ‘아가씨’(2016) 등을 선보이며
+			충무로를 대표하는 거장으로 입지를 다졌다. ‘올드보이’는 제57회 칸 국제영화제 심사위원대상을, ‘박쥐’는 제62회 칸영화제
+			심사위원상을, ‘파란만장’은 제61회 베를린 국제영화제 황금곰상:단편영화상을 수상했다.</p>
+		<p>
+			<strong>#안길강 8월 24일 </strong>
+		</p>
+		<p></p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="배우 안길강. 사진 (주)쇼박스" id="contentsImage2"
+				src="https://d3ihz389yobwks.cloudfront.net/1597974915654zN9VN.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>배우 안길강. 사진 (주)쇼박스</figcaption>
+		</figure>
+		<p>배우 안길강도 이번 주 생일을 맞았다. 1997년 영화 ‘3인조’로 연기 생활을 시작한 그는 스크린과 브라운관을
+			넘나들며 명품 조연으로 맹활약해온 베테랑 배우다. 드라마 ‘왕과 나’, ‘일지매’, ‘선덕여왕’, ‘추노’, ‘드림하이’,
+			영화 ‘태극기 휘날리며’, ‘주먹이 운다’, ‘마음이’, ‘신의 한 수’, ‘힘을 내요, 미스터 리’ 등에 출연했다. 20일
+			방영을 마친 드라마 ‘출사표’에 출연했으며, 10월 방영 예정인 드라마 ‘구미호뎐’을 준비 중이다.</p>
+		<p>
+			<strong>#서지혜 8월 24일 </strong>
+		</p>
+		<p></p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="배우 서지혜. 사진 (주)NEW" id="contentsImage3"
+				src="https://d3ihz389yobwks.cloudfront.net/1597974937394VZmHV.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>배우 서지혜. 사진 (주)NEW</figcaption>
+		</figure>
+		<p>어느덧 데뷔 18년 차가 된 배우 서지혜도 이번 주 생일을 맞았다. 2003년 드라마 ‘올인’으로 연기 생활을
+			시작하며 데뷔와 동시 대중의 이목을 집중시켰던 그는 이후 드라마 ‘신돈’, ‘질투의 화신’, 영화 ‘여고괴담 4 –
+			목소리’, ‘창궐’ 등에 출연하며 연기 내공을 쌓아왔다. 드라마 ‘사랑의 불시착’, ‘저녁 같이 드실래요’에 출연했다.</p>
+		<p>
+			<strong>#손병호 8월 25일 </strong>
+		</p>
+		<p></p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="삼백상회 , (주)스톰픽쳐스코리아" id="contentsImage4"
+				src="https://d3ihz389yobwks.cloudfront.net/1597974995982sl0h9.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>배우 손병호. 사진 삼백상회 , (주)스톰픽쳐스코리아</figcaption>
+		</figure>
+		<p>충무로를 대표하는 연기파 배우 손병호도 이번 주 생일을 맞았다. 드라마 ‘하얀거탑’, ‘자이언트’, ‘각시탈’,
+			‘대풍수’, ‘쌈, 마이웨이’, ‘구해줘’, 영화 ‘알 포인트’, ‘화려한 휴가’, ‘좋은 놈, 나쁜 놈, 이상한 놈’ 등
+			선역과 악역을 가리지 않고 왕성한 작품 활동을 이어왔으며, 최근 방영 중인 드라마 ‘모범형사’에 출연해 다시 한번 존재감을
+			뽐냈다.</p>
+		<p>
+			<strong>#소이현 8월 28일 </strong>
+		</p>
+		<p></p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="배우 소이현. 사진 소이현 SNS" id="contentsImage5"
+				src="https://d3ihz389yobwks.cloudfront.net/1597975022640eOL2t.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>배우 소이현. 사진 소이현 SNS</figcaption>
+		</figure>
+		<p>2002년 가수 이기찬의 뮤직비디오로 데뷔한 소이현도 이번 주 생일을 맞았다. 드라마 ‘노란손수건’으로 본격적인
+			연기 생활을 시작한 그는 드라마 ‘하이에나’, ‘태양을 삼켜라’, ‘청담동 앨리스’, ‘운명과 분노’, 영화 ‘톱스타’ 등에
+			출연하며 이름을 알렸다. 예능 프로그램 ‘동상이몽’에 남편 인교진과 함께 출연하며 화제가 되기도 했다.</p>
+		<p>
+			<strong>#배용준 8월 29일 </strong>
+		</p>
+		<p></p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="배우 배용준. 사진 KBS2" id="contentsImage6"
+				src="https://d3ihz389yobwks.cloudfront.net/1597975054557G2i2u.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>배우 배용준. 사진 KBS2</figcaption>
+		</figure>
+		<p>연기를 오래 쉬었음에도 여전히 한류 열풍의 대표주자로 손꼽히곤 하는 배우 배용준도 이번 주 생일을 맞았다.
+			1994년 KBS 드라마 ‘사랑의 인사’로 데뷔한 그는 드라마 ‘첫사랑’, ‘맨발의 청춘’, ‘호텔리어’, 영화
+			‘스캔들-조선남녀상열지사’, ‘외출’ 등에 출연하며 얼굴을 알렸다. 2002년 드라마 ‘겨울연가’의 주인공 강준상을 연기하며
+			한류 스타 반열에 올랐으며, 이후 드라마 ‘태왕사신기’, ‘드림하이’ 등에 출연했으나 현재 연기 생활을 이어가고 있진 않다.</p>
+	</div>
+<span class="buttonMoving">
+<button type="button" class="btn btn-warning" onclick="location.href='${pageContext.request.contextPath}/movie/MovieNews2.do'">목록으로</button>
+<button type="button" class="btn btn-danger" onclick="location.href='#'">맨위로</button>
+</span>
+</div>
+
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!--// ========== 컨텐츠 영역 끝 ========== -->
+
+<%@ include file="../../_inc/footer.jsp"%>

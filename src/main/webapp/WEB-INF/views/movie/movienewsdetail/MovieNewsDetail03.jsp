@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../../_inc/header.jsp"%>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/MovieNewsDetail.css?time=<%=System.currentTimeMillis()%>">
+<title>영화소식상세정보 | Cinephile</title>
+
+<!-- ========== 컨텐츠 영역 시작 ========== -->
+<div class="movieNews">
+	<!--영화 제목-->
+	<div class="mainNewsTitle clearfix">
+		<h3 class="floatLeft">이슈 | 영화계 또 다시 올스톱…오프라인 행사 모두 취소</h3>
+	</div>
+	<!--영화 본문-->
+	<div class="mainNews" style="font-size: 20px; line-height: 28px">
+		<p>코로나19 일일 감염자가 늘어나면서 영화계가 다시 올스톱됐다. 사회적 거리두기가 2단계로 격상되면서 오프라인
+			행사가 모두 취소되고 온라인 행사로 변경되는 등 또 다시 멈출 기미를 보이고 있다.</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="영화 '국제수사'-'테넷' 포스터. 사진 쇼박스, 워너브러더스 코리아" id="contentsImage1"
+				src="https://d3ihz389yobwks.cloudfront.net/1597907346425tMZEn.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>영화 '국제수사'-'테넷' 포스터. 사진 쇼박스, 워너브러더스 코리아</figcaption>
+		</figure>
+		<p>영화계의 심상치 않은 움직임은 지난 16일, 광복절 이후다. 코로나19 일일 감염자가 급증하면서 영화
+			'국제수사'가 먼저 언론/배급 시사회를 취소하고 개봉을 연기했다. 언론/배급 시사회 일정도, 개봉 일정도 아직은 미정이다.</p>
+		<p>'국제수사'의 개봉 연기 이후 이미 일정이 잡혀있던 영화들의 눈치싸움이 시작됐다. 일단 간담회가 진행되는 행사는
+			취소하거나 온라인으로 변경됐다. 송중기, 김태리 주연 영화 '승리호'는 당초 오프라인으로 제작보고회를 진행할 예정이었지만,
+			행사를 하루 앞두고 온라인으로 변경한다고 공지했다.</p>
+		<p>언론/배급 시사회도 마찬가지다. 국내 영화의 경우, 처음에는 기자 간담회만 취소하고 언론/배급 시사회는 정상적으로
+			진행할 예정이었지만, 상황이 심각해지고 영화진흥위원회의 권고에 따라 시사회 역시 온라인 스크리닝으로 대체했다.</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0px auto; height: auto; width: 600px;">
+			<img alt="영화 '돌멩이'-'후쿠오카' 포스터. 사진 리틀빅픽처스, 인디스토리" id="contentsImage2"
+				src="https://d3ihz389yobwks.cloudfront.net/15979074044231ZLOI.jpg"
+				style="display: block; margin: 0px auto; width: 100%; height: auto;" />
+			<figcaption>영화 '돌멩이'-'후쿠오카' 포스터. 사진 리틀빅픽처스, 인디스토리</figcaption>
+		</figure>
+		<p>이번주와 다음주 언론/배급 시사회가 예정됐던 영화는 '돌멩이'와 '후쿠오카' '나를 구하지 마세요' '기기괴괴
+			성형수' 등이었다. 이 작품들 중 '돌멩이'를 제외한 다른 영화는 모두 온라인 스크리닝으로 시사회 방식을 변경했고,
+			'돌멩이'는 내달 1일로 오프라인 언론/배급 시사회 일정을 다시 잡은 상태다.</p>
+		<p>외화들도 마찬가지다. 당초 라이브 컨퍼런스까지 준비했던 크리스토퍼 놀란 감독 신작 '테넷'은 언론/배급 시사회와
+			라이브 컨퍼런스까지 모두 취소했다. 영화의 특성상 온라인 스크리닝은 진행되지 않는다. 단, 개봉일 변경은 없고, 개봉 전
+			진행되는 프리미엄 상영회는 예정대로 진행된다.</p>
+		<p>비교적 적은 인원이 모이는 수입 영화들 역시 오프라인 언론/배급 시사회를 포기하고 온라인 스크리닝으로 대체하는
+			것을 선택했다. '아웃포스트' '고스트 오브 워'은 온라인 스크리닝으로 시사회를 진행한다.</p>
+		<figure class="image-captioned six"
+			style="display: block; margin: 0 auto; height: auto; width: 600px;">
+			<img alt="영화 '다만 악에서 구하소서'-'오케이 마담' 포스터. 사진 CJ 엔터테이먼트, 메가박스(주)플러스엠"
+				id="contentsImage3"
+				src="https://d3ihz389yobwks.cloudfront.net/15979074379638z3LY.jpg"
+				style="display: block; margin: 0 auto; width: 100%;" />
+			<figcaption>영화 '다만 악에서 구하소서'-'오케이 마담' 포스터. 사진 CJ 엔터테이먼트,
+				메가박스(주)플러스엠</figcaption>
+		</figure>
+		<p>영화계는 최근까지 어려운 상황을 겪었다. 수많은 작품들이 개봉을 연기했고, 개봉 후에도 만족할 만한 성격을 내지
+			못해 아쉬움을 남겼다. 영화 '#살아있다'를 시작으로 '반도' '강철비2: 정상회담' '다만 악에서 구하소서' '오케이
+			마담' 등이 극장가 활력을 불어 넣었지만 원점으로 돌아갈 위기에 처했다.</p>
+	</div>
+	<span class="buttonMoving">
+		<button type="button" class="btn btn-warning"
+			onclick="location.href='${pageContext.request.contextPath}/movie/MovieNews1.do'">목록으로</button>
+		<button type="button" class="btn btn-danger"
+			onclick="location.href='#'">맨위로</button>
+	</span>
+</div>
+
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!--// ========== 컨텐츠 영역 끝 ========== -->
+
+<%@ include file="../../_inc/footer.jsp"%>

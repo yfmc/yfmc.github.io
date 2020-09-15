@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+/*
+.content .content1 ul {
+        border:1px solid #eee;
+        width: 70%;
+        margin: auto;
+        margin-top:30px;
+    }
+
+    .content .content1 ul li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        list-style:none;
+
+
+    }
+    
+.content ul li a{
+	color:#222;
+	font-size:18px;
+	font-family:"Jua", sans-serif;
+	display:block;
+	margin:auto;
+}
+
+    .content ul:after {
+        display: block;
+        content: '';
+        float: none;
+        clear: both;
+    }
+*/
+
+
+    .newsName h2 {
+        color: darkorange;
+        margin-bottom: 20px;
+    }
+
+    .newsName{
+        color:#222;
+        text-align: center;
+        margin-top:50px;
+    }
+
+.king-row{
+    /*border: 1px solid #f6f;*/
+    width:100%;
+    margin:auto;
+    margin-top:100px;
+}
+
+.movie-picture{
+	margin-bottom:50px;
+	width:100%;
+}
+
+
+.thumbnail {
+        height: 400px;
+        width:300px;
+        border:0;
+        text-decoration:none;
+                 
+}
+
+.thumbnail:hover{
+	 text-decoration:none;
+}
+
+.thumbnail .movie-image1{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/1597989437919UHkUJ.jpg") no-repeat;
+	background-size:cover;
+}
+
+.thumbnail .movie-image2{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/1597985976630uO41l.jpg") no-repeat;
+	background-size:cover;
+}
+
+.thumbnail .movie-image3{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/1597974886885K3YqC.jpg") no-repeat;
+	background-size:cover;
+}
+
+.thumbnail .movie-image4{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/1597825436309iAdYb.jpg") no-repeat;
+	background-size:cover;
+}
+
+.thumbnail .movie-image5{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/1597975953895UxBut.jpg") no-repeat;
+	background-size:cover;
+}
+
+.thumbnail .movie-image6{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/1597998224780I0OsZ.jpg") no-repeat;
+	background-size:cover;
+}
+
+.thumbnail .movie-image7{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/15978057348278hPPI.jpg") no-repeat;
+	background-size:cover;
+}
+
+.thumbnail .movie-image8{
+	width:290px;
+	height:200px;
+	background : url("https://d3ihz389yobwks.cloudfront.net/1597795042791LbxIt.jpg") no-repeat;
+	background-size:cover;
+}
+/*썸네일 내부의 이미지 크기 고정*/
+.thumbnail img {
+	width:auto;
+	height:auto;
+    max-height: 200px;
+    max-width:290px;
+  	margin-right:5px;
+ }
+ 
+
+.thumbnail .movie-text{
+	text-align:center;
+	text-decoration:none;
+	
+}
+
+.thumbnail .movie-text h4{
+	font-weight:bold;
+	font-size:20px;
+	color:black;
+	text-decoration:none;
+	margin-left:15px;
+	margin-top:10px;
+	width:250px;
+	
+
+}
+
+.thumbnail .movie-text p{
+	width:250px;
+	color:black;
+	text-overflow:ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4; /* 라인수 */
+	-webkit-box-orient: vertical;
+	word-wrap:break-word; 
+	overflow:hidden;
+	margin-left:25px;
+	margin-top:15px;
+	
+}
+
+
+.king-row .movie-picture{
+	width:25%;
+	float:left;
+	margin-top:15px;
+}
+
+
+ .king-row:after{
+    display: block;
+    content: '';
+    float:none;
+    clear:both;
+ }
+
+.pagePass{
+	font-weight:bold;
+	width:auto;
+	margin:auto;
+	text-align:center;
+	
+}
+
+ .pagePass > a{
+	font-size:24px;
+	margin-left:7px;
+	
+}
+
+   /* .pagination{
+    margin-left:430px;
+    }
+	*/
+    /*사이드 바*/
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  margin-right:0px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right:calc(50% - 723px); /* right:calc(50% - social bar width/2) */
+  border : 2px solid #222;
+  border-radius : 10px;
+  
+ 
+}
+
+@media screen and (max-width:920px){
+.icon-bar {
+  display: none;
+  }
+} 
+
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 16px;
+  text-decoration: none; 
+  font-weight: bold;
+  margin:2px;
+  
+}
+
+
+.icon-bar a:hover {
+  background-color: #edb9c3;
+}
+
+.side-boxoffice {
+  background: white;
+}
+
+.side-moviesearch {
+  background: white; 
+}
+
+.side-movienews {
+  background: white; 
+}
+
+.side-statistics {
+  background: white;
+}
+
+/*사이드바 아이콘*/
+.fas, .far{
+	display:block;
+	font-size:50px;
+	font-weight:800;
+}

@@ -7,9 +7,7 @@ body{
 li{
 list-style:none;
 }
-.containerHeight{
-min-height:1000px;
-}
+
 /*
 .content1 {
 margin-top:20px;
@@ -100,8 +98,6 @@ margin-top:20px;
 }
 
 .imageup {
-        height: 400px;
-        width:250px;
         border:0;
         text-decoration:none;
                  
@@ -114,15 +110,12 @@ margin-top:20px;
 /*썸네일 내부의 이미지 크기 고정*/
 .imageup img {
     min-height: 330px;
-    width:250px;
+    width:245px;
   	
  }
  
 /*이미지에 마우스 올렸을 때 예매하기 상세정보 등장*/
-figcaption button{
-	margin-top:85px;
-	margin-left:28px;
-	width:200px;
+figcaption a{
 	height:30px;
 	background-color:inherit !important;
 	border:1px solid white !important;
@@ -158,14 +151,14 @@ figure.imageup figcaption {
   bottom: 0;
   left: 0;
   right: 0;
-  width:250px;
+  width:245px;
   height:330px;
 }
 figure.imageup:after {
   content: '';
   background-color: rgba(0, 0, 0, 0.65);
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+  -webkit-transition: all 0.0s ease;
+  transition: all 0.0s ease;
   opacity: 0;
   margin-top:-10px;
   margin-left:-8px;
@@ -175,26 +168,31 @@ figure.imageup figcaption {
   margin-top:-10px;
   margin-right:-20px;
 }
-figure.imageup btn-danger{
-  width: 100%;
+figure.imageup a{
+  width: 80%;
   margin: 0;
   padding: 0;
 }
-figure.imageup btn-danger {
-  line-height: 1.1em;
-  font-weight: 700;
-  font-size: 1.4em;
-  text-transform: uppercase;
-  opacity: 0;
-}
-figure.imageup btn-primary {
-  font-size: 0.8em;
-  font-weight: 300;
+
+figure.imageup a {
+  font-size: 20px;
+  font-weight: bold;
   letter-spacing: 1px;
   opacity: 0;
   top: 50%;
   -webkit-transform: translateY(40px);
   transform: translateY(40px);
+  line-height: inherit;
+  text-transform: uppercase;
+  display:inline-block;
+  margin-left: 29.5px;
+  margin-top : 50px;
+  text-align : center;
+  color: white;
+}
+
+figure.imageup a:nth-child(1){
+	margin-top:100px;
 }
 
 
@@ -211,25 +209,25 @@ figure.imageup.hover:after {
   position: absolute;
   top: 10px;
   bottom: 10px;
-  left: 10px;
+  left: 13px;
   right: 10px;
 }
-figure.imageup:hover btn-danger,
-figure.imageup.hover btn-danger,
-figure.imageup:hover btn-primary,
-figure.imageup.hover btn-primary{
+figure.imageup:hover a,
+figure.imageup.hover a
+{
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
   opacity: 1;
+  text-decoration : none;
 }
 
 
-.imageup button{
+.imageup a{
 	visibility: hidden;
 	transition: all 0.0s ease;
 }
 
-.imageup .movie-image:hover button{
+.imageup .movie-image:hover a{
 	visibility: visible;
 	
 }
@@ -266,13 +264,13 @@ figure.imageup.hover btn-primary{
 	height:22px;
 	background-color:red;	
 	width:245px;
-	margin-left:3px;
+	margin-left:5px;
 	margin-bottom:0px;
 	font-style:italic;
 	
 }
 
-.king-row .rank span{
+.king-row .rank{
 	font-size:20px;
 	color:white;
 }

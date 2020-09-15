@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../_inc/header.jsp"%>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/willMoving.css?time=<%=System.currentTimeMillis()%>">
+	href="${pageContext.request.contextPath}/assets/css/willMoving.css?time=<%=System.currentTimeMillis()%>">
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <link rel="stylesheet"
 	href="https://www.littlesnippets.net/css/codepen-result.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/ajax_sws/ajax_helper.css">
 <title>상영예정작 | Cinephile</title>
 <div class="contentHeight">
 	<div class="content">
@@ -16,7 +20,7 @@
 				<span>
 					<ul>
 						<li><a
-							href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>">현재
+							href="${pageContext.request.contextPath}/movie/nowMoving.do">현재
 								상영작</a></li>
 						<li><a href="#">상영 예정작</a></li>
 					</ul>
@@ -40,254 +44,259 @@
 			</div>
 		</div>
 		<!-- 갤러리 영역 -->
-		<div class="king-row">
-			<!-- 1개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-1</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving1.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption> 
-							</span>
+		<div class="scroll-row">
+			<div class="scroll-copy">
+				<div class="king-row">
+					<!-- 1개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>1</span>
 						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving1.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book9">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information9">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
 
-						<!-- 텍스트 영역 -->
+								<!-- 텍스트 영역 -->
 
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>강철비2-정상회담
-								</h4>
-							</span>
-						</div>
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>강철비2-정상회담
+										</h4>
+									</span>
+								</div>
 
+							</div>
+						</figure>
 					</div>
-				</figure>
-			</div>
-			<!-- 2개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-2</span>
+					<!-- 2개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>2</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving2.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book10">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information10">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>반도
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 3개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>3</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving3.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book11">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information11">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-success">전체</span>알라딘
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 4개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>5</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving4.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book12">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information12">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-primary">12</span>소년 아메드
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 5개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>5</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving5.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book13">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information13">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>소년시절의 너
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 6개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>7</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving6.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book14">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information14">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 7개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>7</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving7.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book15">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information15">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-danger">청불</span>존 윅-특별판
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
+					<!-- 8개 -->
+					<div class="movie-picture">
+						<div class="dDay">
+							D-<span>10</span>
+						</div>
+						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+						<figure class="imageup">
+							<div class="row">
+								<!-- 이미지 영역 -->
+								<div class="movie-image">
+									<span> <img
+										src="${pageContext.request.contextPath}/assets/img/nowmoving8.jpg"
+										class="img-responsive" />
+										<figcaption>
+											<a href="${pageContext.request.contextPath}/예매페이지" id="book16">예매하기</a>
+											<a href="${pageContext.request.contextPath}/movie/MovieContent.do" id="information16">상세정보</a>
+										</figcaption>
+									</span>
+								</div>
+								<!-- 텍스트 영역 -->
+								<div class="movie-text">
+									<span>
+										<h4>
+											<span class="label label-warning">15</span>다만 악에서 구하소서
+										</h4>
+									</span>
+								</div>
+							</div>
+						</figure>
+					</div>
 				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving2.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>반도
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
 			</div>
-			<!-- 3개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-3</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving3.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-success">전체</span>알라딘
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 4개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-5</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving4.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-primary">12</span>소년 아메드
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 5개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-5</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving5.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>소년시절의 너
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 6개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-7</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving6.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 7개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-7</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving7.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-danger">청불</span>존 윅-특별판
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
-			<!-- 8개 -->
-			<div class="movie-picture">
-				<div class="dDay">
-					<span>D-10</span>
-				</div>
-				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
-				<figure class="imageup">
-					<div class="row">
-						<!-- 이미지 영역 -->
-						<div class="movie-image">
-							<span> <img
-								src="<%=request.getContextPath()%>/img/nowmoving8.jpg"
-								class="img-responsive" />
-								<figcaption>
-									<button type="button" class="btn btn-danger">예매하기</button>
-									<button type="button" class="btn btn-primary">상세정보</button>
-								</figcaption>
-							</span>
-						</div>
-						<!-- 텍스트 영역 -->
-						<div class="movie-text">
-							<span>
-								<h4>
-									<span class="label label-warning">15</span>다만 악에서 구하소서
-								</h4>
-							</span>
-						</div>
-					</div>
-				</figure>
-			</div>
+			<!-- scroll-row끝! -->
 		</div>
 		<!-- 갤러리 8개 끝!!! -->
-		<div class="plusbutton">
-			<button class="btn btn-danger">
+		<div class="plusbutton" style="visibility:visible;" id="plusbutton">
+			<button class="btn btn-danger" id="morewillmoving">
 				<!-- bs3-icon:glyphicon -->
 				<!-- icon에는 내가 넣고 싶은 것을 넣으면 된다. -->
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -300,24 +309,69 @@
 
 <div class="icon-bar">
 	<a
-		href="<%=request.getContextPath()%>/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>"
+		href="${pageContext.request.contextPath}/movie/nowMoving.do?time=<%=System.currentTimeMillis()%>"
 		class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> <a
-		href="<%=request.getContextPath()%>/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>"
+		href="${pageContext.request.contextPath}/movie/MovieSearch.do?time=<%=System.currentTimeMillis()%>"
 		class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a>
 	<a
-		href="<%=request.getContextPath()%>/movie/MovieNews.jsp?time=<%=System.currentTimeMillis()%>"
+		href="${pageContext.request.contextPath}/movie/MovieNews1.do?time=<%=System.currentTimeMillis()%>"
 		class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a>
 	<a
-		href="<%=request.getContextPath()%>/movie/Statistics1.jsp?time=<%=System.currentTimeMillis()%>"
+		href="${pageContext.request.contextPath}/movie/Statistics.do?time=<%=System.currentTimeMillis()%>"
 		class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
 </div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->
+<script type="text/x-handlebars-template" id="willmoving-list">
+{{#each data}}
+<div class="movie-picture">
+                        <div class="dDay">
+                            NO.<span>{{dDay}}</span>
+                        </div>
+                        <!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+                        <figure class="imageup">
+                            <div class="row">
+                                <!-- 이미지 영역 -->
+                                <div class="movie-image">
+                                    <span>{{{movieaddress}}}
+                                        <figcaption>
+                                            <button type="button" class="btn btn-danger">예매하기</button>
+                                            <button type="button" class="btn btn-primary">상세정보</button>
+                                        </figcaption> </span>
+                                </div>
+                                <!-- 텍스트 영역 -->
+
+                                <div class="movie-text">
+                                    <span>
+                                        <h4>
+                                            <span class="label label-{{agelimitbutton}}">{{agelimit}}</span>{{moviename}}
+                                        </h4>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </figure>
+                    </div>
+{{/each}}
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/plugins/ajax_sws/ajax_helper.js"></script>
+<script src="${pageContext.request.contextPath}/assets/plugins/handlebars/handlebars-v4.7.6.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/morewillmoving.js"></script>	
 <script type="text/javascript">
 	$(".hover").mouseleave(function() {
 		$(this).removeClass("hover");
 	});
+	
+	//console.log(content.movielist.data.length/4)
+	//console.log(content.movielist.data.length%4)
+	//var append=content.movielist.data.length/4
+	//if(content.movielist.data.length%4!=0){
+	//	var append=content.movielist.data.length/4+1;
+	//}
+	$('.dropdown-menu > li > a').click(function (e) {
+    var html = $(this).html();
+    $('button.dropdown-toggle').html(html +' <span class="caret"></span>');
+});
 </script>
 <%@ include file="../_inc/footer.jsp"%>

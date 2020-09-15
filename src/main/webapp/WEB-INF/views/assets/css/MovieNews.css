@@ -183,18 +183,23 @@
  }
 
 .pagePass{
-	margin-top:5px;
 	font-weight:bold;
+	width:auto;
+	margin:auto;
+	text-align:center;
+	
 }
 
-.pagination li>a{
-	color:black;
+ .pagePass > a{
+	font-size:24px;
+	margin-left:7px;
+	
 }
 
-    .pagination{
+   /* .pagination{
     margin-left:430px;
     }
-
+	*/
     /*사이드 바*/
 
 .icon-bar {

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,
+minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title></title>
+<style type="text/css">
+.search-result h4{
+	margin-top:50px;
+}
+
+.king-row {
+	width: 85%;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.imageup {
+	border: 0;
+	text-decoration: none;
+}
+
+.imageup:hover {
+	text-decoration: none;
+}
+
+/*썸네일 내부의 이미지 크기 고정*/
+.imageup img {
+	min-height: 330px;
+	width: 245px;
+}
+
+/*이미지에 마우스 올렸을 때 예매하기 상세정보 등장*/
+figcaption button {
+	margin-top: 85px;
+	margin-left: 28px;
+	width: 200px;
+	height: 30px;
+	background-color: inherit !important;
+	border: 1px solid white !important;
+}
+
+figure.imageup {
+	font-family: 'Raleway', Arial, sans-serif;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	width: auto;
+	height: auto;
+	color: #ffffff;
+	text-align: left;
+	font-size: 16px;
+}
+
+.imageup .movie-text {
+	text-align: center;
+	text-decoration: none;
+}
+
+.imageup .movie-text h4 {
+	font-weight: bold;
+	font-size: 18px;
+	color: black;
+	text-decoration: none;
+	margin-bottom: 60px;
+}
+
+.king-row .movie-picture {
+	width: 25%;
+	float: left;
+	margin-top: 15px;
+}
+
+.king-row:after {
+	display: block;
+	content: '';
+	float: none;
+	clear: both;
+}
+
+.king-row .img-responsive {
+	height: auto;
+	max-height: 200px;
+	min-width: 210px;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+	<!-- 검색결과가 몇건인지 확인하기 -->
+	<div class="search-result">
+		<span>
+			<h4>"OOO"(으)로 총 n개의 검색결과가 있습니다.</h4>
+			<hr />
+		</span>
+	</div>
+	<!-- 검색결과 보여주기 -->
+	<!-- 검색결과가 몇건인지 확인하기 -->
+	<div class="scroll-row">
+		<div class="king-row">
+			<!-- 1개 -->
+			<div class="movie-picture">
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span><img
+								src="https://movie-phinf.pstatic.net/20200703_48/1593739617223iuD2b_JPEG/movie_image.jpg"
+								class="img-responsive" /> </span>
+						</div>
+						<!-- 텍스트 영역 -->
+
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-warning">15</span>강철비2-정상회담
+								</h4>
+							</span>
+						</div>
+
+					</div>
+				</figure>
+			</div>
+			<!-- 2개 -->
+			<div class="movie-picture">
+
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span> <img
+								src="https://movie-phinf.pstatic.net/20200624_137/15929908359489lOON_JPEG/movie_image.jpg"
+								class="img-responsive" />
+
+							</span>
+						</div>
+						<!-- 텍스트 영역 -->
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-warning">15</span>반도
+								</h4>
+							</span>
+						</div>
+					</div>
+				</figure>
+			</div>
+			<!-- 3개 -->
+			<div class="movie-picture">
+
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span> <img
+								src="https://movie-phinf.pstatic.net/20190524_104/1558663170174Q2mmw_JPEG/movie_image.jpg"
+								class="img-responsive" />
+
+							</span>
+						</div>
+						<!-- 텍스트 영역 -->
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-success">전체</span>알라딘
+								</h4>
+							</span>
+						</div>
+					</div>
+				</figure>
+			</div>
+			<!-- 4개 -->
+			<div class="movie-picture">
+
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span> <img
+								src="https://movie-phinf.pstatic.net/20200715_118/1594788326147GKSI3_JPEG/movie_image.jpg"
+								class="img-responsive" />
+
+							</span>
+						</div>
+						<!-- 텍스트 영역 -->
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-primary">12</span>소년 아메드
+								</h4>
+							</span>
+						</div>
+					</div>
+				</figure>
+			</div>
+			<!-- 5개 -->
+			<div class="movie-picture">
+
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span> <img
+								src="https://movie-phinf.pstatic.net/20200804_191/1596519125636u6rAe_JPEG/movie_image.jpg"
+								class="img-responsive" />
+
+							</span>
+						</div>
+						<!-- 텍스트 영역 -->
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-warning">15</span>소년시절의 너
+								</h4>
+							</span>
+						</div>
+					</div>
+				</figure>
+			</div>
+			<!-- 6개 -->
+			<div class="movie-picture">
+
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span> <img
+								src="https://movie-phinf.pstatic.net/20200727_170/1595824882139uopaD_JPEG/movie_image.jpg"
+								class="img-responsive" />
+
+							</span>
+						</div>
+						<!-- 텍스트 영역 -->
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-success">전체</span>빅샤크3-젤리몬스터 대소동
+								</h4>
+							</span>
+						</div>
+					</div>
+				</figure>
+			</div>
+			<!-- 7개 -->
+			<div class="movie-picture">
+
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span> <img
+								src="https://movie-phinf.pstatic.net/20200807_46/159679072564527BTt_JPEG/movie_image.jpg"
+								class="img-responsive" />
+
+							</span>
+						</div>
+						<!-- 텍스트 영역 -->
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-danger">청불</span>존 윅-특별판
+								</h4>
+							</span>
+						</div>
+					</div>
+				</figure>
+			</div>
+			<!-- 8개 -->
+			<div class="movie-picture">
+
+				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
+				<figure class="imageup">
+					<div class="row">
+						<!-- 이미지 영역 -->
+						<div class="movie-image">
+							<span><img
+								src="https://movie-phinf.pstatic.net/20200706_191/1594001490577tifkl_JPEG/movie_image.jpg"
+								class="img-responsive" /> </span>
+						</div>
+						<!-- 텍스트 영역 -->
+						<div class="movie-text">
+							<span>
+								<h4>
+									<span class="label label-warning">15</span>다만 악에서 구하소서
+								</h4>
+							</span>
+						</div>
+					</div>
+				</figure>
+			</div>
+		</div>
+</body>
+</html>
