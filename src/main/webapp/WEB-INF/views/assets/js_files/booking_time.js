@@ -27,7 +27,7 @@ $(function() {
 	});
 	
 	$("#login-btn").click(function() {
-		location.href="02-booking_seats.jsp"
+		location.href="02-booking_seats.do"
 	});
 	
 	// 요일 선택 slick
@@ -77,6 +77,6 @@ $(function() {
 			return false;
 		}
 		
-		location.href="02-booking_seats.jsp";
+		location.href="02-booking_seats.do";
 	});
 });
