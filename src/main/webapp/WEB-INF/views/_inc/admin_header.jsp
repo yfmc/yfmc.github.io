@@ -24,30 +24,30 @@
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="<%=request.getContextPath()%>/assets/admin/admin_home.jsp">Cinephile 관리자</a>
+                <a class="navbar-brand" href="<%=request.getContextPath()%>/assets/admin/admin_home.do">Cinephile 관리자</a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li class="divider"></li>
-                <li><a href="<%=request.getContextPath()%>/admin/admin_login.jsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="<%=request.getContextPath()%>/admin/admin_login.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <div class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
                 	    <li>
-                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_home.jsp">홈</a>
+                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_home.do">홈</a>
                         </li>
                   		<li>
-                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_notice_list.jsp">공지사항 관리</a>
+                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_notice_list.do">공지사항 관리</a>
                         </li>
                         <li>
-                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_qna_list.jsp">1:1문의 관리</a>
+                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_qna_list.do">1:1문의 관리</a>
                         </li>
                         <li>
-                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_faq_list.jsp">자주찾는질문 관리</a>
+                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_faq_list.do">자주찾는질문 관리</a>
                         </li>
                         <li>
-                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("member") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_member.jsp">회원 관리</a>
+                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("member") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_member.do">회원 관리</a>
                         </li>
                     </ul>
                 </div>

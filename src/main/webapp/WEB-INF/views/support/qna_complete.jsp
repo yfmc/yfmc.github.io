@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_home.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_qna.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_qna_complete.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_qna.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_qna_complete.css?time=<%=System.currentTimeMillis()%>">
     	<div class="row">
 	        <div id="contents">
-	            <!-- ==== 사이드 바 ==== -->
-	            <ul class="sidebar">
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
-	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.jsp">대관문의</a></li>
+		        <!-- ==== 사이드 바 ==== -->
+		        <ul class="sidebar">
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.do">고객센터 홈</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.do">공지사항</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.do">자주찾는 질문</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.do">1:1 문의</a></li>
+	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.do">대관문의</a></li>
 	            </ul>
-	            <!-- ==== 사이드바 끝 ==== -->
+		        <!-- ==== 사이드바 끝 ==== -->
 	            <!-- ==== 본문 시작 ==== -->
 	            <div class="content">
 	            	<div class="qna_title">
@@ -40,8 +40,8 @@
 			            	항상 노력하는 CinePhile이 되겠습니다.
 			            </p>
 			            <div class="btn_btm_wrap">
-			            	<a href="<%=request.getContextPath()%>/mypage/inquirylist.jsp" class="btn btn-default">문의내역 확인</a>
-			                <a href="<%=request.getContextPath()%>/support/support_home.jsp" class="btn btn-primary" >고객센터 홈으로</a>
+			            	<a href="<%=request.getContextPath()%>/mypage/inquirylist.do" class="btn btn-default">문의내역 확인</a>
+			                <a href="<%=request.getContextPath()%>/support/support_home.do" class="btn btn-primary" >고객센터 홈으로</a>
 			            </div>
 	                </div>
 	            </div>

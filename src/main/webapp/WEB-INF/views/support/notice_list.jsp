@@ -1,30 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/datatables/datatables.min.css?time=<%=System.currentTimeMillis()%>"/>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_home.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_button.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_list.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/plugins/datatables/datatables.min.css?time=<%=System.currentTimeMillis()%>"/>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_button.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_list.css?time=<%=System.currentTimeMillis()%>">
 
 <div class="row">
 	<div id="contents">
-        <!-- ==== 사이드 바 ==== -->
-        <ul class="sidebar">
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
-	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.jsp">대관문의</a></li>
+		        <!-- ==== 사이드 바 ==== -->
+		        <ul class="sidebar">
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.do">고객센터 홈</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.do">공지사항</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.do">자주찾는 질문</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.do">1:1 문의</a></li>
+	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.do">대관문의</a></li>
 	            </ul>
-        <!-- ==== 사이드바 끝 ==== -->
+		        <!-- ==== 사이드바 끝 ==== -->
 		<div class="content">
 			<div class="support_title">
 				<h2>공지사항</h2>
 				<p>저희 영화관의 이슈 및 공지사항을 확인하실 수 있습니다.</p>
 			</div>
 			<div class="notice search">
-					<form class="search_box" name="search" method="post" action="<%=request.getContextPath()%>/support/notice_list.jsp">
+					<form class="search_box" name="search" method="post" action="<%=request.getContextPath()%>/support/notice_list.do">
 						<!-- 추가적인 style 적용 필요함 -->
 						<select name='choose' class='form-control' >
 								<option value="detail_title">제목</option>
@@ -54,7 +54,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/datatables/datatables.min.js"></script>
 <script type="text/javascript">
 $(function(){ 
 	$(".table_notice_list").DataTable({
