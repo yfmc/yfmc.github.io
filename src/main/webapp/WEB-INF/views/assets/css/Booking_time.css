@@ -29,17 +29,38 @@
 	padding-top: 80px;
 }
 
+.booking_stage li:hover {
+	cursor: default;
+}
+
 .booking_stage li:first-child {
 	background-color:#4d4d4d;
 	color: white;
 	font-weight: bold;
 }
 
+/* 각 박스 타이틀 */
+.booking_title {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	border-right: 1px solid white;
+	height: 60px;
+	padding-top: 15px;
+	background-color: #4d4d4d;
+	color: white;
+}
+
+.booking_title:hover {
+	cursor: default;
+}
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 /* 영화관 선택 */
 .booking_branch {
-	width: 350px;
+	width: 380px;
 	float: left;
 }
 
@@ -63,14 +84,15 @@
 	font-weight: bold;
 }
 
-.choose_provincial li:nth-child(2) {
-	background-color: white;
+.choose_provincial li:hover {
+	cursor: pointer;
+	color: #b0b0b0;
 }
 
 /* 지점 선택 */
 .choose_branch {
 	position: relative;
-	width: 210px;
+	width: 240px;
 	height: 740px;
 	padding-top: 15px;
 	float:left;
@@ -82,6 +104,11 @@
 	font-size: 14px;
 }
 
+.choose_branch li:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+
 .choose_branch li:nth-child(4) {
 	color: red;
 }
@@ -90,7 +117,7 @@
 
 /* 영화 선택 */
 .booking_film {
-	width: 350px;
+	width: 320px;
 	height: 800px;
 	float: left;
 }
@@ -104,8 +131,13 @@
 .choose_film li {
 	display: block;
 	height: 50px;
-	font-size: 17px;
+	font-size: 15px;
 	padding-top: 12px;
+}
+
+.choose_film li:hover {
+	cursor: pointer;
+	font-weight: bold;
 }
 
 .choose_film li:first-child {
@@ -124,32 +156,68 @@
 
 /* 날짜 선택 */
 .choose_day {
+	width: 410px;
 	height:80px;
-	padding-top: 15px;
-	padding-left: 12px;
+	margin-top: 10px;
 }
 
-.choose_day li {
-	display: inline-block;
+.weekday {
 	text-align: center;
-	padding: 2px 5px;
+	color: black;
 }
 
-.choose_day li:nth-child(2) {
-	color: red;
-}
-
-.choose_day li:nth-child(8) {
-	color: blue;
-}
-
-.choose_day li:first-child, .choose_day li:last-child {
-	font-size: 25px;
-}
-
-.choose_day li:nth-child(3) {
+.weekday:hover {
+	color: black;
 	font-weight: bold;
-	border: 2px solid black;
+	text-decoration: none;
+	cursor: pointer;
+	border-bottom: 2px solid red;
+}
+
+/* 각종 버튼 효과 삭제 */
+
+.slick-slide:focus, .slick-center:focus, .slick-track:focus, .slick-active:focus, .slick-current:focus, .slick-arrow:focus {
+   border: none;
+   outline: none;
+   box-shadow: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+	outline: none !important;
+	box-shadow: none;
+}
+
+.choose_day > a.slick-arrow:active, .choose_day > a.slick-arrow:focus {
+	box-shadow: none !important;
+}
+
+a.weekday:active, a.weekday:link, a.weekday:visited, a.weekday:focus {
+	text-decoration: none;
+	color: black;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+/* float 마감제 */
+.choose_day:after {
+	content: '';
+	display: block;
+	float:none;
+	clear: both;
+}
+
+.slick-list {
+	width: 325px;
+	display: block;
+	float: left;
+}
+
+.slick-arrow {
+	width: 30px;
+	display: block;
+	float: left;
 }
 
 /* 시간 선택 */
@@ -173,6 +241,11 @@
 	margin-bottom: 10px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+.choose_time li:hover {
+	cursor: pointer;
+	background-color: #eee;
 }
 
 .choose_time li:first-child {
@@ -222,23 +295,17 @@
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
+/* 로그인 modal */
+.modal-title:hover, .modal-msg:hover {
+	cursor: default;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
 /* float 마감제 */
 .clear {
 	content: '';
 	display: block;
 	float: none;
 	clear: both;
-}
-
-/* 각 박스 타이틀 */
-.booking_title {
-	text-align: center;
-	font-size: 18px;
-	font-weight: bold;
-	border-bottom: 1px solid black;
-	border-right: 1px solid white;
-	height: 60px;
-	padding-top: 15px;
-	background-color: #4d4d4d;
-	color: white;
 }

@@ -4,10 +4,12 @@
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_time.css?time=<%=System.currentTimeMillis()%>" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
-<!-- 스크롤바 플러그인 -->
+<!-- fakescroll css -->
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
+<!-- slick css -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-<title>상영선택 < 예매 | Cinephile</title>
+<title>상영선택 > 예매 | Cinephile</title>
 
 <!-- content -->
 <div id="content">
@@ -32,24 +34,24 @@
 			<div class="choose_provincial">
 				<ul>
 					<li>자주 가는 영화관</li>
-					<li>서울</li>
-					<li>경기</li>
-					<li>인천</li>
-					<li>강원</li>
-					<li>대전</li>
-					<li>충청/세종</li>
-					<li>광주</li>
-					<li>전라</li>
-					<li>대구/경북</li>
-					<li>부산/울산</li>
-					<li>경남</li>
-					<li>제주</li>
+					<li id="seoul2">서울</li>
+					<li id="gyeonggi2">경기</li>
+					<li id="incheon2">인천</li>
+					<li id="gangwon2">강원</li>
+					<li id="daejeon2">대전</li>
+					<li id="chungcheong2">충청/세종</li>
+					<li id="gwangju2">광주</li>
+					<li id="jeolla2">전라</li>
+					<li id="daegu2">대구/경북</li>
+					<li id="busan2">부산/울산</li>
+					<li id="gyeongnam2">경남</li>
+					<li id="jeju2">제주</li>
 				</ul>
 			</div>
 			
 			<!-- 지점 선택 -->
 			<div class="choose_branch">
-				<ul>
+				<ul id="branch_list">
 					<li>CGV 강남</li>
 					<li>롯데시네마 영등포</li>
 					<li>메가박스 송파파크하비오</li>
@@ -123,17 +125,20 @@
 			</div>
 			<!-- 날짜 선택 -->
 			<div class="choose_day">
-				<ul>
-					<li><i class="fas fa-angle-left"></i></li>
-					<li>7/19<br />일</li>
-					<li>7/20<br />월</li>
-					<li>7/21<br />화</li>
-					<li>7/22<br />수</li>
-					<li>7/23<br />목</li>
-					<li>7/24<br />금</li>
-					<li>7/25<br />토</li>
-					<li><i class="fas fa-angle-right"></i></li>
-				</ul>
+				<a class="btn weekday day0"></a>
+				<a class="btn weekday day1"></a>
+				<a class="btn weekday day2"></a>
+				<a class="btn weekday day3"></a>
+				<a class="btn weekday day4"></a>
+				<a class="btn weekday day5"></a>
+				<a class="btn weekday day6"></a>
+				<a class="btn weekday day7"></a>
+				<a class="btn weekday day8"></a>
+				<a class="btn weekday day9"></a>
+				<a class="btn weekday day10"></a>
+				<a class="btn weekday day11"></a>
+				<a class="btn weekday day12"></a>
+				<a class="btn weekday day13"></a>
 			</div>
 			<!-- 시간 선택 -->
 			<div class="choose_time">
@@ -165,14 +170,17 @@
                         <h4 class="modal-title">로그인</h4>
                     </div>
                     <!-- body -->
-                    <div class="modal-body">로그인하셔야 예매가 가능합니다
-                        <div class="form-group" style="margin-top: 10px">
-                            <label for="user_id">아이디</label>
-                            <input type="text" name="user_id" id="user_id" class="form-control" />
-                            <label for="user_pw">비밀번호</label>
-                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
-                        </div>
-                        <button type="button" id="login-btn" class="btn btn-primary">로그인</button>
+                    <div class="modal-body">
+                    	<span class="modal-msg">로그인하셔야 예매가 가능합니다</span>
+                    	<form id="login_modal">
+	                        <div class="form-group" style="margin-top: 10px">
+	                            <label for="user_id">아이디</label>
+	                            <input type="text" name="user_id" id="user_id" class="form-control" />
+	                            <label for="user_pw">비밀번호</label>
+	                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
+	                        </div>
+	                        <button type="submit" class="btn btn-primary">로그인</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -186,11 +194,12 @@
     </div>
 </div>
 
-<!-- jQuery -->
-<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
-<!-- 스크롤바 플러그인 -->
+<!-- fakescroll js -->
 <script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
+<!-- slick js -->
+<script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
 <!-- js 파일 적용 -->
 <script type="text/javascript" src="booking_time.js"></script>
+<script src="<%=request.getContextPath()%>/branch/branch2.js"></script>
 
 <%@ include file="/_inc/footer.jsp"%>
