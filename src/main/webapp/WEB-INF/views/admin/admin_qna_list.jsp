@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-	<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="../assets/plugins/datatables/datatables.min.js"></script>
 	<script type="text/javascript">
 		$(function(){ 
 			$(".table_qna_list").DataTable({

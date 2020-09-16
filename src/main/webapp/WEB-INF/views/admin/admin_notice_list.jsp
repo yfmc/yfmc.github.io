@@ -14,7 +14,7 @@
                     <div class="notice_list panel panel-default">
                         <div class="panel-heading">
                             공지사항 관리
-                            <a href="<%=request.getContextPath()%>/admin/admin_notice_write.jsp" class="write btn btn-success pull-right">글쓰기</a>
+                            <a href="<%=request.getContextPath()%>/admin/admin_notice_write.do" class="write btn btn-success pull-right">글쓰기</a>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-	<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="../assets/plugins/datatables/datatables.min.js"></script>
 	<script type="text/javascript">
 		$(function(){ 
 			    

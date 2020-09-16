@@ -18,9 +18,9 @@
 				            </div>
 			            </div>
 			            <div class="form-group">
-				            <label for="notice_contents"  class="must col-xs-2 ">내용</label>
+				            <label for="notice_content"  class="must col-xs-2 ">내용</label>
 					        <div class="col-xs-10">
-					            <textarea name="notice_contents" id="notice_contents" class="form-control"  /></textarea>
+					            <textarea name="notice_content" id="notice_content" class="form-control"  /></textarea>
 					        </div>
 				        </div>
 				        <div class="btn_btm_wrap">
@@ -35,7 +35,7 @@
 	$("#notice_form").submit(function(e) {
 		e.preventDefault();
         alert("등록이 완료되었습니다.");
-        location.href="<%=request.getContextPath()%>/admin/admin_notice_list.jsp";
+        location.href="<%=request.getContextPath()%>/admin/admin_notice_list.do";
     });
 	</script>
     
