@@ -1,4 +1,4 @@
-package study.spring.cinephile.impl;
+package study.spring.cinephile.service.impl;
 
 import java.util.List;
 
