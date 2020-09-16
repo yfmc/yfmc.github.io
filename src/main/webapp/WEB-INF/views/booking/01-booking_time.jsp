@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@ include file="/_inc/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="../_inc/header.jsp"%>
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_time.css?time=<%=System.currentTimeMillis()%>" />
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/Booking_time.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 <!-- fakescroll css -->
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/plugins/fakescroll/fakescroll.css?time=<%=System.currentTimeMillis()%>" />
 <!-- slick css -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
@@ -195,11 +198,11 @@
 </div>
 
 <!-- fakescroll js -->
-<script src="<%=request.getContextPath()%>/plugins/fakescroll/fakescroll.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/plugins/fakescroll/fakescroll.min.js"></script>
 <!-- slick js -->
-<script type="text/javascript" src="<%=request.getContextPath()%>/branch/branch_slick.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js_files/branch_slick.js"></script>
 <!-- js 파일 적용 -->
-<script type="text/javascript" src="booking_time.js"></script>
-<script src="<%=request.getContextPath()%>/branch/branch2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js_files/booking_time.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
 
-<%@ include file="/_inc/footer.jsp"%>
+<%@ include file="../_inc/footer.jsp"%>
