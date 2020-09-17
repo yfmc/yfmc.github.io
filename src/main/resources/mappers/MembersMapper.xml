@@ -24,6 +24,12 @@
 		<result property="edit_date" column="edit_date" />
 	</resultMap>
 	
+	<!-- 단일행 조회 (for Email) 를 위한 기능 정의 -->
+	<select id="selectEmail" parameterType="study.spring.cinephile.model.Members"
+		resultMap="membersMap">
+		SELECT user_email FROM Members;
+	</select>
+	
 	<!-- 단일행 조회를 위한 기능 정의 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Members"
 		resultMap="membersMap">

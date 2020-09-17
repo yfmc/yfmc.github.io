@@ -14,7 +14,7 @@
 		<li>4단계: 가입완료</li>
 	</ul>
 	<div class="joining">
-		<form name="email_form" id="email_form" method="post" action="session_ok.jsp">
+		<form name="email_form" id="email_form" method="get" action="session_ok.jsp">
 			<div class="emails">
 				<div class="input-group">
 					<label for="user_email">이메일 주소</label> 
@@ -29,7 +29,7 @@
 						<button type="submit" class="btn btn-default" id="email_submit" disabled>인증번호 전송</button>
 						
 					</a> 
-					<a href="<%=request.getContextPath()%>/account/01-welcome.jsp">
+					<a href="<%=request.getContextPath()%>/account/01-welcome.do">
 						<button type="button" class="btn btn-default">취소</button>
 					</a>
 				</div>

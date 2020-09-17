@@ -18,8 +18,8 @@
                 </div>
                 
                 <div class="loginpb">
-                    <a href="<%=request.getContextPath()%>/login/02-findidpassword.jsp" class="fgidpw">ID/PW찾기</a>
-                    <a href="#" class="noid">회원가입</a>
+                    <a href="<%=request.getContextPath()%>/login/02-findidpassword.do" class="fgidpw">ID/PW찾기</a>
+                    <a href="<%=request.getContextPath()%>/account/01-welcome.do" class="noid">회원가입</a>
                 </div>
                 <div class="loginbt">     
                     <button type="submit" class="btn btn-primary" id="btn_login">로그인</button>
