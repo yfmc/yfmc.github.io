@@ -15,18 +15,14 @@ import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
-import study.spring.cinephile.model.BookingList;
-import study.spring.cinephile.model.ChoiceList;
-import study.spring.cinephile.service.BookingListService;
-import study.spring.cinephile.service.ChoiceListService;
+
 
 @Slf4j
 @Controller
 public class MypageController {
 	@Autowired WebHelper webHelper;
 	@Autowired RegexHelper regexHelper;
-	@Autowired BookingListService bookingListService;
-	@Autowired ChoiceListService choiceListService;
+
 	
 	
 	@Value("#{servletContext.contextPath}")
