@@ -104,12 +104,11 @@ $(function(){
        				return false;				//<-- 실행중단
        			}else{
        				$("input[name=checked_id]").val("y");
-       				
        			}
        			
        			//위의 if문을 무사히 통과했다면 내용이 존재한다는 의미이므로,
        			//입력된 내용을 Ajax를 사용해서 웹 프로그램에게 전달한다.
-       			$.post("idcheck.json", {user_id:user_id_val}, function(req){
+       			$.post("${pageContext.request.contextPath}/putMemInfo/", {user_id:user_id_val}, function(req){
        				//사용 가능한 아이디인 경우 --> req = {result : "ok"}
        				//사용 불가능한 아이디인 경우 --> req = {result:"fail"}
        				if(user_id_val == 'newjhj31'){
@@ -139,5 +138,20 @@ $(function(){
        		
         	   //우편검색버튼
         	   $("#addrsc").postcodifyPopUp();
+        	   
+        	// #addForm에 대한 submit이벤트를 가로채서 Ajax요청을 전송한다.
+//               $("#join_form").ajaxForm({
+//                   // 전송 메서드 지정
+//                   method: "POST",
+//                   // 서버에서 200 응답을 전달한 경우 실행됨
+//                   success: function(json) {
+//                       console.log(json);
+//                       
+//                       // json에 포함된 데이터를 활용하여 상세페이지로 이동한다.
+//                       if (json.rt == "OK") {
+//                           window.location = "${pageContext.request.contextPath}/account/06-Complete.do";
+//                       }
+//                   }
+//               });
 
            });

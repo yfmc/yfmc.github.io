@@ -26,10 +26,10 @@ public class MembersServiceImpl implements MembersService{
 	 * @throws Exception
 	 */
 	@Override
-	public Members getMembersEmail(Members input) throws Exception {
+	public Members getMembersEmail() throws Exception {
 		Members result= null;
 		
-		result = sqlSession.selectOne("MembersMapper.selectEmail", input);
+		result = sqlSession.selectOne("MembersMapper.selectEmail");
 		
 		return result;
 	}

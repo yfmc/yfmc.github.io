@@ -2,7 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <%@ include file="../_inc/header.jsp" %>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/account_06Complete.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_06Complete.css?time=<%=System.currentTimeMillis()%>" />
 
     
 <div id="content">
@@ -16,12 +16,12 @@
                 <div class="completetxt">
                     <p>
                         회원가입이 정상적으로 처리되었습니다.<br/>
-                        <span class="user_name">장혁준</span> 고객님, <span class="insidelogo">cinephile </span> 회원이 되신 것을 환영합니다!
+                        <span class="user_name">${output.user_name}</span> 고객님, <span class="insidelogo">cinephile </span> 회원이 되신 것을 환영합니다!
                     </p>
                 </div>
                 <div class="buttons">
-                    <a href="<%=request.getContextPath()%>/login/01-login.jsp"><button type="button" class="btn btn-primary">로그인 하기</button></a>
-                    <a href="<%=request.getContextPath()%>/index.jsp"><button type="button" class="btn btn-default">메인으로 가기</button></a>
+                    <a href="<%=request.getContextPath()%>/login/01-login.do"><button type="button" class="btn btn-primary">로그인 하기</button></a>
+                    <a href="<%=request.getContextPath()%>/index.do"><button type="button" class="btn btn-default">메인으로 가기</button></a>
                 </div>
             </div>
         </div>

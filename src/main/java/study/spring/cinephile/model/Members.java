@@ -10,9 +10,9 @@ public class Members {
 	private String user_id;
 	private String user_pw;
 	private String user_name;
-	private String user_email;
-	private String gender;
 	private String birthdate;
+	private String gender;
+	private String user_email;
 	private String phone;
 	private String postcode;
 	private String addr;

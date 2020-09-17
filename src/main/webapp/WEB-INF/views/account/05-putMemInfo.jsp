@@ -10,7 +10,7 @@
 	// 추출시에는 원래의 형태로 명시적 변환이 필요하다.
 	String mySession = (String) session.getAttribute("mysession");
 %>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/account_05putMemberInfo.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_05putMemberInfo.css?time=<%=System.currentTimeMillis()%>" />
 
 
 <div id="content">
@@ -26,7 +26,7 @@
                 <div class="essential">
                     <p>* 항목은 필수입력 사항입니다. </p>
                 </div>
-                <form name="join_form" id="join_form" >
+                <form name="join_form" id="join_form" action="${pageContext.request.contextPath}/account/05-putMemInfo_ok.do" method="post">
                 <div class="meminfo">
                         <div class="input-group">
                             <label for="user_id"><span class="star">*</span> 아이디</label>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="input-group">
                             <label for="user_birth"><span class="star">*</span> 생년월일</label>
-                            <input id="user_birth" name="user_birth" type="text" placeholder="주민번호 앞 6자리">
+                            <input id="user_birth" name="birthdate" type="text" placeholder="주민번호 앞 6자리">
                         </div>
                         <div class="input-group">
                             <div class="gender">
@@ -65,23 +65,22 @@
                         </div>
                         <div class="input-group">
                             <label for="user_email"><span class="star">*</span> 이메일 주소</label>
-                            <%if(mySession != null){ %>
-                            <input id="user_email" name="user_email"type="text" placeholder="<%=mySession%>" disabled>
-                            <%} %>
+                            <input id="user_email" name="user_email"type="text" placeholder="이메일">
+
                         </div>
                         <div class="input-group">
                             <label for="user_phone"><span class="star">*</span> 휴대폰 번호</label>
-                            <input id="user_phone" name="user_phone" type="text" placeholder="휴대폰 번호를 -없이 입력해주세요">
+                            <input id="user_phone" name="phone" type="text" placeholder="휴대폰 번호를 -없이 입력해주세요">
                         </div>
                         <div class="input-group">
                             <label for="user_postcode"><span class="star">*</span> 주소</label>
-                            <input id="user_postcode" name="user_postcode" type="text" placeholder="우편번호" class="postcodify_postcode5" >
-                            <button type="button"name="postcode" class="btn btn-default" id="addrsc">우편번호 검색</button>
+                            <input id="user_postcode" name="postcode" type="text" placeholder="우편번호" class="postcodify_postcode5" >
+                            <button type="button"name="user_postcode" class="btn btn-default" id="addrsc">우편번호 검색</button>
                         </div>
 
                         <div class="input-group">
                             <label for="user_addr"></label>
-                            <input id="user_addr" name="user_addr" type="text" placeholder="" class="postcodify_address" >
+                            <input id="user_addr" name="addr" type="text" placeholder="" class="postcodify_address" >
                         </div>
                         <div class="input-group">
                             <label for="addr_detail"></label>
@@ -96,9 +95,9 @@
                 </form>
             </div>
         </div>
-        <script src="../plugins/validate/jquery.validate.min.js"></script>
-        <script src="../plugins/validate/additional-methods.min.js"></script>
+        <script src="../assets/plugins/validate/jquery.validate.min.js"></script>
+        <script src="../assets/plugins/validate/additional-methods.min.js"></script>
         <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-        <script src="../js_files/account_05putMemInfo.js"></script>
+      <script src="../assets/js_files/account_05putMemInfo.js"></script> 
 
 <%@ include file="../_inc/footer.jsp" %>
