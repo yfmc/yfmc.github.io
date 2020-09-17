@@ -69,7 +69,7 @@
                 <ul>
                     <li><a href="${pageContext.request.contextPath}/login/01-login.do" class="login">로그인</a></li>
                     <li><a href="${pageContext.request.contextPath}/account/01-welcome.do">&nbsp;회원가입</a></li>
-                    <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.jsp">&nbsp;마이페이지</a></li>
+                    <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.do">&nbsp;마이페이지</a></li>
                 </ul>
             </div>
         </div>

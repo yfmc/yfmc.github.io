@@ -56,7 +56,14 @@
 	         						<h4>${item.branch} ${item.peonum}명 (${item.seatno})</h4>
 	         					</span>
 	         					<!-- 예매취소 버튼 -->
-	         					<input type="button" value="예매취소" class="btn cancelbtn" />
+	         					<c:choose>
+	         						<c:when test="${item.bookok=='Y'}">
+	         							<input type="button" value="예매취소" class="btn cancelbtn"/>
+	         						</c:when>
+	         						<c:otherwise>
+	         							<input type="button" value="취소불가" class="btn cancelbtn" disabled/>
+	         						</c:otherwise>
+	         					</c:choose>
 	         				</li>
          				</ul>
                 		</c:forEach>
@@ -76,7 +83,7 @@
 									<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
 								</c:when>
 								<c:otherwise>
-									<li class="page-item"><a class="page-link" href="#">이전</a></li>
+									<li class="page-item"><a class="page-link">이전</a></li>
 								</c:otherwise>
 							</c:choose>
 							
@@ -86,10 +93,10 @@
 								</c:url>
 								<c:choose>
 									<c:when test="${pageData.nowPage ==i}">
-										<li class="page-item page-link"><a class="page-link" href="#">[${i}]</a></li>
+										<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
 									</c:when>
 									<c:otherwise>
-										<li class="page-item"><a class="page-link" href="${pageUrl}">[${i}]</a></li>
+										<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>
@@ -102,7 +109,7 @@
 										<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
 								</c:when>
 								<c:otherwise>
-									<li class="page-item page-link"><a class="page-link" href="#">다음</a></li>
+									<li class="page-item page-link"><a class="page-link">다음</a></li>
 								</c:otherwise>
 							</c:choose>
 						</ul>

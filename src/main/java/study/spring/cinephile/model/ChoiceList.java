@@ -3,15 +3,15 @@ package study.spring.cinephile.model;
 import lombok.Data;
 
 @Data
-public class BookingList {
-	private int bookingid;
+public class ChoiceList {
+
+	private int choiceid;
 	private String title;
 	private String poster;
-	private String lookdate;
-	private String branch;
-	private int peonum;
-	private String seatno;
-	private String bookok;
+	private float rate;
+	private String genre;
+	private String bookingok;
+	
 	
 	private static int offset;
 	private static int listCount;
@@ -21,7 +21,7 @@ public class BookingList {
 	}
 	
 	public static void setOffset(int offset) {
-		BookingList.offset=offset;
+		ChoiceList.offset=offset;
 	}
 	
 	public static int getListCount() {
@@ -29,6 +29,6 @@ public class BookingList {
 	}
 	
 	public static void setListCount(int listCount) {
-		BookingList.listCount=listCount;
+		ChoiceList.listCount=listCount;
 	}
 }

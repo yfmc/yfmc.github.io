@@ -38,11 +38,6 @@ $(function(){
 		location.href="../booking/01-booking_time.do";
 	});
 	
-	$(".page-link").click(function(e){		//현재 있는 페이지버튼에 색깔넣기
-		e.preventDefault();
-		$(this).attr("style","background:#a8a8a8");
-		$(".page-link").not($(this)).attr("style","background:white");
-	});
 	
 	$.fn.generateStars = function() {		//별점 표시
 		return this.each(function(i, e) {
