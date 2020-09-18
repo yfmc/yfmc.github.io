@@ -62,7 +62,7 @@
 		parameterType="study.spring.cinephile.model.Members"
 		useGeneratedKeys="true"
 		keyProperty="members_id">
-		insert into members (user_id, user_pw, user_name,  birthdate, gender, user_email, phone, postcode, addr, addr_detail, is_out, reg_date, edit_date) values (#{user_id}, #{user_pw}, #{user_name}, #{birthdate}, #{gender}, #{user_email}, #{phone}, #{postcode}, #{addr}, #{addr_detail}, #{is_out}, now(), now());
+		insert into members (user_id, user_pw, user_name,  birthdate, gender, user_email, phone, postcode, addr, addr_detail, is_out, reg_date, edit_date) values (#{user_id}, MD5(#{user_pw}), #{user_name}, #{birthdate}, #{gender}, #{user_email}, #{phone}, #{postcode}, #{addr}, #{addr_detail}, #{is_out}, now(), now());
 	</insert>
 		
 	<!-- 데이터 삭제를 위한 기능 정의 -->
