@@ -18,13 +18,13 @@
 			<!-- 이미지 슬라이드 -->
 			<div class="carousel-inner">
 				<div class="item active">
-					<img src="assets/img/alive.jpg">
+					<img src="<%=request.getContextPath()%>/assets/img/alive.jpg">
 				</div>
 				<div class="item">
-					<img src="assets/img/bando2.jpg">
+					<img src="<%=request.getContextPath()%>/assets/img/bando2.jpg">
 				</div>
 				<div class="item">
-					<img src="assets/img/akak.jpg">
+					<img src="<%=request.getContextPath()%>/assets/img/akak.jpg">
 				</div>
 			</div>
 			<!-- 이전,다음 버튼 -->
@@ -42,7 +42,7 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="assets/img/ar1.jpg" class="img-responsive" />
+					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar1.jpg" class="img-responsive" />
 						<h4>리뷰 | ‘SF8-블링크’, 클리셰 범벅에 한숨만 푹</h4>
 					</a>
 				</div>
@@ -52,7 +52,7 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="assets/img/ar2.jpg" class="img-responsive" />
+					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar2.jpg" class="img-responsive" />
 						<h4>이슈 | HBO 맥스, ‘배트맨’ 드라마 제작 확정</h4>
 					</a>
 				</div>
@@ -62,7 +62,7 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="assets/img/ar3.jfif" class="img-responsive" />
+					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar3.jfif" class="img-responsive" />
 						<h4>인터뷰 | ‘반도’ 연상호 감독 “이레, 첫 만남에 크게 될 배우라 느껴”</h4>
 					</a>
 				</div>
@@ -72,7 +72,7 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="assets/img/ar4.jpg" class="img-responsive" />
+					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar4.jpg" class="img-responsive" />
 						<h4>기획 | 퀸의 귀환, 만능 엔터테이너 엄정화의 화려한 필모</h4>
 					</a>
 				</div>

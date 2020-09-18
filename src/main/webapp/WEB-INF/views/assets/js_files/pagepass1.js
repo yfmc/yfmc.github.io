@@ -35,16 +35,16 @@ function pagePass(totalData, dataPerPage, pageCount, currentPage){
     var html = "";
     
     if(prev > 0)
-        html += '<a href="${pageContext.request.contextPath}/movie/MovieNews2.do" id="prev"><</a> ';
+        html += '<a href=MovieNews2.do" id="prev"><</a> ';
         
     
     for(var i=first; i <= last; i++){
-        html += "<a href=${pageContext.request.contextPath}/movie/MovieNews"+i+".do"+" "+"id=" + i + ">" + i + "</a> ";
+        html += "<a href=MovieNews"+i+".do"+" "+"id=" + i + ">" + i + "</a> ";
     }
     
     
     if(last < totalPage)
-        html += "<a href=${pageContext.request.contextPath}/movie/MovieNews6.do"+" "+"id=next>"+">"+"</a>";
+        html += "<a href=MovieNews6.do"+" "+"id=next>"+">"+"</a>";
     
     $("#pagePass").html(html);    // 페이지 목록 생성
     $("#pagePass a").css("color", "black");

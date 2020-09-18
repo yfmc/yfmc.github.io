@@ -13,7 +13,7 @@ public static final String BASE_URL = "http://www.kobis.or.kr";
 	Call<SearchDailyBoxOfficeList> getSearchDailyBoxOfficeList(@Query("targetDt") String targetDt);
 	
 	@GET("/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=2b1cdc092447d60ec9545657d90b3aaa&weekGb=0")
-	Call<SearchWeeklyBoxOfficeList> getSearchWeeklyBoxOfficeList(@Query("targetDt") String targetDt);
+	Call<SearchWeeklyBoxOfficeList> getSearchWeeklyBoxOfficeList(@Query("targetDt") String targetDt2);
 	
 	//@GET("/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=2b1cdc092447d60ec9545657d90b3aaa&weekGb=0")
 	//Call<SearchWeeklyBoxOfficeList> getSearchWeeklyBoxOfficerange(@Query("showRange") String showRange);

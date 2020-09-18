@@ -52,16 +52,22 @@ public class StatisticsController {
 					date = String.format("%04d-%02d-%02d", c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DAY_OF_MONTH));
 					
 				}
+				
 				//영화 진흥원에 api 요청
 				String targetDt = date.replace("-", "");
 				//String showRange2 = showRange;
+				
+				int tmp = Integer.parseInt(targetDt);
+				int tmp2 = tmp-7;
+				
+				String targetDt2 = Integer.toString(tmp2);
 				
 				//영화진흥원 openApi를 통해 검색결과 반영하기
 				Call<SearchDailyBoxOfficeList> call = apiKobisService.getSearchDailyBoxOfficeList(targetDt);
 				SearchDailyBoxOfficeList searchDailyBoxOfficeList = null;
 				
 				//영화진흥원 openApi를 통해 검색결과 반영하기
-				Call<SearchWeeklyBoxOfficeList> call2 = apiKobisService.getSearchWeeklyBoxOfficeList(targetDt);
+				Call<SearchWeeklyBoxOfficeList> call2 = apiKobisService.getSearchWeeklyBoxOfficeList(targetDt2);
 				SearchWeeklyBoxOfficeList searchWeeklyBoxOfficeList = null;
 				
 				//Call<SearchWeeklyBoxOfficeList> call3 = apiKobisService.getSearchWeeklyBoxOfficerange(showRange);
@@ -142,6 +148,7 @@ public class StatisticsController {
 				model.addAttribute("audiCntStr",audiCntStr);
 				
 				model.addAttribute("list2", list2);
+				model.addAttribute("targetDt2", targetDt2);
 				model.addAttribute("movieNmStr2",movieNmStr2);
 				model.addAttribute("audiCntStr2",audiCntStr2);
 				//model.addAttribute("showRange2", showRange2);

@@ -1,68 +1,75 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page trimDirectiveWhitespaces="true" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Statistics.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/Statistics.css?time=<%=System.currentTimeMillis()%>">
 <meta charset="utf-8" />
 <title>통계 | Cinephile</title>
-<link rel="stylesheet" type="text/css" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" />
 <!-- ========== 컨텐츠 영역 시작 ========== -->
 <div class="contentHeight">
-        <div class="content">
-            <!-- 통계 전체 부분 -->
-            <!-- 통계시작 -->
-            <div class="statistics">
-                <h2>통계</h2>
-			<form name="statistics_form" method="get" action="${pageContext.request.contextPath}/movie/Statistics.do">
-			<input type="hidden" id="date" name="date" value="${date}"/>
-			<input type="hidden" value="검색하기"/>
-            <div class="form-group statistics-check">
-                <div class="statistics-radio">
-                    <label class="radio-inline">
-                        <input type="radio" name="myradio" id="radio1" value="radio1" checked/>
-                        박스오피스 순위
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="myradio" id="radio2" value="radio2" />
-                        최근 일주일 영화별 관람객 수
-                    </label>
-                    
-                </div>
-            </div>
-            <!-- 통계자료 끝 -->
-            </form>
-            <!-- 통계자료 사진 넣기 -->
-            <span>
-            <!--<div style="display:display" id="chart-text" class="chart-text">
+	<div class="content">
+		<!-- 통계 전체 부분 -->
+		<!-- 통계시작 -->
+		<div class="statistics">
+			<h2>통계</h2>
+			<form name="statistics_form" method="get"
+				action="${pageContext.request.contextPath}/movie/Statistics.do">
+				<input type="hidden" id="date" name="date" value="${date}" /> <input
+					type="hidden" value="검색하기" />
+				<div class="form-group statistics-check">
+					<div class="statistics-radio">
+						<label class="radio-inline"> <input type="radio"
+							name="myradio" id="radio1" value="radio1" checked /> 박스오피스 순위
+						</label> <label class="radio-inline"> <input type="radio"
+							name="myradio" id="radio2" value="radio2" /> 최근 일주일 영화별 관람객 수
+						</label>
+
+					</div>
+				</div>
+				<!-- 통계자료 끝 -->
+			</form>
+			<!-- 통계자료 사진 넣기 -->
+			<span> <!--<div style="display:display" id="chart-text" class="chart-text">
             <p>원하는 통계값을 선택해주세요.(일별/주간)</p>
             </div>-->
-                <div style = "height:600px; display:none;" id="chart1">
-                	<canvas id="myChart"></canvas>
-                </div>
-                <div style = "height:600px; display:none;" id="chart2">
-                	<canvas id="myChart2"></canvas>
-                </div>
-            </span>
-            </div>
-            
-            <!-- 통계끝 -->
-        </div>
-    </div>
-    
+				<div style="height: 600px; display: none;" id="chart1">
+					<canvas id="myChart"></canvas>
+				</div>
+				<div style="height: 600px; display: none;" id="chart2">
+					<canvas id="myChart2"></canvas>
+				</div>
+			</span>
+		</div>
+
+		<!-- 통계끝 -->
+	</div>
+</div>
+
 <!-- side바 -->
 
-	<div class="icon-bar">
-  		<a href="${pageContext.request.contextPath}/movie/nowMoving.jsp?time=<%=System.currentTimeMillis()%>" class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> 
-  		<a href="${pageContext.request.contextPath}/movie/MovieSearch.jsp?time=<%=System.currentTimeMillis()%>" class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a> 
- 		 <a href="${pageContext.request.contextPath}/movie/MovieNews1.jsp?time=<%=System.currentTimeMillis()%>" class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a> 
-  		<a href="${pageContext.request.contextPath}/movie/Statistics.jsp?time=<%=System.currentTimeMillis()%>" class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
-	</div>
+<div class="icon-bar">
+	<a
+		href="${pageContext.request.contextPath}/assets/movie/nowMoving.do?time=<%=System.currentTimeMillis()%>"
+		class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> 
+	<a href="${pageContext.request.contextPath}/assets/movie/MovieSearch.do?time=<%=System.currentTimeMillis()%>"
+		class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a>
+	<a
+		href="${pageContext.request.contextPath}/assets/movie/MovieNews1.do?time=<%=System.currentTimeMillis()%>"
+		class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a>
+	<a
+		href="${pageContext.request.contextPath}/assets/movie/Statistics.do?time=<%=System.currentTimeMillis()%>"
+		class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
+</div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <script>
 	
 	//document.statistics_form.myradio[0].checked
