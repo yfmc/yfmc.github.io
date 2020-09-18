@@ -10,7 +10,8 @@
 		            <div class="notice_title">
 				     	<h3>공지사항 글 작성</h3>
 		            </div>
-		            <form class="form-horizontal"  name="notice_form" id="notice_form">
+		            <form class="form-horizontal"  name="notice_form" id="notice_form"
+						action="${pageContext.request.contextPath}/admin/admin_notice_write_ok.do">
 			            <div class="form-group">
 				            <label for="notice_title"  class="must col-xs-2 ">제목</label>
 				            <div class="col-xs-10">
@@ -30,13 +31,5 @@
 		        </div>
             </div>
         </div>
-    
-	<script type="text/javascript">
-	$("#notice_form").submit(function(e) {
-		e.preventDefault();
-        alert("등록이 완료되었습니다.");
-        location.href="<%=request.getContextPath()%>/admin/admin_notice_list.do";
-    });
-	</script>
     
 <%@ include file="../_inc/admin_footer.jsp" %>
