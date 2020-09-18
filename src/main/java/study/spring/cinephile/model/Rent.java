@@ -15,5 +15,7 @@ public class Rent {
 	private String tel;
 	private String email;
 	private int members_id;
+	private String reg_date;
+	private String edit_date;
 	
 }
