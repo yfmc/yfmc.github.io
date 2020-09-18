@@ -113,7 +113,7 @@
 				
 				//'취소' 버튼 누르면 메인으로
 				$(document).on("click",".out",function(){
-					location.href="../mypage/mypagemain.jsp";
+					location.href="../mypage/mypagemain.do";
 				});
 				
 				//체크박스를 넣어 원할 때에만 이메일 변경 가능하게 함

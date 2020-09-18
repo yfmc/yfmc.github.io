@@ -14,9 +14,10 @@ $(function(){
 			
 			var user_email_val = $("#user_email").val();
 			
-				$.post("idcheck.json", {user_email:user_email_val}, function(req){
-					
-					if(user_email_val == req.user_email){
+				$.get("${pageContext.request.contextPath}/Email/", {user_email:user_email_val}, function(req){
+					//입력된 값을 DB조회 한다. 리턴값으 Map<value, object>
+					for (var i = 0; i < req.item.length; i++) {
+					if(user_email_val == req.item[i].user_email){
 						alert("사용할 수 없는 이메일 입니다.");
 						$("#user_email").val("");
 						$("#user_email").focus();					
@@ -25,6 +26,7 @@ $(function(){
 						$('#email_check').prop("disabled",false); 
 						$("#email_check").focus();
 						}
+					 }
 					});//end $.post
 			}
 		}); //uniq_chekc end

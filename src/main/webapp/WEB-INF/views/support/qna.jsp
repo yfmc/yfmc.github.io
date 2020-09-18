@@ -1,20 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_home.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_qna.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_qna.css?time=<%=System.currentTimeMillis()%>">
     	<div class="row">
 	        <div id="contents">
-	            <!-- ==== 사이드 바 ==== -->
-	            <ul class="sidebar">
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
-	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.jsp">대관문의</a></li>
+		        <!-- ==== 사이드 바 ==== -->
+		        <ul class="sidebar">
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.do">고객센터 홈</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.do">공지사항</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.do">자주찾는 질문</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.do">1:1 문의</a></li>
+	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.do">대관문의</a></li>
 	            </ul>
-	            <!-- ==== 사이드바 끝 ==== -->
+		        <!-- ==== 사이드바 끝 ==== -->
 	            <!-- ==== 본문 시작 ==== -->
 	            <div class="content">
 		                <div class="qna_title">
@@ -41,9 +41,9 @@
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
-		                            <label for="qna_contents"  class="must col-xs-2 ">내용</label>
+		                            <label for="qna_content"  class="must col-xs-2 ">내용</label>
 		                            <div class="col-xs-10">
-		                                <textarea name="qna_contents" id="qna_contents" class="form-control"  /></textarea>
+		                                <textarea name="qna_content" id="qna_content" class="form-control"  /></textarea>
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
@@ -113,8 +113,8 @@
 	            <!-- ==== 본문 끝 ==== -->
 	        </div>
 	    </div>
-		<script src="../plugins/validate/jquery.validate.min.js"></script>
-		<script src="../plugins/validate/additional-methods.min.js"></script>
+		<script src="../assets/plugins/validate/jquery.validate.min.js"></script>
+		<script src="../assets/plugins/validate/additional-methods.min.js"></script>
 	    <script type="text/javascript">
 	    $(function() {
 	    	$.validator.addMethod("kor", function(value, element) {
@@ -160,7 +160,7 @@
 	            	return false;
 	            } else {
 	            	alert("등록이 완료되었습니다.");
-	            	location.href="<%=request.getContextPath()%>/support/qna_complete.jsp";
+	            	location.href="<%=request.getContextPath()%>/support/qna_complete.do";
 	            }
 	        });
 	    });

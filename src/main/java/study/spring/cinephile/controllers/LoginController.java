@@ -20,7 +20,7 @@ public class LoginController {
 	WebHelper webHelper;
 	
 	@RequestMapping(value="/login/01-login.do")
-	public ModelAndView login(Model model) {
+	public ModelAndView login() {
 		return new ModelAndView("login/01-login");
 	}
 	
@@ -44,5 +44,10 @@ public class LoginController {
 
 		
 		return new ModelAndView("home");
+	}
+	
+	@RequestMapping(value="/login/02-findidpassword.do")
+	public ModelAndView findid() {
+		return new ModelAndView("login/02-findidpassword");
 	}
 }

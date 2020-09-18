@@ -29,20 +29,19 @@
 	padding-top: 80px;
 }
 
+.booking_stage li:hover {
+	cursor: default;
+}
+
 .booking_stage li:first-child {
 	border-top: 1px solid black;
 }
 
-.booking_stage li:first-child:hover {
+.booking_stage li:first-child:hover, .booking_stage li:nth-child(2):hover {
 	background-color: #4d4d4d;
 	color: white;
 	font-weight: bold;
-}
-
-.booking_stage li:nth-child(2):hover {
-	background-color: #4d4d4d;
-	color: white;
-	font-weight: bold;
+	cursor: pointer;
 }
 
 .booking_stage li:nth-child(3) {
@@ -69,6 +68,10 @@
 	text-align: center;
 	font-weight: bold;
 	color: white;
+}
+
+.booking_title:hover {
+	cursor: default;
 }
 
 /* 하단 영역 */
@@ -120,7 +123,7 @@
 
 /* '최종 결제수단 선택' */
 .choose_payment h2 {
-	margin-top: 50px;
+	margin-top: 70px;
 	text-align: center;
 	font-weight: bold;
 }
@@ -132,11 +135,23 @@
 	margin-top: 40px;
 }
 
-.payment_radio > button {
+/* 라디오 선택 동그라미 삭제 */
+input[type="radio"] {
+	-webkit-appearance: none;
+}
+
+.payment_radio label {
 	display: inline-block;
-	width: 130px;
+	width: 120px;
 	margin: 10px;
 	padding: 10px;
+	border: 3px solid black;
+	text-align: center;
+	transition: 0.5s;
+}
+
+.payment_radio label:hover {
+	cursor: pointer;
 }
 
 .payment_radio i {
@@ -145,8 +160,14 @@
 }
 
 .payment_radio span {
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
+}
+
+/* 네모 영역을 라디오 버튼 영역으로 설정 */
+input[type="radio"]:checked+label {
+	background-color: black;
+	color: #eee;
 }
 
 .choose_payment h3 {

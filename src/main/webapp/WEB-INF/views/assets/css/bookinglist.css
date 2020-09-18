@@ -149,3 +149,11 @@
     margin-top: -25px;
     margin-left: 375px;
 }
+
+.pagination>li>a{
+	padding:6px 8px;
+}
+
+.thispage{
+	color:#222222;
+}

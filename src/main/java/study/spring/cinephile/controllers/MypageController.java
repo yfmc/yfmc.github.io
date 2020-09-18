@@ -15,15 +15,15 @@ import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
-import study.spring.cinephile.model.BookingList;
-import study.spring.cinephile.service.BookingListService;
+
 
 @Slf4j
 @Controller
 public class MypageController {
 	@Autowired WebHelper webHelper;
 	@Autowired RegexHelper regexHelper;
-	@Autowired BookingListService bookingListService;
+
+	
 	
 	@Value("#{servletContext.contextPath}")
 	String contextPath;
@@ -36,34 +36,9 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/bookinglist.do",method=RequestMethod.GET)
-	public ModelAndView bookinglist(Model model,
-			@RequestParam(value="page",defaultValue="1") int nowPage) {
+	public String bookinglist(Model model) {
 		
-		int totalCount=0;
-		int listCount=5;
-		int pageCount=5;
-		
-		BookingList input=new BookingList();
-		
-		List<BookingList> output=null;
-		PageData pageData=null;
-		
-		try {
-			totalCount=bookingListService.getBookingListCount(input);
-			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
-			
-			BookingList.setOffset(pageData.getOffset());
-			BookingList.setListCount(pageData.getListCount());
-			
-			output=bookingListService.getBookingListList(input);
-		} catch (Exception e) {
-			return webHelper.redirect(null, e.getLocalizedMessage());
-		}
-		
-		model.addAttribute("output",output);
-		model.addAttribute("pageData",pageData);
-		
-		return new ModelAndView("mypage/bookinglist");
+		return "mypage/bookinglist";
 	}
 	
 	@RequestMapping(value="/mypage/changeinfo-(1).do",method=RequestMethod.GET)
@@ -86,6 +61,7 @@ public class MypageController {
 	
 	@RequestMapping(value="/mypage/choicelist.do",method=RequestMethod.GET)
 	public String choicelist(Model model) {
+		
 		
 		return "mypage/choicelist";
 	}

@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<%@ include file="/_inc/header.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="../_inc/header.jsp"%>
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Booking_confirmed.css?time=<%=System.currentTimeMillis()%>" />
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/Booking_confirmed.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/Branch_yeti.css?time=<%=System.currentTimeMillis()%>" />
 
-<title>예매완료 < 예매 | Cinephile</title>
+<title>예매완료 > 예매 | Cinephile</title>
 
 <!-- content -->
 <div id="content">
@@ -40,7 +43,7 @@
 					</div>
 				</div>
 				<div class="exit_btn">
-					<button class="go_to_main" type="button" onclick="goMain();">메인으로 가기</button>
+					<button class="go_to_main" type="button">메인으로 가기</button>
 					<button class="go_to_mypage" type="button">나의 예매내역으로 가기</button>
 				</div>
 			</div>
@@ -53,10 +56,6 @@
 	</div>
 </div>
 
-<!-- Javascript -->
-<script type="text/javascript">
-function goMain() {
-	location.href="<%=request.getContextPath()%>/index.jsp";
-}
-</script>
-<%@ include file="/_inc/footer.jsp"%>
+<!-- js 파일 적용 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js_files/booking_confirmed.js"></script>
+<%@ include file="../_inc/footer.jsp"%>

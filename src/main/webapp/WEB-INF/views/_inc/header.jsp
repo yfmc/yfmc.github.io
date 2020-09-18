@@ -34,7 +34,7 @@
     <div id="container">
         <div id="header">
         	<div class="filmlogo_header">
-        		<a href="<%=request.getContextPath()%>/index.jsp"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" /></a>
+        		<a href="${pageContext.request.contextPath}/index.do"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnogAg%2FbtqFWY15hQN%2FVGrVJLX5KA47ap52Q6jHZK%2Fimg.png" /></a>
             </div>
             <div class="menu">
                 <ul class="mainnav">
@@ -48,19 +48,19 @@
                         </ul>
                     </li>
                     <li class="nav">
-                        <a href="#" class="mains">예매</a>
+                        <a href="${pageContext.request.contextPath}/booking/01-booking_time.do" class="mains">예매</a>
                         <ul class="subnav">
-                            <li><a href="<%=request.getContextPath()%>/booking/01-booking_time.jsp">예매하기</a></li>
-                            <li><a href="<%=request.getContextPath()%>/booking/05-timetable.jsp">극장별시간표</a></li>
+                            <li><a href="${pageContext.request.contextPath}/booking/01-booking_time.do">예매하기</a></li>
+                            <li><a href="${pageContext.request.contextPath}/timetable.do">극장별시간표</a></li>
                         </ul>
                     </li>
-                    <li class="nav"><a href="<%=request.getContextPath()%>/branch/01-branch.jsp" class="mains">극장</a></li>
+                    <li class="nav"><a href="${pageContext.request.contextPath}/branch.do" class="mains">극장</a></li>
                     <li class="nav">
-                        <a href="<%=request.getContextPath()%>/support/support_home.jsp" class="mains">고객센터</a>
+                        <a href="<%=request.getContextPath()%>/support/support_home.do" class="mains">고객센터</a>
                         <ul class="subnav">
-                            <li><a href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
-                            <li><a href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는질문</a></li>
-                            <li><a href="<%=request.getContextPath()%>/support/qna.jsp">1:1문의</a></li>
+                            <li><a href="<%=request.getContextPath()%>/support/notice_list.do">공지사항</a></li>
+                            <li><a href="<%=request.getContextPath()%>/support/faq_list.do">자주찾는질문</a></li>
+                            <li><a href="<%=request.getContextPath()%>/support/qna.do">1:1문의</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -69,7 +69,7 @@
                 <ul>
                     <li><a href="${pageContext.request.contextPath}/login/01-login.do" class="login">로그인</a></li>
                     <li><a href="${pageContext.request.contextPath}/account/01-welcome.do">&nbsp;회원가입</a></li>
-                    <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.jsp">&nbsp;마이페이지</a></li>
+                    <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.do">&nbsp;마이페이지</a></li>
                 </ul>
             </div>
         </div>

@@ -29,6 +29,10 @@
 	padding-top: 80px;
 }
 
+.booking_stage li:hover {
+	cursor: default;
+}
+
 .booking_stage li:first-child {
 	border-top: 1px solid black;
 }
@@ -37,6 +41,7 @@
 	background-color: #4d4d4d;
 	color: white;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .booking_stage li:nth-child(2) {
@@ -63,6 +68,10 @@
 	text-align: center;
 	font-weight: bold;
 	color: white;
+}
+
+.booking_title:hover {
+	cursor: default;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
@@ -95,6 +104,11 @@
 	display: block;
 	float: left;
 	width: 480px;
+	/* 텍스트 드래그, 선택 방지 */
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 /* 인원 분류 영역 3개 */
@@ -156,10 +170,19 @@
 	font-weight: bold;
 }
 
+.screen:hover {
+	cursor: default;
+}
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 /* 중반부 */
 .seats_body {
 	height: 490px;
+	/* 텍스트 드래그, 선택 방지 */
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 
 /* 좌석 버튼 영역 */
@@ -184,18 +207,6 @@
 	position: absolute;
 	width: 20px;
 	height: 16px;
-}
-
-/* 좌석 버튼 (span) */
-.seat_num {
-	display: block;
-	width: 20px;
-	height: 16px;
-	background: #e8e8e8;
-	color: #000;
-	font-size: 10px;
-	text-align: center;
-	border-radius: 7px 7px 2px 0px;
 }
 
 /* 좌석 버튼 (a) */
@@ -232,7 +243,7 @@
 }
 
 /* 선택가능 */
-.seat_able {
+.seat_able, a.seat_able {
 	display: block;
 	width: 20px;
 	height: 16px;
@@ -244,7 +255,7 @@
 }
 
 /* 선택좌석 */
-.seat_selected {
+.seat_selected, a.seat_selected {
 	display: block;
 	width: 20px;
 	height: 16px;
@@ -256,7 +267,7 @@
 }
 
 /* 예매완료 */
-.seat_sold {
+.seat_sold, a.seat_sold {
 	display: block;
 	width: 20px;
 	height: 16px;
@@ -265,22 +276,31 @@
 	font-size: 10px;
 	text-align: center;
 	border-radius: 7px 7px 2px 0px;
+	cursor: default;
 }
 
 /* 예매불가 */
-.seat_unable {
+.seat_unable, a.seat_unable {
 	display: block;
 	width: 20px;
 	height: 16px;
 	background: #000;
-	color: #fff;
 	font-size: 10px;
 	text-align: center;
 	border-radius: 7px 7px 2px 0px;
+	cursor: default;
+}
+
+a.seat_able, a.seat_disabled, a.seat_selected {
+	cursor: pointer;
+}
+
+a.seat_unable {
+	cursor: not-allowed;
 }
 
 /* 장애인석 */
-.seat_disabled {
+.seat_disabled, a.seat_disabled {
 	display: block;
 	width: 20px;
 	height: 16px;
@@ -291,43 +311,67 @@
 	border-radius: 7px 7px 2px 0px;
 }
 
-/* 총 금액 안내 */
+/* 선택 좌석, 요금 안내 영역 */
 .seats_price {
 	width: 430px;
 	height: 130px;
 	float:left;
 }
 
-.seats_price > h4 {
+/* 선택 좌석 */
+.seat_info {
+	display: block;
 	margin-top: 20px;
-	text-align: center;
+	margin-left: 20px;
+	text-align: left;
 	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
 }
 
-.seats_price > h3 {
-	text-align: center;
+/* 총 금액 */
+.price_info {
+	display: block;
+	margin-top: 20px;
+	margin-left: 20px;
+	text-align: left;
 	color: #fff;
+	font-size: 25px;
+	font-weight: bold;
 }
 
 
 /* 결제하기 버튼 */
 .go_to_next {
-	text-align: center;
-	height: 130px;
-	float: right;
-}
-
-.go_to_next > a {
-	display: block;
-	border: 2px solid black;
 	width: 130px;
-	height: 100%;
-	padding-top: 20px;
-	font-size: 25px;
-	color: black;
+	height: 130px;
+	display: block;
+	float: right;
+	text-align: center;
+	font-size: 23px;
+	font-weight: bold;
+	box-shadow: none;
+	border: none;
+	
+	/* 비활성화 상태  */
+	cursor: default;
+	background-color: #808080;
+	color: #eee;
+	
 }
 
-.go_to_next > a:hover {
+/* 활성화 상태 */
+.go_to_next.active {
+	cursor: pointer;
+	background-color: #4d4d4d;
+	color: #fff;
+}
+
+.go_to_next:focus {
+	outline: none;
+}
+
+.go_to_next.active {
 	cursor: pointer;
 	background-color: black;
 	color: white;

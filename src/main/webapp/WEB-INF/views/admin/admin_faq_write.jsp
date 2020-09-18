@@ -18,9 +18,9 @@
 				            </div>
 			            </div>
 			            <div class="form-group">
-				            <label for="faq_contents"  class="must col-xs-2 ">내용</label>
+				            <label for="faq_content"  class="must col-xs-2 ">내용</label>
 					        <div class="col-xs-10">
-					            <textarea name="faq_contents" id="faq_contents" class="form-control"  /></textarea>
+					            <textarea name="faq_content" id="faq_content" class="form-control"  /></textarea>
 					        </div>
 				        </div>
 				        <div class="btn_btm_wrap">
@@ -34,7 +34,7 @@
 	$("#faq_form").submit(function(e) {
 		e.preventDefault();
         alert("등록이 완료되었습니다.");
-        location.href="<%=request.getContextPath()%>/admin/admin_faq_list.jsp";
+        location.href="<%=request.getContextPath()%>/admin/admin_faq_list.do";
     });
 	</script>
     

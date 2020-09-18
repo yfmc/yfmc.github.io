@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login_02findidpassword.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/login_02findidpassword.css?time=<%=System.currentTimeMillis()%>" />
 
     <div id="content">
 
@@ -19,7 +19,7 @@
 
                 <div class="loginbt">
                     <button type="submit" class="btn btn-default" id="findid">아이디 찾기</button>
-                    <a href="01-login.jsp"><button type="button" class="btn btn-default">취소</button></a>
+                    <a href="<%=request.getContextPath()%>/login/01-login.do"><button type="button" class="btn btn-default">취소</button></a>
                 </div>
                 </form>
             </div>
@@ -43,11 +43,11 @@
 
                 <div class="loginbt">
                     <button type="submit" class="btn btn-default" id="findpw">비밀번호 찾기</button>
-                    <a href="<%=request.getContextPath()%>/login/01-login.jsp"><button type="button" class="btn btn-default">취소</button></a>
+                    <a href="<%=request.getContextPath()%>/login/01-login.do"><button type="button" class="btn btn-default">취소</button></a>
 
                 </div>
                 </form>
             </div>
         </div>
-<script src="../js_files/login_02findidpassword.js"></script>
+<script src="../assets/js_files/login_02findidpassword.js"></script>
 <%@ include file="../_inc/footer.jsp" %>

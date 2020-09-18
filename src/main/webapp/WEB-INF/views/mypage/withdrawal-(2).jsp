@@ -23,7 +23,7 @@
         // '메인으로 가기' 버튼 누르면 사이트 메인으로 이동
         $(function(){
         	$(document).on("click",".indexgo",function(){
-        		location.href="../home.do";
+        		location.href="../index.do";
         	});
         });
         </script>

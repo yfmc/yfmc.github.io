@@ -9,7 +9,7 @@
 	                <div class="unanswer_list panel panel-default">
 		                <div class="panel-heading">
 		                            1:1문의 미답변 목록
-		                            <a href="<%=request.getContextPath()%>/admin/admin_qna_list.jsp" class="more pull-right">더보기 > </a>
+		                            <a href="<%=request.getContextPath()%>/admin/admin_qna_list.do" class="more pull-right">더보기 > </a>
 		                </div>
 		                <div class="panel-body">
 			            	<table class="table table-striped table-bordered unanswer_table">
@@ -45,7 +45,7 @@
 		            <div class="notice_list_pre panel panel-default">
 		                <div class="panel-heading">
 		                            공지사항 목록
-		                            <a href="<%=request.getContextPath()%>/admin/admin_notice_list.jsp" class="more pull-right">더보기 > </a>
+		                            <a href="<%=request.getContextPath()%>/admin/admin_notice_list.do" class="more pull-right">더보기 > </a>
 		                </div>
 		                <div class="panel-body">
 			            	<table class="table table-striped table-bordered unanswer_table">
@@ -101,7 +101,7 @@
     
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-	<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="../assets/plugins/datatables/datatables.min.js"></script>
 	<script type="text/javascript">
 		var ctx = document.getElementById('booking_count');
 		var myChart = new Chart(ctx, {

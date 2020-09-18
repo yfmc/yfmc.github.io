@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/admin_header.jsp" %>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/admin_detail.css" >
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin_detail.css" >
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -34,12 +34,12 @@
                 </tbody>
             </table>
             <div class="list_button">
-                <a href="<%=request.getContextPath()%>/admin/admin_qna_list.jsp" class=" btn btn-success pull-right">목록으로</a>
-                <a href="<%=request.getContextPath()%>/admin/admin_qna_list.jsp" class=" btn btn-primary pull-right">답변하기</a>
+                <a href="<%=request.getContextPath()%>/admin/admin_qna_list.do" class=" btn btn-success pull-right">목록으로</a>
+                <a href="<%=request.getContextPath()%>/admin/admin_qna_list.do" class=" btn btn-primary pull-right">답변하기</a>
             </div>
         </div>
     </div>
     
-	<script type="text/javascript" src="../plugins/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="../assets/plugins/datatables/datatables.min.js"></script>
 	
 <%@ include file="../_inc/admin_footer.jsp" %>

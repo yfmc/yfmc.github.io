@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="/_inc/header.jsp" %>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_home.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/support_detail.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_detail.css?time=<%=System.currentTimeMillis()%>">
     <title>공지사항 글</title>
     	<div class="row">
             <div id="contents">
-	            <!-- ==== 사이드 바 ==== -->
-	            <ul class="sidebar">
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.jsp">고객센터 홈</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.jsp">공지사항</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.jsp">자주찾는 질문</a></li>
-	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.jsp">1:1 문의</a></li>
-	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.jsp">대관문의</a></li>
+		        <!-- ==== 사이드 바 ==== -->
+		        <ul class="sidebar">
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("support_home") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/support_home.do">고객센터 홈</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("notice") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/notice_list.do">공지사항</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/faq_list.do">자주찾는 질문</a></li>
+	                <li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("qna") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/qna.do">1:1 문의</a></li>
+	            	<li class="list-group-item"><a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/support/rent.do">대관문의</a></li>
 	            </ul>
-	            <!-- ==== 사이드바 끝 ==== -->
+		        <!-- ==== 사이드바 끝 ==== -->
                 <!-- ==== 본문 시작 ====-->
                 <div class="content">
                     <div class="notice_title">
@@ -47,7 +47,7 @@
                                 <td colspan="4">                         
                                     <span class="page_next">다음글</span>
                                     <i class="fas fa-angle-up"></i>
-                                    <a href="#" class id="?">
+                                    <a href="#" id="?">
                                     <span>다음 글이 없습니다.</span>
                                    	</a>
                                 </td>
@@ -56,7 +56,7 @@
                                 <td colspan="4">
                                         <span class="page_prev">이전글</span>
                                         <i class="fas fa-angle-down"></i>
-                                    	<a href="#" class id="?">
+                                    	<a href="#" id="?">
                                         <span>공지사항 9</span>
                                     </a>
                                 </td>
@@ -64,7 +64,7 @@
                         </tbody>
                     </table>
                     <div class="list_button pull-right">
-                        <a href="<%=request.getContextPath()%>/support/notice_list.jsp" class=" btn btn-success pull-right">목록으로</a>
+                        <a href="<%=request.getContextPath()%>/support/notice_list.do" class=" btn btn-success pull-right">목록으로</a>
                     </div>
                 </div>
             </div>

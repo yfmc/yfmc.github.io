@@ -7,8 +7,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css" >
-    <link  rel="stylesheet" href="<%=request.getContextPath()%>/css/font-awesome.css" >
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css" >
+    <link  rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/font-awesome.css" >
     <title>Cinephile 관리자 로그인</title>
     <style type="text/css">
     .login-box {
@@ -35,7 +35,7 @@
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="<%=request.getContextPath()%>/index.jsp" class="btn btn-lg btn-success btn-block">Login</a>
+                                <a href="<%=request.getContextPath()%>/admin/admin_home.do" class="btn btn-lg btn-success btn-block">Login</a>
                             </fieldset>
                         </form>
                     </div>

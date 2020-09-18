@@ -38,6 +38,7 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 		// URL에서 "?" 이후에 전달괴는 GET파라미터 문자열을 모두 가져옴
 		String queryString = request.getQueryString();
 		
+		System.out.println(queryString);
 		// 가져온 값이 있다면 URL과 결합하여 완전한 URL을 구성
 		if (queryString != null	) {
 			url = url + "?" + queryString;

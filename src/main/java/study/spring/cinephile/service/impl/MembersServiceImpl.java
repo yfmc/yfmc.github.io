@@ -1,4 +1,4 @@
-package study.spring.cinephile.impl;
+package study.spring.cinephile.service.impl;
 
 import java.util.List;
 
@@ -18,6 +18,22 @@ public class MembersServiceImpl implements MembersService{
 	// --> import org.apache.ibatis.session.SqlSession
 	@Autowired
 	SqlSession sqlSession;
+	
+	/**
+	 * 사용가능 이메일 조회
+	 * @param Members 조회할 회원의 이메일을 담고 있는 Beans
+	 * @return 조회된 데이터가 저장된 Beans
+	 * @throws Exception
+	 */
+	@Override
+	public Members getMembersEmail() throws Exception {
+		Members result= null;
+		
+		result = sqlSession.selectOne("MembersMapper.selectEmail");
+		
+		return result;
+	}
+	
 	/**
 	 * 회원데이터 상세조회
 	 * @param Members 조회할 회원의 일련번호를 담고 있는 Beans
@@ -164,6 +180,8 @@ public class MembersServiceImpl implements MembersService{
 		}
 		return result;
 	}
+
+	
 
 
 }

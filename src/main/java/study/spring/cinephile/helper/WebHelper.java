@@ -183,10 +183,10 @@ public class WebHelper {
     	// CrossDomain에 의한 접근 허용
     	// (보안에 좋지 않기 때문에 이 옵션을 허용할 경우 인증키 등의 보안장치가 필요함)
     	// 여기서는 실습을 위해 허용함
-    	this.response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
-    	this.response.setHeader("Access-Control-Max-Age", "3600");
+    	this.response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE"); //접근허용 메서드
+    	this.response.setHeader("Access-Control-Max-Age", "3600");	// 접근 허용시간이 한 시간동안 캐시를 허용한다. 
     	this.response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
-    	this.response.setHeader("Access-Control-Allow-Origin", "*");
+    	this.response.setHeader("Access-Control-Allow-Origin", "*"); //"*"은 모든 도메인
     	
     	/** 2) 파라미터로 전달된 Map 객체에 rt와 pubDate값을 추가한 새로운 Map 생성 */
     	// JSON 생성일시를 위한 현재시각 문자열 만들기 
@@ -208,6 +208,7 @@ public class WebHelper {
     	if (data != null) {
     		map.putAll(data);
     	}
+    	System.out.println("webhelper" + map);
     	return map;
     }
     

@@ -28,35 +28,32 @@
     background-color: #4d4d4d;
 }
 
+.prov_list {
+	display: block;
+	margin-left: 15px;
+}
+
 /* 지역명 글씨 */
 .provincial li {
-    display: inline-block;
-    width: 8%;
+    display: block;
+    float:left;
+    width: 90px;
     height: 40px;
     text-align: center;
     margin-top: 10px;
-}
-
-/* 링크의 박스화 */
-.provincial li a {
-    display: block;
     font-size: 20px;
     color: white;
     font-weight: bold;
 }
 
-.provincial li:nth-child(10) {
-    text-align: right;
+.provincial li:nth-child(6), .provincial li:nth-child(9), .provincial li:nth-child(10) {
+	width: 120px;
 }
 
-.provincial li a:hover {
+.provincial li:hover {
     text-decoration: none;
     color:#eee;
-}
-
-.provincial li a:active {
-    text-decoration: none;
-    font-style: none;
+    cursor: pointer;
 }
 
 /* 지역별 지점 선택 영역 */
@@ -65,6 +62,7 @@
     height: 500px;
     background-color: #eee;
     padding: 10px;
+    padding-top: 15px;
 }
 
 .branch_list > ul {
@@ -184,11 +182,21 @@
 }
 
 /* 팝업 modal */
-#kakaomap {
+.map_info {
+	width: 500px;
+	margin: auto;
+	margin-bottom: 10px;
+	position: relative;
+	text-align: center;
+	color: rgb(35, 140, 250);
+	font-weight: bold;
+}
+
+.kakaomap {
     width: 500px;
     height: 400px;
     margin: auto;
-    background-color: #a2deb2;
+    position: relative;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
@@ -205,20 +213,60 @@
 
 /* 날짜 선택 일주일 */
 .week_btn {
-    background-color: #757575;
-    width: 70%;
+    width: 700px;
     margin:auto;
-}
-
-.week_btn > .btn:active {
-    box-shadow: none;
 }
 
 .week_btn a {
     display: inline-block;
-    width: 10%;
-    margin-left: 5px;
     border-radius: 0;
+}
+
+.slick-list {
+	width: 600px;
+	display: block;
+	float: left;
+}
+
+.slick-arrow {
+	width: 50px;
+	margin-top: 15px;
+	display: block;
+	float: left;
+}
+
+/* 글자색 black */
+.weekday, .weekday:hover {
+	color: black;
+}
+
+.weekday:hover {
+	background-color: #d6d6d6;
+	font-weight: bold;
+}
+
+/* 각종 버튼 효과 삭제 */
+.week_btn > .btn:active, .week_btn > .btn:focus {
+    box-shadow: none;
+}
+
+.slick-slide:focus, .slick-center:focus, .slick-track:focus, .slick-active:focus, .slick-current:focus {
+   border: none;
+   outline: none;
+   box-shadow: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+	outline: none !important;
+	box-shadow: none;
+}
+
+/* float 마감제 */
+.week_btn:after {
+	content: '';
+	display: block;
+	float:none;
+	clear: both;
 }
 
 /* 관람가 / 요금 안내 */
@@ -251,12 +299,13 @@
 
 .start_time {
     font-weight: bold;
+    margin-bottom: 3px;
 }
 
 .film_time .seats {
     font-size: 11px;
     float:left;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .room_no {
