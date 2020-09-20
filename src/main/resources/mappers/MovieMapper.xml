@@ -22,8 +22,51 @@
 	<result property="movie_genre" column="movie_genre"/>
 </resultMap>
 
-<!-- 단일행조회기능 -->
+<!-- 예매순에 따른 조회 -->
+<select id="selectMovieBooking" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
+	SELECT poster_link, title, age_limit, movie_booking
+	FROM movie
+	WHERE movie_booking is not null OR today_audience is not null
+	ORDER BY movie_booking DESC
+	LIMIT 0,10;
+</select>
 
+<!-- 평점순에 따른 조회 -->
+<select id="selectStarInfo" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
+	SELECT poster_link, title, age_limit, star_info
+	FROM movie
+	WHERE movie_booking is not null OR today_audience is not null
+	ORDER BY star_info DESC
+	LIMIT 0,10;
+</select>
+
+<!-- 관람객순에 따른 조회 -->
+<select id="selectTodayAudience" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
+	SELECT poster_link, title, age_limit, today_audience
+	FROM movie
+	WHERE movie_booking is not null OR today_audience is not null
+	ORDER BY today_audience DESC
+	LIMIT 0,10;
+</select>
+
+<!-- 개봉일순에 따른 조회 (개봉일이 DATE 형식이 아니라 String이라 방법 생각해야함.)-->
+<!-- WHERE에 대한 기준점이 필요하다. -->
+<select id="selectOpeningDate" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
+	SELECT poster_link, title, age_limit, opening_date
+	FROM movie
+	WHERE like_count is not null AND opening_date is not null
+	ORDER BY opening_date ASC
+	LIMIT 0,8;
+</select>
+
+<!-- 좋아요순에 따른 조회-->
+<select id="selectLikeCount" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
+	SELECT poster_link, title, age_limit, opening_date, like_count
+	FROM movie
+	WHERE like_count is not null AND opening_date is not null
+	ORDER BY like_count DESC
+	LIMIT 0,8;
+</select>
 <!-- 다중행조회기능 -->
 
 <!-- 데이터 수 조회기능 -->

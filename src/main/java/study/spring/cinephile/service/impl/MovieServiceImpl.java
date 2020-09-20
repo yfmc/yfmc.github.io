@@ -25,11 +25,109 @@ public class MovieServiceImpl implements MovieService{
 		return null;
 	}
 	
-	//영화 데이터 목록 조회
+	//영화 데이터 목록 조회 - 예매순으로
 	@Override
-	public List<Movie> getMovieList(Movie input) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Movie> getMovieBooking(Movie input) throws Exception {
+		List<Movie> result = null;
+		
+		try {
+			result = sqlSession.selectList("MovieMapper.selectMovieBooking", input);
+			
+			if(result == null) {
+				throw new NullPointerException("result=null");
+			}
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 영화 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		return result;
+	}
+	
+	//영화 데이터 목록 조회 - 평점순으로
+	@Override
+	public List<Movie> getMovieStarInfo(Movie input) throws Exception {
+		List<Movie> result = null;
+		
+		try {
+			result = sqlSession.selectList("MovieMapper.selectStarInfo", input);
+			
+			if(result == null) {
+				throw new NullPointerException("result=null");
+			}
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 영화 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		return result;
+	}
+	
+	//영화 데이터 목록 조회  - 관람객순으로
+	@Override
+	public List<Movie> getMovieTodayAudience(Movie input) throws Exception {
+		List<Movie> result = null;
+		
+		try {
+			result = sqlSession.selectList("MovieMapper.selectTodayAudience", input);
+			
+			if(result == null) {
+				throw new NullPointerException("rseult=null");
+			}
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 영화 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		return result;
+	}
+	
+	//영화 데이터 목록 조회 - 개봉일순으로
+	@Override
+	public List<Movie> getMovieOpeningDate(Movie input) throws Exception {
+		List<Movie> result = null;
+		
+		try {
+			result = sqlSession.selectList("MovieMapper.selectOpeningDate", input);
+			
+			if(result == null) {
+				throw new NullPointerException("result=null");
+			}
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 영화 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		return result;
+	}
+	
+	//영화 데이터 목록 조회 - 좋아요순으로
+	@Override
+	public List<Movie> getMovieLikeCount(Movie input) throws Exception {
+		List<Movie> result = null;
+		
+		try {
+			result = sqlSession.selectList("MovieMapper.selectLikeCount", input);
+			
+			if(result == null) {
+				throw new NullPointerException("result=null");
+			}
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 영화 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		return result;
 	}
 	
 	//영화 데이터가 저장되어 있는 갯수 조회
@@ -59,5 +157,4 @@ public class MovieServiceImpl implements MovieService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
 }

@@ -39,7 +39,7 @@
             <div class="menu">
                 <ul class="mainnav">
                     <li class="nav">
-                        <a href="#" class="mains">영화</a>
+                        <a href="${pageContext.request.contextPath}/movie/nowMoving.do" class="mains">영화</a>
                         <ul class="subnav">
                             <li><a href="${pageContext.request.contextPath}/movie/nowMoving.do">박스오피스</a></li>
                             <li><a href="${pageContext.request.contextPath}/movie/MovieSearch.do">영화검색</a></li>

@@ -15,12 +15,44 @@ public interface MovieService {
 	public Movie getMovieItem(Movie input) throws Exception;
 	
 	/*
-	 * 영화 데이터 목록 조회
+	 * 영화 데이터 목록 조회 - 예매순
 	 * @param Movie 검색조건과 페이지 구현 정보를 담고 있는 beans
 	 * @return 조회된 결과에 대한 컬렉션
 	 * @throw Exception
 	 */
-	public List<Movie> getMovieList(Movie input) throws Exception;
+	public List<Movie> getMovieBooking(Movie input) throws Exception;
+	
+	/*
+	 * 영화 데이터 목록 조회 - 평점순
+	 * @param Movie 검색조건과 페이지 구현 정보를 담고 있는 beans
+	 * @return 조회된 결과에 대한 컬렉션
+	 * @throw Exception
+	 */
+	public List<Movie> getMovieStarInfo(Movie input) throws Exception;
+	
+	/*
+	 * 영화 데이터 목록 조회 - 관람객순
+	 * @param Movie 검색조건과 페이지 구현 정보를 담고 있는 beans
+	 * @return 조회된 결과에 대한 컬렉션
+	 * @throw Exception
+	 */
+	public List<Movie> getMovieTodayAudience(Movie input) throws Exception;
+	
+	/*
+	 * 영화 데이터 목록 조회 - 개봉일순
+	 * @param Movie 검색조건과 페이지 구현 정보를 담고 있는 beans
+	 * @return 조회된 결과에 대한 컬렉션
+	 * @throw Exception
+	 */
+	public List<Movie> getMovieOpeningDate(Movie input) throws Exception;
+	
+	/*
+	 * 영화 데이터 목록 조회 - 좋아요순
+	 * @param Movie 검색조건과 페이지 구현 정보를 담고 있는 beans
+	 * @return 조회된 결과에 대한 컬렉션
+	 * @throw Exception
+	 */
+	public List<Movie> getMovieLikeCount(Movie input) throws Exception;
 	
 	/*
 	 * 영화 데이터가 저장되어 있는 갯수 조회

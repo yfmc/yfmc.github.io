@@ -240,7 +240,7 @@ figure.imageup.hover a
 
 .imageup .movie-text h4{
 	font-weight:bold;
-	font-size:18px;
+	font-size:16px;
 	color:black;
 	text-decoration:none;
 	margin-bottom:60px;
@@ -253,7 +253,7 @@ figure.imageup.hover a
 }
 
 
- .king-row:after{
+.king-row:after{
     display: block;
     content: '';
     float:none;
