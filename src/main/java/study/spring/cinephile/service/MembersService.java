@@ -5,6 +5,15 @@ import java.util.List;
 import study.spring.cinephile.model.Members;
 
 public interface MembersService {
+	
+	/**
+	 * 회원데이터 상세조회
+	 * @param Members 조회할 회원의 일련번호를 담고 있는 Beans
+	 * @return 조회된 데이터가 저장된 Beans
+	 * @throws Exception
+	 */
+	public Members getMembersLogin(Members input) throws Exception;	
+	
 	/**
 	 * 회원데이터 상세조회
 	 * @param Members 조회할 회원의 일련번호를 담고 있는 Beans

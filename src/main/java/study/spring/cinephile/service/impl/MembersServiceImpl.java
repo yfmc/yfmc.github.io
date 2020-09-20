@@ -20,6 +20,33 @@ public class MembersServiceImpl implements MembersService{
 	SqlSession sqlSession;
 	
 	/**
+	 * 로그인 처리
+	 * @param Members 조회할 회원의 이메일을 담고 있는 Beans
+	 * @return 조회된 데이터가 저장된 Beans
+	 * @throws Exception
+	 */
+	@Override
+	public Members getMembersLogin(Members input) throws Exception {
+		Members result = null;	
+		
+		try {
+			result = sqlSession.selectOne("MembersMapper.selectLogin", input);
+			
+			if(result == null) {
+				throw new NullPointerException("result=null");
+				}
+			}catch(NullPointerException e) {
+				log.error(e.getLocalizedMessage());
+				throw new Exception("조회된 데이터가 없습니다.");
+			}catch(Exception e) {
+				log.error(e.getLocalizedMessage());
+				throw new Exception("데이터 조회에 실패했습니다.");
+			}
+		
+		return result;
+	}
+	
+	/**
 	 * 사용가능 이메일 조회
 	 * @param Members 조회할 회원의 이메일을 담고 있는 Beans
 	 * @return 조회된 데이터가 저장된 Beans
@@ -180,6 +207,8 @@ public class MembersServiceImpl implements MembersService{
 		}
 		return result;
 	}
+
+	
 
 	
 

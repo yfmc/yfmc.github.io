@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="RentMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시 -->
+	<resultMap id="rentMap" type="study.spring.cinephile.model.Rent">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결 -->
+		<result property="rent_id" 				column="rent_id" />
+		<result property="sel_region" 			column="sel_region" />
+		<result property="sel_theater" 		column="sel_theater" />
+		<result property="rent_date" 			column="rent_date" />
+		<result property="rent_content" 		column="rent_content" />
+		<result property="user_name" 		column="user_name" />
+		<result property="tel" 					column="tel" />
+		<result property="email" 				column="email" />
+		<result property="reg_date" 			column="reg_date" />
+		<result property="edit_date" 			column="edit_date" />
+	</resultMap>
+	
+	<!-- 단일행 조회를 위한 기능 정의 -->
+	<select id="selectItem" parameterType="study.spring.cinephile.model.Rent"
+		resultMap="rentMap">
+		select rent_id, sel_region, sel_theater, rent_date, rent_content, user_name, tel, email, reg_date, edit_date
+		from rent where rent_id=#{rent_id}
+	</select>
+	
+	<!-- 다중행 조회를 위한 기능 정의 -->
+	<select id="selectList"
+		parameterType="study.spring.cinephile.model.Rent"
+		resultMap="rentMap">
+		select rent_id, sel_region, sel_theater, rent_date, rent_content, user_name, tel, email, reg_date, edit_date from rent
+	
+		<where>
+			<if test ="sel_theater != null and sel_theater != ''">
+				sel_theater like concat('%', #{sel_theater}, '%')
+			</if>
+			<if test ="rent_date != null and rent_date != ''">
+				or rent_date like concat('%', #{rent_date}, '%')
+			</if>
+		</where>
+		
+		order by rent_id desc
+	</select>
+	
+	<!-- 데이터 저장을 위한 기능 정의 -->
+	<insert id="insertItem"
+		parameterType="study.spring.cinephile.model.Rent"
+		useGeneratedKeys="true"
+		keyProperty="rent_id">
+		insert into rent (sel_region, sel_theater, rent_date, rent_content, user_name, tel, email)
+			values (#{sel_region}, #{sel_theater}, #{rent_date}, #{rent_content}, #{user_name}, #{tel}, #{email});
+	</insert>
+		
+	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<delete id="deleteItem"
+		parameterType="study.spring.cinephile.model.Rent">
+		delete from rent where rent_id=#{rent_id}
+	</delete>
+		
+	<!-- 데이터 갱신을 위한 기능 정의 -->
+	<update id="updateItem"
+		parameterType="study.spring.cinephile.model.Rent">
+		update rent set rent_title=#{rent_title}, rent_content=#{Rent_content}, edit_date = now()
+		where rent_id=#{rent_id};
+	</update>
+	
+	<!-- 데이터 수 조회하기 -->
+	<!-- 
+			조건에 맞는 데이터 수를 집계하여 int타입으로 반환
+			count, max, min, sum, avg 함수를 사용한 경우 Mapper에서는
+			resultMap이 아닌 resultType으로 반환 -->
+			
+	<select id="selectCountAll"
+				parameterType="study.spring.cinephile.model.Rent"
+				resultType="int">
+		select count(*) from rent
+		
+		<where>
+			<if test="rent_title != null and rent_title != ''">
+				rent_title like concat ('%', #{rent_title}, '%')
+			</if>
+			<if test="rent_content != null and rent_content !=  ''">
+				or rent_content like concat ('%', #{rent_content}, '%')
+			</if>
+		</where>
+	</select>
+</mapper>

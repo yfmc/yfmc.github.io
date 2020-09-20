@@ -176,10 +176,10 @@ public class WebHelper {
     	/** 1) JSON 형식 출력을 위한 HTTP헤더 설정 */
     	// JSON 형식임을 명시
     	response.setContentType("application/json");
-    	
+
     	// HTTP 상태코드 설정 (200, 404, 500 등)
     	response.setStatus(statusCode);
-    	
+
     	// CrossDomain에 의한 접근 허용
     	// (보안에 좋지 않기 때문에 이 옵션을 허용할 경우 인증키 등의 보안장치가 필요함)
     	// 여기서는 실습을 위해 허용함
@@ -194,7 +194,7 @@ public class WebHelper {
     	String pubDate = String.format("%04d-%02d-%02d %02d:%02d:%02d",
     			c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DAY_OF_MONTH),
     			c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), c.get(Calendar.SECOND));
-    	
+
     	// JSON 구성을 위한 컬렉션 객체 생성
     	Map<String, Object> map = new HashMap<String, Object>();
     	
@@ -203,10 +203,12 @@ public class WebHelper {
     	
     	// 생성일시 추가
     	map.put("pubDate", pubDate);
-    	
+
     	// data가 전달 되었다면 map에 병합한다
     	if (data != null) {
+
     		map.putAll(data);
+
     	}
     	System.out.println("webhelper" + map);
     	return map;

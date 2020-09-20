@@ -22,11 +22,12 @@
 		                <div class="rent_title">
 		                    <h2>대관문의</h2>
 		                    <ul>
-		                        <li>개인이나 단체를 위한 대관서비스로 CGV의 넓고 쾌적한 극장에서 즐거운 추억을 만드실 수 있습니다.</li>
+		                        <li>개인이나 단체를 위한 대관서비스로 Cinephile의 넓고 쾌적한 극장에서 즐거운 추억을 만드실 수 있습니다.</li>
 								<li>단체/대관 문의 외 문의나 불편사항은 이메일 문의로 작성 부탁드립니다.</li>
 		                    </ul>
 		                </div>
-	                <form class="form-horizontal"  name="rent_form" id="rent_form">
+	                <form class="form-horizontal"  name="rent_form" id="rent_form"
+		            	action="${pageContext.request.contextPath}/support/rent_ok.do">
 		                <div class="form_title">
 		                        <h4>문의내용<span class="pull-right">* 필수입력</span></h4>
 		                </div>
@@ -36,7 +37,7 @@
 		                            <div class="col-xs-3">
 										<!-- 1차 카테고리 -->
 										<div class="form-group">
-											<select id="sel_region" class="form-control">
+											<select name="sel_region" id="sel_region" class="form-control">
 												<option value="">지역선택</option>
 												<option value="seoul1">서울</option>
 												<option value="gyeonggi1">경기</option>
@@ -56,7 +57,7 @@
 									<div class="col-xs-5">
 										<!-- 2차 카테고리 -->
 										<div class="form-group">
-											<select id="sel_theater" class="form-control">
+											<select name="sel_theater" id="sel_theater" class="form-control">
 												<option value="">영화관선택</option>
 											</select>
 										</div>
@@ -65,7 +66,7 @@
 		                        <div class="form-group">
 		                        	<label for="rent_date"  class="must col-xs-2 " >대관 희망일</label>
 		                        	<div class="col-xs-5">
-		                        		<input type="text" id="datepicker">
+		                        		<input name="rent_date" type="text" id="datepicker">
 		                        	</div>
 		                        </div>
 			                    <div class="form-group">
@@ -187,24 +188,6 @@
 	    				$("#sel_theater").append(html);
 	    			});
 	    		});
-	    	});
-	    	
-	    	$("#rent_form").validate({
-	    		// 입력검사 규칙
-	    		rules: {
-	    			rent_title: {required: true},
-	    			rent_contents: {required: true},
-	    			user_name: {required: true, kor: true},
-	    			tel: {required: true, phone: true},
-	    			email: {required: true, email: true}
-	    		},
-	    		messages: {
-	    			rent_title: {required: "제목을 입력하세요."},
-	    			rent_contents: {required: "내용을 입력하세요."},
-	    			user_name: {required: "이름을 입력하세요.", kor:"이름은 한글로 입력하세요"},
-	    			tel: {required: "전화번호를 입력하세요.", phone: "전화번호 형식이 맞지 않습니다."},
-	    			email: {required: "이메일을 입력하세요.", email:"이메일 형식이 맞지 않습니다."}
-	    		}
 	    	});
 	    	
 	    	$("#rent_form").submit(function(e) {

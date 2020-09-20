@@ -30,6 +30,12 @@
 		SELECT user_id, user_pw, user_name,  birthdate, gender, user_email, phone, postcode, addr, addr_detail, is_out, reg_date, edit_date FROM members;
 	</select>
 	
+	<!-- 단일행 조회 (for Login) 를 위한 기능 정의 -->
+	<select id="selectLogin" parameterType="study.spring.cinephile.model.Members"
+		resultMap="membersMap">
+		select user_id, user_pw from members where user_id=#{user_id};
+	</select>
+	
 	<!-- 단일행 조회를 위한 기능 정의 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Members"
 		resultMap="membersMap">
@@ -62,7 +68,7 @@
 		parameterType="study.spring.cinephile.model.Members"
 		useGeneratedKeys="true"
 		keyProperty="members_id">
-		insert into members (user_id, user_pw, user_name,  birthdate, gender, user_email, phone, postcode, addr, addr_detail, is_out, reg_date, edit_date) values (#{user_id}, MD5(#{user_pw}), #{user_name}, #{birthdate}, #{gender}, #{user_email}, #{phone}, #{postcode}, #{addr}, #{addr_detail}, #{is_out}, now(), now());
+		insert into members (user_id, user_pw, user_name, birthdate, gender, user_email, phone, postcode, addr, addr_detail, is_out, reg_date, edit_date) values (#{user_id}, MD5(#{user_pw}), #{user_name}, #{birthdate}, #{gender}, #{user_email}, #{phone}, #{postcode}, #{addr}, #{addr_detail}, #{is_out}, now(), now());
 	</insert>
 		
 	<!-- 데이터 삭제를 위한 기능 정의 -->

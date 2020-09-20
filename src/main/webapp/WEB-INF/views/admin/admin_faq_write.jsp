@@ -10,7 +10,8 @@
 		            <div class="faq_title">
 				     	<h3>자주찾는 질문 글 작성</h3>
 		            </div>
-		            <form class="form-horizontal"  name="faq_form" id="faq_form">
+		            <form class="form-horizontal"  name="faq_form" id="faq_form"
+		            	action="${pageContext.request.contextPath}/admin/admin_faq_write_ok.do">
 			            <div class="form-group">
 				            <label for="faq_title"  class="must col-xs-2 ">제목</label>
 				            <div class="col-xs-10">
@@ -30,12 +31,5 @@
 		        </div>
             </div>
         </div>
-	<script type="text/javascript">
-	$("#faq_form").submit(function(e) {
-		e.preventDefault();
-        alert("등록이 완료되었습니다.");
-        location.href="<%=request.getContextPath()%>/admin/admin_faq_list.do";
-    });
-	</script>
     
 <%@ include file="../_inc/admin_footer.jsp" %>

@@ -9,13 +9,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>CInephile 관리자 페이지</title>
     
+    <!-- ==== CSS==== -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin.css" >
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/plugins/datatables/datatables.min.css" >
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
     
-    <script src="https://kit.fontawesome.com/2de30be98d.js" crossorigin="anonymous"></script>
+    <!-- ==== JS==== -->
+    <script src="https://kit.fontawesome.com/956ca511cc.js" crossorigin="anonymous"></script>
 	<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 	<script src="https://stackpath.bootstracdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </head>
