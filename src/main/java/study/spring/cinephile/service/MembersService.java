@@ -20,7 +20,7 @@ public interface MembersService {
 	 * @return 조회된 데이터가 저장된 Beans
 	 * @throws Exception
 	 */
-	public Members getMembersEmail() throws Exception;	
+	public Members getMembersEmail(Members input) throws Exception;	
 	
 	/**
 	 * 회원데이터 상세조회

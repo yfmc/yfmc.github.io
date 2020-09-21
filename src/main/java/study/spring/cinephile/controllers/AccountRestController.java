@@ -33,7 +33,7 @@ public class AccountRestController {
 	 * @param user_email
 	 * @return json Map<String, Object>는 자동으로 JSON으로 변환
 	 */
-	@RequestMapping(value="/Email", method = RequestMethod.GET)
+	@RequestMapping(value="/Email.do", method = RequestMethod.GET)
 	public Map<String, Object> get_email(Model model,
 			//검색어
 			@RequestParam(value="user_email", required=false) String user_email){
@@ -52,7 +52,7 @@ public class AccountRestController {
 		
 		try {
 			//데이터 조회하기
-			output = membersService.getMembersEmail();
+			output = membersService.getMembersEmail(input);
 			
 		}catch(Exception e) {
 			return webHelper.getJsonError(e.getLocalizedMessage());

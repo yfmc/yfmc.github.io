@@ -88,6 +88,7 @@
                 </c:choose>
                     
                     <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.do">&nbsp;마이페이지</a></li>
+                    <li><a href="${pageContext.request.contextPath}/account/05-putMemInfo.do">&nbsp;회원가입지름길</a></li>
                 </ul>
             </div>
         </div>
