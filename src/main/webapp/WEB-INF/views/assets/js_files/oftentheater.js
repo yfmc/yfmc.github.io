@@ -71,7 +71,6 @@ var b_json={
 			{"brand": "CGV", "branch": "홍대"},
 			{"brand": "롯데시네마", "branch": "홍대입구"},
 			{"brand": "메가박스", "branch": "화곡"},
-			{"brand": "롯데시네마", "branch": "황학"}
 	  ],
 	 "gyeonggi": [
 		  {"brand": "CGV", "branch": "경기광주"},
@@ -137,6 +136,7 @@ var b_json={
 	  	  {"brand": "메가박스", "branch": "안산중앙"},
 	  	  {"brand": "롯데시네마", "branch": "안성"},
 	  	  {"brand": "CGV", "branch": "안성"},
+	  	  {"brand": "메가박스", "branch": "안성스타필드"},
 	  	  {"brand": "롯데시네마", "branch": "안양(안양역)"},
 	  	  {"brand": "롯데시네마", "branch": "안양일번가"},
 	  	  {"brand": "CGV", "branch": "야탑"},
@@ -210,7 +210,6 @@ var b_json={
 		 {"brand": "CGV", "branch": "인천학익"},
 		 {"brand": "CGV", "branch": "주안역"},
 		 {"brand": "CGV", "branch": "청라"},
-		 {"brand": "메가박스", "branch": "청라"},
 		 {"brand": "메가박스", "branch": "청라지젤"}
 	  ],
 	 "gangwon": [
@@ -245,6 +244,7 @@ var b_json={
 	  ],
 	 "chungcheong": [
 		 {"brand": "메가박스", "branch": "공주"},
+		 {"brand": "메가박스", "branch": "논산"},
 		 {"brand": "CGV", "branch": "당진"},
 		 {"brand": "CGV", "branch": "보령"},
 		 {"brand": "CGV", "branch": "서산"},
@@ -326,7 +326,6 @@ var b_json={
 		 {"brand": "메가박스", "branch": "경주"},
 		 {"brand": "롯데시네마", "branch": "경주"},
 		 {"brand": "CGV", "branch": "구미"},
-		 {"brand": "롯데시네마", "branch": "구미 프라임1번가"},
 		 {"brand": "메가박스", "branch": "구미강동"},
 		 {"brand": "롯데시네마", "branch": "구미공단"},
 		 {"brand": "메가박스", "branch": "김천"},
@@ -383,7 +382,7 @@ var b_json={
 		 {"brand": "롯데시네마", "branch": "센텀시티"},
 		 {"brand": "CGV", "branch": "아시아드"},
 		 {"brand": "롯데시네마", "branch": "오투(부산대)"},
-		 {"brand": "메가박스", "branch": "우산"},
+		 {"brand": "메가박스", "branch": "울산"},
 		 {"brand": "롯데시네마", "branch": "울산"},
 		 {"brand": "CGV", "branch": "울산삼산"},
 		 {"brand": "롯데시네마", "branch": "울산성남"},

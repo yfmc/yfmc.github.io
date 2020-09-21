@@ -39,22 +39,22 @@
                 <c:choose>
                 	<c:when test="${output==null || fn:length(output)==0}">
                 		<ul>
-                			<li>좋아요내역이 없습니다.</li>
+                			<li><h4>좋아한 영화내역이 없습니다.</h4></li>
                 		</ul>
                 	</c:when>
                 	<c:otherwise>
                 		<c:forEach var="item" items="${output}" varStatus="status">
 	                    <ul class="listarea">
 	                    	<!-- 이미지에 마우스 올리면 '크게하기'글자가 뜨며 클릭하면 lightbox를 통해 큰 이미지를 보여줌 -->
-	                        <li><div class="movieimg"><a href="${item.poster}" data-lightbox="myphoto1"><img src="${item.poster}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	                        <li><div class="movieimg"><a href="${item.poster_link}" data-lightbox="myphoto1"><img src="${item.poster_link}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
 	                            <span class="title">
 	                                <h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title}</a></h3>
 	                            </span>
 	                            <span class="rating">
-	                                	평점 : <span class="star-prototype">${item.rate}</span> &nbsp;(${item.rate})
+	                                	평점 : <span class="star-prototype">${item.star_info}</span> &nbsp;(${item.star_info})
 	                            </span>
 	                            <span class="genre">
-	                                <h4>장르 : ${item.genre}</h4>
+	                                <h4>관람가 : ${item.age_limit}</h4>
 	                            </span>
 	                            <!-- 좋아한 영화 목록에서 제거하는 버튼 -->
 	                            <input type="button" value="-" class="btn btn-default remove" />
@@ -72,55 +72,54 @@
 	                        </li>
 	                    </ul>
                     	</c:forEach>
+		                <!--  페이지 넘김 -->
+						<div id="page">
+		                    <div class="row">
+		                        <div class="col">
+		                        <ul class="pagination">
+		                           <c:choose>
+										<c:when test="${pageData.prevPage>0}">
+											<c:url value="/mypage/choicelist.do" var="prevPageUrl">
+												<c:param name="page" value="${pageData.prevPage}"/>
+											</c:url>
+											<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
+										</c:when>
+										<c:otherwise>
+											<li class="page-item"><a class="page-link">이전</a></li>
+										</c:otherwise>
+									</c:choose>
+									
+									<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
+										<c:url value="/mypage/choicelist.do" var="pageUrl">
+											<c:param name="page" value="${i}"/>
+										</c:url>
+										<c:choose>
+											<c:when test="${pageData.nowPage ==i}">
+												<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
+											</c:when>
+											<c:otherwise>
+												<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+			
+									<c:choose>
+										<c:when test="${pageData.nextPage>0}">
+											<c:url value="/mypage/choicelist.do" var="nextPageUrl">
+												<c:param name="page" value="${pageData.nextPage}"/>
+											</c:url>
+												<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
+										</c:when>
+										<c:otherwise>
+											<li class="page-item page-link"><a class="page-link">다음</a></li>
+										</c:otherwise>
+									</c:choose>
+								</ul>
+		                        </div>
+		                    </div>
+		                </div>
                 	</c:otherwise>
                 </c:choose>
-                </div>
-                <!-- 페이지 넘기기 -->
-                <!--  페이지 넘김 -->
-				<div id="page">
-                    <div class="row">
-                        <div class="col">
-                        <ul class="pagination">
-                           <c:choose>
-								<c:when test="${pageData.prevPage>0}">
-									<c:url value="/mypage/choicelist.do" var="prevPageUrl">
-										<c:param name="page" value="${pageData.prevPage}"/>
-									</c:url>
-									<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
-								</c:when>
-								<c:otherwise>
-									<li class="page-item"><a class="page-link">이전</a></li>
-								</c:otherwise>
-							</c:choose>
-							
-							<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
-								<c:url value="/mypage/choicelist.do" var="pageUrl">
-									<c:param name="page" value="${i}"/>
-								</c:url>
-								<c:choose>
-									<c:when test="${pageData.nowPage ==i}">
-										<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
-									</c:when>
-									<c:otherwise>
-										<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
-									</c:otherwise>
-								</c:choose>
-							</c:forEach>
-	
-							<c:choose>
-								<c:when test="${pageData.nextPage>0}">
-									<c:url value="/mypage/choicelist.do" var="nextPageUrl">
-										<c:param name="page" value="${pageData.nextPage}"/>
-									</c:url>
-										<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
-								</c:when>
-								<c:otherwise>
-									<li class="page-item page-link"><a class="page-link">다음</a></li>
-								</c:otherwise>
-							</c:choose>
-						</ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
