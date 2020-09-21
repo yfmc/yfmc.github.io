@@ -28,7 +28,7 @@
             <!-- 사이드바 끝 -->
             <div id="body">
                 <div class="bodytop">
-                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bullhorn"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 문의 내역입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bullhorn"></i>&nbsp;&nbsp;&nbsp;${my_session.user_name}(${my_session.user_id})님의 문의 내역입니다.</h3>
                 </div>
                 <!-- 문의 내역 게시판 형식으로 -->
                 <div class="table_area">

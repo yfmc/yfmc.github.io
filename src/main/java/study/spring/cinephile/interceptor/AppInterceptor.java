@@ -1,21 +1,27 @@
 package study.spring.cinephile.interceptor;
 
+import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.helper.WebHelper;
+import study.spring.cinephile.model.Members;
 
 @Slf4j
 public class AppInterceptor extends HandlerInterceptorAdapter {
 	long startTime=0, endTime=0;
 	
+	@Value("#{servletContext.contextPath}")
+	String contextPath;
 	
 	@Autowired
 	WebHelper webHelper;
@@ -55,6 +61,44 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 		
 		// 획득한 정보를 로그로 표시
 		log.debug(String.format("[%s] %s", methodName, url));
+		
+		
+		
+		/** 로그인 안하고 접근하면 안되는 페이지들에 접근했을때를 처리하는 코드 */
+		String[] forbidden_url= {"http://localhost:8080/cinephile/mypage/mypagemain.do",
+				"http://localhost:8080/cinephile/mypage/bookinglist.do",
+				"http://localhost:8080/cinephile/mypage/choicelist.do",
+				"http://localhost:8080/cinephile/mypage/changeinfo-(1).do",
+				"http://localhost:8080/cinephile/mypage/changeinfo-(2).do",
+				"http://localhost:8080/cinephile/mypage/changeinfo-(3).do",
+				"http://localhost:8080/cinephile/mypage/withdrawal-(1).do",
+				"http://localhost:8080/cinephile/mypage/inquirylist.do",
+				"http://localhost:8080/cinephile/mypage/inquirypost.do"};
+		
+		int count=0;
+		
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		if(mySession==null) {
+			for(int i=0;i<forbidden_url.length;i++) {
+				if(url.equals(forbidden_url[i])){
+					count++;
+				}
+			}
+		}
+		
+		if(count!=0) {
+			String redirectUrl = contextPath + "/index.do";
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter writer = response.getWriter();
+			writer.println("<script>alert('로그인하세요.'); location.href='"+redirectUrl+"';</script>");
+			writer.close();
+
+			response.sendRedirect(redirectUrl);
+		}
+
+		
+		
 		
 		/** 2) 클라이언트가 전달한 모든 파라미터 확인 */
 		Map<String, String[]> params = request.getParameterMap();

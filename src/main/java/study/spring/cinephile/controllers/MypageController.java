@@ -2,6 +2,9 @@ package study.spring.cinephile.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
+import study.spring.cinephile.model.Members;
 
 
 @Slf4j
@@ -29,15 +33,22 @@ public class MypageController {
 	String contextPath;
 
 	@RequestMapping(value="/mypage/mypagemain.do",method=RequestMethod.GET)
-	public String mypagemain(Model model) {
+	public String mypagemain(Model model,HttpServletRequest request) {
 		
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		model.addAttribute("my_session",mySession);
 		
 		return "mypage/mypagemain";
 	}
 	
 	@RequestMapping(value="/mypage/bookinglist.do",method=RequestMethod.GET)
-	public String bookinglist(Model model) {
+	public String bookinglist(Model model,HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		model.addAttribute("my_session",mySession);
 		return "mypage/bookinglist";
 	}
 	
@@ -48,8 +59,11 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/changeinfo-(2).do",method=RequestMethod.GET)
-	public String changeinfo2(Model model) {
+	public String changeinfo2(Model model,HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		model.addAttribute("my_session",mySession);
 		return "mypage/changeinfo-(2)";
 	}
 	
@@ -60,15 +74,21 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/choicelist.do",method=RequestMethod.GET)
-	public String choicelist(Model model) {
+	public String choicelist(Model model,HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		model.addAttribute("my_session",mySession);
 		
 		return "mypage/choicelist";
 	}
 	
 	@RequestMapping(value="/mypage/inquirylist.do",method=RequestMethod.GET)
-	public String inquirylist(Model model) {
+	public String inquirylist(Model model,HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		model.addAttribute("my_session",mySession);
 		return "mypage/inquirylist";
 	}
 	

@@ -30,7 +30,7 @@
             
             <div id="body">
                 <div class="bodytop">
-                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 예매내역입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;${my_session.user_name}(${my_session.user_id})님의 예매내역입니다.</h3>
                 </div>
                 
                 <!--  예매내역 리스트로 -->

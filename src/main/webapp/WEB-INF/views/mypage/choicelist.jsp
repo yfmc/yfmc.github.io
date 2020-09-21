@@ -32,7 +32,7 @@
             
             <div id="body">
                 <div class="bodytop">
-                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-bookmark"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님이 좋아한 영화목록입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-bookmark"></i>&nbsp;&nbsp;&nbsp;${my_session.user_name}(${my_session.user_id})님이 좋아한 영화목록입니다.</h3>
                 </div>
                 <!-- 좋아한 영화 목록 -->
                 <div class="bodylist">

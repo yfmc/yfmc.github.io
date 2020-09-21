@@ -29,7 +29,7 @@
             <div id="body">
             	<!-- 메인 상단부 -->
                 <div class="bodytop">
-                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${output.user_name}(${output.user_id})님의 My Page입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${my_session.user_name}(${my_session.user_id})님의 My Page입니다.</h3>
                     <!-- 자주가는 영화관 목록 -->
                     <table class="oftentheater">
                         <tr>
