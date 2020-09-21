@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-
+<%
+	session.setMaxInactiveInterval(1);
+%>
 
 <%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/login_01login.css?time=<%=System.currentTimeMillis()%>" />
@@ -9,7 +11,7 @@
     <div id="content">
             <h2>로그인</h2>
             <div id="lginput">
-                <form  id="login-form" name="login-form">
+                <form  id="login-form" name="login-form" >
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1"><i class="fas fa-user-circle"></i></span>
                     <input type="text" class="form-control" id="user_id" name="user_id" placeholder="아이디를 입력해주세요." aria-describedby="sizing-addon1">
@@ -38,4 +40,5 @@
         </div>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="../assets/js_files/login_01login.js"></script>
+<script src="../assets/plugins/ajax_sws/ajax_helper.js"></script>
 <%@ include file="../_inc/footer.jsp" %>

@@ -3,6 +3,9 @@ package study.spring.cinephile.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +37,7 @@ public class LoginRestController {
 	 * @return json Map<String, Object>는 자동으로 JSON으로 변환
 	 */
 	@RequestMapping(value="/login/login_ok.do", method = RequestMethod.POST)
-	public Map<String, Object> login(Model model,
+	public Map<String, Object> login(Model model, HttpServletRequest request,
 			//검색어
 			@RequestParam(value="user_id", required=false) String user_id,
 			@RequestParam(value="user_pw", required=false) String user_pw){
@@ -43,7 +46,6 @@ public class LoginRestController {
 		if(user_id == null) {return webHelper.getJsonWarning("아이디를 입력하세요.");}
 		if(user_pw == null) {return webHelper.getJsonWarning("비밀번호를 입력하세요.");}
 		
-	
 		/* )데이터 조회하기 */
 		//조회에 필요한 조건값(검색어)를 Beans에 담는다.
 		Members input = new Members();
@@ -55,7 +57,7 @@ public class LoginRestController {
 		try {
 			//데이터 조회하기
 			output = membersService.getMembersLogin(input);
-			
+		
 		}catch(Exception e) {
 			return webHelper.getJsonError(e.getLocalizedMessage());
 		}
@@ -64,6 +66,16 @@ public class LoginRestController {
 		
 		data.put("item", output);
 		System.out.println(data);
+		
+		//세션처리 
+		HttpSession session = request.getSession();
+		if(output != null) {
+			
+			session.setAttribute("loggedIn", output);
+		}else {
+			session.removeAttribute("loggedIn");
+		}
+		
 		return webHelper.getJsonData(data);
 		
 	}

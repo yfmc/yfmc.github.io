@@ -76,19 +76,17 @@
             </div>
             <div class="right_top">
                 <ul>
-                <% 
-                	if(loginInfo == null){
-                		//세션에서 획득한 객체가 없는 경우는 로그인 상태 아님
-                		// --> 로그인 표시
-                %>
+                <%--JSTL을 통해 세션에 직접 접근하기--%>
+                <c:choose>
+                	<c:when test="${loggedIn == null}">
                     <li><a href="${pageContext.request.contextPath}/login/01-login.do" class="login">로그인</a></li>
-                    <%
-                    }else{ 
-                    	//그렇지 않은 경우 (세션정보가 존재할 경우)는 로그인 중
-                    %>
-                     <li id="logout"><a href="<%=request.getContextPath()%>/login/logout.jsp">로그아웃</a></li>
-                    <%} %>
                     <li><a href="${pageContext.request.contextPath}/account/01-welcome.do">&nbsp;회원가입</a></li>
+                    </c:when>
+					<c:otherwise>                   
+                     <li id="logout"><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+                    </c:otherwise>
+                </c:choose>
+                    
                     <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.do">&nbsp;마이페이지</a></li>
                 </ul>
             </div>

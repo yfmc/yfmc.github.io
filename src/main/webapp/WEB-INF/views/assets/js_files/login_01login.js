@@ -7,22 +7,24 @@ $(function(){
 		var user_id_val = $("#user_id").val();
 		var user_pw_val = $("#user_pw").val();
 
+		if(user_id_val==""){	
+			alert("아이디를 입력해주세요.");
+			$("#user_id").focus();
+			return false;
+		}else if(user_pw_val=="" ){
+			alert("비밀번호 입력해주세요.");
+			$("#user_pw").focus();
+			return false;
+		}
 		
 		$.post("../login/login_ok.do", {user_id:user_id_val, user_pw:user_pw_val}, function(req){
 			
-			 console.log(req.item.user_id);
-			if(user_id_val == req.item.user_id && user_pw_val == req.item.user_pw){
+			if(user_id_val == req.item.user_id && req.item.user_pw){
 				//$("#inout").html(로그아웃); //<<< (index.jsp의 로그인 )손볼곳!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				
 				alert("로그인 하셨습니다.");
 				location.href="../index.do";
 				
-			}else if(user_id_val==""){	
-				alert("아이디를 입력해주세요.");
-				$("#user_id").focus();
-			}else if(user_pw_val=="" ){
-				alert("비밀번호 입력해주세요.");
-				$("#user_pw").focus();
 			}else{
 				alert("아이디 또는 비밀번호가 일치하지 않습니다.");
 				$("#user_pw").val("");

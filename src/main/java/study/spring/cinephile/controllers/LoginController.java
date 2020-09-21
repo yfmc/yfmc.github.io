@@ -39,10 +39,6 @@ public class LoginController {
 		//조회 결과가 저장될 객체
 		List<Members> output = null; //조회결과가 저장될 객체
 		
-		//200912 로그인 처리하다 막힘!ㅠㅠㅠ
-		
-
-		
 		return new ModelAndView("home");
 	}
 	
