@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
@@ -36,7 +39,44 @@
                             <div class="title_area">
                                 <h3>공지사항<a href="<%=request.getContextPath()%>/support/notice_list.do" class="more pull-right">더보기 > </a></h3>
                                 <div id="notice_list_body">
-                                	<!-- Ajax 결과 위치 -->
+                                	<table>
+                                		<thead>
+                                			<tr>
+                                				<th width = "50" ></th>
+                                				<th width = "250" ></th>
+                                				<th width = "100" ></th>
+                                			</tr>
+                                		</thead>
+                                		<tbody>
+                                			<c:choose>
+                                				<%-- 조회결과가 없는 경우 --%>
+                                				<c:when test="${output1 == null || fn:length(output1)==0}">
+                                					<tr>
+                                						<td colspan="3" align="center">조회 결과 없음</td>
+                                					</tr>
+                                				</c:when>
+                                				<%-- 조회결과가 있는 경우 --%>
+                                				<c:otherwise>
+                                					<c:forEach var="item1" items="${output1}" varStatus="status" begin="0" end="4" step="1">
+                                						<%-- 출력을 위해 준비한 notice데이터 --%>
+                                						<c:set var="notice_id" 		value="${fn:length(output1)-status.index}" />
+                                						<c:set var="notice_title" 		value="${item1.notice_title}" />
+                                						<c:set var="reg_date" 			value="${item1.reg_date}" />
+                                						
+                                						<%-- 상세페이지로 이동하기 위한 URL --%>
+                                						<c:url value="/support/notice_detail.do" var="viewUrl1">
+                                							<c:param name="notice_id"  value="${notice_id}" />
+                                						</c:url>
+                                						<tr>
+                                							<td align="center">${notice_id}</td>
+                                							<td align="center"><a href="${viewUrl1}">${notice_title}</a></td>
+                                							<td align="center">${reg_date}</td>
+                                						</tr>
+                                					</c:forEach>
+                                				</c:otherwise>
+                                			</c:choose>
+                                		</tbody>
+                                	</table>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +84,44 @@
                             <div class="title_area">
                                 <h3>자주찾는 질문<a href="<%=request.getContextPath()%>/support/faq_list.do" class="more pull-right">더보기 > </a></h3>
                                 <div id="faq_list_body">
-                                	<!-- Ajax 결과 위치 -->
+                                	<table>
+                                		<thead>
+                                			<tr>
+                                				<th width = "50" ></th>
+                                				<th width = "250" ></th>
+                                				<th width = "100" ></th>
+                                			</tr>
+                                		</thead>
+                                		<tbody>
+                                			<c:choose>
+                                				<%-- 조회결과가 없는 경우 --%>
+                                				<c:when test="${output2 == null || fn:length(output2)==0}">
+                                					<tr>
+                                						<td colspan="3" align="center">조회 결과 없음</td>
+                                					</tr>
+                                				</c:when>
+                                				<%-- 조회결과가 있는 경우 --%>
+                                				<c:otherwise>
+                                					<c:forEach var="item2" items="${output2}" varStatus="status" begin="0" end="4" step="1">
+                                						<%-- 출력을 위해 준비한 notice데이터 --%>
+                                						<c:set var="faq_id" 			value="${fn:length(output2)-status.index}" />
+                                						<c:set var="faq_title" 		value="${item2.faq_title}" />
+                                						<c:set var="reg_date" 		value="${item2.reg_date}" />
+                                						
+                                						<%-- 상세페이지로 이동하기 위한 URL --%>
+                                						<c:url value="/support/faq_detail.do" var="viewUrl2">
+                                							<c:param name="faq_id"  value="${faq_id}" />
+                                						</c:url>
+                                						<tr>
+                                							<td align="center">${faq_id}</td>
+                                							<td align="center"><a href="${viewUrl2}">${faq_title}</a></td>
+                                							<td align="center">${reg_date}</td>
+                                						</tr>
+                                					</c:forEach>
+                                				</c:otherwise>
+                                			</c:choose>
+                                		</tbody>
+                                	</table>
                                 </div>
                             </div>
                         </div>
@@ -54,40 +131,5 @@
             </div>
             <!-- ==== 본문 끝 ==== -->
         </div>
-    </div>
-    <script src="../assets/plugins/handlebars/handlebars-v4.0.11.js"></script>
-    <script id="notice_list_tmpl" type="text/x-handlebars-template">
-    	{{#notice_list}}
-    	<a href="<%=request.getContextPath()%>/support/notice_detail.do" class="list-group-item">
-    	<span>{{noticename}}</span>
-    	<span class="date pull-right">{{date}}</span>
-    	{{/notice_list}}
-    </script>
-    <script id="faq_list_tmpl" type="text/x-handlebars-template">
-    	{{#faq_list}}
-    	<a href="<%=request.getContextPath()%>/support/faq_detail.do" class="list-group-item">
-    	<span>{{faqname}}</span>
-    	<span class="date pull-right">{{date}}</span>
-    	{{/faq_list}}
-    </script>
-    <script type="text/javascript">
-    	function get_notice_list() {
-    		$.get("../api/support_home_list.json", function(req) {
-    			var template = Handlebars.compile($("#notice_list_tmpl").html());
-    			var html = template(req);
-    			$("#notice_list_body").append(html);
-    		});
-    	}
-    	function get_faq_list() {
-    		$.get("../api/support_home_list.json", function(req) {
-    			var template = Handlebars.compile($("#faq_list_tmpl").html());
-    			var html = template(req);
-    			$("#faq_list_body").append(html);
-    		});
-    	}
-    	$(function() {
-    		get_notice_list();
-    		get_faq_list();
-    	});
-    </script>
+    </div>    
 <%@ include file="../_inc/footer.jsp" %>

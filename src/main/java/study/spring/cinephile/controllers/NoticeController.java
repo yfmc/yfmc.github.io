@@ -1,7 +1,10 @@
 package study.spring.cinephile.controllers;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import study.spring.cinephile.service.NoticeService;
+import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.Notice;
@@ -36,9 +40,47 @@ public class NoticeController {
 	
 	/** 목록 페이지 */
 	@RequestMapping(value="/support/notice_list.do", method=RequestMethod.GET)
-	public ModelAndView noticeList(Model model) {
+	public ModelAndView noticeList(Model model,
+		// 검색어
+		@RequestParam(value="keyword", required=false) String keyword,
+		// 현재 페이지 번호
+		@RequestParam(value="page", defaultValue="1") int nowPage){
 		
-		return new ModelAndView("support/notice_list") ;
+		/** 페이지 구현에 필요한 변수값 생성 */
+		int totalCount = 0;
+		int listCount = 10;
+		int pageCount = 5;
+		
+		/** 데이터 조회 */
+		// 조회에 필요한 조건값 Beans에 담기
+		Notice input = new Notice();
+		input.setNotice_title(keyword);
+		input.setNotice_content(keyword);
+		
+		List<Notice> output = null;
+		PageData pageData = null;
+		
+		try {
+			// 전체 게시글 수 조회
+			totalCount = noticeService.getNoticeCount(input);
+			// 페이지 번호 계산 -> 로그로 출력
+			pageData = new PageData(nowPage, totalCount, listCount, pageCount);
+			
+			Notice.setOffset(pageData.getOffset());
+			Notice.setListCount(pageData.getListCount());
+			
+			output = noticeService.getNoticeList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		// view 처리
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("output", output);
+		model.addAttribute("pageDate", pageData);
+		
+		
+		return new ModelAndView("support/notice_list");
 	}
 	
 	/** 상세 페이지 */

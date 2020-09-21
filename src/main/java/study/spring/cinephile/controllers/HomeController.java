@@ -2,17 +2,23 @@ package study.spring.cinephile.controllers;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import lombok.extern.slf4j.Slf4j;
+import study.spring.cinephile.model.Faq;
+import study.spring.cinephile.model.Notice;
+import study.spring.cinephile.service.FaqService;
+import study.spring.cinephile.service.NoticeService;
 
 /**
  * Handles requests for the application home page.
@@ -20,6 +26,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 public class HomeController {
+	
+	@Autowired
+	NoticeService noticeService;
+	FaqService faqService;
 	
 	//private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -44,8 +54,22 @@ public class HomeController {
 		return "index";
 	}
 	
+	/** 고객센터 홈 페이지 */
 	@RequestMapping(value = "/support/support_home.do", method=RequestMethod.GET)
 	public String support(Model model, HttpServletResponse response) {
+		
+		List<Notice> output1 = null;
+		List<Faq> output2 = null;
+		
+		try {
+			output1 = noticeService.getNoticeList(null);
+			output2 = faqService.getFaqList(null);
+		} catch (Exception e) { e.printStackTrace(); }
+		
+		model.addAttribute("output1", output1);
+		model.addAttribute("output2", output2);
+		
 		return "support/support_home";
-	}	
+	}
+	
 }
