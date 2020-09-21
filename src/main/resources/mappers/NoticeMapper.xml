@@ -37,6 +37,10 @@
 		</where>
 		
 		order by notice_id desc
+		
+		<if test="listCount > 0">
+			limit #{offset}, #{listCount}
+		</if>
 	</select>
 	
 	<!-- 데이터 저장을 위한 기능 정의 -->
