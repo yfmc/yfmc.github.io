@@ -88,7 +88,7 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 		}
 		
 		if(count!=0) {
-			String redirectUrl = contextPath + "/index.do";
+			String redirectUrl = contextPath + "/login/01-login.do";
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter writer = response.getWriter();
 			writer.println("<script>alert('로그인하세요.'); location.href='"+redirectUrl+"';</script>");

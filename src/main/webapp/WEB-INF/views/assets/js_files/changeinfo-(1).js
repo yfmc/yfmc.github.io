@@ -2,7 +2,7 @@ $(function(){
 	// 비밀번호 확인 후 일치하면 회원정보 수정 페이지로 이동
 	$(".form-inline").submit(function(e){
 		e.preventDefault();
-		var userPw=$("#password").val();
+		var userPw=$("#user_pw").val();
 		/*
 		$.post("./userinfo.json",{password:userPw},function(req){
 			if(!userPw){

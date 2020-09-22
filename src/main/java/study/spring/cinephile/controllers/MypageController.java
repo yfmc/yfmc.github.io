@@ -66,10 +66,30 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/changeinfo-(1).do",method=RequestMethod.GET)
-	public String changeinfo1(Model model) {
+	public String changeinfo1(Model model,HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		model.addAttribute("my_session",mySession);
 		return "mypage/changeinfo-(1)";
 	}
+	
+	@RequestMapping(value="/mypage/password_ok.do",method=RequestMethod.POST)//진행중
+	public ModelAndView passwordOk(Model model,
+			HttpServletRequest request,
+			@RequestParam(value="user_pw",required=false) String user_pw) {
+		if(user_pw.equals("")) {
+			return webHelper.redirect(null, "비밀번호를 입력하세요");
+		}
+		
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		model.addAttribute("my_session",mySession);
+		return new ModelAndView("mypage/password_ok.do");
+	}
+	//세션의 멤버id와 입력한비밀번호 두개가 동시에 일치하는 데이터를 검사
+	//count>0
 	
 	@RequestMapping(value="/mypage/changeinfo-(2).do",method=RequestMethod.GET)
 	public String changeinfo2(Model model,HttpServletRequest request) {

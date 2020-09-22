@@ -29,9 +29,9 @@
                 <i class="fas fa-key"></i>
                     <p>회원정보를 수정하기 전 본인 확인이 필요합니다.<br />비밀번호를 입력해주세요.</p>
                     <br />
-                    <form action="" method="POST" class="form-inline">
+                    <form action="${pageContext.request.contextPath}/mypage/changeinfo-(2).do" method="POST" class="form-inline">
                         <div class="form-group">
-                            <input type="password" name="password" id="password" placeholder="  비밀번호를 입력해주세요">
+                            <input type="password" name="user_pw" id="user_pw" placeholder="  비밀번호를 입력해주세요">
                         </div>
                         <!--  입력버튼 -->
                         &nbsp;&nbsp;<button type="submit" class="btn btn-default change_go_btn">입력</button>
@@ -41,9 +41,11 @@
                 <div class="mainbutton">
                 	<button type="button" class="btn main_go_btn">메인으로</button>
                 </div>
+                ${my_session.members_id}
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
         <script src="${pageContext.request.contextPath}/assets/js_files/changeinfo-(1).js"></script>
 <%@ include file="../_inc/footer.jsp"%>
