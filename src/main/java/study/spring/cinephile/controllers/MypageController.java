@@ -20,7 +20,9 @@ import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.FavTheater;
 import study.spring.cinephile.model.Members;
+import study.spring.cinephile.model.PasswordOk;
 import study.spring.cinephile.service.FavTheaterService;
+import study.spring.cinephile.service.PasswordOkService;
 
 
 @Slf4j
@@ -29,6 +31,7 @@ public class MypageController {
 	@Autowired WebHelper webHelper;
 	@Autowired RegexHelper regexHelper;
 	@Autowired FavTheaterService favTheaterService;
+	@Autowired PasswordOkService passwordOkService;
 	
 	
 	@Value("#{servletContext.contextPath}")
@@ -74,31 +77,48 @@ public class MypageController {
 		return "mypage/changeinfo-(1)";
 	}
 	
-	@RequestMapping(value="/mypage/password_ok.do",method=RequestMethod.POST)//진행중
+	@RequestMapping(value={"/mypage/changeinfo-(2).do"},method= {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView passwordOk(Model model,
 			HttpServletRequest request,
 			@RequestParam(value="user_pw",required=false) String user_pw) {
-		if(user_pw.equals("")) {
-			return webHelper.redirect(null, "비밀번호를 입력하세요");
+		
+		
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		PasswordOk input=new PasswordOk();
+		
+		input.setMembers_id(mySession.getMembers_id());
+		input.setUser_pw(user_pw);
+		int totalCount=0;
+		try {
+			totalCount=passwordOkService.getPasswordOkCount(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return webHelper.redirect(null, "정상적이지 않은 접근입니다.");
 		}
 		
-		HttpSession session=request.getSession();
-		Members mySession=(Members)session.getAttribute("loggedIn");
+		if(totalCount==0) {
+			if(user_pw==null || user_pw.equals("")) {
+				return webHelper.redirect(null, "정상적이지 않은 접근입니다.");
+			}
+			else {
+				return webHelper.redirect(null,"비밀번호가 틀립니다.");
+			}
+		}
+
+		else {
+			model.addAttribute("my_session",mySession);
+			model.addAttribute("totalCount",totalCount);
+			return new ModelAndView("mypage/changeinfo-(2)");
+		}
 		
-		model.addAttribute("my_session",mySession);
-		return new ModelAndView("mypage/password_ok.do");
+
+		
+		
 	}
-	//세션의 멤버id와 입력한비밀번호 두개가 동시에 일치하는 데이터를 검사
-	//count>0
 	
-	@RequestMapping(value="/mypage/changeinfo-(2).do",method=RequestMethod.GET)
-	public String changeinfo2(Model model,HttpServletRequest request) {
-		HttpSession session=request.getSession();
-		Members mySession=(Members)session.getAttribute("loggedIn");
-		
-		model.addAttribute("my_session",mySession);
-		return "mypage/changeinfo-(2)";
-	}
+	
 	
 	@RequestMapping(value="/mypage/changeinfo-(3).do",method=RequestMethod.POST)
 	public String changeinfo3(Model model) {

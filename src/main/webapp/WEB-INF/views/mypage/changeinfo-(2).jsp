@@ -10,6 +10,7 @@
 <title>마이페이지 > 회원정보 수정</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/changeinfo-(2).css">
 <link rel="styleshhet" href="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalret2.min.css">
+
         <div id="content" class="clear">
         	<!-- 사이드바 -->
             <div class="sidebar">

@@ -41,7 +41,6 @@
                 <div class="mainbutton">
                 	<button type="button" class="btn main_go_btn">메인으로</button>
                 </div>
-                ${my_session.members_id}
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
