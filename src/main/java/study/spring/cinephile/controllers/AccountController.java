@@ -71,7 +71,7 @@ public class AccountController {
 		return new ModelAndView("account/03-emailCode");
 	}
 	
-	/* 메일보내기 action 페이지 */
+	/* 인증번호 메일보내기 action 페이지 */
 	@RequestMapping(value="/account/02-sendCode", method=RequestMethod.POST)
 	public ModelAndView sendCode(Model model, HttpServletRequest request,
 			@RequestParam(value="user_email", required=false) String user_email) {
