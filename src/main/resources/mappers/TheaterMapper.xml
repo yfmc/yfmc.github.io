@@ -24,5 +24,10 @@
         resultMap="theaterMap">
         select brand, branch, rooms, seats, old_addr, new_addr, lat, lng from theater where theater_id=#{theaterId};
     </select>
+    
+    <!-- 다중행 조회를 위한 기능 정의 -->
+	<select id="selectList" parameterType="study.spring.cinephile.model.Theater" resultMap="theaterMap">
+		select prov_no, theater_id, brand, branch, lat, lng from theater where prov_no=#{provNo};
+	</select>
 
 </mapper>

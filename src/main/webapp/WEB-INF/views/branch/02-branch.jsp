@@ -38,78 +38,15 @@
 			</ul>
 		</div>
 		<div class="branch_list">
-			<ul id="branch_list">
-				<li><a href='#'>롯데시네마 가산디지털</a></li>
-				<li><a href='#'>롯데시네마 가양</a></li>
-				<li><a href='#'>CGV 강남</a></li>
-				<li><a href='#'>메가박스 강남</a></li>
-				<li><a href='#'>메가박스 강남대로(씨티)</a></li>
-				<li><a href='#'>롯데시네마 강동</a></li>
-				<li><a href='#'>메가박스 강동</a></li>
-				<li><a href='#'>CGV 강변</a></li>
-				<li><a href='#'>CGV 건대입구</a></li>
-				<li><a href='#'>롯데시네마 건대입구</a></li>
-				<li><a href='#'>CGV 구로</a></li>
-				<li><a href='#'>메가박스 군자</a></li>
-				<li><a href='#'>롯데시네마 김포공항</a></li>
-				<li><a href='#'>롯데시네마 노원</a></li>
-				<li><a href='#'>CGV 대학로</a></li>
-				<li><a href='#'>롯데시네마 도곡</a></li>
-				<li><a href='#'>롯데시네마 독산</a></li>
-				<li><a href='#'>CGV 동대문</a></li>
-				<li><a href='#'>메가박스 동대문</a></li>
-				<li><a href='#'>CGV 등촌</a></li>
-				<li><a href='#'>메가박스 마곡</a></li>
-				<li><a href='#'>CGV 명동</a></li>
-				<li><a href='#'>CGV 명동역 씨네라이브러리</a></li>
-				<li><a href='#'>CGV 목동</a></li>
-				<li><a href='#'>메가박스 목동</a></li>
-				<li><a href='#'>CGV 미아</a></li>
-				<li><a href='#'>CGV 불광</a></li>
-				<li><a href='#'>롯데시네마 브로드웨이(신사)</a></li>
-				<li><a href='#'>CGV 상봉</a></li>
-				<li><a href='#'>메가박스 상봉</a></li>
-				<li><a href='#'>메가박스 상암월드컵경기장</a></li>
-				<li><a href='#'>롯데시네마 서울대입구</a></li>
-				<li><a href='#'>메가박스 성수</a></li>
-				<li><a href='#'>CGV 성신여대입구</a></li>
-				<li><a href='#'>메가박스 센트럴</a></li>
-				<li><a href='#'>CGV 송파</a></li>
-				<li><a href='#'>메가박스 송파파크하비오</a></li>
-				<li><a href='#'>롯데시네마 수락산</a></li>
-				<li><a href='#'>CGV 수유</a></li>
-				<li><a href='#'>롯데시네마 수유</a></li>
-				<li><a href='#'>롯데시네마 신도림</a></li>
-				<li><a href='#'>롯데시네마 신림</a></li>
-				<li><a href='#'>메가박스 신촌</a></li>
-				<li><a href='#'>CGV 신촌아트레온</a></li>
-				<li><a href='#'>메가박스 아트나인</a></li>
-				<li><a href='#'>CGV 압구정</a></li>
-				<li><a href='#'>롯데시네마 에비뉴엘(명동)</a></li>
-				<li><a href='#'>CGV 여의도</a></li>
-				<li><a href='#'>CGV 영등포</a></li>
-				<li><a href='#'>롯데시네마 영등포</a></li>
-				<li><a href='#'>CGV 왕십리</a></li>
-				<li><a href='#'>롯데시네마 용산</a></li>
-				<li><a href='#'>CGV 용산아이파크몰</a></li>
-				<li><a href='#'>롯데시네마 월드타워</a></li>
-				<li><a href='#'>롯데시네마 은평</a></li>
-				<li><a href='#'>메가박스 은평</a></li>
-				<li><a href='#'>메가박스 이수</a></li>
-				<li><a href='#'>롯데시네마 장안</a></li>
-				<li><a href='#'>CGV 중계</a></li>
-				<li><a href='#'>메가박스 창동</a></li>
-				<li><a href='#'>CGV 천호</a></li>
-				<li><a href='#'>CGV 청담씨네시티</a></li>
-				<li><a href='#'>롯데시네마 청량리</a></li>
-				<li><a href='#'>메가박스 코엑스</a></li>
-				<li><a href='#'>CGV 피카디리 1958</a></li>
-				<li><a href='#'>CGV 하계</a></li>
-				<li><a href='#'>롯데시네마 합정</a></li>
-				<li><a href='#'>CGV 홍대</a></li>
-				<li><a href='#'>메가박스 홍대</a></li>
-				<li><a href='#'>롯데시네마 홍대입구</a></li>
-				<li><a href='#'>메가박스 화곡</a></li>
+			<ul id="branch_list">				
+				<c:forEach var="item" items="${output2}" varStatus="status">
+					<%-- 상세페이지로 이동하기 위한 URL --%>
+					<c:url value="/branch" var="viewUrl">
+						<c:param name="provNo" value="${item.provNo}" />
+						<c:param name="theaterId" value="${item.theaterId}" />
+					</c:url>
+					<li><a href="${viewUrl}">${item.brand}&nbsp;${item.branch}</a></li>
+				</c:forEach>
 			</ul>
 		</div>
 		<!-- float 마감제 -->

@@ -1,5 +1,7 @@
 package study.spring.cinephile.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -30,7 +32,7 @@ public class BranchController {
 	public String branch() {
 		return "branch/01-branch";
 	}
-	
+		
 	/* 극장정보 상세 페이지 */
 	@RequestMapping(value="/branch", method=RequestMethod.GET)
 	public ModelAndView info(Model model, @RequestParam (value="provNo", defaultValue="0") int provNo, @RequestParam(value="theaterId", defaultValue="0") int theaterId) {
@@ -44,9 +46,11 @@ public class BranchController {
 		input.setProvNo(provNo);
 		input.setTheaterId(theaterId);
 		Theater output=null;
+		List<Theater> output2=null;
 		
 		try {
 			output=theaterService.getTheaterItem(input);
+			output2=theaterService.getTheaterList(input);
 		}
 		catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
@@ -54,6 +58,7 @@ public class BranchController {
 		
 		/* 3) View 처리 */
 		model.addAttribute("output", output);
+		model.addAttribute("output2", output2);
 		return new ModelAndView("branch/02-branch");
 		
 	}
