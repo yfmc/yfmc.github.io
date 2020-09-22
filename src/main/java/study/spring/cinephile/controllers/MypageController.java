@@ -18,7 +18,9 @@ import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
+import study.spring.cinephile.model.FavTheater;
 import study.spring.cinephile.model.Members;
+import study.spring.cinephile.service.FavTheaterService;
 
 
 @Slf4j
@@ -26,21 +28,32 @@ import study.spring.cinephile.model.Members;
 public class MypageController {
 	@Autowired WebHelper webHelper;
 	@Autowired RegexHelper regexHelper;
-
+	@Autowired FavTheaterService favTheaterService;
 	
 	
 	@Value("#{servletContext.contextPath}")
 	String contextPath;
 
 	@RequestMapping(value="/mypage/mypagemain.do",method=RequestMethod.GET)
-	public String mypagemain(Model model,HttpServletRequest request) {
-		
+	public ModelAndView mypagemain(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
 		model.addAttribute("my_session",mySession);
 		
-		return "mypage/mypagemain";
+		FavTheater input=new FavTheater();
+		input.setMembers_id(mySession.getMembers_id());
+		List<FavTheater> output=null;
+		
+		try {
+			output=favTheaterService.getFavTheaterList(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		model.addAttribute("output",output);
+		
+		return new ModelAndView("mypage/mypagemain");
 	}
 	
 	@RequestMapping(value="/mypage/bookinglist.do",method=RequestMethod.GET)
@@ -99,9 +112,24 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/oftentheater.do",method=RequestMethod.GET)
-	public String oftentheater(Model model) {
+	public ModelAndView oftentheater(Model model,HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
-		return "mypage/oftentheater";
+		model.addAttribute("my_session",mySession);
+		
+		FavTheater input=new FavTheater();
+		input.setMembers_id(mySession.getMembers_id());
+		List<FavTheater> output=null;
+		
+		try {
+			output=favTheaterService.getFavTheaterList(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		model.addAttribute("output",output);
+		return new ModelAndView("mypage/oftentheater");
 	}
 	
 	@RequestMapping(value="/mypage/withdrawal-(1).do",method=RequestMethod.GET)

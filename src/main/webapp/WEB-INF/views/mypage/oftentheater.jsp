@@ -24,6 +24,13 @@
 </head>
 
 <body>
+	
+	<c:forEach var="item" items="${output}" varStatus="status">
+	<input type="hidden" class="th${status.index}" value="${item.full_name}"/>
+	
+	</c:forEach>
+	
+	
     <div id="container">
     	<div class="up">
         	<h3>자주가는 영화관 설정하기</h3>
@@ -104,10 +111,14 @@
 				<button type="button" class="btn btn-success applbutton">적용</button>
 				<button type="button" class="btn btn-warning outbutton">취소</button>
 		</div>
+		${my_session.members_id}
+		<c:forEach var="item" items="${output}" varStatus="status">
+		${item.brand} &nbsp; ${item.branch}
+		</c:forEach>
 		 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/plugins/tagsinput/jquery-tagsinput.min.js" defer></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="../assets/js_files/oftentheater.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js_files/oftentheater.js"></script>
    </div>
 </body>
 

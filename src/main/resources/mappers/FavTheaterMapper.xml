@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FavTheaterMapper">
+
+	<resultMap id="favTheaterMap" type="study.spring.cinephile.model.FavTheater">
+		<result property="fav_theater_id" column="fav_theater_id"/>
+		<result property="added_time" column="added_time"/>
+		<result property="members_id" column="members_id"/>
+		<result property="theater_id" column="theater_id"/>
+		<result property="brand" column="brand"/>
+		<result property="branch" column="branch"/>
+		<result property="rooms" column="rooms"/>
+		<result property="seats" column="seats"/>
+		<result property="oldAddr" column="old_addr"/>
+		<result property="full_name" column="full_name"/>
+	</resultMap>
+		
+	<select id="selectList"
+	parameterType="study.spring.cinephile.model.FavTheater"
+	resultMap="favTheaterMap">
+	select fav_theater_id,added_time,members_id,t.theater_id,brand,branch,rooms,seats,old_addr,concat(brand,' ',branch) as full_name
+	from fav_theater f
+	inner join theater t on f.theater_id=t.theater_id
+	
+	<where>
+		members_id=#{members_id}
+	</where>
+	order by added_time asc
+	
+	</select>
+
+</mapper>

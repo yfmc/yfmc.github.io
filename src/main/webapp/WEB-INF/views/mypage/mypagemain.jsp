@@ -32,29 +32,45 @@
                     <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${my_session.user_name}(${my_session.user_id})님의 My Page입니다.</h3>
                     <!-- 자주가는 영화관 목록 -->
                     <table class="oftentheater">
-                        <tr>
-                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 강남구 역삼동 814-6 스타플렉스<br/>1544-1122<br/>6관 / 874석">CGV 강남</span>
-                            <a href="#"><img src="${pageContext.request.contextPath}/assets/img/deleteicon.png" /></a>
-                            </td>
-                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 양천구 목동 916번지 현대백화점 지하2층<br/>1544-1122<br/>8관 / 1,372석">CGV 목동</span>
-                            <a href="#"><img src="${pageContext.request.contextPath}/assets/img/deleteicon.png" /></a>
-                            </td>
+                    	<tr>
+                        <c:forEach var="item" items="${output}" begin="0" end="1" varStatus="status">
+                        <c:choose>
+                        	<c:when test="${item!=null || item!=''}">
+                      		<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
+	                        </c:when>
+	                        <c:otherwise>
+	                        <td></td>
+	                        </c:otherwise>
+                        </c:choose>
+                        </c:forEach>
                         </tr>
                         <tr>
-                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울시 강서구 화곡로 142 메가스퀘어 4층<br/>1544-0070<br/>5관,850석">메가박스 화곡</span>
-                            <a href="#"><img src="${pageContext.request.contextPath}/assets/img/deleteicon.png" /></a>
-                            </td>
-                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 영등포구 경인로102길 13 (영등포동, 시네마동 7층)<br/>1544-8855<br/>7관, 1328석">롯데시네마 영등포</span>
-                            <a href="#"><img src="${pageContext.request.contextPath}/assets/img/deleteicon.png" /></a>
-                            </td>
+                        <c:forEach var="item" items="${output}" begin="2" end="3" varStatus="status">
+                        <c:choose>
+	                        <c:when test="${item!=null || item!=''}">
+	                      	<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
+	                        </c:when>
+	                        <c:otherwise>
+	                        <td></td>
+	                        </c:otherwise>
+                        </c:choose>
+                        </c:forEach>
                         </tr>
                         <tr>
-                            <td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="서울특별시 금천구 디지털로10길 9 (가산동, 현대아울렛)<br/>1544-8855<br/>6관, 1054석">롯데시네마 가산디지털</span>
-                            <a href="#"><img src="${pageContext.request.contextPath}/assets/img/deleteicon.png" /></a>
-                            </td>
-                            <!-- 자주가는 영화관 설정 창으로 이동 -->
-                            <td class="gotheater"><a href="#" class="often">자주가는 영화관 설정 &nbsp;&nbsp;&nbsp;<i class="fas fa-mouse" style="font-size:14px;"></i></a></td>
+                        <c:forEach var="item" items="${output}" begin="4" varStatus="status">
+                        <c:choose>
+	                        <c:when test="${item!=null || item!=''}">
+	                      	<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
+	                        </c:when>
+	                        <c:otherwise>
+	                        <td></td>
+	                        </c:otherwise>
+                        </c:choose>
+                        </c:forEach>
+                        <!-- 자주가는 영화관 설정 창으로 이동 -->
+                        <td class="gotheater"><a href="#" class="often">자주가는 영화관 설정 &nbsp;&nbsp;&nbsp;<i class="fas fa-mouse" style="font-size:14px;"></i></a></td>
                         </tr>
+
                     </table>
                 </div>
                 <!--  메인 중단부 -->

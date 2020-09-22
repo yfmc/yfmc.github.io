@@ -35,7 +35,7 @@
 	<!-- 단일행 조회 (for Login) 를 위한 기능 정의 -->
 	<select id="selectLogin" parameterType="study.spring.cinephile.model.Members"
 		resultMap="membersMap">
-		select user_id, user_pw, user_name, birthdate, gender, user_email, phone, postcode, addr, addr_detail, is_out, reg_date, edit_date 
+		select members_id,user_id, user_pw, user_name, birthdate, gender, user_email, phone, postcode, addr, addr_detail, is_out, reg_date, edit_date 
 		from members 
 		where user_id=#{user_id} and user_pw = MD5(#{user_pw});
 	</select>
