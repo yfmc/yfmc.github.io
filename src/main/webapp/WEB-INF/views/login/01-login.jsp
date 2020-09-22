@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%
-	session.setMaxInactiveInterval(1);
+	session.setMaxInactiveInterval(10);
 %>
 
 <%@ include file="../_inc/header.jsp" %>
@@ -11,7 +11,7 @@
     <div id="content">
             <h2>로그인</h2>
             <div id="lginput">
-                <form  id="login-form" name="login-form" >
+                <form  id="login-form" name="login-form">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1"><i class="fas fa-user-circle"></i></span>
                     <input type="text" class="form-control" id="user_id" name="user_id" placeholder="아이디를 입력해주세요." aria-describedby="sizing-addon1">

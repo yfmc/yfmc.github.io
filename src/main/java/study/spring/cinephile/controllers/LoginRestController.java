@@ -72,6 +72,9 @@ public class LoginRestController {
 		if(output != null) {
 			
 			session.setAttribute("loggedIn", output);
+			//세션 유지시간 설정(초단위)
+			//60 * 30 = 3분 !!일단 생략
+			//session.setMaxInactiveInterval(1800);
 		}else {
 			session.removeAttribute("loggedIn");
 		}
