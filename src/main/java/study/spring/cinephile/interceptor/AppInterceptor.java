@@ -65,6 +65,14 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 		
 		
 		/** 로그인 안하고 접근하면 안되는 페이지들에 접근했을때를 처리하는 코드 */
+		/*
+		 * 로그인 안 했을때 접근하면 안되는 페이지들의 url을 배열로 만든다.
+		 * 모든 페이지 이동시 실행되며,
+		 * 현재 url과 배열의 url들을 비교해 일치하는게 있는지 찾는다.
+		 * 현재 세션이 없고(로그인이 안돼있고), 접근하면 안되는 페이지에 접근하려 하면
+		 * 접근불가 처리한다
+		 * 
+		 */
 		String[] forbidden_url= {"http://localhost:8080/cinephile/mypage/mypagemain.do",
 				"http://localhost:8080/cinephile/mypage/bookinglist.do",
 				"http://localhost:8080/cinephile/mypage/choicelist.do",

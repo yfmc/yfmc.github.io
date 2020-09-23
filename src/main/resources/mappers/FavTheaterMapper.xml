@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="FavTheaterMapper">
 
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시 -->
 	<resultMap id="favTheaterMap" type="study.spring.cinephile.model.FavTheater">
 		<result property="fav_theater_id" column="fav_theater_id"/>
 		<result property="added_time" column="added_time"/>
@@ -14,7 +15,8 @@
 		<result property="oldAddr" column="old_addr"/>
 		<result property="full_name" column="full_name"/>
 	</resultMap>
-		
+	
+	<!-- 다중행 조회 -->
 	<select id="selectList"
 	parameterType="study.spring.cinephile.model.FavTheater"
 	resultMap="favTheaterMap">

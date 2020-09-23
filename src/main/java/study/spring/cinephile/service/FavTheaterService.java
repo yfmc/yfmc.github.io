@@ -4,6 +4,7 @@ import java.util.List;
 
 import study.spring.cinephile.model.FavTheater;
 
+
 public interface FavTheaterService {
 
 

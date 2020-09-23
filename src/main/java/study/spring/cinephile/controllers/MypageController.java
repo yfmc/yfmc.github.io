@@ -24,28 +24,34 @@ import study.spring.cinephile.model.PasswordOk;
 import study.spring.cinephile.service.FavTheaterService;
 import study.spring.cinephile.service.PasswordOkService;
 
+/**
+ * 마이페이지의 페이지들을 제어하는 컨트롤러입니다.
+ *
+ */
 
-@Slf4j
-@Controller
+@Slf4j //로그 기록시 필요
+@Controller //컨트롤러 명시
 public class MypageController {
 	@Autowired WebHelper webHelper;
 	@Autowired RegexHelper regexHelper;
 	@Autowired FavTheaterService favTheaterService;
 	@Autowired PasswordOkService passwordOkService;
 	
+	//필요한 객체들 주입
 	
 	@Value("#{servletContext.contextPath}")
 	String contextPath;
+	//프로젝트경로를 변수로
 
-	@RequestMapping(value="/mypage/mypagemain.do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/mypagemain.do",method=RequestMethod.GET) //마이페이지 > 메인페이지
 	public ModelAndView mypagemain(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
-		Members mySession=(Members)session.getAttribute("loggedIn");
+		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인세션을 가져옴
 		
 		model.addAttribute("my_session",mySession);
 		
 		FavTheater input=new FavTheater();
-		input.setMembers_id(mySession.getMembers_id());
+		input.setMembers_id(mySession.getMembers_id()); //세션의 멤버id(로그인한 아이디의 일련번호)를 빈즈에 넣음
 		List<FavTheater> output=null;
 		
 		try {
@@ -54,12 +60,15 @@ public class MypageController {
 			e.printStackTrace();
 		}
 		
+		//자주가는 영화관 목록을 불러오는 과정
+		
+		
 		model.addAttribute("output",output);
 		
 		return new ModelAndView("mypage/mypagemain");
 	}
 	
-	@RequestMapping(value="/mypage/bookinglist.do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/bookinglist.do",method=RequestMethod.GET) //마이페이지 > 예매내역페이지
 	public String bookinglist(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
@@ -68,7 +77,7 @@ public class MypageController {
 		return "mypage/bookinglist";
 	}
 	
-	@RequestMapping(value="/mypage/changeinfo-(1).do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/changeinfo-(1).do",method=RequestMethod.GET) //마이페이지 > 회원정보수정페이지1
 	public String changeinfo1(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
@@ -77,14 +86,14 @@ public class MypageController {
 		return "mypage/changeinfo-(1)";
 	}
 	
-	@RequestMapping(value={"/mypage/changeinfo-(2).do"},method= {RequestMethod.GET,RequestMethod.POST})
+	@RequestMapping(value={"/mypage/changeinfo-(2).do"},method= {RequestMethod.GET,RequestMethod.POST}) //마이페이지 > 회원정보수정페이지2
 	public ModelAndView passwordOk(Model model,
 			HttpServletRequest request,
 			@RequestParam(value="user_pw",required=false) String user_pw) {
 		
 		
 		HttpSession session=request.getSession();
-		Members mySession=(Members)session.getAttribute("loggedIn");
+		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 세션 가져옴
 		
 		PasswordOk input=new PasswordOk();
 		
@@ -99,34 +108,41 @@ public class MypageController {
 		}
 		
 		if(totalCount==0) {
-			if(user_pw==null || user_pw.equals("")) {
+			if(user_pw==null) {
 				return webHelper.redirect(null, "정상적이지 않은 접근입니다.");
+			}
+			else if(user_pw.equals("")) {
+				return webHelper.redirect(null, "비밀번호를 입력하세요.");
 			}
 			else {
 				return webHelper.redirect(null,"비밀번호가 틀립니다.");
 			}
 		}
+		
+		//현재 로그인한 계정의 멤버id(일련번호)와 비밀번호를 이용해 db의 값과 비교해 일치하는 데이터개수를 totalCount변수에 가져온다.
+		//totalCount가 0이면 비밀번호가 틀린것->페이지 이동 불허
+		//user_pw를 가져오지 못했으면 정상적이지않은 경로로 처리
+		//user_pw가 ""이면 비밀번호를 입력하라고 출력
+		
 
 		else {
 			model.addAttribute("my_session",mySession);
 			model.addAttribute("totalCount",totalCount);
 			return new ModelAndView("mypage/changeinfo-(2)");
 		}
-		
-
-		
+		//totalCount가 0이 아니면(1) 비밀번호가 일치한것->페이지 이동허가
 		
 	}
 	
 	
 	
-	@RequestMapping(value="/mypage/changeinfo-(3).do",method=RequestMethod.POST)
+	@RequestMapping(value="/mypage/changeinfo-(3).do",method=RequestMethod.POST) //마이페이지 > 회원정보수정페이지3
 	public String changeinfo3(Model model) {
 		
 		return "mypage/changeinfo-(3)";
 	}
 	
-	@RequestMapping(value="/mypage/choicelist.do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/choicelist.do",method=RequestMethod.GET) //마이페이지 > 좋아한영화내역페이지
 	public String choicelist(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
@@ -136,7 +152,7 @@ public class MypageController {
 		return "mypage/choicelist";
 	}
 	
-	@RequestMapping(value="/mypage/inquirylist.do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/inquirylist.do",method=RequestMethod.GET) //마이페이지 > 나의문의내역페이지
 	public String inquirylist(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
@@ -145,13 +161,13 @@ public class MypageController {
 		return "mypage/inquirylist";
 	}
 	
-	@RequestMapping(value="/mypage/inquirypost.do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/inquirypost.do",method=RequestMethod.GET) //마이페이지 > 문의내역상세
 	public String inquirypost(Model model) {
 		
 		return "mypage/inquirypost";
 	}
 	
-	@RequestMapping(value="/mypage/oftentheater.do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/oftentheater.do",method=RequestMethod.GET) //마이페이지 > 자주가는영화관 추가,삭제 페이지
 	public ModelAndView oftentheater(Model model,HttpServletRequest request) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
@@ -167,18 +183,65 @@ public class MypageController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		//현재의 자주가는영화관 목록을 가져오는 작업임
+		
 		
 		model.addAttribute("output",output);
 		return new ModelAndView("mypage/oftentheater");
 	}
 	
-	@RequestMapping(value="/mypage/withdrawal-(1).do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/withdrawal-(1).do",method=RequestMethod.GET) //마이페이지 > 회원탈퇴페이지1
 	public String withdrawal1(Model model) {
 		
 		return "mypage/withdrawal-(1)";
 	}
 	
-	@RequestMapping(value="/mypage/withdrawal-(2).do",method=RequestMethod.GET)
+	@RequestMapping(value="/mypage/withdrawal_ok.do",method= {RequestMethod.GET,RequestMethod.POST}) //마이페이지 > 회원탈퇴페이지2
+	public ModelAndView withdrawalok(Model model,HttpServletRequest request,
+			@RequestParam(value="user_pw",required=false) String user_pw) {
+		
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 객체 가져옴
+		
+		PasswordOk input=new PasswordOk();
+		
+		input.setMembers_id(mySession.getMembers_id());
+		input.setUser_pw(user_pw);
+		int totalCount=0;
+		try {
+			totalCount=passwordOkService.getPasswordOkCount(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return webHelper.redirect(null, "정상적이지 않은 접근입니다.");
+		}
+		
+		if(totalCount==0) {
+			if(user_pw==null) {
+				return webHelper.redirect(null, "정상적이지 않은 접근입니다.");
+			}
+			else if(user_pw.equals("")) {
+				return webHelper.redirect(null,"비밀번호를 입력하세요.");
+			}
+			else {
+				return webHelper.redirect(null,"비밀번호가 틀립니다.");
+			}
+		}
+
+		//현재 로그인한 계정의 멤버id(일련번호)와 비밀번호를 이용해 db의 값과 비교해 일치하는 데이터개수를 totalCount변수에 가져온다.
+		//totalCount가 0이면 비밀번호가 틀린것->페이지 이동 불허
+		//user_pw를 가져오지 못했으면 정상적이지않은 경로로 처리
+		//user_pw가 ""이면 비밀번호를 입력하라고 출력
+		
+		else {
+			model.addAttribute("my_session",mySession);
+			model.addAttribute("totalCount",totalCount);
+			return new ModelAndView("mypage/withdrawal_ok");
+		}
+		//totalCount가 0이 아니면(1) 비밀번호가 일치한것->페이지 이동허가
+		
+	}
+	
+	@RequestMapping(value="/mypage/withdrawal-(2).do",method=RequestMethod.GET) //마이페이지 > 회원탈퇴페이지3
 	public String withdrawal2(Model model) {
 		
 		return "mypage/withdrawal-(2)";

@@ -6,7 +6,7 @@
 <%@include file="../_inc/header.jsp" %>
 <title>마이페이지 > 회원 탈퇴</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/withdrawal-(1).css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/withdrawal_ok.css">
 
         <div id="content" class="clear">
         	<!-- 사이드바 -->
@@ -27,21 +27,24 @@
             <div id="body">
                 <div class="reqmsg">
                 	<i class="fas fa-frown-open"></i>
-                    <p>회원 탈퇴하기 전 본인 확인이 필요합니다.<br />비밀번호를 입력해주세요.</p>
+                    <p>정말로 탈퇴하시겠습니까?<br />
                     <br />
-                    <form action="${pageContext.request.contextPath}/mypage/withdrawal_ok.do" method="POST" class="form-inline">
-                        <div class="form-group">
-                            <input type="password" name="user_pw" id="user_pw" placeholder="  비밀번호를 입력해주세요">
-                        </div>
-                        &nbsp;&nbsp;<button type="submit" class="btn btn-default withdgo">입력</button>
+                    <form action="${pageContext.request.contextPath}/mypage/withdrawal-(2).do" method="POST" class="form-inline">
+                        <button type="submit" class="btn btn1 btn-secondary">탈퇴하기</button>
+                        <button type="button" class="btn btn2 btn-success maingo">다시한번<br/>생각하기</button>
                     </form>
-                </div>
-                <!-- 메인 이동 버튼 -->
-                <div class="mainbutton">
-                	<button type="button" class="btn maingo">메인으로</button>
                 </div>
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="${pageContext.request.contextPath}/assets/js_files/withdrawal-(1).js?v=<%=System.currentTimeMillis() %>"></script>
+        <script type="text/javaScript">
+        $(function(){
+        	
+        	// 취소 버튼 누르면 마이페이지 메인으로 이동
+        	$(document).on("click",".maingo",function(){
+        		location.href="../mypage/mypagemain.do";
+        	});
+        });
+        
+        </script>
 <%@ include file="../_inc/footer.jsp"%>
