@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="TcodesMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시 -->
+	<resultMap id="tcodesMap" type="study.spring.cinephile.model.Tcodes">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결 -->
+		<result property="id_code" column="id_code" />
+		<result property="user_email" column="user_email" />
+		<result property="reg_date" column="reg_date" />
+		<result property="code" column="code" />	
+	</resultMap>
+	
+	<!-- 단일행 조회를 위한 기능 정의 -->
+	<select id="selectCode" parameterType="study.spring.cinephile.model.Tcodes"
+		resultMap="tcodesMap">
+		SELECT id_code, user_email, reg_date, code 
+		FROM tcodes 
+		WHERE id_code=#{id_code};
+	</select>
+	
+	<!-- 데이터 저장을 위한 기능 정의 -->
+	<insert id="insertCode"
+		parameterType="study.spring.cinephile.model.Tcodes"
+		useGeneratedKeys="true"
+		keyProperty="id_code">
+		insert into tcodes (user_email, reg_date, code) values (#{user_email}, now(), #{code});
+	</insert>
+	
+	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<delete id="deleteCode"
+		parameterType="study.spring.cinephile.model.Tcodes">
+		delete from tcodes where now() > date_add(reg_date, INTERVAL 3 MINUTE);
+	</delete>
+	
+</mapper>

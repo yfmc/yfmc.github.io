@@ -23,6 +23,7 @@
                     입력하신 이메일 주소로 인증번호 6자리가 전송되었습니다.
                     인증번호를 입력해 주세요.
                 </p>
+                
                 <form method="post" action="${pageContext.request.contextPath}/account/03-emailCode">
                 <div class="variCode">
                         <div class="input-group">
@@ -34,14 +35,18 @@
                             
                         </div>
                 </div>
+                </form>
+                
+                <form id="sendCodeAgain" method="post" action="${pageContext.request.contextPath}/account/02-sendCode">
                 <div class="nomail">
                     <p>메일을 받지 못하였나요?</p>
-                    <button type="button" class="btn btn-default" id="code_again">인증번호 다시 보내기</button>
+                    <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
+                    <button type="submit" class="btn btn-default" id="code_again" >인증번호 다시 보내기</button>
                 </div>
                 </form>
             </div>
         </div>
     
     
-<script src="../assets/js_files/account_03emailCode.js"></script>
+
 <%@ include file="../_inc/footer.jsp" %>

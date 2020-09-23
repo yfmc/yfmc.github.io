@@ -2,7 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <%@ include file="../_inc/header.jsp" %>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/account_04Agree.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_04Agree.css?time=<%=System.currentTimeMillis()%>" />
 
     
     <div id="content">
@@ -55,6 +55,6 @@
             </div>
         </div>
         
-<script src="account_04Agree.js"></script>
+<script src="../assets/js_files/account_04Agree.js"></script>
 
 <%@ include file="../_inc/footer.jsp" %>

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%
-	session.setMaxInactiveInterval(10);
-%>
+
 
 <%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/login_01login.css?time=<%=System.currentTimeMillis()%>" />

@@ -9,7 +9,7 @@ $(function(){
 			return false;
 		}
 		
-		location.href="05-putMemInfo.jsp";
+		location.href="../account/05-putMemInfo.do";
 	});
 	
 	$(".cancel").click(function(){
