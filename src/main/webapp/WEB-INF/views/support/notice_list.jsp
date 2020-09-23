@@ -4,7 +4,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../_inc/header.jsp"%>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/plugins/datatables/datatables.min.css?time=<%=System.currentTimeMillis()%>"/>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_button.css?time=<%=System.currentTimeMillis()%>">
@@ -38,7 +37,7 @@
 					</form>
 			</div>
 			<div class="search_result">
-			총 "&nbsp;&nbsp;&nbsp;"건이 검색 되었습니다.
+			<mark>"${keyword}"</mark>(으)로 총 "${count}"건이 검색 되었습니다.
 			</div>
 			<div class="table_area">
 				<table class="table_notice_list">
@@ -64,10 +63,10 @@
 								<%-- 조회 결과에 따른 반복처리 --%>
 								<c:forEach var="item" items="${output}" varStatus="status">
 									<%-- 출력을 위해 준비한 notice데이터 --%>
-									<c:set var="notice_id" value="${item.notice_id}" />
-									<c:set var="notice_title" value="${item.notice_title}" />
-									<c:set var="reg_date" value="${item.reg_date}" />
-									<c:set var="views" value="${item.views}" />
+									<c:set var="notice_id" 		value="${item.notice_id}" />
+									<c:set var="notice_title" 		value="${item.notice_title}" />
+									<c:set var="reg_date" 			value="${item.reg_date}" />
+									<c:set var="views" 				value="${item.views}" />
 
 									<%-- 검색어가 있다면 --%>
 									<c:if test="${keyword != ''}">
@@ -92,59 +91,62 @@
 						</c:choose>
 					</tbody>
 				</table>
-				<!-- 페이지 번호 구현 -->
-				<%-- 이전 그룹에 대한 링크 --%>
-				<c:choose>
-					<%-- 이전 그룹으로 이동 가능하다면? --%>
-					<c:when test="${pageData.prevPage > 0}">
-						<%-- 이동할 URL 생성 --%>
-						<c:url value="/support/notice_list.do" var="prevPageUrl">
-							<c:param name="page" value="${pageData.prevPage}" />
-							<c:param name="keyword" value="${keyword}" />
-						</c:url>
-						<a href="${prevPageUrl}">[이전]</a>
-					</c:when>
-					<c:otherwise>
-			            [이전]
-			        </c:otherwise>
-				</c:choose>
-
-				<%-- 페이지 번호 (시작 페이지 부터 끝 페이지까지 반복) --%>
-				<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
-					<%-- 이동할 URL 생성 --%>
-					<c:url value="/support/notice_list.do" var="pageUrl">
-						<c:param name="page" value="${i}" />
-						<c:param name="keyword" value="${keyword}" />
-					</c:url>
-
-					<%-- 페이지 번호 출력 --%>
+				<div class = "page">
+					<!-- 페이지 번호 구현 -->
+					<%-- 이전 그룹에 대한 링크 --%>
 					<c:choose>
-						<%-- 현재 머물고 있는 페이지 번호를 출력할 경우 링크 적용 안함 --%>
-						<c:when test="${pageData.nowPage == i}">
-							<strong>[${i}]</strong>
+						<%-- 이전 그룹으로 이동 가능하다면? --%>
+						<c:when test="${pageData.prevPage > 0}">
+							<%-- 이동할 URL 생성 --%>
+							<c:url value="/support/notice_list.do" var="prevPageUrl">
+								<c:param name="page" value="${pageData.prevPage}" />
+								<c:param name="keyword" value="${keyword}" />
+							</c:url>
+							<a href="${prevPageUrl}">[ < ]</a>
 						</c:when>
-						<%-- 나머지 페이지의 경우 링크 적용함 --%>
 						<c:otherwise>
-							<a href="${pageUrl}">[${i}]</a>
-						</c:otherwise>
+			            	[ < ]
+			        	</c:otherwise>
 					</c:choose>
-				</c:forEach>
 
-				<%-- 다음 그룹에 대한 링크 --%>
-				<c:choose>
-					<%-- 다음 그룹으로 이동 가능하다면? --%>
-					<c:when test="${pageData.nextPage > 0}">
+					<%-- 페이지 번호 (시작 페이지 부터 끝 페이지까지 반복) --%>
+					<c:forEach var="i" begin="${pageData.startPage}"
+						end="${pageData.endPage}" varStatus="status">
 						<%-- 이동할 URL 생성 --%>
-						<c:url value="/support/notice_list.do" var="nextPageUrl">
-							<c:param name="page" value="${pageData.nextPage}" />
+						<c:url value="/support/notice_list.do" var="pageUrl">
+							<c:param name="page" value="${i}" />
 							<c:param name="keyword" value="${keyword}" />
 						</c:url>
-						<a href="${nextPageUrl}">[다음]</a>
-					</c:when>
-					<c:otherwise>
-			            [다음]
-			        </c:otherwise>
-				</c:choose>
+
+						<%-- 페이지 번호 출력 --%>
+						<c:choose>
+							<%-- 현재 머물고 있는 페이지 번호를 출력할 경우 링크 적용 안함 --%>
+							<c:when test="${pageData.nowPage == i}">
+								<strong>[${i}]</strong>
+							</c:when>
+							<%-- 나머지 페이지의 경우 링크 적용함 --%>
+							<c:otherwise>
+								<a href="${pageUrl}">[${i}]</a>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+
+					<%-- 다음 그룹에 대한 링크 --%>
+					<c:choose>
+						<%-- 다음 그룹으로 이동 가능하다면? --%>
+						<c:when test="${pageData.nextPage > 0}">
+							<%-- 이동할 URL 생성 --%>
+							<c:url value="/support/notice_list.do" var="nextPageUrl">
+								<c:param name="page" value="${pageData.nextPage}" />
+								<c:param name="keyword" value="${keyword}" />
+							</c:url>
+							<a href="${nextPageUrl}">[ > ]</a>
+						</c:when>
+						<c:otherwise>
+			            	[ > ]
+			       		</c:otherwise>
+					</c:choose>
+				</div>
 			</div>
 		</div>
 	</div>

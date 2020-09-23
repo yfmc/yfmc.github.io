@@ -12,7 +12,7 @@ public class Qna {
 	private int members_id;
 	private String qna_title;
 	private String qna_content;
-	private MultipartFile file_img;
+	private String file_img;
 	private String user_name;
 	private String birthdate;
 	private String tel;

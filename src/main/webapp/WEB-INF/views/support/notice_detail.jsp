@@ -28,22 +28,16 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">번호 10</th>
-                                <th style="width: auto;">공지사항10</th>
-                                <th style="width: 150px;">등록일 2020.07.20</th>
-                                <th style="width: 150px;">조회수 10000</th>
+                                <th style="width: 100px;">${output.notice_id}</th>
+                                <th style="width: auto;">${output.notice_title}</th>
+                                <th style="width: 150px;">등록일 ${output.reg_date}</th>
+                                <th style="width: 150px;">조회수 ${output.views}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="detail_box">
                                 <td colspan="4">
-                                	여기는 공지사항 내용입니다.<br />
-                                    잘 읽어 보세요.<br />
-                                    확인 잘 해보세요.<br />
-                                    저희 영화관을 이용해 주셔서 감사합니다.<br />
-                                    Cinephile.<br />
-                                    확인 잘 해보세요.<br />
-                                    확인 잘 해보세요.<br />
+                                	${output.notice_content}
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">

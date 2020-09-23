@@ -136,4 +136,41 @@ public class AdminController {
 		return new ModelAndView("admin/admin_faq_list");
 	}
 	
+	/** 관리자 1:1문의 목록 페이지 */
+	@RequestMapping(value="/admin/admin_qna_list.do", method=RequestMethod.GET)
+	public ModelAndView qnaList(Model model,
+			// 현재 페이지 번호
+			@RequestParam(value="page", defaultValue="1") int nowPage){
+			
+			/** 페이지 구현에 필요한 변수값 생성 */
+			int totalCount = 0;
+			int listCount = 10;
+			int pageCount = 5;
+			
+			Qna input = new Qna();
+			
+			List<Qna> output = null;
+			PageData pageData = null;
+			
+			try {
+				// 전체 게시글 수 조회
+				totalCount = qnaService.getQnaCount(input);
+				// 페이지 번호 계산 -> 로그로 출력
+				pageData = new PageData(nowPage, totalCount, listCount, pageCount);
+				
+				Qna.setOffset(pageData.getOffset());
+				Qna.setListCount(pageData.getListCount());
+				
+				output = qnaService.getQnaList(input);
+			} catch (Exception e) {
+				return webHelper.redirect(null, e.getLocalizedMessage());
+			}
+			
+			// view 처리
+			model.addAttribute("output", output);
+			model.addAttribute("pageData", pageData);
+			
+		return new ModelAndView("admin/admin_qna_list");
+	}
+	
 }
