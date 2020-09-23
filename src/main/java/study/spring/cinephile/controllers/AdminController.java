@@ -52,6 +52,14 @@ public class AdminController {
 	@RequestMapping(value="/admin/admin_home.do", method=RequestMethod.GET)
 	public ModelAndView adminHome(Model model) {
 		
+		List<Notice> output = null;
+		
+		try {
+			output = noticeService.getNoticeList(null);
+		} catch (Exception e) { e.printStackTrace(); }
+		
+		model.addAttribute("output", output);
+		
 		return new ModelAndView("admin/admin_home");
 	}
 	

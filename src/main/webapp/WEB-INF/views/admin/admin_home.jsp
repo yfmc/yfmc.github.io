@@ -59,35 +59,34 @@
 						<tr>
 							<th style="width: 10%;">번호</th>
 							<th style="width: auto;">제목</th>
-							<th style="width: 15%;">작성일</th>
+							<th style="width: 20%;">작성일</th>
 							<th style="width: 15%;">조회수</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:choose>
 							<%-- 조회결과가 없는 경우 --%>
-							<c:when test="${output1 == null || fn:length(output1)==0}">
+							<c:when test="${output == null || fn:length(output)==0}">
 								<tr>
 									<td colspan="4" align="center">조회 결과 없음</td>
 								</tr>
 							</c:when>
 							<%-- 조회결과가 있는 경우 --%>
 							<c:otherwise>
-								<c:forEach var="item1" items="${output1}" varStatus="status"
-									begin="0" end="3" step="1">
+								<c:forEach var="item" items="${output}" varStatus="status" begin="0" end="3" step="1">
 									<%-- 출력을 위해 준비한 notice데이터 --%>
-									<c:set var="notice_id" 		value="${fn:length(output1)-status.index}" />
-									<c:set var="notice_title" 		value="${item1.notice_title}" />
-									<c:set var="reg_date"			value="${item1.reg_date}" />
-									<c:set var="views"				value="${item1.views}" />
+									<c:set var="notice_id" 		value="${fn:length(output)-status.index}" />
+									<c:set var="notice_title" 		value="${item.notice_title}" />
+									<c:set var="reg_date"			value="${item.reg_date}" />
+									<c:set var="views"				value="${item.views}" />
 
 									<%-- 상세페이지로 이동하기 위한 URL --%>
-									<c:url value="/admin/admin_notice_detail.do" var="viewUrl1">
+									<c:url value="/admin/admin_notice_detail.do" var="viewUrl">
 										<c:param name="notice_id" value="${notice_id}" />
 									</c:url>
 									<tr>
 										<td align="center">${notice_id}</td>
-										<td align="center"><a href="${viewUrl1}">${notice_title}</a></td>
+										<td align="center"><a href="${viewUrl}">${notice_title}</a></td>
 										<td align="center">${reg_date}</td>
 										<td align="center">${views}</td>
 									</tr>
