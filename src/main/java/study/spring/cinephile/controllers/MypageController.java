@@ -86,11 +86,10 @@ public class MypageController {
 		return "mypage/changeinfo-(1)";
 	}
 	
-	@RequestMapping(value={"/mypage/changeinfo-(2).do"},method= {RequestMethod.GET,RequestMethod.POST}) //마이페이지 > 회원정보수정페이지2
-	public ModelAndView passwordOk(Model model,
+	@RequestMapping(value="/mypage/changeinfo-(2).do",method= {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView changeinfo2(Model model,
 			HttpServletRequest request,
 			@RequestParam(value="user_pw",required=false) String user_pw) {
-		
 		
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 세션 가져옴
@@ -131,8 +130,8 @@ public class MypageController {
 			return new ModelAndView("mypage/changeinfo-(2)");
 		}
 		//totalCount가 0이 아니면(1) 비밀번호가 일치한것->페이지 이동허가
-		
 	}
+	
 	
 	
 	

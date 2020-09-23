@@ -80,6 +80,7 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 				"http://localhost:8080/cinephile/mypage/changeinfo-(2).do",
 				"http://localhost:8080/cinephile/mypage/changeinfo-(3).do",
 				"http://localhost:8080/cinephile/mypage/withdrawal-(1).do",
+				"http://localhost:8080/cinephile/mypage/withdrawal_ok.do",
 				"http://localhost:8080/cinephile/mypage/inquirylist.do",
 				"http://localhost:8080/cinephile/mypage/inquirypost.do"};
 		

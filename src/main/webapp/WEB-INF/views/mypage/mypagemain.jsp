@@ -39,7 +39,7 @@
                       		<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
 	                        </c:when>
 	                        <c:otherwise>
-	                        <td></td>
+	                        <td>공란</td>
 	                        </c:otherwise>
                         </c:choose>
                         </c:forEach>
@@ -51,7 +51,7 @@
 	                      	<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
 	                        </c:when>
 	                        <c:otherwise>
-	                        <td></td>
+	                        <td>공란</td>
 	                        </c:otherwise>
                         </c:choose>
                         </c:forEach>
@@ -63,7 +63,7 @@
 	                      	<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
 	                        </c:when>
 	                        <c:otherwise>
-	                        <td></td>
+	                        <td>공란</td>
 	                        </c:otherwise>
                         </c:choose>
                         </c:forEach>

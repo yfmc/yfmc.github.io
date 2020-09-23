@@ -44,7 +44,6 @@
 						user_password:{required:true,minlength:8,maxlength:20,engnumspe:true},
 						user_password2:{required:true,equalTo:"#user_password"},
 						mail:{required:true,email:true},
-						certinum:{required:true},
 						phone:{required:true,phones:true},
 						address:{required:true},
 						details:{required:true}
@@ -64,9 +63,6 @@
 							required:"이메일을 입력하세요.",
 							email:"이메일 형식이 잘못되었습니다."
 						},
-						certinum:{
-							required:"인증번호를 입력하세요."
-						},
 						phone:{
 							required:"연락처를 입력하세요.",
 							phones:"연락처 형식이 잘못되었습니다."
@@ -78,37 +74,6 @@
 							required:"나머지 주소를 입력해주세요."
 						}
 					}
-				});
-			    
-				//'인증' 버튼 클릭 시 이메일 형식검사
-				$(document).on("click","#certigo",function(){
-					var mail=$("#mail").val();
-					var res=chkEmail(mail);
-					if(!res){
-						swal({
-							html:"이메일이 형식에 맞지 않습니다.",
-							animation:false
-						});
-						$("#mail").focus();
-						return false;
-					}
-					swal({
-						html:"해당 메일로 인증번호가 발송되었습니다."
-					});
-				});
-				
-				//'인증번호확인' 버튼 클릭 시 인증번호 검사
-				$(document).on("click",".certi_confirm",function(){
-					if($("#certinum").val()!="12345"){
-						swal({
-							html:"인증번호가 맞지 않습니다.",
-							animation:false
-						});
-						return false;
-					}
-					swal({
-						html:"인증되었습니다."
-					});
 				});
 				
 				//'취소' 버튼 누르면 메인으로
@@ -122,15 +87,10 @@
 					$("#mail").prop("disabled",!now);
 					if($("#mail").prop("disabled")==false){
 						$("#mail").focus();
+						$(".hiddenstar1").show();
 					}
-					if($("#certigo").css("display") == "none"){
-					    $("#certigo").show();
-					    $(".certinum").show();
-					    $(".hiddenstar1").show();
-					} else {
-					    $("#certigo").hide();
-					    $(".certinum").hide();
-					    $(".hiddenstar1").hide();
+					else{
+						$(".hiddenstar1").hide();
 					}
 				});
 				
