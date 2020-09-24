@@ -37,7 +37,23 @@
 				<div class="clear"></div>
 			</ul>
 		</div>
-		<div class="branch_list">
+<c:choose>
+	<c:when test="${output2[0].getProvNo()==40 || output2[0].getProvNo()==50 || output2[0].getProvNo()==70 || output2[0].getProvNo()==120}">
+		<div class="branch_list" style="height: 200px">
+	</c:when>
+	<c:when test="${output2[0].getProvNo()==30 || output2[0].getProvNo()==80}">
+		<div class="branch_list" style="height: 300px">
+	</c:when>
+	<c:when test="${output2[0].getProvNo()==60 || output2[0].getProvNo()==100 || output2[0].getProvNo()==110}">
+		<div class="branch_list" style="height: 350px">
+	</c:when>
+	<c:when test="${output2[0].getProvNo()==90}">
+		<div class="branch_list" style="height: 400px">
+	</c:when>
+	<c:otherwise>
+		<div class="branch_list">	
+	</c:otherwise>
+</c:choose>
 			<ul id="branch_list">				
 				<c:forEach var="item" items="${output2}" varStatus="status">
 					<%-- 상세페이지로 이동하기 위한 URL --%>

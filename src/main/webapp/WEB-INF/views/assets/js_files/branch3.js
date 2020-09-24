@@ -1658,8 +1658,6 @@ function getTheaterId() {
 	return tId;
 }
 
-console.log(getTheaterId());
-
 /* kakaomap API */
 
 function kakaoMap() {
@@ -1669,7 +1667,7 @@ function kakaoMap() {
 	// 지점명
 	var branch=map_json[getTheaterId()].brand+" "+map_json[getTheaterId()].branch;
 
-	// CGV 강남 좌표
+	// 좌표
 	var lat=map_json[getTheaterId()].lat;
 	var lng=map_json[getTheaterId()].lng;
 

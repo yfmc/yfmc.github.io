@@ -161,7 +161,7 @@
 						</div>
 						<div class="modal-body">
 							<h4 class="map_info">마커 클릭 시 kakaomap 길찾기 페이지로 이동합니다</h4>
-    						<div id="kakaomap" class="kakaomap">
+    						<div id="kakaomap_" class="kakaomap">
     						</div>
 						</div>
 						<div class="modal-footer">
@@ -332,5 +332,4 @@
 <!-- js 파일 적용 -->
 <script src="${pageContext.request.contextPath}/assets/js_files/branch.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
 <%@ include file="../_inc/footer.jsp"%>
