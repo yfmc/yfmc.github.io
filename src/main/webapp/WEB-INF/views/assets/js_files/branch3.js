@@ -1654,9 +1654,19 @@ map_json={"1001": {"brand": "롯데시네마",
 /* 현재 링크에서 theater_id 추출 */
 function getTheaterId() {
 	var tIndex=location.href.indexOf("theaterId");
-	var tId=location.href.substring(tIndex+10).toString();
+	
+	if (tIndex==-1) {
+		// URL get 파라미터가 없을 경우 기본값
+		var tId="1001";
+	}
+	else {
+		// URL에서 get 파라미터로 theaterId 추출
+		var tId=location.href.substring(tIndex+10).toString();
+	}
 	return tId;
 }
+
+console.log(getTheaterId());
 
 /* kakaomap API */
 

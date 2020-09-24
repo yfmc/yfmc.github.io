@@ -37,81 +37,32 @@
 				<div class="clear"></div>
 			</ul>
 		</div>
-		<div class="branch_list">
-			<ul id="branch_list">
-				<%-- 상세페이지로 이동하기 위한 URL --%>
-				<c:url value="/branch?provNo=10&theaterId=" var="viewUrl"></c:url>
-				<li><a href='${viewUrl}1001'>롯데시네마 가산디지털</a></li>
-				<li><a href='${viewUrl}1002'>롯데시네마 가양</a></li>
-				<li><a href='${viewUrl}1003'>CGV 강남</a></li>
-				<li><a href='${viewUrl}1004'>메가박스 강남</a></li>
-				<li><a href='${viewUrl}1005'>메가박스 강남대로(씨티)</a></li>
-				<li><a href='${viewUrl}1006'>롯데시네마 강동</a></li>
-				<li><a href='${viewUrl}1007'>메가박스 강동</a></li>
-				<li><a href='${viewUrl}1008'>CGV 강변</a></li>
-				<li><a href='${viewUrl}1009'>CGV 건대입구</a></li>
-				<li><a href='${viewUrl}1010'>롯데시네마 건대입구</a></li>
-				<li><a href='${viewUrl}1011'>CGV 구로</a></li>
-				<li><a href='${viewUrl}1012'>메가박스 군자</a></li>
-				<li><a href='${viewUrl}1013'>롯데시네마 김포공항</a></li>
-				<li><a href='${viewUrl}1014'>롯데시네마 노원</a></li>
-				<li><a href='${viewUrl}1015'>CGV 대학로</a></li>
-				<li><a href='${viewUrl}1016'>롯데시네마 도곡</a></li>
-				<li><a href='${viewUrl}1017'>롯데시네마 독산</a></li>
-				<li><a href='${viewUrl}1018'>CGV 동대문</a></li>
-				<li><a href='${viewUrl}1019'>메가박스 동대문</a></li>
-				<li><a href='${viewUrl}1020'>CGV 등촌</a></li>
-				<li><a href='${viewUrl}1021'>메가박스 마곡</a></li>
-				<li><a href='${viewUrl}1022'>CGV 명동</a></li>
-				<li><a href='${viewUrl}1023'>CGV 명동역 씨네라이브러리</a></li>
-				<li><a href='${viewUrl}1024'>CGV 목동</a></li>
-				<li><a href='${viewUrl}1025'>메가박스 목동</a></li>
-				<li><a href='${viewUrl}1026'>CGV 미아</a></li>
-				<li><a href='${viewUrl}1027'>CGV 불광</a></li>
-				<li><a href='${viewUrl}1028'>롯데시네마 브로드웨이(신사)</a></li>
-				<li><a href='${viewUrl}1029'>CGV 상봉</a></li>
-				<li><a href='${viewUrl}1030'>메가박스 상봉</a></li>
-				<li><a href='${viewUrl}1031'>메가박스 상암월드컵경기장</a></li>
-				<li><a href='${viewUrl}1032'>롯데시네마 서울대입구</a></li>
-				<li><a href='${viewUrl}1033'>메가박스 성수</a></li>
-				<li><a href='${viewUrl}1034'>CGV 성신여대입구</a></li>
-				<li><a href='${viewUrl}1035'>메가박스 센트럴</a></li>
-				<li><a href='${viewUrl}1036'>CGV 송파</a></li>
-				<li><a href='${viewUrl}1037'>메가박스 송파파크하비오</a></li>
-				<li><a href='${viewUrl}1038'>롯데시네마 수락산</a></li>
-				<li><a href='${viewUrl}1039'>CGV 수유</a></li>
-				<li><a href='${viewUrl}1040'>롯데시네마 수유</a></li>
-				<li><a href='${viewUrl}1041'>롯데시네마 신도림</a></li>
-				<li><a href='${viewUrl}1042'>롯데시네마 신림</a></li>
-				<li><a href='${viewUrl}1043'>메가박스 신촌</a></li>
-				<li><a href='${viewUrl}1044'>CGV 신촌아트레온</a></li>
-				<li><a href='${viewUrl}1045'>메가박스 아트나인</a></li>
-				<li><a href='${viewUrl}1046'>CGV 압구정</a></li>
-				<li><a href='${viewUrl}1047'>롯데시네마 에비뉴엘(명동)</a></li>
-				<li><a href='${viewUrl}1048'>CGV 여의도</a></li>
-				<li><a href='${viewUrl}1049'>CGV 영등포</a></li>
-				<li><a href='${viewUrl}1050'>롯데시네마 영등포</a></li>
-				<li><a href='${viewUrl}1051'>CGV 왕십리</a></li>
-				<li><a href='${viewUrl}1052'>롯데시네마 용산</a></li>
-				<li><a href='${viewUrl}1053'>CGV 용산아이파크몰</a></li>
-				<li><a href='${viewUrl}1054'>롯데시네마 월드타워</a></li>
-				<li><a href='${viewUrl}1055'>롯데시네마 은평</a></li>
-				<li><a href='${viewUrl}1056'>메가박스 은평</a></li>
-				<li><a href='${viewUrl}1057'>메가박스 이수</a></li>
-				<li><a href='${viewUrl}1058'>롯데시네마 장안</a></li>
-				<li><a href='${viewUrl}1059'>CGV 중계</a></li>
-				<li><a href='${viewUrl}1060'>메가박스 창동</a></li>
-				<li><a href='${viewUrl}1061'>CGV 천호</a></li>
-				<li><a href='${viewUrl}1062'>CGV 청담씨네시티</a></li>
-				<li><a href='${viewUrl}1063'>롯데시네마 청량리</a></li>
-				<li><a href='${viewUrl}1064'>메가박스 코엑스</a></li>
-				<li><a href='${viewUrl}1065'>CGV 피카디리 1958</a></li>
-				<li><a href='${viewUrl}1066'>CGV 하계</a></li>
-				<li><a href='${viewUrl}1067'>롯데시네마 합정</a></li>
-				<li><a href='${viewUrl}1068'>CGV 홍대</a></li>
-				<li><a href='${viewUrl}1069'>메가박스 홍대</a></li>
-				<li><a href='${viewUrl}1070'>롯데시네마 홍대입구</a></li>
-				<li><a href='${viewUrl}1071'>메가박스 화곡</a></li>
+<c:choose>
+	<c:when test="${output2[0].getProvNo()==40 || output2[0].getProvNo()==50 || output2[0].getProvNo()==70 || output2[0].getProvNo()==120}">
+		<div class="branch_list" style="height: 200px">
+	</c:when>
+	<c:when test="${output2[0].getProvNo()==30 || output2[0].getProvNo()==80}">
+		<div class="branch_list" style="height: 300px">
+	</c:when>
+	<c:when test="${output2[0].getProvNo()==60 || output2[0].getProvNo()==100 || output2[0].getProvNo()==110}">
+		<div class="branch_list" style="height: 350px">
+	</c:when>
+	<c:when test="${output2[0].getProvNo()==90}">
+		<div class="branch_list" style="height: 400px">
+	</c:when>
+	<c:otherwise>
+		<div class="branch_list">	
+	</c:otherwise>
+</c:choose>
+			<ul id="branch_list">				
+				<c:forEach var="item" items="${output2}" varStatus="status">
+					<%-- 상세페이지로 이동하기 위한 URL --%>
+					<c:url value="/branch" var="viewUrl">
+						<c:param name="provNo" value="${item.provNo}" />
+						<c:param name="theaterId" value="${item.theaterId}" />
+					</c:url>
+					<li><a href="${viewUrl}">${item.brand}&nbsp;${item.branch}</a></li>
+				</c:forEach>
 			</ul>
 		</div>
 		<!-- float 마감제 -->
@@ -123,7 +74,7 @@
 	<div class="branch_info">
 		<!-- 극장 상세 정보 head -->
 		<div class="branch_head">
-			<h2 class="branch_name">CGV 강남</h2>
+			<h2 class="branch_name">${output.brand}&nbsp;${output.branch}</h2>
 			<button id="bookmarking" class="btn btn-default"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
 		</div>
 		<!-- 극장 상세 정보 body -->
@@ -131,13 +82,21 @@
 			<!-- 텍스트 정보 -->
 			<div class="info_text">
 				<div class="info_detail">
-					<span class="add1">서울특별시 강남구 역삼동 814-6 스타플렉스 4~11층</span><br /> <span class="add2">서울특별시 강남구 강남대로 438</span><br /> <span class="rooms">6개관 / </span> <span class="seats">874석</span>
+					<span class="add1">${output.oldAddr}</span><br /> <span class="add2">${output.newAddr}</span><br /> <span class="rooms">${output.rooms}개관 / </span> <span class="seats">${output.seats}석</span>
 				</div>
 			</div>
 			
 			<!-- 브랜드 로고 영역 -->
 			<div class="info_img">
+				<c:if test="${output.brand=='CGV'}">
 				<img src="http://img.cgv.co.kr/R2014/images/title/h1_cgv.png" />
+				</c:if>
+				<c:if test="${output.brand=='롯데시네마'}">
+				<img src="https://www.lottecinema.co.kr/NLCHS/Content/images/common/logo.png" />
+				</c:if>
+				<c:if test="${output.brand=='메가박스'}">
+				<img src="https://img.megabox.co.kr/static/pc/images/common/ci/logo.png" />
+				</c:if>
 			</div>
 		</div>
 		<!-- float 마감제 -->
@@ -161,7 +120,7 @@
 						</div>
 						<div class="modal-body">
 							<h4 class="map_info">마커 클릭 시 kakaomap 길찾기 페이지로 이동합니다</h4>
-    						<div id="kakaomap_" class="kakaomap">
+    						<div id="kakaomap" class="kakaomap">
     						</div>
 						</div>
 						<div class="modal-footer">
@@ -332,4 +291,5 @@
 <!-- js 파일 적용 -->
 <script src="${pageContext.request.contextPath}/assets/js_files/branch.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
 <%@ include file="../_inc/footer.jsp"%>

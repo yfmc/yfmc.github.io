@@ -63,7 +63,7 @@
                             <li><a href="${pageContext.request.contextPath}/timetable.do">극장별시간표</a></li>
                         </ul>
                     </li>
-                    <li class="nav"><a href="${pageContext.request.contextPath}/branch.do" class="mains">극장</a></li>
+                    <li class="nav"><a href="${pageContext.request.contextPath}/branch" class="mains">극장</a></li>
                     <li class="nav">
                         <a href="<%=request.getContextPath()%>/support/support_home.do" class="mains">고객센터</a>
                         <ul class="subnav">
