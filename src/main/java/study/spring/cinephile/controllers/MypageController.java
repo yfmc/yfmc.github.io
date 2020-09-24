@@ -21,8 +21,10 @@ import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.FavTheater;
 import study.spring.cinephile.model.Members;
 import study.spring.cinephile.model.PasswordOk;
+import study.spring.cinephile.model.Theater2;
 import study.spring.cinephile.service.FavTheaterService;
 import study.spring.cinephile.service.PasswordOkService;
+import study.spring.cinephile.service.Theater2Service;
 
 /**
  * 마이페이지의 페이지들을 제어하는 컨트롤러입니다.
@@ -36,6 +38,7 @@ public class MypageController {
 	@Autowired RegexHelper regexHelper;
 	@Autowired FavTheaterService favTheaterService;
 	@Autowired PasswordOkService passwordOkService;
+	@Autowired Theater2Service theater2Service;
 	
 	//필요한 객체들 주입
 	
@@ -167,25 +170,60 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/oftentheater.do",method=RequestMethod.GET) //마이페이지 > 자주가는영화관 추가,삭제 페이지
-	public ModelAndView oftentheater(Model model,HttpServletRequest request) {
+	public ModelAndView oftentheater(Model model,HttpServletRequest request,
+			@RequestParam(value="keyword",required=false) String keyword,
+			@RequestParam(value="page",defaultValue="1") int nowPage,
+			@RequestParam(value="region",defaultValue="10") int region,
+			@RequestParam(value="brand",required=false) String brand) {
+		
+		int totalCount=0;
+		int listCount=10;
+		int pageCount=5;
+		
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
 		model.addAttribute("my_session",mySession);
 		
-		FavTheater input=new FavTheater();
-		input.setMembers_id(mySession.getMembers_id());
-		List<FavTheater> output=null;
+		Theater2 input=new Theater2();
+		log.error(region+"asdasd");
+		input.setBranch(keyword);
+		input.setProv_no(region);
+		input.setBrand(brand);
+		
+		List<Theater2> output=null;
+		PageData pageData=null;
+		
 		
 		try {
-			output=favTheaterService.getFavTheaterList(input);
+			totalCount=theater2Service.getTheater2Count(input);
+			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
+			
+			Theater2.setOffset(pageData.getOffset());
+			Theater2.setListCount(pageData.getListCount());
+			
+			output=theater2Service.getTheater2List(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		FavTheater input2=new FavTheater();
+		input2.setMembers_id(mySession.getMembers_id());
+		List<FavTheater> output2=null;
+		
+		try {
+			output2=favTheaterService.getFavTheaterList(input2);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		//현재의 자주가는영화관 목록을 가져오는 작업임
 		
-		
+		model.addAttribute("keyword",keyword);
+		model.addAttribute("input",input);
 		model.addAttribute("output",output);
+		model.addAttribute("output2",output2);
+		model.addAttribute("pageData",pageData);
 		return new ModelAndView("mypage/oftentheater");
 	}
 	

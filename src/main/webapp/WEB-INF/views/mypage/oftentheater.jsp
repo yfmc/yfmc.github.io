@@ -25,8 +25,8 @@
 
 <body>
 	
-	<c:forEach var="item" items="${output}" varStatus="status">
-	<input type="hidden" class="th${status.index}" value="${item.full_name}"/>
+	<c:forEach var="item" items="${output2}" varStatus="status">
+	<input type="hidden" class="th${status.index}" value="${item.brand} ${item.branch}"/>
 	
 	</c:forEach>
 	
@@ -37,81 +37,97 @@
         </div>
         <div class="search">
         	<!-- 영화관 검색 폼 -->
-            <form>
+            <form method="get" action="${pageContext.request.contextPath}/mypage/oftentheater.do">
                 <fieldset>
                     <legend>영화관 검색</legend>
                     <label for="region">&nbsp;&nbsp;&nbsp;지역</label>
                     <select name="region" id="region">
-                    	<option value="">--- 선택 ---</option>
-                        <option value="seoul">서울</option>
-                        <option value="gyeonggi">경기</option>
-                        <option value="incheon">인천</option>
-                        <option value="gangwon">강원</option>
-                        <option value="daejeon">대전</option>
-                        <option value="chungcheong">충청/세종</option>
-                        <option value="gwangju">광주</option>
-						<option value="jeolla">전라</option>
-                        <option value="daegu">대구/경북</option>
-                        <option value="busan">부산/울산</option>
-                        <option value="gyeongnam">경남</option>
-                        <option value="jeju">제주</option>
+                        <option value="10">서울</option>
+                        <option value="20">경기</option>
+                        <option value="30">인천</option>
+                        <option value="40">강원</option>
+                        <option value="50">대전</option>
+                        <option value="60">충청/세종</option>
+                        <option value="70">광주</option>
+						<option value="80">전라</option>
+                        <option value="90">대구/경북</option>
+                        <option value="100">부산/울산</option>
+                        <option value="110">경남</option>
+                        <option value="120">제주</option>
                     </select>
                     <!-- 브랜드 선택 -->
-                    <label for="theater"> &nbsp;브랜드</label>
-                    <select name="theater" id="theater" disabled>
-                    	<option value="">--- 선택 ---</option>
+                    <label for="brand"> &nbsp;브랜드</label>
+                    <select name="brand" id="brand">
                         <option value="CGV">CGV</option>
-                        <option value="megabox">메가박스</option>
-                        <option value="lotte">롯데시네마</option>
+                        <option value="메가박스">메가박스</option>
+                        <option value="롯데시네마">롯데시네마</option>
                     </select>
                     <!-- 지역 선택 -->
                     
-                    <!-- 영화관 검색시 자동완성으로 목록이 뜨며 추가 누를 시 추가됨 -->
-                    <!-- 없는 영화관 검색해 추가하거나 이미 등록한 영화관 추가할 수 없음 -->
-                    <!-- 자주 가는 영화관은 5개까지 선택 가능함 -->
-                    <label for="theatersearch">&nbsp;&nbsp;영화관</label>
-                    <input type="search" id="theatersearch" name="theatersearch" style="width:150px;" />
-                    <button type="button" class="inserttheater" style="margin-left:2px;">추가</button>
+                    <label for="keyword">&nbsp;&nbsp;영화관</label>
+                    <input type="search" id="keyword" name="keyword" style="width:150px;" />
+                    <button type="submit" class="inserttheater" style="margin-left:2px;">검색</button>
                 </fieldset>
             </form>
         </div>
+        <mark>${keyword}</mark>
+        <h4>영화관 목록(지점이름으로 검색)</h4>
+        <table class="table table-striped table-hover">
+        <thead class="thead-light">
+        	<tr>
+        		<th width="220" class="text-center">지점명</th>
+        		<th width="400" class="text-center">주소</th>
+        		<th width="80" class="text-center">상영관수</th>
+        		<th width="75" class="text-center">좌석수</th>
+        	</tr>
+        </thead>
+        <tbody>
+        	<c:choose>
+        		<c:when test="${output==null||fn:length(output)==0}">
+        			<tr>
+        				<td colspan="4" align="center">조회결과가 없습니다.</td>
+        			</tr>
+        		</c:when>
+        		<c:otherwise>
+        			<c:forEach var="item" items="${output}" varStatus="status">
+        				<c:set var="full_name" value="${item.full_name}"/>
+        				<c:if test="${keyword!=''}">
+        					<c:set var="mark" value="<mark>${keyword}</mark>"/>
+        					<c:set var="full_name" value="${fn:replace(full_name,keyword,mark)}"/>
+        				</c:if>
+        				<tr>
+        					<td align="center">${full_name}</td>
+        					<td align="center">${item.new_addr}</td>
+        					<td align="center">${item.rooms}</td>
+        					<td align="center">${item.seats}</td>
+        				</tr>
+        			</c:forEach>
+        			
+        		</c:otherwise>
+        	</c:choose>
+        </tbody>
+        </table>
         
         <!-- 자주가는 영화관 목록 5개까지 정의 -->
         <div class="theaterlist">
             <legend>자주가는 영화관 목록(최대 5개까지 지정 가능합니다)</legend>
 			<input data-role="tags-input" value="tagsinput" hidden="hidden" data-rendered="true">
 			<div class="tags-container form-control">
-				<c:forEach var="item" items="${output}" varStatus="status">
+				<c:forEach var="item" items="${output2}" varStatus="status">
 				<div class="tag badge badge-primary">
-					<span>${item.brand}&nbsp;${item.branch}</span><i class="tag-remove">✖</i>
+					<span>${item.brand}&nbsp;${item.branch}</span><i class="tag-remove"><a href="delete_ok.do">✖</a></i>
 				</div>
 				</c:forEach>
-  				
 			</div>
 		</div>
-		<!-- 데이터 전송용(임시) -->
-		<form name="myform" method="post" action="${pageContext.request.contextPath}/mypage/mypagemain.do">
-			<input type="hidden" name="movie1" id="movie1" value="CGV 강남">
-			<input type="hidden" name="movie2" id="movie2" value="CGV 목동">
-			<input type="hidden" name="movie3" id="movie3" value="메가박스 화곡">
-			<input type="hidden" name="movie4" id="movie4" value="롯데시네마 영등포">
-			<input type="hidden" name="movie5" id="movie5" value="롯데시네마 가산디지털">
-		</form>
-		<p style="margin-top:15px;">지역을 선택해야 브랜드 선택이 가능합니다.<br/>브랜드 선택시 지역 변경이 불가능합니다.<br/>지역을 변경하려면 브랜트 탭을 <strong>'선택'</strong>으로 해주세요 :)</p>
-		<div class="butt">
-				<button type="button" class="btn btn-success applbutton">적용</button>
-				<button type="button" class="btn btn-warning outbutton">취소</button>
-		</div>
-		${my_session.members_id}
-		<c:forEach var="item" items="${output}" varStatus="status">
-		${item.brand} &nbsp; ${item.branch}
-		</c:forEach>
+
+
 
 		 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/plugins/tagsinput/jquery-tagsinput.min.js" defer></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javaScript">
-		var b_json={
+		/*var b_json={
 				 "seoul": [
 						{"brand": "롯데시네마", "branch": "가산디지털"},
 						{"brand": "롯데시네마", "branch": "가양"},
@@ -551,7 +567,7 @@
 			
 			var my_theater=new Array();
 			var count=0;
-			<c:forEach var="item" items="${output}" varStatus="status">
+			<c:forEach var="item" items="${output2}" varStatus="status">
 				my_theater.push("${item.brand}"+" "+"${item.branch}")
 				count+=1;
 			</c:forEach>
@@ -772,7 +788,7 @@
 				});
 
 			});
-		
+		*/
 		</script>
    </div>
 </body>
