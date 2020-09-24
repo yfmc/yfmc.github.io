@@ -438,12 +438,20 @@ var b_json={
 		  {"brano": 12006, "brand": "롯데시네마", "branch": "제주아라"}
 	  ]};
 
+/* ContextPath 구하기 */
+function getContextPath() {
+	var hostIndex=location.href.indexOf(location.host)+location.host.length;
+	var contextPath=location.href.substring(hostIndex, location.href.indexOf('/', hostIndex+1));
+	return contextPath;
+}
+
+
 $(function() {
 	// 극장별 상세 페이지에서 각 지역별 극장 목록 노출 기능 구현
 	$("#seoul1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.seoul.length; i++) {
-			html+="<li><a href='#'>"+b_json.seoul[i].brand+" "+b_json.seoul[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+10+"&theaterId="+b_json.seoul[i].brano+"'>"+b_json.seoul[i].brand+" "+b_json.seoul[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "500");
@@ -451,7 +459,7 @@ $(function() {
 	$("#gyeonggi1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gyeonggi.length; i++) {
-			html+="<li><a href='#'>"+b_json.gyeonggi[i].brand+" "+b_json.gyeonggi[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+20+"&theaterId="+b_json.gyeonggi[i].brano+"'>"+b_json.gyeonggi[i].brand+" "+b_json.gyeonggi[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "500");
@@ -459,7 +467,7 @@ $(function() {
 	$("#incheon1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.incheon.length; i++) {
-			html+="<li><a href='#'>"+b_json.incheon[i].brand+" "+b_json.incheon[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+30+"&theaterId="+b_json.incheon[i].brano+"'>"+b_json.incheon[i].brand+" "+b_json.incheon[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "300");
@@ -467,7 +475,7 @@ $(function() {
 	$("#gangwon1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gangwon.length; i++) {
-			html+="<li><a href='#'>"+b_json.gangwon[i].brand+" "+b_json.gangwon[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+40+"&theaterId="+b_json.gangwon[i].brano+"'>"+b_json.gangwon[i].brand+" "+b_json.gangwon[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "200");
@@ -475,7 +483,7 @@ $(function() {
 	$("#daejeon1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.daejeon.length; i++) {
-			html+="<li><a href='#'>"+b_json.daejeon[i].brand+" "+b_json.daejeon[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+50+"&theaterId="+b_json.daejeon[i].brano+"'>"+b_json.daejeon[i].brand+" "+b_json.daejeon[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "200");
@@ -483,7 +491,7 @@ $(function() {
 	$("#chungcheong1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.chungcheong.length; i++) {
-			html+="<li><a href='#'>"+b_json.chungcheong[i].brand+" "+b_json.chungcheong[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+60+"&theaterId="+b_json.chungcheong[i].brano+"'>"+b_json.chungcheong[i].brand+" "+b_json.chungcheong[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "350");
@@ -491,7 +499,7 @@ $(function() {
 	$("#gwangju1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gwangju.length; i++) {
-			html+="<li><a href='#'>"+b_json.gwangju[i].brand+" "+b_json.gwangju[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+70+"&theaterId="+b_json.gwangju[i].brano+"'>"+b_json.gwangju[i].brand+" "+b_json.gwangju[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "200");
@@ -499,7 +507,7 @@ $(function() {
 	$("#jeolla1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.jeolla.length; i++) {
-			html+="<li><a href='#'>"+b_json.jeolla[i].brand+" "+b_json.jeolla[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+80+"&theaterId="+b_json.jeolla[i].brano+"'>"+b_json.jeolla[i].brand+" "+b_json.jeolla[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "300");
@@ -507,7 +515,7 @@ $(function() {
 	$("#daegu1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.daegu.length; i++) {
-			html+="<li><a href='#'>"+b_json.daegu[i].brand+" "+b_json.daegu[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+90+"&theaterId="+b_json.daegu[i].brano+"'>"+b_json.daegu[i].brand+" "+b_json.daegu[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "400");
@@ -515,7 +523,7 @@ $(function() {
 	$("#busan1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.busan.length; i++) {
-			html+="<li><a href='#'>"+b_json.busan[i].brand+" "+b_json.busan[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+100+"&theaterId="+b_json.busan[i].brano+"'>"+b_json.busan[i].brand+" "+b_json.busan[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "350");
@@ -523,7 +531,7 @@ $(function() {
 	$("#gyeongnam1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gyeongnam.length; i++) {
-			html+="<li><a href='#'>"+b_json.gyeongnam[i].brand+" "+b_json.gyeongnam[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+110+"&theaterId="+b_json.gyeongnam[i].brano+"'>"+b_json.gyeongnam[i].brand+" "+b_json.gyeongnam[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "350");
@@ -531,7 +539,7 @@ $(function() {
 	$("#jeju1").click(function() {
 		var html="";
 		for (var i=0; i<b_json.jeju.length; i++) {
-			html+="<li><a href='#'>"+b_json.jeju[i].brand+" "+b_json.jeju[i].branch+"</a></li>\n";
+			html+="<li><a href='"+getContextPath()+"/branch?provNo="+120+"&theaterId="+b_json.jeju[i].brano+"'>"+b_json.jeju[i].brand+" "+b_json.jeju[i].branch+"</a></li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".branch_list").css("height", "200");
