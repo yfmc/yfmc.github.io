@@ -275,4 +275,5 @@
 <!-- js 파일 적용 -->
 <script src="${pageContext.request.contextPath}/assets/js_files/branch.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
 <%@ include file="../_inc/footer.jsp"%>

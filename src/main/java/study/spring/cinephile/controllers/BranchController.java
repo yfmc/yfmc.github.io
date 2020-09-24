@@ -38,7 +38,7 @@ public class BranchController {
 	public ModelAndView info(Model model, @RequestParam (value="provNo", defaultValue="0") int provNo, @RequestParam(value="theaterId", defaultValue="0") int theaterId) {
 		/* 1) 유효성 검사 */
 		if (provNo==0 || theaterId==0) {
-			return webHelper.redirect(null, "해당 극장이 없습니다");
+			return new ModelAndView("branch/01-branch");
 		}
 		
 		/* 2) 데이터 조회하기 */
