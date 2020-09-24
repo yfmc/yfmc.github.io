@@ -32,7 +32,7 @@
 			                   	<br />형법에 의해 처벌 대상이 될 수 있습니다.</p></span>
 		                   	</div>
 		                </div>
-	                <form enctype="multipart/form-data" class="form-horizontal" method="get"  name="qna_form" id="qna_form"
+	                <form enctype="multipart/form-data" class="form-horizontal" method="post"  name="qna_form" id="qna_form"
 		            	action="${pageContext.request.contextPath}/support/qna_ok.do">
 		                <div class="form_title">
 		                        <h4>문의내용<span class="pull-right">* 필수입력</span></h4>

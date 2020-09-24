@@ -84,7 +84,7 @@ public class QnaController {
 	}
 	
 	/** 작성 폼에 대한 action 페이지 */
-	@RequestMapping(value="/support/qna_ok.do", method=RequestMethod.GET)
+	@RequestMapping(value="/support/qna_ok.do", method=RequestMethod.POST)
 	public ModelAndView qnaOk(Model model,HttpServletRequest request,
 			@RequestParam(value="qna_title", required = false) String qna_title,
 			@RequestParam(value="qna_content", required = false) String qna_content,
@@ -92,7 +92,7 @@ public class QnaController {
 			@RequestParam(value="birthdate", required = false) String birthdate,
 			@RequestParam(value="tel", required = false) String tel,
 			@RequestParam(value="email", required = false) String email,
-			@RequestParam(required = false) MultipartFile file_img) {
+			@RequestParam() MultipartFile file_img) {
 		
 		System.out.println("데이터 입력 완료");
 		
@@ -136,6 +136,25 @@ public class QnaController {
 			return webHelper.redirect(null, "업로드 실패");
 		}
 		
+		/** 썸네일 이미지 생성 */
+		if (item != null && item.getContentType().indexOf("image") > -1) {
+			// 필요한 이미지 사이즈로 썸네일을 생성할 수 있다.
+			String thumbnailPath = null;
+			
+			try {
+				thumbnailPath = webHelper.createThumbnail(item.getFilePath(), 240, 240, true);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return webHelper.redirect(null, "썸네일 이미지 생성 실패");
+			}
+			
+			// 썸네일 경로를 URL로 변환
+			String thumbnailUrl = webHelper.getUploadUrl(thumbnailPath);
+			// 리턴할 객체에 썸네일 정보 추가
+			item.setThumbnailPath(thumbnailPath);
+			item.setThumbnailUrl(thumbnailUrl);
+		}
+		
 		// 결과 확인을 위한 JSON 출력
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("output", output);
@@ -148,7 +167,7 @@ public class QnaController {
 		return webHelper.redirect(redirectUrl, "접수가 완료 되었습니다.");
 		
 	}
-	
+		
 	/** 작성 완료 페이지 */
 	@RequestMapping(value="/support/qna_complete.do", method=RequestMethod.GET)
 	public ModelAndView qna_complete(Model model) {

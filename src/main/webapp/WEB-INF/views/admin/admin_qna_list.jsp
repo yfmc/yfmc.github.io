@@ -27,7 +27,7 @@
 									<th style="width: 10%;">번호</th>
 									<th style="width: auto;">제목</th>
 									<th style="width: 10%;">작성자</th>
-									<th style="width: 10%;">작성일</th>
+									<th style="width: 15%;">작성일</th>
 									<th style="width: 10%;">답변 여부</th>
 								</tr>
 							</thead>
@@ -85,8 +85,7 @@
 							</c:choose>
 
 							<%-- 페이지 번호 (시작 페이지 부터 끝 페이지까지 반복) --%>
-							<c:forEach var="i" begin="${pageData.startPage}"
-								end="${pageData.endPage}" varStatus="status">
+							<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
 								<%-- 이동할 URL 생성 --%>
 								<c:url value="/admin/admin_qna_list.do" var="pageUrl">
 									<c:param name="page" value="${i}" />

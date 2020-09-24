@@ -211,7 +211,7 @@
 	            if (!agree) {
 	                alert("개인정보수집 동의를 해주셔야 등록이 가능합니다.");
 	                return false;
-	            } else if (!rent_title.value || !rent_contents.value || !user_name.value ||
+	            } else if (!rent_title.value || !rent_content.value || !user_name.value ||
 	            		!birthdate.value || !tel.value || !email.value) {
 	            	return false;
 	            } else {

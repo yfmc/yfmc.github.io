@@ -52,13 +52,16 @@ public class AdminController {
 	@RequestMapping(value="/admin/admin_home.do", method=RequestMethod.GET)
 	public ModelAndView adminHome(Model model) {
 		
-		List<Notice> output = null;
+		List<Notice> noticeList = null;
+		List<Qna> qnaList = null;
 		
 		try {
-			output = noticeService.getNoticeList(null);
+			noticeList = noticeService.getNoticeList(null);
+			qnaList = qnaService.getQnaList(null);
 		} catch (Exception e) { e.printStackTrace(); }
 		
-		model.addAttribute("output", output);
+		model.addAttribute("noticeList", noticeList);
+		model.addAttribute("qnaList", qnaList);
 		
 		return new ModelAndView("admin/admin_home");
 	}
@@ -152,7 +155,7 @@ public class AdminController {
 			
 			/** 페이지 구현에 필요한 변수값 생성 */
 			int totalCount = 0;
-			int listCount = 10;
+			int listCount = 20;
 			int pageCount = 5;
 			
 			Qna input = new Qna();
