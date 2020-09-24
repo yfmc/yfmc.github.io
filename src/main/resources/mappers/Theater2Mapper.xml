@@ -35,8 +35,8 @@
 			
 			<!-- 대소문자 구분없이 검색 가능하게 함 -->
 			<if test="branch!=null and branch!=''">
-				and full_name like upper(concat('%',#{branch},'%'))
-				or full_name like lower(concat('%',#{branch},'%'))
+				and (full_name like upper(concat('%',#{branch},'%'))
+				or full_name like lower(concat('%',#{branch},'%')))
 			</if>
 		</where>
 		order by theater_id asc
