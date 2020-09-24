@@ -28,7 +28,7 @@ public class BranchController {
 	String contextPath;
 		
 	/* 극장정보 상세 페이지 */
-	@RequestMapping(value="/branch", method=RequestMethod.GET)
+	@RequestMapping(value={"/branch", "/timetable"}, method=RequestMethod.GET)
 	public ModelAndView branch(Model model, @RequestParam (value="provNo", defaultValue="0") int provNo, @RequestParam(value="theaterId", defaultValue="0") int theaterId) {
 		/* 1) URL get 파라미터가 없을 경우 default 페이지로 '롯데시네마 가산디지털' 설정 */
 		if (provNo==0 || theaterId==0) {

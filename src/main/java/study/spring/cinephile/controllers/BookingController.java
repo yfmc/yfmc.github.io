@@ -41,9 +41,9 @@ public class BookingController {
 		return "booking/04-booking_confirmed";
 	}
 
-	/* 극장별 상영시간표 페이지 */
-	@RequestMapping(value="timetable.do", method=RequestMethod.GET)
-	public String timetable() {
-		return "booking/05-timetable";
-	}
+//	/* 극장별 상영시간표 페이지 */
+//	@RequestMapping(value="timetable.do", method=RequestMethod.GET)
+//	public String timetable() {
+//		return "booking/05-timetable";
+//	}
 }

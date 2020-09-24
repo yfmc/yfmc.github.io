@@ -12,13 +12,31 @@
 <!-- slick css -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-<title>극장정보 > 극장 | Cinephile</title>
+<c:set var="tab" value="${requestScope['javax.servlet.forward.servlet_path']}" />
+<%-- URL에 따라 페이지 종류 분리 --%>
+<c:choose>
+	<c:when test="${fn:contains(tab, 'branch')}">
+		<title>극장정보 > 극장 | Cinephile</title>
+	</c:when>
+	<c:otherwise>
+		<title>상영시간표 > 예매 | Cinephile</title>
+	</c:otherwise>
+</c:choose>
 
 <!-- content -->
 <div id="content">
 	<!-- 극장 선택 테이블 -->
 	<div class="branch_table">
-		<h1 class="table_name">지역별 극장 정보</h1>
+		<%-- 페이지 종류에 따라 문구 차등 노출 --%>
+		<c:choose>
+			<c:when test="${fn:contains(tab, 'branch')}">
+				<h1 class="table_name">지역별 극장 정보</h1>
+			</c:when>
+			<c:otherwise>
+				<h1 class="table_name">극장 선택</h1>
+			</c:otherwise>
+		</c:choose>
+		
 		<div class="provincial">
 			<ul class="prov_list">
 				<li id="seoul1">서울</li>
@@ -57,7 +75,7 @@
 			<ul id="branch_list">				
 				<c:forEach var="item" items="${output2}" varStatus="status">
 					<%-- 상세페이지로 이동하기 위한 URL --%>
-					<c:url value="/branch" var="viewUrl">
+					<c:url value="${tab}" var="viewUrl">
 						<c:param name="provNo" value="${item.provNo}" />
 						<c:param name="theaterId" value="${item.theaterId}" />
 					</c:url>
@@ -69,6 +87,10 @@
 		<div class="clear"></div>
 	</div>
 	<hr />
+	
+	<%-- 극장 페이지인 경우에만 상세정보를 노출 --%>
+	<c:choose>
+	<c:when test="${fn:contains(tab, 'branch')}">
 	<h1 class="branch_infottl">지점 상세 정보</h1>
 	<!-- 극장 상세 정보 -->
 	<div class="branch_info">
@@ -130,11 +152,22 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
+	</c:when>
+	<c:otherwise></c:otherwise>
+	</c:choose>
+	
 	<!-- 상영시간표 -->
 	<div class="timetable">
-		<h1>상영시간표</h1>
+		<%-- 상영시간표 페이지인 경우에만 지점명+상영시간표 문구 노출 --%>
+		<c:choose>
+			<c:when test="${fn:contains(tab, 'timetable')}">
+				<h1>${output.brand}&nbsp;${output.branch}&nbsp;상영시간표</h1>
+			</c:when>
+			<c:otherwise>
+				<h1>상영시간표</h1>
+			</c:otherwise>
+		</c:choose>
 		<!-- 날짜 선택 영역 -->
 		<div class="table_head">
 			<!-- 날짜 선택 버튼 영역 -->
