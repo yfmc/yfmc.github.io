@@ -123,7 +123,7 @@
 
 /* 상세 정보 박스 head 영역 */
 
-.branch_head > h2, .branch_head > button {
+.branch_head > h2, .branch_head > form {
     display: inline-block;
 }
 
