@@ -37,7 +37,7 @@ public class TheaterController {
 	String contextPath;
 		
 	/* 극장정보 상세 페이지 */
-	@RequestMapping(value={"/branch", "/timetable"}, method=RequestMethod.GET)
+	@RequestMapping(value={"/branch", "/branch.do", "/timetable", "/timetable.do"}, method=RequestMethod.GET)
 	public ModelAndView branch(HttpServletRequest request, Model model, @RequestParam (value="provNo", defaultValue="0") int provNo, @RequestParam(value="theaterId", defaultValue="0") int theaterId) {
 		/* 1) URL get 파라미터가 없을 경우 default 페이지로 '롯데시네마 가산디지털' 설정 */
 		if (provNo==0 || theaterId==0) {
@@ -58,19 +58,27 @@ public class TheaterController {
 				return webHelper.redirect(null, e.getLocalizedMessage());
 			}
 			
-			// 로그인 한 회원 Primary Key를 전송
+			// 로그인 한 회원 Primary Key와 자주 가는 영화관 등록 여부 전송
 			HttpSession session = request.getSession();
 			Members mySession = (Members) session.getAttribute("loggedIn");
+			
+			int output3=0;
+			
+			TheaterAdd count=new TheaterAdd();
+			count.setTheaterId(df.getTheaterId());
+			
 			if (mySession==null) {
 				model.addAttribute("user", 0);
 			}
 			else {
 				model.addAttribute("user", mySession.getMembers_id());
+				count.setMembersId(mySession.getMembers_id());
 			}
-			
+
 			// view 처리
 			model.addAttribute("output", output);
 			model.addAttribute("output2", output2);
+			model.addAttribute("favCount", output3);
 			return new ModelAndView("branch/01-branch");
 		}
 		
@@ -89,19 +97,40 @@ public class TheaterController {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
 		
-		/* 3) 로그인 한 회원 Primary Key를 전송 */
+		/* 3) 로그인 한 회원 Primary Key와 자주 가는 영화관 등록 여부 전송 */
+		
+		// 세션에서 회원정보를 받아 Members 객체에 주입
 		HttpSession session = request.getSession();
 		Members mySession = (Members) session.getAttribute("loggedIn");
+		
+		// 자주 가는 영화관 여부를 나타낼 변수
+		int output3=0;
+		
+		// 등록 여부를 조회할 영화관 set
+		TheaterAdd count=new TheaterAdd();
+		count.setTheaterId(theaterId);
+		
+		// 로그인 정보가 없으면 0 전송
 		if (mySession==null) {
 			model.addAttribute("user", 0);
 		}
+		// 로그인 정보가 있으면 회원 PK 전송
 		else {
 			model.addAttribute("user", mySession.getMembers_id());
+			count.setMembersId(mySession.getMembers_id());
+		}
+				
+		try {
+			output3=addService.countFavTheater(count);
+		}
+		catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
 		
 		/* 4) View 처리 */
 		model.addAttribute("output", output);
 		model.addAttribute("output2", output2);
+		model.addAttribute("favCount", output3);
 		return new ModelAndView("branch/01-branch");		
 	}
 	
@@ -128,11 +157,19 @@ public class TheaterController {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
 		
-		/* 3) 확인 창 띄우고 페이지는 제자리 */
-		Theater theater=new Theater();
-		theater.setTheaterId(theaterId);
-		String redirectUrl=contextPath+"/branch?provNo="+theater.getProvNo()+"&theaterId="+input.getTheaterId();
-		return webHelper.redirect(redirectUrl, "자주 가는 영화관에 추가되었습니다");
+		/* 3) 확인 창 띄우고 해당 영화관 상세정보 페이지로 이동 */
+		Theater gb=new Theater();
+		gb.setTheaterId(theaterId);
+		Theater output=null;
+		try {
+			output=theaterService.getTheaterItem(gb);
+		}
+		catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
 		
+		String redirectUrl=contextPath+"/branch?provNo="+output.getProvNo()+"&theaterId="+output.getTheaterId();
+		return webHelper.redirect(redirectUrl, "자주 가는 영화관에 추가되었습니다");
+
 	}
 }

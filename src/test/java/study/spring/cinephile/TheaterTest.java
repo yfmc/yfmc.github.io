@@ -42,12 +42,12 @@ public class TheaterTest {
 		}
 	}
 	
-	/* 자주 가는 영화관 등록 테스트 */
+	/* 자주 가는 영화관 등록 테스트 + 중복 테스트 */
 	@Test
 	public void testB() {
 		TheaterAdd input=new TheaterAdd();
 		input.setTheaterId(7001);
-		input.setMembersId(4);
+		input.setMembersId(1);
 		
 		int output=0;
 		
