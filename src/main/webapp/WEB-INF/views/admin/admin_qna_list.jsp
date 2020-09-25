@@ -24,11 +24,11 @@
 						<table class="table table-striped table-bordered table_qna_list">
 							<thead>
 								<tr>
-									<th style="width: 10%;">번호</th>
-									<th style="width: auto;">제목</th>
-									<th style="width: 10%;">작성자</th>
-									<th style="width: 15%;">작성일</th>
-									<th style="width: 10%;">답변 여부</th>
+									<th style="width: 10%; text-align:center;">번호</th>
+									<th style="width: auto; text-align:center;">제목</th>
+									<th style="width: 10%; text-align:center;">작성자</th>
+									<th style="width: 15%; text-align:center;">작성일</th>
+									<th style="width: 10%; text-align:center;">답변 여부</th>
 								</tr>
 							</thead>
 							<tbody>

@@ -16,12 +16,20 @@ public interface QnaService {
     public Qna getQnaItem(Qna input) throws Exception;
 
     /**
-     * Qna 데이터 목록 조회
+     * Qna 데이터 목록 조회 (datetime 타입)
      * @param   input   검색 조건을 담고 있는 Beans
      * @return  조회 결과에 대한 컬렉션
      * @throws  Exception
      */
     public List<Qna> getQnaList(Qna input) throws Exception;
+    
+    /**
+     * Qna 데이터 목록 조회 (date 타입)
+     * @param   input   검색 조건을 담고 있는 Beans
+     * @return  조회 결과에 대한 컬렉션
+     * @throws  Exception
+     */
+    public List<Qna> getQnaList_date(Qna input) throws Exception;
 
     /**
      * Qna 데이터 갯수 조회

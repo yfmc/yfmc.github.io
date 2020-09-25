@@ -20,9 +20,9 @@ var printday=mm+"/"+dd+"<br />"+days[dayno];
 /* jQuery */
 $(function() {
 	// 자주가는 영화관 등록
-	$("#bookmarking").click(function() {
-		alert("자주 가는 영화관에 추가되었습니다");
-	});
+//	$("#bookmarking").click(function() {
+//		alert("자주 가는 영화관에 추가되었습니다");
+//	});
 		
 	// 요일 선택 slick
 	$(".week_btn").slick({

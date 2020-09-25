@@ -33,39 +33,24 @@
                     <!-- 자주가는 영화관 목록 -->
                     <table class="oftentheater">
                     	<tr>
-                        <c:forEach var="item" items="${output}" begin="0" end="1" varStatus="status">
-                        <c:choose>
-                        	<c:when test="${item!=null || item!=''}">
-                      		<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
-	                        </c:when>
-	                        <c:otherwise>
-	                        <td>공란</td>
-	                        </c:otherwise>
-                        </c:choose>
+                        <c:forEach var="i" begin="0" end="1" varStatus="status">
+	                       <td>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       </td>
                         </c:forEach>
                         </tr>
                         <tr>
-                        <c:forEach var="item" items="${output}" begin="2" end="3" varStatus="status">
-                        <c:choose>
-	                        <c:when test="${item!=null || item!=''}">
-	                      	<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
-	                        </c:when>
-	                        <c:otherwise>
-	                        <td>공란</td>
-	                        </c:otherwise>
-                        </c:choose>
+                        <c:forEach var="i" begin="2" end="3" varStatus="status">
+	                       <td>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       </td>
                         </c:forEach>
                         </tr>
                         <tr>
-                        <c:forEach var="item" items="${output}" begin="4" varStatus="status">
-                        <c:choose>
-	                        <c:when test="${item!=null || item!=''}">
-	                      	<td><span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${item.oldAddr}<br/>${item.rooms}관 / ${item.seats}석">${item.brand}&nbsp; ${item.branch}</span></td>
-	                        </c:when>
-	                        <c:otherwise>
-	                        <td>공란</td>
-	                        </c:otherwise>
-                        </c:choose>
+                        <c:forEach var="i" begin="4" end="4" varStatus="status">
+	                       <td>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       </td>
                         </c:forEach>
                         <!-- 자주가는 영화관 설정 창으로 이동 -->
                         <td class="gotheater"><a href="#" class="often">자주가는 영화관 설정 &nbsp;&nbsp;&nbsp;<i class="fas fa-mouse" style="font-size:14px;"></i></a></td>

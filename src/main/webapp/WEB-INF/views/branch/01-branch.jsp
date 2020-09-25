@@ -96,8 +96,21 @@
 	<div class="branch_info">
 		<!-- 극장 상세 정보 head -->
 		<div class="branch_head">
+			<c:choose>
+			<%-- 자주 가는 영화관인 경우 지점명 옆에 별 표시 --%>
+			<c:when test="${favCount>0}">
+			<h2 class="branch_name">${output.brand}&nbsp;${output.branch}&nbsp;<i class="fas fa-star"></i></h2>
+			</c:when>
+			<%-- 자주 가는 영화관이 아닐 경우 등록 버튼 표시 --%>
+			<c:otherwise>
 			<h2 class="branch_name">${output.brand}&nbsp;${output.branch}</h2>
-			<button id="bookmarking" class="btn btn-default"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
+			<form method="post" action="${pageContext.request.contextPath}/branch/add_ok.do" >
+				<input type="hidden" name="theater_id" value="${output.theaterId}" />
+				<input type="hidden" name="members_id" value="${user}" />
+				<button type="submit" id="bookmarking" class="btn btn-default"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
+			</form>
+			</c:otherwise>
+			</c:choose>
 		</div>
 		<!-- 극장 상세 정보 body -->
 		<div class="branch_body">

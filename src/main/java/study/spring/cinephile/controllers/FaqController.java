@@ -18,7 +18,7 @@ import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.Faq;
-import study.spring.cinephile.model.Notice;
+import study.spring.cinephile.model.Faq;
 
 @Controller
 public class FaqController {
@@ -68,7 +68,7 @@ public class FaqController {
 				Faq.setOffset(pageData.getOffset());
 				Faq.setListCount(pageData.getListCount());
 				
-				output = faqService.getFaqList(input);
+				output = faqService.getFaqList_date(input);
 			} catch (Exception e) {
 				return webHelper.redirect(null, e.getLocalizedMessage());
 			}
@@ -102,16 +102,22 @@ public class FaqController {
 		
 		// 조회결과를 저장할 객체
 		Faq output = null;
+		Faq nextFaq = null;
+		Faq prevFaq = null;
 		
 		try {
 			// 데이터 조회
-			output = faqService.getFaqItem(input);
+			output = faqService.getFaqItem_date(input);
+			nextFaq = faqService.getFaqItem_next(input);
+			prevFaq = faqService.getFaqItem_prev(input);
 		} catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
 		
 		/** view 처리 */
 		model.addAttribute("output", output);
+		model.addAttribute("nextFaq", nextFaq);
+		model.addAttribute("prevFaq", prevFaq);
 		
 		return new ModelAndView("support/faq_detail");
 	}

@@ -115,7 +115,7 @@
 			<div class="tags-container form-control">
 				<c:forEach var="item" items="${output2}" varStatus="status">
 				<div class="tag badge badge-primary">
-					<span>${item.brand}&nbsp;${item.branch}</span><i class="tag-remove"><a href="delete_ok.do">✖</a></i>
+					<span>${item.brand}&nbsp;${item.branch}</span><i class="tag-remove"><a href="fav_theater_delete.do?theater_id=${item.theater_id}">✖</a></i>
 				</div>
 				</c:forEach>
 			</div>

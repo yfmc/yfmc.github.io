@@ -50,16 +50,16 @@
                                 		<tbody>
                                 			<c:choose>
                                 				<%-- 조회결과가 없는 경우 --%>
-                                				<c:when test="${output1 == null || fn:length(output1)==0}">
+                                				<c:when test="${noticeList == null || fn:length(noticeList)==0}">
                                 					<tr>
                                 						<td colspan="3" align="center">조회 결과 없음</td>
                                 					</tr>
                                 				</c:when>
                                 				<%-- 조회결과가 있는 경우 --%>
                                 				<c:otherwise>
-                                					<c:forEach var="item1" items="${output1}" varStatus="status" begin="0" end="4" step="1">
+                                					<c:forEach var="item1" items="${noticeList}" varStatus="status" begin="0" end="4" step="1">
                                 						<%-- 출력을 위해 준비한 notice데이터 --%>
-                                						<c:set var="notice_id" 		value="${fn:length(output1)-status.index}" />
+                                						<c:set var="notice_id" 		value="${fn:length(noticeList)-status.index}" />
                                 						<c:set var="notice_title" 		value="${item1.notice_title}" />
                                 						<c:set var="reg_date" 			value="${item1.reg_date}" />
                                 						
@@ -95,16 +95,16 @@
                                 		<tbody>
                                 			<c:choose>
                                 				<%-- 조회결과가 없는 경우 --%>
-                                				<c:when test="${output2 == null || fn:length(output2)==0}">
+                                				<c:when test="${faqList == null || fn:length(faqList)==0}">
                                 					<tr>
                                 						<td colspan="3" align="center">조회 결과 없음</td>
                                 					</tr>
                                 				</c:when>
                                 				<%-- 조회결과가 있는 경우 --%>
                                 				<c:otherwise>
-                                					<c:forEach var="item2" items="${output2}" varStatus="status" begin="0" end="4" step="1">
+                                					<c:forEach var="item2" items="${faqList}" varStatus="status" begin="0" end="4" step="1">
                                 						<%-- 출력을 위해 준비한 notice데이터 --%>
-                                						<c:set var="faq_id" 			value="${fn:length(output2)-status.index}" />
+                                						<c:set var="faq_id" 			value="${fn:length(faqList)-status.index}" />
                                 						<c:set var="faq_title" 		value="${item2.faq_title}" />
                                 						<c:set var="reg_date" 		value="${item2.reg_date}" />
                                 						

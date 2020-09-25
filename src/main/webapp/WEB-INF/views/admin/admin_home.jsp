@@ -19,10 +19,10 @@
 				<table class="table table-striped table-bordered unanswer_table">
 					<thead>
 						<tr>
-							<th style="width: 10%;">번호</th>
-							<th style="width: auto;">제목</th>
-							<th style="width: 15%;">작성자</th>
-							<th style="width: 15%;">작성일</th>
+							<th style="width: 10%; text-align:center;">번호</th>
+							<th style="width: auto; text-align:center;">제목</th>
+							<th style="width: 15%; text-align:center;">작성자</th>
+							<th style="width: 20%; text-align:center;">등록일</th>
 						</tr>
 						<%-- 미답변인 1:1문의내역만 가져오기 --%>
 						<c:choose>
@@ -34,7 +34,7 @@
 							</c:when>
 							<%-- 조회결과가있는경우 --%>
 							<c:otherwise>
-								<c:forEach var="item" items="${qnaList}" varStatus="status">
+								<c:forEach var="item" items="${qnaList}" varStatus="status" begin="0" end="3" step="1">
 									<%-- 출력을 위한 1:1문의 데이터 --%>
 									<c:set var="qna_id" value="${item.qna_id}" />
 									<c:set var="qna_title" value="${item.qna_title}" />
@@ -69,10 +69,10 @@
 				<table class="table table-striped table-bordered unanswer_table">
 					<thead>
 						<tr>
-							<th style="width: 10%;">번호</th>
-							<th style="width: auto;">제목</th>
-							<th style="width: 20%;">작성일</th>
-							<th style="width: 15%;">조회수</th>
+							<th style="width: 10%; text-align:center;">번호</th>
+							<th style="width: auto; text-align:center;">제목</th>
+							<th style="width: 20%; text-align:center;">등록일</th>
+							<th style="width: 15%; text-align:center;">조회수</th>
 						</tr>
 					</thead>
 					<tbody>

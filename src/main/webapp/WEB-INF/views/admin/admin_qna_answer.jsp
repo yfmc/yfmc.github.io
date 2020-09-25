@@ -23,7 +23,7 @@
 				     	</div>
 				     	<div>
 				     		<label for ="email" >메일주소 : </label>
-				     		<input type="email" name="email"  value="${output.email}" />
+				     		<input type="email" name="email"  value="${output.email}"  readonly/>
 				     	</div>
 				     	<div>
 				     		<label for ="subject" >메일제목 : </label>

@@ -83,9 +83,9 @@
 				
 				//체크박스를 넣어 원할 때에만 이메일 변경 가능하게 함
 				$("#email_enable").change(function(){
-					var now=$("#mail").prop("disabled");
-					$("#mail").prop("disabled",!now);
-					if($("#mail").prop("disabled")==false){
+					var now=$("#mail").prop("readonly");
+					$("#mail").prop("readonly",!now);
+					if($("#mail").prop("readonly")==false){
 						$("#mail").focus();
 						$(".hiddenstar1").show();
 					}
@@ -96,9 +96,9 @@
 				
 				//체크박스를 넣어 원할 때에만 연락처 변경 가능하게 함
 				$("#phone_enable").change(function(){
-					var now=$("#phone").prop("disabled");
-					$("#phone").prop("disabled",!now);
-					if($("#phone").prop("disabled")==false){
+					var now=$("#phone").prop("readonly");
+					$("#phone").prop("readonly",!now);
+					if($("#phone").prop("readonly")==false){
 						$("#phone").focus();
 						$(".hiddenstar2").show();
 					}
@@ -109,18 +109,18 @@
 				
 				//체크박스를 넣어 원할 때에만 주소 변경 가능하게 함
 				$("#address_enable").change(function(){
-					var now=$("#address").prop("disabled");
-					var now2=$("#details").prop("disabled");
-					var now3=$("#postcode").prop("disabled");
-					$("#address").prop("disabled",!now);
-					$("#details").prop("disabled",!now2);
-					$("#postcode").prop("disabled",!now3);
+					var now=$("#address").prop("readonly");
+					var now2=$("#details").prop("readonly");
+					var now3=$("#postcode").prop("readonly");
+					$("#address").prop("readonly",!now);
+					$("#details").prop("readonly",!now2);
+					$("#postcode").prop("readonly",!now3);
 					$(".keyword").addClass("form-control");
 					$(".keyword").attr("placeholder","주소를 검색하세요");
 					$(".search_button").addClass("btn");
 					$(".search_button").addClass("btn-info");
 					
-					if($("#address").prop("disabled")==false){
+					if($("#address").prop("readonly")==false){
 						$("#details").focus();
 					}
 					if($("#postcodify").css("display")=="none"){
