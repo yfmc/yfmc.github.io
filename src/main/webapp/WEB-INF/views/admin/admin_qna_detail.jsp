@@ -18,8 +18,8 @@
                         <tr class="detail_title">
                             <th style="width:10%;">${output.qna_id}</th>
                             <th style="width:auto;">${output.qna_title}</th>
-                            <th style="width:10%;">${output.user_name}</th>
-                            <th style="width:10%;">${output.reg_date}</th>
+                            <th style="width:15%;">작성자 : ${output.user_name}</th>
+                            <th style="width:15%;">등록일<br />${output.reg_date}</th>
                             <th style="width:15%;">답변여부 : ${output.answer_check}</th>
                         </tr>
                     </thead>

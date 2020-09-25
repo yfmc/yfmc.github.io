@@ -19,7 +19,7 @@ public class NoticeServiceImpl implements NoticeService {
 	SqlSession sqlSession;
 	
 	/**
-     * Notice 데이터 상세 조회
+     * Notice 데이터 상세 조회 (datetime 타입)
      * @param  Notice 조회할 Notice의 일련번호를 담고 있는 Beans
      * @return  조회된 데이터가 저장된 Beans
      * @throws  Exception
@@ -46,7 +46,34 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 	
 	/**
-     * Notice 데이터 목록 조회
+     * Notice 데이터 상세 조회 (date 타입)
+     * @param  Notice 조회할 Notice의 일련번호를 담고 있는 Beans
+     * @return  조회된 데이터가 저장된 Beans
+     * @throws  Exception
+     */
+	@Override
+	public Notice getNoticeItem_date(Notice input) throws Exception {
+		Notice result = null;
+			
+		try {
+			result = sqlSession.selectOne("NoticeMapper.selectItem_date", input);
+			
+			if (result == null) {
+				throw new NullPointerException("result=null");
+			}
+		} catch (NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 데이터 없음");
+		} catch (Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		
+		return result;
+	}
+	
+	/**
+     * Notice 데이터 목록 조회(datetime 타입)
      * @param   input   검색 조건을 담고 있는 Beans
      * @return  조회 결과에 대한 컬렉션
      * @throws  Exception
@@ -57,6 +84,33 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		try {
 			result = sqlSession.selectList("NoticeMapper.selectList", input);
+			
+			if (result == null) {
+				throw new NullPointerException("result=null");
+			}
+		} catch (NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 데이터 없음");
+		} catch (Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		
+		return result;
+	}
+	
+	/**
+     * Notice 데이터 목록 조회(date 타입)
+     * @param   input   검색 조건을 담고 있는 Beans
+     * @return  조회 결과에 대한 컬렉션
+     * @throws  Exception
+     */
+	@Override
+	public List<Notice> getNoticeList_date(Notice input) throws Exception {
+		List<Notice> result = null;
+		
+		try {
+			result = sqlSession.selectList("NoticeMapper.selectList_date", input);
 			
 			if (result == null) {
 				throw new NullPointerException("result=null");

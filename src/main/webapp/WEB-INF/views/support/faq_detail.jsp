@@ -31,26 +31,19 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">번호 10</th>
-                                <th style="width: auto;">자주찾는 질문 10</th>
-                                <th style="width: 150px;">등록일</th>
-                                <th style="width: 150px;">조회수</th>
+                                <th style="width: 100px;">${output.faq_id}</th>
+                                <th style="width: auto;">${output.faq_title}</th>
+                                <th style="width: 200px;">등록일 : ${output.reg_date}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="detail_box">
-                            	<td colspan="4">
-                                여기는 자주찾는 질문입니다.<br />
-                                잘 읽어 보세요.<br />
-                                확인 잘 해보세요.<br />
-                                저희 영화관을 이용해 주셔서 감사합니다.<br />
-                                Cinephile.<br />
-                                확인 잘 해보세요.<br />
-                                확인 잘 해보세요.<br />
+                                <td colspan="3">
+                                	${output.faq_content}
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">
-                                <td colspan="4">                         
+                                <td colspan="3">                         
                                         <span class="page_next">다음글</span>
                                         <i class="fas fa-angle-up"></i>
                                         <a href="#" id="?">
@@ -59,7 +52,7 @@
                                 </td>
                             </tr>
                             <tr class="page_move" align="left">
-                                <td colspan="4">
+                                <td colspan="3">
                                         <span class="page_prev">이전글</span>
                                         <i class="fas fa-angle-down"></i>
                                     	<a href="#" id="?">

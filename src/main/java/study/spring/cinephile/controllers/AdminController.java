@@ -56,8 +56,8 @@ public class AdminController {
 		List<Qna> qnaList = null;
 		
 		try {
-			noticeList = noticeService.getNoticeList(null);
-			qnaList = qnaService.getQnaList(null);
+			noticeList = noticeService.getNoticeList_date(null);
+			qnaList = qnaService.getQnaList_date(null);
 		} catch (Exception e) { e.printStackTrace(); }
 		
 		model.addAttribute("noticeList", noticeList);
@@ -134,7 +134,7 @@ public class AdminController {
 				Faq.setOffset(pageData.getOffset());
 				Faq.setListCount(pageData.getListCount());
 				
-				output = faqService.getFaqList(input);
+				output = faqService.getFaqList_date(input);
 			} catch (Exception e) {
 				return webHelper.redirect(null, e.getLocalizedMessage());
 			}

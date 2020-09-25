@@ -68,7 +68,7 @@ public class FaqController {
 				Faq.setOffset(pageData.getOffset());
 				Faq.setListCount(pageData.getListCount());
 				
-				output = faqService.getFaqList(input);
+				output = faqService.getFaqList_date(input);
 			} catch (Exception e) {
 				return webHelper.redirect(null, e.getLocalizedMessage());
 			}
@@ -105,7 +105,7 @@ public class FaqController {
 		
 		try {
 			// 데이터 조회
-			output = faqService.getFaqItem(input);
+			output = faqService.getFaqItem_date(input);
 		} catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}

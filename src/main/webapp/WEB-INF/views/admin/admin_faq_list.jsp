@@ -26,10 +26,10 @@
 						<table class="table table-striped table-bordered table_faq_list">
 							<thead>
 								<tr>
-									<th style="width: 10%;">번호</th>
-									<th style="width: auto;">제목</th>
-									<th style="width: 15%;">등록일</th>
-									<th style="width: 15%;">조회수</th>
+									<th style="width: 10%; text-align:center;">번호</th>
+									<th style="width: auto; text-align:center;">제목</th>
+									<th style="width: 15%; text-align:center;">등록일</th>
+									<th style="width: 15%; text-align:center;">조회수</th>
 								</tr>
 							</thead>
 							<tbody>

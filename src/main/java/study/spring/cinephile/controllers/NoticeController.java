@@ -67,7 +67,7 @@ public class NoticeController {
 			Notice.setOffset(pageData.getOffset());
 			Notice.setListCount(pageData.getListCount());
 			
-			output = noticeService.getNoticeList(input);
+			output = noticeService.getNoticeList_date(input);
 		} catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
@@ -104,7 +104,7 @@ public class NoticeController {
 		
 		try {
 			// 데이터 조회
-			output = noticeService.getNoticeItem(input);
+			output = noticeService.getNoticeItem_date(input);
 		} catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
