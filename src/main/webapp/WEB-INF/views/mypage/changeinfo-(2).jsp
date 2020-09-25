@@ -100,7 +100,7 @@
                             <label for="maillist" class="col-xs-2 control-label"><span style="color:red;display:none;" class="hiddenstar1">*</span> &nbsp;
                             <input type="checkbox" id="email_enable" /> 이메일</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" name="mail" id="mail" value="${my_session.user_email}" style="width:200px;"disabled/>
+                                <input type="text" class="form-control" name="mail" id="mail" value="${my_session.user_email}" style="width:200px;"readonly/>
                             </div>
                         </div>
 
@@ -109,7 +109,7 @@
                             <label for="phonelist" class="col-xs-2 control-label">
                             <span style="color:red;display:none;" class="hiddenstar2">*</span> &nbsp;<input type="checkbox" id="phone_enable"/> 연락처</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" name="phone" id="phone" value="${my_session.phone}" style="width:150px; "disabled/>
+                                <input type="text" class="form-control" name="phone" id="phone" value="${my_session.phone}" style="width:150px; "readonly/>
                                 (-없이 입력하세요)
                             </div>
                         </div>
@@ -119,9 +119,9 @@
                             <span style="color:red;display:none;" class="hiddenstar3">*</span> &nbsp;<input type="checkbox" id="address_enable"/> 주소</label>
                             <div class="col-xs-10">
                             <div id="postcodify" style="display:none;"></div>
-                            	<input type="text" class="form-control" name="postcode" id="postcode" style="width:80px;" value="${my_session.postcode}" disabled /><br />
-								<input type="text" class="form-control" name="address" id="address" style="width:310px;" value="${my_session.addr}" disabled/><br />
-								<input type="text" class="form-control" name="details" id="details" style="width:310px;" value="${my_session.addr_detail}" disabled/><br />
+                            	<input type="text" class="form-control" name="postcode" id="postcode" style="width:80px;" value="${my_session.postcode}" readonly /><br />
+								<input type="text" class="form-control" name="address" id="address" style="width:310px;" value="${my_session.addr}" readonly/><br />
+								<input type="text" class="form-control" name="details" id="details" style="width:310px;" value="${my_session.addr_detail}" readonly/><br />
                             </div>
                         </div>
                         <hr />

@@ -23,6 +23,7 @@ import study.spring.cinephile.model.Members;
 import study.spring.cinephile.model.PasswordOk;
 import study.spring.cinephile.model.Theater2;
 import study.spring.cinephile.service.FavTheaterService;
+import study.spring.cinephile.service.MembersService;
 import study.spring.cinephile.service.PasswordOkService;
 import study.spring.cinephile.service.Theater2Service;
 
@@ -39,6 +40,7 @@ public class MypageController {
 	@Autowired FavTheaterService favTheaterService;
 	@Autowired PasswordOkService passwordOkService;
 	@Autowired Theater2Service theater2Service;
+	@Autowired MembersService membersService;
 	
 	//필요한 객체들 주입
 	
@@ -138,10 +140,47 @@ public class MypageController {
 	
 	
 	
-	@RequestMapping(value="/mypage/changeinfo-(3).do",method=RequestMethod.POST) //마이페이지 > 회원정보수정페이지3
-	public String changeinfo3(Model model) {
+	@RequestMapping(value="/mypage/changeinfo-(3).do",method= {RequestMethod.GET,RequestMethod.POST}) //마이페이지 > 회원정보수정페이지3
+	public ModelAndView changeinfo3(Model model,HttpServletRequest request,
+			@RequestParam(value="user_password",required=false) String user_pw,
+			@RequestParam(value="mail",required=false) String user_email,
+			@RequestParam(value="phone",required=false) String phone,
+			@RequestParam(value="postcode",required=false) String postcode,
+			@RequestParam(value="address",required=false) String addr,
+			@RequestParam(value="details",required=false) String addr_detail
+			) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 세션 가져옴
 		
-		return "mypage/changeinfo-(3)";
+		log.error(user_pw+" "+user_email+" "+phone+" "+postcode+" "+addr+" "+addr_detail+"asas");
+		
+		Members input=new Members();
+		input.setUser_pw(user_pw);
+		input.setUser_email(user_email);
+		input.setPhone(phone);
+		input.setPostcode(postcode);
+		input.setAddr(addr);
+		input.setAddr_detail(addr_detail);
+		input.setMembers_id(mySession.getMembers_id());
+		
+		if(user_pw==null) {return webHelper.redirect(null, "정상적이지 않은 접근입니다.");}
+		if(user_email==null) {return webHelper.redirect(null, "이메일을 입력하세요.");}
+		if(phone==null) {return webHelper.redirect(null, "연락처를 입력하세요.");}
+		if(postcode==null) {return webHelper.redirect(null, "우편번호를 입력하세요.");}
+		if(addr==null) {return webHelper.redirect(null, "주소를 입력하세요.");}
+		if(addr_detail==null) {return webHelper.redirect(null, "상세주소를 입력하세요.");}
+		if(!regexHelper.isEmail(user_email)) {return webHelper.redirect(null, "올바른 메일을 입력하세요.");}
+		if(!regexHelper.isTel(phone)) {return webHelper.redirect(null, "올바른 연락처를 입력하세요.");}
+		
+		
+		
+		try {
+			membersService.editMembers(input);
+			return new ModelAndView("mypage/changeinfo-(3)");
+		} catch (Exception e) {
+			return webHelper.redirect("mypage/changeinfo-(2).do","수정에 실패했습니다. 관리자에게 문의하세요.");
+		}
+
 	}
 	
 	@RequestMapping(value="/mypage/choicelist.do",method=RequestMethod.GET) //마이페이지 > 좋아한영화내역페이지
