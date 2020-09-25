@@ -11,10 +11,10 @@
 
                 <div class="input-group input-group-lg">
 
-                    <input type="text" class="form-control" id="nameforid" placeholder="이 름" aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" id="nameforid" name="user_name" placeholder="이 름" aria-describedby="sizing-addon1">
                 </div>
                 <div class="input-group input-group-lg">
-                    <input type="text" class="form-control" id="emailforid" placeholder="이메일" aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" id="emailforid" name="user_email" placeholder="이메일" aria-describedby="sizing-addon1">
                 </div>
 
                 <div class="loginbt">
@@ -30,15 +30,15 @@
 
                 <div class="input-group input-group-lg">
 
-                    <input type="text" class="form-control" id="nameforpw" placeholder="이 름" aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" id="nameforpw" name="user_name" placeholder="이 름" aria-describedby="sizing-addon1">
                 </div>
                 <div class="input-group input-group-lg">
 
-                    <input type="text" class="form-control" id="idforpw" placeholder="아이디" aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" id="idforpw" name="user_id" placeholder="아이디" aria-describedby="sizing-addon1">
                 </div>
                 <div class="input-group input-group-lg">
 
-                    <input type="text" class="form-control" id="emailforpw" placeholder="이메일" aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control" id="emailforpw" name="user_email" placeholder="이메일" aria-describedby="sizing-addon1">
                 </div>
 
                 <div class="loginbt">

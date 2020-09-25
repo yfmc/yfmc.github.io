@@ -19,6 +19,43 @@ public class MembersServiceImpl implements MembersService{
 	@Autowired
 	SqlSession sqlSession;
 	
+	
+	@Override
+	public Members getFindPw(Members input) throws Exception {
+		Members result = null;
+		
+		try {
+			result = sqlSession.selectOne("MembersMapper.selectFindPw", input);
+			
+			}catch(Exception e) {
+				log.error(e.getLocalizedMessage());
+				throw new Exception("데이터 조회에 실패했습니다.");
+			}
+		
+		return result;
+	}
+	
+	/**
+	 * 아이디 찾기
+	 * @param Members 조회할 회원의 이름,이메일을 담고 있는 Beans
+	 * @return 조회된 데이터가 저장된 Beans
+	 * @throws Exception
+	 */
+	@Override
+	public Members getFindId(Members input) throws Exception {
+		Members result = null;
+		
+		try {
+			result = sqlSession.selectOne("MembersMapper.selectFindId", input);
+			
+			}catch(Exception e) {
+				log.error(e.getLocalizedMessage());
+				throw new Exception("데이터 조회에 실패했습니다.");
+			}
+		
+		return result;
+	}
+	
 	/**
 	 * 로그인 처리
 	 * @param Members 조회할 회원의 이메일을 담고 있는 Beans
@@ -232,6 +269,37 @@ public class MembersServiceImpl implements MembersService{
 		}
 		return result;
 	}
+	
+	
+	/**
+	 * 회원 비번 업댓
+	 * @param Members 새로운 비번, 회원 이메일
+	 * @throws Exception
+	 */
+	@Override
+	public int newPw(Members input) throws Exception {
+		int result = 0;
+		
+		try {
+			result = sqlSession.update("MembersMapper.updateNewPw", input);
+			
+			if(result == 0) {
+				throw new NullPointerException("result=0");
+			}
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("수정된 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 수정에 실패했습니다.");
+		}
+		return result;
+		
+	}
+
+	
+
+	
 
 	
 

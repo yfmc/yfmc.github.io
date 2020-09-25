@@ -2,6 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <%@ include file="../_inc/header.jsp" %>
+<title>약관동의 | Cinephile</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_04Agree.css?time=<%=System.currentTimeMillis()%>" />
 
     

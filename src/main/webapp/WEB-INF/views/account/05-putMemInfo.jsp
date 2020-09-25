@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
-
+<title>회원정보입력 | Cinephile</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_05putMemberInfo.css?time=<%=System.currentTimeMillis()%>" />
 
 

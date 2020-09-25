@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="../_inc/header.jsp"%>
-
+<title>이메일 인증 | Cinephile</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_02putEmail.css?time=<%=System.currentTimeMillis()%>" />
 
 

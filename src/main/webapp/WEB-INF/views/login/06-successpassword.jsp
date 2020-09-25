@@ -2,7 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login_06successpassword.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/login_06successpassword.css?time=<%=System.currentTimeMillis()%>" />
     
     <div id="content">
             <h2>비밀번호 재설정</h2>
@@ -12,7 +12,7 @@
                 </p>
 
                 <div class="loginbt">
-                    <a href="<%=request.getContextPath()%>/login/01-login.jsp"><button type="button" class="btn btn-primary">로그인</button></a>
+                    <a href="<%=request.getContextPath()%>/login/01-login.do"><button type="button" class="btn btn-primary">로그인</button></a>
 
                 </div>
 

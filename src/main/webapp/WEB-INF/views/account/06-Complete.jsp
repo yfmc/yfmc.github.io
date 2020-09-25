@@ -2,6 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <%@ include file="../_inc/header.jsp" %>
+<title>회원가입 성공 | Cinephile</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_06Complete.css?time=<%=System.currentTimeMillis()%>" />
 
     

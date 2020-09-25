@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login_05newpassword.css?time=<%=System.currentTimeMillis()%>" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/login_05newpassword.css?time=<%=System.currentTimeMillis()%>" />
 
     <div id="content">
-     <form id="pwagain">
+     <form id="pwagain" method="post" action="${pageContext.request.contextPath}/login/setNewPw.do">
+            <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
             <h2>비밀번호 재설정</h2>
             <div id="newpw">
                 <div class="passwords">
@@ -25,13 +26,15 @@
                  
                 </div>
                 <div class="buttons">
+                
                     <button type="submit" class="btn btn-default">비밀번호 재설정</button>
-                   	<a href="<%=request.getContextPath()%>/login/02-findidpassword.jsp"><button type="button" class="btn btn-default">취소</button></a>
+                   	<a href="<%=request.getContextPath()%>/login/02-findidpassword.do"><button type="button" class="btn btn-default">취소</button></a>
                 </div>
             </div>
             </form>
         </div>
-<script src="../plugins/validate/jquery.validate.min.js"></script>
-<script src="../plugins/validate/additional-methods.min.js"></script>
-<script src="../js_files/login_05newpassword.js"></script>
+
+<script src="../assets/plugins/validate/jquery.validate.min.js"></script>
+<script src="../assets/plugins/validate/additional-methods.min.js"></script>
+<script src="../assets/js_files/login_05newpassword.js"></script>
 <%@ include file="../_inc/footer.jsp" %>

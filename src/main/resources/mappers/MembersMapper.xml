@@ -24,6 +24,22 @@
 		<result property="edit_date" column="edit_date" />
 	</resultMap>
 	
+	<!-- 비번 찾기 -->
+	<select id="selectFindPw" parameterType="study.spring.cinephile.model.Members"
+		resultMap="membersMap">
+		SELECT members_id, user_email  
+		FROM members
+		WHERE user_name = #{user_name} and user_id = #{user_id} and user_email = #{user_email};
+	</select>
+	
+	<!-- 아이디 찾기 -->
+	<select id="selectFindId" parameterType="study.spring.cinephile.model.Members"
+		resultMap="membersMap">
+		SELECT replace(user_id, substring(user_id,6,2), '**') as user_id  
+		FROM members
+		WHERE user_name = #{user_name} and user_email = #{user_email};
+	</select>
+	
 	<!-- 단일행 조회 (for Email) 를 위한 기능 정의 -->
 	<select id="selectEmail" parameterType="study.spring.cinephile.model.Members"
 		resultMap="membersMap">
@@ -97,6 +113,13 @@
 		parameterType="study.spring.cinephile.model.Members">
 		update members set user_id=#{user_id}, user_pw=#{user_pw}, user_name=#{user_name}, birthdate=#{birthdate}, gender=#{gender}, user_email=#{user_email}, phone=#{phone}, postcode=#{postcode}, addr=#{addr}, addr_detail=#{addr_detail}, is_out=#{is_out}, reg_date = #{reg_date}, edit_date = now()
 		where members_id=#{members_id};	
+	</update>
+	
+	<!-- 비번 갱신을 위한 기능 정의 -->
+	<update id="updateNewPw"
+		parameterType="study.spring.cinephile.model.Members">
+		update members set user_pw=MD5(#{user_pw}), edit_date = now()
+		where user_email=#{user_email};	
 	</update>
 	
 	<!-- 데이터 수 조회하기 -->
