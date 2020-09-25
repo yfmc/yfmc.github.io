@@ -3,6 +3,7 @@ package study.spring.cinephile.service;
 import java.util.List;
 
 import study.spring.cinephile.model.Faq;
+import study.spring.cinephile.model.Faq;
 
 /** Faq 데이터 관리 기능을 제공하기 위한 Service 계층. */
 public interface FaqService {
@@ -22,6 +23,22 @@ public interface FaqService {
      * @throws  Exception
      */
     public Faq getFaqItem_date(Faq input) throws Exception;
+    
+    /**
+     * Faq 데이터 상세 조회 (다음글 조회)
+     * @param   input   조회할 Faq의 일련번호를 담고 있는 Beans
+     * @return  조회된 데이터가 저장된 Beans
+     * @throws  Exception
+     */
+    public Faq getFaqItem_next(Faq input) throws Exception;
+    
+    /**
+     * Faq 데이터 상세 조회 (이전글 조회)
+     * @param   input   조회할 Faq의 일련번호를 담고 있는 Beans
+     * @return  조회된 데이터가 저장된 Beans
+     * @throws  Exception
+     */
+    public Faq getFaqItem_prev(Faq input) throws Exception;
 
     /**
      * Faq 데이터 목록 조회(datetime 타입) 

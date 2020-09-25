@@ -40,24 +40,55 @@
                                 	${output.notice_content}
                                 </td>
                             </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">                         
-                                    <span class="page_next">다음글</span>
-                                    <i class="fas fa-angle-up"></i>
-                                    <a href="#" id="?">
-                                    <span>다음 글이 없습니다.</span>
-                                   	</a>
-                                </td>
-                            </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">
-                                        <span class="page_prev">이전글</span>
-                                        <i class="fas fa-angle-down"></i>
-                                    	<a href="#" id="?">
-                                        <span>공지사항 9</span>
-                                    </a>
-                                </td>
-                            </tr>
+							<!-- 이전/다음 게시글 이동 -->
+							<%-- 다음 게시글에 대한 링크 --%>
+							<c:choose>
+	                            <%-- 다음게시글이 없다면 --%>
+	                            <c:when test="${nextNotice == null}">
+		                            <tr class="page_move" align="left">
+		                                <td colspan="4">                         
+		                                    <span class="page_next">다음글</span>
+		                                    <i class="fas fa-angle-up"></i>
+		                                    <span>다음 글이 없습니다.</span>
+		                                </td>
+		                            </tr>
+	                            </c:when>
+	                            <%-- 다음게시글이 있다면 --%>
+	                            <c:otherwise>
+	                            	<tr class="page_move" align="left">
+		                                <td colspan="4">                         
+		                                    <span class="page_next">다음글</span>
+		                                    <i class="fas fa-angle-up"></i>
+		                                    <a href="<%=request.getContextPath()%>/support/notice_detail.do?notice_id=${nextNotice.notice_id}">
+		                                    <span>${nextNotice.notice_title}</span>
+		                                   	</a>
+		                                </td>
+		                            </tr>
+	                            </c:otherwise>
+	                        </c:choose>
+	                        
+							<%-- 이전 게시글에 대한 링크 --%>
+							<c:choose>
+								<%-- 이전 게시글로 이동이 불가능하다면 --%>
+								<c:when test="${prevNotice == null}">
+									<tr class="page_move" align="left">
+										<td colspan="4"><span class="page_prev">이전글</span>
+											<i class="fas fa-angle-down"></i>
+											<span>이전 글이 없습니다.</span>
+										</td>
+									</tr>
+								</c:when>
+								<%-- 이전게시글로 이동이 가능하다면 --%>
+								<c:otherwise>
+									<tr class="page_move" align="left">
+										<td colspan="4"><span class="page_prev">이전글</span>
+											<i class="fas fa-angle-down"></i>
+											<a href="<%=request.getContextPath()%>/support/notice_detail.do?notice_id=${prevNotice.notice_id}">
+											<span>${prevNotice.notice_title}</span></a>
+										</td>
+									</tr>
+								</c:otherwise>
+							</c:choose>
                         </tbody>
                     </table>
                     <div class="list_button pull-right">

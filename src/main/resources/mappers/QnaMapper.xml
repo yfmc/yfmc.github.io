@@ -28,11 +28,26 @@
 		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna where qna_id=#{qna_id};
 	</select>
 	
-	<!-- 다중행 조회를 위한 기능 정의 -->
+	<!-- 다중행 조회(datetime 타입)를 위한 기능 정의 -->
 	<select id="selectList"
 		parameterType="study.spring.cinephile.model.Qna"
 		resultMap="qnaMap">
 		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna
+	
+		<where>
+			<if test ="qna_id != null and qna_id != ''">
+				qna_id like concat('%', #{qna_id}, '%')
+			</if>
+		</where>
+		
+		order by qna_id desc
+	</select>
+	
+	<!-- 다중행 조회(date 타입)를 위한 기능 정의 -->
+	<select id="selectList_date"
+		parameterType="study.spring.cinephile.model.Qna"
+		resultMap="qnaMap">
+		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, cast(reg_date as date) as reg_date, answer_check, answer_content, answer_date from qna
 	
 		<where>
 			<if test ="qna_id != null and qna_id != ''">

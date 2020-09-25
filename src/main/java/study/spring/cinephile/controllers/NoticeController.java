@@ -101,16 +101,22 @@ public class NoticeController {
 		
 		// 조회결과를 저장할 객체
 		Notice output = null;
+		Notice nextNotice = null;
+		Notice prevNotice = null;
 		
 		try {
 			// 데이터 조회
 			output = noticeService.getNoticeItem_date(input);
+			nextNotice = noticeService.getNoticeItem_next(input);
+			prevNotice = noticeService.getNoticeItem_prev(input);
 		} catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
 		
 		/** view 처리 */
 		model.addAttribute("output", output);
+		model.addAttribute("nextNotice", nextNotice);
+		model.addAttribute("prevNotice", prevNotice);
 		
 		return new ModelAndView("support/notice_detail");
 	}
