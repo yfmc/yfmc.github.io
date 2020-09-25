@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ page import="study.spring.cinephile.model.Members" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+	//세션값 가져오기
+	Members loginInfo = (Members) session.getAttribute("login_info");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +48,7 @@
             <div class="menu">
                 <ul class="mainnav">
                     <li class="nav">
-                        <a href="#" class="mains">영화</a>
+                        <a href="${pageContext.request.contextPath}/movie/nowMoving.do" class="mains">영화</a>
                         <ul class="subnav">
                             <li><a href="${pageContext.request.contextPath}/movie/nowMoving.do">박스오피스</a></li>
                             <li><a href="${pageContext.request.contextPath}/movie/MovieSearch.do">영화검색</a></li>
@@ -51,10 +60,10 @@
                         <a href="${pageContext.request.contextPath}/booking/01-booking_time.do" class="mains">예매</a>
                         <ul class="subnav">
                             <li><a href="${pageContext.request.contextPath}/booking/01-booking_time.do">예매하기</a></li>
-                            <li><a href="${pageContext.request.contextPath}/timetable.do">극장별시간표</a></li>
+                            <li><a href="${pageContext.request.contextPath}/timetable">극장별시간표</a></li>
                         </ul>
                     </li>
-                    <li class="nav"><a href="${pageContext.request.contextPath}/branch.do" class="mains">극장</a></li>
+                    <li class="nav"><a href="${pageContext.request.contextPath}/branch" class="mains">극장</a></li>
                     <li class="nav">
                         <a href="<%=request.getContextPath()%>/support/support_home.do" class="mains">고객센터</a>
                         <ul class="subnav">
@@ -67,10 +76,19 @@
             </div>
             <div class="right_top">
                 <ul>
+                <%--JSTL을 통해 세션에 직접 접근하기--%>
+                <c:choose>
+                	<c:when test="${loggedIn == null}">
                     <li><a href="${pageContext.request.contextPath}/login/01-login.do" class="login">로그인</a></li>
                     <li><a href="${pageContext.request.contextPath}/account/01-welcome.do">&nbsp;회원가입</a></li>
+                    </c:when>
+					<c:otherwise>                   
+                     <li id="logout"><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+                    </c:otherwise>
+                </c:choose>
+                    
                     <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.do">&nbsp;마이페이지</a></li>
-                    <li><a href="<%=request.getContextPath()%>/admin/admin_home.do">&nbsp;관리자페이지</a></li>
+                   <%-- <li><a href="${pageContext.request.contextPath}/account/05-putMemInfo.do">&nbsp;회원가입지름길</a></li> --%>
                 </ul>
             </div>
         </div>
