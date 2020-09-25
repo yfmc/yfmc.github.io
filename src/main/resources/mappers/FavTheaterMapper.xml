@@ -35,4 +35,22 @@
 	delete from fav_theater where members_id=#{members_id} and theater_id=#{theater_id}
 	</delete>
 
+
+	<insert id="insertItem" parameterType="study.spring.cinephile.model.FavTheater"
+	useGeneratedKeys="true" keyProperty="fav_theater_id">
+	insert into fav_theater(added_time,members_id,theater_id)
+	values(now(),#{members_id},#{theater_id})
+	</insert>
+	
+	<!-- 중복방지 위한 count -->
+	<select id="selectCount" parameterType="study.spring.cinephile.model.FavTheater" resultType="int">
+	select count(*) from fav_theater
+	where members_id=#{members_id} and theater_id=#{theater_id}
+	</select>
+	
+	
+	
+	
+	
+	
 </mapper>

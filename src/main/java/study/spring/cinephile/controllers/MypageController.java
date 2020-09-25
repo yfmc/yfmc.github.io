@@ -266,6 +266,47 @@ public class MypageController {
 		return new ModelAndView("mypage/oftentheater");
 	}
 	
+	@RequestMapping(value="/mypage/fav_theater_add.do",method=RequestMethod.GET)
+	public ModelAndView fav_theater_add(Model model,HttpServletRequest request,
+			@RequestParam(value="theater_id") int theater_id) {
+		
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		if(theater_id==0) {
+			return webHelper.redirect(null, "데이터가 없습니다.");
+		}
+		
+		
+		FavTheater input=new FavTheater();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setTheater_id(theater_id);
+		
+		FavTheater input2=new FavTheater();
+		input2.setMembers_id(mySession.getMembers_id());
+		input2.setTheater_id(theater_id);
+		int totalCount=0;
+		
+		try {
+			totalCount=favTheaterService.getFavTheaterCount(input2);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		
+		if(totalCount==1) {
+			return webHelper.redirect(null,"이미 추가하신 영화관입니다.");
+		}
+		
+		try {
+			favTheaterService.addFavTheater(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return webHelper.redirect(null, "추가에 실패했습니다. 관리자에게 문의하세요.");
+		}
+		
+		return webHelper.redirect(contextPath+"/mypage/oftentheater.do", "추가되었습니다.");
+	}
+	
 	@RequestMapping(value="/mypage/fav_theater_delete.do",method=RequestMethod.GET)
 	public ModelAndView fav_theater_delete(Model model,HttpServletRequest request,
 			@RequestParam(value="theater_id",defaultValue="0") int theater_id) {

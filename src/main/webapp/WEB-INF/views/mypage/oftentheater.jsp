@@ -70,7 +70,6 @@
                 </fieldset>
             </form>
         </div>
-        <mark>${keyword}</mark>
         <h4>영화관 목록(지점이름으로 검색)</h4>
         <table class="table table-striped table-hover">
         <thead class="thead-light">
@@ -78,7 +77,7 @@
         		<th width="220" class="text-center">지점명</th>
         		<th width="400" class="text-center">주소</th>
         		<th width="80" class="text-center">상영관수</th>
-        		<th width="75" class="text-center">좌석수</th>
+        		<th width="75" class="text-center">추가</th>
         	</tr>
         </thead>
         <tbody>
@@ -99,7 +98,7 @@
         					<td align="center">${full_name}</td>
         					<td align="center">${item.new_addr}</td>
         					<td align="center">${item.rooms}</td>
-        					<td align="center">${item.seats}</td>
+        					<td align="center"><a href="fav_theater_add.do?theater_id=${item.theater_id}">추가</a></td>
         				</tr>
         			</c:forEach>
         			
@@ -110,12 +109,12 @@
         
         <!-- 자주가는 영화관 목록 5개까지 정의 -->
         <div class="theaterlist">
-            <legend>자주가는 영화관 목록(최대 5개까지 지정 가능합니다)</legend>
+            <legend>자주가는 영화관 목록</legend>
 			<input data-role="tags-input" value="tagsinput" hidden="hidden" data-rendered="true">
 			<div class="tags-container form-control">
 				<c:forEach var="item" items="${output2}" varStatus="status">
 				<div class="tag badge badge-primary">
-					<span>${item.brand}&nbsp;${item.branch}</span><i class="tag-remove"><a href="fav_theater_delete.do?theater_id=${item.theater_id}">✖</a></i>
+					<span>${item.brand}&nbsp;${item.branch}</span><i class="tag-remove"><a class="del" href="fav_theater_delete.do?theater_id=${item.theater_id}">✖</a></i>
 				</div>
 				</c:forEach>
 			</div>

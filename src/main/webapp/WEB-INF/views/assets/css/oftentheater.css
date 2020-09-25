@@ -84,3 +84,9 @@
 .thispage{
 	color:#222222;
 }
+
+.del{
+	text-decoration:none;
+	color:#3a3a3a;
+	font-weight:900;
+}
