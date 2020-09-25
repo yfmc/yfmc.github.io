@@ -266,6 +266,32 @@ public class MypageController {
 		return new ModelAndView("mypage/oftentheater");
 	}
 	
+	@RequestMapping(value="/mypage/fav_theater_delete.do",method=RequestMethod.GET)
+	public ModelAndView fav_theater_delete(Model model,HttpServletRequest request,
+			@RequestParam(value="theater_id",defaultValue="0") int theater_id) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		
+		if(theater_id==0) {
+			return webHelper.redirect(null, "데이터가 없습니다.");
+		}
+		
+		FavTheater input=new FavTheater();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setTheater_id(theater_id);
+		
+		try {
+			favTheaterService.deleteFavTheater(input);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return webHelper.redirect(null,"삭제에 실패했습니다. 관리자에게 문의하세요.");
+		}
+		
+		
+		return webHelper.redirect(contextPath+"/mypage/oftentheater.do", "삭제되었습니다.");
+	}
+	
 	@RequestMapping(value="/mypage/withdrawal-(1).do",method=RequestMethod.GET) //마이페이지 > 회원탈퇴페이지1
 	public String withdrawal1(Model model) {
 		

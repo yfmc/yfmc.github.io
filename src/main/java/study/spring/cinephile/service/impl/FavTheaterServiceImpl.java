@@ -59,8 +59,19 @@ public class FavTheaterServiceImpl implements FavTheaterService{
 
 	@Override
 	public int deleteFavTheater(FavTheater input) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		int result=0;
+		
+		try {
+			result=sqlSession.delete("FavTheaterMapper.deleteItem",input);
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("삭제된 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 삭제에 실패했습니다.");
+		}
+		
+		return result;
 	}
 
 }
