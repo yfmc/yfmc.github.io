@@ -2,11 +2,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 
 <%@ include file="../_inc/header.jsp" %>
-<%
-	//세션값 가져오기
-	String user_email = (String) session.getAttribute("user_email");
-	String code = (String) session.getAttribute("code");
-%>
+
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_03emailCode.css?time=<%=System.currentTimeMillis()%>" />
 
     <div id="content">
@@ -24,7 +20,8 @@
                     인증번호를 입력해 주세요.
                 </p>
                 
-                <form method="post" action="${pageContext.request.contextPath}/account/03-emailCode">
+                <form method="get" action="${pageContext.request.contextPath}/account/03-emailCode_ok">
+                <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
                 <div class="variCode">
                         <div class="input-group">
                             
@@ -37,7 +34,7 @@
                 </div>
                 </form>
                 
-                <form id="sendCodeAgain" method="post" action="${pageContext.request.contextPath}/account/02-sendCode">
+                <form id="sendCodeAgain" method="get" action="${pageContext.request.contextPath}/account/02-sendCode">
                 <div class="nomail">
                     <p>메일을 받지 못하였나요?</p>
                     <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>

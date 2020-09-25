@@ -60,10 +60,10 @@
                         <a href="${pageContext.request.contextPath}/booking/01-booking_time.do" class="mains">예매</a>
                         <ul class="subnav">
                             <li><a href="${pageContext.request.contextPath}/booking/01-booking_time.do">예매하기</a></li>
-                            <li><a href="${pageContext.request.contextPath}/timetable">극장별시간표</a></li>
+                            <li><a href="${pageContext.request.contextPath}/timetable.do">극장별시간표</a></li>
                         </ul>
                     </li>
-                    <li class="nav"><a href="${pageContext.request.contextPath}/branch" class="mains">극장</a></li>
+                    <li class="nav"><a href="${pageContext.request.contextPath}/branch.do" class="mains">극장</a></li>
                     <li class="nav">
                         <a href="<%=request.getContextPath()%>/support/support_home.do" class="mains">고객센터</a>
                         <ul class="subnav">
@@ -88,7 +88,7 @@
                 </c:choose>
                     
                     <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.do">&nbsp;마이페이지</a></li>
-                   <%--  <li><a href="${pageContext.request.contextPath}/account/05-putMemInfo.do">&nbsp;회원가입지름길</a></li> --%>
+                   <%-- <li><a href="${pageContext.request.contextPath}/account/05-putMemInfo.do">&nbsp;회원가입지름길</a></li> --%>
                 </ul>
             </div>
         </div>

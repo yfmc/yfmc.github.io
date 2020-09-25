@@ -14,7 +14,7 @@
 		<li>4단계: 가입완료</li>
 	</ul>
 	<div class="joining">
-		<form name="email_form" id="email_form" method="post" action="${pageContext.request.contextPath}/account/02-sendCode">
+		<form name="email_form" id="email_form" method="get" action="${pageContext.request.contextPath}/account/02-sendCode">
 			<div class="emails">
 				<div class="input-group">
 					<label for="user_email">이메일 주소</label> 

@@ -70,4 +70,43 @@ public class AccountRestController {
 	}
 	
 	
+	/**
+	 * 아이디 입력시 중복확인
+	 * @param model
+	 * @param user_email
+	 * @return json Map<String, Object>는 자동으로 JSON으로 변환
+	 */
+	@RequestMapping(value="/userid_cheik.do", method = {RequestMethod.POST})
+	public Map<String, Object> get_userid(
+			//검색어
+			@RequestParam(value="user_id", required=false) String user_id){
+		
+		System.out.println("accountrestcontroller 실행");
+		if(user_id == null) {return webHelper.getJsonWarning("아이디를 입력하세요");}
+		if(!regexHelper.isEngNum(user_id)) {return webHelper.getJsonWarning("아이디는 영어,숫자만 입력 가능합니다.");}
+	
+		/* )데이터 조회하기 */
+		//조회에 필요한 조건값(검색어)를 Beans에 담는다.
+		Members input = new Members();
+		input.setUser_id(user_id);
+
+		Members output = null; // 조회결과가 저장될 객체
+		
+		try {
+			//데이터 조회하기
+			output = membersService.getMembersIdcheck(input);
+			
+		}catch(Exception e) {
+			return webHelper.getJsonError(e.getLocalizedMessage());
+		}
+		/* 3)JSON 출력하기 */
+		Map<String, Object> data = new HashMap<String, Object>();
+		
+		data.put("item", output);
+		System.out.println(data);
+		return webHelper.getJsonData(data);
+		
+	}
+	
+	
 }

@@ -1,15 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
-<%
-	//세션 유효시간 설정(초단위, 기본값 5분 ) -> 모든 페이지마다 개별 설정함.
-	session.setMaxInactiveInterval(60);
-	
-	//"mysession"이라는 이름으로 저장된 Session 객체 추출
-	//-> Object 타입으로 형변환 되어 저장되므로,
-	// 추출시에는 원래의 형태로 명시적 변환이 필요하다.
-	String mySession = (String) session.getAttribute("mysession");
-%>
+
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_05putMemberInfo.css?time=<%=System.currentTimeMillis()%>" />
 
 
@@ -65,7 +57,7 @@
                         </div>
                         <div class="input-group">
                             <label for="user_email"><span class="star">*</span> 이메일 주소</label>
-                            <input id="user_email" name="user_email"type="text" placeholder="이메일">
+                            <input id="user_email" name="user_email"type="text" value="${user_email}" placeholder="${user_email}" readonly>
 
                         </div>
                         <div class="input-group">

@@ -32,6 +32,14 @@
 		WHERE user_email=#{user_email};
 	</select>
 	
+	<!-- 단일행 조회 (for idCheck) 를 위한 기능 정의 -->
+	<select id="selectUserid" parameterType="study.spring.cinephile.model.Members"
+		resultMap="membersMap">
+		SELECT user_id 
+		FROM members
+		WHERE user_id=#{user_id};
+	</select>
+	
 	<!-- 단일행 조회 (for Login) 를 위한 기능 정의 -->
 	<select id="selectLogin" parameterType="study.spring.cinephile.model.Members"
 		resultMap="membersMap">
@@ -39,6 +47,7 @@
 		from members 
 		where user_id=#{user_id} and user_pw = MD5(#{user_pw});
 	</select>
+	
 	
 	<!-- 단일행 조회를 위한 기능 정의 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Members"

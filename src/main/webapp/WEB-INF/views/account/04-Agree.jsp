@@ -37,19 +37,18 @@
                         ※ 1:1문의 서비스 제공을 위한 최소한의 개인정보이며 거부할 수 있습니다. 다만, 수집에 동의하지 않을 경우 서비스 이용이 제한됩니다.<br />
                     </p>
                     </div>
-                    <form id="agreeForm">
-                    <div class="agreeornot">
-                    <input type="radio" name="agree" id="agree"
-                    value="agree"/>
-                    <label for="agree">동의&nbsp;&nbsp;</label>
-                    <input type="radio" name="agree" id="disagree"
-                    value="disagree"/>
-                    <label for="disagree">동의하지 않음</label>
-                    </div>
-                    <div class="buttons">
-                        <button type="submit" class="btn btn-default">확인</button>
-                        <button type="button" class="btn btn-default cancel">취소</button>
-                    </div>
+                    <form id="agreeForm" method="get" action="${pageContext.request.contextPath}/account/05-putMemInfo.do">
+                    	<input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
+                    	<div class="agreeornot">
+                    		<input type="radio" name="agree" id="agree" value="agree"/>
+                    		<label for="agree">동의&nbsp;&nbsp;</label>
+                    		<input type="radio" name="agree" id="disagree" value="disagree"/>
+	                    	<label for="disagree">동의하지 않음</label>
+    	                </div>
+        	            <div class="buttons">
+                    	    <button type="submit" class="btn btn-default" >확인</button>
+                	        <button type="button" class="btn btn-default cancel">취소</button>
+            	        </div>
                     </form>
                 </div>
             </div>

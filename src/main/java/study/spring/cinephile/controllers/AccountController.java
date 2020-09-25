@@ -68,19 +68,27 @@ public class AccountController {
 	}
 	
 	@RequestMapping(value="/account/03-emailCode.do")
-	public ModelAndView sentCode(Model model) {
-
+	public ModelAndView sentCode(Model model,
+			@RequestParam(value="user_email", required=false) String user_email) {
+		model.addAttribute("user_email", user_email);
+		
 		return new ModelAndView("account/03-emailCode");
 	}
 	
-	@RequestMapping(value="/account/04-Agree.do")
-	public ModelAndView Agree(Model model) {
-
+	@RequestMapping(value="/account/04-Agree.do", method=RequestMethod.GET)
+	public ModelAndView Agree(Model model,
+			@RequestParam(value="user_email", required=false) String user_email) {
+		model.addAttribute("user_email", user_email);
+		
 		return new ModelAndView("account/04-Agree");
 	}
 	
-	@RequestMapping(value="/account/05-putMemInfo.do")
-	public ModelAndView gogo(Model model) {
+	@RequestMapping(value="/account/05-putMemInfo.do", method=RequestMethod.GET)
+	public ModelAndView gogo(Model model,
+			@RequestParam(value="user_email", required=false) String user_email,
+			@RequestParam(value="agree", required=false) String agree) {
+		model.addAttribute("user_email", user_email);
+		
 		return new ModelAndView("account/05-putMemInfo");
 	}
 	
@@ -95,7 +103,7 @@ public class AccountController {
 
 	
 	/* 인증번호 메일보내기 action 페이지 */
-	@RequestMapping(value="/account/02-sendCode", method=RequestMethod.POST)
+	@RequestMapping(value="/account/02-sendCode", method=RequestMethod.GET)
 	public ModelAndView sendCode(Model model, 
 			HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value="user_email", required=false) String user_email) throws IOException {
@@ -120,8 +128,6 @@ public class AccountController {
 			//인증코드, 메일 임시 테이블에 저장
 			tcodesService.addCode(input);
 			
-			output = tcodesService.getCode(input);
-			// sendMail()메서드 선언시 throws를 정의했기 때문에 예외처리가 요구된다.
 			mailHelper.sendMail(user_email, subject, content);
 			
 		} catch (Exception e) {
@@ -130,11 +136,11 @@ public class AccountController {
 		}
 		
 		int Pk;
-		Pk = output.getId_code();
-		System.out.println(output.toString());
+		Pk = input.getId_code();
+		System.out.println(input.toString());
 		System.out.println("셍썽된 프라이뭐리"+Pk);
 		
-		Cookie cookie = new Cookie("codePk", Integer.toString(Pk)); //저장할 쿠키 객체 생성.
+		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성.
 		
 		cookie.setPath("/");	//쿠키의 유효 경로 --> 사이트 전역에 대한 설정
 		cookie.setDomain("localhost");	//쿠키의 유효 도메인
@@ -146,7 +152,7 @@ public class AccountController {
 		}
 		
 		response.addCookie(cookie); //쿠키 저장
-		model.addAttribute("user_email", user_email);
+//		model.addAttribute("user_email", user_email);
 		
 		
 		
@@ -159,20 +165,21 @@ public class AccountController {
 //		out.println("alert('인증번호를 발송하였습니다.')");
 //		out.println("</script>");
 //		out.flush();
-//		
-		/* 결과처리 */
+//		System.out.println(content);
+//		/* 결과처리 */
 //		return new ModelAndView("/account/03-emailCode");
 		
-		//연습결과처리↓
-		return webHelper.redirect(contextPath + "/account/03-emailCode.do", "인증코드를 발송하였습니다." + content);
+		//결과처리
+		return webHelper.redirect(contextPath + "/account/03-emailCode.do?user_email="+user_email, "인증코드를 발송하였습니다." + content);
 		
 	}
 	
 	/* 인증번호 처리 */
-	@RequestMapping(value="/account/03-emailCode", method=RequestMethod.POST)
+	@RequestMapping(value="/account/03-emailCode_ok", method=RequestMethod.GET)
 	public ModelAndView checkCode(Model model, HttpServletRequest request,
+			@RequestParam(value="user_email", required=false) String user_email,
 			@RequestParam(value="code_check", required=false) String code_check) {
-		
+		System.out.println(user_email);
 		//쿠키값을 저장할 문자열
 		String getPk = null;
 		
@@ -214,13 +221,14 @@ public class AccountController {
 		System.out.println("입력 "+code_check);
 		
 		if(output.getCode().equals(code_check)) {
-			return webHelper.redirect(contextPath + "/account/04-Agree.do", null);
+			return webHelper.redirect(contextPath + "/account/04-Agree.do?user_email=" + user_email, null);
 		}else {
 			return webHelper.redirect(null, "인증번호가 일치하지 않습니다.");
 		}
 		
 	}
 	
+	/*회원가입*/
 	@RequestMapping(value="/account/05-putMemInfo_ok.do", method=RequestMethod.POST)
 	public ModelAndView addMembers(Model model,
 			@RequestParam(value="user_id", required=false) String user_id,
