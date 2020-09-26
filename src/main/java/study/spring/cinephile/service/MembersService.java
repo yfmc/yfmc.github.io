@@ -12,6 +12,30 @@ public interface MembersService {
 	 * @return 조회된 데이터가 저장된 Beans
 	 * @throws Exception
 	 */
+	public Members getFindPw(Members input) throws Exception;
+	
+	/**
+	 * 회원데이터 상세조회
+	 * @param Members 조회할 회원의 일련번호를 담고 있는 Beans
+	 * @return 조회된 데이터가 저장된 Beans
+	 * @throws Exception
+	 */
+	public Members getFindId(Members input) throws Exception;	
+	
+	/**
+	 * 회원데이터 상세조회
+	 * @param Members 조회할 회원의 일련번호를 담고 있는 Beans
+	 * @return 조회된 데이터가 저장된 Beans
+	 * @throws Exception
+	 */
+	public Members getMembersIdcheck(Members input) throws Exception;	
+	
+	/**
+	 * 회원데이터 상세조회
+	 * @param Members 조회할 회원의 일련번호를 담고 있는 Beans
+	 * @return 조회된 데이터가 저장된 Beans
+	 * @throws Exception
+	 */
 	public Members getMembersLogin(Members input) throws Exception;	
 	
 	/**
@@ -20,7 +44,7 @@ public interface MembersService {
 	 * @return 조회된 데이터가 저장된 Beans
 	 * @throws Exception
 	 */
-	public Members getMembersEmail() throws Exception;	
+	public Members getMembersEmail(Members input) throws Exception;	
 	
 	/**
 	 * 회원데이터 상세조회
@@ -69,4 +93,12 @@ public interface MembersService {
 	 * @throws Exception
 	 */
 	public int deleteMembers(Members input) throws Exception;
+	
+	/**
+	 * 회원 비번업댓
+	 * @param Members 새로운 비번, 회원 이메일
+	 * @return int
+	 * @throws Exception
+	 */
+	public int newPw(Members input) throws Exception;
 }

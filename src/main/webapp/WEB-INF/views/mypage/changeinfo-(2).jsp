@@ -3,10 +3,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../_inc/header.jsp" %>
 <title>마이페이지 > 회원정보 수정</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/changeinfo-(2).css">
 <link rel="styleshhet" href="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalret2.min.css">
+	${totalCount}
         <div id="content" class="clear">
         	<!-- 사이드바 -->
             <div class="sidebar">
@@ -36,7 +40,7 @@
                         <div class="form-group">
                             <label for="user_id" class="col-xs-2 control-label">아이디</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" name="user_id" id="user_id" value="abcd1234" style="width:110px;"disabled />
+                                <p class="form-control-static">${my_session.user_id}</p>
                             </div>
                         </div>
                         <!-- 비밀번호 -->
@@ -57,53 +61,55 @@
                         <div class="form-group">
                             <label for="user_name" class="col-xs-2 control-label">이름</label>
                             <div class="col-xs-10">
-                                <p class="form-control-static">OOO</p>
+                                <p class="form-control-static">${my_session.user_name}</p>
                             </div>
                         </div>
                         <!-- 생년월일 -->
                         <div class="form-group">
                             <label for="date" class="col-xs-2 control-label">생년월일</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" value="800101" style="width:80px;"disabled />
+                                <p class="form-control-static">${my_session.birthdate}</p>
                             </div>
                         </div>
                         <!-- 성별 -->
                         <div class="form-group">
                             <label for="gender" class="col-xs-2 control-label">성별</label>
                             <div class="col-xs-10">
-                                <label>
-                                    <input type="radio" name="gender" id="gender_m" value="M" checked disabled />남&nbsp;
-                                </label>
-                                <label>
-                                    <input type="radio" name="gender" id="gender_f" value="F" disabled />여
-                                </label>
+                            <c:choose>
+	                            <c:when test="${my_session.gender=='M'}">
+	                                <label>
+	                                    <input type="radio" name="gender" id="gender_m" value="M" checked disabled />남&nbsp;
+	                                </label>
+	                                <label>
+	                                    <input type="radio" name="gender" id="gender_f" value="F" disabled />여
+	                                </label>
+	                            </c:when>
+	                            <c:otherwise>
+	                             	<label>
+	                                    <input type="radio" name="gender" id="gender_m" value="M" disabled />남&nbsp;
+	                                </label>
+	                                <label>
+	                                    <input type="radio" name="gender" id="gender_f" value="F" checked disabled />여
+	                                </label>
+	                            </c:otherwise>
+                            </c:choose>
                             </div>
                         </div>
-                        <!-- 이메일 -->
+                       <!-- 이메일 -->
                         <div class="form-group">
                             <label for="maillist" class="col-xs-2 control-label"><span style="color:red;display:none;" class="hiddenstar1">*</span> &nbsp;
                             <input type="checkbox" id="email_enable" /> 이메일</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" name="mail" id="mail" value="abcd@gmail.com" style="width:200px;"disabled/>
-                                &nbsp;&nbsp;
-                                <input type="button" id="certigo" class="btn btn-info" value="인증하기" style="display:none;" />
+                                <input type="text" class="form-control" name="mail" id="mail" value="${my_session.user_email}" style="width:200px;"readonly/>
                             </div>
                         </div>
-                        <!-- 인증번호 및 인증번호 확인 -->
-                        <div class="form-group certinum">
-                            <label for="certinum" class="col-xs-2 control-label">인증번호</label>
-                            <div class="col-xs-10">
-                                <input type="text" class="form-control" name="certinum" id="certinum" placeholder="인증번호를 입력하세요." style="width:180px" />
-                                &nbsp;&nbsp;
-                                <input type="button" class="certi_confirm btn btn-info" value="인증번호확인" />
-                            </div>
-                        </div>
+
                         <!-- 연락처 -->
                         <div class="form-group">
                             <label for="phonelist" class="col-xs-2 control-label">
                             <span style="color:red;display:none;" class="hiddenstar2">*</span> &nbsp;<input type="checkbox" id="phone_enable"/> 연락처</label>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" name="phone" id="phone" value="01012345678" style="width:150px; "disabled/>
+                                <input type="text" class="form-control" name="phone" id="phone" value="${my_session.phone}" style="width:150px; "readonly/>
                                 (-없이 입력하세요)
                             </div>
                         </div>
@@ -113,13 +119,13 @@
                             <span style="color:red;display:none;" class="hiddenstar3">*</span> &nbsp;<input type="checkbox" id="address_enable"/> 주소</label>
                             <div class="col-xs-10">
                             <div id="postcodify" style="display:none;"></div>
-                            	<input type="text" class="form-control" name="postcode" id="postcode" style="width:80px;" value="06611" disabled /><br />
-								<input type="text" class="form-control" name="address" id="address" style="width:310px;" value="서울특별시 서초구 서초대로77길 54" disabled/><br />
-								<input type="text" class="form-control" name="details" id="details" style="width:310px;" value="서초타워 14층" disabled/><br />
+                            	<input type="text" class="form-control" name="postcode" id="postcode" style="width:80px;" value="${my_session.postcode}" readonly /><br />
+								<input type="text" class="form-control" name="address" id="address" style="width:310px;" value="${my_session.addr}" readonly/><br />
+								<input type="text" class="form-control" name="details" id="details" style="width:310px;" value="${my_session.addr_detail}" readonly/><br />
                             </div>
                         </div>
                         <hr />
-                        <p style="font-size:12px;color:#e47676;">※ id, 생년월일, 성별은 변경하실 수 없습니다.</p>
+                        <p style="font-size:12px;color:#e47676;">※ id, 이름, 생년월일, 성별은 변경하실 수 없습니다.</p>
                         <!-- 수정버튼, 취소버튼 -->
                         <div class="twobutton">
                             <button type="submit" name="button" id="change_btn" class="btn btn-success" style="width:110px;">회원정보 수정</button>

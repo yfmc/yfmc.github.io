@@ -70,7 +70,7 @@
 }
 
 .bodylist {
-    height: 1100px;
+    min-height: 300px;
 }
 
 .listarea {

@@ -15,13 +15,33 @@
 		<result property="edit_date" 				column="edit_date" />
 	</resultMap>
 	
-	<!-- 단일행 조회를 위한 기능 정의 -->
+	<!-- 공지사항 조회(datetime 타입)를 위한 기능 정의 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Notice"
 		resultMap="noticeMap">
 		select notice_id, notice_title, notice_content, views, reg_date, edit_date from notice where notice_id=#{notice_id}
 	</select>
 	
-	<!-- 다중행 조회를 위한 기능 정의 -->
+	<!-- 공지사항 조회(date 타입)를 위한 기능 정의 -->
+	<select id="selectItem_date" parameterType="study.spring.cinephile.model.Notice"
+		resultMap="noticeMap">
+		select notice_id, notice_title, notice_content, views, cast(reg_date as date) as reg_date, edit_date from notice where notice_id=#{notice_id}
+	</select>
+	
+	<!-- 다음글 조회를 위한 기능정의  -->
+	<select id="selectItem_next" parameterType="study.spring.cinephile.model.Notice"
+		resultMap="noticeMap">
+		<![CDATA[select notice_id, notice_title, notice_content, views, cast(reg_date as date) as reg_date, edit_date
+		from notice where notice_id = (select notice_id from notice where notice_id > #{notice_id} order by notice_id  limit 0,1)]]>
+	</select>
+	
+	<!-- 이전글 조회를 위한 기능정의  -->
+	<select id="selectItem_prev" parameterType="study.spring.cinephile.model.Notice"
+		resultMap="noticeMap">
+		<![CDATA[select notice_id, notice_title, notice_content, views, cast(reg_date as date) as reg_date, edit_date
+		from notice where notice_id = (select notice_id from notice where notice_id < #{notice_id} order by notice_id desc limit 0,1)]]>
+	</select>
+
+	<!-- 공지사항 목록조회(datetime 타입)를 위한 기능 정의 -->
 	<select id="selectList"
 		parameterType="study.spring.cinephile.model.Notice"
 		resultMap="noticeMap">
@@ -37,6 +57,32 @@
 		</where>
 		
 		order by notice_id desc
+		
+		<if test="listCount > 0">
+			limit #{offset}, #{listCount}
+		</if>
+	</select>
+	
+	<!-- 공지사항 목록조회(date 타입)를 위한 기능 정의 -->
+	<select id="selectList_date"
+		parameterType="study.spring.cinephile.model.Notice"
+		resultMap="noticeMap">
+		select notice_id, notice_title, notice_content, views, cast(reg_date as date) as reg_date, edit_date from notice
+	
+		<where>
+			<if test ="notice_title != null and notice_title != ''">
+				notice_title like concat('%', #{notice_title}, '%')
+			</if>
+			<if test ="notice_content != null and notice_content != ''">
+				or notice_content like concat('%', #{notice_content}, '%')
+			</if>
+		</where>
+		
+		order by notice_id desc
+		
+		<if test="listCount > 0">
+			limit #{offset}, #{listCount}
+		</if>
 	</select>
 	
 	<!-- 데이터 저장을 위한 기능 정의 -->

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
@@ -29,7 +32,8 @@
 			                   	<br />형법에 의해 처벌 대상이 될 수 있습니다.</p></span>
 		                   	</div>
 		                </div>
-	                <form class="form-horizontal"  name="qna_form" id="qna_form">
+	                <form enctype="multipart/form-data" class="form-horizontal" method="post"  name="qna_form" id="qna_form"
+		            	action="${pageContext.request.contextPath}/support/qna_ok.do">
 		                <div class="form_title">
 		                        <h4>문의내용<span class="pull-right">* 필수입력</span></h4>
 		                </div>
@@ -47,7 +51,7 @@
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
-		                            <label for="textbox"  class="col-xs-2 ">첨부파일</label>
+		                            <label for="file_img"  class="col-xs-2 ">첨부파일</label>
 		                            <div class="col-xs-10">
 		                                <input type="file" name="file_img" id="file_img" class="file_img" >
 		                            </div>
@@ -90,7 +94,7 @@
 			                        ① 수집 목적 : 원활한 고객 상담, 불편사항 및 문의사항 관련 의사소통 경로 확보<br />
 			                        ② 수집 항목<br />
 			                        *필수입력사항<br />
-			                        - 이용자 식별을 위한 항목 : 성명, 연락처, 생년월일, 이메일, 아이디(로그인 시 수집)<br /><br />
+			                        - 이용자 식별을 위한 항목 : 성명, 연락처, 생년월일, 이메일<br /><br />
 			                        개인정보의 보유 및 이용기간<br />
 			                        입력하신 개인정보는 문의 접수 후 처리 완료 시점으로 부터 3개월 간 보유 합니다. (단, 생년월일은 이용자 식별 목적으로 이용되며 별도 보관되지 않습니다.)<br />
 			                        다만, 소비자보호에 관한 법률 등 관계 법률에 의해 보유할 필요가 있는 경우에는 다음과 같이 보유합니다.<br />
@@ -132,7 +136,7 @@
 	    		// 입력검사 규칙
 	    		rules: {
 	    			qna_title: {required: true},
-	    			qna_contents: {required: true},
+	    			qna_content: {required: true},
 	    			file_img: {extension: "jpg|gif|png"},
 	    			user_name: {required: true, kor: true},
 	    			birthdate: {required: true, dateISO: true},
@@ -141,7 +145,7 @@
 	    		},
 	    		messages: {
 	    			qna_title: {required: "제목을 입력하세요."},
-	    			qna_contents: {required: "내용을 입력하세요."},
+	    			qna_content: {required: "내용을 입력하세요."},
 	    			file_img: {extension: "첨부파일은 jpg, gif, png 형식만 가능합니다."},
 	    			user_name: {required: "이름을 입력하세요.", kor:"이름은 한글로 입력하세요"},
 	    			birthdate: {required: "생년월일을 입력하세요.", dateISO: "생년월일의 형식이 맞지 않습니다."},
@@ -149,8 +153,8 @@
 	    			email: {required: "이메일을 입력하세요.", email:"이메일 형식이 맞지 않습니다."}
 	    		}
 	    	});
+	    	
 	    	$("#qna_form").submit(function(e) {
-	            e.preventDefault();
 	            var agree = $("input.agree:checked").val();
 	            if (!agree) {
 	                alert("개인정보수집 동의를 해주셔야 등록이 가능합니다.");

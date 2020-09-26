@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ include file="../_inc/header.jsp" %>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/login_04passwordmail.css?time=<%=System.currentTimeMillis()%>" />
+<title>비밀번호 찾기 이메일 인증 | Cinephile</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/login_04passwordmail.css?time=<%=System.currentTimeMillis()%>" />
 
 
     <div id="content">
@@ -13,18 +14,22 @@
                 </p>
                 <div class="variCode">
                         <div class="input-group">
-                            <form id="codesubmit">
+                            <form method="get" action="${pageContext.request.contextPath}/login/04-passwordemail_ok.do">
+                            <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
                             <label for="code">인증번호</label>
-                            <input id="code" type="text" placeholder="인증번호를 입력해주세요.">
+                            <input id="code" type="text" name="code_check" placeholder="인증번호를 입력해주세요.">
                             <button type="submit" class="btn btn-default">확인</button>
                             </form>
                         </div>
                 </div>
+                <form method="get" action="${pageContext.request.contextPath}/login/goPwCode.do">
                 <div class="nomail">
                     <p>메일을 받지 못하였나요?</p>
-                    <button type="button" class="btn btn-default" id="code_again">인증번호 다시 보내기</button>
+                    <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
+                    <button type="submit" class="btn btn-default" id="code_again">인증번호 다시 보내기</button>
                 </div>
+                </form>
             </div>
         </div>
-<script src="../js_files/login_04passwordemail.js"></script>
+<script src="../assets/js_files/login_04passwordemail.js"></script>
 <%@ include file="../_inc/footer.jsp" %>

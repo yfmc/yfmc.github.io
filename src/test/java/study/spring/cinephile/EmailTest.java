@@ -51,7 +51,7 @@ public class EmailTest {
 		
 		try {
 			//데이터 조회하기
-			output = membersService.getMembersEmail();
+			output = membersService.getMembersEmail(input);
 			
 		}catch(Exception e) {
 			e.printStackTrace();

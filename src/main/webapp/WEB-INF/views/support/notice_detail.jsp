@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ include file="/_inc/header.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_detail.css?time=<%=System.currentTimeMillis()%>">
@@ -25,42 +28,67 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">번호 10</th>
-                                <th style="width: auto;">공지사항10</th>
-                                <th style="width: 150px;">등록일 2020.07.20</th>
-                                <th style="width: 150px;">조회수 10000</th>
+                                <th style="width: 100px;">${output.notice_id}</th>
+                                <th style="width: auto;">${output.notice_title}</th>
+                                <th style="width: 150px;">등록일 ${output.reg_date}</th>
+                                <th style="width: 150px;">조회수 ${output.views}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="detail_box">
                                 <td colspan="4">
-                                	여기는 공지사항 내용입니다.<br />
-                                    잘 읽어 보세요.<br />
-                                    확인 잘 해보세요.<br />
-                                    저희 영화관을 이용해 주셔서 감사합니다.<br />
-                                    Cinephile.<br />
-                                    확인 잘 해보세요.<br />
-                                    확인 잘 해보세요.<br />
+                                	${output.notice_content}
                                 </td>
                             </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">                         
-                                    <span class="page_next">다음글</span>
-                                    <i class="fas fa-angle-up"></i>
-                                    <a href="#" id="?">
-                                    <span>다음 글이 없습니다.</span>
-                                   	</a>
-                                </td>
-                            </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">
-                                        <span class="page_prev">이전글</span>
-                                        <i class="fas fa-angle-down"></i>
-                                    	<a href="#" id="?">
-                                        <span>공지사항 9</span>
-                                    </a>
-                                </td>
-                            </tr>
+							<!-- 이전/다음 게시글 이동 -->
+							<%-- 다음 게시글에 대한 링크 --%>
+							<c:choose>
+	                            <%-- 다음게시글이 없다면 --%>
+	                            <c:when test="${nextNotice == null}">
+		                            <tr class="page_move" align="left">
+		                                <td colspan="4">                         
+		                                    <span class="page_next">다음글</span>
+		                                    <i class="fas fa-angle-up"></i>
+		                                    <span>다음 글이 없습니다.</span>
+		                                </td>
+		                            </tr>
+	                            </c:when>
+	                            <%-- 다음게시글이 있다면 --%>
+	                            <c:otherwise>
+	                            	<tr class="page_move" align="left">
+		                                <td colspan="4">                         
+		                                    <span class="page_next">다음글</span>
+		                                    <i class="fas fa-angle-up"></i>
+		                                    <a href="<%=request.getContextPath()%>/support/notice_detail.do?notice_id=${nextNotice.notice_id}">
+		                                    <span>${nextNotice.notice_title}</span>
+		                                   	</a>
+		                                </td>
+		                            </tr>
+	                            </c:otherwise>
+	                        </c:choose>
+	                        
+							<%-- 이전 게시글에 대한 링크 --%>
+							<c:choose>
+								<%-- 이전 게시글로 이동이 불가능하다면 --%>
+								<c:when test="${prevNotice == null}">
+									<tr class="page_move" align="left">
+										<td colspan="4"><span class="page_prev">이전글</span>
+											<i class="fas fa-angle-down"></i>
+											<span>이전 글이 없습니다.</span>
+										</td>
+									</tr>
+								</c:when>
+								<%-- 이전게시글로 이동이 가능하다면 --%>
+								<c:otherwise>
+									<tr class="page_move" align="left">
+										<td colspan="4"><span class="page_prev">이전글</span>
+											<i class="fas fa-angle-down"></i>
+											<a href="<%=request.getContextPath()%>/support/notice_detail.do?notice_id=${prevNotice.notice_id}">
+											<span>${prevNotice.notice_title}</span></a>
+										</td>
+									</tr>
+								</c:otherwise>
+							</c:choose>
                         </tbody>
                     </table>
                     <div class="list_button pull-right">
@@ -70,4 +98,4 @@
             </div>
         </div>
         <!-- ==== 본문 끝 ==== -->
-<%@ include file="/_inc/footer.jsp" %>
+<%@ include file="../_inc/footer.jsp" %>

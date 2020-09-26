@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.model.Faq;
+import study.spring.cinephile.model.Faq;
 import study.spring.cinephile.service.FaqService;
 
 @Slf4j
@@ -19,7 +20,7 @@ public class FaqServiceImpl implements FaqService {
 	SqlSession sqlSession;
 	
 	/**
-     * Faq 데이터 상세 조회
+     * Faq 데이터 상세 조회 (datetime 타입)
      * @param  Faq 조회할 Faq의 일련번호를 담고 있는 Beans
      * @return  조회된 데이터가 저장된 Beans
      * @throws  Exception
@@ -46,7 +47,65 @@ public class FaqServiceImpl implements FaqService {
 	}
 	
 	/**
-     * Faq 데이터 목록 조회
+     * Faq 데이터 상세 조회 (date 타입)
+     * @param  Faq 조회할 Faq의 일련번호를 담고 있는 Beans
+     * @return  조회된 데이터가 저장된 Beans
+     * @throws  Exception
+     */
+	@Override
+	public Faq getFaqItem_date(Faq input) throws Exception {
+		Faq result = null;
+			
+		try {
+			result = sqlSession.selectOne("FaqMapper.selectItem_date", input);
+			
+			if (result == null) {
+				throw new NullPointerException("result=null");
+			}
+		} catch (NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 데이터 없음");
+		} catch (Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		
+		return result;
+	}
+	
+	/**
+     * Faq 데이터 상세 조회 (다음글 조회)
+     * @param  Faq 조회할 Faq의 일련번호를 담고 있는 Beans
+     * @return  조회된 데이터가 저장된 Beans
+     * @throws  Exception
+     */
+	@Override
+	public Faq getFaqItem_next(Faq input) throws Exception {
+		Faq result = null;
+
+		result = sqlSession.selectOne("FaqMapper.selectItem_next", input);
+
+		return result;
+	}
+	
+	/**
+     * Faq 데이터 상세 조회 (이전글 조회)
+     * @param  Faq 조회할 Faq의 일련번호를 담고 있는 Beans
+     * @return  조회된 데이터가 저장된 Beans
+     * @throws  Exception
+     */
+	@Override
+	public Faq getFaqItem_prev(Faq input) throws Exception {
+		Faq result = null;
+		
+		result = sqlSession.selectOne("FaqMapper.selectItem_prev", input);
+		
+		return result;
+	}
+	
+	
+	/**
+     * Faq 데이터 목록 조회 (datetime 타입)ㄴ
      * @param   input   검색 조건을 담고 있는 Beans
      * @return  조회 결과에 대한 컬렉션
      * @throws  Exception
@@ -57,6 +116,33 @@ public class FaqServiceImpl implements FaqService {
 		
 		try {
 			result = sqlSession.selectList("FaqMapper.selectList", input);
+			
+			if (result == null) {
+				throw new NullPointerException("result=null");
+			}
+		} catch (NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 데이터 없음");
+		} catch (Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회 실패");
+		}
+		
+		return result;
+	}
+	
+	/**
+     * Faq 데이터 목록 조회(date 타입)
+     * @param   input   검색 조건을 담고 있는 Beans
+     * @return  조회 결과에 대한 컬렉션
+     * @throws  Exception
+     */
+	@Override
+	public List<Faq> getFaqList_date(Faq input) throws Exception {
+		List<Faq> result = null;
+		
+		try {
+			result = sqlSession.selectList("FaqMapper.selectList_date", input);
 			
 			if (result == null) {
 				throw new NullPointerException("result=null");

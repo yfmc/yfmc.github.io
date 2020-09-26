@@ -30,7 +30,7 @@
             
             <div id="body">
                 <div class="bodytop">
-                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;ooo(abcd1234)님의 예매내역입니다.</h3>
+                    <h3 style="font-family: 'Jua', sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;${my_session.user_name}(${my_session.user_id})님의 예매내역입니다.</h3>
                 </div>
                 
                 <!--  예매내역 리스트로 -->
@@ -38,22 +38,22 @@
                 <c:choose>
                 	<c:when test="${output==null || fn:length(output)==0}">
                 		<ul>
-                			<li>예매내역이 없습니다.</li>
+                			<li><h4>예매내역이 없습니다.</h4></li>
                 		</ul>
                 	</c:when>
                 	<c:otherwise>
                 		<c:forEach var="item" items="${output}" varStatus="status">
                 		<ul class="listarea">
                     	<!-- 이미지에 마우스 올리면 '크게하기'글자가 뜨며 클릭하면 lightbox를 통해 큰 이미지를 보여줌 -->
-	         				<li class="book"><div class="movieimg"><a href="${item.poster}" data-lightbox="myphoto1"><img src="${item.poster}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	         				<li class="book"><div class="movieimg"><a href="${item.poster_link}" data-lightbox="myphoto1"><img src="${item.poster_link}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
 	         					<span class="title">
 	         						<h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title}</a></h3>
 	         					</span>
 	         					<span class="bookdate">
-	         						<h4>${item.lookdate}</h4>
+	         						<h4>${item.booking_date}</h4>
 	         					</span>
 	         					<span class="theaterpeople">
-	         						<h4>${item.branch} ${item.peonum}명 (${item.seatno})</h4>
+	         						<h4>${item.brand} ${item.branch} ${item.peonum}명 (${item.seat_number})</h4>
 	         					</span>
 	         					<!-- 예매취소 버튼 -->
 	         					<c:choose>
@@ -67,56 +67,55 @@
 	         				</li>
          				</ul>
                 		</c:forEach>
+                		 <!--  페이지 넘김 -->
+						<div id="page">
+		                    <div class="row">
+		                        <div class="col">
+		                        <ul class="pagination">
+		                           <c:choose>
+										<c:when test="${pageData.prevPage>0}">
+											<c:url value="/mypage/bookinglist.do" var="prevPageUrl">
+												<c:param name="page" value="${pageData.prevPage}"/>
+											</c:url>
+											<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
+										</c:when>
+										<c:otherwise>
+											<li class="page-item"><a class="page-link">이전</a></li>
+										</c:otherwise>
+									</c:choose>
+									
+									<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
+										<c:url value="/mypage/bookinglist.do" var="pageUrl">
+											<c:param name="page" value="${i}"/>
+										</c:url>
+										<c:choose>
+											<c:when test="${pageData.nowPage ==i}">
+												<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
+											</c:when>
+											<c:otherwise>
+												<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+			
+									<c:choose>
+										<c:when test="${pageData.nextPage>0}">
+											<c:url value="/mypage/bookinglist.do" var="nextPageUrl">
+												<c:param name="page" value="${pageData.nextPage}"/>
+											</c:url>
+												<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
+										</c:when>
+										<c:otherwise>
+											<li class="page-item page-link"><a class="page-link">다음</a></li>
+										</c:otherwise>
+									</c:choose>
+								</ul>
+		                        </div>
+		                    </div>
+		                </div>
                 	</c:otherwise>
                 </c:choose>
                 </div>
-                <!--  페이지 넘김 -->
-				<div id="page">
-                    <div class="row">
-                        <div class="col">
-                        <ul class="pagination">
-                           <c:choose>
-								<c:when test="${pageData.prevPage>0}">
-									<c:url value="/mypage/bookinglist.do" var="prevPageUrl">
-										<c:param name="page" value="${pageData.prevPage}"/>
-									</c:url>
-									<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
-								</c:when>
-								<c:otherwise>
-									<li class="page-item"><a class="page-link">이전</a></li>
-								</c:otherwise>
-							</c:choose>
-							
-							<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
-								<c:url value="/mypage/bookinglist.do" var="pageUrl">
-									<c:param name="page" value="${i}"/>
-								</c:url>
-								<c:choose>
-									<c:when test="${pageData.nowPage ==i}">
-										<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
-									</c:when>
-									<c:otherwise>
-										<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
-									</c:otherwise>
-								</c:choose>
-							</c:forEach>
-	
-							<c:choose>
-								<c:when test="${pageData.nextPage>0}">
-									<c:url value="/mypage/bookinglist.do" var="nextPageUrl">
-										<c:param name="page" value="${pageData.nextPage}"/>
-									</c:url>
-										<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
-								</c:when>
-								<c:otherwise>
-									<li class="page-item page-link"><a class="page-link">다음</a></li>
-								</c:otherwise>
-							</c:choose>
-						</ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 		</div>
         

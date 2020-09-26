@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
@@ -208,7 +211,7 @@
 	            if (!agree) {
 	                alert("개인정보수집 동의를 해주셔야 등록이 가능합니다.");
 	                return false;
-	            } else if (!rent_title.value || !rent_contents.value || !user_name.value ||
+	            } else if (!rent_title.value || !rent_content.value || !user_name.value ||
 	            		!birthdate.value || !tel.value || !email.value) {
 	            	return false;
 	            } else {

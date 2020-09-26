@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ include file="../_inc/header.jsp"%>
-
+<title>이메일 인증 | Cinephile</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/account_02putEmail.css?time=<%=System.currentTimeMillis()%>" />
 
 
@@ -14,7 +14,7 @@
 		<li>4단계: 가입완료</li>
 	</ul>
 	<div class="joining">
-		<form name="email_form" id="email_form" method="get" action="session_ok.jsp">
+		<form name="email_form" id="email_form" method="get" action="${pageContext.request.contextPath}/account/02-sendCode">
 			<div class="emails">
 				<div class="input-group">
 					<label for="user_email">이메일 주소</label> 
@@ -44,6 +44,7 @@
 
 <script src="../assets/plugins/validate/jquery.validate.min.js"></script>
 <script src="../assets/plugins/validate/additional-methods.min.js"></script>
+<script src="../assets/plugins/ajax_sws/ajax_helper.js"></script>
 <script src="../assets/js_files/account_02putEmail.js"></script> 
 
 <%@ include file="../_inc/footer.jsp"%>

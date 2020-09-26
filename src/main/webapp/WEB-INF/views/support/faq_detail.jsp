@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ include file="/_inc/header.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="../_inc/header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_home.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_sidebar.css?time=<%=System.currentTimeMillis()%>">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/support_detail.css?time=<%=System.currentTimeMillis()%>">
@@ -28,42 +31,67 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">번호 10</th>
-                                <th style="width: auto;">자주찾는 질문 10</th>
-                                <th style="width: 150px;">등록일</th>
-                                <th style="width: 150px;">조회수</th>
+                                <th style="width: 100px;">${output.faq_id}</th>
+                                <th style="width: auto;">${output.faq_title}</th>
+                                <th style="width: 200px;">등록일 : ${output.reg_date}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="detail_box">
-                            	<td colspan="4">
-                                여기는 자주찾는 질문입니다.<br />
-                                잘 읽어 보세요.<br />
-                                확인 잘 해보세요.<br />
-                                저희 영화관을 이용해 주셔서 감사합니다.<br />
-                                Cinephile.<br />
-                                확인 잘 해보세요.<br />
-                                확인 잘 해보세요.<br />
+                                <td colspan="3">
+                                	${output.faq_content}
                                 </td>
                             </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">                         
-                                        <span class="page_next">다음글</span>
-                                        <i class="fas fa-angle-up"></i>
-                                        <a href="#" id="?">
-                                        <span>다음 글이 없습니다.</span>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">
-                                        <span class="page_prev">이전글</span>
-                                        <i class="fas fa-angle-down"></i>
-                                    	<a href="#" id="?">
-                                        <span>자주찾는질문 9</span>
-                                    </a>
-                                </td>
-                            </tr>
+                            <!-- 이전/다음 게시글 이동 -->
+							<%-- 다음 게시글에 대한 링크 --%>
+							<c:choose>
+	                            <%-- 다음게시글이 없다면 --%>
+	                            <c:when test="${nextFaq == null}">
+		                            <tr class="page_move" align="left">
+		                                <td colspan="3">                         
+		                                    <span class="page_next">다음글</span>
+		                                    <i class="fas fa-angle-up"></i>
+		                                    <span>다음 글이 없습니다.</span>
+		                                </td>
+		                            </tr>
+	                            </c:when>
+	                            <%-- 다음게시글이 있다면 --%>
+	                            <c:otherwise>
+	                            	<tr class="page_move" align="left">
+		                                <td colspan="3">                         
+		                                    <span class="page_next">다음글</span>
+		                                    <i class="fas fa-angle-up"></i>
+		                                    <a href="<%=request.getContextPath()%>/support/faq_detail.do?faq_id=${nextFaq.faq_id}">
+		                                    <span>${nextFaq.faq_title}</span>
+		                                   	</a>
+		                                </td>
+		                            </tr>
+	                            </c:otherwise>
+	                        </c:choose>
+	                        
+							<%-- 이전 게시글에 대한 링크 --%>
+							<c:choose>
+								<%-- 이전 게시글로 이동이 불가능하다면 --%>
+								<c:when test="${prevFaq == null}">
+									<tr class="page_move" align="left">
+										<td colspan="3">
+										<span class="page_prev">이전글</span>
+											<i class="fas fa-angle-down"></i>
+											<span>이전 글이 없습니다.</span>
+										</td>
+									</tr>
+								</c:when>
+								<%-- 이전게시글로 이동이 가능하다면 --%>
+								<c:otherwise>
+									<tr class="page_move" align="left">
+										<td colspan="3"><span class="page_prev">이전글</span>
+											<i class="fas fa-angle-down"></i>
+											<a href="<%=request.getContextPath()%>/support/faq_detail.do?faq_id=${prevFaq.faq_id}">
+											<span>${prevFaq.faq_title}</span></a>
+										</td>
+									</tr>
+								</c:otherwise>
+							</c:choose>
                         </tbody>
                     </table>
                     <div class="list_button pull-right">
@@ -73,4 +101,4 @@
             </div>
         </div>
         <!-- ==== 본문 끝 ==== -->
-<%@ include file="/_inc/footer.jsp" %>
+<%@ include file="../_inc/footer.jsp" %>

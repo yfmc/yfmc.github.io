@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="QnaMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시 -->
+	<resultMap id="qnaMap" type="study.spring.cinephile.model.Qna">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결 -->
+		<result property="qna_id" 				column="qna_id" />
+		<result property="members_id" 		column="members_id" />
+		<result property="qna_title" 			column="qna_title" />
+		<result property="qna_content" 		column="qna_content" />
+		<result property="file_img" 			column="file_img" />
+		<result property="user_name" 		column="user_name" />
+		<result property="birthdate" 			column="birthdate" />
+		<result property="tel" 					column="tel" />
+		<result property="email" 				column="email" />
+		<result property="reg_date" 			column="reg_date" />
+		<result property="answer_check" 	column="answer_check" />
+		<result property="answer_content" column="answer_content" />
+		<result property="answer_date" 		column="answer_date" />
+	</resultMap>
+	
+	<!-- 단일행 조회를 위한 기능 정의 -->
+	<select id="selectItem" parameterType="study.spring.cinephile.model.Qna"
+		resultMap="qnaMap">
+		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna where qna_id=#{qna_id};
+	</select>
+	
+	<!-- 다중행 조회(datetime 타입)를 위한 기능 정의 -->
+	<select id="selectList"
+		parameterType="study.spring.cinephile.model.Qna"
+		resultMap="qnaMap">
+		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna
+	
+		<where>
+			<if test ="qna_id != null and qna_id != ''">
+				qna_id like concat('%', #{qna_id}, '%')
+			</if>
+		</where>
+		
+		order by qna_id desc
+	</select>
+	
+	<!-- 다중행 조회(date 타입)를 위한 기능 정의 -->
+	<select id="selectList_date"
+		parameterType="study.spring.cinephile.model.Qna"
+		resultMap="qnaMap">
+		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, cast(reg_date as date) as reg_date, answer_check, answer_content, answer_date from qna
+	
+		<where>
+			<if test ="qna_id != null and qna_id != ''">
+				qna_id like concat('%', #{qna_id}, '%')
+			</if>
+		</where>
+		
+		order by qna_id desc
+	</select>
+	
+	<!-- 데이터 저장을 위한 기능 정의 -->
+	<insert id="insertItem"
+		parameterType="study.spring.cinephile.model.Qna"
+		useGeneratedKeys="true" keyProperty="qna_id">
+		insert into qna (qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check)
+			values (#{qna_title}, #{qna_content}, #{file_img}, #{user_name}, #{birthdate}, #{tel}, #{email}, now(), '미답변');
+	</insert>
+		
+	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<delete id="deleteItem"
+		parameterType="study.spring.cinephile.model.Qna">
+		delete from qna where qna_id=#{qna_id};
+	</delete>
+		
+	<!-- 데이터 수정을 위한 기능 정의 -->
+	<update id="updateItem"
+		parameterType="study.spring.cinephile.model.Qna">
+		update qna set answer_check = '답변완료', answer_content = #{answer_content}, answer_date = now()
+		where qna_id=#{qna_id};	
+	</update>
+	
+	<!-- 데이터 수 조회하기 -->
+	<!-- 
+			조건에 맞는 데이터 수를 집계하여 int타입으로 반환
+			count, max, min, sum, avg 함수를 사용한 경우 Mapper에서는
+			resultMap이 아닌 resultType으로 반환 -->
+			
+	<select id="selectCountAll"
+				parameterType="study.spring.cinephile.model.Qna"
+				resultType="int">
+		select count(*) from qna
+		
+		<where>
+			<if test="user_name != null and user_name != ''">
+				user_name like concat ('%', #{user_name}, '%')
+			</if>
+			<if test="answer_check != null and answer_check !=  ''">
+				or answer_check like concat ('%', #{answer_check}, '%')
+			</if>
+		</where>
+	</select>
+</mapper>

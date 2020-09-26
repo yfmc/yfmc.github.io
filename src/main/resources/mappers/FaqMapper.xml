@@ -14,17 +14,55 @@
 		<result property="edit_date" 		column="edit_date" />
 	</resultMap>
 	
-	<!-- 단일행 조회를 위한 기능 정의 -->
+	<!-- 단일행 조회(datetime 타입)를 위한 기능 정의 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Faq"
 		resultMap="faqMap">
 		select faq_id, faq_title, faq_content, reg_date, edit_date from faq where faq_id=#{faq_id};
 	</select>
 	
-	<!-- 다중행 조회를 위한 기능 정의 -->
+	<!-- 단일행 조회(date 타입)를 위한 기능 정의 -->
+	<select id="selectItem_date" parameterType="study.spring.cinephile.model.Faq"
+		resultMap="faqMap">
+		select faq_id, faq_title, faq_content, cast(reg_date as date) as reg_date, edit_date from faq where faq_id=#{faq_id};
+	</select>
+	
+	<!-- 다음글 조회를 위한 기능정의  -->
+	<select id="selectItem_next" parameterType="study.spring.cinephile.model.Faq"
+		resultMap="faqMap">
+		<![CDATA[select faq_id, faq_title, faq_content, cast(reg_date as date) as reg_date, edit_date
+		from faq where faq_id = (select faq_id from faq where faq_id > #{faq_id} order by faq_id  limit 0,1)]]>
+	</select>
+	
+	<!-- 이전글 조회를 위한 기능정의  -->
+	<select id="selectItem_prev" parameterType="study.spring.cinephile.model.Faq"
+		resultMap="faqMap">
+		<![CDATA[select faq_id, faq_title, faq_content, cast(reg_date as date) as reg_date, edit_date
+		from faq where faq_id = (select faq_id from faq where faq_id < #{faq_id} order by faq_id desc limit 0,1)]]>
+	</select>
+	
+	<!-- 다중행 조회(datetime)를 위한 기능 정의 -->
 	<select id="selectList"
 		parameterType="study.spring.cinephile.model.Faq"
 		resultMap="faqMap">
 		select faq_id, faq_title, faq_content, reg_date, edit_date from faq
+	
+		<where>
+			<if test ="faq_title != null and faq_title != ''">
+				faq_title like concat('%', #{faq_title}, '%')
+			</if>
+			<if test ="faq_content != null and faq_content != ''">
+				or faq_content like concat('%', #{faq_content}, '%')
+			</if>
+		</where>
+		
+		order by faq_id desc
+	</select>
+	
+	<!-- 다중행 조회(date)를 위한 기능 정의 -->
+	<select id="selectList_date"
+		parameterType="study.spring.cinephile.model.Faq"
+		resultMap="faqMap">
+		select faq_id, faq_title, faq_content, cast(reg_date as date) as reg_date, edit_date from faq
 	
 		<where>
 			<if test ="faq_title != null and faq_title != ''">

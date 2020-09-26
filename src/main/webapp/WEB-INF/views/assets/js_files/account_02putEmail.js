@@ -14,10 +14,10 @@ $(function(){
 			
 			var user_email_val = $("#user_email").val();
 			
-				$.get("${pageContext.request.contextPath}/Email/", {user_email:user_email_val}, function(req){
+				$.post("../Emaila_ok.do", {user_email:user_email_val}, function(req){
 					//입력된 값을 DB조회 한다. 리턴값으 Map<value, object>
-					for (var i = 0; i < req.item.length; i++) {
-					if(user_email_val == req.item[i].user_email){
+					
+					if(req.item != null){
 						alert("사용할 수 없는 이메일 입니다.");
 						$("#user_email").val("");
 						$("#user_email").focus();					
@@ -26,7 +26,7 @@ $(function(){
 						$('#email_check').prop("disabled",false); 
 						$("#email_check").focus();
 						}
-					 }
+					 
 					});//end $.post
 			}
 		}); //uniq_chekc end
@@ -42,24 +42,6 @@ $(function(){
         	}
         }); //double check end
         
-        $("#email_submit").click(function(){
-        	function random(n1, n2){
-                return parseInt(Math.random()*(n2 - n1 + 1)) + n1;
-              }
-                           
-              $(function(){
-            	  var value = "";
-                  for (var i=0; i<6; i++){
-                    value += random(0,9);
-                  }
-                  //인증번호보내기//
-                  alert(value);
-                  location.href="03-emailCode.jsp";
-              });
-              /*//페이지 새로 고침
-              function refresh(){
-                location.href="<%=request.getContextPath()%>/account/03-emailCode.jsp%>";
-              }*/
-        });
+
        });
            

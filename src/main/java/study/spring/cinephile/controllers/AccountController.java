@@ -1,7 +1,14 @@
 package study.spring.cinephile.controllers;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,10 +19,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import study.spring.cinephile.helper.CodeHelper;
+import study.spring.cinephile.helper.MailHelper;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.Members;
+import study.spring.cinephile.model.Tcodes;
 import study.spring.cinephile.service.MembersService;
+import study.spring.cinephile.service.TcodesService;
+
 
 
 @Controller
@@ -26,16 +38,27 @@ public class AccountController {
 	
 	@Autowired
 	MembersService membersService;
+	
+	@Autowired
+	TcodesService tcodesService;
 
 	@Autowired
 	RegexHelper regexHelper;
 	
+	@Autowired
+	CodeHelper codeHelper;
+	
+	@Autowired
+	MailHelper mailHelper;
+	
 	@Value("#{servletContext.contextPath}")
 	String contextPath;
 	
+	
+	
 	@RequestMapping(value="/account/01-welcome.do")
 	public ModelAndView welcome(Model model) {
-		return new ModelAndView("account/05-putMemInfo");
+		return new ModelAndView("account/01-welcome");
 	}
 
 	@RequestMapping(value="/account/02-putEmail.do")
@@ -43,13 +66,169 @@ public class AccountController {
 
 		return new ModelAndView("account/02-putEmail");
 	}
-
+	
+	@RequestMapping(value="/account/03-emailCode.do")
+	public ModelAndView sentCode(Model model,
+			@RequestParam(value="user_email", required=false) String user_email) {
+		model.addAttribute("user_email", user_email);
+		
+		return new ModelAndView("account/03-emailCode");
+	}
+	
+	@RequestMapping(value="/account/04-Agree.do", method=RequestMethod.GET)
+	public ModelAndView Agree(Model model,
+			@RequestParam(value="user_email", required=false) String user_email) {
+		model.addAttribute("user_email", user_email);
+		
+		return new ModelAndView("account/04-Agree");
+	}
+	
+	@RequestMapping(value="/account/05-putMemInfo.do", method=RequestMethod.GET)
+	public ModelAndView gogo(Model model,
+			@RequestParam(value="user_email", required=false) String user_email,
+			@RequestParam(value="agree", required=false) String agree) {
+		model.addAttribute("user_email", user_email);
+		
+		return new ModelAndView("account/05-putMemInfo");
+	}
+	
 	@RequestMapping(value="/account/06-Complete.do")
 	public ModelAndView Complete(Model model) {
 
 		return new ModelAndView("account/06-Complete");
 	}
 	
+	
+	
+
+	
+	/* 인증번호 메일보내기 action 페이지 */
+	@RequestMapping(value="/account/02-sendCode", method=RequestMethod.GET)
+	public ModelAndView sendCode(Model model, 
+			HttpServletRequest request, HttpServletResponse response,
+			@RequestParam(value="user_email", required=false) String user_email) throws IOException {
+		
+		String subject = "Cinephile 회원가입 인증번호가 발송되었습니다.";
+		
+		//5자리의 인증번호 생성하기
+		String content = "";
+		
+		for (int i=0; i<6; i++) {
+			content += codeHelper.getInstance().random(0,9); 
+		}
+		
+		Tcodes input = new Tcodes();
+		input.setUser_email(user_email);
+		input.setCode(content);
+		
+		Tcodes output = null;
+		
+		/* tcodes 임시 테이블에 값넣기 , 메일 발송 처리 */
+		try {
+			//인증코드, 메일 임시 테이블에 저장
+			tcodesService.addCode(input);
+			
+			mailHelper.sendMail(user_email, subject, content);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return webHelper.redirect(null, "메일 발송에 실패했습니다.");
+		}
+		
+		int Pk;
+		Pk = input.getId_code();
+		System.out.println(input.toString());
+		System.out.println("셍썽된 프라이뭐리"+Pk);
+		
+		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성.
+		
+		cookie.setPath("/");	//쿠키의 유효 경로 --> 사이트 전역에 대한 설정
+		cookie.setDomain("localhost");	//쿠키의 유효 도메인
+		
+		if(Pk == 0) {	//쿠키 시간을 설정하지 않으면 브라우저가 동작하는 동안 유효
+			cookie.setMaxAge(0);	//쿠키 설정시간이 0이면 즉시 삭제된다.
+		}else {
+			cookie.setMaxAge(180);	//값이 있다면 3분 동안 쿠키 저장
+		}
+		
+		response.addCookie(cookie); //쿠키 저장
+//		model.addAttribute("user_email", user_email);
+		
+		
+		
+		
+		//알림발송 (webHelper를 안쓰고) 실제로 쓰일 코드
+//		PrintWriter out=response.getWriter();
+//		
+//		response.setContentType("text/html; charset=utf-8");
+//		out.println("<script language='javascript'>");
+//		out.println("alert('인증번호를 발송하였습니다.')");
+//		out.println("</script>");
+//		out.flush();
+//		System.out.println(content);
+//		/* 결과처리 */
+//		return new ModelAndView("/account/03-emailCode");
+		
+		//결과처리
+		return webHelper.redirect(contextPath + "/account/03-emailCode.do?user_email="+user_email, "인증코드를 발송하였습니다." + content);
+		
+	}
+	
+	/* 인증번호 처리 */
+	@RequestMapping(value="/account/03-emailCode_ok", method=RequestMethod.GET)
+	public ModelAndView checkCode(Model model, HttpServletRequest request,
+			@RequestParam(value="user_email", required=false) String user_email,
+			@RequestParam(value="code_check", required=false) String code_check) {
+		System.out.println(user_email);
+		//쿠키값을 저장할 문자열
+		String getPk = null;
+		
+		//저장된 쿠키를 가져온다.
+		Cookie[] cookies = request.getCookies();
+		
+		String value = null;
+		//쿠키 목록이 있다면
+		if(cookies != null) {
+			//가져온 배열의 길이만큼 반복
+			for (int i = 0; i < cookies.length; i++) {
+				//i번째 쿠키의 이름을 취득한다.
+				String cookieName = cookies[i].getName();
+				
+				//이름이 내가 원하는 값일 경우 값을 복사한다.
+				if(cookieName.equals("codePk")) {
+					//쿠키값을 취득한다.
+					value = cookies[i].getValue();	
+				}
+			}
+		}
+		System.out.println(value);
+		Tcodes input = new Tcodes();
+		input.setId_code(Integer.parseInt(value));
+		
+		Tcodes output;
+		
+		/* tcodes 인증번호 확인 처리 */
+		try {
+			//pk값으로 인증번호 조회
+			output = tcodesService.getCode(input);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return webHelper.redirect(null, "인증번호를 다시 발급 받으세요");
+		}
+
+		System.out.println("발급 "+output.getCode());
+		System.out.println("입력 "+code_check);
+		
+		if(output.getCode().equals(code_check)) {
+			return webHelper.redirect(contextPath + "/account/04-Agree.do?user_email=" + user_email, null);
+		}else {
+			return webHelper.redirect(null, "인증번호가 일치하지 않습니다.");
+		}
+		
+	}
+	
+	/*회원가입*/
 	@RequestMapping(value="/account/05-putMemInfo_ok.do", method=RequestMethod.POST)
 	public ModelAndView addMembers(Model model,
 			@RequestParam(value="user_id", required=false) String user_id,
@@ -122,6 +301,7 @@ public class AccountController {
 		return webHelper.redirect(redirectUrl, null);
 	}
 	
+	
 	/* 완료페이지 */
 	@RequestMapping(value="/account/06-Complete.do", method = RequestMethod.GET)
 	public ModelAndView view(Model model,
@@ -151,4 +331,6 @@ public class AccountController {
 		model.addAttribute("output", output);
 		return new ModelAndView("account/06-Complete");
 	}
+	
+	
 }

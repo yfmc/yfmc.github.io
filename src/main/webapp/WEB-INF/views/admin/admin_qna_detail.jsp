@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../_inc/admin_header.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin_detail.css" >
         <div id="page-wrapper">
@@ -13,38 +16,34 @@
             	<table class="detail_content">
                     <thead>
                         <tr class="detail_title">
-                            <th style="width:10%;">번호 24</th>
-                            <th style="width:auto;">바람의 나라 재밌음</th>
-                            <th style="width:10%;">마이클 장</th>
-                            <th style="width:10%;">2020.08.04</th>
-                            <th style="width:15%;">답변 여부 : 답변완료</th>
+                            <th style="width:10%;">${output.qna_id}</th>
+                            <th style="width:auto;">${output.qna_title}</th>
+                            <th style="width:15%;">작성자 : ${output.user_name}</th>
+                            <th style="width:15%;">등록일<br />${output.reg_date}</th>
+                            <th style="width:15%;">답변여부 : ${output.answer_check}</th>
                         </tr>
                     </thead>
                     <tbody>
                     	<tr class="qna_contents">
                     		<td colspan="5">
-                    			영화 재미없어요 바람의나라 하세요<br />
-                    			영화 재미없어요 바람의나라 하세요<br />
-                    			영화 재미없어요 바람의나라 하세요<br />
-                    			영화 재미없어요 바람의나라 하세요<br />
-                    			영화 재미없어요 바람의나라 하세요<br />
-                    			영화 재미없어요 바람의나라 하세요<br />
+                    			${output.qna_content}
                     		</td>
-                    	</tr>	
+                    	</tr>
+                    	<tr class="qna_file_img">
+                    		<td colspan="5">
+                    			${output.file_img}
+                    		</td>
+                    	</tr>		
                     	<tr class="qna_answer">
                     		<td colspan="5">
-                    			=답변내용=<br />
-                    			바람의 나라 너나 하세요<br />
-                    			바람의 나라 너나 하세요<br />
-                    			바람의 나라 너나 하세요<br />
-                    			바람의 나라 너나 하세요<br />
-                    			바람의 나라 너나 하세요<br />
+                    			${output.answer_content}
                     		</td>
                     	</tr>	
                     </tbody>
                 </table>
                 <div class="list_button pull-right">
                         <a href="<%=request.getContextPath()%>/admin/admin_qna_list.do" class=" btn btn-success pull-right">목록으로</a>
+                        <a href="<%=request.getContextPath()%>/admin/admin_qna_answer.do?qna_id=${output.qna_id}" class=" btn btn-success pull-right">답변하기</a>
                 </div>
             </div>
         </div>

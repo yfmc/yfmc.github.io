@@ -279,7 +279,7 @@ table.dataTable thead .sorting_desc_disabled {
 /* 관리자페이지 홈 */
 #DataTables_Table_0 { padding: 0; }
 
-.panel { width : 47%; margin-right: 30px; border: 2px solid #eee; float: left; }
+.panel { min-height: 250px; width : 47%; margin-right: 30px; border: 2px solid #eee; float: left; }
 .panel-heading { font-weight: bold; font-size:16px; }
 
 .unanswer_list h3, .notice_list h3 { padding-bottom: 10px; border-bottom: 1px solid #eee; }

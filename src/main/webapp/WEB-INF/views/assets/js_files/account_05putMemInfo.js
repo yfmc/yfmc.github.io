@@ -27,7 +27,7 @@ $(function(){
 	   });
 	   
 	   $.validator.addMethod("engnumspe",  function( value, element ) {
-		   return /^.*(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/.test(value);
+		   return /^.*(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=():]).*$/.test(value);
     });
 	  
 	   /* form태그에 부여한 id속성에 대한 유효성 검사 함수 호출 */
@@ -44,17 +44,17 @@ $(function(){
 			  //[이름]필수 + 한글입력
 			  user_name:{required:true, kor:true},
 			  //[생년월일]필수 + 날짜형식
-			  user_birth:{required:true, sixnum:true},
+			  birthdate:{required:true, sixnum:true},
 			  //[성별]필수
 			  gender: "required",
 			  
 			  //[이메일]필수 이미 입력됨
 			  //[핸드폰]필수 +핸드폰 형식
-			  user_phone:{
+			  phone:{
 				  required:true,
 				  phone:true
 				  },
-			  user_addr:"required"
+			  addr:"required"
 		  },
 		  /* 규칙에 맞지 않을 경우의 메세지 */
 		  messages:{
@@ -78,16 +78,16 @@ $(function(){
 				  required:"이름을 입력해주세요.",
 				  kor:"이름은 한글만 입력가능합니다."
 			  	  },
-			  user_birth:{
+			  birthdate:{
 				  required:"생년월일을 입력해주세요.",
-				  sixnum:"생년월일의 형식이 잘못되었습니다."
+				  sixnum:"생년월일의 형식이 잘못되었습니다.(주민번호 앞6자리)"
 			      },
 			  gender:"성별을 선택해주세요.",
-			  user_phone:{
+			  phone:{
 				  required:"핸드폰번호를 입력해주세요.",
 				  phone:"연락처 형식이 잘못되었습니다."
 			  },
-			  user_addr:"주소를 입력해주세요."	  
+			  addr:"주소를 입력해주세요."	  
 		  }
 	   });//end validate
 	
@@ -98,20 +98,32 @@ $(function(){
        			
        			var user_id_val = $("#user_id").val();
        			
+       			
+       			
        			if(!user_id_val) {//입력되지 않았다면?
        				alert("아이디를 입력하세요");		//<-- 메시지 표시
        				$("#user_id").focus();		//<-- 커서를 강제로 넣기
        				return false;				//<-- 실행중단
+       			}else if(user_id_val.length > 20){
+       				alert('아이디는 최대 20자까지 가능합니다.');
+       				$("#user_id").val('');
+       				$("#user_id").focus();
+       				return false;
+       			}else if(user_id_val.length < 8){
+       				alert('아이디는 8글자 이상 가능합니다.');
+       				$("#user_id").val('');
+       				$("#user_id").focus();
+       				return false;
        			}else{
        				$("input[name=checked_id]").val("y");
        			}
        			
        			//위의 if문을 무사히 통과했다면 내용이 존재한다는 의미이므로,
        			//입력된 내용을 Ajax를 사용해서 웹 프로그램에게 전달한다.
-       			$.post("${pageContext.request.contextPath}/putMemInfo/", {user_id:user_id_val}, function(req){
+       			$.post("../userid_cheik.do", {user_id:user_id_val}, function(req){
        				//사용 가능한 아이디인 경우 --> req = {result : "ok"}
        				//사용 불가능한 아이디인 경우 --> req = {result:"fail"}
-       				if(user_id_val == 'newjhj31'){
+       				if(req.item != null){
        					alert("사용할 수 없는 아이디 입니다.");
        					$("#user_id").val("");
        					$("#user_id").focus();

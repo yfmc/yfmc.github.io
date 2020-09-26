@@ -60,10 +60,10 @@
                         <a href="${pageContext.request.contextPath}/booking/01-booking_time.do" class="mains">예매</a>
                         <ul class="subnav">
                             <li><a href="${pageContext.request.contextPath}/booking/01-booking_time.do">예매하기</a></li>
-                            <li><a href="${pageContext.request.contextPath}/timetable.do">극장별시간표</a></li>
+                            <li><a href="${pageContext.request.contextPath}/timetable">극장별시간표</a></li>
                         </ul>
                     </li>
-                    <li class="nav"><a href="${pageContext.request.contextPath}/branch.do" class="mains">극장</a></li>
+                    <li class="nav"><a href="${pageContext.request.contextPath}/branch" class="mains">극장</a></li>
                     <li class="nav">
                         <a href="<%=request.getContextPath()%>/support/support_home.do" class="mains">고객센터</a>
                         <ul class="subnav">
@@ -76,20 +76,20 @@
             </div>
             <div class="right_top">
                 <ul>
-                <% 
-                	if(loginInfo == null){
-                		//세션에서 획득한 객체가 없는 경우는 로그인 상태 아님
-                		// --> 로그인 표시
-                %>
+                <%--JSTL을 통해 세션에 직접 접근하기--%>
+                <c:choose>
+                	<c:when test="${loggedIn == null}">
                     <li><a href="${pageContext.request.contextPath}/login/01-login.do" class="login">로그인</a></li>
-                    <%
-                    }else{ 
-                    	//그렇지 않은 경우 (세션정보가 존재할 경우)는 로그인 중
-                    %>
-                     <li id="logout"><a href="<%=request.getContextPath()%>/login/logout.jsp">로그아웃</a></li>
-                    <%} %>
                     <li><a href="${pageContext.request.contextPath}/account/01-welcome.do">&nbsp;회원가입</a></li>
+                    </c:when>
+					<c:otherwise>                   
+                     <li id="logout"><a href="${pageContext.request.contextPath}/login/logout.do">로그아웃</a></li>
+                    </c:otherwise>
+                </c:choose>
+                    
                     <li><a href="<%=request.getContextPath()%>/mypage/mypagemain.do">&nbsp;마이페이지</a></li>
+                   <%-- <li><a href="${pageContext.request.contextPath}/account/05-putMemInfo.do">&nbsp;회원가입지름길</a></li> --%>
+                   <li><a href="<%=request.getContextPath()%>/admin/admin_home.do">&nbsp;관리자페이지</a></li>
                 </ul>
             </div>
         </div>
