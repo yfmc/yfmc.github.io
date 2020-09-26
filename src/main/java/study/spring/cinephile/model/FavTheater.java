@@ -15,6 +15,7 @@ public class FavTheater {
 	private int theater_id;
 	
 	//조인할 컬럼
+	private int prov_no;
     private String brand;
     private String branch;
     private int rooms;

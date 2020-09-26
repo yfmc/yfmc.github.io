@@ -44,6 +44,13 @@ public class Theater2ServiceImpl implements Theater2Service {
 	public int getTheater2Count(Theater2 input) throws Exception {
 		int result=0;
 		
+		try {
+			result=sqlSession.selectOne("Theater2Mapper.selectCountAll",input);
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회에 실패했습니다.");
+		}
+		
 		return result;
 	}
 

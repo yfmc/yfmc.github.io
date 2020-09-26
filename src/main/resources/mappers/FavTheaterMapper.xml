@@ -8,6 +8,7 @@
 		<result property="added_time" column="added_time"/>
 		<result property="members_id" column="members_id"/>
 		<result property="theater_id" column="theater_id"/>
+		<result property="prov_no" column="prov_no"/>
 		<result property="brand" column="brand"/>
 		<result property="branch" column="branch"/>
 		<result property="rooms" column="rooms"/>
@@ -20,7 +21,7 @@
 	<select id="selectList"
 	parameterType="study.spring.cinephile.model.FavTheater"
 	resultMap="favTheaterMap">
-	select fav_theater_id,added_time,members_id,t.theater_id,brand,branch,rooms,seats,old_addr,concat(brand,' ',branch) as full_name
+	select fav_theater_id,added_time,members_id,t.theater_id,prov_no,brand,branch,rooms,seats,old_addr,concat(brand,' ',branch) as full_name
 	from fav_theater f
 	inner join theater t on f.theater_id=t.theater_id
 	
@@ -42,15 +43,11 @@
 	values(now(),#{members_id},#{theater_id})
 	</insert>
 	
-	<!-- 중복방지 위한 count -->
+	<!-- 자주가는 영화관 중복등록방지 위한 count -->
 	<select id="selectCount" parameterType="study.spring.cinephile.model.FavTheater" resultType="int">
 	select count(*) from fav_theater
 	where members_id=#{members_id} and theater_id=#{theater_id}
 	</select>
-	
-	
-	
-	
 	
 	
 </mapper>

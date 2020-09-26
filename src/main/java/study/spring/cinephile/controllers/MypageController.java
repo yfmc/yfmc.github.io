@@ -216,7 +216,7 @@ public class MypageController {
 			@RequestParam(value="brand",required=false) String brand) {
 		
 		int totalCount=0;
-		int listCount=10;
+		int listCount=8;
 		int pageCount=5;
 		
 		HttpSession session=request.getSession();

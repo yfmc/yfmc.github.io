@@ -37,10 +37,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-<<<<<<< HEAD
-=======
 
->>>>>>> 532395578a45865c75c5e2f38d37a8a30eac92b9
 	@RequestMapping(value = {"/", "/index.do", "simple/home.do"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public String home(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) {
 		//logger.info("Welcome home! The client locale is {}.", locale);

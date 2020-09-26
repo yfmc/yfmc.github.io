@@ -12,7 +12,7 @@
 	#container .up{
 		border:1px solid white;
 		border-radius:5px;
-		background-color:#b194c3;
+		background-color:#443250;
 		color:white;
 		margin-bottom:20px;
 	}
@@ -73,8 +73,9 @@
 		border:0px;
     }
 .pagination {
-    margin-top: -25px;
-    margin-left: 375px;
+    margin-top: -2px;
+    margin-left: 250px;
+ 	margin-bottom:0px;
 }
 
 .pagination>li>a{
@@ -89,4 +90,14 @@
 	text-decoration:none;
 	color:#3a3a3a;
 	font-weight:900;
+}
+
+.favtheater_add{
+	color:#27a29f;
+}
+
+.closebtn{
+	margin-top:17px;
+	margin-left:305px;
+	margin-bottom:20px;
 }

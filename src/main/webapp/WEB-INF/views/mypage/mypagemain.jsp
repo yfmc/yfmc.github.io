@@ -35,21 +35,27 @@
                     	<tr>
                         <c:forEach var="i" begin="0" end="1" varStatus="status">
 	                       <td>
-	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">
+	                       <a href="${pageContext.request.contextPath}/branch?provNo=${output[status.index].prov_no}&theaterId=${output[status.index].theater_id}">
+	                       ${output[status.index].brand}&nbsp; ${output[status.index].branch}</a></span>
 	                       </td>
                         </c:forEach>
                         </tr>
                         <tr>
                         <c:forEach var="i" begin="2" end="3" varStatus="status">
 	                       <td>
-	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">
+	                       <a href="${pageContext.request.contextPath}/branch?provNo=${output[status.index].prov_no}&theaterId=${output[status.index].theater_id}">
+	                       ${output[status.index].brand}&nbsp; ${output[status.index].branch}</a></span>
 	                       </td>
                         </c:forEach>
                         </tr>
                         <tr>
                         <c:forEach var="i" begin="4" end="4" varStatus="status">
 	                       <td>
-	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">
+	                       <a href="${pageContext.request.contextPath}/branch?provNo=${output[status.index].prov_no}&theaterId=${output[status.index].theater_id}">
+	                       ${output[status.index].brand}&nbsp; ${output[status.index].branch}</a></span>
 	                       </td>
                         </c:forEach>
                         <!-- 자주가는 영화관 설정 창으로 이동 -->
