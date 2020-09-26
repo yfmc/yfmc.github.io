@@ -55,15 +55,15 @@
 
 <div class="icon-bar">
 	<a
-		href="${pageContext.request.contextPath}/assets/movie/nowMoving.do?time=<%=System.currentTimeMillis()%>"
+		href="${pageContext.request.contextPath}/movie/nowMoving.do?time=<%=System.currentTimeMillis()%>"
 		class="side-boxoffice"><i class="fas fa-film"></i><b>박스오피스</b></a> 
-	<a href="${pageContext.request.contextPath}/assets/movie/MovieSearch.do?time=<%=System.currentTimeMillis()%>"
+	<a href="${pageContext.request.contextPath}/movie/MovieSearch.do?time=<%=System.currentTimeMillis()%>"
 		class="side-moviesearch"><i class="fas fa-search"></i><b>영화검색</b></a>
 	<a
-		href="${pageContext.request.contextPath}/assets/movie/MovieNews1.do?time=<%=System.currentTimeMillis()%>"
+		href="${pageContext.request.contextPath}/movie/MovieNews1.do?time=<%=System.currentTimeMillis()%>"
 		class="side-movienews"><i class="far fa-file-alt"></i><b>영화소식</b></a>
 	<a
-		href="${pageContext.request.contextPath}/assets/movie/Statistics.do?time=<%=System.currentTimeMillis()%>"
+		href="${pageContext.request.contextPath}/movie/Statistics.do?time=<%=System.currentTimeMillis()%>"
 		class="side-statistics"><i class="fas fa-chart-bar"></i><b>통계</b></a>
 </div>
 <!--// ========== 컨텐츠 영역 끝 ========== -->

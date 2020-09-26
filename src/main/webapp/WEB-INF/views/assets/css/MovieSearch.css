@@ -56,6 +56,209 @@ table ul li label{
 }
 
 
+/*결과물 출력되는 장소*/
+
+.king-row{
+    /*border: 1px solid #f6f;*/
+    width:85%;
+    margin:auto;
+    margin-top:50px;
+}
+
+.imageup {
+        border:0;
+        text-decoration:none;
+                 
+}
+
+.imageup:hover{
+	 text-decoration:none;
+}
+
+/*썸네일 내부의 이미지 크기 고정*/
+.imageup img {
+    min-height: 330px;
+    width:245px;
+  	
+ }
+ 
+/*이미지에 마우스 올렸을 때 예매하기 상세정보 등장*/
+figcaption a{
+	height:30px;
+	background-color:inherit !important;
+	border:1px solid white !important;
+}
+
+ figure.imageup {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: auto;
+  height:auto;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  
+}
+figure.imageup * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+figure.imageup img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+figure.imageup:after,
+figure.imageup figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:245px;
+  height:330px;
+}
+figure.imageup:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.65);
+  -webkit-transition: all 0.0s ease;
+  transition: all 0.0s ease;
+  opacity: 0;
+  margin-top:-10px;
+  margin-left:-8px;
+}
+figure.imageup figcaption {
+  z-index: 1;
+  margin-top:-10px;
+  margin-right:-20px;
+}
+figure.imageup a{
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+figure.imageup a {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  opacity: 0;
+  top: 50%;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+  line-height: inherit;
+  text-transform: uppercase;
+  display:inline-block;
+  margin-left: 29.5px;
+  margin-top : 50px;
+  text-align : center;
+  color: white;
+}
+
+figure.imageup a:nth-child(1){
+	margin-top:100px;
+}
+
+
+figure.imageup:hover img,
+figure.imageup.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+figure.imageup:hover:after,
+figure.imageup.hover:after {
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 13px;
+  right: 10px;
+}
+figure.imageup:hover a,
+figure.imageup.hover a
+{
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  opacity: 1;
+  text-decoration : none;
+}
+
+
+.imageup a{
+	visibility: hidden;
+	transition: all 0.0s ease;
+}
+
+.imageup .movie-image:hover a{
+	visibility: visible;
+	
+}
+/*이미지에 마우스 올렸을 때 예매하기 상세정보 등장 끝*/
+.imageup .movie-text{
+	text-align:center;
+	text-decoration:none;
+	
+}
+
+.imageup .movie-text h4{
+	font-weight:bold;
+	font-size:16px;
+	color:black;
+	text-decoration:none;
+	margin-bottom:60px;
+	
+}
+.king-row .movie-picture{
+	width:25%;
+	float:left;
+	margin-top:15px;
+}
+
+/*영화하나가 들어가는 칸 크기*/
+.row{
+	width:285px;
+	height:417.6px;
+}
+
+
+.king-row:after{
+    display: block;
+    content: '';
+    float:none;
+    clear:both;
+ }
+
+.king-row .search_list{
+	height:22px;
+	background-color:red;	
+	width:245px;
+	margin-left:5px;
+	margin-bottom:0px;
+	font-style:italic;
+	
+}
+
+.king-row .search_list{
+	font-size:20px;
+	color:white;
+}
+
+
+ .king-row .img-responsive{
+ 
+ height:auto;
+ max-height:200px;
+ min-width:210px;
+ margin:auto;
+ 
+}
+
 .search-button{
 	text-align:center;
 	margin:auto;
@@ -74,6 +277,12 @@ button{
 button:nth-child(2){
 	background:white;
 	color:#e71a0f;
+}
+
+.movie_search_list{
+	margin:auto;
+	text-align:center;
+	display:block;
 }    
 /*slidebar*/
 

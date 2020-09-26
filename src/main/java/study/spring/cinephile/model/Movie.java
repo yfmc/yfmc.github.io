@@ -1,5 +1,7 @@
 package study.spring.cinephile.model;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -22,10 +24,39 @@ public class Movie {
 	private String movie_made_year;
 	private String movie_booking;
 	private String movie_genre;
+	private static String[] movie_genre_list;
+	private static String[] movie_nation_list;
 	
 	//join절에 따른 추가적인 컬럼들
 	
-	//페이지 구현을 위한 static변수(일단 나는 ajax로 구현할 생각이기
-	//static변수를 선언해 놓지는 않는다.
+	//페이지 구현을 위한 static변수
+	private static int offset;
+	//LIMIT절에서 사용할 조회할 데이터 수
+	private static int listCount;
+
+	public void setGenreList(String genre_string) {
+		Movie.movie_genre_list = genre_string.split(",");
+	}
+	
+	public void setnationList(String nation_string) {
+		Movie.movie_nation_list = nation_string.split(",");
+	}
+	
+	public static int getOffset() {
+		return offset;
+	}
+	
+	public static void setOffset(int offset) {
+		Movie.offset = offset;
+	}
+	
+	public static int getListCount() {
+		return listCount;
+	}
+	
+	public static void setListCount(int listCount) {
+		Movie.listCount = listCount;
+	}
+	
 	
 }

@@ -2,78 +2,346 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MovieMapper">
 
-<resultMap id="movieMap" type="study.spring.cinephile.model.Movie">
-<!-- beans의 멤버변수(property)이름과 대상 테이블의 컬럼을 연결한다. -->
-	<result property="movie_id" column="movie_id"/>
-	<result property="opening_date" column="opening_date"/>
-	<result property="title" column="title"/>
-	<result property="synopsis" column="synopsis"/>
-	<result property="poster_link" column="poster_link"/>
-	<result property="accumul_audience" column="accumul_audience"/>
-	<result property="today_audience" column="today_audience"/>
-	<result property="age_limit" column="age_limit"/>
-	<result property="like_count" column="like_count"/>
-	<result property="star_info" column="star_info"/>
-	<result property="movie_nation" column="movie_nation"/>
-	<result property="movie_actor" column="movie_actor"/>
-	<result property="movie_director" column="movie_director"/>
-	<result property="movie_made_year" column="movie_made_year"/>
-	<result property="movie_booking" column="movie_booking"/>
-	<result property="movie_genre" column="movie_genre"/>
-</resultMap>
+	<resultMap id="movieMap"
+		type="study.spring.cinephile.model.Movie">
+		<!-- beans의 멤버변수(property)이름과 대상 테이블의 컬럼을 연결한다. -->
+		<result property="movie_id" column="movie_id" />
+		<result property="opening_date" column="opening_date" />
+		<result property="title" column="title" />
+		<result property="synopsis" column="synopsis" />
+		<result property="poster_link" column="poster_link" />
+		<result property="accumul_audience" column="accumul_audience" />
+		<result property="today_audience" column="today_audience" />
+		<result property="age_limit" column="age_limit" />
+		<result property="like_count" column="like_count" />
+		<result property="star_info" column="star_info" />
+		<result property="movie_nation" column="movie_nation" />
+		<result property="movie_actor" column="movie_actor" />
+		<result property="movie_director" column="movie_director" />
+		<result property="movie_made_year" column="movie_made_year" />
+		<result property="movie_booking" column="movie_booking" />
+		<result property="movie_genre" column="movie_genre" />
+	</resultMap>
 
-<!-- 예매순에 따른 조회 -->
-<select id="selectMovieBooking" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
-	SELECT poster_link, title, age_limit, movie_booking
-	FROM movie
-	WHERE movie_booking is not null OR today_audience is not null
-	ORDER BY movie_booking DESC
-	LIMIT 0,10;
-</select>
+	<!-- 예매순에 따른 조회 -->
+	<select id="selectMovieBooking"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit, movie_booking
+		FROM
+		movie
+		WHERE movie_booking is not null OR today_audience is not null
+		ORDER BY movie_booking DESC
+		LIMIT 0,8;
+	</select>
 
-<!-- 평점순에 따른 조회 -->
-<select id="selectStarInfo" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
-	SELECT poster_link, title, age_limit, star_info
-	FROM movie
-	WHERE movie_booking is not null OR today_audience is not null
-	ORDER BY star_info DESC
-	LIMIT 0,10;
-</select>
+	<!-- 평점순에 따른 조회 -->
+	<select id="selectStarInfo"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit, star_info
+		FROM movie
+		WHERE movie_booking is not null OR today_audience is not null
+		ORDER BY
+		star_info DESC
+		LIMIT 0,8;
+	</select>
 
-<!-- 관람객순에 따른 조회 -->
-<select id="selectTodayAudience" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
-	SELECT poster_link, title, age_limit, today_audience
-	FROM movie
-	WHERE movie_booking is not null OR today_audience is not null
-	ORDER BY today_audience DESC
-	LIMIT 0,10;
-</select>
+	<!-- 관람객순에 따른 조회 -->
+	<select id="selectTodayAudience"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit, today_audience
+		FROM
+		movie
+		WHERE movie_booking is not null OR today_audience is not null
+		ORDER BY today_audience DESC
+		LIMIT 0,8;
+	</select>
 
-<!-- 개봉일순에 따른 조회 (개봉일이 DATE 형식이 아니라 String이라 방법 생각해야함.)-->
-<!-- WHERE에 대한 기준점이 필요하다. -->
-<select id="selectOpeningDate" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
-	SELECT poster_link, title, age_limit, opening_date
-	FROM movie
-	WHERE like_count is not null AND opening_date is not null
-	ORDER BY opening_date ASC
-	LIMIT 0,8;
-</select>
+	<!-- 개봉일순에 따른 조회 (개봉일이 DATE 형식이 아니라 String이라 방법 생각해야함.) -->
+	<!-- WHERE에 대한 기준점이 필요하다. -->
+	<select id="selectOpeningDate"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit, opening_date
+		FROM movie
+		WHERE like_count is not null AND opening_date is not null
+		ORDER BY
+		opening_date ASC
+		LIMIT 0,8;
+	</select>
 
-<!-- 좋아요순에 따른 조회-->
-<select id="selectLikeCount" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
-	SELECT poster_link, title, age_limit, opening_date, like_count
-	FROM movie
-	WHERE like_count is not null AND opening_date is not null
-	ORDER BY like_count DESC
-	LIMIT 0,8;
-</select>
-<!-- 다중행조회기능 -->
+	<!-- 좋아요순에 따른 조회 -->
+	<select id="selectLikeCount"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit, opening_date
+		FROM movie
+		WHERE like_count is not null AND opening_date is not null
+		ORDER BY
+		like_count DESC
+		LIMIT 0,8;
+	</select>
+	<!-- 검객페이지에서의 기능 - 제목 -->
+	<select id="selectWhatMovieTitle"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit
+		FROM movie
+		<where>
+			<if test="title != null and title !=''">
+				title LIKE concat('%', #{title}, '%')
+			</if>
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+		<if test="opening_date != null and opening_date !=''">
+			ORDER BY opening_date DESC
+		</if>
+		<!--<if test="listCount > 0"> LIMIT #{offset}, #{listCount} </if> -->
+		LIMIT 0,50;
 
-<!-- 데이터 수 조회기능 -->
+	</select>
 
-<!-- 데이터 저장 기능 -->
+	<!-- 검객페이지에서의 기능 - 배우 -->
+	<select id="selectWhatMovieActor"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit
+		FROM movie
+		<where>
+			<if test="movie_actor != null and movie_actor !=''">
+				movie_actor LIKE concat('%', #{movie_actor}, '%')
+			</if>
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+		<if test="opening_date != null and opening_date !=''">
+			ORDER BY opening_date DESC
+		</if>
+		<!--<if test="listCount > 0"> LIMIT #{offset}, #{listCount} </if> -->
+		LIMIT 0,50;
+	</select>
 
-<!-- 데이터 삭제 기능 -->
+	<!-- 검객페이지에서의 기능 - 감독 -->
+	<select id="selectWhatMovieDirector"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit
+		FROM movie
+		<where>
+			<if test="movie_director != null and movie_director !=''">
+				movie_director LIKE concat('%', #{movie_director}, '%')
+			</if>
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+		<if test="opening_date != null and opening_date !=''">
+			ORDER BY opening_date DESC
+		</if>
+		<!--<if test="listCount > 0"> LIMIT #{offset}, #{listCount} </if> -->
+		LIMIT 0,50;
+	</select>
 
-<!-- 데이터 갱신 기능 -->
+	<!-- 검객페이지에서의 기능 - 전체 -->
+	<select id="selectWhatMovieOptionAll"
+		parameterType="study.spring.cinephile.model.Movie"
+		resultMap="movieMap">
+		SELECT poster_link, title, age_limit
+		FROM movie
+		<where>
+			(
+			<if test="title != null and title !=''">
+				title LIKE concat('%', #{title}, '%')
+			</if>
+
+			<if test="movie_actor != null and movie_actor !=''">
+				OR movie_actor LIKE concat('%', #{movie_actor}, '%')
+			</if>
+
+			<if test="movie_director != null and movie_director !=''">
+				OR movie_director LIKE concat('%', #{movie_director}, '%')
+			</if>
+			)
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+		<if test="opening_date != null and opening_date !=''">
+			ORDER BY opening_date DESC
+		</if>
+		<!--<if test="listCount > 0"> LIMIT #{offset}, #{listCount} </if> -->
+		LIMIT 0,50;
+	</select>
+
+	<!-- 데이터 수 조회기능 - 제목 -->
+	<select id="selectCountAllTitle"
+		parameterType="study.spring.cinephile.model.Movie" resultType="int">
+		SELECT COUNT(*)
+		FROM movie
+		<where>
+			<if test="title != null and title !=''">
+				title LIKE concat('%', #{title}, '%')
+			</if>
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+	</select>
+
+	<!-- 데이터 수 조회기능 - 배우 -->
+	<select id="selectCountAllActor"
+		parameterType="study.spring.cinephile.model.Movie" resultType="int">
+		SELECT COUNT(*)
+		FROM movie
+		<where>
+			<if test="movie_actor != null and movie_actor !=''">
+				movie_actor LIKE concat('%', #{movie_actor}, '%')
+			</if>
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+	</select>
+
+	<!-- 데이터 수 조회기능 - 감독 -->
+	<select id="selectCountAllDirector"
+		parameterType="study.spring.cinephile.model.Movie" resultType="int">
+		SELECT COUNT(*)
+		FROM movie
+		<where>
+			<if test="movie_director != null and movie_director !=''">
+				movie_director LIKE concat('%', #{movie_director}, '%')
+			</if>
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+	</select>
+
+	<!-- 데이터 수 조회기능 - 전제 -->
+	<select id="selectCountAll"
+		parameterType="study.spring.cinephile.model.Movie" resultType="int">
+		SELECT COUNT(*)
+		FROM movie
+		<where>
+			(
+			<if test="title != null and title !=''">
+				title LIKE concat('%', #{title}, '%')
+			</if>
+
+			<if test="movie_actor != null and movie_actor !=''">
+				OR movie_actor LIKE concat('%', #{movie_actor}, '%')
+			</if>
+
+			<if test="movie_director != null and movie_director !=''">
+				OR movie_director LIKE concat('%', #{movie_director}, '%')
+			</if>
+			)
+			<if test="movie_genre != null and movie_genre !=''">
+			 	AND
+				<foreach item="item" collection="movie_genre_list" index="index" open="(" separator="OR" close=")">
+					movie_genre LIKE concat('%', #{item}, '%')
+				</foreach>
+			</if>
+			<if test="movie_nation != null and movie_nation != ''">
+				AND
+				<foreach item="k" collection="movie_nation_list" index="index" open="(" separator="OR" close=")">
+					movie_nation LIKE concat('%', #{k}, '%')
+				</foreach>
+			</if>
+			<if test="movie_made_year != null and movie_made_year !=''">
+				AND movie_made_year LIKE concat('%', #{movie_made_year}, '%')
+			</if>
+		</where>
+	</select>
+
 </mapper>

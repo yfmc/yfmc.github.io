@@ -1,3 +1,4 @@
+<%@ page import="java.sql.Timestamp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -5,6 +6,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../_inc/header.jsp"%>
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/willMoving.css?time=<%=System.currentTimeMillis()%>">
 <!-- ========== 컨텐츠 영역 시작 ========== -->
@@ -50,7 +52,20 @@
 				<c:forEach var="k" items="${output}" varStatus="status">
 					<div class="movie-picture">
 						<div class="dDay">
-							개봉일:&nbsp;<span>${fn:substring(k.opening_date,0,4)}년 ${fn:substring(k.opening_date,4,6)}월 ${fn:substring(k.opening_date,6,8)}일</span>
+						<fmt:parseDate var = "sDate" value="${today}" pattern="yyyyMMdd"/>
+						<fmt:parseNumber value="${sDate.time / (1000*60*60*24)}" integerOnly="true" var="isDate" scope="request"/>
+						
+						<fmt:parseDate var = "tDate" value="${k.opening_date}" pattern="yyyyMMdd"/>
+						<fmt:parseNumber value="${tDate.time / (1000*60*60*24)}" integerOnly="true" var="itDate" scope="request"/>
+							
+							<c:choose>
+								<c:when test = "${tDate > sDate }">
+									D-<span>${itDate-isDate}</span>
+								</c:when>
+								<c:otherwise>
+									<span>이미 개봉한 영화입니다.</span>
+								</c:otherwise>
+							</c:choose>
 						</div>
 						<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 						<figure class="imageup">

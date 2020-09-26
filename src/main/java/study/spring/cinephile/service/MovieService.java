@@ -60,7 +60,13 @@ public interface MovieService {
 	 * @return int
 	 * @throw Exception
 	 */
-	public int getMovieCount(Movie input) throws Exception;
+	public int getMovieCountTitle(Movie input) throws Exception;
+	
+	public int getMovieCountActor(Movie input) throws Exception;
+	
+	public int getMovieCountDirector(Movie input) throws Exception;
+	
+	public int getMovieCountOptionAll(Movie input) throws Exception;
 	
 	/*
 	 * 영화 데이터 저장하기
@@ -70,21 +76,19 @@ public interface MovieService {
 	 */
 	public int addMovie(Movie input) throws Exception;
 	
-	/*
-	 * 영화 데이터 수정하기
-	 * @param Movie 수정할 정보를 담고 있는 beans
-	 * @return int
-	 * @throw Exception
-	 */
-	public int editMovie(Movie input) throws Exception;
 	
 	/*
-	 * 영화 데이터 삭제하기
-	 * @param Movie 삭제할 정보를 담고 있는 beans
-	 * @return int
+	 * 영화 데이터 목록 조회 - 검색조회
+	 * @param Movie 검색조건과 페이지 구현 정보를 담고 있는 beans
+	 * @return 조회된 결과에 대한 컬렉션
 	 * @throw Exception
-	 * 
-	 * 영화데이터를 삭제하는 기능은 사용할 일이 거의 없을 것이다.
 	 */
-	public int deleteMovie(Movie input) throws Exception;
+	public List<Movie> getMovieSearchTitle(Movie input) throws Exception;
+	
+	public List<Movie> getMovieSearchActor(Movie input) throws Exception;
+	
+	public List<Movie> getMovieSearchDirector(Movie input) throws Exception;
+	
+	public List<Movie> getMovieSearchOptionAll(Movie input) throws Exception;
+
 }

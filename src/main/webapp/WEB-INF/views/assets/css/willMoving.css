@@ -99,6 +99,12 @@ margin-top:20px;
     
 }
 
+/*영화하나가 들어가는 칸 크기*/
+.row{
+	width:285px;
+	height:417.6px;
+}
+
 .imageup {
         height: 400px;
         width:250px;

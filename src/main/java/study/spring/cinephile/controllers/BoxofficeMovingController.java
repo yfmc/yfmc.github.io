@@ -38,8 +38,6 @@ public class BoxofficeMovingController {
 	//"/프로젝트이름" 에 해당하는 contextPath변수 주입
 	@Value("#{servletContext.contextPath}") String contextPath;
 	
-	//현재날짜계산하기.
-	
 	
 	//현재상영중 영화페이지
 	@RequestMapping(value= "/movie/nowMoving.do", method= RequestMethod.GET)
@@ -115,8 +113,9 @@ public class BoxofficeMovingController {
 				
 				//현재 날짜
 				String today = calendarTime.cTime();
+				//System.out.println(today);
 				//현재날짜의 정수형
-				int tmp = Integer.parseInt(today);
+				//int tmp = Integer.parseInt(today);
 				//System.out.println(tmp);
 				
 				
@@ -136,7 +135,7 @@ public class BoxofficeMovingController {
 					
 					model.addAttribute("output", output);
 					model.addAttribute("movielist", movielist);
-					model.addAttribute("tmp", tmp);
+					model.addAttribute("today", today);
 					
 				}
 				
@@ -150,9 +149,8 @@ public class BoxofficeMovingController {
 					
 					model.addAttribute("output", output);
 					model.addAttribute("movielist", movielist);
-					model.addAttribute("tmp", tmp);
-					
-					
+					model.addAttribute("today", today);
+
 				}
 				
 				else {
@@ -164,7 +162,7 @@ public class BoxofficeMovingController {
 					
 					model.addAttribute("output", output);
 					model.addAttribute("movielist", movielist);
-					model.addAttribute("tmp", tmp);
+					model.addAttribute("today", today);
 					
 				}
 		
