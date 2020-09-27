@@ -107,7 +107,7 @@
 			<form method="post" action="${pageContext.request.contextPath}/branch/add_ok.do" >
 				<input type="hidden" name="theater_id" value="${output.theaterId}" />
 				<input type="hidden" name="members_id" value="${user}" />
-				<button type="submit" id="bookmarking" class="btn btn-default"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
+				<button type="submit" id="bookmarking" class="btn btn-default addbtn"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
 			</form>
 			</c:otherwise>
 			</c:choose>

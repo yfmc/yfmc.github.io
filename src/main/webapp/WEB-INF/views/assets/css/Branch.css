@@ -139,6 +139,12 @@
     padding-left: 15px;
 }
 
+/* 자주 가는 영화관 버튼 */
+.addbtn {
+	margin-top: -10px;
+	margin-left: 5px;
+}
+
 /* 자주 가는 영화관 별 표시 */
 .fa-star {
 	color: #ff4f4f;

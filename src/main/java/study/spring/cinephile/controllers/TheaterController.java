@@ -74,6 +74,13 @@ public class TheaterController {
 				model.addAttribute("user", mySession.getMembers_id());
 				count.setMembersId(mySession.getMembers_id());
 			}
+			
+			try {
+				output3=addService.countFavTheater(count);
+			}
+			catch (Exception e) {
+				return webHelper.redirect(null, e.getLocalizedMessage());
+			}
 
 			// view 처리
 			model.addAttribute("output", output);
