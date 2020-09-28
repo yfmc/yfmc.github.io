@@ -32,7 +32,7 @@
         margin-bottom: 140px;
         padding-top: 200px;
     }
-        .joining .info {
+    .joining .info {
         width: 500px;
         height: 80px;
         margin: auto;
@@ -65,7 +65,15 @@
         display:inline-block;
         margin-left:20px;
     }
-
+	
+	
+	.joining #timer{
+		color: red;
+		display: inline-block;
+		width: 250px;
+		padding:3px;
+		font-weight: bold;
+	}
     .joining .nomail {
         width: 500px;
         margin: auto;

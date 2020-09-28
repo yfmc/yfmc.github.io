@@ -3,7 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -36,17 +38,17 @@
 	</interceptors>
 	
 	<!-- 스케줄러 어노테이션 선언 -->
-<!-- 	<task:annotation-driven/>
+	<task:annotation-driven/>
 	
-	스케줄러로 동작할 객체 생성
-	<beans:bean id="scheduleJob" class="study.spring.cinephile.scheduler.TCodeScheduler" />
+	<!-- 스케줄러로 동작할 객체 생성 -->
+	<beans:bean id="scheduleJob" class="study.spring.cinephile.scheduler.TcodeScheduler" />
 	
-	생성한 스케줄러 객체에 대한 작겁 스케줄 지정
+	<!-- 생성한 스케줄러 객체에 대한 작겁 스케줄 지정 -->
 	<task:scheduled-tasks>
-		1초마다 실행되는 작업
-		<task:scheduled ref="scheduleJob" method="delCodeAfterThreeMin" cron="* * * * * ?" />
+		<!-- 1초마다 실행되는 작업 -->
+		<task:scheduled ref="scheduleJob" method="delCodeAfterThreeMin" cron="0 0 0 * * ?" />
 		
-	</task:scheduled-tasks>  -->
+	</task:scheduled-tasks>  
 	
 	
 	

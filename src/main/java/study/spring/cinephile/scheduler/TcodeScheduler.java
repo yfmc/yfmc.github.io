@@ -19,7 +19,6 @@ public class TcodeScheduler {
 	 * 이메일을 보낸뒤 이 메서드를 실행한다.
 	 * 이 메서드는 실행된 뒤 3분뒤에 파일을 지운다.
 	 * delete문에서 where에 reg_date > 3분 이상 되었다면 지우게끔 처리한다.
-	 * 
 	 * delete를 수행한다.  
 	 * */
 	

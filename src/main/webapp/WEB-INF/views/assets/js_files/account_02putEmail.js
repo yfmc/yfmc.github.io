@@ -36,6 +36,7 @@ $(function(){
         	if($('#user_email').val()==$(this).val()){
         		$('#email_submit').prop("disabled",false);        		
         	}else{
+        		$('#email_submit').prop("disabled",true); 
         		alert('이메일이 일치하지 않습니다.');
         		$('#email_check').val('');
         		$('#email_check').focus();        		

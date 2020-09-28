@@ -67,6 +67,7 @@ public class AccountController {
 		return new ModelAndView("account/02-putEmail");
 	}
 	
+	
 	@RequestMapping(value="/account/03-emailCode.do")
 	public ModelAndView sentCode(Model model,
 			@RequestParam(value="user_email", required=false) String user_email) {
@@ -128,7 +129,7 @@ public class AccountController {
 			//인증코드, 메일 임시 테이블에 저장
 			tcodesService.addCode(input);
 			
-			mailHelper.sendMail(user_email, subject, content);
+			//mailHelper.sendMail(user_email, subject, content);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -140,7 +141,7 @@ public class AccountController {
 		System.out.println(input.toString());
 		System.out.println("셍썽된 프라이뭐리"+Pk);
 		
-		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성.
+		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성. //쿠키에는 텍스트 정보만 담을수 있다.
 		
 		cookie.setPath("/");	//쿠키의 유효 경로 --> 사이트 전역에 대한 설정
 		cookie.setDomain("localhost");	//쿠키의 유효 도메인
@@ -200,6 +201,8 @@ public class AccountController {
 					value = cookies[i].getValue();	
 				}
 			}
+		}else {
+			return webHelper.redirect(null, "인증번호를 다시 발급 받으세요");
 		}
 		System.out.println(value);
 		Tcodes input = new Tcodes();
@@ -223,6 +226,7 @@ public class AccountController {
 		if(output.getCode().equals(code_check)) {
 			return webHelper.redirect(contextPath + "/account/04-Agree.do?user_email=" + user_email, null);
 		}else {
+			
 			return webHelper.redirect(null, "인증번호가 일치하지 않습니다.");
 		}
 		
