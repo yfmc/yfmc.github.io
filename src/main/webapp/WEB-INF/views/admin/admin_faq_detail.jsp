@@ -25,6 +25,7 @@
 		           	<div class="faq_edit_date">
 		           		수정일 : ${output.edit_date}
 		           	</div>
+		           	<a href="${pageContext.request.contextPath}/admin/admin_faq_list.do">[목록으로]</a>
 		           	<a href="${pageContext.request.contextPath}/admin/admin_faq_edit.do?faq_id=${output.faq_id}">[수정하기]</a>
 		           	<a href="${pageContext.request.contextPath}/admin/admin_faq_delete.do?faq_id=${output.faq_id}">[삭제하기]</a>
 		        </div>

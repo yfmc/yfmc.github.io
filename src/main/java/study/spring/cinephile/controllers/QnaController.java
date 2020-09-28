@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,6 +23,7 @@ import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.UploadItem;
 import study.spring.cinephile.helper.WebHelper;
+import study.spring.cinephile.model.Members;
 import study.spring.cinephile.model.Qna;
 import study.spring.cinephile.service.QnaService;
 
@@ -78,9 +80,18 @@ public class QnaController {
 	
 	/** 작성 페이지 */
 	@RequestMapping(value="/support/qna.do", method=RequestMethod.GET)
-	public ModelAndView qna(Model model) {
+	public ModelAndView qna(Model model, HttpServletRequest request) {
 			
+		// 로그인시 회원 정보 가져오기0
+		HttpSession session = request.getSession();
+		Members mySession = (Members) session.getAttribute("loggedIn");
+		
+		if (mySession != null ) {
+			model.addAttribute("my_session", mySession);
 		return new ModelAndView ("support/qna");
+		} else {
+			return new ModelAndView ("support/qna");
+		}
 	}
 	
 	/** 작성 폼에 대한 action 페이지 */
@@ -127,7 +138,6 @@ public class QnaController {
 			qnaService.addQna(input);
 			output = qnaService.getQnaItem(input);
 			item = webHelper.saveMultipartFile(file_img);
-			System.out.println(item.getOrginName());	
 		} catch (NullPointerException e){
 			e.printStackTrace();
 			return webHelper.redirect(null, "업로드된 파일이 없습니다.");
