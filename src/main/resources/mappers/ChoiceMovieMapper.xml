@@ -23,6 +23,7 @@
 	from movie m,fav_movie f
 	<where>
 	m.movie_id=f.movie_id
+	and members_id=#{members_id}
 	</where>
 	
 	order by liked_time desc
@@ -36,7 +37,8 @@
 	<select id="selectCountAll" parameterType="study.spring.cinephile.model.ChoiceMovie" resultType="int">
 	select count(*) from movie m,fav_movie f
 		<where>
-		m.movie_id=f.movie_id;
+		m.movie_id=f.movie_id
+		and members_id=#{members_id}
 		</where>
 	
 	</select>

@@ -103,21 +103,67 @@
                         <h4 style="font-family: 'Jua', sans-serif;">좋아한 영화</h4>
                     </span>
                     <div class="row">
-                    <c:forEach var="item2" items="${choiceoutput}" begin="0" end="2" varStatus="status">
-                    	<div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item2.movie_id}" class="thumbnail">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <c:choose>
+                    <c:when test="${choiceoutput[0]!=null}">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[0].movie_id}" class="thumbnail">
+                    </c:when>
+                    <c:otherwise>
+                    		<a href="#" class="thumbnail">
+                    </c:otherwise>
+                    </c:choose>
                             	<c:choose>
-                            	<c:when test="${item2.poster_link!=null}">
-                                <img src="${item2.poster_link}" />
+                            	<c:when test="${choiceoutput[0].poster_link!=null}">
+                                <img src="${choiceoutput[0].poster_link}" />
                                 </c:when>
                                 <c:otherwise>
-                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg""/>
+                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
                                 </c:otherwise>
                                 </c:choose>
-                                <h5>${item2.title}</h5>
+                                <h5>${choiceoutput[0].title}</h5>
                             </a>
-                        </div>
-                    </c:forEach>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <c:choose>
+                    <c:when test="${choiceoutput[0]!=null}">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[1].movie_id}" class="thumbnail">
+                    </c:when>
+                    <c:otherwise>
+                    		<a href="#" class="thumbnail">
+                    </c:otherwise>
+                    </c:choose>
+                            	<c:choose>
+                            	<c:when test="${choiceoutput[1].poster_link!=null}">
+                                <img src="${choiceoutput[1].poster_link}" />
+                                </c:when>
+                                <c:otherwise>
+                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+                                </c:otherwise>
+                                </c:choose>
+                                <h5>${choiceoutput[1].title}</h5>
+                            </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <c:choose>
+                    <c:when test="${choiceoutput[0]!=null}">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[2].movie_id}" class="thumbnail">
+                    </c:when>
+                    <c:otherwise>
+                    		<a href="#" class="thumbnail">
+                    </c:otherwise>
+                    </c:choose>
+                            	<c:choose>
+                            	<c:when test="${choiceoutput[2].poster_link!=null}">
+                                <img src="${choiceoutput[2].poster_link}" />
+                                </c:when>
+                                <c:otherwise>
+                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+                                </c:otherwise>
+                                </c:choose>
+                                <h5>${choiceoutput[2].title}</h5>
+                            </a>
+                    </div>
+                    
                         <!-- 좋아요 누른 영화내역 페이지로 이동 -->
                         <button type="button" class="btn btn-success bt2 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="좋아한 영화 페이지로 이동합니다." >더보기</button>
                     </div>
