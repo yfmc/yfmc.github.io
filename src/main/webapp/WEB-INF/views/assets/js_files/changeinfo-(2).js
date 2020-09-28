@@ -76,6 +76,8 @@
 					}
 				});
 				
+
+				
 				//'취소' 버튼 누르면 메인으로
 				$(document).on("click",".out",function(){
 					location.href="../mypage/mypagemain.do";

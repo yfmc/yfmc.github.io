@@ -18,12 +18,15 @@ import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
+import study.spring.cinephile.model.ChoiceMovie;
 import study.spring.cinephile.model.FavTheater;
 import study.spring.cinephile.model.Members;
 import study.spring.cinephile.model.PasswordOk;
 import study.spring.cinephile.model.Theater2;
+import study.spring.cinephile.service.ChoiceMovieService;
 import study.spring.cinephile.service.FavTheaterService;
 import study.spring.cinephile.service.MembersService;
+import study.spring.cinephile.service.MyPageMembersService;
 import study.spring.cinephile.service.PasswordOkService;
 import study.spring.cinephile.service.Theater2Service;
 
@@ -41,6 +44,8 @@ public class MypageController {
 	@Autowired PasswordOkService passwordOkService;
 	@Autowired Theater2Service theater2Service;
 	@Autowired MembersService membersService;
+	@Autowired MyPageMembersService myPageMembersService;
+	@Autowired ChoiceMovieService choiceMovieService;
 	
 	//필요한 객체들 주입
 	
@@ -172,10 +177,20 @@ public class MypageController {
 		if(!regexHelper.isEmail(user_email)) {return webHelper.redirect(null, "올바른 메일을 입력하세요.");}
 		if(!regexHelper.isTel(phone)) {return webHelper.redirect(null, "올바른 연락처를 입력하세요.");}
 		
+		int totalCount=0;
+		try {
+			totalCount=myPageMembersService.getMyPageMembersCount(input);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 		
+		if(totalCount==1) {
+			return webHelper.redirect(null, "이미 사용중인 이메일입니다. 다른 이메일을 입력해주세요!");
+		}
 		
 		try {
-			membersService.editMembers(input);
+			myPageMembersService.editMyPageMembers(input);
+		    session.removeAttribute("loggedIn");//회원정보 수정 시 로그아웃
 			return new ModelAndView("mypage/changeinfo-(3)");
 		} catch (Exception e) {
 			return webHelper.redirect("mypage/changeinfo-(2).do","수정에 실패했습니다. 관리자에게 문의하세요.");
@@ -184,13 +199,40 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/choicelist.do",method=RequestMethod.GET) //마이페이지 > 좋아한영화내역페이지
-	public String choicelist(Model model,HttpServletRequest request) {
+	public ModelAndView choicelist(Model model,HttpServletRequest request,
+			@RequestParam(value="page",defaultValue="1") int nowPage) {
+		
+		int totalCount=0;
+		int listCount=5;
+		int pageCount=5;
+		
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
-		model.addAttribute("my_session",mySession);
+		ChoiceMovie input=new ChoiceMovie();
+		input.setMembers_id(mySession.getMembers_id());
 		
-		return "mypage/choicelist";
+		List<ChoiceMovie> output=null;
+		PageData pageData=null;
+		
+		try {
+			totalCount=choiceMovieService.getChoiceMovieCount(input);
+			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
+			
+			ChoiceMovie.setOffset(pageData.getOffset());
+			ChoiceMovie.setListCount(pageData.getListCount());
+			
+			output=choiceMovieService.getChoiceMovieList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		
+		model.addAttribute("my_session",mySession);
+		model.addAttribute("output",output);
+		model.addAttribute("pageData",pageData);
+		
+		return new ModelAndView("mypage/choicelist");
 	}
 	
 	@RequestMapping(value="/mypage/inquirylist.do",method=RequestMethod.GET) //마이페이지 > 나의문의내역페이지
