@@ -23,6 +23,9 @@ public class ChoiceMovieServiceImpl implements ChoiceMovieService{
 		
 		try {
 			result=sqlSession.selectList("ChoiceMovieMapper.selectList",input);
+			if(result==null) {
+				throw new NullPointerException("result=null");
+			}
 		}catch(NullPointerException e) {
 			log.error(e.getLocalizedMessage());
 			throw new Exception("조회된 데이터가 없습니다.");

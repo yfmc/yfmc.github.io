@@ -35,9 +35,9 @@
 					<table class="table_faq_list">
 						<thead>
 							<tr>
-								<th style="width: 100px;">번호</th>
-								<th style="width: auto;">제목</th>
-								<th style="width: 150px;">등록일</th>
+								<th align="center" style="width: 10px;">번호</th>
+								<th align="center" style="width: 400px;">제목</th>
+								<th align="center" style="width: 30px;">등록일</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -51,65 +51,71 @@
 									<c:param name="qna_id" value="${item.qna_id}"/>
 								</c:url>
 								<tr>
-									<td>${item.qna_id}</td>
+									<td>${item.no}</td>
 									<td class="detail_title"><a href="${viewUrl}">${item.qna_title}</a></td>
-									<td>${item.qna_date}</td>
+									<td>${item.reg_date}</td>
 								</tr>
 								</c:forEach>
-								<!--  페이지 넘김 -->
-								<div id="page">
-				                    <div class="row">
-				                        <div class="col">
-				                        <ul class="pagination">
-				                           <c:choose>
-												<c:when test="${pageData.prevPage>0}">
-													<c:url value="/mypage/inquirylist.do" var="prevPageUrl">
-														<c:param name="page" value="${pageData.prevPage}"/>
-													</c:url>
-													<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
-												</c:when>
-												<c:otherwise>
-													<li class="page-item"><a class="page-link">이전</a></li>
-												</c:otherwise>
-											</c:choose>
-											
-											<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
-												<c:url value="/mypage/inquirylist.do" var="pageUrl">
-													<c:param name="page" value="${i}"/>
-												</c:url>
-												<c:choose>
-													<c:when test="${pageData.nowPage ==i}">
-														<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
-													</c:when>
-													<c:otherwise>
-														<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
-													</c:otherwise>
-												</c:choose>
-											</c:forEach>
-					
-											<c:choose>
-												<c:when test="${pageData.nextPage>0}">
-													<c:url value="/mypage/inquirylist.do" var="nextPageUrl">
-														<c:param name="page" value="${pageData.nextPage}"/>
-													</c:url>
-														<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
-												</c:when>
-												<c:otherwise>
-													<li class="page-item page-link"><a class="page-link">다음</a></li>
-												</c:otherwise>
-											</c:choose>
-										</ul>
-				                        </div>
-				                    </div>
-				                </div>
 							</c:otherwise>
 						</c:choose>
 						</tbody>
 					</table>
+					<c:choose>
+			        <c:when test="${output==null||fn:length(output)==0}">
+			        </c:when>
+        			<c:otherwise>
+        			<!--  페이지 넘김 -->
+					<div id="page">
+	                    <div class="row">
+	                        <div class="col">
+	                        <ul class="pagination">
+	                           <c:choose>
+									<c:when test="${pageData.prevPage>0}">
+										<c:url value="/mypage/inquirylist.do" var="prevPageUrl">
+											<c:param name="page" value="${pageData.prevPage}"/>
+										</c:url>
+										<li class="page-item"><a class="page-link" href="${prevPageUrl}">이전</a></li>
+									</c:when>
+									<c:otherwise>
+										<li class="page-item"><a class="page-link">이전</a></li>
+									</c:otherwise>
+								</c:choose>
+								
+								<c:forEach var="i" begin="${pageData.startPage}" end="${pageData.endPage}" varStatus="status">
+									<c:url value="/mypage/inquirylist.do" var="pageUrl">
+										<c:param name="page" value="${i}"/>
+									</c:url>
+									<c:choose>
+										<c:when test="${pageData.nowPage ==i}">
+											<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
+										</c:when>
+										<c:otherwise>
+											<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+		
+								<c:choose>
+									<c:when test="${pageData.nextPage>0}">
+										<c:url value="/mypage/inquirylist.do" var="nextPageUrl">
+											<c:param name="page" value="${pageData.nextPage}"/>
+										</c:url>
+											<li class="page-item"><a class="page-link" href="${nextPageUrl}">다음</a></li>
+									</c:when>
+									<c:otherwise>
+										<li class="page-item page-link"><a class="page-link">다음</a></li>
+									</c:otherwise>
+								</c:choose>
+							</ul>
+	                        </div>
+	                    </div>
+	                </div>
+				    </c:otherwise>
+				    </c:choose>
 						<!-- 1:1문의 페이지로 가는 버튼 -->
-			            <div class="inqbutton">
-			                <button type="button" class="btn faqgo">1:1문의</button>
-			            </div>
+		            <div class="inqbutton">
+		                <button type="button" class="btn faqgo">1:1문의</button>
+		            </div>
 				</div>
 				
                 

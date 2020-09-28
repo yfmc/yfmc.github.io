@@ -103,24 +103,21 @@
                         <h4 style="font-family: 'Jua', sans-serif;">좋아한 영화</h4>
                     </span>
                     <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie1.jpg" />
-                                <h5>강철비2: 정상회담</h5>
+                    <c:forEach var="item2" items="${choiceoutput}" begin="0" end="2" varStatus="status">
+                    	<div class="col-md-3 col-sm-6 col-xs-12">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item2.movie_id}" class="thumbnail">
+                            	<c:choose>
+                            	<c:when test="${item2.poster_link!=null}">
+                                <img src="${item2.poster_link}" />
+                                </c:when>
+                                <c:otherwise>
+                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg""/>
+                                </c:otherwise>
+                                </c:choose>
+                                <h5>${item2.title}</h5>
                             </a>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie2.jpg" />
-                                <h5>반도</h5>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie3.jpg" />
-                                <h5>스파이더맨: 파 프롬 홈</h5>
-                            </a>
-                        </div>
+                    </c:forEach>
                         <!-- 좋아요 누른 영화내역 페이지로 이동 -->
                         <button type="button" class="btn btn-success bt2 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="좋아한 영화 페이지로 이동합니다." >더보기</button>
                     </div>

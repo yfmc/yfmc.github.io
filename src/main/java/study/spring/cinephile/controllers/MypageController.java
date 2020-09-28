@@ -21,12 +21,14 @@ import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.ChoiceMovie;
 import study.spring.cinephile.model.FavTheater;
 import study.spring.cinephile.model.Members;
+import study.spring.cinephile.model.MyPageQna;
 import study.spring.cinephile.model.PasswordOk;
 import study.spring.cinephile.model.Theater2;
 import study.spring.cinephile.service.ChoiceMovieService;
 import study.spring.cinephile.service.FavTheaterService;
 import study.spring.cinephile.service.MembersService;
 import study.spring.cinephile.service.MyPageMembersService;
+import study.spring.cinephile.service.MyPageQnaService;
 import study.spring.cinephile.service.PasswordOkService;
 import study.spring.cinephile.service.Theater2Service;
 
@@ -46,6 +48,7 @@ public class MypageController {
 	@Autowired MembersService membersService;
 	@Autowired MyPageMembersService myPageMembersService;
 	@Autowired ChoiceMovieService choiceMovieService;
+	@Autowired MyPageQnaService myPageQnaService;
 	
 	//필요한 객체들 주입
 	
@@ -72,8 +75,20 @@ public class MypageController {
 		
 		//자주가는 영화관 목록을 불러오는 과정
 		
+		ChoiceMovie choiceinput=new ChoiceMovie();
+		choiceinput.setMembers_id(mySession.getMembers_id());
+		List<ChoiceMovie> choiceoutput=null;
+		
+		try {
+			choiceoutput=choiceMovieService.getChoiceMovieList(choiceinput);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 		
 		model.addAttribute("output",output);
+		model.addAttribute("choiceoutput",choiceoutput);
 		
 		return new ModelAndView("mypage/mypagemain");
 	}
@@ -236,18 +251,75 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/inquirylist.do",method=RequestMethod.GET) //마이페이지 > 나의문의내역페이지
-	public String inquirylist(Model model,HttpServletRequest request) {
+	public ModelAndView inquirylist(Model model,HttpServletRequest request,
+			@RequestParam(value="page",defaultValue="1") int nowPage) {
+		
+		int totalCount=0;
+		int listCount=8;
+		int pageCount=5;
+		
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		MyPageQna input=new MyPageQna();
+		input.setMembers_id(mySession.getMembers_id());
+		
+		List<MyPageQna> output=null;
+		PageData pageData=null;
+		
+		try {
+			totalCount=myPageQnaService.getMyPageQnaCount(input);
+			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
+			
+			MyPageQna.setOffset(pageData.getOffset());
+			MyPageQna.setListCount(pageData.getListCount());
+			
+			output=myPageQnaService.getMyPageQnaList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
 		model.addAttribute("my_session",mySession);
-		return "mypage/inquirylist";
+		model.addAttribute("output",output);
+		model.addAttribute("pageData",pageData);
+		model.addAttribute("totalCount",totalCount);
+		
+		return new ModelAndView("mypage/inquirylist");
 	}
 	
 	@RequestMapping(value="/mypage/inquirypost.do",method=RequestMethod.GET) //마이페이지 > 문의내역상세
-	public String inquirypost(Model model) {
+	public ModelAndView inquirypost(Model model,HttpServletRequest request,
+			@RequestParam(value="qna_id",defaultValue="0") int qna_id) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
-		return "mypage/inquirypost";
+		if(qna_id==0) {
+			return webHelper.redirect(null, "존재하지 않는 문의입니다.");
+		}
+		
+		MyPageQna input=new MyPageQna();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setQna_id(qna_id);
+		
+		MyPageQna input2=new MyPageQna();
+		input2.setMembers_id(mySession.getMembers_id());
+		
+		MyPageQna output=null;
+		List<MyPageQna> output2=null;
+		
+		try {
+			output=myPageQnaService.getMyPageQnaItem(input);
+			output2=myPageQnaService.getMyPageQnaList(input2);
+
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		
+		
+		model.addAttribute("output",output);
+		model.addAttribute("output2",output2);
+		return new ModelAndView("mypage/inquirypost");
 	}
 	
 	@RequestMapping(value="/mypage/oftentheater.do",method=RequestMethod.GET) //마이페이지 > 자주가는영화관 추가,삭제 페이지
