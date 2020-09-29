@@ -87,7 +87,7 @@
 									</c:url>
 									<c:choose>
 										<c:when test="${pageData.nowPage ==i}">
-											<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
+											<li class="page-item page-link"><a class="page-link" style="background-color:#eee;"><strong class="thispage">${i}</strong></a></li>
 										</c:when>
 										<c:otherwise>
 											<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>

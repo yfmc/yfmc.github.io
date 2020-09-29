@@ -37,8 +37,25 @@ public class MyPageMembersServiceImpl implements MyPageMembersService{
 
 	@Override
 	public int deleteMyPageMembers(Members input) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		int result=0;
+		
+		try {
+			
+			sqlSession.update("MyPageBookingNoMapper.unsetforMyPageBookingNo",input);
+			sqlSession.update("MyPageQnaMapper.unsetforMyPageQna",input);
+			sqlSession.update("ChoiceMovieMapper.unsetforMyPageChoiceMovie",input);
+			sqlSession.update("FavTheaterMapper.unsetforFavTheater",input);
+			sqlSession.update("MyPageStarCommentMapper.unsetforMyPageStarComment",input);
+			
+			result=sqlSession.delete("MyPageMembersMapper.deleteItem",input);
+		}catch(NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("삭제된 데이터가 없습니다.");
+		}catch(Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 삭제에 실패했습니다.");
+		}
+		return result;
 	}
 
 	//이메일 중복검사를 위한 count메서드

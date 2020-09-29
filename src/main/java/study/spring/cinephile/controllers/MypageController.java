@@ -172,8 +172,6 @@ public class MypageController {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 세션 가져옴
 		
-		log.error(user_pw+" "+user_email+" "+phone+" "+postcode+" "+addr+" "+addr_detail+"asas");
-		
 		Members input=new Members();
 		input.setUser_pw(user_pw);
 		input.setUser_email(user_email);
@@ -521,10 +519,24 @@ public class MypageController {
 		
 	}
 	
-	@RequestMapping(value="/mypage/withdrawal-(2).do",method=RequestMethod.GET) //마이페이지 > 회원탈퇴페이지3
-	public String withdrawal2(Model model) {
+	@RequestMapping(value="/mypage/withdrawal-(2).do",method= RequestMethod.POST) //마이페이지 > 회원탈퇴페이지3
+	public ModelAndView withdrawal2(Model model,HttpServletRequest request) {
 		
-		return "mypage/withdrawal-(2)";
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 객체 가져옴
+		
+		Members input=new Members();
+		input.setMembers_id(mySession.getMembers_id());
+		
+		try {
+			myPageMembersService.deleteMyPageMembers(input);
+			session.removeAttribute("loggedIn");//회원정보 수정 시 로그아웃
+			return new ModelAndView("mypage/withdrawal-(2)");
+		} catch (Exception e) {
+			return webHelper.redirect(contextPath+"/mypage/mypagemain.do","탈퇴에 실패했습니다. 관리자에게 문의하세요.");
+		}
+		
+
 	}
 
 

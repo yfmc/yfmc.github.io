@@ -49,5 +49,8 @@
 	where members_id=#{members_id} and theater_id=#{theater_id}
 	</select>
 	
+	<update id="unsetforFavTheater" parameterType="study.spring.cinephile.model.FavTheater">
+	update fav_theater set members_id=null where members_id=#{members_id}
+	</update>
 	
 </mapper>

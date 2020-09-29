@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MyPageStarCommentMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시 -->
+	<resultMap id="myPageStarCommentMapperMap" type="study.spring.cinephile.model.MyPageStarComment">
+	<result property="comment_star_id" column="comment_star_id" />
+	<result property="members_id" column="members_id" />
+	<result property="movie_id" column="movie_id" />
+	<result property="comment" column="comment"/>
+	<result property="comment_date" column="comment_date"/>
+	<result property="star_comment" column="star_comment"/>
+	<result property="edit_date" column="edit_date"/>
+	</resultMap>
+	
+	<update id="unsetforMyPageStarComment" parameterType="study.spring.cinephile.model.MyPageStarComment">
+	update star_comment set members_id=null where members_id=#{members_id}
+	</update>
+	
+	
+</mapper>

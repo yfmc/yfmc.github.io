@@ -52,5 +52,8 @@
 	</where>
 	</select>
 
+	<update id="unsetforMyPageQna" parameterType="study.spring.cinephile.model.MyPageQna">
+	update qna set members_id=null where members_id=#{members_id}
+	</update>
 	
 </mapper>
