@@ -40,11 +40,11 @@ public class MyPageMembersServiceImpl implements MyPageMembersService{
 		int result=0;
 		
 		try {
-			
-			sqlSession.update("MyPageBookingNoMapper.unsetforMyPageBookingNo",input);
-			sqlSession.update("MyPageQnaMapper.unsetforMyPageQna",input);
-			sqlSession.update("ChoiceMovieMapper.unsetforMyPageChoiceMovie",input);
-			sqlSession.update("FavTheaterMapper.unsetforFavTheater",input);
+			sqlSession.delete("MyPageBookingMapper.unsetMyPageBooking",input);
+			sqlSession.delete("MyPageBookingNoMapper.unsetforMyPageBookingNo",input);
+			sqlSession.delete("MyPageQnaMapper.unsetforMyPageQna",input);
+			sqlSession.delete("ChoiceMovieMapper.unsetforMyPageChoiceMovie",input);
+			sqlSession.delete("FavTheaterMapper.unsetforFavTheater",input);
 			sqlSession.update("MyPageStarCommentMapper.unsetforMyPageStarComment",input);
 			
 			result=sqlSession.delete("MyPageMembersMapper.deleteItem",input);

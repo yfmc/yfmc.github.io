@@ -12,9 +12,9 @@
 	<result property="timetable_id" column="timetable_id"/>
 	</resultMap>
 	
-	<update id="unsetforMyPageBookingNo" parameterType="study.spring.cinephile.model.MyPageBookingNo">
-	update bookingno set members_id=null where members_id=#{members_id}
-	</update>
+	<delete id="unsetforMyPageBookingNo" parameterType="study.spring.cinephile.model.MyPageBookingNo">
+	delete from bookingno where members_id=#{members_id}
+	</delete>
 	
 	
 </mapper>

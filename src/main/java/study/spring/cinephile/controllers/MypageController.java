@@ -528,6 +528,7 @@ public class MypageController {
 		Members input=new Members();
 		input.setMembers_id(mySession.getMembers_id());
 		
+		
 		try {
 			myPageMembersService.deleteMyPageMembers(input);
 			session.removeAttribute("loggedIn");//회원정보 수정 시 로그아웃

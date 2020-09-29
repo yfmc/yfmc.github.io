@@ -51,7 +51,7 @@
 	
 	</delete>
 	
-	<update id="unsetforMyPageChoiceMovie" parameterType="study.spring.cinephile.model.ChoiceMovie">
-	update fav_movie set members_id=null where members_id=#{members_id}
-	</update>
+	<delete id="unsetforMyPageChoiceMovie" parameterType="study.spring.cinephile.model.ChoiceMovie">
+	delete from fav_movie where members_id=#{members_id}
+	</delete>
 </mapper>
