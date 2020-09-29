@@ -20,7 +20,7 @@
                     인증번호를 입력해 주세요. <span id="timer"></span>
                 </p>
       
-                <form id="code_form" method="get" action="${pageContext.request.contextPath}/account/03-emailCode_ok" >
+                <form id="code_form" <%-- method="get" action="${pageContext.request.contextPath}/account/03-emailCode_ok" --%> >
                 <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
                 <div class="variCode">
                         <div class="input-group">

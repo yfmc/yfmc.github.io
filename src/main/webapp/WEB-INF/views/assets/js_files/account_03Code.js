@@ -23,12 +23,25 @@ $(function(){
 	}, 1000); 
 	
 	
-	$('#code_form').submit(function(){
-		
+	$('#code_form').submit(function(e){
+		e.preventDefault();
+		var user_email= $('#user_email').val();
 		if($('#code_check').val() == ""){
 			alert("인증번호를 입력하세요");
 			$('#code_check').focus();
 			return false;
+		}else{
+			$.post("../account/03-emailCode_oks",{code_check:$('#code_check').val()}, function(req){
+				if(req.item.code != $('#code_check').val()){
+					alert("코드가 일치하지 않습니다.");
+					$('#code_check').val("");
+					$('#code_check').focus();
+					return false;
+				}else{
+					alert("코드가 일치합니다.");
+					window.location = "../account/04-Agree.do?user_email="+user_email;
+				}
+			});
 		}
 
 	});

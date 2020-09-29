@@ -42,7 +42,7 @@ $(function(){
 			  //[비밀번화 확인]필수 +특정항목과 일치
 			  check_pw:{required:true, equalTo:"#user_pw"},
 			  //[이름]필수 + 한글입력
-			  user_name:{required:true, kor:true},
+			  user_name:{required:true,minlength:2, maxlength:4, kor:true},
 			  //[생년월일]필수 + 날짜형식
 			  birthdate:{required:true, sixnum:true},
 			  //[성별]필수
@@ -76,6 +76,8 @@ $(function(){
 			  	  },
 			  user_name:{
 				  required:"이름을 입력해주세요.",
+				  minlength:"이름은 2자 이상 부터 가능합니다.",
+				  maxlength:"이름은 4자까지 입력가능 합니다.",
 				  kor:"이름은 한글만 입력가능합니다."
 			  	  },
 			  birthdate:{
@@ -91,7 +93,9 @@ $(function(){
 		  }
 	   });//end validate
 	
-	
+	   	$("#user_id").change(function(){
+	   		$("input[name=checked_id]").val("n");
+	   	});
         	   /* 버튼 클릭시 이벤트 */
        		$("#id_uniq_check").click(function(){
        			//입력값을 취득하고, 내용의 존재여부를 검사한다.
@@ -115,7 +119,7 @@ $(function(){
        				$("#user_id").focus();
        				return false;
        			}else{
-       				$("input[name=checked_id]").val("y");
+       				$("input[name=checked_id]").val(user_id_val);
        			}
        			
        			//위의 if문을 무사히 통과했다면 내용이 존재한다는 의미이므로,
@@ -141,7 +145,7 @@ $(function(){
        			
        			/* 중복검사를 하지 않고 회원가입 버튼을 눌렀을 경우 처리 */
        			$("#btn_submit").click(function(){
-       				if($("#user_id").val() != "" && $("input[name=checked_id]").val()==""){
+       				if($("#user_id").val() != "" && $("input[name=checked_id]").val()=="" || $("input[name=checked_id]").val()!= $("#user_id").val()){
        					alert("아이디 중복확인 버튼을 눌러주세요.");
        					$(this).focus(); //<-- 왜 안먹힘???
        					return false;
