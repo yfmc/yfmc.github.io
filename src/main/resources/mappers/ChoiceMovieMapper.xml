@@ -26,7 +26,7 @@
 	and members_id=#{members_id}
 	</where>
 	
-	order by liked_time desc
+	order by fav_movie_id desc
 	
 	<if test="listCount>0">
 		limit #{offset},#{listCount}
@@ -42,4 +42,12 @@
 		</where>
 	
 	</select>
+	
+	<delete id="deleteItem" parameterType="study.spring.cinephile.model.ChoiceMovie">
+	delete from fav_movie
+	<where>
+	members_id=#{members_id} and fav_movie_id=#{fav_movie_id}
+	</where>
+	
+	</delete>
 </mapper>

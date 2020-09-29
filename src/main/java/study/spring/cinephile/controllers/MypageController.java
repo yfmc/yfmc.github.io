@@ -250,6 +250,29 @@ public class MypageController {
 		return new ModelAndView("mypage/choicelist");
 	}
 	
+	@RequestMapping(value="/mypage/choice_delete.do",method=RequestMethod.GET)
+	public ModelAndView choice_delete(Model model,HttpServletRequest request,
+			@RequestParam(value="fav_movie_id",defaultValue="0") int fav_movie_id) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		if(fav_movie_id==0) {
+			return webHelper.redirect(null, "잘못된 접근입니다.");
+		}
+		
+		ChoiceMovie input=new ChoiceMovie();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setFav_movie_id(fav_movie_id);
+		
+		try {
+			choiceMovieService.deleteChoiceMovie(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, "삭제에 실패했습니다. 관리자에게 문의하세요.");
+		}
+		
+		return webHelper.redirect(contextPath+"/mypage/choicelist.do", "좋아한 영화 목록에서 삭제되었습니다.");
+	}
+	
 	@RequestMapping(value="/mypage/inquirylist.do",method=RequestMethod.GET) //마이페이지 > 나의문의내역페이지
 	public ModelAndView inquirylist(Model model,HttpServletRequest request,
 			@RequestParam(value="page",defaultValue="1") int nowPage) {
