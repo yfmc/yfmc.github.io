@@ -204,5 +204,6 @@
 <!-- js 파일 적용 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js_files/booking_time.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/branch4.js"></script>
 
 <%@ include file="../_inc/footer.jsp"%>

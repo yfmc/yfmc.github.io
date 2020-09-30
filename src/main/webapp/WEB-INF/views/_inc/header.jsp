@@ -57,9 +57,9 @@
                         </ul>
                     </li>
                     <li class="nav">
-                        <a href="${pageContext.request.contextPath}/booking/01-booking_time.do" class="mains">예매</a>
+                        <a href="${pageContext.request.contextPath}/booking" class="mains">예매</a>
                         <ul class="subnav">
-                            <li><a href="${pageContext.request.contextPath}/booking/01-booking_time.do">예매하기</a></li>
+                            <li><a href="${pageContext.request.contextPath}/booking">예매하기</a></li>
                             <li><a href="${pageContext.request.contextPath}/timetable">극장별시간표</a></li>
                         </ul>
                     </li>

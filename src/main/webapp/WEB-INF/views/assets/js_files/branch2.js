@@ -445,6 +445,8 @@ function getContextPath() {
 	return contextPath;
 }
 
+console.log(getContextPath());
+
 /* viewname 구하기 */
 function getViewName() {
 	var pathname=location.pathname;
@@ -452,7 +454,7 @@ function getViewName() {
 	return viewname;
 }
 
-console.log(location.pathname);
+console.log(getViewName());
 
 $(function() {
 	// 극장별 상세 페이지에서 각 지역별 극장 목록 노출 기능 구현

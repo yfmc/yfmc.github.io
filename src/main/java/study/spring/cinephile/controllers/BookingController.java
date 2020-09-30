@@ -18,7 +18,7 @@ public class BookingController {
 	String contextPath;
 	
 	/* 01) 상영시간 선택 페이지 */
-	@RequestMapping(value="/booking/01-booking_time.do", method=RequestMethod.GET)
+	@RequestMapping(value="/booking", method=RequestMethod.GET)
 	public String bookingTime() {
 		return "booking/01-booking_time";
 	}

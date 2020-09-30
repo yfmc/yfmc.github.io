@@ -186,20 +186,20 @@
 			<!-- 날짜 선택 버튼 영역 -->
 			<div class="table_header">
 				<div class="week_btn">
-						<a class="btn btn-lg weekday day0"></a>
-						<a class="btn btn-lg weekday day1"></a>
-						<a class="btn btn-lg weekday day2"></a>
-						<a class="btn btn-lg weekday day3"></a>
-						<a class="btn btn-lg weekday day4"></a>
-						<a class="btn btn-lg weekday day5"></a>
-						<a class="btn btn-lg weekday day6"></a>
-						<a class="btn btn-lg weekday day7"></a>
-						<a class="btn btn-lg weekday day8"></a>
-						<a class="btn btn-lg weekday day9"></a>
-						<a class="btn btn-lg weekday day10"></a>
-						<a class="btn btn-lg weekday day11"></a>
-						<a class="btn btn-lg weekday day12"></a>
-						<a class="btn btn-lg weekday day13"></a>
+					<a class="btn btn-lg weekday day0"></a>
+					<a class="btn btn-lg weekday day1"></a>
+					<a class="btn btn-lg weekday day2"></a>
+					<a class="btn btn-lg weekday day3"></a>
+					<a class="btn btn-lg weekday day4"></a>
+					<a class="btn btn-lg weekday day5"></a>
+					<a class="btn btn-lg weekday day6"></a>
+					<a class="btn btn-lg weekday day7"></a>
+					<a class="btn btn-lg weekday day8"></a>
+					<a class="btn btn-lg weekday day9"></a>
+					<a class="btn btn-lg weekday day10"></a>
+					<a class="btn btn-lg weekday day11"></a>
+					<a class="btn btn-lg weekday day12"></a>
+					<a class="btn btn-lg weekday day13"></a>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -338,4 +338,5 @@
 <script src="${pageContext.request.contextPath}/assets/js_files/branch.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/branch4.js"></script>
 <%@ include file="../_inc/footer.jsp"%>
