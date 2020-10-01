@@ -16,5 +16,13 @@
 	where b.members_id=m.members_id and b.members_id=#{members_id})
 	</delete>
 	
+	<delete id="unsetMyPageBooking2" parameterType="study.spring.cinephile.model.MyPageBooking">
+	delete from booking
+	<where>
+	booking_no=
+	(select distinct bn.booking_no from bookingno bn,timetable t where bn.members_id=#{members_id} and 
+	bn.timetable_id=(select timetable_id from timetable where movie_id=#{movie_id}))
+	</where>
+	</delete>
 	
 </mapper>

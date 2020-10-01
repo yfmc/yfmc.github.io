@@ -21,12 +21,14 @@ import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.ChoiceMovie;
 import study.spring.cinephile.model.FavTheater;
 import study.spring.cinephile.model.Members;
+import study.spring.cinephile.model.MyPageBookingList;
 import study.spring.cinephile.model.MyPageQna;
 import study.spring.cinephile.model.PasswordOk;
 import study.spring.cinephile.model.Theater2;
 import study.spring.cinephile.service.ChoiceMovieService;
 import study.spring.cinephile.service.FavTheaterService;
 import study.spring.cinephile.service.MembersService;
+import study.spring.cinephile.service.MyPageBookingListService;
 import study.spring.cinephile.service.MyPageMembersService;
 import study.spring.cinephile.service.MyPageQnaService;
 import study.spring.cinephile.service.PasswordOkService;
@@ -49,6 +51,7 @@ public class MypageController {
 	@Autowired MyPageMembersService myPageMembersService;
 	@Autowired ChoiceMovieService choiceMovieService;
 	@Autowired MyPageQnaService myPageQnaService;
+	@Autowired MyPageBookingListService myPageBookingListService;
 	
 	//필요한 객체들 주입
 	
@@ -75,12 +78,18 @@ public class MypageController {
 		
 		//자주가는 영화관 목록을 불러오는 과정
 		
+		
+		MyPageBookingList bookinginput=new MyPageBookingList();
+		bookinginput.setMembers_id(mySession.getMembers_id());
+		List<MyPageBookingList> bookingoutput=null;
+		
 		ChoiceMovie choiceinput=new ChoiceMovie();
 		choiceinput.setMembers_id(mySession.getMembers_id());
 		List<ChoiceMovie> choiceoutput=null;
 		
 		try {
 			choiceoutput=choiceMovieService.getChoiceMovieList(choiceinput);
+			bookingoutput=myPageBookingListService.getMyPageBookingList(bookinginput);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -89,17 +98,67 @@ public class MypageController {
 		
 		model.addAttribute("output",output);
 		model.addAttribute("choiceoutput",choiceoutput);
+		model.addAttribute("bookingoutput",bookingoutput);
 		
 		return new ModelAndView("mypage/mypagemain");
 	}
 	
 	@RequestMapping(value="/mypage/bookinglist.do",method=RequestMethod.GET) //마이페이지 > 예매내역페이지
-	public String bookinglist(Model model,HttpServletRequest request) {
+	public ModelAndView bookinglist(Model model,HttpServletRequest request,
+			@RequestParam(value="page",defaultValue="1") int nowPage) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		int totalCount=0;
+		int listCount=5;
+		int pageCount=5;
+		
+		
+		MyPageBookingList input=new MyPageBookingList();
+		input.setMembers_id(mySession.getMembers_id());
+		
+		List<MyPageBookingList> output=null;
+		PageData pageData=null;
+		
+		try {
+			totalCount=myPageBookingListService.getMyPageBookingListCount(input);
+			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
+			
+			MyPageBookingList.setOffset(pageData.getOffset());
+			MyPageBookingList.setListCount(pageData.getListCount());
+			
+			output=myPageBookingListService.getMyPageBookingList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null,e.getLocalizedMessage());
+		}
+		
 		model.addAttribute("my_session",mySession);
-		return "mypage/bookinglist";
+		model.addAttribute("output",output);
+		model.addAttribute("pageData",pageData);
+		return new ModelAndView("mypage/bookinglist");
+	}
+	
+	@RequestMapping(value="/mypage/mybooking_delete.do",method=RequestMethod.GET)
+	public ModelAndView mybooking_delete(Model model,HttpServletRequest request,
+			@RequestParam(value="movie_id",defaultValue="0") int movie_id) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		if(movie_id==0) {
+			return webHelper.redirect(null, "잘못된 접근입니다.");
+		}
+		
+		MyPageBookingList input=new MyPageBookingList();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setMovie_id(movie_id);
+		
+		try {
+			myPageBookingListService.deleteMyPageBookingList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		return webHelper.redirect(contextPath+"/mypage/bookinglist.do", "예매가 취소되었습니다.");
 	}
 	
 	@RequestMapping(value="/mypage/changeinfo-(1).do",method=RequestMethod.GET) //마이페이지 > 회원정보수정페이지1
