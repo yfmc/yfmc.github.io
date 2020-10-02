@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TimetableMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="timetableMap" type="study.spring.cinephile.model.Timetable">
+    	<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="scrnDay" column="scrn_day" />
+        <result property="scrnStart" column="scrn_start" />
+        <result property="scrnEnd" column="scrn_end" />
+        <result property="roomNo" column="room_no" />
+        <result property="seatCount" column="seat_count" />
+        <result property="movieId" column="movie_id" />
+        <result property="theaterId" column="theater_id" />
+        <!-- inner join movie -->
+        <result property="title" column="title" />
+        <result property="ageLimit" column="age_limit" />
+    </resultMap>
+
+	<!-- 다중행 조회를 위한 기능 정의 (특정 날짜, 지점의 상영 중인 영화 목록 조회) -->
+	<select id="selectMovieList" parameterType="study.spring.cinephile.model.Timetable" resultMap="timetableMap">
+		select t.movie_id, m.title, m.age_limit
+		from timetable t
+		inner join movie m on t.movie_id=m.movie_id
+		where t.theater_id=#{theaterId} and t.scrn_day=#{scrnDay}
+		group by t.movie_id;
+	</select>
+	
+	<!-- 데이터 수를 조회하기 위한 기능 정의 (특정 날짜, 지점의 상영 중인 영화 개수 조회) -->
+	<select id="countMovie" parameterType="study.spring.cinephile.model.Timetable" resultType="int">
+		select count(moviegroup.movie_id) as count from (select movie_id from timetable where theater_id=#{theaterId} and scrn_day=#{scrnDay} group by movie_id) as moviegroup;
+	</select>
+	
+	<!-- 다중행 조회를 위한 기능 정의 (특정 날짜, 지점, 영화의 상영시간표 목록 조회) -->
+	<select id="selectTimetableList" parameterType="study.spring.cinephile.model.Timetable" resultMap="timetableMap">
+		select m.title, t.scrn_start, t.scrn_end, t.room_no, t.seat_count
+		from timetable t
+		inner join movie m on t.movie_id=m.movie_id
+		where t.theater_id=${theaterId} and t.scrn_day=#{scrnDay} and t.movie_id=#{movieId};
+	</select>
+	
+	<!-- 데이터 수를 조회하기 위한 기능 정의 (특정 날짜, 지점 영화의 상영시간표 개수 조회) -->
+	<select id="countTable" parameterType="study.spring.cinephile.model.Timetable" resultType="int">
+		select count(*) from timetable where theater_id=${theaterId} and scrn_day=#{scrnDay} and movie_id=#{movieId};
+	</select>
+	
+</mapper>

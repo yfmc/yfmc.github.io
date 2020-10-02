@@ -44,13 +44,28 @@ $(function() {
 			var today=new Date();
 			today.setDate(today.getDate()-dayno+i);
 			
-			// 월, 일 각각 리턴 받기
+			// 년, 월, 일 각각 리턴 받기
+			var yy=today.getFullYear();
 			var mm=today.getMonth()+1;	// 0부터 시작하므로 1을 더해준다
 			var dd=today.getDate();
 			
 			// 출력 형식
 			var printday=mm+"/"+dd+"<br />"+days[i];
 			
+			// data-date 입력 형식
+			if (mm<10) {
+				mm="0"+mm;
+			}
+			if (dd<10) {
+				dd="0"+dd;
+			}
+			var dataday=yy+"-"+mm+"-"+dd;
+			
+			// data-date 값에 날짜 넣기
+			var getdata=$(".day"+i).data("date");
+			$(".day"+i).attr("data-date", dataday);
+			
+			// html에 날짜 출력
 			$(".day"+i).html(printday);
 			$(".day"+i).addClass("disabled");
 			
@@ -66,13 +81,28 @@ $(function() {
 			var today=new Date();
 			today.setDate(today.getDate()-dayno+i);
 			
-			// 월, 일 각각 리턴 받기
+			// 년, 월, 일 각각 리턴 받기
+			var yy=today.getFullYear();
 			var mm=today.getMonth()+1;	// 0부터 시작하므로 1을 더해준다
 			var dd=today.getDate();
 			
 			// 출력 형식
 			var printday=mm+"/"+dd+"<br />"+days[i];
 			
+			// data-date 입력 형식
+			if (mm<10) {
+				mm="0"+mm;
+			}
+			if (dd<10) {
+				dd="0"+dd;
+			}
+			var dataday=yy+"-"+mm+"-"+dd;
+			
+			// data-date 값에 날짜 넣기
+			var getdata=$(".day"+i).data("date");
+			$(".day"+i).attr("data-date", dataday);
+			
+			// html에 날짜 출력
 			$(".day"+i).html(printday);
 			
 			/* 예매 페이지의 경우 출력 날짜 css 적용 */
@@ -85,13 +115,28 @@ $(function() {
 			// 날짜 설정 하기
 			var today=new Date();
 			
-			// 월, 일 각각 리턴 받기
+			// 년, 월, 일 각각 리턴 받기
+			var yy=today.getFullYear();
 			var mm=today.getMonth()+1;	// 0부터 시작하므로 1을 더해준다
 			var dd=today.getDate();
 			
 			// 출력 형식
 			var printday=mm+"/"+dd+"<br />"+days[i];
 			
+			// data-date 입력 형식
+			if (mm<10) {
+				mm="0"+mm;
+			}
+			if (dd<10) {
+				dd="0"+dd;
+			}
+			var dataday=yy+"-"+mm+"-"+dd;
+			
+			// data-date 값에 날짜 넣기
+			var getdata=$(".day"+i).data("date");
+			$(".day"+i).attr("data-date", dataday);
+						
+			// html에 날짜 출력			
 			$(".day"+dayno).html(printday);
 			
 			/* 예매 페이지의 경우 출력 날짜 css 적용 */
@@ -106,5 +151,4 @@ $(function() {
 	$(".day"+6).css("color", "blue");
 	$(".day"+7).css("color", "red");
 	$(".day"+13).css("color", "blue");
-
 });
