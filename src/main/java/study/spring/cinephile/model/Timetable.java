@@ -22,6 +22,6 @@ public class Timetable {
 	private int ageLimit;		// 관람가 (0: 전체, 1: 12세, 2: 15세, 3: 청불)
 	
 	// theater inner join columns
-	private int provNo;
+	private int provNo;			// 지역번호
 	
 }
