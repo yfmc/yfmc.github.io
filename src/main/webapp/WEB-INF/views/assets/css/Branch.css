@@ -223,6 +223,7 @@
 
 .table_head {
     background-color:#eee;
+    padding-bottom: 50px;
 }
 
 /* 날짜 선택 일주일 */
@@ -302,7 +303,7 @@
 
 /* 영화 시간 버튼 */
 .film_time > .btn {
-    width: 100px;
+    width: 110px;
     margin-right: 10px;
 }
 

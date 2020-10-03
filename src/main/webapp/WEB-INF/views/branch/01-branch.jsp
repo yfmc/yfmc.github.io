@@ -290,8 +290,27 @@
 			
 			<!-- 상영 영화 목록 -->
 			<div id="film_list">
-				
+ 
+				<c:forEach var="i" begin="0" end="${movieCount-1}">
+					<div class="film_time film${i} &nbsp; ${movieList[i].movieId}" data-id="${movieList[i].movieId}" data-count="${movieCount}">						
+						<c:choose>
+							<c:when test="${movieList[i].ageLimit==0}">
+								<h3><span class="label label-success">전체</span> ${movieList[i].title}</h3>
+							</c:when>
+							<c:when test="${movieList[i].ageLimit==1}">
+								<h3><span class="label label-primary">12</span> ${movieList[i].title}</h3>
+							</c:when>
+							<c:when test="${movieList[i].ageLimit==2}">
+								<h3><span class="label label-warning">15</span> ${movieList[i].title}</h3>
+							</c:when>
+							<c:when test="${movieList[i].ageLimit==3}">
+								<h3><span class="label label-danger">청불</span> ${movieList[i].title}</h3>
+							</c:when>
+						</c:choose>						
+					</div>
+				</c:forEach>
 			</div>
+
 		</div>
 	</div>
 </div>
@@ -310,5 +329,4 @@
 <script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch4.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/timetable.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js_files/timetable2.js"></script>
 <%@ include file="../_inc/footer.jsp"%>

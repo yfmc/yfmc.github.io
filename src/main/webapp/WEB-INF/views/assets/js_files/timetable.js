@@ -15,6 +15,44 @@ $(function() {
 		return tId;
 	}
 	
+	/* 날짜 클릭 이전 기본 출력을 위한 상영시간표 기본값 설정 */
+	var today=new Date();
+	
+	// 년, 월, 일 각각 리턴 받기
+	var yy=today.getFullYear();
+	var mm=today.getMonth()+1;	// 0부터 시작하므로 1을 더해준다
+	var dd=today.getDate();
+	
+	// scrnDay 기본값
+	var setDate=yy+"-"+mm+"-"+dd;
+	
+	// 반복할 영화 개수 추출
+	var movieCount=$(".film_time").attr("data-count");
+	
+	for (var k=0; k<movieCount; k++) {
+		// movieId 값 추출
+		var movieId=$(".film"+k).attr("data-id");
+
+		$.get('timetablejson2?theaterId='+getTheaterId()+'&scrnDay='+setDate+"&movieId="+movieId, function(req) {
+			var btns="";
+			for (var i=0; i<req.count; i++) {
+				var scrnStart=req.tableList[i].scrnStart;
+				var scrnEnd=req.tableList[i].scrnEnd;
+				var seatCount=244-req.tableList[i].seatCount;
+				var roomNo=req.tableList[i].roomNo;
+					
+				btns+="<a href='booking' ";
+				btns+="class='btn btn-lg btn-default' data-toggle='tooltip' ";
+				btns+="data-placement='bottom' title='종료 "+scrnEnd;
+				btns+="'> <span class='start_time'>"+scrnStart;
+				btns+="</span> <span class='seats'>"+seatCount;
+				btns+=" / 252</span> <span class='room_no'>"+roomNo+"관</span></a>";
+			}
+
+			$("."+req.movieId).append(btns);
+		});
+	}
+
 	/* 클릭 시 상영날짜 추출 및 해당 상영시간표 출력 */
 	var scrnDay="";
 	
@@ -84,12 +122,13 @@ $(function() {
 						btns+="</span> <span class='seats'>"+seatCount;
 						btns+=" / 252</span> <span class='room_no'>"+roomNo+"관</span></a>";
 					}
-										
+					
 					/* <div> 안에 <h3> 블록(관람가+영화제목), 상영시간표 버튼 추가 */
 					div.append(h3).append(btns);
 					h3.append(ageLimit);
 					h3.append(" "+title);
-
+					
+					$('[data-toggle="tooltip"]').tooltip();
 				} // end for movieCount
 			} // end else
 		}); // end get movieList
