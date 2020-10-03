@@ -45,7 +45,10 @@ public class TheaterController {
 	
 	/* 극장정보 상세 페이지 */
 	@RequestMapping(value={"/branch", "/branch.do", "/timetable", "/timetable.do"}, method=RequestMethod.GET)
-	public ModelAndView branch(HttpServletRequest request, Model model, @RequestParam (value="provNo", defaultValue="0") int provNo, @RequestParam(value="theaterId", defaultValue="0") int theaterId) {
+	public ModelAndView branch(HttpServletRequest request, Model model,
+			@RequestParam (value="provNo", defaultValue="0") int provNo,
+			@RequestParam(value="theaterId", defaultValue="0") int theaterId) {
+		
 		/* 1) URL get 파라미터가 없을 경우 default 페이지로 '롯데시네마 가산디지털' 설정 */
 		if (provNo==0 || theaterId==0) {
 			// 데이터 기본값으로 설정하기

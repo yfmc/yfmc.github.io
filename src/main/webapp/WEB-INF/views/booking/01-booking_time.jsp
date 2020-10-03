@@ -37,68 +37,112 @@
 			<div class="choose_provincial">
 				<ul>
 					<li>자주 가는 영화관</li>
-					<li id="seoul2">서울</li>
-					<li id="gyeonggi2">경기</li>
-					<li id="incheon2">인천</li>
-					<li id="gangwon2">강원</li>
-					<li id="daejeon2">대전</li>
-					<li id="chungcheong2">충청/세종</li>
-					<li id="gwangju2">광주</li>
-					<li id="jeolla2">전라</li>
-					<li id="daegu2">대구/경북</li>
-					<li id="busan2">부산/울산</li>
-					<li id="gyeongnam2">경남</li>
-					<li id="jeju2">제주</li>
+					<%-- get 파라미터 존재 시 css 처리 --%>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==10}">
+							<li id="seoul2" style="background-color: white;">서울</li>
+						</c:when>
+						<c:otherwise>
+							<li id="seoul2">서울</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==20}">
+							<li id="gyeonggi2" style="background-color: white;">경기</li>
+						</c:when>
+						<c:otherwise>
+							<li id="gyeonggi2">경기</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==30}">
+							<li id="incheon2" style="background-color: white;">인천</li>
+						</c:when>
+						<c:otherwise>
+							<li id="incheon2">인천</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==40}">
+							<li id="gangwon2" style="background-color: white;">강원</li>
+						</c:when>
+						<c:otherwise>
+							<li id="gangwon2">강원</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==50}">
+							<li id="daejeon2" style="background-color: white;">대전</li>
+						</c:when>
+						<c:otherwise>
+							<li id="daejeon2">대전</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==60}">
+							<li id="chungcheong2" style="background-color: white;">충청/세종</li>
+						</c:when>
+						<c:otherwise>
+							<li id="chungcheong2">충청/세종</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==70}">
+							<li id="gwangju2" style="background-color: white;">광주</li>
+						</c:when>
+						<c:otherwise>
+							<li id="gwangju2">광주</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==80}">
+							<li id="jeolla2" style="background-color: white;">전라</li>
+						</c:when>
+						<c:otherwise>
+							<li id="jeolla2">전라</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==90}">
+							<li id="daegu2" style="background-color: white;">대구/경북</li>
+						</c:when>
+						<c:otherwise>
+							<li id="daegu2">대구/경북</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==100}">
+							<li id="busan2" style="background-color: white;">부산/울산</li>
+						</c:when>
+						<c:otherwise>
+							<li id="busan2">부산/울산</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==110}">
+							<li id="gyeongnam2" style="background-color: white;">경남</li>
+						</c:when>
+						<c:otherwise>
+							<li id="gyeongnam2">경남</li>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${output[0].getProvNo()==120}">
+							<li id="jeju2" style="background-color: white;">제주</li>
+						</c:when>
+						<c:otherwise>
+							<li id="jeju2">제주</li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</div>
 			
 			<!-- 지점 선택 -->
 			<div class="choose_branch">
 				<ul id="branch_list">
-					<li>CGV 강남</li>
-					<li>롯데시네마 영등포</li>
-					<li>메가박스 송파파크하비오</li>
-					<li>메가박스 코엑스</li>
-					<li>CGV 압구정</li>
-					<li>CGV 등촌</li>
-					<li>메가박스 군자</li>
-					<li>롯데시네마 신도림</li>
-					<li>롯데시네마 서울대입구</li>
-					<li>CGV 하계</li>
-					<li>CGV 건대입구</li>
-					<li>메가박스 창동</li>
-					<li>롯데시네마 강동</li>
-					<li>롯데시네마 도곡</li>
-					<li>메가박스 아트나인</li>
-					<li>CGV 홍대</li>
-					<li>CGV 신촌아트레온</li>
-					<li>롯데시네마 홍대입구</li>
-					<li>메가박스 신촌</li>
-					<li>CGV 왕십리</li>
-					<li>CGV 성신여대입구</li>
-					<li>롯데시네마 청량리</li>
-					<li>CGV 강남</li>
-					<li>롯데시네마 영등포</li>
-					<li>메가박스 송파파크하비오</li>
-					<li>메가박스 코엑스</li>
-					<li>CGV 압구정</li>
-					<li>CGV 등촌</li>
-					<li>메가박스 군자</li>
-					<li>롯데시네마 신도림</li>
-					<li>롯데시네마 서울대입구</li>
-					<li>CGV 하계</li>
-					<li>CGV 건대입구</li>
-					<li>메가박스 창동</li>
-					<li>롯데시네마 강동</li>
-					<li>롯데시네마 도곡</li>
-					<li>메가박스 아트나인</li>
-					<li>CGV 홍대</li>
-					<li>CGV 신촌아트레온</li>
-					<li>롯데시네마 홍대입구</li>
-					<li>메가박스 신촌</li>
-					<li>CGV 왕십리</li>
-					<li>CGV 성신여대입구</li>
-					<li>롯데시네마 청량리</li>
+					<c:forEach var="item" items="${output}" varStatus="status">
+						<li class="branch_btn" data-id="${item.theaterId}">${item.brand}&nbsp;${item.branch}</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>
@@ -111,13 +155,7 @@
 			</div>
 			<!-- 영화 선택 -->
 			<div class="choose_film">
-				<ul>
-					<li><span class="label label-warning">15</span> 강철비2 : 정상회담</li>
-					<li><span class="label label-warning">15</span> #살아있다</li>
-					<li><span class="label label-warning">15</span> 반도</li>
-					<li><span class="label label-success">전체</span> 알라딘</li>
-					<li><span class="label label-success">전체</span> 온워드 : 단 하루의 기적</li>
-				</ul>
+				<p style="text-align: center;">영화관을 선택해주세요</p>
 			</div>
 		</div>
 		<!-- 날짜, 시간 선택 -->
@@ -145,53 +183,40 @@
 			</div>
 			<!-- 시간 선택 -->
 			<div class="choose_time">
-				<div class="chosen_film">
-					<span class="label label-warning">15</span> 강철비2 : 정상회담
-				</div>
-				<ul>
-					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
-					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
-					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
-					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
-					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
-					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
-					<li><span class="start_time">15:15</span><br /><span class="seats">89 / 132</span> <span class="room_no">1관</span></li>
-					
-				</ul>
+				<p style="text-align: center;">영화, 날짜를 선택해주세요</p>
 			</div>
-            <!-- 다음 단계 버튼 -->
-            <div class="go_to_next" id="next-btn">
-                <a href=""><i class="fas fa-hand-point-right"></i><br />좌석선택</a>
+            <!-- 좌석선택 버튼 -->
+            <div class="button_area">
+            	<button id="go_to_next" class="go_to_next"><i class="fas fa-hand-point-right"></i><br />좌석선택</button>
             </div>
-            <!-- 로그인 modal 창 -->
-            <div class="modal" id="modal-login">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <!-- head -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">로그인</h4>
-                    </div>
-                    <!-- body -->
-                    <div class="modal-body">
-                    	<span class="modal-msg">로그인하셔야 예매가 가능합니다</span>
-                    	<form id="login_modal">
-	                        <div class="form-group" style="margin-top: 10px">
-	                            <label for="user_id">아이디</label>
-	                            <input type="text" name="user_id" id="user_id" class="form-control" />
-	                            <label for="user_pw">비밀번호</label>
-	                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
-	                        </div>
-	                        <button type="submit" class="btn btn-primary">로그인</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
             <!-- float 마감제 -->
             <div class="clear"></div>
+            <!-- 로그인 modal 창 -->
+            <div class="modal fade" id="modal-login">
+	            <div class="modal-dialog modal-sm">
+	                <div class="modal-content">
+	                    <!-- head -->
+	                    <div class="modal-header">
+	                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	                        <h4 class="modal-title">로그인</h4>
+	                    </div>
+	                    <!-- body -->
+	                    <div class="modal-body">
+	                    	<span class="modal-msg">로그인하셔야 예매가 가능합니다</span>
+	                    	<form id="login_modal">
+		                        <div class="form-group" style="margin-top: 10px">
+		                            <label for="user_id">아이디</label>
+		                            <input type="text" name="user_id" id="user_id" class="form-control" />
+		                            <label for="user_pw">비밀번호</label>
+		                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
+		                        </div>
+		                        <button type="submit" class="btn btn-primary">로그인</button>
+	                        </form>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
         </div>
-
         <!-- float 마감제 -->
         <div class="clear"></div>
     </div>
@@ -202,8 +227,9 @@
 <!-- slick js -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js_files/branch_slick.js"></script>
 <!-- js 파일 적용 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js_files/booking_time.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/booking_time.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/booking_time2.js"></script>
 
 <%@ include file="../_inc/footer.jsp"%>

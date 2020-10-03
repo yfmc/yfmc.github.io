@@ -559,7 +559,7 @@ $(function() {
 	$("#seoul2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.seoul.length; i++) {
-			html+="<li>"+b_json.seoul[i].brand+" "+b_json.seoul[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.seoul[i].brano+">"+b_json.seoul[i].brand+" "+b_json.seoul[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -568,7 +568,7 @@ $(function() {
 	$("#gyeonggi2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gyeonggi.length; i++) {
-			html+="<li>"+b_json.gyeonggi[i].brand+" "+b_json.gyeonggi[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.gyeonggi[i].brano+">"+b_json.gyeonggi[i].brand+" "+b_json.gyeonggi[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -577,7 +577,7 @@ $(function() {
 	$("#incheon2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.incheon.length; i++) {
-			html+="<li>"+b_json.incheon[i].brand+" "+b_json.incheon[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.incheon[i].brano+">"+b_json.incheon[i].brand+" "+b_json.incheon[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -586,7 +586,7 @@ $(function() {
 	$("#gangwon2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gangwon.length; i++) {
-			html+="<li>"+b_json.gangwon[i].brand+" "+b_json.gangwon[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.gangwon[i].brano+">"+b_json.gangwon[i].brand+" "+b_json.gangwon[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -595,7 +595,7 @@ $(function() {
 	$("#daejeon2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.daejeon.length; i++) {
-			html+="<li>"+b_json.daejeon[i].brand+" "+b_json.daejeon[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.daejeon[i].brano+">"+b_json.daejeon[i].brand+" "+b_json.daejeon[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -604,7 +604,7 @@ $(function() {
 	$("#chungcheong2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.chungcheong.length; i++) {
-			html+="<li>"+b_json.chungcheong[i].brand+" "+b_json.chungcheong[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.chungcheong[i].brano+">"+b_json.chungcheong[i].brand+" "+b_json.chungcheong[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -613,7 +613,7 @@ $(function() {
 	$("#gwangju2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gwangju.length; i++) {
-			html+="<li>"+b_json.gwangju[i].brand+" "+b_json.gwangju[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.gwangju[i].brano+">"+b_json.gwangju[i].brand+" "+b_json.gwangju[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -622,7 +622,7 @@ $(function() {
 	$("#jeolla2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.jeolla.length; i++) {
-			html+="<li>"+b_json.jeolla[i].brand+" "+b_json.jeolla[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.jeolla[i].brano+">"+b_json.jeolla[i].brand+" "+b_json.jeolla[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -631,7 +631,7 @@ $(function() {
 	$("#daegu2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.daegu.length; i++) {
-			html+="<li>"+b_json.daegu[i].brand+" "+b_json.daegu[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.daegu[i].brano+">"+b_json.daegu[i].brand+" "+b_json.daegu[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -640,7 +640,7 @@ $(function() {
 	$("#busan2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.busan.length; i++) {
-			html+="<li>"+b_json.busan[i].brand+" "+b_json.busan[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.busan[i].brano+">"+b_json.busan[i].brand+" "+b_json.busan[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -649,7 +649,7 @@ $(function() {
 	$("#gyeongnam2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.gyeongnam.length; i++) {
-			html+="<li>"+b_json.gyeongnam[i].brand+" "+b_json.gyeongnam[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.gyeongnam[i].brano+">"+b_json.gyeongnam[i].brand+" "+b_json.gyeongnam[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");
@@ -658,7 +658,7 @@ $(function() {
 	$("#jeju2").click(function() {
 		var html="";
 		for (var i=0; i<b_json.jeju.length; i++) {
-			html+="<li>"+b_json.jeju[i].brand+" "+b_json.jeju[i].branch+"</li>\n";
+			html+="<li class='branch_btn' data-id="+b_json.jeju[i].brano+">"+b_json.jeju[i].brand+" "+b_json.jeju[i].branch+"</li>\n";
 		}
 		$("#branch_list").html(html);
 		$(".choose_provincial li").css("background-color", "#eee");

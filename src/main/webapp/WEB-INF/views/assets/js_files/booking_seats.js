@@ -114,7 +114,7 @@ $(function() {
 		var is_ok=confirm("상영시간 선택화면으로 돌아가시겠습니까?");
 		
 		if (is_ok) {
-			location.href="01-booking_time.do";
+			location.href="time";
 		}
 	});
 	
@@ -215,7 +215,7 @@ $(function() {
 	/* 활성화된 결제하기 버튼 클릭 시 결제 화면으로 이동 */
 	$("#go_to_next").click(function() {
 		if ($("#go_to_next").hasClass("active")) {
-			location.href="03-booking_payment.do";
+			location.href="payment";
 		}
 	});
 });

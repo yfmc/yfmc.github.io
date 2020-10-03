@@ -363,19 +363,13 @@ a.seat_unable {
 /* 활성화 상태 */
 .go_to_next.active {
 	cursor: pointer;
-	background-color: #4d4d4d;
-	color: #fff;
+	background-color: black;
+	color: white;
+	text-decoration: none;
 }
 
 .go_to_next:focus {
 	outline: none;
-}
-
-.go_to_next.active {
-	cursor: pointer;
-	background-color: black;
-	color: white;
-	text-decoration: none;
 }
 
 .go_to_next .fas {

@@ -3,15 +3,13 @@ document.querySelector('.choose_branch').fakeScroll();
 
 /* jQuery */
 $(function() {
-	// 좌석 선택 클릭 시 로그인 modal 창
-	$("#next-btn").click(function(e) {
-		e.preventDefault();
-		$(this).attr("data-toggle", "modal");
-		$(this).attr("href", "#modal-login");
-	});
-	
-	$("#login-btn").click(function() {
-		location.href="02-booking_seats.do"
+	/* 활성화된 좌석선택 버튼 클릭 시 로그인 modal 창 */
+	$("#go_to_next").click(function(e) {
+		if ($("#go_to_next").hasClass("active")) {
+			e.preventDefault();
+			$(this).attr("data-toggle", "modal");
+			$(this).attr("href", "#modal-login");
+		}
 	});
 	
 	// 로그인 입력값 검사
@@ -32,6 +30,6 @@ $(function() {
 			return false;
 		}
 		
-		location.href="02-booking_seats.do";
+		location.href="booking/seats";
 	});
 });

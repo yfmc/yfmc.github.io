@@ -70,7 +70,7 @@ $(function() {
 			$(".day"+i).addClass("disabled");
 			
 			/* 예매 페이지의 경우 출력 날짜 css 적용 */
-			if (getViewName()=="/booking") {
+			if (getViewName()=="/bookingtime") {
 				$(".day"+i).css("padding-left", "0px").css("padding-right", "0px").css("font-size", "14px");
 			}
 			
@@ -106,7 +106,7 @@ $(function() {
 			$(".day"+i).html(printday);
 			
 			/* 예매 페이지의 경우 출력 날짜 css 적용 */
-			if (getViewName()=="/booking") {
+			if (getViewName()=="/bookingtime") {
 				$(".day"+i).css("padding-left", "0px").css("padding-right", "0px").css("font-size", "14px");
 			}
 		}
@@ -140,7 +140,7 @@ $(function() {
 			$(".day"+dayno).html(printday);
 			
 			/* 예매 페이지의 경우 출력 날짜 css 적용 */
-			if (getViewName()=="/booking") {
+			if (getViewName()=="/bookingtime") {
 				$(".day"+i).css("padding-left", "0px").css("padding-right", "0px").css("font-size", "14px");
 			}
 		}
