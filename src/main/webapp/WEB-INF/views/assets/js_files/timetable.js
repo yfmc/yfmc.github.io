@@ -50,6 +50,7 @@ $(function() {
 			}
 
 			$("."+req.movieId).append(btns);
+			$('[data-toggle="tooltip"]').tooltip();
 		});
 	}
 
