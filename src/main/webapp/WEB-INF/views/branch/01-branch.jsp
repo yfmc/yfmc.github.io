@@ -327,6 +327,5 @@
 <script src="${pageContext.request.contextPath}/assets/js_files/branch.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js_files/branch4.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/timetable.js"></script>
 <%@ include file="../_inc/footer.jsp"%>
