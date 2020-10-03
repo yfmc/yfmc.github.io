@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ChoiceMovieMapper">
+
+	<resultMap id="choiceMovieMap"
+		type="study.spring.cinephile.model.ChoiceMovie">
+		
+		<result property="fav_movie_id" column="fav_movie_id"/>
+		<result property="liked_time" column="liked_time"/>
+		<result property="movie_id" column="movie_id"/>
+		<result property="members_id" column="members_id"/>
+		<result property="opening_date" column="opening_date"/>
+		<result property="title" column="title"/>
+		<result property="poster_link" column="poster_link"/>
+		<result property="star_info" column="star_info"/>
+		<result property="movie_made_year" column="movie_made_year"/>
+		<result property="movie_genre" column="genre"/>
+		<result property="age_limit" column="age_limit"/>
+	</resultMap>
+	
+	<select id="selectList" parameterType="study.spring.cinephile.model.ChoiceMovie" resultMap="choiceMovieMap">
+	select fav_movie_id,liked_time,f.movie_id,members_id,opening_date,title,poster_link,star_info,movie_made_year,movie_genre,age_limit
+	from movie m,fav_movie f
+	<where>
+	m.movie_id=f.movie_id
+	and members_id=#{members_id}
+	</where>
+	
+	order by fav_movie_id desc
+	
+	<if test="listCount>0">
+		limit #{offset},#{listCount}
+	</if>
+	
+	</select>
+
+	<select id="selectCountAll" parameterType="study.spring.cinephile.model.ChoiceMovie" resultType="int">
+	select count(*) from movie m,fav_movie f
+		<where>
+		m.movie_id=f.movie_id
+		and members_id=#{members_id}
+		</where>
+	
+	</select>
+	
+	<delete id="deleteItem" parameterType="study.spring.cinephile.model.ChoiceMovie">
+	delete from fav_movie
+	<where>
+	members_id=#{members_id} and fav_movie_id=#{fav_movie_id}
+	</where>
+	
+	</delete>
+	
+	<delete id="unsetforMyPageChoiceMovie" parameterType="study.spring.cinephile.model.ChoiceMovie">
+	delete from fav_movie where members_id=#{members_id}
+	</delete>
+</mapper>

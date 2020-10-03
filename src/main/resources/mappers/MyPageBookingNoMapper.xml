@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MyPageBookingNoMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시 -->
+	<resultMap id="myPageBookingNoMapperMap" type="study.spring.cinephile.model.MyPageBookingNo">
+	<result property="booking_no" column="booking_no" />
+	<result property="price" column="price"/>
+	<result property="payment" column="payment"/>
+	<result property="booking_date" column="booking_date"/>
+	<result property="members_id" column="members_id"/>
+	<result property="timetable_id" column="timetable_id"/>
+	</resultMap>
+	
+	<delete id="unsetforMyPageBookingNo" parameterType="study.spring.cinephile.model.MyPageBookingNo">
+	delete from bookingno where members_id=#{members_id}
+	</delete>
+	
+	
+</mapper>

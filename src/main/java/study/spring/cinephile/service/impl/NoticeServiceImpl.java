@@ -18,6 +18,9 @@ public class NoticeServiceImpl implements NoticeService {
 	@Autowired
 	SqlSession sqlSession;
 	
+	@Autowired
+	NoticeService noticeService;
+	
 	/**
      * Notice 데이터 상세 조회 (datetime 타입)
      * @param  Notice 조회할 Notice의 일련번호를 담고 있는 Beans
@@ -27,7 +30,7 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public Notice getNoticeItem(Notice input) throws Exception {
 		Notice result = null;
-			
+		
 		try {
 			result = sqlSession.selectOne("NoticeMapper.selectItem", input);
 			
@@ -253,6 +256,22 @@ public class NoticeServiceImpl implements NoticeService {
 			log.error(e.getLocalizedMessage());
 			throw new Exception("데이터 삭제 실패");
 		}
+		
+		return result;
+	}
+	
+	/**
+     * 공지사항 조회수
+     * @param input
+     * @return 공지사항 조회수
+     * @throws Exception
+     */
+	@Override
+	public int viewsUp(Notice input) throws Exception {
+		
+		int result = input.getViews();
+		
+		sqlSession.update("NoticeMapper.viewsUp", input);
 		
 		return result;
 	}

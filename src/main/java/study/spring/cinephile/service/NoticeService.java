@@ -87,4 +87,12 @@ public interface NoticeService {
      * @throws  Exception
      */
     public int deleteNotice(Notice input) throws Exception;
+    
+    /**
+     * 공지사항 조회수
+     * @param input
+     * @return 공지사항 조회수
+     * @throws Exception
+     */
+    public int viewsUp(Notice input) throws Exception;
 }

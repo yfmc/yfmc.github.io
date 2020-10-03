@@ -85,7 +85,7 @@
 		</if>
 	</select>
 	
-	<!-- 데이터 저장을 위한 기능 정의 -->
+	<!-- 공지사항 저장을 위한 기능 정의 -->
 	<insert id="insertItem"
 		parameterType="study.spring.cinephile.model.Notice"
 		useGeneratedKeys="true"
@@ -93,13 +93,13 @@
 		insert into notice (notice_title, notice_content, views, reg_date, edit_date) values (#{notice_title}, #{notice_content}, 0, now(), now());
 	</insert>
 		
-	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<!-- 공지사항 삭제를 위한 기능 정의 -->
 	<delete id="deleteItem"
 		parameterType="study.spring.cinephile.model.Notice">
 		delete from notice where notice_id=#{notice_id}
 	</delete>
 		
-	<!-- 데이터 갱신을 위한 기능 정의 -->
+	<!-- 공지사항 수정을 위한 기능 정의 -->
 	<update id="updateItem"
 		parameterType="study.spring.cinephile.model.Notice">
 		update notice set notice_title=#{notice_title}, notice_content=#{notice_content}, edit_date = now()
@@ -126,4 +126,9 @@
 			</if>
 		</where>
 	</select>
+	
+	<!-- 공지사항 조회수 올리기 -->
+	<update id ="viewsUp" parameterType="study.spring.cinephile.model.Notice">
+		update notice set views = views+1 where notice_id=#{notice_id}
+	</update>
 </mapper>

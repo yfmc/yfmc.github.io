@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MyPageBookingListMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시 -->
+	<resultMap id="myPageBookingListMapperMap" type="study.spring.cinephile.model.MyPageBookingList">
+	<result property="timetable_id" column="timetable_id"/>
+	<result property="scrn_day" column="scrn_day"/>
+	<result property="scrn_start" column="scrn_start"/>
+	<result property="scrn_end" column="scrn_end"/>
+	<result property="room_no" column="room_no"/>
+	<result property="seat_count" column="seat_count"/>
+	<result property="movie_id" column="movie_id"/>
+	<result property="theater_id" column="theater_id"/>
+	<result property="booking_no" column="booking_no"/>
+	<result property="price" column="price"/>
+	<result property="payment" column="payment"/>
+	<result property="booking_date" column="booking_date"/>
+	<result property="members_id" column="members_id"/>
+	<result property="brand" column="brand"/>
+	<result property="branch" column="branch"/>
+	<result property="title" column="title"/>
+	<result property="poster_link" column="poster_link"/>
+	<result property="movie_made_year" column="movie_made_year"/>
+	</resultMap>
+	
+	<select id="selectList" parameterType="study.spring.cinephile.model.MyPageBookingList" resultMap="myPageBookingListMapperMap">
+	select bn.booking_no,price,payment,booking_date,members_id,bn.timetable_id,scrn_day,scrn_start,
+	scrn_end,room_no,seat_count,t.movie_id,t.theater_id,brand,branch,title,poster_link,movie_made_year
+	from bookingno bn,timetable t,movie m,theater th
+	<where>
+	bn.timetable_id=t.timetable_id and t.movie_id=m.movie_id
+	and t.theater_id=th.theater_id
+	and members_id=#{members_id}
+	</where>
+	order by booking_no desc
+	
+	<if test="listCount>0">
+		limit #{offset},#{listCount}
+	</if>
+	</select>
+	
+	<select id="selectCountAll" parameterType="study.spring.cinephile.model.MyPageBookingList" resultType="int">
+	select count(*) from bookingno b,timetable t
+	<where>
+	b.timetable_id=t.timetable_id
+	and members_id=#{members_id}
+	</where>
+	</select>
+	
+	<delete id="deleteItem" parameterType="study.spring.cinephile.model.MyPageBookingList">
+	delete from bookingno
+	<where>
+	members_id=#{members_id} and timetable_id=(select timetable_id from timetable where movie_id=#{movie_id})
+	</where> 
+	</delete>
+	
+	
+</mapper>

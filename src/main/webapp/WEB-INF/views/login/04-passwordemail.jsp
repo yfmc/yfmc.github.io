@@ -10,14 +10,14 @@
             <div id="pwEmail">
                 <p class="info">
                     입력하신 이메일 주소로 인증번호 6자리가 전송되었습니다.
-                    인증번호를 입력해 주세요.
+                    인증번호를 입력해 주세요. <span id="timer"></span>
                 </p>
                 <div class="variCode">
                         <div class="input-group">
-                            <form method="get" action="${pageContext.request.contextPath}/login/04-passwordemail_ok.do">
+                            <form id="codesubmit" <%--method="get" action="${pageContext.request.contextPath}/login/04-passwordemail_ok.do" --%>>
                             <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
-                            <label for="code">인증번호</label>
-                            <input id="code" type="text" name="code_check" placeholder="인증번호를 입력해주세요.">
+                            <label for="code_check">인증번호</label>
+                            <input id="code_check" type="text" name="code_check" placeholder="인증번호를 입력해주세요.">
                             <button type="submit" class="btn btn-default">확인</button>
                             </form>
                         </div>

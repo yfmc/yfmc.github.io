@@ -28,6 +28,7 @@
 		           	<div class="notice_edit_date">
 		           		수정일 : ${output.edit_date}
 		           	</div>
+		           	<a href="${pageContext.request.contextPath}/admin/admin_notice_list.do">[목록으로]</a>
 		           	<a href="${pageContext.request.contextPath}/admin/admin_notice_edit.do?notice_id=${output.notice_id}">[수정하기]</a>
 		           	<a href="${pageContext.request.contextPath}/admin/admin_notice_delete.do?notice_id=${output.notice_id}">[삭제하기]</a>
 		        </div>

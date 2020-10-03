@@ -45,30 +45,41 @@
                 	<c:otherwise>
                 		<c:forEach var="item" items="${output}" varStatus="status">
 	                    <ul class="listarea">
+	                    <c:choose>
+	                    	<c:when test="${item.poster_link!=null}">
 	                    	<!-- 이미지에 마우스 올리면 '크게하기'글자가 뜨며 클릭하면 lightbox를 통해 큰 이미지를 보여줌 -->
 	                        <li><div class="movieimg"><a href="${item.poster_link}" data-lightbox="myphoto1"><img src="${item.poster_link}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	                     	</c:when>
+	                     	<c:otherwise>
+	                     	<li><div class="movieimg"><a href="${pageContext.request.contextPath}/assets/img/poster_default.jpg" data-lightbox="myphoto1"><img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	                     	</c:otherwise>
+	                     </c:choose>
 	                            <span class="title">
-	                                <h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title}</a></h3>
+	                                <h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item.movie_id}">${item.title} (${item.movie_made_year})</a></h3>
 	                            </span>
 	                            <span class="rating">
 	                                	평점 : <span class="star-prototype">${item.star_info}</span> &nbsp;(${item.star_info})
 	                            </span>
 	                            <span class="genre">
-	                                <h4>관람가 : ${item.age_limit}</h4>
+	                            <c:choose>
+		                            <c:when test="${item.age_limit==0}">
+		                                <h4>관람가 : 전체관람가</h4>
+		                            </c:when>
+		                            <c:when test="${item.age_limit==1}">
+		                                <h4>관람가 : 12세 이상 관람가</h4>
+		                            </c:when>
+		                            <c:when test="${item.age_limit==2}">
+		                                <h4>관람가 : 15세 이상 관람가</h4>
+		                            </c:when>
+		                            <c:otherwise>
+		                            	<h4>관람가 : 청소년 관람불가</h4>
+		                            </c:otherwise>
+	                            </c:choose>
 	                            </span>
 	                            <!-- 좋아한 영화 목록에서 제거하는 버튼 -->
-	                            <input type="button" value="-" class="btn btn-default remove" />
+	                            <button type="button" class="btn btn-default remove" onclick = "location.href = '${pageContext.request.contextPath}/mypage/choice_delete.do?fav_movie_id=${item.fav_movie_id}'" >-</button>
 	                            
-	                            
-	                            <!-- 예매하기 페이지로 이동하는 버튼 -->
-	                            <c:choose>
-	                            	<c:when test="${item.bookingok=='Y'}">
-	                            		<input type="button" value="예매하기" class="btn book"/>
-	                            	</c:when>
-	                            	<c:otherwise>
-	                            		<input type="button" value="예매불가" class="btn book" disabled/>
-	                            	</c:otherwise>
-	                            </c:choose>
+
 	                        </li>
 	                    </ul>
                     	</c:forEach>
@@ -95,7 +106,7 @@
 										</c:url>
 										<c:choose>
 											<c:when test="${pageData.nowPage ==i}">
-												<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
+												<li class="page-item page-link""><a class="page-link" style="background-color:#eee;"><strong class="thispage">${i}</strong></a></li>
 											</c:when>
 											<c:otherwise>
 												<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>

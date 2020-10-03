@@ -18,12 +18,19 @@ import lombok.extern.slf4j.Slf4j;
 import study.spring.cinephile.helper.PageData;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
+import study.spring.cinephile.model.ChoiceMovie;
 import study.spring.cinephile.model.FavTheater;
 import study.spring.cinephile.model.Members;
+import study.spring.cinephile.model.MyPageBookingList;
+import study.spring.cinephile.model.MyPageQna;
 import study.spring.cinephile.model.PasswordOk;
 import study.spring.cinephile.model.Theater2;
+import study.spring.cinephile.service.ChoiceMovieService;
 import study.spring.cinephile.service.FavTheaterService;
 import study.spring.cinephile.service.MembersService;
+import study.spring.cinephile.service.MyPageBookingListService;
+import study.spring.cinephile.service.MyPageMembersService;
+import study.spring.cinephile.service.MyPageQnaService;
 import study.spring.cinephile.service.PasswordOkService;
 import study.spring.cinephile.service.Theater2Service;
 
@@ -41,6 +48,10 @@ public class MypageController {
 	@Autowired PasswordOkService passwordOkService;
 	@Autowired Theater2Service theater2Service;
 	@Autowired MembersService membersService;
+	@Autowired MyPageMembersService myPageMembersService;
+	@Autowired ChoiceMovieService choiceMovieService;
+	@Autowired MyPageQnaService myPageQnaService;
+	@Autowired MyPageBookingListService myPageBookingListService;
 	
 	//필요한 객체들 주입
 	
@@ -68,18 +79,86 @@ public class MypageController {
 		//자주가는 영화관 목록을 불러오는 과정
 		
 		
+		MyPageBookingList bookinginput=new MyPageBookingList();
+		bookinginput.setMembers_id(mySession.getMembers_id());
+		List<MyPageBookingList> bookingoutput=null;
+		
+		ChoiceMovie choiceinput=new ChoiceMovie();
+		choiceinput.setMembers_id(mySession.getMembers_id());
+		List<ChoiceMovie> choiceoutput=null;
+		
+		try {
+			choiceoutput=choiceMovieService.getChoiceMovieList(choiceinput);
+			bookingoutput=myPageBookingListService.getMyPageBookingList(bookinginput);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
 		model.addAttribute("output",output);
+		model.addAttribute("choiceoutput",choiceoutput);
+		model.addAttribute("bookingoutput",bookingoutput);
 		
 		return new ModelAndView("mypage/mypagemain");
 	}
 	
 	@RequestMapping(value="/mypage/bookinglist.do",method=RequestMethod.GET) //마이페이지 > 예매내역페이지
-	public String bookinglist(Model model,HttpServletRequest request) {
+	public ModelAndView bookinglist(Model model,HttpServletRequest request,
+			@RequestParam(value="page",defaultValue="1") int nowPage) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		int totalCount=0;
+		int listCount=5;
+		int pageCount=5;
+		
+		
+		MyPageBookingList input=new MyPageBookingList();
+		input.setMembers_id(mySession.getMembers_id());
+		
+		List<MyPageBookingList> output=null;
+		PageData pageData=null;
+		
+		try {
+			totalCount=myPageBookingListService.getMyPageBookingListCount(input);
+			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
+			
+			MyPageBookingList.setOffset(pageData.getOffset());
+			MyPageBookingList.setListCount(pageData.getListCount());
+			
+			output=myPageBookingListService.getMyPageBookingList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null,e.getLocalizedMessage());
+		}
+		
 		model.addAttribute("my_session",mySession);
-		return "mypage/bookinglist";
+		model.addAttribute("output",output);
+		model.addAttribute("pageData",pageData);
+		return new ModelAndView("mypage/bookinglist");
+	}
+	
+	@RequestMapping(value="/mypage/mybooking_delete.do",method=RequestMethod.GET)
+	public ModelAndView mybooking_delete(Model model,HttpServletRequest request,
+			@RequestParam(value="movie_id",defaultValue="0") int movie_id) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		if(movie_id==0) {
+			return webHelper.redirect(null, "잘못된 접근입니다.");
+		}
+		
+		MyPageBookingList input=new MyPageBookingList();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setMovie_id(movie_id);
+		
+		try {
+			myPageBookingListService.deleteMyPageBookingList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		return webHelper.redirect(contextPath+"/mypage/bookinglist.do", "예매가 취소되었습니다.");
 	}
 	
 	@RequestMapping(value="/mypage/changeinfo-(1).do",method=RequestMethod.GET) //마이페이지 > 회원정보수정페이지1
@@ -152,8 +231,6 @@ public class MypageController {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 세션 가져옴
 		
-		log.error(user_pw+" "+user_email+" "+phone+" "+postcode+" "+addr+" "+addr_detail+"asas");
-		
 		Members input=new Members();
 		input.setUser_pw(user_pw);
 		input.setUser_email(user_email);
@@ -172,10 +249,20 @@ public class MypageController {
 		if(!regexHelper.isEmail(user_email)) {return webHelper.redirect(null, "올바른 메일을 입력하세요.");}
 		if(!regexHelper.isTel(phone)) {return webHelper.redirect(null, "올바른 연락처를 입력하세요.");}
 		
+		int totalCount=0;
+		try {
+			totalCount=myPageMembersService.getMyPageMembersCount(input);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 		
+		if(totalCount==1) {
+			return webHelper.redirect(null, "이미 사용중인 이메일입니다. 다른 이메일을 입력해주세요!");
+		}
 		
 		try {
-			membersService.editMembers(input);
+			myPageMembersService.editMyPageMembers(input);
+		    session.removeAttribute("loggedIn");//회원정보 수정 시 로그아웃
 			return new ModelAndView("mypage/changeinfo-(3)");
 		} catch (Exception e) {
 			return webHelper.redirect("mypage/changeinfo-(2).do","수정에 실패했습니다. 관리자에게 문의하세요.");
@@ -184,28 +271,135 @@ public class MypageController {
 	}
 	
 	@RequestMapping(value="/mypage/choicelist.do",method=RequestMethod.GET) //마이페이지 > 좋아한영화내역페이지
-	public String choicelist(Model model,HttpServletRequest request) {
+	public ModelAndView choicelist(Model model,HttpServletRequest request,
+			@RequestParam(value="page",defaultValue="1") int nowPage) {
+		
+		int totalCount=0;
+		int listCount=5;
+		int pageCount=5;
+		
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
-		model.addAttribute("my_session",mySession);
+		ChoiceMovie input=new ChoiceMovie();
+		input.setMembers_id(mySession.getMembers_id());
 		
-		return "mypage/choicelist";
+		List<ChoiceMovie> output=null;
+		PageData pageData=null;
+		
+		try {
+			totalCount=choiceMovieService.getChoiceMovieCount(input);
+			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
+			
+			ChoiceMovie.setOffset(pageData.getOffset());
+			ChoiceMovie.setListCount(pageData.getListCount());
+			
+			output=choiceMovieService.getChoiceMovieList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		
+		model.addAttribute("my_session",mySession);
+		model.addAttribute("output",output);
+		model.addAttribute("pageData",pageData);
+		
+		return new ModelAndView("mypage/choicelist");
+	}
+	
+	@RequestMapping(value="/mypage/choice_delete.do",method=RequestMethod.GET)
+	public ModelAndView choice_delete(Model model,HttpServletRequest request,
+			@RequestParam(value="fav_movie_id",defaultValue="0") int fav_movie_id) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
+		
+		if(fav_movie_id==0) {
+			return webHelper.redirect(null, "잘못된 접근입니다.");
+		}
+		
+		ChoiceMovie input=new ChoiceMovie();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setFav_movie_id(fav_movie_id);
+		
+		try {
+			choiceMovieService.deleteChoiceMovie(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, "삭제에 실패했습니다. 관리자에게 문의하세요.");
+		}
+		
+		return webHelper.redirect(contextPath+"/mypage/choicelist.do", "좋아한 영화 목록에서 삭제되었습니다.");
 	}
 	
 	@RequestMapping(value="/mypage/inquirylist.do",method=RequestMethod.GET) //마이페이지 > 나의문의내역페이지
-	public String inquirylist(Model model,HttpServletRequest request) {
+	public ModelAndView inquirylist(Model model,HttpServletRequest request,
+			@RequestParam(value="page",defaultValue="1") int nowPage) {
+		
+		int totalCount=0;
+		int listCount=8;
+		int pageCount=5;
+		
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
+		MyPageQna input=new MyPageQna();
+		input.setMembers_id(mySession.getMembers_id());
+		
+		List<MyPageQna> output=null;
+		PageData pageData=null;
+		
+		try {
+			totalCount=myPageQnaService.getMyPageQnaCount(input);
+			pageData=new PageData(nowPage,totalCount,listCount,pageCount);
+			
+			MyPageQna.setOffset(pageData.getOffset());
+			MyPageQna.setListCount(pageData.getListCount());
+			
+			output=myPageQnaService.getMyPageQnaList(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
 		model.addAttribute("my_session",mySession);
-		return "mypage/inquirylist";
+		model.addAttribute("output",output);
+		model.addAttribute("pageData",pageData);
+		model.addAttribute("totalCount",totalCount);
+		
+		return new ModelAndView("mypage/inquirylist");
 	}
 	
 	@RequestMapping(value="/mypage/inquirypost.do",method=RequestMethod.GET) //마이페이지 > 문의내역상세
-	public String inquirypost(Model model) {
+	public ModelAndView inquirypost(Model model,HttpServletRequest request,
+			@RequestParam(value="qna_id",defaultValue="0") int qna_id) {
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn");
 		
-		return "mypage/inquirypost";
+		if(qna_id==0) {
+			return webHelper.redirect(null, "존재하지 않는 문의입니다.");
+		}
+		
+		MyPageQna input=new MyPageQna();
+		input.setMembers_id(mySession.getMembers_id());
+		input.setQna_id(qna_id);
+		
+		MyPageQna input2=new MyPageQna();
+		input2.setMembers_id(mySession.getMembers_id());
+		
+		MyPageQna output=null;
+		List<MyPageQna> output2=null;
+		
+		try {
+			output=myPageQnaService.getMyPageQnaItem(input);
+			output2=myPageQnaService.getMyPageQnaList(input2);
+
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		
+		
+		model.addAttribute("output",output);
+		model.addAttribute("output2",output2);
+		return new ModelAndView("mypage/inquirypost");
 	}
 	
 	@RequestMapping(value="/mypage/oftentheater.do",method=RequestMethod.GET) //마이페이지 > 자주가는영화관 추가,삭제 페이지
@@ -216,7 +410,7 @@ public class MypageController {
 			@RequestParam(value="brand",required=false) String brand) {
 		
 		int totalCount=0;
-		int listCount=10;
+		int listCount=8;
 		int pageCount=5;
 		
 		HttpSession session=request.getSession();
@@ -384,10 +578,25 @@ public class MypageController {
 		
 	}
 	
-	@RequestMapping(value="/mypage/withdrawal-(2).do",method=RequestMethod.GET) //마이페이지 > 회원탈퇴페이지3
-	public String withdrawal2(Model model) {
+	@RequestMapping(value="/mypage/withdrawal-(2).do",method= RequestMethod.POST) //마이페이지 > 회원탈퇴페이지3
+	public ModelAndView withdrawal2(Model model,HttpServletRequest request) {
 		
-		return "mypage/withdrawal-(2)";
+		HttpSession session=request.getSession();
+		Members mySession=(Members)session.getAttribute("loggedIn"); //로그인 객체 가져옴
+		
+		Members input=new Members();
+		input.setMembers_id(mySession.getMembers_id());
+		
+		
+		try {
+			myPageMembersService.deleteMyPageMembers(input);
+			session.removeAttribute("loggedIn");//회원정보 수정 시 로그아웃
+			return new ModelAndView("mypage/withdrawal-(2)");
+		} catch (Exception e) {
+			return webHelper.redirect(contextPath+"/mypage/mypagemain.do","탈퇴에 실패했습니다. 관리자에게 문의하세요.");
+		}
+		
+
 	}
 
 

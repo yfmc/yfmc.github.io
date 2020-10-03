@@ -28,53 +28,40 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">10</th>
-                                <th style="width: auto;">예매가 되지 않습니다.</th>
-                                <th style="width: 150px;">2020.07.20</th>
+                                <th align="center" style="width: 10px;">
+                                <c:forEach var="item" items="${output2}" varStatus="status">
+                                <c:if test="${item.qna_id==output.qna_id}">
+                                ${item.no}
+                                </c:if>
+
+                                </c:forEach>
+                                </th>
+                                <th align="center" style="width: 300px;">${output.qna_title}</th>
+                                <th align="center" style="width: 30px;">${output.reg_date}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="detail_box">
                             	<td colspan="4">
-                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
-                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
-                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
-                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
-                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
-                               문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용 문의내용<br/>
-                                
-                                <br/><br/><br/><br/><br/><br/>
+                               		${output.qna_content}
+                                <br/><br/><br/>
                                 <hr />
-                               안녕하세요 Cinephile입니다. 문의하신 내용에 대한 답변입니다.<br/><br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-                               문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 문의답변 <br/>
-          
+                                <br/>
+                                <br/>
+	                                <c:choose>
+	                                <c:when test="${output.answer_check=='미답변'}">
+	                                	아직 답변이 없습니다.
+	                                </c:when>
+	                                <c:otherwise>
+                              		${output.answer_content}
+          						</c:otherwise>
+          						</c:choose>
                                 </td>
                             </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">                         
-                                        <span class="page_next">다음글</span>
-                                        <i class="fas fa-angle-up"></i>
-                                        <a href="#" class id="?">
-                                        <span>다음 글이 없습니다.</span>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="page_move" align="left">
-                                <td colspan="4">
-                                        <span class="page_prev">이전글</span>
-                                        <i class="fas fa-angle-down"></i>
-                                    	<a href="#" class id="?">
-                                        <span>결제가 되지 않습니다.</span>
-                                    </a>
-                                </td>
-                            </tr>
+                           
                         </tbody>
                     </table>
+                    
                     <!-- 문의목록,메인 페이지로 가는 버튼 -->
                     <button type="button" class="btn inqgo">목록으로</button>
                     <button type="button" class="btn maingo">메인으로</button>

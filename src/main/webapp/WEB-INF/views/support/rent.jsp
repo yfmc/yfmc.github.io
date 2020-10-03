@@ -41,19 +41,10 @@
 										<!-- 1차 카테고리 -->
 										<div class="form-group">
 											<select name="sel_region" id="sel_region" class="form-control">
-												<option value="">지역선택</option>
-												<option value="seoul1">서울</option>
-												<option value="gyeonggi1">경기</option>
-												<option value="incheon1">인천</option>
-												<option value="gangwon1">강원</option>
-												<option value="daejeon1">대전</option>
-												<option value="chungcheong1">충청/세종</option>
-												<option value="gwangju1">광주</option>
-												<option value="jeolla1">전라</option>
-												<option value="daegu1">대구/경북</option>
-												<option value="busan1">부산/울산</option>
-												<option value="gyeongnam1">경남</option>
-												<option value="jeju1">제주</option>
+												<%-- 조회 결과에 따른 반복처리 --%>
+												<c:forEach var="item" items="${provList}" varStatus="status">
+													<option value="${item.prov_no}">${item.prov_name}</option>
+												</c:forEach>
 											</select>
 										</div>
 									</div>
@@ -61,7 +52,10 @@
 										<!-- 2차 카테고리 -->
 										<div class="form-group">
 											<select name="sel_theater" id="sel_theater" class="form-control">
-												<option value="">영화관선택</option>
+												<%-- 조회 결과에 따른 반복처리 --%>
+												<c:forEach var="item" items="${theaterList}" varStatus="status">
+													<option value="${item.theaterId}">${item.branch}</option>
+												</c:forEach>
 											</select>
 										</div>
 									</div>
@@ -84,19 +78,19 @@
 		                        <div class="form-group">
 		                            <label for="user_name"  class="must col-xs-2 ">이름</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="user_name" id="user_name" class="form-control" />
+		                                <input type="text" name="user_name" id="user_name" class="form-control" value="${my_session.user_name}"/>
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="tel"  class="must col-xs-2 ">연락처</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="tel" id="tel" class="form-control" placeholder="' - '를 제외하고 입력하세요." />
+		                                <input type="text" name="tel" id="tel" class="form-control" placeholder="' - '를 제외하고 입력하세요." value="${my_session.phone}" />
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="email"  class="must col-xs-2 ">이메일</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 전화번호 혹은 이메일로 답변이 전송됩니다." />
+		                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 전화번호 혹은 이메일로 답변이 전송됩니다." value="${my_session.user_email}"/>
 		                            </div>
 		                        </div>
 	                    </div>
@@ -181,15 +175,6 @@
 	    			if (!choice) {
 	    				return false;
 	    			}
-	    			
-	    			$.get("../api/category.do", {type: choice}, function(req) {
-	    				// 미리 준비한 HTML들을 읽어옴.
-	    				var template = Handlebars.compile($("#category_item_tmpl").html());
-	    				// Ajax를 통해서 읽어온 json을 템플릿에 병함
-	    				var html = template(req);
-	    				// #child에 읽어온 내용 추가
-	    				$("#sel_theater").append(html);
-	    			});
 	    		});
 	    	});
 	    	

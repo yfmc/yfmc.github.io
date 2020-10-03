@@ -16,11 +16,11 @@
             </ul>
             <div class="joining">
                 <p class="info">
-                    입력하신 이메일 주소로 인증번호 6자리가 전송되었습니다.
-                    인증번호를 입력해 주세요.
+                    입력하신 이메일 주소로 인증번호 6자리가 전송되었습니다. 
+                    인증번호를 입력해 주세요. <span id="timer"></span>
                 </p>
-                
-                <form method="get" action="${pageContext.request.contextPath}/account/03-emailCode_ok">
+      
+                <form id="code_form" <%-- method="get" action="${pageContext.request.contextPath}/account/03-emailCode_ok" --%> >
                 <input type="hidden" name="user_email" id="user_email" value="${user_email}"/>
                 <div class="variCode">
                         <div class="input-group">
@@ -31,6 +31,7 @@
                             <button type="submit" class="btn btn-default" id="code_submit">확인</button>
                             
                         </div>
+
                 </div>
                 </form>
                 
@@ -45,5 +46,5 @@
         </div>
     
     
-
+<script src="../assets/js_files/account_03Code.js"></script> 
 <%@ include file="../_inc/footer.jsp" %>

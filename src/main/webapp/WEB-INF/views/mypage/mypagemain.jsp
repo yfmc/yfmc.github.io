@@ -35,21 +35,27 @@
                     	<tr>
                         <c:forEach var="i" begin="0" end="1" varStatus="status">
 	                       <td>
-	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">
+	                       <a href="${pageContext.request.contextPath}/branch?provNo=${output[status.index].prov_no}&theaterId=${output[status.index].theater_id}">
+	                       ${output[status.index].brand}&nbsp; ${output[status.index].branch}</a></span>
 	                       </td>
                         </c:forEach>
                         </tr>
                         <tr>
                         <c:forEach var="i" begin="2" end="3" varStatus="status">
 	                       <td>
-	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">
+	                       <a href="${pageContext.request.contextPath}/branch?provNo=${output[status.index].prov_no}&theaterId=${output[status.index].theater_id}">
+	                       ${output[status.index].brand}&nbsp; ${output[status.index].branch}</a></span>
 	                       </td>
                         </c:forEach>
                         </tr>
                         <tr>
                         <c:forEach var="i" begin="4" end="4" varStatus="status">
 	                       <td>
-	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">${output[status.index].brand}&nbsp; ${output[status.index].branch}</span>
+	                       <span class="tooltip-graph" data-toggle="tooltip" data-html="true" data-placement="top" title="${output[status.index].oldAddr}<br/>${output[status.index].rooms}관 / ${output[status.index].seats}석">
+	                       <a href="${pageContext.request.contextPath}/branch?provNo=${output[status.index].prov_no}&theaterId=${output[status.index].theater_id}">
+	                       ${output[status.index].brand}&nbsp; ${output[status.index].branch}</a></span>
 	                       </td>
                         </c:forEach>
                         <!-- 자주가는 영화관 설정 창으로 이동 -->
@@ -66,26 +72,76 @@
                     </span>
                     <div class="row">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie1.jpg" />
-                                <h5 style="font-weight:bold">강철비2: 정상회담</h5>
-                                <h5 style="font-size:12px;">예매:2020-07-31</h5>
+                                            <c:choose>
+	                    <c:when test="${bookingoutput[0]!=null}">
+	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[0].movie_id}" class="thumbnail">
+	                    </c:when>
+	                    <c:otherwise>
+	                    		<a href="#" class="thumbnail">
+	                    </c:otherwise>
+	                    </c:choose>
+	                            	<c:choose>
+	                            	<c:when test="${bookingoutput[0].poster_link!=null}">
+	                                <img src="${bookingoutput[0].poster_link}" />
+	                                <h5 style="font-weight:bold">${bookingoutput[0].title}</h5>
+	                                <h5 style="font-size:12px;">${bookingoutput[0].booking_date}</h5>
+	                                </c:when>
+	                                <c:otherwise>
+	                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+	                                <h5 style="font-weight:bold">${bookingoutput[0].title}</h5>
+	                                <h5 style="font-size:12px;">${bookingoutput[0].booking_date}</h5>
+	                                </c:otherwise>
+	                                </c:choose>
+	                                
+	                            </a>
+	                    </div>
+	                    <div class="col-md-3 col-sm-6 col-xs-12">
+	                    <c:choose>
+	                    <c:when test="${bookingoutput[1]!=null}">
+	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[1].movie_id}" class="thumbnail">
+	                    </c:when>
+	                    <c:otherwise>
+	                    		<a href="#" class="thumbnail">
+	                    </c:otherwise>
+	                    </c:choose>
+                    	<c:choose>
+                    	<c:when test="${bookingoutput[1].poster_link!=null}">
+                        <img src="${bookingoutput[1].poster_link}" />
+                        <h5 style="font-weight:bold">${bookingoutput[1].title}</h5>
+                        <h5 style="font-size:12px;">${bookingoutput[1].booking_date}</h5>
+                        </c:when>
+                        <c:otherwise>
+                        <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+                        <h5 style="font-weight:bold">${bookingoutput[1].title}</h5>
+                        <h5 style="font-size:12px;">${bookingoutput[1].booking_date}</h5>
+                        </c:otherwise>
+                        </c:choose>
                             </a>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie2.jpg" />
-                                <h5 style="font-weight:bold">반도</h5>
-                                <h5 style="font-size:12px;">예매:2020-07-18</h5>
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie3.jpg" />
-                                <h5 style="font-weight:bold">스파이더맨: 파 프롬 홈</h5>
-                                <h5 style="font-size:12px;">예매:2019-07-17</h5>
-                            </a>
-                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <c:choose>
+                    <c:when test="${bookingoutput[0]!=null}">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[2].movie_id}" class="thumbnail">
+                    </c:when>
+                    <c:otherwise>
+                    		<a href="#" class="thumbnail">
+                    </c:otherwise>
+                    </c:choose>
+                	<c:choose>
+                	<c:when test="${bookingoutput[2].poster_link!=null}">
+                    <img src="${bookingoutput[2].poster_link}" />
+                    <h5 style="font-weight:bold">${bookingoutput[2].title}</h5>
+                    <h5 style="font-size:12px;">${bookingoutput[2].booking_date}</h5>
+                    </c:when>
+                    <c:otherwise>
+                    <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+                    <h5 style="font-weight:bold">${bookingoutput[2].title}</h5>
+                    <h5 style="font-size:12px;">${bookingoutput[2].booking_date}</h5>
+                    </c:otherwise>
+                    </c:choose>
+                    
+                    </a>
+                    </div>
                         <!-- 예매내역 페이지로 이동 -->
                         <button type="button" class="btn btn-info bt1 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="예매내역 페이지로 이동합니다." >더보기</button>
                     </div>
@@ -97,24 +153,67 @@
                         <h4 style="font-family: 'Jua', sans-serif;">좋아한 영화</h4>
                     </span>
                     <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie1.jpg" />
-                                <h5>강철비2: 정상회담</h5>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <c:choose>
+                    <c:when test="${choiceoutput[0]!=null}">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[0].movie_id}" class="thumbnail">
+                    </c:when>
+                    <c:otherwise>
+                    		<a href="#" class="thumbnail">
+                    </c:otherwise>
+                    </c:choose>
+                            	<c:choose>
+                            	<c:when test="${choiceoutput[0].poster_link!=null}">
+                                <img src="${choiceoutput[0].poster_link}" />
+                                </c:when>
+                                <c:otherwise>
+                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+                                </c:otherwise>
+                                </c:choose>
+                                <h5>${choiceoutput[0].title}</h5>
                             </a>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie2.jpg" />
-                                <h5>반도</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <c:choose>
+                    <c:when test="${choiceoutput[0]!=null}">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[1].movie_id}" class="thumbnail">
+                    </c:when>
+                    <c:otherwise>
+                    		<a href="#" class="thumbnail">
+                    </c:otherwise>
+                    </c:choose>
+                            	<c:choose>
+                            	<c:when test="${choiceoutput[1].poster_link!=null}">
+                                <img src="${choiceoutput[1].poster_link}" />
+                                </c:when>
+                                <c:otherwise>
+                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+                                </c:otherwise>
+                                </c:choose>
+                                <h5>${choiceoutput[1].title}</h5>
                             </a>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do" class="thumbnail">
-                                <img src="${pageContext.request.contextPath}/assets/img/mypage_movie3.jpg" />
-                                <h5>스파이더맨: 파 프롬 홈</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <c:choose>
+                    <c:when test="${choiceoutput[0]!=null}">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[2].movie_id}" class="thumbnail">
+                    </c:when>
+                    <c:otherwise>
+                    		<a href="#" class="thumbnail">
+                    </c:otherwise>
+                    </c:choose>
+                            	<c:choose>
+                            	<c:when test="${choiceoutput[2].poster_link!=null}">
+                                <img src="${choiceoutput[2].poster_link}" />
+                                </c:when>
+                                <c:otherwise>
+                                <img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg"/>
+                                </c:otherwise>
+                                </c:choose>
+                                <h5>${choiceoutput[2].title}</h5>
                             </a>
-                        </div>
+                    </div>
+                    
                         <!-- 좋아요 누른 영화내역 페이지로 이동 -->
                         <button type="button" class="btn btn-success bt2 tooltip-graph" data-toggle="tooltip" data-placement="bottom" title="좋아한 영화 페이지로 이동합니다." >더보기</button>
                     </div>

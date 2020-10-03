@@ -1,5 +1,7 @@
 package study.spring.cinephile.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +20,10 @@ import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.Members;
 import study.spring.cinephile.model.Theater;
 import study.spring.cinephile.model.TheaterAdd;
+import study.spring.cinephile.model.Timetable;
 import study.spring.cinephile.service.TheaterAddService;
 import study.spring.cinephile.service.TheaterService;
+import study.spring.cinephile.service.TimetableService;
 
 @Controller
 public class TheaterController {
@@ -32,27 +36,44 @@ public class TheaterController {
 	@Autowired
 	TheaterAddService addService;
 	
+	@Autowired
+	TimetableService timetableService;
+	
 	/* "/프로젝트이름"에 해당하는 ContextPath 변수 주입 */
 	@Value("#{servletContext.contextPath}")
 	String contextPath;
-		
+	
 	/* 극장정보 상세 페이지 */
 	@RequestMapping(value={"/branch", "/branch.do", "/timetable", "/timetable.do"}, method=RequestMethod.GET)
 	public ModelAndView branch(HttpServletRequest request, Model model, @RequestParam (value="provNo", defaultValue="0") int provNo, @RequestParam(value="theaterId", defaultValue="0") int theaterId) {
 		/* 1) URL get 파라미터가 없을 경우 default 페이지로 '롯데시네마 가산디지털' 설정 */
 		if (provNo==0 || theaterId==0) {
 			// 데이터 기본값으로 설정하기
-			Theater df=new Theater();
-			df.setProvNo(10);
-			df.setTheaterId(1001);
+			Theater input=new Theater();
+			input.setProvNo(10);
+			input.setTheaterId(1001);
 			
+			// 오늘 날짜로 scrnDay를 set하기 위해 Date 객체로 오늘 날짜 추출
+			Date today=new Date();
+			SimpleDateFormat formatType = new SimpleDateFormat("yyyy-MM-dd");
+			String scrnDay=formatType.format(today);
+			
+			Timetable input2=new Timetable();
+			input2.setTheaterId(1001);
+			input2.setScrnDay(scrnDay);
+			
+			// 빈 객체 준비
 			Theater output=null;
 			List<Theater> output2=null;
+			List<Timetable> output4=null;
+			int output5=0;					// 상영 중인 영화 개수
 			
 			try {
 				// 상세정보 가져오기 (롯데시네마 가산디지털 & 서울 극장 목록)
-				output=theaterService.getTheaterItem(df);
-				output2=theaterService.getTheaterList(df);
+				output=theaterService.getTheaterItem(input);
+				output2=theaterService.getTheaterList(input);
+				output4=timetableService.getMovieList(input2);
+				output5=timetableService.countMovie(input2);
 			}
 			catch (Exception e) {
 				return webHelper.redirect(null, e.getLocalizedMessage());
@@ -65,7 +86,7 @@ public class TheaterController {
 			int output3=0;
 			
 			TheaterAdd count=new TheaterAdd();
-			count.setTheaterId(df.getTheaterId());
+			count.setTheaterId(input.getTheaterId());
 			
 			if (mySession==null) {
 				model.addAttribute("user", 0);
@@ -74,11 +95,20 @@ public class TheaterController {
 				model.addAttribute("user", mySession.getMembers_id());
 				count.setMembersId(mySession.getMembers_id());
 			}
+			
+			try {
+				output3=addService.countFavTheater(count);
+			}
+			catch (Exception e) {
+				return webHelper.redirect(null, e.getLocalizedMessage());
+			}
 
 			// view 처리
 			model.addAttribute("output", output);
 			model.addAttribute("output2", output2);
 			model.addAttribute("favCount", output3);
+			model.addAttribute("movieList", output4);
+			model.addAttribute("movieCount", output5);
 			return new ModelAndView("branch/01-branch");
 		}
 		
@@ -86,12 +116,27 @@ public class TheaterController {
 		Theater input=new Theater();
 		input.setProvNo(provNo);
 		input.setTheaterId(theaterId);
+		
+		// 오늘 날짜로 scrnDay를 set하기 위해 Date 객체로 오늘 날짜 추출
+		Date today=new Date();
+		SimpleDateFormat formatType = new SimpleDateFormat("yyyy-MM-dd");
+		String scrnDay=formatType.format(today);
+		
+		Timetable input2=new Timetable();
+		input2.setTheaterId(theaterId);
+		input2.setScrnDay(scrnDay);
+		
+		// 빈 객체 준비
 		Theater output=null;
 		List<Theater> output2=null;
+		List<Timetable> output4=null;
+		int output5=0;					// 상영 중인 영화 개수
 		
 		try {
 			output=theaterService.getTheaterItem(input);
 			output2=theaterService.getTheaterList(input);
+			output4=timetableService.getMovieList(input2);
+			output5=timetableService.countMovie(input2);
 		}
 		catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
@@ -131,6 +176,8 @@ public class TheaterController {
 		model.addAttribute("output", output);
 		model.addAttribute("output2", output2);
 		model.addAttribute("favCount", output3);
+		model.addAttribute("movieList", output4);
+		model.addAttribute("movieCount", output5);
 		return new ModelAndView("branch/01-branch");		
 	}
 	

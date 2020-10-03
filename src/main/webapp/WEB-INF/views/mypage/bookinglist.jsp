@@ -45,25 +45,30 @@
                 		<c:forEach var="item" items="${output}" varStatus="status">
                 		<ul class="listarea">
                     	<!-- 이미지에 마우스 올리면 '크게하기'글자가 뜨며 클릭하면 lightbox를 통해 큰 이미지를 보여줌 -->
-	         				<li class="book"><div class="movieimg"><a href="${item.poster_link}" data-lightbox="myphoto1"><img src="${item.poster_link}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	         				<c:choose>
+	                    	<c:when test="${item.poster_link!=null}">
+	                    	<!-- 이미지에 마우스 올리면 '크게하기'글자가 뜨며 클릭하면 lightbox를 통해 큰 이미지를 보여줌 -->
+	                        <li><div class="movieimg"><a href="${item.poster_link}" data-lightbox="myphoto1"><img src="${item.poster_link}" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	                     	</c:when>
+	                     	<c:otherwise>
+	                     	<li><div class="movieimg"><a href="${pageContext.request.contextPath}/assets/img/poster_default.jpg" data-lightbox="myphoto1"><img src="${pageContext.request.contextPath}/assets/img/poster_default.jpg" class="imgimg" height=170px/><div class="moreview" style="display:none;">크게 보기</div></a></div>
+	                     	</c:otherwise>
+	                     	</c:choose>
 	         					<span class="title">
-	         						<h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title}</a></h3>
+	         						<h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title} (${item.movie_made_year})</a></h3>
 	         					</span>
 	         					<span class="bookdate">
 	         						<h4>${item.booking_date}</h4>
 	         					</span>
 	         					<span class="theaterpeople">
-	         						<h4>${item.brand} ${item.branch} ${item.peonum}명 (${item.seat_number})</h4>
+	         						<h4>${item.brand} ${item.branch} (${item.room_no}관)</h4>
 	         					</span>
 	         					<!-- 예매취소 버튼 -->
-	         					<c:choose>
-	         						<c:when test="${item.bookok=='Y'}">
-	         							<input type="button" value="예매취소" class="btn cancelbtn"/>
-	         						</c:when>
-	         						<c:otherwise>
-	         							<input type="button" value="취소불가" class="btn cancelbtn" disabled/>
-	         						</c:otherwise>
-	         					</c:choose>
+	         					<!-- <input type="button" value="예매취소" class="btn cancelbtn" onclick="location.href='${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}'"/>-->
+	         					<input type="button" value="예매취소" class="btn cancelbtn" />
+	         					<input type="hidden" class="cancelurl" value="${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}"/>
+
+
 	         				</li>
          				</ul>
                 		</c:forEach>
@@ -90,7 +95,7 @@
 										</c:url>
 										<c:choose>
 											<c:when test="${pageData.nowPage ==i}">
-												<li class="page-item page-link"><a class="page-link"><strong class="thispage">${i}</strong></a></li>
+												<li class="page-item page-link"><a class="page-link" style="background-color:#eee;"><strong class="thispage">${i}</strong></a></li>
 											</c:when>
 											<c:otherwise>
 												<li class="page-item"><a class="page-link" href="${pageUrl}">${i}</a></li>
@@ -120,7 +125,7 @@
 		</div>
         
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="${pageContext.request.contextPath}/assets/js_files/bookinglist.js"></script>
+        <script src="${pageContext.request.contextPath}/assets/js_files/bookinglist.js?ver=1234"></script>
         <script src="${pageContext.request.contextPath}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
 
 		<script src="${pageContext.request.contextPath}/assets/plugins/lightbox/js/lightbox.min.js"></script>

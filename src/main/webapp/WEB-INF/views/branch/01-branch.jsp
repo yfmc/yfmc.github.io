@@ -107,7 +107,7 @@
 			<form method="post" action="${pageContext.request.contextPath}/branch/add_ok.do" >
 				<input type="hidden" name="theater_id" value="${output.theaterId}" />
 				<input type="hidden" name="members_id" value="${user}" />
-				<button type="submit" id="bookmarking" class="btn btn-default"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
+				<button type="submit" id="bookmarking" class="btn btn-default addbtn"><i class="fas fa-plus-circle"></i> 자주 가는 영화관 등록</button>
 			</form>
 			</c:otherwise>
 			</c:choose>
@@ -186,20 +186,20 @@
 			<!-- 날짜 선택 버튼 영역 -->
 			<div class="table_header">
 				<div class="week_btn">
-						<a class="btn btn-lg weekday day0"></a>
-						<a class="btn btn-lg weekday day1"></a>
-						<a class="btn btn-lg weekday day2"></a>
-						<a class="btn btn-lg weekday day3"></a>
-						<a class="btn btn-lg weekday day4"></a>
-						<a class="btn btn-lg weekday day5"></a>
-						<a class="btn btn-lg weekday day6"></a>
-						<a class="btn btn-lg weekday day7"></a>
-						<a class="btn btn-lg weekday day8"></a>
-						<a class="btn btn-lg weekday day9"></a>
-						<a class="btn btn-lg weekday day10"></a>
-						<a class="btn btn-lg weekday day11"></a>
-						<a class="btn btn-lg weekday day12"></a>
-						<a class="btn btn-lg weekday day13"></a>
+					<a class="btn btn-lg weekday day0" data-date=""></a>
+					<a class="btn btn-lg weekday day1" data-date=""></a>
+					<a class="btn btn-lg weekday day2" data-date=""></a>
+					<a class="btn btn-lg weekday day3" data-date=""></a>
+					<a class="btn btn-lg weekday day4" data-date=""></a>
+					<a class="btn btn-lg weekday day5" data-date=""></a>
+					<a class="btn btn-lg weekday day6" data-date=""></a>
+					<a class="btn btn-lg weekday day7" data-date=""></a>
+					<a class="btn btn-lg weekday day8" data-date=""></a>
+					<a class="btn btn-lg weekday day9" data-date=""></a>
+					<a class="btn btn-lg weekday day10" data-date=""></a>
+					<a class="btn btn-lg weekday day11" data-date=""></a>
+					<a class="btn btn-lg weekday day12" data-date=""></a>
+					<a class="btn btn-lg weekday day13" data-date=""></a>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -287,41 +287,30 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- 영화 1 시간표 영역 -->
-			<div class="film_time">
-				<h3>
-					<span class="label label-warning">15</span> 반도
-				</h3>
-
-				<a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a> <a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a> <a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a> <a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a>
+			
+			<!-- 상영 영화 목록 -->
+			<div id="film_list">
+ 
+				<c:forEach var="i" begin="0" end="${movieCount-1}">
+					<div class="film_time film${i} &nbsp; ${movieList[i].movieId}" data-id="${movieList[i].movieId}" data-count="${movieCount}">						
+						<c:choose>
+							<c:when test="${movieList[i].ageLimit==0}">
+								<h3><span class="label label-success">전체</span> ${movieList[i].title}</h3>
+							</c:when>
+							<c:when test="${movieList[i].ageLimit==1}">
+								<h3><span class="label label-primary">12</span> ${movieList[i].title}</h3>
+							</c:when>
+							<c:when test="${movieList[i].ageLimit==2}">
+								<h3><span class="label label-warning">15</span> ${movieList[i].title}</h3>
+							</c:when>
+							<c:when test="${movieList[i].ageLimit==3}">
+								<h3><span class="label label-danger">청불</span> ${movieList[i].title}</h3>
+							</c:when>
+						</c:choose>						
+					</div>
+				</c:forEach>
 			</div>
-			<!-- 영화 2 시간표 영역 -->
-			<div class="film_time">
-				<h3>
-					<span class="label label-success">전체</span> 알라딘
-				</h3>
 
-				<a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a> <a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a> <a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a>
-
-			</div>
-			<div class="film_time">
-				<h3>
-					<span class="label label-danger">청불</span> 아디오스
-				</h3>
-
-				<a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a> <a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a> <a href="#" class="btn btn-lg btn-default" data-toggle="tooltip" data-placement="bottom" title="종료 17:21"> <span class="start_time">15:15</span> <span class="seats">89 / 132</span> <span class="room_no">1관</span>
-				</a>
-			</div>
 		</div>
 	</div>
 </div>
@@ -338,4 +327,5 @@
 <script src="${pageContext.request.contextPath}/assets/js_files/branch.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch2.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js_files/branch3.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js_files/timetable.js"></script>
 <%@ include file="../_inc/footer.jsp"%>

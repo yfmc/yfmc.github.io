@@ -74,6 +74,7 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 		 * 
 		 */
 		String[] forbidden_url= {"http://localhost:8080/cinephile/mypage/mypagemain.do",
+				"http://localhost:8080/cinephile/mypage/oftentheater.do",
 				"http://localhost:8080/cinephile/mypage/bookinglist.do",
 				"http://localhost:8080/cinephile/mypage/choicelist.do",
 				"http://localhost:8080/cinephile/mypage/changeinfo-(1).do",

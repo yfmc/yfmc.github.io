@@ -62,25 +62,25 @@
 		                        <div class="form-group">
 		                            <label for="user_name"  class="must col-xs-2 ">이름</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="user_name" id="user_name" class="form-control" />
+		                                <input type="text" name="user_name" id="user_name" class="form-control"  value="${my_session.user_name}"/>
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="birthdate"  class="must col-xs-2 ">생년월일</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="birthdate" id="birthdate" class="form-control"  placeholder="예) 900101" />
+		                                <input type="text" name="birthdate" id="birthdate" class="form-control"  placeholder="예) 900101" value="${my_session.birthdate}"/>
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="tel"  class="must col-xs-2 ">연락처</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="tel" id="tel" class="form-control" placeholder="' - '를 제외하고 입력하세요." />
+		                                <input type="text" name="tel" id="tel" class="form-control" placeholder="' - '를 제외하고 입력하세요." value="${my_session.phone}" />
 		                            </div>
 		                        </div>
 		                        <div class="form-group">
 		                            <label for="email"  class="must col-xs-2 ">이메일</label>
 		                            <div class="col-xs-10">
-		                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 이메일로 답변이 전송됩니다." />
+		                                <input type="text" name="email" id="email" class="form-control" placeholder="입력하신 이메일로 답변이 전송됩니다." value="${my_session.user_email}" />
 		                            </div>
 		                        </div>
 	                    </div>

@@ -24,7 +24,7 @@
 			            <div class="form-group">
 				            <label for="faq_content"  class="must col-xs-2 ">내용</label>
 					        <div class="col-xs-10">
-					            <textarea name="faq_content" id="faq_content" class="form-control"  /></textarea>
+					            <textarea name="faq_content" id="faq_content" class="form-control ckeditor"  /></textarea>
 					        </div>
 				        </div>
 				        <div class="btn_btm_wrap">
@@ -34,5 +34,5 @@
 		        </div>
             </div>
         </div>
-    
+        <script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>    
 <%@ include file="../_inc/admin_footer.jsp" %>

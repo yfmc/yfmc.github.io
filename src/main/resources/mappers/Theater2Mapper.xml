@@ -40,6 +40,19 @@
 			</if>
 		</where>
 		order by theater_id asc
+		<if test="listCount>0">
+			limit #{offset},#{listCount}
+		</if>
 	</select>
 
+	<!-- 영화관 검색시 페이지 구현을 위한 전체카운트 -->
+	<select id="selectCountAll" parameterType="study.spring.cinephile.model.Theater2" resultType="int">
+	select count(*) from (select theater_id,prov_no,brand,concat(brand,' ',branch) as full_name from theater) as full
+	<where>
+		prov_no=#{prov_no} and brand=#{brand}
+		<if test="full_name!=null and full_name!=''">
+			and full_name like concat('%',#{name},'%')
+		</if>
+	</where>
+	</select>
 </mapper>

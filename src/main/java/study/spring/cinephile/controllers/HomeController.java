@@ -37,6 +37,10 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f069b84b79017782494844328f375a316ee45b7
 	@RequestMapping(value = {"/", "/index.do", "simple/home.do"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public String home(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) {
 		//logger.info("Welcome home! The client locale is {}.", locale);
@@ -59,16 +63,16 @@ public class HomeController {
 	@RequestMapping(value = "/support/support_home.do", method=RequestMethod.GET)
 	public String support(Model model, HttpServletResponse response) {
 		
-		List<Notice> output1 = null;
-		List<Faq> output2 = null;
+		List<Notice> noticeList = null;
+		List<Faq> faqList = null;
 		
 		try {
-			output1 = noticeService.getNoticeList(null);
-			output2 = faqService.getFaqList(null);
+			noticeList = noticeService.getNoticeList_date(null);
+			faqList = faqService.getFaqList_date(null);
 		} catch (Exception e) { e.printStackTrace(); }
 		
-		model.addAttribute("output1", output1);
-		model.addAttribute("output2", output2);
+		model.addAttribute("noticeList", noticeList);
+		model.addAttribute("faqList", faqList);
 		
 		return "support/support_home";
 	}

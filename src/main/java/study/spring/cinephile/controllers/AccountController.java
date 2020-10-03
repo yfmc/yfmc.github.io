@@ -67,6 +67,7 @@ public class AccountController {
 		return new ModelAndView("account/02-putEmail");
 	}
 	
+	
 	@RequestMapping(value="/account/03-emailCode.do")
 	public ModelAndView sentCode(Model model,
 			@RequestParam(value="user_email", required=false) String user_email) {
@@ -128,7 +129,7 @@ public class AccountController {
 			//인증코드, 메일 임시 테이블에 저장
 			tcodesService.addCode(input);
 			
-			mailHelper.sendMail(user_email, subject, content);
+			//mailHelper.sendMail(user_email, subject, content);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -140,7 +141,7 @@ public class AccountController {
 		System.out.println(input.toString());
 		System.out.println("셍썽된 프라이뭐리"+Pk);
 		
-		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성.
+		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성. //쿠키에는 텍스트 정보만 담을수 있다.
 		
 		cookie.setPath("/");	//쿠키의 유효 경로 --> 사이트 전역에 대한 설정
 		cookie.setDomain("localhost");	//쿠키의 유효 도메인
@@ -174,59 +175,62 @@ public class AccountController {
 		
 	}
 	
-	/* 인증번호 처리 */
-	@RequestMapping(value="/account/03-emailCode_ok", method=RequestMethod.GET)
-	public ModelAndView checkCode(Model model, HttpServletRequest request,
-			@RequestParam(value="user_email", required=false) String user_email,
-			@RequestParam(value="code_check", required=false) String code_check) {
-		System.out.println(user_email);
-		//쿠키값을 저장할 문자열
-		String getPk = null;
-		
-		//저장된 쿠키를 가져온다.
-		Cookie[] cookies = request.getCookies();
-		
-		String value = null;
-		//쿠키 목록이 있다면
-		if(cookies != null) {
-			//가져온 배열의 길이만큼 반복
-			for (int i = 0; i < cookies.length; i++) {
-				//i번째 쿠키의 이름을 취득한다.
-				String cookieName = cookies[i].getName();
-				
-				//이름이 내가 원하는 값일 경우 값을 복사한다.
-				if(cookieName.equals("codePk")) {
-					//쿠키값을 취득한다.
-					value = cookies[i].getValue();	
-				}
-			}
-		}
-		System.out.println(value);
-		Tcodes input = new Tcodes();
-		input.setId_code(Integer.parseInt(value));
-		
-		Tcodes output;
-		
-		/* tcodes 인증번호 확인 처리 */
-		try {
-			//pk값으로 인증번호 조회
-			output = tcodesService.getCode(input);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return webHelper.redirect(null, "인증번호를 다시 발급 받으세요");
-		}
-
-		System.out.println("발급 "+output.getCode());
-		System.out.println("입력 "+code_check);
-		
-		if(output.getCode().equals(code_check)) {
-			return webHelper.redirect(contextPath + "/account/04-Agree.do?user_email=" + user_email, null);
-		}else {
-			return webHelper.redirect(null, "인증번호가 일치하지 않습니다.");
-		}
-		
-	}
+//	/* 인증번호 처리 */
+//	@RequestMapping(value="/account/03-emailCode_ok", method=RequestMethod.GET)
+//	public ModelAndView checkCode(Model model, HttpServletRequest request,
+//			@RequestParam(value="user_email", required=false) String user_email,
+//			@RequestParam(value="code_check", required=false) String code_check) {
+//		System.out.println(user_email);
+//		//쿠키값을 저장할 문자열
+//		String getPk = null;
+//		
+//		//저장된 쿠키를 가져온다.
+//		Cookie[] cookies = request.getCookies();
+//		
+//		String value = null;
+//		//쿠키 목록이 있다면
+//		if(cookies != null) {
+//			//가져온 배열의 길이만큼 반복
+//			for (int i = 0; i < cookies.length; i++) {
+//				//i번째 쿠키의 이름을 취득한다.
+//				String cookieName = cookies[i].getName();
+//				
+//				//이름이 내가 원하는 값일 경우 값을 복사한다.
+//				if(cookieName.equals("codePk")) {
+//					//쿠키값을 취득한다.
+//					value = cookies[i].getValue();	
+//				}
+//			}
+//		}else {
+//			return webHelper.redirect(null, "인증번호를 다시 발급 받으세요");
+//		}
+//		System.out.println(value);
+//		Tcodes input = new Tcodes();
+//		input.setId_code(Integer.parseInt(value));
+//		
+//		Tcodes output;
+//		
+//		/* tcodes 인증번호 확인 처리 */
+//		try {
+//			//pk값으로 인증번호 조회
+//			output = tcodesService.getCode(input);
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return webHelper.redirect(null, "인증번호를 다시 발급 받으세요");
+//		}
+//
+//		System.out.println("발급 "+output.getCode());
+//		System.out.println("입력 "+code_check);
+//		
+//		if(output.getCode().equals(code_check)) {
+//			return webHelper.redirect(contextPath + "/account/04-Agree.do?user_email=" + user_email, null);
+//		}else {
+//			
+//			return webHelper.redirect(null, "인증번호가 일치하지 않습니다.");
+//		}
+//		
+//	}
 	
 	/*회원가입*/
 	@RequestMapping(value="/account/05-putMemInfo_ok.do", method=RequestMethod.POST)
