@@ -3,6 +3,7 @@ package study.spring.cinephile.service;
 import java.util.List;
 
 import study.spring.cinephile.model.Movie;
+import study.spring.cinephile.model.StarComment;
 
 public interface MovieService {
 	
@@ -68,6 +69,23 @@ public interface MovieService {
 	
 	public int getMovieCountOptionAll(Movie input) throws Exception;
 	
+	public int setMovieLikeUp(Movie input, int members_id) throws Exception;
+	
+	public int setMovieLikeDown(Movie input, int members_id) throws Exception;
+	
+	public int getStarCommentCount(StarComment input) throws Exception;
+	
+	public List<StarComment> getStarComment(StarComment input) throws Exception;
+	
+	public int setStarComment(StarComment input) throws Exception;
+	
+	public int setEditStarComment(StarComment input, int members_id) throws Exception;
+	
+	public int setDeleteStarComment(StarComment input, int members_id) throws Exception;
+	
+	public boolean getMovieItemLike(Movie movie, int members_id) throws Exception;
+	
+	public StarComment getMovieMyStarComment(Movie input, int members_id) throws Exception;
 	/*
 	 * 영화 데이터 저장하기
 	 * @param Movie 저장할 정보를 담고 있는 beans
@@ -76,6 +94,16 @@ public interface MovieService {
 	 */
 	public int addMovie(Movie input) throws Exception;
 	
+//	/*
+//	 * 좋아요 갯수 증가하기
+//	 */
+//	public int addLikeMovie(Movie input) throws Exception;
+//	
+//	/*
+//	 * 좋아요 갯수 증가하기
+//	 */
+//	public int minusLikeMovie(Movie input) throws Exception;
+//	
 	
 	/*
 	 * 영화 데이터 목록 조회 - 검색조회

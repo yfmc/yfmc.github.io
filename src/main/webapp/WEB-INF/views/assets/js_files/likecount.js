@@ -4,7 +4,7 @@
 
 
 $(function() {
-	var counter = {single : 0, count : 1, total:152361};
+	var counter = {single : 0, count : 1, total : 1513123};
 	
 	$("#likecount").html(counter.total);
 	$("#likebutton").click(function() {

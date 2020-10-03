@@ -22,14 +22,30 @@
 		<result property="movie_booking" column="movie_booking" />
 		<result property="movie_genre" column="movie_genre" />
 	</resultMap>
+	
+	<resultMap id="favmovieMap" type="study.spring.cinephile.model.FavMovie">
+		<result property="fav_movie_id" column="fav_movie_id"/>
+		<result property="liked_time" column="liked_time"/>
+		<result property="movie_id" column="movie_id"/>
+		<result property="members_id" column="members_id"/>
+	</resultMap>
+	
+	<resultMap id="starCommentMap" type="study.spring.cinephile.model.StarComment">
+		<result property="comment_star_id" column="comment_star_id"/>
+		<result property="members_id" column="members_id"/>
+		<result property="movie_id" column="movie_id"/>
+		<result property="comment" column="comment"/>
+		<result property="comment_date" column="comment_date"/>
+		<result property="star_comment" column="star_comment"/>
+		<result property="edit_date" column="edit_date"/>
+	</resultMap>
 
 	<!-- 예매순에 따른 조회 -->
 	<select id="selectMovieBooking"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit, movie_booking
-		FROM
-		movie
+		SELECT movie_id, poster_link, title, age_limit, movie_booking, star_info, like_count
+		FROM movie
 		WHERE movie_booking is not null OR today_audience is not null
 		ORDER BY movie_booking DESC
 		LIMIT 0,8;
@@ -39,11 +55,10 @@
 	<select id="selectStarInfo"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit, star_info
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
 		FROM movie
 		WHERE movie_booking is not null OR today_audience is not null
-		ORDER BY
-		star_info DESC
+		ORDER BY star_info DESC
 		LIMIT 0,8;
 	</select>
 
@@ -51,7 +66,7 @@
 	<select id="selectTodayAudience"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit, today_audience
+		SELECT movie_id, poster_link, title, age_limit, today_audience, star_info, like_count
 		FROM
 		movie
 		WHERE movie_booking is not null OR today_audience is not null
@@ -64,7 +79,7 @@
 	<select id="selectOpeningDate"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit, opening_date
+		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count
 		FROM movie
 		WHERE like_count is not null AND opening_date is not null
 		ORDER BY
@@ -76,7 +91,7 @@
 	<select id="selectLikeCount"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit, opening_date
+		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count
 		FROM movie
 		WHERE like_count is not null AND opening_date is not null
 		ORDER BY
@@ -87,7 +102,7 @@
 	<select id="selectWhatMovieTitle"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
 		FROM movie
 		<where>
 			<if test="title != null and title !=''">
@@ -121,7 +136,7 @@
 	<select id="selectWhatMovieActor"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
 		FROM movie
 		<where>
 			<if test="movie_actor != null and movie_actor !=''">
@@ -154,7 +169,7 @@
 	<select id="selectWhatMovieDirector"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
 		FROM movie
 		<where>
 			<if test="movie_director != null and movie_director !=''">
@@ -187,7 +202,7 @@
 	<select id="selectWhatMovieOptionAll"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT poster_link, title, age_limit
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
 		FROM movie
 		<where>
 			(
@@ -343,5 +358,77 @@
 			</if>
 		</where>
 	</select>
+	
+	<!-- 영화 상세정보에 대한 기능 -->
+	<select id="selectItem" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
+	SELECT movie_id, poster_link, title, movie_director, movie_actor, movie_genre, age_limit, opening_date, accumul_audience, star_info, synopsis, like_count, star_info
+	FROM movie
+	WHERE movie_id=#{movie_id} AND title=#{title}
+	</select>
+	
+	 <!--좋아요한 영화들--> 
+	<insert id="insertLike" parameterType="study.spring.cinephile.model.FavMovie" useGeneratedKeys="true" keyProperty="fav_movie_id">
+		INSERT INTO fav_movie
+		(liked_time, movie_id, members_id)
+		VALUES
+		(now(), #{movie_id}, #{members_id})
+	</insert>
+	<!--좋아요를 취소--> 
+	<delete id="deleteLike" parameterType="study.spring.cinephile.model.FavMovie">
+		DELETE FROM fav_movie
+		WHERE movie_id=#{movie_id} AND members_id=#{members_id}
+	</delete>
 
+	<!-- 좋아요 버튼 클릭시 좋아요 갯수 증가 -->
+	<update id="setLike" parameterType="study.spring.cinephile.model.Movie">
+		UPDATE movie
+		SET like_count=#{like_count}
+		WHERE movie_id=#{movie_id}
+	</update>
+	<!-- 댓글등록 -->
+	<insert id="setComment" parameterType="study.spring.cinephile.model.StarComment" useGeneratedKeys="true" keyProperty="comment_star_id">
+		INSERT INTO star_comment
+		(members_id, movie_id, comment, comment_date, star_comment, edit_date, user_id)
+		VALUES
+		(#{members_id}, #{movie_id}, #{comment}, now(), #{star_comment}, now(), #{user_id})
+	</insert>
+	<!-- 댓글 조회 -->
+	<select id="selectComment" parameterType="study.spring.cinephile.model.StarComment" resultMap="starCommentMap">
+		SELECT members_id, comment, comment_date, star_comment, user_id, edit_date
+		FROM star_comment
+		WHERE movie_id = #{movie_id}
+		
+		ORDER BY edit_date DESC, comment_date DESC 
+		
+		<if test="listCount > 0">
+            LIMIT #{offset}, #{listCount}
+        </if>
+	</select>
+	<!-- 댓글 갯수 조회-->
+	<select id="selectCommentCount" parameterType="study.spring.cinephile.model.StarComment" resultType="int">
+		SELECT count(*)
+		FROM star_comment
+		WHERE movie_id = #{movie_id}
+	</select>
+	<!-- 댓글 수정 -->
+	<update id="editComment" parameterType="study.spring.cinephile.model.StarComment">
+		UPDATE star_comment
+		SET comment=#{comment}, edit_date=#{edit_date}
+		WHERE members_id=#{members_id} AND movie_id=#{movie_id}
+	</update>
+	<!--댓글 삭제--> 
+	<delete id="deleteComment" parameterType="study.spring.cinephile.model.StarComment">
+		DELETE FROM star_comment
+		WHERE movie_id=#{movie_id} AND members_id=#{members_id}
+	</delete>
+	<select id="getMovieItemLike" parameterType="study.spring.cinephile.model.FavMovie" resultMap="favmovieMap">
+		SELECT members_id, movie_id
+		FROM fav_movie
+		WHERE members_id=#{members_id} AND movie_id=#{movie_id}
+	</select>
+	<select id="getMovieMyStarComment" parameterType="study.spring.cinephile.model.StarComment" resultMap="starCommentMap">
+		SELECT *
+		FROM star_comment
+		WHERE members_id=#{members_id} AND movie_id=#{movie_id}
+	</select>
 </mapper>

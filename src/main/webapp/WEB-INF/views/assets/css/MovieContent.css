@@ -33,6 +33,7 @@
 
 .movie-poster img {
 	height: 400px;
+	width:266.66px;
 	margin-left: 180px;
 	margin-top: opx;
 	margin-right: 15px;
@@ -77,30 +78,68 @@
 	font-weight: bold;
 }
 
-.movie-etc2 button {
-	margin-right: 5px;
+.movie-etc2 form{
+	display:inline;
 }
 
-.movie-etc2 p:nth-child(1) {
+.movie-etc2 .likebutton {
+	margin-right: 5px;
+	height:50px;
+	width:55px;
+}
+
+.movie-etc2 .likebutton:hover{
+	text-decoration : none;
+	cursor : grab;
+}
+
+.movie-etc2 .likecount{
 	font-size: 16px;
 	font-weight: bold;
 	color: blue;
 	margin-right: 25px;
 }
 
-.movie-etc2 p:nth-child(2) {
+.movie-etc2 p:nth-child(1) {
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
 	margin-right: 25px;
 }
 
-.movie-etc2 .starRev {
-	margin-right: 60px;
+.movie-etc2 p:nth-child(2) {
+	margin-right: 15px;
+}
+
+.movie-etc2 p:nth-child(3) {
+	margin-right: -15px;
+	
 }
 
 .change-poster {
 	margin-top: 50px;
 }
 
+.movie-etc2 .starRev {
+	margin-right: 60px;
+}
+
 .starRev {
+	display: block;
+	float: right;
+}
+
+.starRev-user {
+	display: block;
+	float: right;
+}
+
+.movie-etc2 .people-starRev {
+	margin-right: 80px;
+	margin-top : 13px;
+}
+
+.people-starRev {
 	display: block;
 	float: right;
 	margin-right: 25px;
@@ -207,13 +246,20 @@ table th {
 	height:50px;
 }
 
-.movie-advice button {
+.movie-advice .add-comment {
 	margin-top: 10px;
-	font-size: 16px;
+	font-size: 24px;
 	font-weight: bold;
+	border : 3px solid #eee;
+	margin-left : 10px;
 }
 
-.movie-advice button:after {
+.movie-advice .add-comment:hover{
+	text-decoration : none;
+	cursor : grab;
+}
+
+.movie-advice .add-comment:after {
 	content: ' ';
 	display: block;
 	float: none;
@@ -253,7 +299,7 @@ table th {
 	clear: both;
 }
 
-.movie-comment .starRev {
+.movie-comment .starRev-user {
 	margin-top: 5px;
 	margin-right: 0px;
 }
@@ -270,9 +316,23 @@ table th {
 	font-weight: bold;
 }
 
-.movie-comment .delete-text {
-	font-size: 12px;
+.movie-comment .none-comment{
+	width:auto;
+	margin:auto;
+	text-align:center;
+	font-size:20px;
 	font-weight: bold;
+}
+
+.movie-comment .delete-text {
+	font-size: 16px;
+	font-weight: bold;
+	border : 3px solid #eee;
+}
+
+.movie-comment .delete-text:hover{
+	text-decoration : none;
+	cursor : grab;
 }
 
 .people-comment .text1 {
@@ -283,25 +343,21 @@ table th {
 	font-family: "Jua", sans-serif;
 }
 
-.pagePass {
-	margin-top: 40px;
-	font-weight: bold;
-}
-
-.pagination li>a {
-	color: black;
-}
-
-.pagination {
-	margin-left: 430px;
+.pagePass{
+	margin:auto;
+	width:auto;
+	text-align:center;
 }
 
 .pageUpbutton {
 	margin-top: 10px;
-	width: 600px;
+	margin:auto;
+	width:fit-content;
+	text-align:center;
 }
 
 .pageUpbutton button {
 	font-weight: bold;
 	color: #222;
+	margin-top : 15px;
 }

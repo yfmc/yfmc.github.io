@@ -62,9 +62,13 @@
 											<span><img src="${k.poster_link}"
 												class="img-responsive" />
 												<figcaption>
-													<a href="${pageContext.request.contextPath}/예매페이지"
+												<c:url value="${contextPath}/movie/MovieContent.do" var="movie_content_url">
+													<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
+													<c:param name = "title" value = "${k.title}"></c:param>
+												</c:url>
+													<a href="${contextPath}/예매페이지"
 														id="book1">예매하기</a> <a
-														href="${pageContext.request.contextPath}/movie/MovieContent.do"
+														href="${movie_content_url}"
 														id="information1">상세정보</a>
 												</figcaption></span>
 										</div>
@@ -75,10 +79,12 @@
 												src="https://blog.kakaocdn.net/dn/uWnY7/btqI4S6VLt1/0KNymI3JcPIAhvwvgiJ3pK/img.png"
 												class="img-responsive" />
 												<figcaption>
-													<a href="${pageContext.request.contextPath}/예매페이지"
-														id="book1">예매하기</a> <a
-														href="${pageContext.request.contextPath}/movie/MovieContent.do"
-														id="information1">상세정보</a>
+												<c:url value="${contextPath}/movie/MovieContent.do" var="movie_content_url">
+													<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
+													<c:param name = "title" value = "${k.title}"></c:param>
+												</c:url>
+													<a href="${contextPath}/예매페이지" id="book1">예매하기</a>
+													<a href="${movie_content_url}" id="information1">상세정보</a>
 												</figcaption></span>
 										</div>
 									</c:otherwise>

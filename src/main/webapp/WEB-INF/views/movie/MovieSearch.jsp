@@ -16,9 +16,7 @@
 	href="${pageContext.request.contextPath}/assets/plugins/ajax_sws/ajax_helper.css">
 <title>영화검색 | Cinephile</title>
 <!-- ========== 컨텐츠 영역 시작 ========== -->
-<form class="movie-search" id="movie-search"
-	action="${pageContext.request.contextPath}/movie/MovieSearchResult.do"
-	method="get">
+<form class="movie-search" id="movie-search" action="${pageContext.request.contextPath}/movie/MovieSearch.do" method="get">
 	<!-- action="MovieSearch.jsp" 검색에 대한 조건을 입력하였을 때 같은 페이지로 결과를 보낸다.-->
 	<h2>
 		좋아하는 영화, 보고싶은 영화를 <span>Cinephile</span>에서 찾아보세요!
@@ -144,10 +142,12 @@
 								<div class="movie-image">
 									<span><img src="${k.poster_link}" class="img-responsive" />
 										<figcaption>
-											<a href="${pageContext.request.contextPath}/예매페이지" id="book1">예매하기</a>
-											<a
-												href="${pageContext.request.contextPath}/movie/MovieContent.do"
-												id="information1">상세정보</a>
+										<c:url value="${contextPath}/movie/MovieContent.do" var="movie_content_url">
+											<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
+											<c:param name = "title" value = "${k.title}"></c:param>
+										</c:url>
+											<a href="${contextPath}/예매페이지" id="book1">예매하기</a>
+											<a href="${movie_content_url}" id="information1">상세정보</a>
 										</figcaption></span>
 								</div>
 							</c:when>
@@ -157,10 +157,12 @@
 										src="https://blog.kakaocdn.net/dn/uWnY7/btqI4S6VLt1/0KNymI3JcPIAhvwvgiJ3pK/img.png"
 										class="img-responsive" />
 										<figcaption>
-											<a href="${pageContext.request.contextPath}/예매페이지" id="book1">예매하기</a>
-											<a
-												href="${pageContext.request.contextPath}/movie/MovieContent.do"
-												id="information1">상세정보</a>
+										<c:url value="${contextPath}/movie/MovieContent.do" var="movie_content_url">
+											<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
+											<c:param name = "title" value = "${k.title}"></c:param>
+										</c:url>
+											<a href="${contextPath}/예매페이지" id="book1">예매하기</a>
+											<a href="${movie_content_url}" id="information1">상세정보</a>
 										</figcaption></span>
 								</div>
 							</c:otherwise>
