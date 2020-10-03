@@ -38,12 +38,13 @@ public class TimetableRestController {
 		input.setTheaterId(theaterId);
 		input.setScrnDay(scrnDay);
 		
-		// 조회 결과가 저장될 객체
+		// 해당 극장, 날짜에 상영 중인 영화 목록이 저장될 객체
 		List<Timetable> output=null;
+		// 영화 개수가 저장될 객체
 		int output2=0;
 		
 		try {
-			// 데이터 조회하기
+			// 데이터 조회하기1 (영화 목록)
 			output=timetableService.getMovieList(input);
 			output2=timetableService.countMovie(input);
 		}
@@ -57,6 +58,34 @@ public class TimetableRestController {
 		data.put("scrnDay", scrnDay);
 		data.put("movieList", output);
 		data.put("count", output2);
+		
+		/* 각 영화에 대한 상영시간표 조회 : 영화 개수만큼 반복 */
+		for (int i=0; i<output2; i++) {
+			/* 데이터 조회하기2 (상영시간표 목록) */
+			// 필요한 조건값을 Beans에 담는다
+			Timetable input2=new Timetable();
+			input2.setTheaterId(input.getTheaterId());
+			input2.setScrnDay(input.getScrnDay());
+			input2.setMovieId(output.get(i).getMovieId());
+			
+			// 영화 별 상영시간표 결과가 저장될 객체
+			List<Timetable> output3=null;
+			// 영화 당 상영시간표 개수가 저장될 객체
+			int output4=0;
+			
+			try {
+				// 데이터 조회하기
+				output3=timetableService.getTimetableList(input2);
+				output4=timetableService.countTable(input2);
+			}
+			catch (Exception e) {
+				return webHelper.getJsonError(e.getLocalizedMessage());
+			}
+			
+			/* JSON 출력하기 */
+			data.put("table"+input2.getMovieId(), output3);
+			data.put("count"+input2.getMovieId(), output4);
+		}
 		
 		return webHelper.getJsonData(data);
 		

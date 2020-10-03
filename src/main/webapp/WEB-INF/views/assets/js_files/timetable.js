@@ -44,7 +44,7 @@ $(function() {
 					var movieId=req.movieList[i].movieId;
 					
 					/* <div id="film_list">에 추가할 html 요소 준비 */
-					var div=$("<div>").addClass("film_time").attr("id", "film"+i);
+					var div=$("<div>").addClass("film_time").attr("id", "film"+i).attr("data-count", count1).attr("data-id", movieId);
 					var h3=$("<h3>");
 					var ageLimit=$("<span>").addClass("label");
 					
@@ -64,51 +64,34 @@ $(function() {
 					
 					/* <div class="film_time"> 블록 추가 */
 					$("#film_list").append(div);
+
+					/* JSON에 접근하기 위한 key 값 준비 */
+					var countMovieId="count"+movieId;
+					// console.log(req[countMovieId]);
+					var tableMovieId="table"+movieId;
 					
-					/* <div> 안에 <h3> 블록(관람가+영화제목) 추가 */
-					div.append(h3);
+					var btns="";
+					for (var j=0; j<req[countMovieId]; j++) {
+						var scrnStart=req[tableMovieId][j].scrnStart;
+						var scrnEnd=req[tableMovieId][j].scrnEnd;
+						var seatCount=244-req[tableMovieId][j].seatCount;
+						var roomNo=req[tableMovieId][j].roomNo;
+						
+						btns+="<a href='booking' ";
+						btns+="class='btn btn-lg btn-default' data-toggle='tooltip' ";
+						btns+="data-placement='bottom' title='종료 "+scrnEnd;
+						btns+="'> <span class='start_time'>"+scrnStart;
+						btns+="</span> <span class='seats'>"+seatCount;
+						btns+=" / 252</span> <span class='room_no'>"+roomNo+"관</span></a>";
+					}
+										
+					/* <div> 안에 <h3> 블록(관람가+영화제목), 상영시간표 버튼 추가 */
+					div.append(h3).append(btns);
 					h3.append(ageLimit);
 					h3.append(" "+title);
-					
 
-					var btnsArray=[];
-
-					$.get('timetablejson2?theaterId='+getTheaterId()+'&scrnDay='+scrnDay+"&movieId="+movieId, function(req) {
-						console.log(req.movieId);
-						console.log(req.count);
-						
-						// 영화의 상영시간표 개수 조회	
-						var count2=req.count;
-
-						var btns="";
-						for (var j=0; j<count2; j++) {
-							var scrnStart=req.tableList[j].scrnStart;
-							var scrnEnd=req.tableList[j].scrnEnd;
-							var seatCount=244-req.tableList[j].seatCount;
-							var roomNo=req.tableList[j].roomNo;
-							
-							btns+="<a href='booking' ";
-							btns+="class='btn btn-lg btn-default' data-toggle='tooltip' ";
-							btns+="data-placement='bottom' title='종료 "+scrnEnd;
-							btns+="'> <span class='start_time'>"+scrnStart;
-							btns+="</span> <span class='seats'>"+seatCount;
-							btns+=" / 252</span> <span class='room_no'>"+roomNo+"관</span></a>";
-						} // end for tableCount
-						
-						console.log(btns);
-						btnsArray.push(btns);
-						console.log("배열 길이 : "+btnsArray.length);
-						$("#film"+(btnsArray.length-1)).append(btnsArray[btnsArray.length-1]);
-					}); // end get timetableList
 				} // end for movieCount
 			} // end else
 		}); // end get movieList
-			
-			
-
-		
-		
-		
-		
 	}); // end click
 }); // end jQuery
