@@ -18,8 +18,10 @@ $(function(){
 	//예매취소 버튼 누르면 물어보는 팝업
 	$(document).on("click",".cancelbtn",function(){
 		var result=confirm("정말 예매를 취소하시겠습니까?");
+		var url=$(".cancelurl").val();
+		console.log(url);
 		if(result){
-
+			location.href=url;
 		}
 		else{
 			location.href="bookinglist.do";

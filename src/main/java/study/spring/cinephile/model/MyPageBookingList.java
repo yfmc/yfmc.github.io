@@ -28,6 +28,7 @@ public class MyPageBookingList {
 	//movie 테이블
 	private String title;
 	private String poster_link;
+	private String movie_made_year;
 	
 	//booking테이블
 	private String seat_no;

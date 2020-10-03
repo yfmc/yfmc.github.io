@@ -55,7 +55,7 @@
 	                     	</c:otherwise>
 	                     </c:choose>
 	                            <span class="title">
-	                                <h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item.movie_id}">${item.title}</a></h3>
+	                                <h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item.movie_id}">${item.title} (${item.movie_made_year})</a></h3>
 	                            </span>
 	                            <span class="rating">
 	                                	평점 : <span class="star-prototype">${item.star_info}</span> &nbsp;(${item.star_info})
@@ -79,9 +79,6 @@
 	                            <!-- 좋아한 영화 목록에서 제거하는 버튼 -->
 	                            <button type="button" class="btn btn-default remove" onclick = "location.href = '${pageContext.request.contextPath}/mypage/choice_delete.do?fav_movie_id=${item.fav_movie_id}'" >-</button>
 	                            
-	                            
-	                            <!-- 예매하기 페이지로 이동하는 버튼 -->
-	                            <input type="button" value="예매불가" class="btn book" disabled/>
 
 	                        </li>
 	                    </ul>

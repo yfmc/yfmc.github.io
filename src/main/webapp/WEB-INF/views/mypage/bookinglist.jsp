@@ -55,7 +55,7 @@
 	                     	</c:otherwise>
 	                     	</c:choose>
 	         					<span class="title">
-	         						<h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title}</a></h3>
+	         						<h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do">${item.title} (${item.movie_made_year})</a></h3>
 	         					</span>
 	         					<span class="bookdate">
 	         						<h4>${item.booking_date}</h4>
@@ -64,7 +64,9 @@
 	         						<h4>${item.brand} ${item.branch} (${item.room_no}관)</h4>
 	         					</span>
 	         					<!-- 예매취소 버튼 -->
-	         					<input type="button" value="예매취소" class="btn cancelbtn" onclick="location.href='${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}'"/>
+	         					<!-- <input type="button" value="예매취소" class="btn cancelbtn" onclick="location.href='${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}'"/>-->
+	         					<input type="button" value="예매취소" class="btn cancelbtn" />
+	         					<input type="hidden" class="cancelurl" value="${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}"/>
 
 
 	         				</li>

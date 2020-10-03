@@ -21,11 +21,12 @@
 	<result property="branch" column="branch"/>
 	<result property="title" column="title"/>
 	<result property="poster_link" column="poster_link"/>
+	<result property="movie_made_year" column="movie_made_year"/>
 	</resultMap>
 	
 	<select id="selectList" parameterType="study.spring.cinephile.model.MyPageBookingList" resultMap="myPageBookingListMapperMap">
 	select bn.booking_no,price,payment,booking_date,members_id,bn.timetable_id,scrn_day,scrn_start,
-	scrn_end,room_no,seat_count,t.movie_id,t.theater_id,brand,branch,title,poster_link
+	scrn_end,room_no,seat_count,t.movie_id,t.theater_id,brand,branch,title,poster_link,movie_made_year
 	from bookingno bn,timetable t,movie m,theater th
 	<where>
 	bn.timetable_id=t.timetable_id and t.movie_id=m.movie_id
