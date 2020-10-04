@@ -66,7 +66,7 @@
 	         					<!-- 예매취소 버튼 -->
 	         					<!-- <input type="button" value="예매취소" class="btn cancelbtn" onclick="location.href='${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}'"/>-->
 	         					<input type="button" value="예매취소" class="btn cancelbtn" />
-	         					<input type="hidden" class="cancelurl" value="${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}"/>
+	         					<input type="hidden" class="cancelurl" value="${pageContext.request.contextPath}/mypage/mybooking_delete.do?timetable_id=${item.timetable_id}"/>
 
 
 	         				</li>

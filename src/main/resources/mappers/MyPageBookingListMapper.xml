@@ -51,7 +51,7 @@
 	<delete id="deleteItem" parameterType="study.spring.cinephile.model.MyPageBookingList">
 	delete from bookingno
 	<where>
-	members_id=#{members_id} and timetable_id=(select timetable_id from timetable where movie_id=#{movie_id})
+	members_id=#{members_id} and timetable_id=#{timetable_id}
 	</where> 
 	</delete>
 	

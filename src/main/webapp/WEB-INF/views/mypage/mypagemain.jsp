@@ -74,7 +74,7 @@
                         <div class="col-md-3 col-sm-6 col-xs-12">
                                             <c:choose>
 	                    <c:when test="${bookingoutput[0]!=null}">
-	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[0].movie_id}" class="thumbnail">
+	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[0].movie_id}" class="thumbnail">
 	                    </c:when>
 	                    <c:otherwise>
 	                    		<a href="#" class="thumbnail">
@@ -120,7 +120,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                     <c:choose>
-                    <c:when test="${bookingoutput[0]!=null}">
+                    <c:when test="${bookingoutput[2]!=null}">
                             <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[2].movie_id}" class="thumbnail">
                     </c:when>
                     <c:otherwise>
@@ -175,7 +175,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                     <c:choose>
-                    <c:when test="${choiceoutput[0]!=null}">
+                    <c:when test="${choiceoutput[1]!=null}">
                             <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[1].movie_id}" class="thumbnail">
                     </c:when>
                     <c:otherwise>
@@ -195,7 +195,7 @@
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                     <c:choose>
-                    <c:when test="${choiceoutput[0]!=null}">
+                    <c:when test="${choiceoutput[2]!=null}">
                             <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[2].movie_id}" class="thumbnail">
                     </c:when>
                     <c:otherwise>

@@ -140,17 +140,17 @@ public class MypageController {
 	
 	@RequestMapping(value="/mypage/mybooking_delete.do",method=RequestMethod.GET)
 	public ModelAndView mybooking_delete(Model model,HttpServletRequest request,
-			@RequestParam(value="movie_id",defaultValue="0") int movie_id) {
+			@RequestParam(value="timetable_id",defaultValue="0") int timetable_id) {
 		HttpSession session=request.getSession();
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		
-		if(movie_id==0) {
+		if(timetable_id==0) {
 			return webHelper.redirect(null, "잘못된 접근입니다.");
 		}
 		
 		MyPageBookingList input=new MyPageBookingList();
 		input.setMembers_id(mySession.getMembers_id());
-		input.setMovie_id(movie_id);
+		input.setTimetable_id(timetable_id);
 		
 		try {
 			myPageBookingListService.deleteMyPageBookingList(input);
