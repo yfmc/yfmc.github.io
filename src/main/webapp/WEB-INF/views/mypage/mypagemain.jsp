@@ -74,7 +74,7 @@
                         <div class="col-md-3 col-sm-6 col-xs-12">
                                             <c:choose>
 	                    <c:when test="${bookingoutput[0]!=null}">
-	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[0].movie_id}" class="thumbnail">
+	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[0].movie_id}&title=${bookingoutput[0].title}" class="thumbnail">
 	                    </c:when>
 	                    <c:otherwise>
 	                    		<a href="#" class="thumbnail">
@@ -98,7 +98,7 @@
 	                    <div class="col-md-3 col-sm-6 col-xs-12">
 	                    <c:choose>
 	                    <c:when test="${bookingoutput[1]!=null}">
-	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[1].movie_id}" class="thumbnail">
+	                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[1].movie_id}&title=${bookingoutput[1].title}" class="thumbnail">
 	                    </c:when>
 	                    <c:otherwise>
 	                    		<a href="#" class="thumbnail">
@@ -121,7 +121,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                     <c:choose>
                     <c:when test="${bookingoutput[2]!=null}">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[2].movie_id}" class="thumbnail">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${bookingoutput[2].movie_id}&title=${bookingoutput[2].title}" class="thumbnail">
                     </c:when>
                     <c:otherwise>
                     		<a href="#" class="thumbnail">
@@ -156,7 +156,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                     <c:choose>
                     <c:when test="${choiceoutput[0]!=null}">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[0].movie_id}" class="thumbnail">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[0].movie_id}&title=${choiceoutput[0].title}" class="thumbnail">
                     </c:when>
                     <c:otherwise>
                     		<a href="#" class="thumbnail">
@@ -176,7 +176,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                     <c:choose>
                     <c:when test="${choiceoutput[1]!=null}">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[1].movie_id}" class="thumbnail">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[1].movie_id}&title=${choiceoutput[1].title}" class="thumbnail">
                     </c:when>
                     <c:otherwise>
                     		<a href="#" class="thumbnail">
@@ -196,7 +196,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                     <c:choose>
                     <c:when test="${choiceoutput[2]!=null}">
-                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[2].movie_id}" class="thumbnail">
+                            <a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${choiceoutput[2].movie_id}&title=${choiceoutput[2].title}" class="thumbnail">
                     </c:when>
                     <c:otherwise>
                     		<a href="#" class="thumbnail">

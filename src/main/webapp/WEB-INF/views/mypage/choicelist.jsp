@@ -55,7 +55,7 @@
 	                     	</c:otherwise>
 	                     </c:choose>
 	                            <span class="title">
-	                                <h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item.movie_id}">${item.title} (${item.movie_made_year})</a></h3>
+	                                <h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item.movie_id}&title=${item.title}">${item.title} (${item.movie_made_year})</a></h3>
 	                            </span>
 	                            <span class="rating">
 	                                	평점 : <span class="star-prototype">${item.star_info}</span> &nbsp;(${item.star_info})
