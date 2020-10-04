@@ -1,6 +1,6 @@
 /* 예매 선택 Ajax 구현 */
 $(function() {
-	/* Ajax 작동이 아닌 get 방식으로 페이지 접근 시 처리 */
+	/* Ajax 작동이 아닌 get 방식으로 페이지 접근 시 처리 : 선택된 상영시간표의 날짜에 대한 css 적용 */
 	$(document).ready(function() {
 		// 선택한 상영시간표의 극장, 영화, 날짜 console 출력
 		console.log($(".selected_theater").data("id"));
@@ -183,8 +183,9 @@ $(function() {
 					var scrnEnd=req.tableList[i].scrnEnd;
 					var seatCount=244-req.tableList[i].seatCount;
 					var roomNo=req.tableList[i].roomNo;
+					var timetableId=req.tableList[i].timetableId;
 					
-					li+="<li class='table_btn' data-toggle='tooltip' ";
+					li+="<li class='table_btn' data-id='"+timetableId+"' data-toggle='tooltip' ";
 					li+="data-placement='top' title='종료 "+scrnEnd;
 					li+="'> <span class='start_time'>"+scrnStart;
 					li+="</span><br /><span class='seats'>"+seatCount+" / 252</span> ";
@@ -274,8 +275,9 @@ $(function() {
 					var scrnEnd=req.tableList[i].scrnEnd;
 					var seatCount=244-req.tableList[i].seatCount;
 					var roomNo=req.tableList[i].roomNo;
+					var timetableId=req.tableList[i].timetableId;
 					
-					li+="<li class='table_btn' data-toggle='tooltip' ";
+					li+="<li class='table_btn' data-id='"+timetableId+"' data-toggle='tooltip' ";
 					li+="data-placement='top' title='종료 "+scrnEnd;
 					li+="'> <span class='start_time'>"+scrnStart;
 					li+="</span><br /><span class='seats'>"+seatCount+" / 252</span> ";
