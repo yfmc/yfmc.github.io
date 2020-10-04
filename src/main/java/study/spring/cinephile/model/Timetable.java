@@ -23,5 +23,6 @@ public class Timetable {
 	
 	// theater inner join columns
 	private int provNo;			// 지역번호
+	private String theater;		// 영화관 이름
 	
 }

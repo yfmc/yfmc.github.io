@@ -117,5 +117,34 @@ public class TimetableServiceImpl implements TimetableService {
 		
 		return result;
 	}
+
+	/**
+	 * 상영시간표 단일행 조회
+	 * @param Timetable input : 상영시간표 Beans
+	 * @return 상영시간표 객체
+	 * @throws Exception
+	 */
+	@Override
+	public Timetable getTimetableItem(Timetable input) throws Exception {
+		Timetable result=null;
+		
+		try {
+			result=sqlSession.selectOne("TimetableMapper.selectTimetableItem", input);
+			
+			if (result==null) {
+				throw new NullPointerException("result=null");
+			}
+		}
+		catch (NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 데이터가 없습니다");
+		}
+		catch (Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회에 실패했습니다");
+		}
+		
+		return result;
+	}
 	
 }

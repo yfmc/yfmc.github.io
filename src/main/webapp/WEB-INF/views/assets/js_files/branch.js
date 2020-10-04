@@ -556,7 +556,26 @@ $(function() {
 	});
 	
 	// 예매 상영시간 선택 페이지에서 지역별 극장 목록 노출 기능 구현
+	
+	/* 지역 선택 시 초기화 해야 하는 기능 함수화 */
+	function setDefault() {
+		// 좌석선택 버튼을 비활성화
+		$("#go_to_next").removeClass("active");
+		
+		// selected_theater class 제거
+		$(".branch_btn").removeClass("selected_theater");
+		
+		// 영화선택 div 영역을 비우고 영화관 선택요구 문구 출력
+		$(".movie_btn").removeClass("selected_film");
+		$(".choose_film").empty().append("<p style='text-align: center; margin-top: 105px;'>영화관을 선택해주세요</p>");
+
+		// 날짜 선택을 초기화하고 상영시간표 영역을 비우고 영화 선택요구 문구 출력
+		$(".weekday").css("border-bottom", "0px").removeClass("selected_date");
+		$(".choose_time").empty().append("<p style='text-align: center;'>영화를 선택해주세요</p>");
+	}
+	
 	$("#seoul2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.seoul.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.seoul[i].brano+">"+b_json.seoul[i].brand+" "+b_json.seoul[i].branch+"</li>\n";
@@ -566,6 +585,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#gyeonggi2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.gyeonggi.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.gyeonggi[i].brano+">"+b_json.gyeonggi[i].brand+" "+b_json.gyeonggi[i].branch+"</li>\n";
@@ -575,6 +595,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#incheon2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.incheon.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.incheon[i].brano+">"+b_json.incheon[i].brand+" "+b_json.incheon[i].branch+"</li>\n";
@@ -584,6 +605,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#gangwon2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.gangwon.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.gangwon[i].brano+">"+b_json.gangwon[i].brand+" "+b_json.gangwon[i].branch+"</li>\n";
@@ -593,6 +615,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#daejeon2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.daejeon.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.daejeon[i].brano+">"+b_json.daejeon[i].brand+" "+b_json.daejeon[i].branch+"</li>\n";
@@ -602,6 +625,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#chungcheong2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.chungcheong.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.chungcheong[i].brano+">"+b_json.chungcheong[i].brand+" "+b_json.chungcheong[i].branch+"</li>\n";
@@ -611,6 +635,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#gwangju2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.gwangju.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.gwangju[i].brano+">"+b_json.gwangju[i].brand+" "+b_json.gwangju[i].branch+"</li>\n";
@@ -620,6 +645,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#jeolla2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.jeolla.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.jeolla[i].brano+">"+b_json.jeolla[i].brand+" "+b_json.jeolla[i].branch+"</li>\n";
@@ -629,6 +655,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#daegu2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.daegu.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.daegu[i].brano+">"+b_json.daegu[i].brand+" "+b_json.daegu[i].branch+"</li>\n";
@@ -638,6 +665,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#busan2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.busan.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.busan[i].brano+">"+b_json.busan[i].brand+" "+b_json.busan[i].branch+"</li>\n";
@@ -647,6 +675,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#gyeongnam2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.gyeongnam.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.gyeongnam[i].brano+">"+b_json.gyeongnam[i].brand+" "+b_json.gyeongnam[i].branch+"</li>\n";
@@ -656,6 +685,7 @@ $(function() {
 		$(this).css("background-color", "white");
 	});
 	$("#jeju2").click(function() {
+		setDefault();
 		var html="";
 		for (var i=0; i<b_json.jeju.length; i++) {
 			html+="<li class='branch_btn' data-id="+b_json.jeju[i].brano+">"+b_json.jeju[i].brand+" "+b_json.jeju[i].branch+"</li>\n";

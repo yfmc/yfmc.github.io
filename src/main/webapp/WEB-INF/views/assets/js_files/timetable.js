@@ -24,7 +24,7 @@ $(function() {
 	var dd=today.getDate();
 	
 	// scrnDay 기본값
-	var setDate=yy+"-"+mm+"-"+dd;
+	var scrnDay=yy+"-"+mm+"-"+dd;
 	
 	// 반복할 영화 개수 추출
 	var movieCount=$(".film_time").attr("data-count");
@@ -33,15 +33,21 @@ $(function() {
 		// movieId 값 추출
 		var movieId=$(".film"+k).attr("data-id");
 
-		$.get('timetablejson2?theaterId='+getTheaterId()+'&scrnDay='+setDate+"&movieId="+movieId, function(req) {
+		$.get('timetablejson2?theaterId='+getTheaterId()+'&scrnDay='+scrnDay+"&movieId="+movieId, function(req) {
 			var btns="";
 			for (var i=0; i<req.count; i++) {
 				var scrnStart=req.tableList[i].scrnStart;
 				var scrnEnd=req.tableList[i].scrnEnd;
 				var seatCount=244-req.tableList[i].seatCount;
 				var roomNo=req.tableList[i].roomNo;
-					
-				btns+="<a href='booking' ";
+				
+				var provNo=req.tableList[i].provNo;
+				var theaterId=req.theaterId;
+				var scrnDay=req.scrnDay;
+				var movieId=req.movieId;
+				var timetableId=req.tableList[i].timetableId;
+				
+				btns+="<a href='bookingtime?provNo="+provNo+"&theaterId="+theaterId+"&scrnDay="+scrnDay+"&movieId="+movieId+"&timetableId="+timetableId+"' ";
 				btns+="class='btn btn-lg btn-default' data-toggle='tooltip' ";
 				btns+="data-placement='bottom' title='종료 "+scrnEnd;
 				btns+="'> <span class='start_time'>"+scrnStart;
@@ -116,7 +122,13 @@ $(function() {
 						var seatCount=244-req[tableMovieId][j].seatCount;
 						var roomNo=req[tableMovieId][j].roomNo;
 						
-						btns+="<a href='booking' ";
+						var provNo=req[tableMovieId][j].provNo;
+						var theaterId=req.theaterId;
+						var scrnDay=req.scrnDay;
+						var movieId=req[tableMovieId][j].movieId;
+						var timetableId=req[tableMovieId][j].timetableId;
+						
+						btns+="<a href='bookingtime?provNo="+provNo+"&theaterId="+theaterId+"&scrnDay="+scrnDay+"&movieId="+movieId+"&timetableId="+timetableId+"' ";
 						btns+="class='btn btn-lg btn-default' data-toggle='tooltip' ";
 						btns+="data-placement='bottom' title='종료 "+scrnEnd;
 						btns+="'> <span class='start_time'>"+scrnStart;

@@ -141,7 +141,14 @@
 			<div class="choose_branch">
 				<ul id="branch_list">
 					<c:forEach var="item" items="${output}" varStatus="status">
-						<li class="branch_btn" data-id="${item.theaterId}">${item.brand}&nbsp;${item.branch}</li>
+						<c:choose>
+							<c:when test="${output2[0].getTheaterId()==item.theaterId}">
+								<li class="branch_btn selected_theater" data-id="${item.theaterId}" style="color: red; font-weight: bold;">${item.brand}&nbsp;${item.branch}</li>
+							</c:when>
+							<c:otherwise>
+								<li class="branch_btn" data-id="${item.theaterId}">${item.brand}&nbsp;${item.branch}</li>
+							</c:otherwise>
+						</c:choose>
 					</c:forEach>
 				</ul>
 			</div>
@@ -155,7 +162,40 @@
 			</div>
 			<!-- 영화 선택 -->
 			<div class="choose_film">
-				<p style="text-align: center;">영화관을 선택해주세요</p>
+				<c:choose>
+					<c:when test="${output2==null}">
+						<p style="text-align: center; margin-top: 105px;">영화관을 선택해주세요</p>
+					</c:when>
+					<c:otherwise>
+						<ul>
+						<c:forEach var="item" items="${output2}" varStatus="status">
+							<c:choose>
+								<c:when test="${output3[0].getMovieId()==item.movieId}">
+									<li class="movie_btn selected_film" data-id="${item.movieId}" style="border: 2px solid black; background-color: white;">
+								</c:when>
+								<c:otherwise>
+									<li class="movie_btn" data-id="${item.movieId}">
+								</c:otherwise>
+							</c:choose>
+							<c:choose>
+								<c:when test="${item.ageLimit==0}">
+									<span class="label label-success">전체</span>
+								</c:when>
+								<c:when test="${item.ageLimit==1}">
+									<span class="label label-primary">12</span>
+								</c:when>
+								<c:when test="${item.ageLimit==2}">
+									<span class="label label-warning">15</span>
+								</c:when>
+								<c:otherwise>
+									<span class="label label-danger">청불</span>
+								</c:otherwise>
+							</c:choose>
+							&nbsp;${item.title}</li>
+						</c:forEach>
+						</ul>
+					</c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 		<!-- 날짜, 시간 선택 -->
@@ -183,40 +223,105 @@
 			</div>
 			<!-- 시간 선택 -->
 			<div class="choose_time">
-				<p style="text-align: center;">영화, 날짜를 선택해주세요</p>
+				<c:choose>
+					<c:when test="${output3==null}">
+						<p style="text-align: center;">영화를 선택해주세요</p>
+					</c:when>
+					<c:otherwise>
+						<div class="chosen_film">
+							<c:choose>
+								<c:when test="${output3[0].getAgeLimit()==0}">
+									<span class="label label-success">전체</span>
+								</c:when>
+								<c:when test="${output3[0].getAgeLimit()==1}">
+									<span class="label label-primary">12</span>
+								</c:when>
+								<c:when test="${output3[0].getAgeLimit()==2}">
+									<span class="label label-warning">15</span>
+								</c:when>
+								<c:otherwise>
+									<span class="label label-danger">청불</span>
+								</c:otherwise>
+							</c:choose>
+							&nbsp;${output3[0].getTitle()}</li>
+						</div>
+						<ul>
+						<c:forEach var="item" items="${output3}" varStatus="status">
+							<c:choose>
+								<c:when test="${output4.getTimetableId()==item.timetableId}">
+									<li class="table_btn selected_table" data-id="${item.timetableId}" data-date="${output4.getScrnDay()}" data-toggle="tooltip" data-placement="top" title="종료 ${item.scrnEnd}" style="background-color: #eee;">
+										<span class="start_time">${item.scrnStart}</span><br /><span class="seats">${244-item.seatCount}&nbsp;/&nbsp;252</span>&nbsp;<span class="room_no">${item.roomNo}관</span>
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li class="table_btn" data-id="${item.timetableId}" data-toggle="tooltip" data-placement="top" title="종료 ${item.scrnEnd}">
+										<span class="start_time">${item.scrnStart}</span><br /><span class="seats">${244-item.seatCount}&nbsp;/&nbsp;252</span>&nbsp;<span class="room_no">${item.roomNo}관</span>
+									</li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+						</ul>
+					</c:otherwise>
+				</c:choose>
 			</div>
-            <!-- 좌석선택 버튼 -->
-            <div class="button_area">
-            	<button id="go_to_next" class="go_to_next"><i class="fas fa-hand-point-right"></i><br />좌석선택</button>
-            </div>
-            <!-- float 마감제 -->
-            <div class="clear"></div>
-            <!-- 로그인 modal 창 -->
-            <div class="modal fade" id="modal-login">
-	            <div class="modal-dialog modal-sm">
-	                <div class="modal-content">
-	                    <!-- head -->
-	                    <div class="modal-header">
-	                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	                        <h4 class="modal-title">로그인</h4>
-	                    </div>
-	                    <!-- body -->
-	                    <div class="modal-body">
-	                    	<span class="modal-msg">로그인하셔야 예매가 가능합니다</span>
-	                    	<form id="login_modal">
-		                        <div class="form-group" style="margin-top: 10px">
-		                            <label for="user_id">아이디</label>
-		                            <input type="text" name="user_id" id="user_id" class="form-control" />
-		                            <label for="user_pw">비밀번호</label>
-		                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
-		                        </div>
-		                        <button type="submit" class="btn btn-primary">로그인</button>
-	                        </form>
-	                    </div>
-	                </div>
+			<!-- 좌석선택 버튼 -->
+			<%-- 로그인 여부에 따라 좌석선택 버튼 동작 차등 부여 --%>
+			<c:choose>
+				<c:when test="${user==1}">
+				<div class="button_area">
+					<c:choose>
+						<c:when test="${output4==null}">
+							<button type="submit" id="go_to_next" class="go_to_next"><i class="fas fa-hand-point-right"></i><br />좌석선택</button>
+						</c:when>
+						<c:otherwise>
+							<button type="submit" id="go_to_next" class="go_to_next active"><i class="fas fa-hand-point-right"></i><br />좌석선택</button>
+						</c:otherwise>
+					</c:choose>
 	            </div>
-        	</div>
-        </div>
+	            <!-- float 마감제 -->
+	            <div class="clear"></div>
+				</c:when>
+	            <c:otherwise>
+	            	<div class="button_area">
+	            		<c:choose>
+	            			<c:when test="${output4==null}">
+	            				<button id="go_to_next" class="go_to_next" data-user="0" data-toggle="modal"><i class="fas fa-hand-point-right"></i><br />좌석선택</button>
+	            			</c:when>
+	            			<c:otherwise>
+	            				<button id="go_to_next" class="go_to_next active" data-user="0" data-toggle="modal" href="#modal-login"><i class="fas fa-hand-point-right"></i><br />좌석선택</button>
+	            			</c:otherwise>
+	            		</c:choose>
+	            	</div>
+		            <!-- float 마감제 -->
+		            <div class="clear"></div>
+		            <!-- 로그인 modal 창 -->
+		            <div class="modal fade" id="modal-login">
+			            <div class="modal-dialog modal-sm">
+			                <div class="modal-content">
+			                    <!-- head -->
+			                    <div class="modal-header">
+			                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			                        <h4 class="modal-title">로그인</h4>
+			                    </div>
+			                    <!-- body -->
+			                    <div class="modal-body">
+			                    	<span class="modal-msg">로그인하셔야 예매가 가능합니다</span>
+			                    	<form id="login_modal">
+				                        <div class="form-group" style="margin-top: 10px">
+				                            <label for="user_id">아이디</label>
+				                            <input type="text" name="user_id" id="user_id" class="form-control" />
+				                            <label for="user_pw">비밀번호</label>
+				                            <input type="password" name="user_pw" id="user_pw" class="form-control" />
+				                        </div>
+				                        <button type="submit" class="btn btn-primary">로그인</button>
+			                        </form>
+			                    </div>
+			                </div>
+			            </div>
+		        	</div>
+		        </div>
+	            </c:otherwise>
+            </c:choose>
         <!-- float 마감제 -->
         <div class="clear"></div>
     </div>

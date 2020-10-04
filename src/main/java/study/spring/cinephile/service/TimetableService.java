@@ -37,4 +37,12 @@ public interface TimetableService {
 	 * @throws Exception
 	 */
 	public int countTable(Timetable input) throws Exception;
+	
+	/**
+	 * 상영시간표 단일행 조회
+	 * @param Timetable input : 상영시간표 Beans
+	 * @return 상영시간표 객체
+	 * @throws Exception
+	 */
+	public Timetable getTimetableItem(Timetable input) throws Exception;
 }
