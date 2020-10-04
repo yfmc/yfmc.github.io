@@ -7,6 +7,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../_inc/header.jsp" %>
+<meta http-equiv="refresh" content="60">
+
 <title>마이페이지 > 예매내역</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bookinglist.css">
@@ -58,17 +60,23 @@
 	         						<h3><a href="${pageContext.request.contextPath}/movie/MovieContent.do?movie_id=${item.movie_id}&title=${item.title}">${item.title} (${item.movie_made_year})</a></h3>
 	         					</span>
 	         					<span class="bookdate">
-	         						<h4>${item.booking_date}</h4>
+	         						<h4>예매일:${item.booking_date} &nbsp;|| &nbsp;<span style="color:red;">상영일:${item.start}</span></h4>
 	         					</span>
 	         					<span class="theaterpeople">
-	         						<h4>${item.brand} ${item.branch} (${item.room_no}관)</h4>
+	         						<h4>${item.brand} &nbsp;${item.branch} (${item.room_no}관)</h4>
 	         					</span>
+
 	         					<!-- 예매취소 버튼 -->
-	         					<!-- <input type="button" value="예매취소" class="btn cancelbtn" onclick="location.href='${pageContext.request.contextPath}/mypage/mybooking_delete.do?movie_id=${item.movie_id}'"/>-->
-	         					<input type="button" value="예매취소" class="btn cancelbtn" />
-	         					<input type="hidden" class="cancelurl" value="${pageContext.request.contextPath}/mypage/mybooking_delete.do?timetable_id=${item.timetable_id}"/>
-
-
+	         					<c:choose>
+	         						<c:when test="${(item.start_time-item.plus30min)>0}">
+	         						<input type="button" value="예매취소" class="btn cancelbtn" />
+	         						<input type="hidden" class="cancelurl" value="${pageContext.request.contextPath}/mypage/mybooking_delete.do?timetable_id=${item.timetable_id}"/>
+									</c:when>
+									<c:otherwise>
+									<input type="button" value="취소불가" class="btn cancelbtn2" disabled />
+	         						<input type="hidden" class="cancelurl" value="${pageContext.request.contextPath}/mypage/mybooking_delete.do?timetable_id=${item.timetable_id}"/>
+									</c:otherwise>
+								</c:choose>
 	         				</li>
          				</ul>
                 		</c:forEach>

@@ -33,6 +33,13 @@ public class MyPageBookingList {
 	//booking테이블
 	private String seat_no;
 
+	//새로 만든 컬럼
+	private String start_time;
+	private String bookingdt;
+	private String start;
+	private String today;
+	private String plus30min;
+	
 	//페이지구현위함
 	private static int offset;
     private static int listCount;

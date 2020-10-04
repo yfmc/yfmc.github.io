@@ -4,6 +4,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
+<meta http-equiv="refresh" content="60">
 <title>마이페이지 > 문의 내역</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/inquirypost.css">
         <div id="content" class="clear">

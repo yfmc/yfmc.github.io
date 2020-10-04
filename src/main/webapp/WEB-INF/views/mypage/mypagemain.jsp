@@ -7,6 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../_inc/header.jsp" %>
+<meta http-equiv="refresh" content="60">
 <title>마이페이지</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypagemain.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">		

@@ -5,6 +5,7 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@include file="../_inc/header.jsp" %>
 <title>마이페이지 > 회원 탈퇴</title>
+<meta http-equiv="refresh" content="60">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/withdrawal-(1).css">
 

@@ -22,11 +22,19 @@
 	<result property="title" column="title"/>
 	<result property="poster_link" column="poster_link"/>
 	<result property="movie_made_year" column="movie_made_year"/>
+	<result property="start_time" column="start_time"/>
+	<result property="bookingdt" column="bookingdt"/>
+	<result property="start" column="start"/>
+	<result property="today" column="today"/>
+	<result property="plus30min" column="plus30min"/>
 	</resultMap>
 	
 	<select id="selectList" parameterType="study.spring.cinephile.model.MyPageBookingList" resultMap="myPageBookingListMapperMap">
 	select bn.booking_no,price,payment,booking_date,members_id,bn.timetable_id,scrn_day,scrn_start,
-	scrn_end,room_no,seat_count,t.movie_id,t.theater_id,brand,branch,title,poster_link,movie_made_year
+	scrn_end,room_no,seat_count,t.movie_id,t.theater_id,brand,branch,title,poster_link,movie_made_year,
+	date_format(booking_date,'%Y%m%d%H%i%s') as bookingdt, date_format(concat(scrn_day,' ',scrn_start,':00'),'%Y%m%d%H%i%s') as start_time, 
+	concat(scrn_day,' ',scrn_start,':00') as start,date_format(now(),'%Y%m%d%H%i%s') as today,
+	date_format(date_add(now(), interval 30 minute),'%Y%m%d%H%i%s') as plus30min
 	from bookingno bn,timetable t,movie m,theater th
 	<where>
 	bn.timetable_id=t.timetable_id and t.movie_id=m.movie_id
