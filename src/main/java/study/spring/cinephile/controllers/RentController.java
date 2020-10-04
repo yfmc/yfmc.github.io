@@ -66,53 +66,38 @@ public class RentController {
 	@RequestMapping(value="/support/rent.do", method=RequestMethod.GET)
 	public ModelAndView rentWrite(Model model, HttpServletRequest request) {
 		
-		/** 데이터 조회 */
-		List<Provincial> provList = null;
-		List<Theater> theaterList = null;
-		
-		try {
-			provList = provincialService.getProvincialList(null);
-			theaterList = theaterService.getTheaterList(null);
-		} catch (Exception e) {
-			return webHelper.redirect(null, e.getLocalizedMessage());
-		}
 		
 		// 로그인시 회원 정보 가져오기0
-				HttpSession session = request.getSession();
-				Members mySession = (Members) session.getAttribute("loggedIn");
+			HttpSession session = request.getSession();
+			Members mySession = (Members) session.getAttribute("loggedIn");
 		
 		if (mySession != null ) {
 			model.addAttribute("my_session", mySession);
-			model.addAttribute("provList", provList);
-			model.addAttribute("theaterList", theaterList);
-			
+		
 			return new ModelAndView("support/rent");
 		} else {
-			model.addAttribute("provList", provList);
-			model.addAttribute("theaterList", theaterList);
-			
 			return new ModelAndView("support/rent");
 		}
 	}
 	
 	/** 작성 폼에 대한 action 페이지 */
-	@RequestMapping(value="/support/rent_ok.do", method=RequestMethod.GET)
+	@RequestMapping(value="/support/rent_ok.do", method=RequestMethod.POST)
 	public ModelAndView rent_ok(Model model,
-			@RequestParam(value="theater_id", required = false) int theater_id,
+			@RequestParam(value="sel_region", required = false) String sel_region,
+			@RequestParam(value="sel_theater", required = false) String sel_theater,
 			@RequestParam(value="rent_date", required = false) String rent_date,
 			@RequestParam(value="rent_content", required = false) String rent_content,
 			@RequestParam(value="user_name", required = false) String user_name,
-			@RequestParam(value="birthdate", required = false) String birthdate,
 			@RequestParam(value="tel", required = false) String tel,
 			@RequestParam(value="email", required = false) String email) {
 		System.out.println("데이터 입력 완료");
 		
 		/** 입력한 파라미터에 대한 유효성 검사 */
-		if (theater_id == 0)					{ return webHelper.redirect(null, "지역을 선택하세요."); }
-		if (rent_date.equals(""))			{ return webHelper.redirect(null, "극장을 선택하세요."); }
-		if (rent_content.equals(""))		{ return webHelper.redirect(null, "대관날짜를 선택하세요."); }
+		if (sel_region.equals(""))			{ return webHelper.redirect(null, "지역을 선택하세요."); }
+		if (sel_theater.equals(""))		{ return webHelper.redirect(null, "극장을 선택하세요."); }
+		if (rent_date.equals(""))			{ return webHelper.redirect(null, "대관날짜를 선택하세요."); }
+		if (rent_content.equals(""))		{ return webHelper.redirect(null, "대관목적을 선택하세요."); }
 		if (user_name.equals(""))			{ return webHelper.redirect(null, "이름을 입력하세요."); }
-		if (birthdate.equals(""))			{ return webHelper.redirect(null, "이름을 입력하세요."); }
 		if (tel.equals(""))						{ return webHelper.redirect(null, "연락처를 입력하세요."); }
 		if (email.equals(""))				{ return webHelper.redirect(null, "이메일을 입력하세요."); }
 		System.out.println("유효성검사 완료");
@@ -120,6 +105,8 @@ public class RentController {
 		/** 데이터 저장 */
 		// 저장할 값 Beans에 담기
 		Rent input = new Rent();
+		input.setSel_region(sel_region);
+		input.setSel_theater(sel_theater);
 		input.setRent_date(rent_date);
 		input.setRent_content(rent_content);
 		input.setUser_name(user_name);
@@ -133,9 +120,11 @@ public class RentController {
 			// 데이터 저장
 			rentService.addRent(input);
 			output = rentService.getRentItem(input);	
-			
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+			return webHelper.redirect(null, "입력된 내용이 없습니다.");
 		} catch (Exception e) {
-			return webHelper.redirect(null, e.getLocalizedMessage());
+			return webHelper.redirect(null, "데이터 입력 실패");
 		}
 		
 		// 결과 확인을 위한 JSON 출력
@@ -149,7 +138,7 @@ public class RentController {
 		return webHelper.redirect(redirectUrl, "저장 완료");
 	}
 	
-	/** 완료 페이지 */
+	/** 작성 완료 페이지 */
 	@RequestMapping(value="/support/rent_complete.do", method=RequestMethod.GET)
 	public ModelAndView rentComplete(Model model) {
 		

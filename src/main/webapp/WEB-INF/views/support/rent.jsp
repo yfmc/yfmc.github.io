@@ -29,34 +29,38 @@
 								<li>단체/대관 문의 외 문의나 불편사항은 이메일 문의로 작성 부탁드립니다.</li>
 		                    </ul>
 		                </div>
-	                <form class="form-horizontal"  name="rent_form" id="rent_form"
-		            	action="${pageContext.request.contextPath}/support/rent_ok.do">
+	                <form class="form-horizontal" method="post" name="rent_form" id="rent_form"
+	                	action="${pageContext.request.contextPath}/support/rent_ok.do">
 		                <div class="form_title">
 		                        <h4>문의내용<span class="pull-right">* 필수입력</span></h4>
 		                </div>
 	                    <div class="rent_box">
 		                    <div class="form-group">
-		                        <label for="rent_title"  class="must col-xs-2 ">영화관 선택</label>
-		                            <div class="col-xs-3">
+		                        <label for="sel_theater"  class="must col-xs-2 ">영화관 선택</label>
+		                            <div class="col-xs-4">
 										<!-- 1차 카테고리 -->
 										<div class="form-group">
 											<select name="sel_region" id="sel_region" class="form-control">
-												<%-- 조회 결과에 따른 반복처리 --%>
-												<c:forEach var="item" items="${provList}" varStatus="status">
-													<option value="${item.prov_no}">${item.prov_name}</option>
-												</c:forEach>
+												<option value="">==지역을 선택해주세요.==</option>
+												<option value="서울">서울</option>
+												<option value="경기">경기</option>
+												<option value="인천">인천</option>
+												<option value="강원">강원</option>
+												<option value="대전">대전</option>
+												<option value="충청세종">충청/세종</option>
+												<option value="광주">광주</option>
+												<option value="전라">전라</option>
+												<option value="대구경북">대구/경북</option>
+												<option value="부산울산">부산/울산</option>
+												<option value="경남">경남</option>
+												<option value="제주">제주</option>
 											</select>
 										</div>
 									</div>
 									<div class="col-xs-5">
 										<!-- 2차 카테고리 -->
 										<div class="form-group">
-											<select name="sel_theater" id="sel_theater" class="form-control">
-												<%-- 조회 결과에 따른 반복처리 --%>
-												<c:forEach var="item" items="${theaterList}" varStatus="status">
-													<option value="${item.theaterId}">${item.branch}</option>
-												</c:forEach>
-											</select>
+											<select name="sel_theater" id="sel_theater" class="form-control"></select>
 										</div>
 									</div>
 		                        </div>
@@ -127,16 +131,12 @@
 	            <!-- ==== 본문 끝 ==== -->
 	        </div>
 	    </div>
-	    <script id="category_item_tmpl" type="text/x-handlebars-template">
-			{{#each item}}
-			<option value="{{value}}">{{text}}</option>
-			{{/each}}
-		</script>
 		<script src="../assets/plugins/validate/jquery.validate.min.js"></script>
 		<script src="../assets/plugins/validate/additional-methods.min.js"></script>
     `````<script src="../assets/plugins/ajax_sws/ajax_helper.js"></script>
     `````<script src="../assets/plugins/handlebars/handlebars-v4.0.11.js"></script>
-		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>  
+		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js_files/rent.js"></script>  
 
 	    <script type="text/javascript">
 	    $(function() {
@@ -164,22 +164,7 @@
 	    		    });
 	    	});
 	    	
-	    	$(function() {
-	    		// 드롭다운의 선택변경 이벤트
-	    		$("#sel_region").change(function() {
-	    			// 결과가 표시될 #sel_theater에 내용 삭제
-	    			$("#sel_theater").empty();
-	    			// 사용자 선택값 가져오기
-	    			var choice = $(this).find("option:selected").val();
-	    			// 선택값이 없다면 중단
-	    			if (!choice) {
-	    				return false;
-	    			}
-	    		});
-	    	});
-	    	
 	    	$("#rent_form").submit(function(e) {
-	            e.preventDefault();
 		        // 영화관 선택
 				if($('#sel_region').val() == "") {
 					alert("지역을 선택해 주세요");
@@ -196,8 +181,7 @@
 	            if (!agree) {
 	                alert("개인정보수집 동의를 해주셔야 등록이 가능합니다.");
 	                return false;
-	            } else if (!rent_title.value || !rent_content.value || !user_name.value ||
-	            		!birthdate.value || !tel.value || !email.value) {
+	            } else if (!sel_region.value || !sel_theater.value  || !rent_content.value || !user_name.value || !tel.value || !email.value) {
 	            	return false;
 	            } else {
 	            	alert("등록이 완료되었습니다.");
