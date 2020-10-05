@@ -46,7 +46,7 @@
 		resultMap="movieMap">
 		SELECT movie_id, poster_link, title, age_limit, movie_booking, star_info, like_count
 		FROM movie
-		WHERE movie_booking is not null OR today_audience is not null
+		WHERE movie_now = 'Y'
 		ORDER BY movie_booking DESC
 		LIMIT 0,8;
 	</select>
@@ -57,7 +57,7 @@
 		resultMap="movieMap">
 		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
 		FROM movie
-		WHERE movie_booking is not null OR today_audience is not null
+		WHERE movie_now = 'Y'
 		ORDER BY star_info DESC
 		LIMIT 0,8;
 	</select>
@@ -67,9 +67,8 @@
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
 		SELECT movie_id, poster_link, title, age_limit, today_audience, star_info, like_count
-		FROM
-		movie
-		WHERE movie_booking is not null OR today_audience is not null
+		FROM movie
+		WHERE movie_now = 'Y'
 		ORDER BY today_audience DESC
 		LIMIT 0,8;
 	</select>
@@ -81,7 +80,7 @@
 		resultMap="movieMap">
 		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count
 		FROM movie
-		WHERE like_count is not null AND opening_date is not null
+		WHERE movie_will = 'Y'
 		ORDER BY
 		opening_date ASC
 		LIMIT 0,8;
@@ -93,7 +92,7 @@
 		resultMap="movieMap">
 		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count
 		FROM movie
-		WHERE like_count is not null AND opening_date is not null
+		WHERE movie_will = 'Y'
 		ORDER BY
 		like_count DESC
 		LIMIT 0,8;
