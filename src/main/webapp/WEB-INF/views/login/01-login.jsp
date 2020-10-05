@@ -26,13 +26,13 @@
                 <div class="loginbt">     
                     <button type="submit" class="btn btn-primary" id="btn_login">로그인</button>
                 </div>
-                <div class="SNSlogin">
+                <!-- <div class="SNSlogin">
                 <span>SNS 계정 로그인</span>
                 <div class="Kakaologin">
-                	<a id="kakao-login-btn" ><!-- <img src="../img/kakao_login.png"/> --></a>
+                	<a id="kakao-login-btn" ><img src="../img/kakao_login.png"/></a>
                 	<a href="http://developer.kakao.com/logout"></a>
                 </div>
-                </div>
+                </div> -->
                 </form>
             </div>
         </div>
