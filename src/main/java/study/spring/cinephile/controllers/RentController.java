@@ -1,7 +1,6 @@
 package study.spring.cinephile.controllers;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +21,7 @@ import study.spring.cinephile.service.TheaterService;
 import study.spring.cinephile.helper.RegexHelper;
 import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.Members;
-import study.spring.cinephile.model.Provincial;
 import study.spring.cinephile.model.Rent;
-import study.spring.cinephile.model.Theater;
 
 @Controller
 public class RentController {
@@ -48,16 +45,33 @@ public class RentController {
 	@Value("#{servletContext.contextPath}")
 	String contextPath;
 	
-	/** 목록 페이지 */
-	@RequestMapping(value="/admin/admin_rent_list.do", method=RequestMethod.GET)
-	public ModelAndView rentList(Model model) {
-		
-		return new ModelAndView("admin/admin_rent_list") ;
-	}
-	
 	/** 상세 페이지 */
 	@RequestMapping(value="/admin/admin_rent_detail.do", method=RequestMethod.GET)
-	public ModelAndView rentDetail(Model model) {
+	public ModelAndView rentDetail(Model model,
+			@RequestParam(value="rent_id", defaultValue="0") int rent_id) {
+		
+		/** 유효성 검사 */
+		if (rent_id == 0) {
+			return webHelper.redirect(null, "해당 1:1문의내역이 없습니다.");
+		}
+		
+		/** 데이터 조회 */
+		// 데이터 조회에 필요한 조건값 Beans에 담기
+		Rent input = new Rent();
+		input.setRent_id(rent_id);
+		
+		// 조회결과를 저장할 객체
+		Rent output = null;
+		
+		try {
+			// 데이터 조회
+			output = rentService.getRentItem(input);
+		} catch (Exception e) {
+			return webHelper.redirect(null, e.getLocalizedMessage());
+		}
+		
+		/** view 처리 */
+		model.addAttribute("output", output);
 		
 		return new ModelAndView("admin/admin_rent_detail");
 	}

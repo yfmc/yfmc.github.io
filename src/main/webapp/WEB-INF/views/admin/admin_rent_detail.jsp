@@ -8,42 +8,31 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">1:1문의</h1>
+                    <h1 class="page-header">대관문의</h1>
                 </div>
             </div>
-            <!-- /.row -->
+            <!-- /row -->
             <div class="row">
             	<table class="detail_content">
                     <thead>
                         <tr class="detail_title">
-                            <th style="width:10%;">${output.qna_id}</th>
-                            <th style="width:auto;">${output.qna_title}</th>
+                            <th style="width:5%;">${output.rent_id}</th>
+                            <th style="width:15%;">${output.rent_date}</th>
+                            <th style="width:auto;">희망극장 : ${output.sel_region}&nbsp${output.sel_theater}</th>
                             <th style="width:15%;">작성자 : ${output.user_name}</th>
                             <th style="width:15%;">작성일<br />${output.reg_date}</th>
-                            <th style="width:15%;">답변여부 : ${output.answer_check}</th>
                         </tr>
                     </thead>
                     <tbody>
-                    	<tr class="qna_contents">
+                    	<tr class="rent_contents">
                     		<td colspan="5">
-                    			${output.qna_content}
+                    			${output.rent_content}
                     		</td>
                     	</tr>
-                    	<tr class="qna_file_img">
-                    		<td colspan="5">
-                    			${output.file_img}
-                    		</td>
-                    	</tr>		
-                    	<tr class="qna_answer">
-                    		<td colspan="5">
-                    			${output.answer_content}
-                    		</td>
-                    	</tr>	
                     </tbody>
                 </table>
                 <div class="list_button pull-right">
-                        <a href="<%=request.getContextPath()%>/admin/admin_qna_list.do" class=" btn btn-success pull-right">목록으로</a>
-                        <a href="<%=request.getContextPath()%>/admin/admin_qna_answer.do?qna_id=${output.qna_id}" class=" btn btn-success pull-right">답변하기</a>
+                        <a href="<%=request.getContextPath()%>/admin/admin_rent_list.do" class=" btn btn-success pull-right">목록으로</a>
                 </div>
             </div>
         </div>

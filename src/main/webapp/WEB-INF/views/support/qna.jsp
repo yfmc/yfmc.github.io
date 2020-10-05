@@ -59,6 +59,7 @@
 		                </div>
 		                <div class="user_box">
 		                        <h4>회원 정보</h4>
+		                        	<input type="hidden" name="members_id" id="members_id" value="${my_session.members_id}" />
 		                        <div class="form-group">
 		                            <label for="user_name"  class="must col-xs-2 ">이름</label>
 		                            <div class="col-xs-10">

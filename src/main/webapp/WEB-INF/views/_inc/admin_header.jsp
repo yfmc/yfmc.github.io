@@ -25,10 +25,10 @@
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="<%=request.getContextPath()%>/assets/admin/admin_home.do">Cinephile 관리자</a>
-            </div>
-            <ul class="nav navbar-top-links navbar-right">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="<%=request.getContextPath()%>/admin/admin_home.do">Cinephile 관리자</a>
+			</div>
+			<ul class="nav navbar-top-links navbar-right">
                 <li class="divider"></li>
                 <li><a href="<%=request.getContextPath()%>/admin/admin_login.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
@@ -49,7 +49,7 @@
                             <a class="sidebar_link <% if (request.getRequestURI().indexOf("faq") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_faq_list.do">자주찾는질문 관리</a>
                         </li>
                         <li>
-                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("member") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_member.do">회원 관리</a>
+                            <a class="sidebar_link <% if (request.getRequestURI().indexOf("rent") > -1) { %>on<%} %>" href="<%=request.getContextPath()%>/admin/admin_rent_list.do">대관문의 관리</a>
                         </li>
                     </ul>
                 </div>

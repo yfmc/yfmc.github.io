@@ -291,7 +291,7 @@ a:hover { color: #222; }
 
 
 /* 목록 관리 */
-.qna_list, .notice_list, .faq_list { width : 100%; }
+.qna_list, .notice_list, .faq_list, .rent_list { width : 100%; }
 .dataTables_length label, .dataTables_filter label { margin: 10px 0 ;}
 .on { background-color: #eee; }
 

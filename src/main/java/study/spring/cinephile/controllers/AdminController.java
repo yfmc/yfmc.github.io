@@ -17,9 +17,11 @@ import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.Faq;
 import study.spring.cinephile.model.Notice;
 import study.spring.cinephile.model.Qna;
+import study.spring.cinephile.model.Rent;
 import study.spring.cinephile.service.FaqService;
 import study.spring.cinephile.service.NoticeService;
 import study.spring.cinephile.service.QnaService;
+import study.spring.cinephile.service.RentService;
 
 @Controller
 public class AdminController {
@@ -36,6 +38,9 @@ public class AdminController {
 	
 	@Autowired
 	NoticeService noticeService;
+	
+	@Autowired
+	RentService rentService;
 	
 	/** "/프로젝트 이름"에 해당하는 ContextPath 변수 주입 */
 	@Value("#{servletContext.contextPath}")
@@ -182,6 +187,43 @@ public class AdminController {
 			model.addAttribute("pageData", pageData);
 			
 		return new ModelAndView("admin/admin_qna_list");
+	}
+	
+	/** 관리자 1:1문의 목록 페이지 */
+	@RequestMapping(value="/admin/admin_rent_list.do", method=RequestMethod.GET)
+	public ModelAndView rentList(Model model,
+			// 현재 페이지 번호
+			@RequestParam(value="page", defaultValue="1") int nowPage){
+			
+			/** 페이지 구현에 필요한 변수값 생성 */
+			int totalCount = 0;
+			int listCount = 20;
+			int pageCount = 5;
+			
+			Rent input = new Rent();
+			
+			List<Rent> output = null;
+			PageData pageData = null;
+			
+			try {
+				// 전체 게시글 수 조회
+				totalCount = rentService.getRentCount(input);
+				// 페이지 번호 계산 -> 로그로 출력
+				pageData = new PageData(nowPage, totalCount, listCount, pageCount);
+				
+				Qna.setOffset(pageData.getOffset());
+				Qna.setListCount(pageData.getListCount());
+				
+				output = rentService.getRentList(input);
+			} catch (Exception e) {
+				return webHelper.redirect(null, e.getLocalizedMessage());
+			}
+			
+			// view 처리
+			model.addAttribute("output", output);
+			model.addAttribute("pageData", pageData);
+			
+		return new ModelAndView("admin/admin_rent_list");
 	}
 	
 }
