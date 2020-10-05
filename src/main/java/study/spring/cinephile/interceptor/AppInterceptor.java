@@ -73,17 +73,17 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 		 * 접근불가 처리한다
 		 * 
 		 */
-		String[] forbidden_url= {"http://localhost:8080/cinephile/mypage/mypagemain.do",
-				"http://localhost:8080/cinephile/mypage/oftentheater.do",
-				"http://localhost:8080/cinephile/mypage/bookinglist.do",
-				"http://localhost:8080/cinephile/mypage/choicelist.do",
-				"http://localhost:8080/cinephile/mypage/changeinfo-(1).do",
-				"http://localhost:8080/cinephile/mypage/changeinfo-(2).do",
-				"http://localhost:8080/cinephile/mypage/changeinfo-(3).do",
-				"http://localhost:8080/cinephile/mypage/withdrawal-(1).do",
-				"http://localhost:8080/cinephile/mypage/withdrawal_ok.do",
-				"http://localhost:8080/cinephile/mypage/inquirylist.do",
-				"http://localhost:8080/cinephile/mypage/inquirypost.do"};
+		String[] forbidden_url= {"mypage/mypagemain.do",
+				"mypage/oftentheater.do",
+				"mypage/bookinglist.do",
+				"mypage/choicelist.do",
+				"mypage/changeinfo-(1).do",
+				"mypage/changeinfo-(2).do",
+				"mypage/changeinfo-(3).do",
+				"mypage/withdrawal-(1).do",
+				"mypage/withdrawal_ok.do",
+				"mypage/inquirylist.do",
+				"mypage/inquirypost.do"};
 		
 		int count=0;
 		
@@ -91,7 +91,7 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
 		Members mySession=(Members)session.getAttribute("loggedIn");
 		if(mySession==null) {
 			for(int i=0;i<forbidden_url.length;i++) {
-				if(url.equals(forbidden_url[i])){
+				if(url.indexOf(forbidden_url[i]) > -1){
 					count++;
 				}
 			}
