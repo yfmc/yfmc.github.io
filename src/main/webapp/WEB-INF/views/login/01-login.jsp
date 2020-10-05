@@ -37,6 +37,6 @@
             </div>
         </div>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script src="../assets/js_files/login_01login.js"></script>
+<script src="../assets/js_files/login_01login.js?ver=123"></script>
 <script src="../assets/plugins/ajax_sws/ajax_helper.js"></script>
 <%@ include file="../_inc/footer.jsp" %>

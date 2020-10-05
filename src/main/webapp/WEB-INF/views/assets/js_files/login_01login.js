@@ -20,7 +20,7 @@ $(function(){
 		$.post("../login/login_ok.do", {user_id:user_id_val, user_pw:user_pw_val}, function(req){
 			
 			if(user_id_val == req.item.user_id && req.item.user_pw){
-				//$("#inout").html(로그아웃); //<<< (index.jsp의 로그인 )손볼곳!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				
 				
 				alert("로그인 하셨습니다.");
 				location.href="../index.do";
@@ -33,10 +33,10 @@ $(function(){
 			
 			},"json");//end $.post
 	});//end btn_login
-	/*내가 봤을때 서버에서 유효성검사, 프론트에서 유효성 검사를 해야 하는데 이게 백엔드가 아니라 프론트네, 세션 만드는 페이지도 그렇고*/
+	
 	
 	//사용할 앱의 Javascript 키 설정
-	Kakao.init('b712b576f702e0ae294a693b413bf90d');
+//	Kakao.init('b712b576f702e0ae294a693b413bf90d');
 	
 	//카카오 로그인 버튼 생성
 //	Kakao.Auth.createLoginButton({
