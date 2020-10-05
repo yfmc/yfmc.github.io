@@ -18,13 +18,13 @@
 			<!-- 이미지 슬라이드 -->
 			<div class="carousel-inner">
 				<div class="item active">
-					<img src="<%=request.getContextPath()%>/assets/img/alive.jpg">
+					<img src="<%=request.getContextPath()%>/assets/img/main01.jpg">
 				</div>
 				<div class="item">
-					<img src="<%=request.getContextPath()%>/assets/img/bando2.jpg">
+					<img src="<%=request.getContextPath()%>/assets/img/main02.jpg">
 				</div>
 				<div class="item">
-					<img src="<%=request.getContextPath()%>/assets/img/akak.jpg">
+					<img src="<%=request.getContextPath()%>/assets/img/main03.jpg">
 				</div>
 			</div>
 			<!-- 이전,다음 버튼 -->
@@ -42,8 +42,8 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar1.jpg" class="img-responsive" />
-						<h4>리뷰 | ‘SF8-블링크’, 클리셰 범벅에 한숨만 푹</h4>
+					<a href="${pageContext.request.contextPath}/movie/movienewsdetail/MovieNewsDetail01.do?time=<%=System.currentTimeMillis()%>" class="thumbnail"> <img src="https://d3ihz389yobwks.cloudfront.net/1597907066317aowWm.jpg" class="img-responsive" />
+						<h4>인터뷰 | 홍경표 촬영 감독이 직접 밝힌 ‘다만 악’ 촬영 비하인드</h4>
 					</a>
 				</div>
 			</div>
@@ -52,8 +52,8 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar2.jpg" class="img-responsive" />
-						<h4>이슈 | HBO 맥스, ‘배트맨’ 드라마 제작 확정</h4>
+					<a href="${pageContext.request.contextPath}/movie/movienewsdetail/MovieNewsDetail02.do?time=<%=System.currentTimeMillis()%>" class="thumbnail"> <img src="https://d3ihz389yobwks.cloudfront.net/1597883046055mMZ7N.jpg" class="img-responsive" />
+						<h4>인터뷰 | ‘남매의 여름밤’ 윤단비 감독이 전하는 우리 모두의 여름 밤</h4>
 					</a>
 				</div>
 			</div>
@@ -62,8 +62,8 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar3.jfif" class="img-responsive" />
-						<h4>인터뷰 | ‘반도’ 연상호 감독 “이레, 첫 만남에 크게 될 배우라 느껴”</h4>
+					<a href="${pageContext.request.contextPath}/movie/movienewsdetail/MovieNewsDetail03.do?time=<%=System.currentTimeMillis()%>" class="thumbnail"> <img src="https://d3ihz389yobwks.cloudfront.net/1597907346425tMZEn.jpg" class="img-responsive" />
+						<h4>이슈 | 영화계 또 다시 올스톱…오프라인 행사 모두 취소</h4>
 					</a>
 				</div>
 			</div>
@@ -72,8 +72,8 @@
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<!-- .thumbnail은 박스에 회색 테두리를 쳐준다. -->
 				<div class="thumb">
-					<a href="#" class="thumbnail"> <img src="<%=request.getContextPath()%>/assets/img/ar4.jpg" class="img-responsive" />
-						<h4>기획 | 퀸의 귀환, 만능 엔터테이너 엄정화의 화려한 필모</h4>
+					<a href="${pageContext.request.contextPath}/movie/movienewsdetail/MovieNewsDetail05.do?time=<%=System.currentTimeMillis()%>" class="thumbnail"> <img src="https://d3ihz389yobwks.cloudfront.net/1597985568562vLTBu.jpg" class="img-responsive" />
+						<h4>리뉴얼 축전 | 김새벽 "맥스무비 새단장을 축하합니다"</h4>
 					</a>
 				</div>
 			</div>

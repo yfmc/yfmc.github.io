@@ -100,7 +100,7 @@
 			<th colspan="2">제작년도</th>
 			<td colspan="2">
 				<div id="js-example-change-value" class="range-slider">
-					<input type="range" min="2000" max="2020" value="${made_year}" name="made_year" data-rangeslider>
+					<input type="range" min="2000" max="2020" value="2020" name="made_year" data-rangeslider>
 					<h4>
 						<output>
 							<p>년</p>
@@ -146,7 +146,7 @@
 											<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
 											<c:param name = "title" value = "${k.title}"></c:param>
 										</c:url>
-											<a href="${contextPath}/예매페이지" id="book1">예매하기</a>
+											<a href="${pageContext.request.contextPath}/bookingtime" id="book1">예매하기</a>
 											<a href="${movie_content_url}" id="information1">상세정보</a>
 										</figcaption></span>
 								</div>
@@ -161,7 +161,7 @@
 											<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
 											<c:param name = "title" value = "${k.title}"></c:param>
 										</c:url>
-											<a href="${contextPath}/예매페이지" id="book1">예매하기</a>
+											<a href="${pageContext.request.contextPath}/bookingtime" id="book1">예매하기</a>
 											<a href="${movie_content_url}" id="information1">상세정보</a>
 										</figcaption></span>
 								</div>
@@ -325,7 +325,7 @@
 											<span><img src="{{k.poster_link}}"
 												class="img-responsive" />
 												<figcaption>
-													<a href="${pageContext.request.contextPath}/예매페이지"
+													<a href="${pageContext.request.contextPath}/bookingtime"
 														id="book1">예매하기</a> <a
 														href="${pageContext.request.contextPath}/movie/MovieContent.do"
 														id="information1">상세정보</a>
@@ -338,7 +338,7 @@
 												src="https://blog.kakaocdn.net/dn/uWnY7/btqI4S6VLt1/0KNymI3JcPIAhvwvgiJ3pK/img.png"
 												class="img-responsive" />
 												<figcaption>
-													<a href="${pageContext.request.contextPath}/예매페이지"
+													<a href="${pageContext.request.contextPath}/bookingtime"
 														id="book1">예매하기</a> <a
 														href="${pageContext.request.contextPath}/movie/MovieContent.do"
 														id="information1">상세정보</a>
@@ -419,29 +419,29 @@
 </script>
 <!-- User code -->
 <script type="text/javascript">
-	let nowPage = 1; // 현재 페이지의 기본값
+let nowPage = 1; // 현재 페이지의 기본값
 
-	$(function() {
-		/** 더 보기 버튼에 대한 이벤트 정의 */
-		$("#movie_search_list").click(function() {
-			// 다음 페이지를 요청하기 위해 페이지 변수 1 증가
-			nowPage++;
-			// Restful API에 GET 방식 요청
-			$.get("${pageContext.request.contextPath}/movie", {
-				"page" : nowPage
-			// 페이지 번호는 GET 파라미터로 전송한다.
-			}, function(json) {
-				var source = $("#prof-list-tmpl").html(); // 템플릿 코드 가져오기
-				var template = Handlebars.compile(source); // 템플릿 코드 컴파일
-				var result = template(json); // 템플릿 컴파일 결과물에 json 전달
-				$("#movie_search_list_more").append(result); // 최종 결과물을 #list 요소에 추가한다.
+$(function() {
+	/** 더 보기 버튼에 대한 이벤트 정의 */
+	$("#movie_search_list").click(function() {
+		// 다음 페이지를 요청하기 위해 페이지 변수 1 증가
+		nowPage++;
+		// Restful API에 GET 방식 요청
+		$.get("${pageContext.request.contextPath}/movie", {
+			"page" : nowPage
+		// 페이지 번호는 GET 파라미터로 전송한다.
+		}, function(json) {
+			var source = $("#prof-list-tmpl").html(); // 템플릿 코드 가져오기
+			var template = Handlebars.compile(source); // 템플릿 코드 컴파일
+			var result = template(json); // 템플릿 컴파일 결과물에 json 전달
+			$("#movie_search_list_more").append(result); // 최종 결과물을 #list 요소에 추가한다.
 
-				// 현재 페이지 번호가 전체 페이지 수에 도달했다면 더 보기 버튼을 숨긴다.
-				if (json.meta.totalPage <= nowPage) {
-					$("#movie_search_list").hide();
-				}
-			});
+			// 현재 페이지 번호가 전체 페이지 수에 도달했다면 더 보기 버튼을 숨긴다.
+			if (json.meta.totalPage <= nowPage) {
+				$("#movie_search_list").hide();
+			}
 		});
 	});
+});
 </script>
 <%@ include file="../_inc/footer.jsp"%>

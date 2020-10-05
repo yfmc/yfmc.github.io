@@ -64,7 +64,7 @@ public class MovieSearchController {
 			@RequestParam(value = "choose", defaultValue = "") String choose,
 			@RequestParam(value = "genre", defaultValue = "") String genre,
 			@RequestParam(value = "nation", defaultValue = "") String nation,
-			@RequestParam(value = "made_year", defaultValue = "2010") String made_year,
+			@RequestParam(value = "made_year", defaultValue = "2020") String made_year,
 			@RequestParam(value = "page", defaultValue = "1") int nowPage) {
 
 		// 페이지 구현에 필요한 변수값 생성

@@ -1,6 +1,7 @@
 package study.spring.cinephile.controllers;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -46,6 +47,10 @@ public class BoxofficeMovingController {
 		//System.out.println(movielist);
 		//영화 데이터 조회하기
 		Movie input = new Movie();
+		
+		Date today = new Date();
+		SimpleDateFormat formatType = new SimpleDateFormat("yyyy-MM-dd");
+		String scrnDay = formatType.format(today);
 		
 		//조회결과가 저장될 객체
 		List<Movie> output = null;
@@ -96,6 +101,8 @@ public class BoxofficeMovingController {
 			model.addAttribute("output", output);
 			model.addAttribute("movielist", movielist);
 		}
+		
+		model.addAttribute("scrnDay",scrnDay);
 		
 		return new ModelAndView("movie/nowMoving");
 	}

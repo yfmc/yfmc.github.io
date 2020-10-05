@@ -116,13 +116,15 @@
 					<c:choose>
 						<c:when test="${isLike == false}">
 							<input type="hidden" name="is_like" id="is_like" value="0" />
+							<img src="${pageContext.request.contextPath}/assets/img/hate_icon2.png"
+						id="likebutton" class="likebutton" onclick="like_clicked();" />
 						</c:when>
 						<c:otherwise>
+						<img src="${pageContext.request.contextPath}/assets/img/love_icon2.png"
+						id="likebutton" class="likebutton" onclick="like_clicked();" />
 							<input type="hidden" name="is_like" id="is_like" value="1" />
 						</c:otherwise>
 					</c:choose>
-					<img src="${pageContext.request.contextPath}/assets/img/love_icon2.png"
-						id="likebutton" class="likebutton" onclick="like_clicked();" />
 				</p>
 			</form>
 			<span id="likecount" class="likecount">${output.like_count}</span>
@@ -525,6 +527,7 @@
 							like_count.value = Number(like_count.value) - 1;
 							$("#likecount").html(like_count.value);
 							alert("좋아요한 영화에 삭제되었습니다.");
+							$("#likebutton").attr("src","${pageContext.request.contextPath}/assets/img/hate_icon2.png");
 						},
 						error : function(error) {
 							alert("로그인이 필요합니다.");
@@ -545,6 +548,7 @@
 							like_count.value = Number(like_count.value) + 1;
 							$("#likecount").html(like_count.value);
 							alert("좋아요한 영화에서 추가되었습니다.");
+							$("#likebutton").attr("src","${pageContext.request.contextPath}/assets/img/love_icon2.png");
 						},
 						error : function(error) {
 							alert("로그인이 필요합니다.");

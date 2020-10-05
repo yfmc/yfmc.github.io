@@ -250,7 +250,9 @@ figure.imageup.hover a
 	color:black;
 	text-decoration:none;
 	margin-bottom:60px;
-	
+	width:245px;
+	margin:auto;
+	margin-top:5px;
 }
 .king-row .movie-picture{
 	width:25%;
