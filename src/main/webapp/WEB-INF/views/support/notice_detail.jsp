@@ -28,10 +28,10 @@
                     <table class="detail_content">
                         <thead>
                             <tr class="detail_title">
-                                <th style="width: 100px;">${output.notice_id}</th>
+                                <th style="width: 50px;">${output.notice_id}</th>
                                 <th style="width: auto;">${output.notice_title}</th>
-                                <th style="width: 150px;">등록일 ${output.reg_date}</th>
-                                <th style="width: 150px;">조회수 ${output.views}</th>
+                                <th style="width: 200px;">등록일 ${output.reg_date}</th>
+                                <th style="width: 100px;">조회수 ${output.views}</th>
                             </tr>
                         </thead>
                         <tbody>
