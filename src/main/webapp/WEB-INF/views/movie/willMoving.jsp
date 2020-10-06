@@ -81,7 +81,7 @@
 													<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
 													<c:param name = "title" value = "${k.title}"></c:param>
 												</c:url>
-													<a href="${pageContext.request.contextPath}/bookingtime"
+													<a href="${pageContext.request.contextPath}/bookingtime?movieId=${k.movie_id}&scrnDay=${scrnDay}"
 														id="book1">예매하기</a> <a
 														href="${movie_content_url}"
 														id="information1">상세정보</a>
@@ -98,7 +98,7 @@
 													<c:param name = "movie_id" value = "${k.movie_id}"></c:param>
 													<c:param name = "title" value = "${k.title}"></c:param>
 												</c:url>
-													<a href="${pageContext.request.contextPath}/bookingtime"
+													<a href="${pageContext.request.contextPath}/bookingtime?movieId=${k.movie_id}&scrnDay=${scrnDay}"
 														id="book1">예매하기</a> <a
 														href="${movie_content_url}"
 														id="information1">상세정보</a>

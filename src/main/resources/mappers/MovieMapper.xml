@@ -21,6 +21,8 @@
 		<result property="movie_made_year" column="movie_made_year" />
 		<result property="movie_booking" column="movie_booking" />
 		<result property="movie_genre" column="movie_genre" />
+		<result property="movie_now" column="movie_now"/>
+		<result property="movie_will" column="movie_will"/>
 	</resultMap>
 	
 	<resultMap id="favmovieMap" type="study.spring.cinephile.model.FavMovie">
@@ -44,7 +46,7 @@
 	<select id="selectMovieBooking"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, movie_booking, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, movie_booking, star_info, like_count, movie_now, movie_will
 		FROM movie
 		WHERE movie_now = 'Y'
 		ORDER BY movie_booking DESC
@@ -55,7 +57,7 @@
 	<select id="selectStarInfo"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count, movie_now, movie_will
 		FROM movie
 		WHERE movie_now = 'Y'
 		ORDER BY star_info DESC
@@ -66,7 +68,7 @@
 	<select id="selectTodayAudience"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, today_audience, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, today_audience, star_info, like_count, movie_now, movie_will
 		FROM movie
 		WHERE movie_now = 'Y'
 		ORDER BY today_audience DESC
@@ -78,7 +80,7 @@
 	<select id="selectOpeningDate"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count, movie_now, movie_will
 		FROM movie
 		WHERE movie_will = 'Y'
 		ORDER BY
@@ -90,7 +92,7 @@
 	<select id="selectLikeCount"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, opening_date, star_info, like_count, movie_now, movie_will
 		FROM movie
 		WHERE movie_will = 'Y'
 		ORDER BY
@@ -101,7 +103,7 @@
 	<select id="selectWhatMovieTitle"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count, movie_now, movie_will
 		FROM movie
 		<where>
 			<if test="title != null and title !=''">
@@ -135,7 +137,7 @@
 	<select id="selectWhatMovieActor"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count, movie_now, movie_will
 		FROM movie
 		<where>
 			<if test="movie_actor != null and movie_actor !=''">
@@ -168,7 +170,7 @@
 	<select id="selectWhatMovieDirector"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count, movie_now, movie_will
 		FROM movie
 		<where>
 			<if test="movie_director != null and movie_director !=''">
@@ -201,7 +203,7 @@
 	<select id="selectWhatMovieOptionAll"
 		parameterType="study.spring.cinephile.model.Movie"
 		resultMap="movieMap">
-		SELECT movie_id, poster_link, title, age_limit, star_info, like_count
+		SELECT movie_id, poster_link, title, age_limit, star_info, like_count, movie_now, movie_will
 		FROM movie
 		<where>
 			(
@@ -360,7 +362,7 @@
 	
 	<!-- 영화 상세정보에 대한 기능 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Movie" resultMap="movieMap">
-	SELECT movie_id, poster_link, title, movie_director, movie_actor, movie_genre, age_limit, opening_date, accumul_audience, star_info, synopsis, like_count, star_info
+	SELECT movie_id, poster_link, title, movie_director, movie_actor, movie_genre, age_limit, opening_date, accumul_audience, star_info, synopsis, like_count, star_info, movie_now, movie_will
 	FROM movie
 	WHERE movie_id=#{movie_id} AND title=#{title}
 	</select>

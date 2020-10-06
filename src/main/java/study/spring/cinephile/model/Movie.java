@@ -24,6 +24,8 @@ public class Movie {
 	private String movie_made_year;
 	private String movie_booking;
 	private String movie_genre;
+	private String movie_now;
+	private String movie_will;
 	private static String[] movie_genre_list;
 	private static String[] movie_nation_list;
 	
