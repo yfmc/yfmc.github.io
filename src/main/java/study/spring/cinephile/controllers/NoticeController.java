@@ -46,7 +46,7 @@ public class NoticeController {
 	@RequestMapping(value="/support/notice_list.do", method=RequestMethod.GET)
 	public ModelAndView noticeList(Model model,
 		// 검색어
-		@RequestParam(value="keyword", required=false) String keyword,
+		@RequestParam(value="keyword", defaultValue = "") String keyword,
 		// 현재 페이지 번호
 		@RequestParam(value="page", defaultValue = "1") int nowPage){
 		
@@ -78,14 +78,10 @@ public class NoticeController {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
 		
-		// 검색결과 수
-		int count = output.size();
-		
 		// view 처리
 		model.addAttribute("keyword", keyword);
 		model.addAttribute("output", output);
 		model.addAttribute("pageData", pageData);
-		model.addAttribute("count", count);
 		
 		return new ModelAndView("support/notice_list");
 	}

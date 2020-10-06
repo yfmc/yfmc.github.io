@@ -56,6 +56,10 @@
 		</where>
 		
 		order by faq_id desc
+		
+		<if test="listCount > 0">
+			limit #{offset}, #{listCount}
+		</if>
 	</select>
 	
 	<!-- 다중행 조회(date)를 위한 기능 정의 -->
@@ -74,6 +78,10 @@
 		</where>
 		
 		order by faq_id desc
+		
+		<if test="listCount > 0">
+			limit #{offset}, #{listCount}
+		</if>
 	</select>
 	
 	<!-- 데이터 저장을 위한 기능 정의 -->

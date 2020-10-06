@@ -70,6 +70,7 @@
                             <li><a href="<%=request.getContextPath()%>/support/notice_list.do">공지사항</a></li>
                             <li><a href="<%=request.getContextPath()%>/support/faq_list.do">자주찾는질문</a></li>
                             <li><a href="<%=request.getContextPath()%>/support/qna.do">1:1문의</a></li>
+                            <li><a href="<%=request.getContextPath()%>/support/rent.do">대관문의</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-    #contents { width: 100%; margin: 0 auto; }
+    #contents { width: 100%; margin: 0 auto; font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif }
 
     .row { margin-top: 30px; }
     
@@ -12,20 +12,25 @@
     .support_title { margin-bottom: 40px; }
 
     .service { width: 100%; padding-bottom: 20px; border-bottom: 1px solid #eee;}
+    .service a:link { text-decoration: none; }
     .service_list { height: 200px; margin-top: 20px; }
     .service_list li { margin: 5px 25px 0px 5px; float: left; line-height: 50px; }
-    .service_list li a { display: block; width: 190px; height: 180px; font-size: 17px; font-weight: bold; color: #222; text-align: center; }
+    .service_list li a { display: block; width: 190px; height: 180px; font-size: 16px; font-weight: bold; color: #222; text-align: center; }
 	.service_list li i { font-size: 100px; color:#897944; }  
-
-    a:link { text-decoration:none; }
 
     .notice_wrap { border-bottom: 1px solid #cacac1; margin-bottom: 20px; padding-bottom: 50px; }
     .notice_wrap h3 { border-bottom: 1px solid #000; }
     
     .more { width: 60px; height: 22px; color: #222; font-size: 14px; line-height: 200%; }
 
-    .pre { width: 400px; margin-left: 15px; padding: 0 0 10px 0; border-bottom: 1px solid #eee; }
+    .pre { width: 420px; margin-left: 15px; padding: 0 0 10px 0; border-bottom: 1px solid #eee; }
+    .pre table {table-layout: fixed; margin: 0 auto; width:410px; font-size:15px; line-height: 30px; }
+    .pre table > tbody > tr > td { padding: 2px; overflow: hidden; text-overflow: ellipsis; white-space : nowrap; }
+    .pre a:link { color: #333; }
+    #notice_list_body, #faq_list_body { margin-top:15px; }
     
     .btn-link { padding: 0; color: #222; }
     
     .on > a { background-color:#e71a0f; }
+    
+    mark {background-color: #cffff4 }

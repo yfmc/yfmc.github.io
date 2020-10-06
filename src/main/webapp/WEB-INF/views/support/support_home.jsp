@@ -42,9 +42,9 @@
                                 	<table>
                                 		<thead>
                                 			<tr>
-                                				<th width = "50" ></th>
-                                				<th width = "250" ></th>
-                                				<th width = "100" ></th>
+	                                			<th style="width: 25px;"></th>
+	                                			<th style="width: auto;"></th>
+	                                			<th style="width: 85px;"></th>
                                 			</tr>
                                 		</thead>
                                 		<tbody>
@@ -68,7 +68,7 @@
                                 							<c:param name="notice_id"  value="${notice_id}" />
                                 						</c:url>
                                 						<tr>
-                                							<td align="center">${notice_id}</td>
+                                							<td align="center" >${notice_id}</td>
                                 							<td align="center"><a href="${viewUrl1}">${notice_title}</a></td>
                                 							<td align="center">${reg_date}</td>
                                 						</tr>
@@ -87,9 +87,9 @@
                                 	<table>
                                 		<thead>
                                 			<tr>
-                                				<th width = "50" ></th>
-                                				<th width = "250" ></th>
-                                				<th width = "100" ></th>
+                                				<th style="width: 25px;"> </th>
+                                				<th style="width: auto;"> </th>
+                                				<th style="width: 85px;"> </th>
                                 			</tr>
                                 		</thead>
                                 		<tbody>
