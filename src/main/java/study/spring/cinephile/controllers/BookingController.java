@@ -76,7 +76,7 @@ public class BookingController {
 			
 			// view 처리
 			model.addAttribute("output", output);
-			return new ModelAndView("booking/01-booking_time");
+			return new ModelAndView("booking/05-booking");
 		}
 		
 		/* 2) 데이터 조회하기 */
@@ -131,7 +131,7 @@ public class BookingController {
 		model.addAttribute("output2", output2);
 		model.addAttribute("output3", output3);
 		model.addAttribute("output4", output4);
-		return new ModelAndView("booking/01-booking_time");
+		return new ModelAndView("booking/05-booking");
 	}
 	
 	/* 02) 좌석 선택 페이지 */

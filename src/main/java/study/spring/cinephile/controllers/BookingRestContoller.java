@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import study.spring.cinephile.helper.WebHelper;
 import study.spring.cinephile.model.TheaterAdd;
+import study.spring.cinephile.model.Timetable;
 import study.spring.cinephile.service.TheaterAddService;
+import study.spring.cinephile.service.TimetableService;
 
 @RestController
 public class BookingRestContoller {
@@ -23,6 +25,9 @@ public class BookingRestContoller {
 	/* Service 패턴 구현체 주입 */
 	@Autowired
 	TheaterAddService favTheaterService;
+	
+	@Autowired
+	TimetableService timetableService;
 	
 	/* 로그인 한 회원에 대한 자주 가는 영화관 목록 조회 */
 	@RequestMapping(value="/favtheaterlistjson", method=RequestMethod.GET)
@@ -51,5 +56,32 @@ public class BookingRestContoller {
 		
 		return webHelper.getJsonData(data);
 		
+	}
+	
+	/* 선택한 상영시간표에 대한 단일정보 조회 */
+	@RequestMapping(value="/timetablejson3", method=RequestMethod.GET)
+	public Map<String, Object> timetable_info(@RequestParam(value="timetableId", defaultValue="0") int timetableId) {
+		
+		/* 1) 데이터 조회하기 */
+		// 조회에 필요한 조건값(검색어)을 Beans에 담는다
+		Timetable input=new Timetable();
+		input.setTimetableId(timetableId);
+		
+		// 조회된 상영시간표가 저장될 객체
+		Timetable output=null;
+		
+		try {
+			// 데이터 조회하기
+			output=timetableService.getTimetableItem(input);
+		}
+		catch (Exception e) {
+			return webHelper.getJsonError(e.getLocalizedMessage());
+		}
+		
+		/* 2) JSON 출력하기 */
+		Map<String, Object> data=new HashMap<String, Object>();
+		data.put("timetableInfo", output);
+		
+		return webHelper.getJsonData(data);
 	}
 }

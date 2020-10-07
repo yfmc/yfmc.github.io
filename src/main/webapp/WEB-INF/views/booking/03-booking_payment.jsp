@@ -14,7 +14,7 @@
 <div id="content">
 	<div class="booking_page">
 		<!-- 예매단계 안내박스 -->
-		<div class="booking_stage">
+		<div class="booking_stage3">
 			<ul>
 				<li id="go_to_1st">01<br />상영시간</li>
 				<li id="go_to_2nd">02<br />좌석</li>

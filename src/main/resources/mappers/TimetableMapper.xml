@@ -18,6 +18,7 @@
         <!-- inner join movie -->
         <result property="title" column="title" />
         <result property="ageLimit" column="age_limit" />
+        <result property="posterLink" column="poster_link" />
         <!-- inner join theater -->
         <result property="provNo" column="prov_no" />
         <result property="theater" column="theater" />
@@ -53,7 +54,7 @@
 	
 	<!-- 단일행 조회를 위한 기능 정의 -->
 	<select id="selectTimetableItem" parameterType="study.spring.cinephile.model.Timetable" resultMap="timetableMap">
-		select t.timetable_id, t.scrn_day, t.scrn_start, t.scrn_end, t.room_no, t.seat_count, m.title, m.age_limit, concat(tt.brand, ' ', tt.branch) as theater
+		select t.timetable_id, t.scrn_day, t.scrn_start, t.scrn_end, t.room_no, t.seat_count, m.title, m.poster_link, m.age_limit, concat(tt.brand, ' ', tt.branch) as theater
 		from timetable t
 		inner join movie m on t.movie_id=m.movie_id
 		inner join theater tt on t.theater_id=tt.theater_id

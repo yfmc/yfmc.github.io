@@ -15,13 +15,13 @@
 }
 
 /* 예매단계 안내박스 */
-.booking_stage {	
+.booking_stage2 {	
 	width: 80px;
 	float: left;
 	border-right: 1px solid white;
 }
 
-.booking_stage li {
+.booking_stage2 li {
 	display: block;
 	height: 200px;
 	text-align: center;
@@ -29,22 +29,22 @@
 	padding-top: 80px;
 }
 
-.booking_stage li:hover {
+.booking_stage2 li:hover {
 	cursor: default;
 }
 
-.booking_stage li:first-child {
+.booking_stage2 li:first-child {
 	border-top: 1px solid black;
 }
 
-.booking_stage li:first-child:hover {
+.booking_stage2 li:first-child:hover {
 	background-color: #4d4d4d;
 	color: white;
 	font-weight: bold;
 	cursor: pointer;
 }
 
-.booking_stage li:nth-child(2) {
+.booking_stage2 li:nth-child(2) {
 	background-color: #4d4d4d;
 	color: white;
 	font-weight: bold;
@@ -342,7 +342,7 @@ a.seat_unable {
 
 
 /* 결제하기 버튼 */
-.go_to_next {
+.go_to_pay {
 	width: 130px;
 	height: 130px;
 	display: block;
@@ -361,18 +361,18 @@ a.seat_unable {
 }
 
 /* 활성화 상태 */
-.go_to_next.active {
+.go_to_pay.active {
 	cursor: pointer;
 	background-color: black;
 	color: white;
 	text-decoration: none;
 }
 
-.go_to_next:focus {
+.go_to_pay:focus {
 	outline: none;
 }
 
-.go_to_next .fas {
+.go_to_pay .fas {
 	font-size: 40px;
 }
 

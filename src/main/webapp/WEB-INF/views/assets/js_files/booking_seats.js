@@ -4,6 +4,20 @@ var count=[0, 0, 0];
 var price=0;
 
 $(function() {
+	/* 상영시간 선택으로 돌아가기 */
+	$(document).on('click', "#go_back", function() {
+		var is_ok=confirm("상영시간 선택화면으로 돌아가시겠습니까?");
+		
+		if (is_ok) {
+			$(".booking_step2").css("display", "none");
+			$(".booking_step1").css("display", "block");
+			$(".booking_stage2 li:nth-child(1)").attr("id", "");
+			$(".booking_stage2 li:nth-child(2)").attr("id", "");
+			$(".booking_stage2").addClass("booking_stage1");
+			$(".booking_stage1").removeClass("booking_stage2");
+		}
+	});
+	
 	/* 예매 인원 선택 기능 */
 		
 	// 성인
@@ -109,15 +123,6 @@ $(function() {
 		}
 	});
 	
-	/* 상영시간 선택으로 돌아가기 */
-	$("#go_back").click(function() {
-		var is_ok=confirm("상영시간 선택화면으로 돌아가시겠습니까?");
-		
-		if (is_ok) {
-			location.href="time";
-		}
-	});
-	
 	/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 	
 	/* 좌석 버튼 클릭 기능 */
@@ -200,11 +205,11 @@ $(function() {
 	/* 선택 인원과 선택 좌석 수가 일치할 경우 결제하기 버튼 활성화 */
 	function check() {
 		if (white+green>0 && (white+green)==(count[0]+count[1]+count[2])) {
-			$("#go_to_next").addClass("active");
+			$("#go_to_pay").addClass("active");
 			console.log(">> add ACITVE >>");
 			}
 		else {
-			$("#go_to_next").removeClass("active");
+			$("#go_to_pay").removeClass("active");
 			console.log(">> remove ACITVE >>");
 		}
 	}
@@ -213,9 +218,22 @@ $(function() {
 	$(".seat_btn").click(check);
 	
 	/* 활성화된 결제하기 버튼 클릭 시 결제 화면으로 이동 */
-	$("#go_to_next").click(function() {
-		if ($("#go_to_next").hasClass("active")) {
-			location.href="payment";
+	$(document).on('click', "#go_to_pay", function() {
+		if ($(this).hasClass("active")) {
+			$(".booking_step2").css("display", "none");
+			$(".booking_step3").css("display", "block");
+			$(".booking_stage2").addClass("booking_stage3");
+			$(".booking_stage3").removeClass("booking_stage2");
+			$(".booking_stage3 li:nth-child(1)").attr("id", "go_to_1st");
+			$(".booking_stage3 li:nth-child(2)").attr("id", "go_to_2nd");
+			
+			// 선택좌석 정보 html 추가
+			var seats=$(".selected_seat").html();
+			$("#seats").html(seats);
+			
+			// 결제금액 html 추가
+			var price=$(".selected_price").html();
+			$("#price").html(price);
 		}
 	});
 });

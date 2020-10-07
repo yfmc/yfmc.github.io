@@ -15,13 +15,13 @@
 }
 
 /* 예매단계 안내박스 */
-.booking_stage {	
+.booking_stage1 {	
 	width: 80px;
 	float: left;
 	border-right: 1px solid white;
 }
 
-.booking_stage li {
+.booking_stage1 li {
 	display: block;
 	height: 200px;
 	text-align: center;
@@ -29,11 +29,11 @@
 	padding-top: 80px;
 }
 
-.booking_stage li:hover {
+.booking_stage1 li:hover {
 	cursor: default;
 }
 
-.booking_stage li:first-child {
+.booking_stage1 li:first-child {
 	background-color:#4d4d4d;
 	color: white;
 	font-weight: bold;

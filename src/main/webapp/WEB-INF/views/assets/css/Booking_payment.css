@@ -15,13 +15,13 @@
 }
 
 /* 예매단계 안내박스 */
-.booking_stage {	
+.booking_stage3 {	
 	width: 80px;
 	float: left;
 	border-right: 1px solid white;
 }
 
-.booking_stage li {
+.booking_stage3 li {
 	display: block;
 	height: 200px;
 	text-align: center;
@@ -29,22 +29,22 @@
 	padding-top: 80px;
 }
 
-.booking_stage li:hover {
+.booking_stage3 li:hover {
 	cursor: default;
 }
 
-.booking_stage li:first-child {
+.booking_stage3 li:first-child {
 	border-top: 1px solid black;
 }
 
-.booking_stage li:first-child:hover, .booking_stage li:nth-child(2):hover {
+.booking_stage3 li:first-child:hover, .booking_stage3 li:nth-child(2):hover {
 	background-color: #4d4d4d;
 	color: white;
 	font-weight: bold;
 	cursor: pointer;
 }
 
-.booking_stage li:nth-child(3) {
+.booking_stage3 li:nth-child(3) {
 	background-color:#4d4d4d;
 	color: white;
 	font-weight: bold;
@@ -83,13 +83,13 @@
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 /* 좌측 선택 영화 영역 */
-.chosen_film {
+.selected_filminfo {
 	width: 30%;
 	height:740px;
 	float: left;
 }
 
-.chosen_film > img {
+.selected_filminfo > img {
 	display: block;
 	margin: auto;
 	margin-top: 40px;
@@ -107,7 +107,7 @@
 	margin-bottom: 10px;
 }
 
-.detail {
+.detail_info {
 	font-size: 15px;
 }
 

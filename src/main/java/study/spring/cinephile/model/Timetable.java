@@ -20,6 +20,7 @@ public class Timetable {
 	// movie inner join columns
 	private String title;		// 영화제목
 	private int ageLimit;		// 관람가 (0: 전체, 1: 12세, 2: 15세, 3: 청불)
+	private String posterLink;	// 포스터 이미지 링크
 	
 	// theater inner join columns
 	private int provNo;			// 지역번호
