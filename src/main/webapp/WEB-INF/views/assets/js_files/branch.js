@@ -694,4 +694,31 @@ $(function() {
 		$(".choose_provincial li").css("background-color", "#eee");
 		$(this).css("background-color", "white");
 	});
+	
+	/* 자주 가는 영화관 출력 처리 */
+	$(document).on('click', '#fav', function() {
+		/* 로그인 여부에 따라 '자주 가는 영화관' 버튼 클릭 기능 차등 부여 */
+		if ($(this).data("log")==0) {
+			// 비로그인 경우 문구 출력
+			setDefault();
+			$("#branch_list").html("<p>로그인 하시면 조회 가능합니다</p>");
+			$(".choose_provincial li").css("background-color", "#eee");
+			$(this).css("background-color", "white");
+		}
+		else {
+			// 로그인 한 경우 회원의 자주 가는 영화관 목록을 불러온다
+			var membersId=$(this).data("id");
+			$.get('favtheaterlistjson?membersId='+membersId, function(req) {
+				setDefault();
+				var html="";
+				for (var i=0; i<req.favTheaterList.length; i++) {
+					html+="<li class='branch_btn' data-id="+req.favTheaterList[i].theaterId+">"+req.favTheaterList[i].theaterName+"</li>\n";
+				}
+				$("#branch_list").html(html);
+			});
+			$(".choose_provincial li").css("background-color", "#eee");
+			$(this).css("background-color", "white");
+		}
+		
+	});
 });

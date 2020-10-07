@@ -13,4 +13,7 @@ public class TheaterAdd {
 	private int theaterId;
 	private int membersId;
 	private String addedTime;
+	
+	// inner join columns
+	private String theaterName;
 }

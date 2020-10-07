@@ -36,7 +36,7 @@
 			<!-- 지역 선택 -->
 			<div class="choose_provincial">
 				<ul>
-					<li>자주 가는 영화관</li>
+					<li id="fav" data-log="${user}" data-id="${membersId}">자주 가는 영화관</li>
 					<%-- get 파라미터 존재 시 css 처리 --%>
 					<c:choose>
 						<c:when test="${output[0].getProvNo()==10}">

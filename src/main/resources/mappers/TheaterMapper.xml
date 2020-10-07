@@ -25,6 +25,8 @@
     	<result property="theaterId" column="theater_id" />
     	<result property="membersId" column="members_id" />
     	<result property="addedTime" column="added_time" />
+    	<!-- inner join column -->
+    	<result property="theaterName" column="theater_name" />
     </resultMap>
 
     <!-- 단일행 조회를 위한 기능 정의 (지점 상세정보 조회) -->
@@ -48,5 +50,12 @@
 	<select id="countFav" parameterType="study.spring.cinephile.model.TheaterAdd" resultType="int">
 		select count(*) from fav_theater where members_id=#{membersId} and theater_id=#{theaterId};
 	</select>
-
+	
+	<!-- 다중행 조회를 위한 기능 정의 (회원의 자주 가는 영화관 목록 조회) -->
+	<select id="selectFavList" parameterType="study.spring.cinephile.model.TheaterAdd" resultMap="favTheaterMap">
+		select f.theater_id, concat(t.brand, ' ', t.branch) as theater_name
+		from fav_theater f
+		inner join theater t on f.theater_id=t.theater_id
+		where members_id=#{membersId};
+	</select>
 </mapper>

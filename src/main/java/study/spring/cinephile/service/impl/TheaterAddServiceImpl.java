@@ -1,5 +1,7 @@
 package study.spring.cinephile.service.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,6 +68,35 @@ public class TheaterAddServiceImpl implements TheaterAddService {
 		
 		try {
 			result=sqlSession.selectOne("TheaterMapper.countFav", input);
+		}
+		catch (Exception e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("데이터 조회에 실패했습니다");
+		}
+		
+		return result;
+	}
+
+	/**
+	 * 로그인 한 회원의 자주 가는 영화관 목록 조회
+	 * @param TheaterAdd input : 자주 가는 영화관 Beans
+	 * @return 자주 가는 영화관 목록
+	 * @throws Exception
+	 */
+	@Override
+	public List<TheaterAdd> getFavTheaterList(TheaterAdd input) throws Exception {
+		List<TheaterAdd> result=null;
+		
+		try {
+			result=sqlSession.selectList("TheaterMapper.selectFavList", input);
+			
+			if (result==null) {
+				throw new NullPointerException("result=null");
+			}
+		}
+		catch (NullPointerException e) {
+			log.error(e.getLocalizedMessage());
+			throw new Exception("조회된 데이터가 없습니다");
 		}
 		catch (Exception e) {
 			log.error(e.getLocalizedMessage());

@@ -71,6 +71,7 @@ public class BookingController {
 			}
 			else {
 				model.addAttribute("user", 1);
+				model.addAttribute("membersId", mySession.getMembers_id());
 			}
 			
 			// view 처리

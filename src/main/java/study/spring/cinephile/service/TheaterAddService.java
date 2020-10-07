@@ -1,5 +1,8 @@
 package study.spring.cinephile.service;
 
+import java.util.List;
+
+import study.spring.cinephile.model.Theater;
 import study.spring.cinephile.model.TheaterAdd;
 
 public interface TheaterAddService {
@@ -19,4 +22,12 @@ public interface TheaterAddService {
 	 * @throws Exception
 	 */
 	public int countFavTheater(TheaterAdd input) throws Exception;
+	
+	/**
+	 * 로그인 한 회원의 자주 가는 영화관 목록 조회
+	 * @param TheaterAdd input : 자주 가는 영화관 Beans
+	 * @return 자주 가는 영화관 목록
+	 * @throws Exception
+	 */
+	public List<TheaterAdd> getFavTheaterList(TheaterAdd input) throws Exception;
 }
