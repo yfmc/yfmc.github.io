@@ -47,6 +47,7 @@ public class NoticeController {
 	public ModelAndView noticeList(Model model,
 		// 검색어
 		@RequestParam(value="keyword", defaultValue = "") String keyword,
+		@RequestParam(value="searchType", defaultValue = "")String searchType,
 		// 현재 페이지 번호
 		@RequestParam(value="page", defaultValue = "1") int nowPage){
 		
@@ -58,8 +59,8 @@ public class NoticeController {
 		/** 데이터 조회 */
 		// 조회에 필요한 조건값 Beans에 담기
 		Notice input = new Notice();
-		input.setNotice_title(keyword);
-		input.setNotice_content(keyword);
+		input.setSearchType(searchType);
+		input.setKeyword(keyword);
 		
 		List<Notice> output = null;
 		PageData pageData = null;

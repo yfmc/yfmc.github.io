@@ -29,7 +29,6 @@
 									<th style="width: 10%; text-align:center;">번호</th>
 									<th style="width: auto; text-align:center;">제목</th>
 									<th style="width: 15%; text-align:center;">등록일</th>
-									<th style="width: 15%; text-align:center;">조회수</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -37,7 +36,7 @@
 									<%-- 조회결과가 없는 경우 --%>
 									<c:when test="${output == null || fn:length(output)==0}">
 										<tr>
-											<td colspan="4" align="center">조회 결과 없음</td>
+											<td colspan="3" align="center">조회 결과 없음</td>
 										</tr>
 									</c:when>
 									<%-- 조회결과가 있는 경우 --%>
@@ -57,7 +56,6 @@
 												<td align="center">${faq_id}</td>
 												<td align="center"><a href="${viewUrl}">${faq_title}</a></td>
 												<td align="center">${reg_date}</td>
-												<td align="center">${views}</td>
 											</tr>
 										</c:forEach>
 									</c:otherwise>

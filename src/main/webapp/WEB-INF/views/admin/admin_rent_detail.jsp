@@ -31,8 +31,9 @@
                     	</tr>
                     </tbody>
                 </table>
-                <div class="list_button pull-right">
-                        <a href="<%=request.getContextPath()%>/admin/admin_rent_list.do" class=" btn btn-success pull-right">목록으로</a>
+                <hr />
+                <div class="buttons pull-right">
+                	<button><a href="<%=request.getContextPath()%>/admin/admin_rent_list.do" >목록으로</a></button>
                 </div>
             </div>
         </div>

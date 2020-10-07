@@ -49,8 +49,8 @@
 		parameterType="study.spring.cinephile.model.Rent"
 		useGeneratedKeys="true"
 		keyProperty="rent_id">
-		insert into rent (sel_region, sel_theater, rent_date, rent_content, user_name, tel, email, reg_date)
-			values (#{sel_region}, #{sel_theater}, #{rent_date}, #{rent_content}, #{user_name}, #{tel}, #{email}, now());
+		insert into rent (sel_region, sel_theater, rent_date, rent_content, members_id, user_name, tel, email, reg_date)
+			values (#{sel_region}, #{sel_theater}, #{rent_date}, #{rent_content}, #{members_id}, #{user_name}, #{tel}, #{email}, now());
 	</insert>
 		
 	<!-- 데이터 삭제를 위한 기능 정의 -->

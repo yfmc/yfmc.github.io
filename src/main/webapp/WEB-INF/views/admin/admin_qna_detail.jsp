@@ -19,7 +19,7 @@
                             <th style="width:10%;">${output.qna_id}</th>
                             <th style="width:auto;">${output.qna_title}</th>
                             <th style="width:15%;">작성자 : ${output.user_name}</th>
-                            <th style="width:15%;">작성일<br />${output.reg_date}</th>
+                            <th style="width:20%;">작성일 : ${output.reg_date}</th>
                             <th style="width:15%;">답변여부 : ${output.answer_check}</th>
                         </tr>
                     </thead>
@@ -41,9 +41,10 @@
                     	</tr>	
                     </tbody>
                 </table>
+                <hr />
                 <div class="list_button pull-right">
-                        <a href="<%=request.getContextPath()%>/admin/admin_qna_list.do" class=" btn btn-success pull-right">목록으로</a>
-                        <a href="<%=request.getContextPath()%>/admin/admin_qna_answer.do?qna_id=${output.qna_id}" class=" btn btn-success pull-right">답변하기</a>
+                        <button><a href="<%=request.getContextPath()%>/admin/admin_qna_list.do">목록으로</a></button>
+                        <button><a href="<%=request.getContextPath()%>/admin/admin_qna_answer.do?qna_id=${output.qna_id}" >답변하기</a></button>
                 </div>
             </div>
         </div>

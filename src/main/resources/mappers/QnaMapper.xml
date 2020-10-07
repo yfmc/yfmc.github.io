@@ -8,10 +8,10 @@
 	<resultMap id="qnaMap" type="study.spring.cinephile.model.Qna">
 		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결 -->
 		<result property="qna_id" 				column="qna_id" />
-		<result property="members_id" 		column="members_id" />
 		<result property="qna_title" 			column="qna_title" />
 		<result property="qna_content" 		column="qna_content" />
 		<result property="file_img" 			column="file_img" />
+		<result property="members_id" 		column="members_id" />
 		<result property="user_name" 		column="user_name" />
 		<result property="birthdate" 			column="birthdate" />
 		<result property="tel" 					column="tel" />
@@ -25,14 +25,14 @@
 	<!-- 단일행 조회를 위한 기능 정의 -->
 	<select id="selectItem" parameterType="study.spring.cinephile.model.Qna"
 		resultMap="qnaMap">
-		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna where qna_id=#{qna_id};
+		select qna_id, members_id, qna_title, qna_content, file_img, members_id, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna where qna_id=#{qna_id};
 	</select>
 	
 	<!-- 다중행 조회(datetime 타입)를 위한 기능 정의 -->
 	<select id="selectList"
 		parameterType="study.spring.cinephile.model.Qna"
 		resultMap="qnaMap">
-		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna
+		select qna_id, members_id, qna_title, qna_content, file_img, members_id, user_name, birthdate, tel, email, reg_date, answer_check, answer_content, answer_date from qna
 	
 		<where>
 			<if test ="qna_id != null and qna_id != ''">
@@ -47,7 +47,7 @@
 	<select id="selectList_date"
 		parameterType="study.spring.cinephile.model.Qna"
 		resultMap="qnaMap">
-		select qna_id, members_id, qna_title, qna_content, file_img, user_name, birthdate, tel, email, cast(reg_date as date) as reg_date, answer_check, answer_content, answer_date from qna
+		select qna_id, members_id, qna_title, qna_content, file_img, members_id, user_name, birthdate, tel, email, cast(reg_date as date) as reg_date, answer_check, answer_content, answer_date from qna
 	
 		<where>
 			<if test ="qna_id != null and qna_id != ''">
@@ -62,8 +62,8 @@
 	<insert id="insertItem"
 		parameterType="study.spring.cinephile.model.Qna"
 		useGeneratedKeys="true" keyProperty="qna_id">
-		insert into qna (qna_title, qna_content, file_img, user_name, birthdate, tel, email, reg_date, answer_check)
-			values (#{qna_title}, #{qna_content}, #{file_img}, #{user_name}, #{birthdate}, #{tel}, #{email}, now(), '미답변');
+		insert into qna (qna_title, qna_content, file_img, members_id, user_name, birthdate, tel, email, reg_date, answer_check)
+			values (#{qna_title}, #{qna_content}, #{file_img}, #{members_id}, #{user_name}, #{birthdate}, #{tel}, #{email}, now(), '미답변');
 	</insert>
 		
 	<!-- 데이터 삭제를 위한 기능 정의 -->

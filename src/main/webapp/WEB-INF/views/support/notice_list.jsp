@@ -28,12 +28,12 @@
 			<div class="notice search">
 					<form class="search_box" method="get" action="<%=request.getContextPath()%>/support/notice_list.do">
 						<!-- 추가적인 style 적용 필요함 -->
-						<select name='choose' class='form-control' >
+						<select name='choose' class='form-control'  id="searchType">
 								<option value="notice_title">제목</option>
 								<option value="notice_content">내용</option>
 						</select>
-						<input type="search" name="keyword" id="keyword" class="form-control" placeholder="Search" value="${keyword}" />
-						<button type="submit" class="btn btn-default">검색</button>
+						<input type="text" name="keyword" id="keyword" class="form-control" placeholder="Search" value="${keyword}" />
+						<button type="submit" class="searchButton btn btn-default">검색</button>
 					</form>
 			</div>
 			<div class="search_result">
@@ -151,4 +151,15 @@
 		</div>
 	</div>
 </div>
+<script>
+$(function() {
+	$(document).on('click', '.searchButton', function(e) {
+		e.preventDefault();
+		var url = "${pageContext.request.contextPath}/support/notice_list.do";
+		url = url + "?searchType=" + $('#searchType').val();
+		url = url + "&keyword=" + $('#keyword').val();
+		location.href = url;		
+	});
+});
+</script>
 <%@ include file="../_inc/footer.jsp"%>

@@ -47,11 +47,11 @@
 		select faq_id, faq_title, faq_content, reg_date, edit_date from faq
 	
 		<where>
-			<if test ="faq_title != null and faq_title != ''">
-				faq_title like concat('%', #{faq_title}, '%')
+			<if test ="searchType=='faq_title' and keyword != null and keyword != ''">
+				faq_title like concat('%', #{keyword}, '%')
 			</if>
-			<if test ="faq_content != null and faq_content != ''">
-				or faq_content like concat('%', #{faq_content}, '%')
+			<if test ="searchType=='faq_content' and keyword != null and keyword != ''">
+				or faq_content like concat('%', #{keyword}, '%')
 			</if>
 		</where>
 		
@@ -69,11 +69,11 @@
 		select faq_id, faq_title, faq_content, cast(reg_date as date) as reg_date, edit_date from faq
 	
 		<where>
-			<if test ="faq_title != null and faq_title != ''">
-				faq_title like concat('%', #{faq_title}, '%')
+			<if test ="searchType=='faq_title' and keyword != null and keyword != ''">
+				faq_title like concat('%', #{keyword}, '%')
 			</if>
-			<if test ="faq_content != null and faq_content != ''">
-				or faq_content like concat('%', #{faq_content}, '%')
+			<if test ="searchType=='faq_content' and keyword != null and keyword != ''">
+				or faq_content like concat('%', #{keyword}, '%')
 			</if>
 		</where>
 		
@@ -116,11 +116,11 @@
 		select count(*) from faq
 		
 		<where>
-			<if test="faq_title != null and faq_title != ''">
-				faq_title like concat ('%', #{faq_title}, '%')
+			<if test ="searchType=='faq_title' and keyword != null and keyword != ''">
+				faq_title like concat('%', #{keyword}, '%')
 			</if>
-			<if test="faq_content != null and faq_content !=  ''">
-				or faq_content like concat ('%', #{faq_content}, '%')
+			<if test ="searchType=='faq_content' and keyword != null and keyword != ''">
+				or faq_content like concat('%', #{keyword}, '%')
 			</if>
 		</where>
 	</select>

@@ -129,9 +129,8 @@ public class QnaController {
 		
 		Qna output = null;
 		
-		/** 업로드 처리 */
+		/** 업로드 처리 */		
 		UploadItem item = null;
-		
 		
 		try {
 			// 데이터 저장
@@ -140,10 +139,10 @@ public class QnaController {
 			item = webHelper.saveMultipartFile(file_img);
 		} catch (NullPointerException e){
 			e.printStackTrace();
-			return webHelper.redirect(null, "업로드된 파일이 없습니다.");
+			return webHelper.redirect(null, "입력된 내용이 없습니다.");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return webHelper.redirect(null, "업로드 실패");
+			return webHelper.redirect(null, "입력에 실패했습니다.");
 		}
 		
 		/** 썸네일 이미지 생성 */

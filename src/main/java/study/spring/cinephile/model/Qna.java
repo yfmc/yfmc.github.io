@@ -7,10 +7,10 @@ public class Qna {
 	
 	/** 기본 컬럼 */
 	private int qna_id;
-	private int members_id;
 	private String qna_title;
 	private String qna_content;
 	private String file_img;
+	private int members_id;
 	private String user_name;
 	private String birthdate;
 	private String tel;

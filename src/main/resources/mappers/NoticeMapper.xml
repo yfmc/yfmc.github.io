@@ -48,11 +48,12 @@
 		select notice_id, notice_title, notice_content, views, reg_date, edit_date from notice
 	
 		<where>
-			<if test ="notice_title != null and notice_title != ''">
-				notice_title like concat('%', #{notice_title}, '%')
+			<if test ="searchType=='notice_title' and  keyword != null and keyword != ''">
+				notice_title like concat('%', #{keyword}, '%')
 			</if>
-			<if test ="notice_content != null and notice_content != ''">
-				or notice_content like concat('%', #{notice_content}, '%')
+			
+			<if test ="searchType=='notice_content'and keyword != null and keyword != ''">
+				or notice_content like concat('%', #{keyword}, '%')
 			</if>
 		</where>
 		
@@ -70,11 +71,12 @@
 		select notice_id, notice_title, notice_content, views, cast(reg_date as date) as reg_date, edit_date from notice
 	
 		<where>
-			<if test ="notice_title != null and notice_title != ''">
-				notice_title like concat('%', #{notice_title}, '%')
+			<if test ="searchType=='notice_title' and  keyword != null and keyword != ''">
+				notice_title like concat('%', #{keyword}, '%')
 			</if>
-			<if test ="notice_content != null and notice_content != ''">
-				or notice_content like concat('%', #{notice_content}, '%')
+			
+			<if test ="searchType=='notice_content'and keyword != null and keyword != ''">
+				or notice_content like concat('%', #{keyword}, '%')
 			</if>
 		</where>
 		
@@ -118,11 +120,12 @@
 		select count(*) from notice
 		
 		<where>
-			<if test="notice_title != null and notice_title != ''">
-				notice_title like concat ('%', #{notice_title}, '%')
+			<if test ="searchType=='notice_title' and  keyword != null and keyword != ''">
+				notice_title like concat('%', #{keyword}, '%')
 			</if>
-			<if test="notice_content != null and notice_content !=  ''">
-				or notice_content like concat ('%', #{notice_content}, '%')
+			
+			<if test ="searchType=='notice_content' and keyword != null and keyword != ''">
+				or notice_content like concat('%', #{keyword}, '%')
 			</if>
 		</where>
 	</select>

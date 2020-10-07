@@ -24,13 +24,11 @@
 		           	<div class ="detail_content notice_content">
 		           		${output.notice_content}
 		           	</div>
-		           	<div class="notice_edit_date">
-		           		수정일 : ${output.edit_date}
-		           	</div>
+		           	<hr />
 		           	<div class="buttons pull-right">
-			           	<a href="${pageContext.request.contextPath}/admin/admin_notice_list.do">[목록으로]</a>
-			           	<a href="${pageContext.request.contextPath}/admin/admin_notice_edit.do?notice_id=${output.notice_id}">[수정하기]</a>
-			           	<a href="${pageContext.request.contextPath}/admin/admin_notice_delete.do?notice_id=${output.notice_id}">[삭제하기]</a>
+			           	<button><a href="${pageContext.request.contextPath}/admin/admin_notice_list.do">목록으로</a></button>
+			           	<button><a href="${pageContext.request.contextPath}/admin/admin_notice_edit.do?notice_id=${output.notice_id}">수정하기</a></button>
+			           	<button><a href="${pageContext.request.contextPath}/admin/admin_notice_delete.do?notice_id=${output.notice_id}">삭제하기</a></button>
 		        	</div>
 		        </div>
             </div>

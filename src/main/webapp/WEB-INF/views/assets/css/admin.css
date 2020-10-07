@@ -165,64 +165,12 @@ body {
     color: #fff;
 }
 
-/* Pages */
-
-/* ------------------------------- */
-
-/* Dashboard Chat */
-
-.chat {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.chat li {
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
-}
-
-.chat li.left .chat-body {
-    margin-left: 60px;
-}
-
-.chat li.right .chat-body {
-    margin-right: 60px;
-}
-
-.chat li .chat-body p {
-    margin: 0;
-    color: #777777;
-}
-
-.panel .slidedown .glyphicon,
-.chat .glyphicon {
-    margin-right: 5px;
-}
-
-.chat-panel .panel-body {
-    height: 350px;
-    overflow-y: scroll;
-}
-
 /* Login Page */
 
 .login-panel {
     margin-top: 25%;
 }
 
-/* Flot Chart Containers */
-
-.flot-chart {
-    display: block;
-    height: 400px;
-}
-
-.flot-chart-content {
-    width: 100%;
-    height: 100%;
-}
 
 /* DataTables Overrides */
 
@@ -279,7 +227,7 @@ table.dataTable thead .sorting_desc_disabled {
 /* 관리자페이지 홈 */
 #DataTables_Table_0 { padding: 0; }
 
-.panel { min-height: 250px; width : 47%; margin-right: 30px; border: 2px solid #eee; float: left; }
+.panel { min-height: 300px; width : 47%; margin-right: 30px; border: 2px solid #eee; float: left; }
 .panel-heading { font-weight: bold; font-size:16px; }
 
 .unanswer_table { table-layout: fixed; }
@@ -296,6 +244,7 @@ a:hover { color: #222; }
 .qna_list, .notice_list, .faq_list, .rent_list { width : 100%; }
 .dataTables_length label, .dataTables_filter label { margin: 10px 0 ;}
 .on { background-color: #eee; }
+.page { text-align: center; font-size: 16px; }
 
 /* 버튼 */
 .write { width : 80px; height: 25px; margin-top: -3px; line-height: 100%; }

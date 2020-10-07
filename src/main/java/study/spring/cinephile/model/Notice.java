@@ -10,6 +10,8 @@ public class Notice {
 	private int views;
 	private String reg_date;
 	private String edit_date;
+	private String searchType;
+	private String keyword;
 	
 	/** 페이지 구현이 필요한 경우 아래 속성들을 추가한다 (static) */
 	// LIMIT 절에서 사용할 검색 시작 위치

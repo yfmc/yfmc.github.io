@@ -189,7 +189,7 @@ public class AdminController {
 		return new ModelAndView("admin/admin_qna_list");
 	}
 	
-	/** 관리자 1:1문의 목록 페이지 */
+	/** 관리자 대관문의 목록 페이지 */
 	@RequestMapping(value="/admin/admin_rent_list.do", method=RequestMethod.GET)
 	public ModelAndView rentList(Model model,
 			// 현재 페이지 번호
