@@ -78,7 +78,7 @@
         	<tr>
         		<th width="220" class="text-center">지점명</th>
         		<th width="400" class="text-center">주소</th>
-        		<th width="80" class="text-center">상영관수</th>
+        		<th width="90" class="text-center">상영관수</th>
         		<th width="75" class="text-center">추가</th>
         	</tr>
         </thead>
@@ -165,7 +165,7 @@
         </div>
         </c:otherwise>
         </c:choose>
-        <!-- 자주가는 영화관 목록 5개까지 정의 -->
+        <!-- 자주가는 영화관 목록 -->
         <div class="theaterlist">
             <legend>자주가는 영화관 목록</legend>
 			<input data-role="tags-input" value="tagsinput" hidden="hidden" data-rendered="true">
