@@ -118,6 +118,10 @@ public class BoxofficeMovingController {
 				//조회결과가 저장될 객체
 				List<Movie> output = null;
 				
+				Date today2 = new Date();
+				SimpleDateFormat formatType = new SimpleDateFormat("yyyy-MM-dd");
+				String scrnDay = formatType.format(today2);
+				
 				//현재 날짜
 				String today = calendarTime.cTime();
 				//System.out.println(today);
@@ -172,6 +176,8 @@ public class BoxofficeMovingController {
 					model.addAttribute("today", today);
 					
 				}
+				
+				model.addAttribute("scrnDay",scrnDay);
 		
 		return new ModelAndView("movie/willMoving");
 	}

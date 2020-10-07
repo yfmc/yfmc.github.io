@@ -37,7 +37,14 @@
 			<div class="box-margin" style="height: 20px;"></div>
 			<h3>
 				<span>${output.title}</span>
-				<button type="button" class="btn btn-danger" disabled>예매하기</button>
+				<c:choose>
+					<c:when test="${output.movie_now eq 'Y'}">
+						<button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/bookingtime?movieId=${output.movie_id}&scrnDay=${scrnDay}'">예매하기</button>
+					</c:when>
+					<c:otherwise>
+						<button type="button" class="btn btn-danger" disabled>예매하기</button>
+					</c:otherwise>
+				</c:choose>
 			</h3>
 			<h4>
 				<c:choose>

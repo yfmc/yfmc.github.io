@@ -1,5 +1,7 @@
 package study.spring.cinephile.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -199,6 +201,10 @@ public class MovieSearchController {
 		HttpSession session = request.getSession();
 		Members mySession = (Members) session.getAttribute("loggedIn"); // 로그인세션을 가져옴
 		
+		Date today = new Date();
+		SimpleDateFormat formatType = new SimpleDateFormat("yyyy-MM-dd");
+		String scrnDay = formatType.format(today);
+		
 		boolean isUserExist;
 		int members_id = 0;
 		if(mySession == null) {
@@ -227,8 +233,8 @@ public class MovieSearchController {
 		Movie output = null;
 		List<StarComment> output2 = null;
 
-		input2.setMovie_id(movie_id);	
-
+		input2.setMovie_id(movie_id);
+		
 		try {
             // 전체 게시글 수 조회
             totalCount = movieService.getStarCommentCount(input2);
@@ -268,7 +274,9 @@ public class MovieSearchController {
 				model.addAttribute("my",myStarComment);
 			}
 		}
-		
+		System.out.println("===============================================");
+		System.out.println(output.getMovie_now());
+		System.out.println("===============================================");
 		model.addAttribute("output", output);
 		model.addAttribute("output2", output2);
 		model.addAttribute("user_id",user_id);
@@ -276,6 +284,7 @@ public class MovieSearchController {
 		
 		model.addAttribute("isLike", isLike);
 		model.addAttribute("isComment", isComment);
+		model.addAttribute("scrnDay",scrnDay);
 		return new ModelAndView("movie/MovieContent");
 	}
 }
