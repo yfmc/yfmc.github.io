@@ -1,0 +1,31 @@
+/* Global Styles */
+
+/* ------------------------------- */
+
+body { padding-top: 100px; background-color: #f8f8f8; }
+
+@media(min-width:768px) {
+    body { padding-top: 50px; }
+	}
+
+#page-wrapper { padding: 0 15px; min-height: 568px; background-color: #fff; }
+
+@media(min-width:768px){ 
+    #page-wrapper { position: inherit; margin: 0 0 0 250px; padding: 0 30px; min-height: 1300px; border-left: 1px solid #e7e7e7; }
+	}
+	
+.title { margin-bottom: 20px; }
+.title > input { width: 700px; }
+
+.content { margin-bottom: 20px; }
+.content > textarea { width: 700px; min-height: 400px; }
+
+.email { margin-bottom: 20px; }
+.email > input { width: 700px; }
+
+.subject { margin-bottom: 20px; }
+.subject > input { width: 700px; }
+
+label { vertical-align: top; margin-right: 10px; }  
+
+button { margin-right: 10px; color: #333; }
