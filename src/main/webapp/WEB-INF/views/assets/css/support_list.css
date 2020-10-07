@@ -16,7 +16,7 @@
 	th { text-align: center; background-color: #f2f4f5; font-size: 16px; line-height: 200%; }
 	td { display: table-cell; vertical-align: inherit; border-bottom: 1px solid #eee; padding: 20px; font-size: 16px; line-height: 200%; }
     
-    a { color: black; }
+    .content a { color: black; }
     
     .page { font-size: 16px; }
     
