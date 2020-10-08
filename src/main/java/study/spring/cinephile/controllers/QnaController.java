@@ -107,6 +107,9 @@ public class QnaController {
 		
 		System.out.println("데이터 입력 완료");
 		
+		HttpSession session = request.getSession();
+		Members mySession = (Members) session.getAttribute("loggedIn");
+		
 		/** 입력한 파라미터에 대한 유효성 검사 */
 		if (qna_title.equals(""))			{ return webHelper.redirect( null, "제목을 입력해주세요."); }
 		if (qna_content.equals(""))		{ return webHelper.redirect( null, "문의내용을 입력해주세요."); }
@@ -124,6 +127,7 @@ public class QnaController {
 		input.setBirthdate(birthdate);
 		input.setTel(tel);
 		input.setEmail(email);
+		input.setMembers_id(mySession.getMembers_id());
 		
 		System.out.println("데이터 저장 완료");
 		
