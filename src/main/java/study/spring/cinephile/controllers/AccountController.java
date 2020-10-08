@@ -128,9 +128,7 @@ public class AccountController {
 		try {
 			//인증코드, 메일 임시 테이블에 저장
 			tcodesService.addCode(input);
-			
-			//mailHelper.sendMail(user_email, subject, content);
-			
+			mailHelper.sendMail(user_email, subject, content);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return webHelper.redirect(null, "메일 발송에 실패했습니다.");
@@ -138,8 +136,6 @@ public class AccountController {
 		
 		int Pk;
 		Pk = input.getId_code();
-		System.out.println(input.toString());
-		System.out.println("셍썽된 프라이뭐리"+Pk);
 		
 		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성. //쿠키에는 텍스트 정보만 담을수 있다.
 		
@@ -153,24 +149,6 @@ public class AccountController {
 		}
 		
 		response.addCookie(cookie); //쿠키 저장
-//		model.addAttribute("user_email", user_email);
-		
-		
-		
-		
-		//알림발송 (webHelper를 안쓰고) 실제로 쓰일 코드
-//		PrintWriter out=response.getWriter();
-//		
-//		response.setContentType("text/html; charset=utf-8");
-//		out.println("<script language='javascript'>");
-//		out.println("alert('인증번호를 발송하였습니다.')");
-//		out.println("</script>");
-//		out.flush();
-//		System.out.println(content);
-//		/* 결과처리 */
-//		return new ModelAndView("/account/03-emailCode");
-		
-		//결과처리
 		return webHelper.redirect(contextPath + "/account/03-emailCode.do?user_email="+user_email, "인증코드를 발송하였습니다." + content);
 		
 	}
