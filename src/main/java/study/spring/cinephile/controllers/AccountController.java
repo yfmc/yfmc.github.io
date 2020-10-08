@@ -235,10 +235,10 @@ public class AccountController {
 		if(user_name.equals(""))		{return webHelper.redirect(null, "이름을 입력하세요."); }
 		if(!regexHelper.isKor(user_name))		{return webHelper.redirect(null, "이름은 한글만 입력 가능합니다."); }
 		System.out.println("컨트롤뤄 실행 2-1");
-//		if(birthdate.equals(""))		{return webHelper.redirect(null, "생년월일을 입력하세요."); }
-//		if(gender.equals(""))		{return webHelper.redirect(null, "성별을 체크해 주세요."); }
-//		if(phone.equals(""))		{return webHelper.redirect(null, "전화번호를 입력해주세요."); }
-//		if(postcode.equals(""))		{return webHelper.redirect(null, "우편번호를 선택해주세요."); }
+		if(birthdate.equals(""))		{return webHelper.redirect(null, "생년월일을 입력하세요."); }
+		if(gender.equals(""))		{return webHelper.redirect(null, "성별을 체크해 주세요."); }
+		if(phone.equals(""))		{return webHelper.redirect(null, "전화번호를 입력해주세요."); }
+		if(postcode.equals(""))		{return webHelper.redirect(null, "우편번호를 선택해주세요."); }
 		
 		System.out.println("컨트롤뤄 실행2 ");
 		
@@ -275,10 +275,8 @@ public class AccountController {
 		/* 3)결과를 확인하기 위한 JSON 출력 */
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("item", output);
-		System.out.println("컨트롤뤄 실행 5");
+
 		
-		//return new ModelAndView("account/06-Complete");
-		//return webHelper.redirect("account/06-Complete", null);
 		String redirectUrl = contextPath + "/account/06-Complete.do?members_id=" + input.getMembers_id();
 		return webHelper.redirect(redirectUrl, null);
 	}

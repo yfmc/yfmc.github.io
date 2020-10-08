@@ -101,7 +101,7 @@ public class LoginRestController {
 		System.out.println(user_email);
 		
 		if(user_name == null) {return webHelper.getJsonWarning("아이디를 입력하세요.");}
-		if(user_email == null) {return webHelper.getJsonWarning("비밀번호를 입력하세요.");}
+		if(user_email == null) {return webHelper.getJsonWarning("이메일을 입력하세요.");}
 		
 		/* )데이터 조회하기 */
 		//조회에 필요한 조건값(검색어)를 Beans에 담는다.

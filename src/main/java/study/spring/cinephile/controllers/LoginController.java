@@ -153,22 +153,6 @@ public class LoginController {
 		}
 		
 		response.addCookie(cookie); //쿠키 저장
-//		model.addAttribute("user_email", user_email);
-		
-		
-		
-		
-		//알림발송 (webHelper를 안쓰고) 실제로 쓰일 코드
-//		PrintWriter out=response.getWriter();
-//		
-//		response.setContentType("text/html; charset=utf-8");
-//		out.println("<script language='javascript'>");
-//		out.println("alert('인증번호를 발송하였습니다.')");
-//		out.println("</script>");
-//		out.flush();
-//		System.out.println(content);
-//		/* 결과처리 */
-//		return new ModelAndView("/account/03-emailCode");
 		
 		//결과처리
 		return webHelper.redirect(contextPath + "/login/04-passwordemail.do?user_email="+user_email, "인증코드를 발송하였습니다." + content);
