@@ -39,7 +39,7 @@
 				<span>${output.title}</span>
 				<c:choose>
 					<c:when test="${output.movie_now eq 'Y'}">
-						<button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/bookingtime?movieId=${output.movie_id}&scrnDay=${scrnDay}'">예매하기</button>
+						<button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/booking?movieId=${output.movie_id}&scrnDay=${scrnDay}'">예매하기</button>
 					</c:when>
 					<c:otherwise>
 						<button type="button" class="btn btn-danger" disabled>예매하기</button>
@@ -522,7 +522,7 @@
 		var is_like = document.getElementById("is_like");
 		if (is_like.value == "1") {
 			$.ajax({
-						url : "http://localhost:8080${pageContext.request.contextPath}/movie/MovieLikeDown",
+						url : "${pageContext.request.contextPath}/movie/MovieLikeDown",
 						dataType : 'json',
 						type : 'POST',
 						data : {
@@ -538,12 +538,12 @@
 						},
 						error : function(error) {
 							alert("로그인이 필요합니다.");
-							window.location.href = "http://localhost:8080${pageContext.request.contextPath}/login/01-login.do";
+							window.location.href = "${pageContext.request.contextPath}/login/01-login.do";
 						}
 					});
 		} else {
 			$.ajax({
-						url : "http://localhost:8080${pageContext.request.contextPath}/movie/MovieLikeUp",
+						url : "${pageContext.request.contextPath}/movie/MovieLikeUp",
 						dataType : 'json',
 						type : 'POST',
 						data : {
@@ -559,7 +559,7 @@
 						},
 						error : function(error) {
 							alert("로그인이 필요합니다.");
-							window.location.href = "http://localhost:8080${pageContext.request.contextPath}/login/01-login.do";
+							window.location.href = "${pageContext.request.contextPath}/login/01-login.do";
 						}
 					});
 		}
@@ -602,12 +602,12 @@
 		
 		if (user_id.value == null || user_id.value == '' || user_id.value.length < 1){
 			alert("로그인이 필요합니다.");
-			window.location.href = "http://localhost:8080${pageContext.request.contextPath}/login/01-login.do";
+			window.location.href = "${pageContext.request.contextPath}/login/01-login.do";
 			return;
 		}
 
 		$.ajax({
-			url : "http://localhost:8080${pageContext.request.contextPath}/movie/addComment",
+			url : "${pageContext.request.contextPath}/movie/addComment",
 			dataType : 'json',
 			type : 'POST',
 			data : {
@@ -638,13 +638,13 @@
 		
 		if (user_id.value == null || user_id.value == '' || user_id.value.length < 1){
 			alert("로그인이 필요합니다.");
-			window.location.href = "http://localhost:8080${pageContext.request.contextPath}/login/01-login.do";
+			window.location.href = "${pageContext.request.contextPath}/login/01-login.do";
 			return;
 		}
 		
 
 		$.ajax({
-			url : "http://localhost:8080${pageContext.request.contextPath}/movie/deleteComment",
+			url : "${pageContext.request.contextPath}/movie/deleteComment",
 			dataType : 'json',
 			type : 'POST',
 			data : {
